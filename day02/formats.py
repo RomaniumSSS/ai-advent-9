@@ -1,9 +1,9 @@
-"""День 2 — контроль формата ответа.
+"""День 2: контроль формата ответа.
 
 Один и тот же запрос в трёх режимах:
-    raw    — без ограничений вообще
-    soft   — формат, длина и завершение заданы СЛОВАМИ в промпте
-    strict — то же самое, но ПАРАМЕТРАМИ запроса (response_format, max_tokens, stop)
+    raw:    без ограничений вообще
+    soft:   формат, длина и завершение заданы словами в промпте
+    strict: то же самое, но параметрами запроса (response_format, max_tokens, stop)
 
 Запуск:
     uv run day02/formats.py --chat          # диалог, режим переключается на лету
@@ -56,7 +56,7 @@ RULES = """Ты составляешь зарядку и разминку. От�
 
 
 def ask(question: str, mode: str, temperature: float) -> tuple[str, str]:
-    """Возвращает (текст ответа, причина остановки). При сбое API — ("", "error")."""
+    """Возвращает (текст ответа, причина остановки). При сбое API отдаёт ("", "error")."""
     prompt = question if mode == "raw" else f"{RULES}\n\n{question}"
 
     params = {
@@ -65,7 +65,7 @@ def ask(question: str, mode: str, temperature: float) -> tuple[str, str]:
         "messages": [{"role": "user", "content": prompt}],
     }
 
-    # soft — те же требования, но ТОЛЬКО словами в промпте, без параметров
+    # soft: те же требования, только словами в промпте, без параметров
 
     if mode == "strict":
         params["response_format"] = {"type": "json_object"}
@@ -96,7 +96,7 @@ def parse(answer: str):
 
 
 def is_refusal(data) -> bool:
-    """Отказ по теме — это тоже правильное поведение, а не поломка формата."""
+    """Отказ по теме тоже правильное поведение, а не поломка формата."""
     return isinstance(data, dict) and set(data) == {"error"}
 
 
@@ -117,7 +117,7 @@ def content_words(value) -> int:
     """Считает слова в содержимом, не в разметке: строки и числа, без имён полей."""
     if isinstance(value, str):
         return len(value.split())
-    if isinstance(value, (int, float)):  # bool сюда же — он подкласс int
+    if isinstance(value, (int, float)):  # bool сюда же, он подкласс int
         return 1
     if isinstance(value, list):
         return sum(content_words(item) for item in value)
@@ -133,20 +133,20 @@ def count_words(answer: str, data) -> int:
 def stop_verdict(answer: str, stop_reason: str) -> str:
     """Что на самом деле оборвало ответ. Порядок проверок важен.
 
-    Обрезанный по лимиту ответ не содержит стоп-слова — и наивная проверка
+    Обрезанный по лимиту ответ не содержит стоп-слова, и наивная проверка
     записала бы это в заслугу stop. Поэтому лимит проверяется первым.
     """
     if stop_reason == "length":
         return "упёрся в max_tokens, формат мог сломаться"
     if STOP_WORD in answer:
-        return f"маркер {STOP_WORD} остался в тексте — завершение не сработало"
+        return f"маркер {STOP_WORD} остался в тексте, значит завершение не сработало"
     if stop_reason == "stop":
         return "чисто: маркера нет, обрыва нет"
     return f"неожиданная причина остановки: {stop_reason or 'пусто'}"
 
 
 def verdict(answer: str, stop_reason: str) -> dict:
-    """Разбор одного ответа. Чистая функция — тестируется без обращения к API."""
+    """Разбор одного ответа. Чистая функция, тестируется без обращения к API."""
     data = parse(answer)
     items = exercises_of(data)
     words = count_words(answer, data)
@@ -188,7 +188,7 @@ def report(question: str, modes: Sequence[str], runs: int, temperature: float) -
 
             if runs == 1:
                 print(answer or "(пустой ответ)")
-                print(f"\n  stop_reason: {stop_reason} — {v['stop']}")
+                print(f"\n  stop_reason: {stop_reason}, {v['stop']}")
             elif v["refusal"]:
                 print(f"  прогон {run + 1}: отказ по теме (в статистику схемы не идёт)")
             else:
@@ -218,8 +218,8 @@ HELP = """Команды:
   /runs N                     сколько прогонов на режим (сейчас: {runs})
   /help                       эта справка
   /exit                       выход
-Любой другой текст — вопрос к модели.
-Агент отвечает только про зарядку и разминку; на остальное вернёт
+Любой другой текст считается вопросом к модели.
+Агент отвечает только про зарядку и разминку, на остальное вернёт
 {{"error": "вопрос вне темы"}}."""
 
 
@@ -243,14 +243,14 @@ def handle_command(line: str, mode: str, runs: int) -> tuple[str, int]:
         else:
             print("нужно целое число больше нуля, например /runs 5")
     else:
-        print(f"неизвестная команда {name}, /help — список")
+        print(f"неизвестная команда {name}, список команд в /help")
 
     return mode, runs
 
 
 def chat(runs: int, temperature: float) -> None:
     mode = "all"
-    print("Режим диалога. /help — команды, /exit — выход.\n")
+    print("Режим диалога. /help для списка команд, /exit для выхода.\n")
 
     while True:
         try:
