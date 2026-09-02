@@ -12,6 +12,7 @@
 """
 
 import re
+from functools import cache
 from itertools import product
 
 BUDGET = 210
@@ -182,8 +183,12 @@ def all_builds():
         yield dict(zip(PARTS, combo))
 
 
+@cache
 def best_build() -> tuple[dict, int]:
-    """Правильный ответ полным перебором. Возвращает (сборка, сколько валидных всего)."""
+    """Правильный ответ полным перебором. Возвращает (сборка, сколько валидных всего).
+
+    Кэшируется: score() зовёт её на каждый ответ, а перебор одинаковый всегда.
+    """
     valid = [build for build in all_builds() if is_valid(build)]
     if not valid:
         raise ValueError("валидных сборок нет — каталог или бюджет заданы неудачно")
@@ -247,6 +252,48 @@ def parse_answer(text: str) -> dict | None:
     if set(build) != set(PARTS):
         return None
     return build
+
+
+def score(answer: str) -> dict:
+    """Метрики одного ответа модели. Чистая функция, тестируется без API.
+
+    Три категории провала разведены намеренно, потому что означают разное:
+      parsed=False   — модель не выдала разбираемую строку. Поломка формата,
+                       а не рассуждения, в ошибку решения не записывается.
+      invented=True  — модель придумала деталь, которой нет в каталоге.
+                       Она не считала и ошиблась, она вообще не смотрела в каталог.
+      valid=False    — все детали настоящие, но нарушено правило совместимости.
+
+    Порядок ветвлений важен. Если проверять бюджет раньше наличия позиций
+    в каталоге, выдуманная сборка получит in_budget=True — цену такой сборки
+    вообще не на чем посчитать.
+    """
+    empty = {
+        "parsed": False,
+        "invented": False,
+        "valid": False,
+        "in_budget": False,
+        "optimal": False,
+        "minutes": 0.0,
+    }
+
+    build = parse_answer(answer)
+    if build is None:
+        return empty
+
+    problems = broken_rules(build)
+    if any("нет в каталоге" in problem for problem in problems):
+        return empty | {"parsed": True, "invented": True}
+
+    valid = not problems
+    return {
+        "parsed": True,
+        "invented": False,
+        "valid": valid,
+        "in_budget": not any(problem.startswith("бюджет") for problem in problems),
+        "optimal": build == best_build()[0],
+        "minutes": minutes_of(build) if valid else 0.0,
+    }
 
 
 def main() -> None:

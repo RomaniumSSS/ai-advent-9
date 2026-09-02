@@ -20,6 +20,7 @@ from build import (  # noqa: E402
     minutes_of,
     parse_answer,
     price_of,
+    score,
     weight_of,
 )
 
@@ -206,8 +207,101 @@ def check_parsing() -> list[str]:
     return problems
 
 
+def line(**parts: str) -> str:
+    return "ОТВЕТ: " + ", ".join(f"{key}={value}" for key, value in parts.items())
+
+
+SCORING = [
+    (
+        "оптимум",
+        line(frame="F-220", motor="M-2", props="P-5", esc="E-30", battery="B-4S-2200"),
+        {
+            "parsed": True,
+            "invented": False,
+            "valid": True,
+            "in_budget": True,
+            "optimal": True,
+            "minutes": 2.75,
+        },
+    ),
+    (
+        "валидна, но не оптимум",
+        line(frame="F-180", motor="M-1", props="P-4", esc="E-20", battery="B-4S-1300"),
+        {
+            "parsed": True,
+            "invented": False,
+            "valid": True,
+            "in_budget": True,
+            "optimal": False,
+        },
+    ),
+    (
+        "нарушено правило, но не бюджет",
+        line(frame="F-180", motor="M-2", props="P-5", esc="E-30", battery="B-4S-2200"),
+        {
+            "parsed": True,
+            "invented": False,
+            "valid": False,
+            "in_budget": True,
+            "optimal": False,
+            "minutes": 0.0,
+        },
+    ),
+    (
+        "вылезла за бюджет",
+        line(frame="F-250", motor="M-2", props="P-5", esc="E-50", battery="B-4S-2200"),
+        {
+            "parsed": True,
+            "invented": False,
+            "valid": False,
+            "in_budget": False,
+            "optimal": False,
+        },
+    ),
+    (
+        # Главный случай: цену выдуманной сборки посчитать не на чем,
+        # поэтому in_budget обязан быть False, а не True по умолчанию.
+        "выдуманная деталь не должна засчитываться как «в бюджете»",
+        line(frame="F-220", motor="M-9", props="P-5", esc="E-30", battery="B-4S-2200"),
+        {
+            "parsed": True,
+            "invented": True,
+            "valid": False,
+            "in_budget": False,
+            "optimal": False,
+            "minutes": 0.0,
+        },
+    ),
+    (
+        "ответ не разобрался",
+        "Думаю, подойдёт что-нибудь лёгкое.",
+        {
+            "parsed": False,
+            "invented": False,
+            "valid": False,
+            "in_budget": False,
+            "optimal": False,
+            "minutes": 0.0,
+        },
+    ),
+]
+
+
+def check_scoring() -> list[str]:
+    problems = []
+    for name, answer, expected in SCORING:
+        got = score(answer)
+        for key, value in expected.items():
+            actual = round(got[key], 2) if key == "minutes" else got[key]
+            if actual != value:
+                problems.append(
+                    f"метрики, {name}: {key} ждали {value}, получили {actual}"
+                )
+    return problems
+
+
 def main() -> None:
-    problems = check_optimum() + check_rules() + check_parsing()
+    problems = check_optimum() + check_rules() + check_parsing() + check_scoring()
     if problems:
         print("FAIL")
         for problem in problems:
@@ -219,6 +313,10 @@ def main() -> None:
     print(
         f"ok    разбор:  {len(PARSING)} случаев, из них "
         f"{sum(1 for _, _, expected in PARSING if expected is None)} должны дать None"
+    )
+    print(
+        f"ok    метрики: {len(SCORING)} случаев, включая выдуманную деталь "
+        f"и разведение «невалидна» с «не в бюджете»"
     )
 
 

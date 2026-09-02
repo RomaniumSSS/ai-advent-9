@@ -27,11 +27,11 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from build import (  # noqa: E402
     ANSWER_FORMAT,
+    PARTS,
     best_build,
-    broken_rules,
     minutes_of,
-    parse_answer,
     price_of,
+    score,
     task_text,
 )
 
@@ -40,6 +40,12 @@ load_dotenv()
 MODEL = "deepseek-chat"
 TEMPERATURE = 1.0
 RESULTS = Path(__file__).parent / "results.json"
+
+# Потолок длины ответа. Значение равно умолчанию DeepSeek — замерено запросом,
+# который модель физически не может закончить: finish_reason=length на 8192.
+# Задано явно, чтобы предел был виден в коде и замер воспроизводился,
+# даже если провайдер поменяет умолчание. Именно в него упирался режим meta.
+MAX_TOKENS = 8192
 
 # Опорная точка, а не режим промптинга: тот же промпт, но рассуждения
 # придушены параметром API. Показывает, сколько стоит само рассуждение.
@@ -75,6 +81,7 @@ def call(prompt: str, extra: dict | None = None) -> tuple[str, str]:
     params = {
         "model": MODEL,
         "temperature": TEMPERATURE,
+        "max_tokens": MAX_TOKENS,
         "messages": [{"role": "user", "content": prompt}],
     }
     if extra:
@@ -143,45 +150,6 @@ def run_once(mode: str) -> dict:
 OPTIMUM, VALID_TOTAL = best_build()
 
 
-def score(record: dict) -> dict:
-    """Метрики одного прогона.
-
-    Три категории провала разведены намеренно, потому что означают разное:
-      parsed=False   — модель не выдала разбираемую строку. Поломка формата,
-                       а не рассуждения, в ошибку решения не записывается.
-      invented=True  — модель придумала деталь, которой нет в каталоге.
-                       Она не считала и ошиблась, она вообще не смотрела в каталог.
-      valid=False    — все детали настоящие, но нарушено правило совместимости.
-    """
-    build = parse_answer(record["answer"])
-    empty = {
-        "parsed": False,
-        "invented": False,
-        "valid": False,
-        "in_budget": False,
-        "optimal": False,
-        "minutes": 0.0,
-    }
-    if build is None:
-        return empty
-
-    problems = broken_rules(build)
-    if any("нет в каталоге" in problem for problem in problems):
-        return empty | {"parsed": True, "invented": True}
-
-    valid = not problems
-    return {
-        "parsed": True,
-        "invented": False,
-        "valid": valid,
-        # Считать бюджет осмысленно только когда все позиции настоящие,
-        # иначе price_of вообще не на чем вызвать.
-        "in_budget": not any(problem.startswith("бюджет") for problem in problems),
-        "optimal": build == OPTIMUM,
-        "minutes": minutes_of(build) if valid else 0.0,
-    }
-
-
 def measure(runs: int) -> list[dict]:
     """Все режимы, все прогоны, параллельно."""
     jobs = [mode for mode in MODES for _ in range(runs)]
@@ -190,7 +158,7 @@ def measure(runs: int) -> list[dict]:
 
 
 def report(records: list[dict]) -> None:
-    print(f"\nправильный ответ: {' + '.join(OPTIMUM[part] for part in OPTIMUM)}")
+    print(f"\nправильный ответ: {' + '.join(OPTIMUM[part] for part in PARTS)}")
     print(
         f"{minutes_of(OPTIMUM):.2f} мин, цена {price_of(OPTIMUM)}, "
         f"валидных сборок в каталоге {VALID_TOTAL} из 1920\n"
@@ -208,7 +176,11 @@ def report(records: list[dict]) -> None:
         if not rows:
             continue
         failed = [row for row in rows if row["stop"].startswith("error")]
-        scored = [score(row) for row in rows if row not in failed]
+        # Фильтруем по признаку, а не по вхождению объекта в список:
+        # сравнение словарей через `in` квадратично и опирается на равенство значений.
+        scored = [
+            score(row["answer"]) for row in rows if not row["stop"].startswith("error")
+        ]
         parsed = [s for s in scored if s["parsed"]]
         flying = [s["minutes"] for s in parsed if s["valid"]]
 
