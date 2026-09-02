@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>День 3 — конфигуратор дрона</title>
+<style>
+  :root {
+    --bg: #14161a;
+    --panel: #1c1f26;
+    --line: #2b3039;
+    --text: #d7dce4;
+    --dim: #8b93a1;
+    --ok: #6cc17f;
+    --bad: #e07a6a;
+    --accent: #7aa2f7;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 1rem;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.55 system-ui, -apple-system, sans-serif;
+  }
+  main { max-width: 62rem; margin: 0 auto; }
+  h1 { font-size: 1.4rem; margin: 0 0 .3rem; }
+  h2 { font-size: 1.05rem; margin: 0 0 .8rem; font-weight: 600; }
+  p.lead { color: var(--dim); margin: 0 0 1.5rem; }
+  section {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  .grid { display: grid; gap: 1rem; }
+  @media (min-width: 900px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+
+  label { display: block; margin-bottom: .7rem; }
+  label span { display: block; color: var(--dim); font-size: .8rem; margin-bottom: .2rem; }
+  select {
+    width: 100%; padding: .5rem; border-radius: 6px;
+    background: var(--bg); color: var(--text);
+    border: 1px solid var(--line); font: inherit;
+  }
+  .verdict { font-size: 1.15rem; font-weight: 700; margin: .2rem 0 .6rem; }
+  .verdict.ok { color: var(--ok); }
+  .verdict.bad { color: var(--bad); }
+  .nums { font-family: ui-monospace, Menlo, monospace; color: var(--dim); font-size: .85rem; }
+  ul.problems { margin: .6rem 0 0; padding-left: 1.1rem; color: var(--bad); font-size: .88rem; }
+  ul.problems li { margin-bottom: .25rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th, td { text-align: right; padding: .35rem .4rem; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--dim); font-weight: 500; }
+  td.win { color: var(--ok); font-weight: 700; }
+
+  button {
+    padding: .45rem .8rem; margin: 0 .4rem .4rem 0;
+    border: 1px solid var(--line); border-radius: 6px;
+    background: var(--bg); color: var(--accent);
+    font: inherit; cursor: pointer;
+  }
+  button:hover:not(:disabled) { border-color: var(--accent); }
+  button:disabled { opacity: .45; cursor: wait; }
+  pre {
+    white-space: pre-wrap; word-break: break-word;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+    padding: .7rem; max-height: 24rem; overflow: auto;
+    font-size: .8rem; color: var(--dim); margin: .6rem 0 0;
+  }
+  details summary { cursor: pointer; color: var(--accent); font-size: .85rem; }
+  pre.rules { color: var(--dim); max-height: none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Конфигуратор дрона</h1>
+  <p class="lead">
+    Задача дня 3. Семь правил связаны между собой: аккумулятор побольше даёт время полёта,
+    но он сам весит, вес поднимает порог тяги, тяга требует моторов помощнее,
+    те тянут больше тока. Собери сам и посмотри, что ломается.
+  </p>
+
+  <div class="grid two">
+    <section>
+      <h2>Собери сам</h2>
+      <form id="picker"></form>
+    </section>
+
+    <section>
+      <h2>Что вышло</h2>
+      <p class="verdict" id="verdict">…</p>
+      <p class="nums" id="nums"></p>
+      <ul class="problems" id="problems"></ul>
+      <p class="nums" id="reference"></p>
+    </section>
+  </div>
+
+  <section>
+    <h2>Замер: пять способов рассуждения, по 20 прогонов</h2>
+    <table id="table"><tbody></tbody></table>
+  </section>
+
+  <section>
+    <h2>Спросить модель вживую</h2>
+    <p class="nums">Один прогон, 15–40 секунд. Ответ приходит целиком, вердикт считает тот же валидатор.</p>
+    <div id="buttons"></div>
+    <p class="verdict" id="ask-verdict"></p>
+    <div id="ask-out"></div>
+  </section>
+
+  <section>
+    <h2>Правила</h2>
+    <details><summary>показать условие задачи</summary><pre class="rules" id="rules"></pre></details>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let STATE = null;
+
+async function boot() {
+  STATE = await (await fetch('/api/state')).json();
+  renderPicker();
+  renderTable();
+  $('rules').textContent = STATE.rules + '\n\n' + STATE.goal;
+  $('reference').textContent =
+    `эталон: ${STATE.parts.map(p => STATE.optimum[p]).join(' + ')} — ` +
+    `${STATE.optimum_minutes} мин, цена ${STATE.optimum_price}. ` +
+    `Валидных сборок всего ${STATE.valid_total} из 1920.`;
+  renderButtons();
+  check();
+}
+
+function renderPicker() {
+  const form = $('picker');
+  form.innerHTML = '';
+  for (const part of STATE.parts) {
+    const many = STATE.quantity[part] === 4 ? ' (4 шт.)' : '';
+    const label = document.createElement('label');
+    label.innerHTML = `<span>${part}${many}</span>`;
+    const select = document.createElement('select');
+    select.dataset.part = part;
+    for (const [name, spec] of Object.entries(STATE.catalogs[part])) {
+      const opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name + ' — ' +
+        Object.entries(spec).map(([k, v]) => `${k} ${v}`).join(', ');
+      select.append(opt);
+    }
+    select.onchange = check;
+    label.append(select);
+    form.append(label);
+  }
+}
+
+function currentBuild() {
+  const build = {};
+  for (const select of $('picker').querySelectorAll('select')) {
+    build[select.dataset.part] = select.value;
+  }
+  return build;
+}
+
+async function check() {
+  const result = await (await fetch('/api/check', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(currentBuild()),
+  })).json();
+
+  const verdict = $('verdict');
+  if (result.optimal) {
+    verdict.textContent = 'Летит, и это лучшая сборка';
+    verdict.className = 'verdict ok';
+  } else if (result.valid) {
+    verdict.textContent = 'Летит, но не лучшая';
+    verdict.className = 'verdict ok';
+  } else {
+    verdict.textContent = 'Не полетит';
+    verdict.className = 'verdict bad';
+  }
+
+  $('nums').textContent = [
+    result.minutes !== null ? `${result.minutes} мин` : null,
+    result.price !== null ? `цена ${result.price} из ${STATE.budget}` : null,
+    result.weight !== null ? `вес ${result.weight} г` : null,
+  ].filter(Boolean).join('   ·   ');
+
+  $('problems').innerHTML = '';
+  for (const problem of result.problems) {
+    const li = document.createElement('li');
+    li.textContent = problem;
+    $('problems').append(li);
+  }
+}
+
+function renderTable() {
+  const best = Math.max(...STATE.table.map(r => r.optimal));
+  const head = '<tr><th>режим</th><th>разобралось</th><th>валидна</th>' +
+               '<th>оптимум</th><th>вызовов</th></tr>';
+  const rows = STATE.table.map(r =>
+    `<tr><td>${r.mode}</td><td>${r.parsed}/${r.runs}</td><td>${r.valid}</td>` +
+    `<td class="${r.optimal === best ? 'win' : ''}">${r.optimal}</td><td>${r.calls}</td></tr>`
+  ).join('');
+  $('table').innerHTML = head + rows;
+}
+
+function renderButtons() {
+  for (const mode of STATE.modes) {
+    const button = document.createElement('button');
+    button.textContent = mode;
+    button.onclick = () => ask(mode, button);
+    $('buttons').append(button);
+  }
+}
+
+async function ask(mode, button) {
+  const buttons = $('buttons').querySelectorAll('button');
+  buttons.forEach(b => b.disabled = true);
+  button.textContent = mode + ' — думает…';
+  $('ask-verdict').textContent = '';
+  $('ask-out').innerHTML = '';
+
+  try {
+    const result = await (await fetch('/api/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mode }),
+    })).json();
+
+    const s = result.score;
+    const verdict = $('ask-verdict');
+    if (!s.parsed)      { verdict.textContent = 'Ответ не разобрался'; verdict.className = 'verdict bad'; }
+    else if (s.invented){ verdict.textContent = 'Придумала несуществующую деталь'; verdict.className = 'verdict bad'; }
+    else if (s.optimal) { verdict.textContent = 'Попала в оптимум'; verdict.className = 'verdict ok'; }
+    else if (s.valid)   { verdict.textContent = `Летит, но не лучшая — ${s.minutes.toFixed(2)} мин`; verdict.className = 'verdict ok'; }
+    else                { verdict.textContent = 'Не полетит'; verdict.className = 'verdict bad'; }
+
+    const details = document.createElement('details');
+    details.innerHTML =
+      `<summary>ответ модели, ${result.answer.length} симв., ` +
+      `stop=${result.stop}, вызовов ${result.calls}</summary>`;
+    const pre = document.createElement('pre');
+    pre.textContent = result.answer || '(пусто)';
+    details.append(pre);
+    $('ask-out').append(details);
+  } catch (error) {
+    $('ask-verdict').textContent = 'Запрос не дошёл: ' + error;
+    $('ask-verdict').className = 'verdict bad';
+  } finally {
+    buttons.forEach(b => b.disabled = false);
+    button.textContent = mode;
+  }
+}
+
+boot();
+</script>
+</body>
+</html>
