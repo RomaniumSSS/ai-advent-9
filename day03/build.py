@@ -11,6 +11,7 @@
     uv run day03/build.py
 """
 
+import re
 from itertools import product
 
 BUDGET = 210
@@ -223,6 +224,29 @@ def task_text() -> str:
             lines.append(f"  {name}: {fields}")
     lines += ["", RULES_TEXT, "", GOAL_TEXT]
     return "\n".join(lines)
+
+
+ANSWER_LINE = re.compile(r"ответ\s*:(.+)", re.IGNORECASE)
+PAIR = re.compile(r"(\w+)\s*=\s*([\w\-]+)")
+
+
+def parse_answer(text: str) -> dict | None:
+    """Достаёт сборку из последней строки «ОТВЕТ:». None, если разобрать не вышло.
+
+    Берётся именно последняя: модель может передумать по ходу рассуждения
+    и выдать несколько строк ответа.
+
+    Наличие позиции в каталоге здесь НЕ проверяется — это работа broken_rules.
+    Разбор отвечает только за форму, проверка правил за содержание.
+    """
+    matches = ANSWER_LINE.findall(text.replace("*", ""))
+    if not matches:
+        return None
+
+    build = dict(PAIR.findall(matches[-1]))
+    if set(build) != set(PARTS):
+        return None
+    return build
 
 
 def main() -> None:

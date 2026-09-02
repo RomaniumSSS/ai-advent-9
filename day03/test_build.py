@@ -18,6 +18,7 @@ from build import (  # noqa: E402
     broken_rules,
     is_valid,
     minutes_of,
+    parse_answer,
     price_of,
     weight_of,
 )
@@ -163,14 +164,62 @@ def check_rules() -> list[str]:
     return problems
 
 
+GOOD_LINE = "ОТВЕТ: frame=F-220, motor=M-2, props=P-5, esc=E-30, battery=B-4S-2200"
+
+PARSING = [
+    ("обычный ответ", f"Долгие рассуждения...\n{GOOD_LINE}", OPTIMUM),
+    ("текст после строки ответа", f"{GOOD_LINE}\nНадеюсь, помог!", OPTIMUM),
+    (
+        "другой порядок позиций",
+        "ОТВЕТ: battery=B-4S-2200, esc=E-30, props=P-5, motor=M-2, frame=F-220",
+        OPTIMUM,
+    ),
+    (
+        "две строки ОТВЕТ, берём последнюю",
+        "ОТВЕТ: frame=F-180, motor=M-1, props=P-4, esc=E-20, battery=B-4S-1300\n"
+        f"Стоп, пересчитал.\n{GOOD_LINE}",
+        OPTIMUM,
+    ),
+    ("markdown вокруг", f"**{GOOD_LINE}**", OPTIMUM),
+    ("строчными буквами", GOOD_LINE.replace("ОТВЕТ", "ответ"), OPTIMUM),
+    (
+        "без запятых",
+        "ОТВЕТ: frame=F-220 motor=M-2 props=P-5 esc=E-30 battery=B-4S-2200",
+        OPTIMUM,
+    ),
+    ("в блоке кода", f"```\n{GOOD_LINE}\n```", OPTIMUM),
+    ("пробелы вокруг знака равенства", GOOD_LINE.replace("=", " = "), OPTIMUM),
+    ("не хватает позиции", "ОТВЕТ: frame=F-220, motor=M-2, props=P-5, esc=E-30", None),
+    ("лишняя позиция", f"{GOOD_LINE}, camera=C-1", None),
+    ("слово есть, пар нет", "ОТВЕТ: думаю, надо взять F-220 и M-2", None),
+    ("строки ОТВЕТ нет вовсе", "Пожалуй, F-220 и M-2 подойдут.", None),
+    ("пустой ответ", "", None),
+]
+
+
+def check_parsing() -> list[str]:
+    problems = []
+    for name, text, expected in PARSING:
+        got = parse_answer(text)
+        if got != expected:
+            problems.append(f"разбор, {name}: ждали {expected}, получили {got}")
+    return problems
+
+
 def main() -> None:
-    problems = check_optimum() + check_rules()
+    problems = check_optimum() + check_rules() + check_parsing()
     if problems:
         print("FAIL")
         for problem in problems:
             print(f"        {problem}")
         sys.exit(1)
-    print(f"ok    эталон совпал, все {len(BROKEN)} нарушений ловятся")
+
+    print("ok    эталон: сборка, время, цена, вес и число валидных совпали")
+    print(f"ok    правила: {len(BROKEN)} нарушений ловятся, каждое своим сообщением")
+    print(
+        f"ok    разбор:  {len(PARSING)} случаев, из них "
+        f"{sum(1 for _, _, expected in PARSING if expected is None)} должны дать None"
+    )
 
 
 if __name__ == "__main__":
