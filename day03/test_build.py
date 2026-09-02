@@ -49,14 +49,128 @@ def check_optimum() -> list[str]:
     return problems
 
 
+BROKEN = [
+    (
+        "правило 1: пропеллер не того размера, что мотор",
+        {
+            "frame": "F-220",
+            "motor": "M-2",
+            "props": "P-4",
+            "esc": "E-30",
+            "battery": "B-4S-2200",
+        },
+        "пропеллер",
+    ),
+    (
+        "правило 2: пропеллер не влезает в раму",
+        {
+            "frame": "F-180",
+            "motor": "M-2",
+            "props": "P-5",
+            "esc": "E-30",
+            "battery": "B-4S-2200",
+        },
+        "рама",
+    ),
+    (
+        "правило 3: аккумулятор не на то число банок",
+        {
+            "frame": "F-220",
+            "motor": "M-2",
+            "props": "P-5",
+            "esc": "E-30",
+            "battery": "B-6S-1300",
+        },
+        "банки",
+    ),
+    (
+        "правило 4: регулятор не держит ток мотора",
+        {
+            "frame": "F-220",
+            "motor": "M-2",
+            "props": "P-5",
+            "esc": "E-20",
+            "battery": "B-4S-2200",
+        },
+        "регулятор",
+    ),
+    (
+        "правило 5: аккумулятор не отдаёт нужный ток",
+        {
+            "frame": "F-280",
+            "motor": "M-5",
+            "props": "P-7",
+            "esc": "E-50",
+            "battery": "B-6S-1300",
+        },
+        "отдача",
+    ),
+    (
+        "правило 6: тяги не хватает на такой вес",
+        {
+            "frame": "F-220",
+            "motor": "M-2",
+            "props": "P-5",
+            "esc": "E-30",
+            "battery": "B-4S-3000",
+        },
+        "тяга",
+    ),
+    (
+        "правило 7: сборка дороже бюджета",
+        {
+            "frame": "F-250",
+            "motor": "M-2",
+            "props": "P-5",
+            "esc": "E-50",
+            "battery": "B-4S-2200",
+        },
+        "бюджет",
+    ),
+    (
+        "позиции нет в каталоге",
+        {
+            "frame": "F-999",
+            "motor": "M-2",
+            "props": "P-5",
+            "esc": "E-30",
+            "battery": "B-4S-2200",
+        },
+        "нет в каталоге",
+    ),
+]
+
+# Случаи, где должно ломаться РОВНО одно правило. Если валидатор ловит лишнее,
+# значит сборка подобрана неудачно и тест проверяет не то, что заявлено.
+SINGLE_FAULT = {
+    "правило 1: пропеллер не того размера, что мотор",
+    "правило 2: пропеллер не влезает в раму",
+    "правило 3: аккумулятор не на то число банок",
+    "правило 4: регулятор не держит ток мотора",
+    "правило 6: тяги не хватает на такой вес",
+    "правило 7: сборка дороже бюджета",
+}
+
+
+def check_rules() -> list[str]:
+    problems = []
+    for name, build, expected in BROKEN:
+        found = broken_rules(build)
+        if not any(expected in problem for problem in found):
+            problems.append(f"{name}: ждали «{expected}», получили {found}")
+        elif name in SINGLE_FAULT and len(found) != 1:
+            problems.append(f"{name}: ждали одно нарушение, получили {found}")
+    return problems
+
+
 def main() -> None:
-    problems = check_optimum()
+    problems = check_optimum() + check_rules()
     if problems:
-        print("FAIL  эталон")
+        print("FAIL")
         for problem in problems:
             print(f"        {problem}")
         sys.exit(1)
-    print("ok    эталон совпал")
+    print(f"ok    эталон совпал, все {len(BROKEN)} нарушений ловятся")
 
 
 if __name__ == "__main__":
