@@ -59,7 +59,9 @@ BENEFIT_WORDS = [
     "эконом",
 ]
 BANNED_ROOT = "революцион"
-PRICE_PATTERN = re.compile(r"\d[\d\s]*(?:₽|руб|\$|USD|EUR|€)", re.IGNORECASE)
+PRICE_PATTERN = re.compile(
+    r"\d[\d\s]*(?:₽|руб|долл|евро|крон|\$|USD|EUR|€)", re.IGNORECASE
+)
 SENTENCE_SPLIT = re.compile(r"[.!?]+(?:\s+|$)")
 
 
