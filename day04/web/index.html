@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>День 4 — капканы для нейронки</title>
+<style>
+  :root {
+    --bg: #140d08;
+    --wood: #241a10;
+    --card: #2b1f14;
+    --text: #e8dcc0;
+    --dim: #a8926c;
+    --bronze: #976006;
+    --bronze-light: #c98a1c;
+    --gold: #cfb53b;
+    --gold-light: #f4e07a;
+    --crack: #5c1f1f;
+    --ok: #7fae5a;
+    --bad: #a5433a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 1.5rem;
+    background: radial-gradient(ellipse at top, #2a1d10 0%, var(--bg) 70%);
+    color: var(--text);
+    font: 15px/1.55 Georgia, "Times New Roman", serif;
+  }
+  main { max-width: 68rem; margin: 0 auto; }
+  h1 {
+    font-size: 1.6rem; margin: 0 0 .2rem;
+    letter-spacing: .04em; text-transform: uppercase;
+    color: var(--gold-light);
+    text-shadow: 0 1px 0 #000;
+  }
+  h2 {
+    font-size: 1.05rem; margin: 0 0 .8rem; font-weight: 600;
+    letter-spacing: .03em; text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--bronze);
+    padding-bottom: .3rem;
+  }
+  p.lead { color: var(--dim); margin: 0 0 1.5rem; }
+
+  section.board {
+    background: var(--wood);
+    border: 1px solid var(--bronze);
+    border-radius: 6px;
+    padding: 1.2rem;
+    margin-bottom: 1.4rem;
+    box-shadow: inset 0 0 40px rgba(0, 0, 0, .5);
+  }
+
+  .leader {
+    display: flex; align-items: center; gap: 1rem;
+    background: linear-gradient(180deg, #3a2a12, var(--wood));
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.4rem;
+    box-shadow: 0 0 18px rgba(207, 181, 59, .25);
+  }
+  .leader .badge {
+    font-size: .7rem; text-transform: uppercase; letter-spacing: .08em;
+    color: var(--gold-light); border: 1px solid var(--gold);
+    border-radius: 4px; padding: .2rem .5rem; white-space: nowrap;
+  }
+  .leader .text { flex: 1; font-style: italic; }
+  .leader .power {
+    font-size: 1.4rem; font-weight: 700; color: var(--gold-light);
+    min-width: 3rem; text-align: center;
+  }
+
+  .row { margin-bottom: 1rem; }
+  .row-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: .5rem;
+  }
+  .row-head .temp {
+    font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--dim);
+  }
+  .row-head .sum { font-size: 1.3rem; font-weight: 700; color: var(--gold-light); }
+  .cards { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+  .card {
+    width: 6.5rem; min-height: 5.5rem;
+    background: linear-gradient(180deg, #3a2a17, var(--card));
+    border: 2px solid var(--bronze);
+    border-radius: 6px;
+    padding: .4rem;
+    font-size: .78rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .card.gold { border-color: var(--gold); box-shadow: 0 0 8px rgba(207, 181, 59, .4); }
+  .card.crack { border-color: var(--crack); border-style: dashed; opacity: .7; }
+  .card .value { font-size: 1.3rem; font-weight: 700; text-align: center; }
+  .card.gold .value { color: var(--gold-light); }
+  .card.crack .value { color: var(--bad); font-size: .9rem; }
+  .card:not(.gold):not(.crack) .value { color: var(--bronze-light); }
+  .card .foot { font-size: .68rem; color: var(--dim); text-align: center; }
+
+  .empty { color: var(--dim); font-style: italic; }
+
+  select, button {
+    padding: .5rem .7rem; border-radius: 6px;
+    background: var(--card); color: var(--text);
+    border: 1px solid var(--bronze); font: inherit;
+  }
+  button { color: var(--gold-light); cursor: pointer; }
+  button:hover:not(:disabled) { border-color: var(--gold); }
+  button:disabled { opacity: .45; cursor: wait; }
+
+  .verdict { font-size: 1.1rem; font-weight: 700; margin: .6rem 0; }
+  .verdict.ok { color: var(--ok); }
+  .verdict.bad { color: var(--bad); }
+  pre {
+    white-space: pre-wrap; word-break: break-word;
+    background: var(--card); border: 1px solid var(--bronze); border-radius: 6px;
+    padding: .7rem; font-size: .85rem; color: var(--dim);
+  }
+  details summary { cursor: pointer; color: var(--gold); font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Капканы для нейронки</h1>
+  <p class="lead">
+    Задача дня 4. Один и тот же запрос на трёх температурах — три ряда боя,
+    как в Гвинте. Каждый ответ модели — карта в своём ряду.
+  </p>
+
+  <div id="leader"></div>
+
+  <section class="board">
+    <h2>Капкан: буквы «с» в «рассредоточенность» (эталон 3)</h2>
+    <div id="letter-rows"></div>
+  </section>
+
+  <section class="board">
+    <h2>Открытый: гаджет с 4 требованиями</h2>
+    <div id="gadget-rows"></div>
+  </section>
+
+  <section class="board">
+    <h2>Спросить модель вживую</h2>
+    <p class="lead" style="margin-bottom:.8rem">Один прогон. Вердикт считает тот же код, что и на панели.</p>
+    <select id="ask-task"></select>
+    <select id="ask-temp"></select>
+    <button id="ask-button">Спросить</button>
+    <p class="verdict" id="ask-verdict"></p>
+    <div id="ask-out"></div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+let STATE = null;
+
+async function boot() {
+  STATE = await (await fetch('/api/state')).json();
+  renderLeader();
+  renderRows('letter-rows', 'letter', letterCard);
+  renderRows('gadget-rows', 'gadget', gadgetCard);
+  renderAskControls();
+}
+
+function renderLeader() {
+  $('leader').innerHTML = `
+    <div class="leader">
+      <span class="badge">лидер · человек</span>
+      <span class="text">${STATE.human_example}</span>
+      <span class="power">${STATE.human_judge ?? '—'}</span>
+    </div>`;
+}
+
+function cardsFor(task, temperature) {
+  return STATE.records.filter((r) => r.task === task && r.temperature === temperature);
+}
+
+function letterCard(record) {
+  const s = record.score;
+  if (!s) return '<div class="card crack"><div class="value">✗</div><div class="foot">сбой</div></div>';
+  const cls = s.correct ? 'gold' : (s.parsed ? '' : 'crack');
+  const value = s.parsed ? s.value : '?';
+  const foot = s.parsed ? (s.correct ? 'верно' : 'мимо') : 'не разобралось';
+  return `<div class="card ${cls}"><div class="value">${value}</div><div class="foot">${foot}</div></div>`;
+}
+
+function gadgetCard(record) {
+  const s = record.score;
+  if (!s) return '<div class="card crack"><div class="value">✗</div><div class="foot">сбой</div></div>';
+  const cls = s.score === 4 ? 'gold' : (s.score === 0 ? 'crack' : '');
+  const power = s.judge ?? '—';
+  const foot = `${s.score}/4 · ${s.judge != null ? 'судья' : 'без судьи'}`;
+  return `<div class="card ${cls}"><div class="value">${power}</div><div class="foot">${foot}</div></div>`;
+}
+
+function renderRows(containerId, task, cardFn) {
+  const el = $(containerId);
+  el.innerHTML = '';
+  for (const summary of STATE.table[task]) {
+    const records = cardsFor(task, summary.temperature);
+    const sum = task === 'letter' ? `${summary.correct}/${summary.total}` : `${summary.accuracy}%`;
+    const cardsHtml = records.length
+      ? records.map(cardFn).join('')
+      : '<span class="empty">нет прогонов — запусти uv run day04/temperature.py</span>';
+    el.insertAdjacentHTML('beforeend', `
+      <div class="row">
+        <div class="row-head">
+          <span class="temp">temperature ${summary.temperature}</span>
+          <span class="sum">${sum}</span>
+        </div>
+        <div class="cards">${cardsHtml}</div>
+      </div>`);
+  }
+}
+
+function renderAskControls() {
+  $('ask-task').innerHTML = '<option value="letter">буквы</option><option value="gadget">гаджет</option>';
+  $('ask-temp').innerHTML = STATE.temperatures.map((t) => `<option value="${t}">temperature ${t}</option>`).join('');
+  $('ask-button').onclick = ask;
+}
+
+async function ask() {
+  const button = $('ask-button');
+  button.disabled = true;
+  button.textContent = 'спрашиваю…';
+  $('ask-verdict').textContent = '';
+  $('ask-out').innerHTML = '';
+
+  try {
+    const task = $('ask-task').value;
+    const temperature = parseFloat($('ask-temp').value);
+    const result = await (await fetch('/api/ask', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ task, temperature }),
+    })).json();
+
+    const s = result.score;
+    const verdict = $('ask-verdict');
+    if (!s || s.error) {
+      verdict.textContent = 'Запрос не прошёл: ' + (s ? s.error : result.error);
+      verdict.className = 'verdict bad';
+    } else if (task === 'letter') {
+      verdict.textContent = s.parsed
+        ? (s.correct ? `Верно: ${s.value}` : `Мимо: ${s.value}, правильно ${STATE.letter_truth}`)
+        : 'Ответ не разобрался';
+      verdict.className = 'verdict ' + (s.correct ? 'ok' : 'bad');
+    } else {
+      verdict.textContent = `${s.score}/4 требований, судья: ${s.judge ?? '—'}`;
+      verdict.className = 'verdict ' + (s.score === 4 ? 'ok' : 'bad');
+    }
+
+    const details = document.createElement('details');
+    details.innerHTML = `<summary>ответ модели, stop=${result.stop}</summary>`;
+    const pre = document.createElement('pre');
+    pre.textContent = result.answer || '(пусто)';
+    details.append(pre);
+    $('ask-out').append(details);
+  } catch (error) {
+    $('ask-verdict').textContent = 'Запрос не дошёл: ' + error;
+    $('ask-verdict').className = 'verdict bad';
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Спросить';
+  }
+}
+
+boot();
+</script>
+</body>
+</html>
