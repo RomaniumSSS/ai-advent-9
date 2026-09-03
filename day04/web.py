@@ -91,7 +91,10 @@ class Handler(BaseHTTPRequestHandler):
 
     def read_json(self) -> dict:
         length = int(self.headers.get("Content-Length", 0))
-        return json.loads(self.rfile.read(length) or b"{}")
+        try:
+            return json.loads(self.rfile.read(length) or b"{}")
+        except json.JSONDecodeError:
+            return {}
 
     def do_GET(self) -> None:
         if self.path in ("/", "/index.html"):
