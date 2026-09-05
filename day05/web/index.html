@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>День 5 — три модели, один вопрос</title>
+<style>
+  :root {
+    --bg: #0f1216;
+    --panel: #161b22;
+    --line: #262d36;
+    --text: #d7dee7;
+    --dim: #7d8894;
+    --accent: #4b9fd5;
+    --small: #5f8a52;
+    --mid: #b3893c;
+    --big: #a25a8e;
+    --bad: #c05a52;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 1.5rem;
+    background: var(--bg); color: var(--text);
+    font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  main { max-width: 74rem; margin: 0 auto; }
+  h1 { font-size: 1.2rem; margin: 0 0 .3rem; letter-spacing: .02em; }
+  p.lead { color: var(--dim); margin: 0 0 1.4rem; }
+  h2 {
+    font-size: .8rem; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--dim); margin: 2rem 0 .8rem; font-weight: 600;
+  }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 8px; padding: 1rem;
+  }
+
+  form label { display: block; font-size: .78rem; color: var(--dim); margin-bottom: .3rem; }
+  textarea, select, input {
+    width: 100%; padding: .5rem .6rem; font: inherit;
+    background: #0d1117; color: var(--text);
+    border: 1px solid var(--line); border-radius: 6px;
+  }
+  textarea { min-height: 4.5rem; resize: vertical; }
+  .row { display: flex; gap: .8rem; margin-top: .8rem; flex-wrap: wrap; }
+  .row > div { flex: 1; min-width: 12rem; }
+  .thin { flex: 0 0 7rem !important; min-width: 0 !important; }
+  .switches { display: flex; gap: 1.2rem; align-items: center; margin-top: .9rem; flex-wrap: wrap; }
+  .switches label { display: flex; align-items: center; gap: .4rem; margin: 0; cursor: pointer; }
+  .switches input[type=checkbox] { width: auto; cursor: pointer; }
+  .switches input[type=number] { width: 5rem; }
+  .bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; gap: 1rem; flex-wrap: wrap; }
+  #estimate { color: var(--dim); font-size: .82rem; }
+  button {
+    padding: .55rem 1.4rem; font: inherit; cursor: pointer;
+    background: var(--accent); color: #08121a; border: 0; border-radius: 6px; font-weight: 600;
+  }
+  button:disabled { background: var(--line); color: var(--dim); cursor: not-allowed; }
+  .locked {
+    margin-top: .9rem; padding: .6rem .8rem; border-radius: 6px;
+    background: #1d1a12; border: 1px solid #3d3320; color: var(--mid); font-size: .82rem;
+  }
+
+  .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
+  .col { background: var(--panel); border: 1px solid var(--line); border-top-width: 3px; border-radius: 8px; padding: .9rem; }
+  .col.small { border-top-color: var(--small); }
+  .col.mid { border-top-color: var(--mid); }
+  .col.big { border-top-color: var(--big); }
+  .col .role { font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; color: var(--dim); }
+  .col .name { margin: .2rem 0; word-break: break-all; }
+  .col .name a { color: var(--accent); text-decoration: none; }
+  .col .name a:hover { text-decoration: underline; }
+  .col .params { color: var(--dim); font-size: .8rem; margin-bottom: .8rem; }
+
+  .metric { margin-bottom: .55rem; }
+  .metric .top { display: flex; justify-content: space-between; font-size: .78rem; }
+  .metric .top span:first-child { color: var(--dim); }
+  .metric .bar { height: 3px; background: var(--line); border-radius: 2px; margin-top: .25rem; }
+  .metric .bar i { display: block; height: 100%; border-radius: 2px; background: var(--accent); }
+  .col.small .bar i { background: var(--small); }
+  .col.mid .bar i { background: var(--mid); }
+  .col.big .bar i { background: var(--big); }
+
+  details { margin-top: .7rem; }
+  summary { cursor: pointer; color: var(--dim); font-size: .78rem; }
+  pre {
+    white-space: pre-wrap; word-break: break-word; margin: .5rem 0 0;
+    background: #0d1117; border: 1px solid var(--line); border-radius: 6px;
+    padding: .6rem; font-size: .8rem; color: var(--text); max-height: 22rem; overflow: auto;
+  }
+  .err { color: var(--bad); font-size: .82rem; }
+  .note { color: var(--dim); font-size: .78rem; margin-top: .8rem; }
+
+  .session { border-bottom: 1px solid var(--line); padding: .6rem 0; }
+  .session:last-child { border-bottom: 0; }
+  .session summary { color: var(--text); font-size: .85rem; }
+  .session .meta { color: var(--dim); font-size: .76rem; margin-top: .2rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Три модели, один вопрос</h1>
+  <p class="lead">
+    Один и тот же запрос уходит трём моделям разного размера через общий роутер
+    HuggingFace. Все закреплены за провайдером deepinfra, поэтому железо одинаковое
+    и разница во времени говорит про модели, а не про чужие чипы.
+  </p>
+
+  <section class="card">
+    <form id="form">
+      <label for="question">Вопрос</label>
+      <textarea id="question" placeholder="Объясни рекурсию простыми словами">Объясни рекурсию простыми словами</textarea>
+
+      <div class="row" id="picks"></div>
+
+      <div class="switches">
+        <label><span>прогонов</span><input type="number" id="runs" value="3" min="1" max="10"></label>
+        <label><input type="checkbox" id="temp-on"><span>задать температуру</span></label>
+        <input type="number" id="temp" value="0.7" min="0" max="2" step="0.1" style="width:5rem" disabled>
+        <label><input type="checkbox" id="judge"><span>оценивать судьёй</span></label>
+      </div>
+
+      <div class="bottom">
+        <span id="estimate">считаю…</span>
+        <button type="submit" id="go">Сравнить</button>
+      </div>
+      <div class="locked" id="locked" hidden>
+        Публичный режим: запуск только с машины владельца. Смотреть историю можно, тратить кредиты — нет.
+      </div>
+    </form>
+  </section>
+
+  <div id="out"></div>
+
+  <h2>История</h2>
+  <section class="card" id="history"></section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const ROLES = [["small", "младшая"], ["mid", "средняя"], ["big", "старшая"]];
+let STATE = null;
+let CAN_RUN = false;
+
+async function boot() {
+  STATE = await (await fetch('/api/state')).json();
+  renderPicks();
+  renderHistory();
+  for (const el of ['question', 'runs', 'judge', 'temp', 'temp-on']) {
+    $(el).addEventListener('input', onChange);
+  }
+  $('temp-on').addEventListener('change', () => { $('temp').disabled = !$('temp-on').checked; });
+  $('form').addEventListener('submit', run);
+  await refreshEstimate();
+}
+
+function renderPicks() {
+  $('picks').innerHTML = ROLES.map(([cls, title], i) => `
+    <div>
+      <label for="m${i}">${title}</label>
+      <select id="m${i}">${
+        Object.entries(STATE.models).map(([key, m]) =>
+          `<option value="${key}" ${key === STATE.default_trio[i] ? 'selected' : ''}>${key} · ${m.params}</option>`
+        ).join('')
+      }</select>
+    </div>`).join('');
+  for (let i = 0; i < 3; i++) $('m' + i).addEventListener('change', onChange);
+}
+
+function payload(dry) {
+  const temperature = $('temp-on').checked ? parseFloat($('temp').value) : null;
+  return {
+    question: $('question').value,
+    models: [0, 1, 2].map((i) => $('m' + i).value),
+    runs: parseInt($('runs').value, 10),
+    temperature,
+    judge: $('judge').checked,
+    dry_run: dry,
+  };
+}
+
+let timer = null;
+function onChange() {
+  clearTimeout(timer);
+  timer = setTimeout(refreshEstimate, 300);
+}
+
+async function refreshEstimate() {
+  try {
+    const response = await fetch('/api/compare', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload(true)),
+    });
+    const data = await response.json();
+
+    if (response.status === 403) {
+      CAN_RUN = false;
+      $('go').disabled = true;
+      $('locked').hidden = false;
+      $('estimate').textContent = '';
+      return;
+    }
+    CAN_RUN = true;
+    $('locked').hidden = true;
+    if (!response.ok) {
+      $('go').disabled = true;
+      $('estimate').textContent = data.error || 'запрос не принят';
+      return;
+    }
+    $('go').disabled = false;
+    $('estimate').textContent =
+      `будет ${data.calls} ${plural(data.calls, 'вызов', 'вызова', 'вызовов')}, ` +
+      `максимум $${data.worst_cost.toFixed(4)} ` +
+      `(потолок по ${STATE.max_tokens} токенам, обычно выходит меньше)`;
+  } catch (error) {
+    $('estimate').textContent = 'сервер не отвечает: ' + error;
+    $('go').disabled = true;
+  }
+}
+
+async function run(event) {
+  event.preventDefault();
+  if (!CAN_RUN) return;
+  $('go').disabled = true;
+  $('go').textContent = 'спрашиваю…';
+  $('out').innerHTML = '<p class="note">идёт опрос трёх моделей, старшая может думать больше минуты…</p>';
+
+  try {
+    const response = await fetch('/api/compare', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload(false)),
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      $('out').innerHTML = `<p class="err">${data.error}</p>`;
+      return;
+    }
+    renderResult(data);
+    STATE.sessions.unshift(data);
+    renderHistory();
+  } catch (error) {
+    $('out').innerHTML = `<p class="err">запрос не дошёл: ${error}</p>`;
+  } finally {
+    $('go').disabled = false;
+    $('go').textContent = 'Сравнить';
+  }
+}
+
+function temperatureLine(result, key) {
+  if (result.temperature !== null && result.temperature !== undefined) {
+    return `${result.temperature} · задана`;
+  }
+  const declared = STATE.models[key].default_temp;
+  return declared === null ? 'не заявлена' : `${declared} · заявленная`;
+}
+
+function metric(label, value, share, suffix = '') {
+  const width = Math.max(2, Math.round((share || 0) * 100));
+  return `
+    <div class="metric">
+      <div class="top"><span>${label}</span><span>${value}${suffix}</span></div>
+      <div class="bar"><i style="width:${width}%"></i></div>
+    </div>`;
+}
+
+function renderResult(result) {
+  const summaries = result.models.map((key) => result.by_model[key].summary);
+  const peak = (field) => Math.max(...summaries.map((s) => s[field] || 0), 0.0001);
+
+  const cols = result.models.map((key, i) => {
+    const [cls, title] = ROLES[i];
+    const model = STATE.models[key];
+    const data = result.by_model[key];
+    const s = data.summary;
+
+    const head = `
+      <div class="role">${title}</div>
+      <div class="name"><a href="${model.hf}" target="_blank" rel="noreferrer">${key}</a></div>
+      <div class="params">${model.params} · ${s.ok}/${s.runs} успешных</div>`;
+
+    if (!s.ok) {
+      return `<div class="col ${cls}">${head}
+        <p class="err">${data.records[0].error}</p></div>`;
+    }
+
+    const money = s.cost_total === null ? '—' : '$' + s.cost_total.toFixed(6);
+    const body = [
+      metric('время', s.time_avg.toFixed(2), s.time_avg / peak('time_avg'), ' с'),
+      metric('вход', s.prompt_avg ?? '—', (s.prompt_avg || 0) / peak('prompt_avg')),
+      metric('выход', s.completion_avg ?? '—', (s.completion_avg || 0) / peak('completion_avg')),
+      metric('знаков в ответе', s.chars_avg, s.chars_avg / peak('chars_avg')),
+      metric('стоимость', money, (s.cost_total || 0) / peak('cost_total')),
+      s.judge_avg === null ? '' : metric('судья', s.judge_avg, s.judge_avg / 10),
+      `<div class="metric"><div class="top"><span>температура</span><span>${temperatureLine(result, key)}</span></div></div>`,
+    ].join('');
+
+    const answers = data.records
+      .map((r, n) => `<details><summary>ответ ${n + 1}, stop=${r.finish_reason}</summary><pre>${escapeHtml(r.answer) || '(пусто)'}</pre></details>`)
+      .join('');
+
+    return `<div class="col ${cls}">${head}${body}${answers}</div>`;
+  }).join('');
+
+  $('out').innerHTML = `<h2>${escapeHtml(result.question)}</h2><div class="cols">${cols}</div>
+    <p class="note">Полоски — доля от наибольшего среди трёх. Знаки в ответе стоят рядом
+    с выходными токенами намеренно: разрыв между ними и есть невидимые рассуждения,
+    за которые тоже платят.</p>`;
+}
+
+function renderHistory() {
+  if (!STATE.sessions.length) {
+    $('history').innerHTML = '<p class="note">пока пусто — запусти первое сравнение</p>';
+    return;
+  }
+  $('history').innerHTML = STATE.sessions.map((session) => {
+    const parts = session.models.map((key) => {
+      const s = session.by_model[key].summary;
+      if (!s.ok) return `${key}: упало`;
+      const money = s.cost_total === null ? '—' : '$' + s.cost_total.toFixed(5);
+      return `${key}: ${s.time_avg.toFixed(1)}с, ${money}`;
+    }).join('   ');
+    return `
+      <div class="session">
+        <details>
+          <summary>${escapeHtml(session.question)}</summary>
+          <div class="meta">${session.at} · прогонов ${session.runs} · ${parts}</div>
+        </details>
+      </div>`;
+  }).join('');
+}
+
+function plural(count, one, few, many) {
+  const mod100 = count % 100;
+  if (mod100 >= 11 && mod100 <= 14) return many;
+  const mod10 = count % 10;
+  if (mod10 === 1) return one;
+  if (mod10 >= 2 && mod10 <= 4) return few;
+  return many;
+}
+
+function escapeHtml(text) {
+  const box = document.createElement('div');
+  box.textContent = text ?? '';
+  return box.innerHTML;
+}
+
+boot();
+</script>
+</body>
+</html>
