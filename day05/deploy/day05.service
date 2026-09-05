@@ -1,0 +1,20 @@
+[Unit]
+Description=AI Advent day 5 model comparison panel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ai-advent-9
+EnvironmentFile=/opt/ai-advent-9/.env
+ExecStart=/usr/local/bin/uv run day05/web.py --read-port 8035 --run-port 8036
+Restart=on-failure
+RestartSec=5
+
+# Слушатель запуска и так сидит на петле, но лишний слой не мешает
+PrivateTmp=true
+NoNewPrivileges=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
