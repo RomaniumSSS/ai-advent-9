@@ -6,44 +6,58 @@
 на cerebras против 41 на deepinfra), и без явного провайдера колонка стоимости стала бы
 выдумкой, а колонка времени мерила бы чужое железо.
 
-Цены и пропускная способность взяты 05.09.2026 с huggingface.co/inference/models.
+Идентификаторы здесь — слаги OpenRouter, а сам провайдер задаётся отдельным полем
+запроса (PROVIDER ниже). У роутера HuggingFace, с которого начинался день, провайдер
+писался прямо в идентификатор суффиксом ':deepinfra'; на OpenRouter это отдельный
+механизм, потому что он умеет ещё и запрещать подмену провайдера при сбое.
+
+Цены сверены 06.09.2026 с эндпоинтом deepinfra в OpenRouter, а не взяты с витрины:
+на витрине HuggingFace три записи из семи оказались округлены вверх, у glm-5.3-flash —
+вдвое. Пропускная способность по-прежнему с huggingface.co/inference/models и остаётся
+заявленной величиной, а не измеренной.
 Заявленные температуры — из generation_config.json репозитория модели. Это справка
 от авторов, а не наблюдение: API не сообщает, с какой температурой он ответил,
 и провайдер вправе переопределить значение у себя.
 """
 
+# Кого просить обслужить запрос. Пустой список запасных вариантов означает, что при
+# недоступности deepinfra вызов упадёт с ошибкой, а не уедет к другому провайдеру.
+# Тихая подмена железа испортила бы замер времени, никак себя не обозначив.
+PROVIDER = {"only": ["deepinfra"], "allow_fallbacks": False}
+
 MAX_TOKENS = 4000
 
-# Оценка длины промпта в токенах до вызова. Русский текст — 2-3 символа на токен,
-# берём осторожные 2. Надбавка — служебная обёртка провайдера: на разведке 05.09
-# один и тот же промпт стоил от 21 до 108 входных токенов у разных моделей.
-TOKENS_PER_CHAR = 0.5
-WRAPPER_TOKENS = 120
+# Консервативная оценка до вызова: Unicode-символ занимает до четырёх UTF-8 байт,
+# а byte fallback токенизатора — до одного токена на байт. Надбавка покрывает
+# служебный chat-шаблон; на разведке 05.09 он вместе с коротким вопросом занимал
+# до 108 токенов.
+TOKENS_PER_CHAR = 4
+WRAPPER_TOKENS = 256
 
 # Верхняя оценка ответа судьи: он просит одно число, но потолок берём с запасом.
 JUDGE_OUTPUT_TOKENS = 20
 
 MODELS = {
     "gpt-oss-120b": {
-        "id": "openai/gpt-oss-120b:deepinfra",
+        "id": "openai/gpt-oss-120b",
         "params": "117B",
         "params_num": 117,
-        "price_in": 0.04,
+        "price_in": 0.037,
         "price_out": 0.17,
         "default_temp": None,  # в generation_config.json поля нет
         "hf": "https://huggingface.co/openai/gpt-oss-120b",
     },
     "deepseek-v4-flash": {
-        "id": "deepseek-ai/DeepSeek-V4-Flash-0731:deepinfra",
+        "id": "deepseek/deepseek-v4-flash-0731",
         "params": "304B",
         "params_num": 304,
-        "price_in": 0.08,
+        "price_in": 0.06,
         "price_out": 0.18,
         "default_temp": 1.0,
         "hf": "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731",
     },
     "glm-5.3": {
-        "id": "zai-org/GLM-5.3:deepinfra",
+        "id": "z-ai/glm-5.3",
         "params": "753B",
         "params_num": 753,
         "price_in": 1.20,
@@ -51,8 +65,17 @@ MODELS = {
         "default_temp": 1.0,
         "hf": "https://huggingface.co/zai-org/GLM-5.3",
     },
+    "kimi-k3": {
+        "id": "moonshotai/kimi-k3",
+        "params": "2.8T",
+        "params_num": 2800,
+        "price_in": 2.85,
+        "price_out": 14.25,
+        "default_temp": None,  # в generation_config.json поля нет
+        "hf": "https://huggingface.co/moonshotai/Kimi-K3",
+    },
     "gpt-oss-20b": {
-        "id": "openai/gpt-oss-20b:deepinfra",
+        "id": "openai/gpt-oss-20b",
         "params": "21B",
         "params_num": 21,
         "price_in": 0.03,
@@ -61,7 +84,7 @@ MODELS = {
         "hf": "https://huggingface.co/openai/gpt-oss-20b",
     },
     "qwen3.6-27b": {
-        "id": "Qwen/Qwen3.6-27B:deepinfra",
+        "id": "qwen/qwen3.6-27b",
         "params": "27B",
         "params_num": 27,
         "price_in": 0.32,
@@ -70,18 +93,18 @@ MODELS = {
         "hf": "https://huggingface.co/Qwen/Qwen3.6-27B",
     },
     "glm-5.3-flash": {
-        "id": "zai-org/GLM-5.3-Flash:deepinfra",
+        "id": "z-ai/glm-5.3-flash",
         "params": "321B",
         "params_num": 321,
-        "price_in": 0.15,
-        "price_out": 0.50,
+        "price_in": 0.075,
+        "price_out": 0.25,
         "default_temp": 1.0,
         "hf": "https://huggingface.co/zai-org/GLM-5.3-Flash",
     },
 }
 
-# Младшая, средняя, старшая — по числу параметров. Разброс 6.4 раза.
-DEFAULT_TRIO = ("gpt-oss-120b", "deepseek-v4-flash", "glm-5.3")
+# Младшая, средняя, старшая — по числу параметров. Разброс 24 раза.
+DEFAULT_TRIO = ("gpt-oss-120b", "deepseek-v4-flash", "kimi-k3")
 
 
 def price_of(prompt_tokens: int, completion_tokens: int, key: str) -> float:
@@ -133,7 +156,11 @@ def estimate_worst_cost(
     if judge:
         answers = len(model_keys) * runs
         total += (
-            price_of(MAX_TOKENS + WRAPPER_TOKENS, JUDGE_OUTPUT_TOKENS, cheapest_key())
+            price_of(
+                MAX_TOKENS + prompt_tokens + WRAPPER_TOKENS,
+                JUDGE_OUTPUT_TOKENS,
+                cheapest_key(),
+            )
             * answers
         )
     return total

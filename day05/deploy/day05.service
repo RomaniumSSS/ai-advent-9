@@ -5,6 +5,8 @@ Wants=network-online.target
 
 [Service]
 Type=simple
+User=ai-advent
+Group=ai-advent
 WorkingDirectory=/opt/ai-advent-9
 EnvironmentFile=/opt/ai-advent-9/.env
 ExecStart=/usr/local/bin/uv run day05/web.py --read-port 8035 --run-port 8036
@@ -15,6 +17,9 @@ RestartSec=5
 PrivateTmp=true
 NoNewPrivileges=true
 ProtectSystem=full
+ProtectHome=true
+PrivateDevices=true
+UMask=0077
 
 [Install]
 WantedBy=multi-user.target

@@ -1,6 +1,6 @@
 """Панель дня 5: чтение публичное, запуск только с самой машины.
 
-В процессе живёт токен HuggingFace, поэтому запуск и чтение разведены по разным
+В процессе живёт ключ OpenRouter, поэтому запуск и чтение разведены по разным
 слушателям. Публичный отдаёт страницу и историю; локальный принимает POST и тратит
 кредиты. Снаружи до локального не достучаться — по открытому каналу не передаётся
 ничего секретного вообще, поэтому отсутствие TLS ничего не компрометирует.
@@ -13,10 +13,12 @@
 
 import argparse
 import json
+import math
 import sys
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).parent))
 
@@ -31,6 +33,9 @@ from models import (  # noqa: E402
 
 PAGE = Path(__file__).parent / "web" / "index.html"
 MAX_RUNS = 10
+MAX_BODY_BYTES = 64 * 1024
+MAX_QUESTION_CHARS = 20_000
+_run_lock = threading.Lock()
 
 
 def state() -> dict:
@@ -46,9 +51,17 @@ def state() -> dict:
 
 def validate(payload: dict) -> tuple[dict | None, str | None]:
     """Разбор тела POST. Возвращает (аргументы, ошибка)."""
-    question = (payload.get("question") or "").strip()
+    if not isinstance(payload, dict):
+        return None, "тело JSON должно быть объектом"
+
+    question_value = payload.get("question")
+    if not isinstance(question_value, str):
+        return None, "вопрос должен быть строкой"
+    question = question_value.strip()
     if not question:
         return None, "пустой вопрос"
+    if len(question) > MAX_QUESTION_CHARS:
+        return None, f"вопрос длиннее {MAX_QUESTION_CHARS} символов"
 
     model_keys = payload.get("models") or list(DEFAULT_TRIO)
     if not isinstance(model_keys, list) or len(model_keys) != 3:
@@ -56,23 +69,56 @@ def validate(payload: dict) -> tuple[dict | None, str | None]:
     for key in model_keys:
         if key not in MODELS:
             return None, f"неизвестная модель {key!r}"
+    if len(set(model_keys)) != 3:
+        return None, "нужно выбрать три разные модели"
 
     runs = payload.get("runs", 3)
-    if not isinstance(runs, int) or not 1 <= runs <= MAX_RUNS:
+    if type(runs) is not int or not 1 <= runs <= MAX_RUNS:
         return None, f"прогонов должно быть от 1 до {MAX_RUNS}"
 
     temperature = payload.get("temperature")
     if temperature is not None:
-        if not isinstance(temperature, (int, float)) or not 0 <= temperature <= 2:
+        if (
+            isinstance(temperature, bool)
+            or not isinstance(temperature, (int, float))
+            or not math.isfinite(temperature)
+            or not 0 <= temperature <= 2
+        ):
             return None, "температура вне диапазона 0..2"
+
+    judge = payload.get("judge", False)
+    if type(judge) is not bool:
+        return None, "judge должен быть true или false"
+
+    dry_run = payload.get("dry_run", False)
+    if type(dry_run) is not bool:
+        return None, "dry_run должен быть true или false"
 
     return {
         "question": question,
         "model_keys": model_keys,
         "runs": runs,
         "temperature": temperature,
-        "judge": bool(payload.get("judge")),
+        "judge": judge,
+        "dry_run": dry_run,
     }, None
+
+
+def same_origin(origin: str | None, host: str | None) -> bool:
+    """CLI без Origin разрешён; браузер обязан обращаться к своему же Host."""
+    if origin is None:
+        return True
+    if not host:
+        return False
+    parsed = urlsplit(origin)
+    return parsed.scheme in {"http", "https"} and parsed.netloc.lower() == host.lower()
+
+
+def is_loopback_host(host: str | None, port: int) -> bool:
+    """Не даёт DNS rebinding выдать чужой домен за локальный endpoint."""
+    if not host:
+        return False
+    return host.lower() in {f"127.0.0.1:{port}", f"localhost:{port}"}
 
 
 class ReadHandler(BaseHTTPRequestHandler):
@@ -86,6 +132,7 @@ class ReadHandler(BaseHTTPRequestHandler):
         self.send_response(code)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
+        self.send_header("X-Content-Type-Options", "nosniff")
         self.end_headers()
         self.wfile.write(body)
 
@@ -110,15 +157,33 @@ class RunHandler(ReadHandler):
     """Локальный слушатель. Тот же GET плюс запуск сравнения."""
 
     def read_json(self) -> tuple[dict | None, str | None]:
-        length = int(self.headers.get("Content-Length", 0))
         try:
-            return json.loads(self.rfile.read(length) or b"{}"), None
-        except json.JSONDecodeError:
+            length = int(self.headers.get("Content-Length", 0))
+        except (TypeError, ValueError):
+            return None, "некорректный Content-Length"
+        if length < 0 or length > MAX_BODY_BYTES:
+            return None, f"тело запроса должно быть не больше {MAX_BODY_BYTES} байт"
+        try:
+            payload = json.loads(self.rfile.read(length) or b"{}")
+        except (json.JSONDecodeError, UnicodeDecodeError):
             return None, "тело запроса не разобралось как JSON"
+        return payload, None
 
     def do_POST(self) -> None:
         if self.path != "/api/compare":
             self.send_json({"error": "нет такого адреса"}, 404)
+            return
+
+        if self.headers.get_content_type() != "application/json":
+            self.send_json({"error": "нужен Content-Type: application/json"}, 415)
+            return
+        if not is_loopback_host(self.headers.get("Host"), self.server.server_port):
+            self.send_json(
+                {"error": "платный endpoint доступен только через localhost"}, 403
+            )
+            return
+        if not same_origin(self.headers.get("Origin"), self.headers.get("Host")):
+            self.send_json({"error": "запрос с чужого Origin запрещён"}, 403)
             return
 
         payload, error = self.read_json()
@@ -131,7 +196,7 @@ class RunHandler(ReadHandler):
             self.send_json({"error": error or "не разобрали запрос"}, 400)
             return
 
-        if payload.get("dry_run"):
+        if args["dry_run"]:
             self.send_json(
                 {
                     "calls": estimate_calls(
@@ -147,15 +212,21 @@ class RunHandler(ReadHandler):
             )
             return
 
-        result = compare(
-            args["question"],
-            args["model_keys"],
-            args["runs"],
-            args["temperature"],
-            args["judge"],
-        )
-        save_session(result)
-        self.send_json(result)
+        if not _run_lock.acquire(blocking=False):
+            self.send_json({"error": "сравнение уже выполняется"}, 409)
+            return
+        try:
+            result = compare(
+                args["question"],
+                args["model_keys"],
+                args["runs"],
+                args["temperature"],
+                args["judge"],
+            )
+            save_session(result)
+            self.send_json(result)
+        finally:
+            _run_lock.release()
 
 
 def serve(handler, host: str, port: int) -> ThreadingHTTPServer:

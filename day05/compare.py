@@ -1,8 +1,14 @@
-"""День 5: один вопрос трём моделям через роутер HuggingFace.
+"""День 5: один вопрос трём моделям через OpenRouter.
 
-Все модели зовутся одним токеном через общий OpenAI-совместимый эндпоинт.
-Провайдер закреплён в идентификаторе модели, поэтому железо у всех одинаковое
-и разница во времени говорит про модели, а не про чужие чипы.
+Все модели зовутся одним ключом через общий OpenAI-совместимый эндпоинт.
+Провайдер закреплён полем provider в теле запроса: это убирает различия между
+компаниями, хотя не гарантирует одинаковый тип ускорителя внутри инфраструктуры
+провайдера.
+
+OpenRouter вдобавок возвращает фактически списанную сумму в usage.cost. Мы её
+сохраняем рядом со своим расчётом по прайсу, не подменяя его: расхождение между
+двумя числами — единственный способ заметить, что наша арифметика врёт. Тесты
+такое поймать не могут, они сверяют формулу с той же формулой.
 
 Запуск:
     uv run day05/compare.py --question "Объясни рекурсию простыми словами"
@@ -18,6 +24,7 @@ import time
 import unicodedata
 from datetime import datetime
 from pathlib import Path
+from uuid import uuid4
 
 from dotenv import load_dotenv
 from openai import OpenAI, OpenAIError
@@ -26,8 +33,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from models import (  # noqa: E402
     DEFAULT_TRIO,
+    JUDGE_OUTPUT_TOKENS,
     MAX_TOKENS,
     MODELS,
+    PROVIDER,
     cheapest_key,
     cost,
     sampling_args,
@@ -37,10 +46,19 @@ load_dotenv()
 
 RESULTS = Path(__file__).parent / "results"
 
-JUDGE_PROMPT = """Оцени качество этого ответа по шкале от 1 до 10, где 1 — бесполезно,
-10 — исчерпывающе и понятно. Ответь только числом.
+JUDGE_PROMPT = """Оцени ответ на исходный вопрос по шкале от 1 до 10, где 1 — ответ
+неверный или бесполезный, 10 — правильный, исчерпывающий и понятный. Ответь только
+целым числом от 1 до 10.
 
-{answer}"""
+Исходный вопрос:
+<question>
+{question}
+</question>
+
+Проверяемый ответ:
+<answer>
+{answer}
+</answer>"""
 
 _client = None
 
@@ -48,14 +66,17 @@ _client = None
 def get_client() -> OpenAI:
     """Клиент создаётся при первом вызове, а не при импорте.
 
-    Иначе модуль нельзя импортировать без HF_TOKEN — и офлайн-тесты чистых функций
+    Иначе модуль нельзя импортировать без ключа — и офлайн-тесты чистых функций
     отсюда падали бы на строке импорта, ещё ничего не проверив.
     """
     global _client
     if _client is None:
+        token = os.environ.get("OPENROUTER_API_KEY")
+        if not token:
+            raise RuntimeError("не задан OPENROUTER_API_KEY")
         _client = OpenAI(
-            api_key=os.environ["HF_TOKEN"],
-            base_url="https://router.huggingface.co/v1",
+            api_key=token,
+            base_url="https://openrouter.ai/api/v1",
         )
     return _client
 
@@ -73,12 +94,19 @@ def blank_record(
         "completion_tokens": None,
         "reasoning_tokens": None,
         "cost": None,
+        "cost_reported": None,
+        "served_by": None,
         "temperature": temperature,
         "error": error,
     }
 
 
-def ask(question: str, key: str, temperature: float | None = None) -> dict:
+def ask(
+    question: str,
+    key: str,
+    temperature: float | None = None,
+    max_tokens: int = MAX_TOKENS,
+) -> dict:
     """Один вызов. При сбое возвращает запись с error, а не бросает исключение.
 
     temperature=None означает, что параметр не отправляется вообще и модель отвечает
@@ -89,11 +117,12 @@ def ask(question: str, key: str, temperature: float | None = None) -> dict:
     try:
         response = get_client().chat.completions.create(
             model=MODELS[key]["id"],
-            max_tokens=MAX_TOKENS,
+            max_tokens=max_tokens,
             messages=[{"role": "user", "content": question}],
+            extra_body={"provider": PROVIDER, "usage": {"include": True}},
             **sampling_args(temperature),
         )
-    except OpenAIError as error:
+    except (OpenAIError, RuntimeError) as error:
         elapsed = round(time.monotonic() - started, 3)
         return blank_record(
             key, temperature, elapsed, f"{type(error).__name__}: {error}"
@@ -109,6 +138,12 @@ def ask(question: str, key: str, temperature: float | None = None) -> dict:
     details = getattr(usage, "completion_tokens_details", None) if usage else None
     reasoning_tokens = getattr(details, "reasoning_tokens", None) if details else None
 
+    # Фактически списанное и имя обслужившего провайдера — из ответа, а не из наших
+    # предположений. Второе поле есть ровно затем, чтобы закрепление провайдера можно
+    # было проверить, а не принять на веру: молча уехавший запрос выглядит как удачный.
+    cost_reported = getattr(usage, "cost", None) if usage else None
+    served_by = getattr(response, "provider", None)
+
     answer = response.choices[0].message.content or ""
     return {
         "model": key,
@@ -123,44 +158,82 @@ def ask(question: str, key: str, temperature: float | None = None) -> dict:
         "completion_tokens": completion_tokens,
         "reasoning_tokens": reasoning_tokens,
         "cost": cost(prompt_tokens, completion_tokens, key),
+        "cost_reported": cost_reported,
+        "served_by": served_by,
         "temperature": temperature,
         "error": None,
     }
 
 
-def judge_answer(answer: str) -> int | None:
-    """Оценка 1-10 отдельным вызовом самой дешёвой модели каталога.
+def judge_answer(question: str, answer: str) -> dict:
+    """Оценка 1-10 и метрики отдельного вызова самой дешёвой модели каталога.
 
     Каждый ответ оценивается по отдельности, не видя остальные: иначе оценка
     сместилась бы от порядка показа, а не от самого текста.
     """
     if not answer.strip():
-        return None
-    record = ask(JUDGE_PROMPT.format(answer=answer), cheapest_key(), temperature=0)
+        return {"score": None, "cost": None, "error": "пустой ответ"}
+    record = ask(
+        JUDGE_PROMPT.format(question=question, answer=answer),
+        cheapest_key(),
+        temperature=0,
+        max_tokens=JUDGE_OUTPUT_TOKENS,
+    )
     if record["error"]:
-        return None
-    match = re.search(r"\d+", record["answer"])
-    return int(match.group()) if match else None
+        return {"score": None, "cost": record["cost"], "error": record["error"]}
+    match = re.fullmatch(r"\s*(10|[1-9])\s*", record["answer"])
+    return {
+        "score": int(match.group(1)) if match else None,
+        "cost": record["cost"],
+        "error": None if match else "судья вернул не целое число от 1 до 10",
+    }
+
+
+def is_complete(record: dict) -> bool:
+    """Модель не только ответила на уровне API, но и закончила видимый ответ."""
+    return (
+        not record.get("error")
+        and record.get("finish_reason") == "stop"
+        and bool((record.get("answer") or "").strip())
+    )
 
 
 def summarize(records: list[dict]) -> dict:
-    """Агрегаты по одной модели. Считаются только по успешным вызовам."""
-    good = [r for r in records if not r["error"]]
-    if not good:
-        return {"runs": len(records), "ok": 0}
+    """Агрегаты по API-вызовам и число полностью завершённых ответов."""
+    api_good = [r for r in records if not r.get("error")]
+    complete = [r for r in api_good if is_complete(r)]
+    if not api_good:
+        return {"runs": len(records), "api_ok": 0, "ok": 0}
 
-    times = [r["elapsed"] for r in good]
-    costs = [r["cost"] for r in good if r["cost"] is not None]
-    prompt = [r["prompt_tokens"] for r in good if r["prompt_tokens"] is not None]
+    times = [r["elapsed"] for r in api_good]
+    costs = [r["cost"] for r in api_good]
+    prompt = [r["prompt_tokens"] for r in api_good if r["prompt_tokens"] is not None]
     completion = [
-        r["completion_tokens"] for r in good if r["completion_tokens"] is not None
+        r["completion_tokens"] for r in api_good if r["completion_tokens"] is not None
     ]
-    chars = [r["answer_chars"] for r in good]
-    judges = [r["judge"] for r in good if r.get("judge") is not None]
+    chars = [r["answer_chars"] for r in api_good]
+    judges = [r["judge"] for r in api_good if r.get("judge") is not None]
+    judge_attempts = [r for r in api_good if r.get("judge_attempted")]
+    judge_costs = [r.get("judge_cost") for r in judge_attempts]
+
+    model_cost_total = None if any(value is None for value in costs) else sum(costs)
+    judge_cost_total = (
+        None
+        if judge_attempts and any(value is None for value in judge_costs)
+        else sum(judge_costs)
+        if judge_attempts
+        else 0.0
+    )
+    total_cost = (
+        None
+        if model_cost_total is None or judge_cost_total is None
+        else model_cost_total + judge_cost_total
+    )
 
     return {
         "runs": len(records),
-        "ok": len(good),
+        "api_ok": len(api_good),
+        "ok": len(complete),
         "time_avg": round(sum(times) / len(times), 3),
         "time_min": min(times),
         "time_max": max(times),
@@ -169,7 +242,13 @@ def summarize(records: list[dict]) -> dict:
         if completion
         else None,
         "chars_avg": round(sum(chars) / len(chars), 1),
-        "cost_total": round(sum(costs), 8) if costs else None,
+        "model_cost_total": round(model_cost_total, 8)
+        if model_cost_total is not None
+        else None,
+        "judge_cost_total": round(judge_cost_total, 8)
+        if judge_attempts and judge_cost_total is not None
+        else None,
+        "cost_total": round(total_cost, 8) if total_cost is not None else None,
         "judge_avg": round(sum(judges) / len(judges), 1) if judges else None,
     }
 
@@ -186,8 +265,19 @@ def compare(
         records = []
         for _ in range(runs):
             record = ask(question, key, temperature)
-            if judge:
-                record["judge"] = judge_answer(record["answer"])
+            if judge and is_complete(record):
+                judgment = judge_answer(question, record["answer"])
+                record["judge"] = judgment["score"]
+                record["judge_cost"] = judgment["cost"]
+                record["judge_error"] = judgment["error"]
+                record["judge_attempted"] = True
+            elif judge:
+                record.update(
+                    judge=None,
+                    judge_cost=None,
+                    judge_error="ответ не завершён",
+                    judge_attempted=False,
+                )
             records.append(record)
         by_model[key] = {"records": records, "summary": summarize(records)}
 
@@ -250,14 +340,25 @@ def session_name(question: str) -> str:
     slug = "".join(TRANSLIT.get(ch, ch) for ch in lowered)
     slug = re.sub(r"[^a-z0-9]+", "-", slug).strip("-")[:40].strip("-")
     stamp = datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
-    return f"{stamp}-{slug or 'question'}.json"
+    return f"{stamp}-{slug or 'question'}-{uuid4().hex[:8]}.json"
 
 
 def save_session(result: dict) -> Path:
-    RESULTS.mkdir(exist_ok=True)
-    path = RESULTS / session_name(result["question"])
-    path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
-    return path
+    RESULTS.mkdir(parents=True, exist_ok=True)
+    temporary = RESULTS / f".{uuid4().hex}.tmp"
+    temporary.write_text(
+        json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    try:
+        while True:
+            path = RESULTS / session_name(result["question"])
+            try:
+                os.link(temporary, path)
+                return path
+            except FileExistsError:
+                continue
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def load_sessions() -> list[dict]:
@@ -270,8 +371,13 @@ def load_sessions() -> list[dict]:
     sessions = []
     for path in sorted(RESULTS.glob("*.json"), reverse=True):
         try:
-            sessions.append(json.loads(path.read_text(encoding="utf-8")))
-        except (json.JSONDecodeError, OSError):
+            session = json.loads(path.read_text(encoding="utf-8"))
+            for key in session.get("models", []):
+                data = session.get("by_model", {}).get(key)
+                if data and isinstance(data.get("records"), list):
+                    data["summary"] = summarize(data["records"])
+            sessions.append(session)
+        except (json.JSONDecodeError, OSError, KeyError, TypeError, ValueError):
             continue
     return sessions
 
@@ -290,12 +396,13 @@ def report(result: dict) -> None:
     print("-" * len(head))
     for key in result["models"]:
         summary = result["by_model"][key]["summary"]
-        if not summary.get("ok"):
+        if not summary.get("api_ok"):
             first = result["by_model"][key]["records"][0]
             print(
                 f"{key:<20} {MODELS[key]['params']:>10}   всё упало: {first['error'][:60]}"
             )
             continue
+        completed = f"{summary['ok']}/{summary['runs']} завершено"
         # прочерк вместо нуля: провайдер мог не вернуть usage, и ноль соврал бы
         money = (
             f"{summary['cost_total']:.6f}" if summary["cost_total"] is not None else "—"
@@ -308,6 +415,8 @@ def report(result: dict) -> None:
             f"{key:<20} {MODELS[key]['params']:>10} {summary['time_avg']:>7.2f}с "
             f"{prompt:>7} {completion:>7} {summary['chars_avg']:>8} {money:>10}"
         )
+        if summary["ok"] != summary["runs"]:
+            print(f"{'':<20} {'':>10}   {completed}")
 
 
 def main() -> None:
@@ -322,6 +431,12 @@ def main() -> None:
     for key in args.models:
         if key not in MODELS:
             parser.error(f"неизвестная модель {key!r}, есть: {', '.join(MODELS)}")
+    if len(set(args.models)) != 3:
+        parser.error("нужно выбрать три разные модели")
+    if args.runs < 1 or args.runs > 10:
+        parser.error("прогонов должно быть от 1 до 10")
+    if args.temperature is not None and not 0 <= args.temperature <= 2:
+        parser.error("температура должна быть в диапазоне 0..2")
 
     result = compare(
         args.question, args.models, args.runs, args.temperature, args.judge

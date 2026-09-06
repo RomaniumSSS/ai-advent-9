@@ -103,8 +103,9 @@
   <h1>Три модели, один вопрос</h1>
   <p class="lead">
     Один и тот же запрос уходит трём моделям разного размера через общий роутер
-    HuggingFace. Все закреплены за провайдером deepinfra, поэтому железо одинаковое
-    и разница во времени говорит про модели, а не про чужие чипы.
+    OpenRouter. Все закреплены за провайдером deepinfra, с запретом подмены при сбое:
+    это убирает различия между компаниями, хотя конкретные ускорители внутри
+    провайдера могут различаться.
   </p>
 
   <section class="card">
@@ -235,14 +236,14 @@ async function run(event) {
     });
     const data = await response.json();
     if (!response.ok) {
-      $('out').innerHTML = `<p class="err">${data.error}</p>`;
+      $('out').innerHTML = `<p class="err">${escapeHtml(data.error)}</p>`;
       return;
     }
     renderResult(data);
     STATE.sessions.unshift(data);
     renderHistory();
   } catch (error) {
-    $('out').innerHTML = `<p class="err">запрос не дошёл: ${error}</p>`;
+    $('out').innerHTML = `<p class="err">запрос не дошёл: ${escapeHtml(String(error))}</p>`;
   } finally {
     $('go').disabled = false;
     $('go').textContent = 'Сравнить';
@@ -275,15 +276,16 @@ function renderResult(result) {
     const model = STATE.models[key];
     const data = result.by_model[key];
     const s = data.summary;
+    const apiOk = s.api_ok ?? s.ok;
 
     const head = `
       <div class="role">${title}</div>
-      <div class="name"><a href="${model.hf}" target="_blank" rel="noreferrer">${key}</a></div>
-      <div class="params">${model.params} · ${s.ok}/${s.runs} успешных</div>`;
+      <div class="name"><a href="${model.hf}" target="_blank" rel="noreferrer">${escapeHtml(key)}</a></div>
+      <div class="params">${model.params} · ${s.ok}/${s.runs} завершено · API ${apiOk}/${s.runs}</div>`;
 
-    if (!s.ok) {
+    if (!apiOk) {
       return `<div class="col ${cls}">${head}
-        <p class="err">${data.records[0].error}</p></div>`;
+        <p class="err">${escapeHtml(data.records[0].error)}</p></div>`;
     }
 
     const money = s.cost_total === null ? '—' : '$' + s.cost_total.toFixed(6);
@@ -298,7 +300,7 @@ function renderResult(result) {
     ].join('');
 
     const answers = data.records
-      .map((r, n) => `<details><summary>ответ ${n + 1}, stop=${r.finish_reason}</summary><pre>${escapeHtml(r.answer) || '(пусто)'}</pre></details>`)
+      .map((r, n) => `<details><summary>ответ ${n + 1}, stop=${escapeHtml(r.finish_reason)}</summary><pre>${escapeHtml(r.answer) || '(пусто)'}</pre></details>`)
       .join('');
 
     return `<div class="col ${cls}">${head}${body}${answers}</div>`;
@@ -318,15 +320,16 @@ function renderHistory() {
   $('history').innerHTML = STATE.sessions.map((session) => {
     const parts = session.models.map((key) => {
       const s = session.by_model[key].summary;
-      if (!s.ok) return `${key}: упало`;
+      const apiOk = s.api_ok ?? s.ok;
+      if (!apiOk) return `${key}: упало`;
       const money = s.cost_total === null ? '—' : '$' + s.cost_total.toFixed(5);
-      return `${key}: ${s.time_avg.toFixed(1)}с, ${money}`;
+      return `${key}: завершено ${s.ok}/${s.runs}, ${s.time_avg.toFixed(1)}с, ${money}`;
     }).join('   ');
     return `
       <div class="session">
         <details>
           <summary>${escapeHtml(session.question)}</summary>
-          <div class="meta">${session.at} · прогонов ${session.runs} · ${parts}</div>
+          <div class="meta">${escapeHtml(session.at)} · прогонов ${escapeHtml(session.runs)} · ${escapeHtml(parts)}</div>
         </details>
       </div>`;
   }).join('');

@@ -16,6 +16,7 @@ from models import (  # noqa: E402
     DEFAULT_TRIO,
     MAX_TOKENS,
     MODELS,
+    PROVIDER,
     cheapest_key,
     cost,
     estimate_calls,
@@ -41,9 +42,12 @@ def check_catalog() -> list[str]:
         for field in REQUIRED_FIELDS:
             if field not in entry:
                 problems.append(f"каталог, {key}: нет поля {field}")
-        if not entry.get("id", "").endswith(":deepinfra"):
+        # Провайдер задаётся полем PROVIDER, а не суффиксом в идентификаторе.
+        # Оставшийся суффикс ':deepinfra' OpenRouter не понял бы и вернул 404.
+        model_id = entry.get("id", "")
+        if model_id.count("/") != 1 or ":" in model_id:
             problems.append(
-                f"каталог, {key}: провайдер не закреплён — {entry.get('id')!r}"
+                f"каталог, {key}: идентификатор не слаг вида org/model — {model_id!r}"
             )
         if not isinstance(entry.get("params_num"), int) or entry["params_num"] <= 0:
             problems.append(f"каталог, {key}: params_num не положительное целое")
@@ -65,10 +69,29 @@ def check_catalog() -> list[str]:
     return problems
 
 
+def check_provider_pinned() -> list[str]:
+    """Закрепление провайдера — не украшение, а условие осмысленности замера.
+
+    Без allow_fallbacks=False упавший deepinfra молча подменяется другим провайдером,
+    и колонка времени начинает мерить чужое железо, ничем себя не выдавая.
+    """
+    problems = []
+    if PROVIDER.get("only") != ["deepinfra"]:
+        problems.append(
+            f"провайдер не закреплён за deepinfra: {PROVIDER.get('only')!r}"
+        )
+    if PROVIDER.get("allow_fallbacks") is not False:
+        problems.append(
+            "разрешена подмена провайдера при сбое: замер времени станет недостоверным"
+        )
+    return problems
+
+
 COST_CASES = [
-    ("gpt-oss-120b", 1000, 500, 0.000125),
-    ("deepseek-v4-flash", 1000, 500, 0.00017),
+    ("gpt-oss-120b", 1000, 500, 0.000122),
+    ("deepseek-v4-flash", 1000, 500, 0.00015),
     ("glm-5.3", 1000, 500, 0.0032),
+    ("kimi-k3", 1000, 500, 0.009975),
     ("gpt-oss-120b", 0, 0, 0.0),
 ]
 
@@ -162,6 +185,7 @@ def check_sampling_args() -> list[str]:
 def main() -> None:
     problems = (
         check_catalog()
+        + check_provider_pinned()
         + check_cost()
         + check_calls()
         + check_worst_cost()
@@ -174,9 +198,8 @@ def main() -> None:
             print(f"        {problem}")
         sys.exit(1)
 
-    print(
-        f"ok    каталог: {len(MODELS)} моделей, у всех закреплён провайдер и заполнены поля"
-    )
+    print(f"ok    каталог: {len(MODELS)} моделей, слаги и поля на месте")
+    print("ok    провайдер закреплён за deepinfra, подмена при сбое запрещена")
     print(
         f"ok    пересчёт токенов в доллары: {len(COST_CASES)} случаев "
         "+ два на отсутствующий usage"
