@@ -45,6 +45,7 @@ from models import (  # noqa: E402
 load_dotenv()
 
 RESULTS = Path(__file__).parent / "results"
+REQUEST_TIMEOUT_SECONDS = 300.0
 
 JUDGE_PROMPT = """Оцени ответ на исходный вопрос по шкале от 1 до 10, где 1 — ответ
 неверный или бесполезный, 10 — правильный, исчерпывающий и понятный. Ответь только
@@ -77,6 +78,11 @@ def get_client() -> OpenAI:
         _client = OpenAI(
             api_key=token,
             base_url="https://openrouter.ai/api/v1",
+            # Для замера один логический прогон должен означать один сетевой вызов.
+            # Стандартные два повтора SDK незаметно смешали бы время нескольких попыток,
+            # а стандартный read timeout в 600 секунд слишком долго держал бы панель.
+            timeout=REQUEST_TIMEOUT_SECONDS,
+            max_retries=0,
         )
     return _client
 

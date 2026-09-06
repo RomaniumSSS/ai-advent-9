@@ -16,7 +16,9 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import compare as compare_module  # noqa: E402
 from compare import (  # noqa: E402
+    REQUEST_TIMEOUT_SECONDS,
     ask,
+    get_client,
     judge_answer,
     load_sessions,
     save_session,
@@ -236,6 +238,39 @@ def check_missing_token() -> list[str]:
     return problems
 
 
+def check_client_limits() -> list[str]:
+    problems = []
+    original_token = os.environ.get("OPENROUTER_API_KEY")
+    original_client = compare_module._client
+    original_openai = compare_module.OpenAI
+    captured = {}
+
+    class FakeOpenAI:
+        def __init__(self, **kwargs):
+            captured.update(kwargs)
+
+    os.environ["OPENROUTER_API_KEY"] = "test-token"
+    compare_module._client = None
+    compare_module.OpenAI = FakeOpenAI
+    try:
+        get_client()
+    finally:
+        compare_module.OpenAI = original_openai
+        compare_module._client = original_client
+        if original_token is None:
+            os.environ.pop("OPENROUTER_API_KEY", None)
+        else:
+            os.environ["OPENROUTER_API_KEY"] = original_token
+
+    if captured.get("timeout") != REQUEST_TIMEOUT_SECONDS:
+        problems.append(f"таймаут клиента не закреплён: {captured.get('timeout')!r}")
+    if captured.get("max_retries") != 0:
+        problems.append(
+            f"SDK может скрыто повторять измеряемый вызов: {captured.get('max_retries')!r}"
+        )
+    return problems
+
+
 def check_save_session() -> list[str]:
     problems = []
     original = compare_module.RESULTS
@@ -265,6 +300,7 @@ def main() -> None:
         + check_summarize()
         + check_judge()
         + check_missing_token()
+        + check_client_limits()
         + check_save_session()
     )
     if problems:
@@ -284,6 +320,7 @@ def main() -> None:
     print(
         "ok    отсутствие OPENROUTER_API_KEY превращается в запись ошибки, а не падение"
     )
+    print("ok    один прогон — один вызов, ожидание ограничено 300 секундами")
     print("ok    параллельные сессии получают разные имена и не перезаписываются")
 
 
