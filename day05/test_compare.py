@@ -264,6 +264,15 @@ def check_client_limits() -> list[str]:
 
     if captured.get("timeout") != REQUEST_TIMEOUT_SECONDS:
         problems.append(f"таймаут клиента не закреплён: {captured.get('timeout')!r}")
+    # Самый долгий ответ, который мы наблюдали живьём (Kimi K3, 06.09). Таймаут ниже
+    # двойного запаса начал бы обрывать законные ответы, и обрыв попал бы в выводы
+    # как отказ модели.
+    slowest_observed = 244.0
+    if REQUEST_TIMEOUT_SECONDS < 2 * slowest_observed:
+        problems.append(
+            f"таймаут {REQUEST_TIMEOUT_SECONDS} с не даёт двойного запаса "
+            f"к наблюдавшимся {slowest_observed} с"
+        )
     if captured.get("max_retries") != 0:
         problems.append(
             f"SDK может скрыто повторять измеряемый вызов: {captured.get('max_retries')!r}"
@@ -320,7 +329,10 @@ def main() -> None:
     print(
         "ok    отсутствие OPENROUTER_API_KEY превращается в запись ошибки, а не падение"
     )
-    print("ok    один прогон — один вызов, ожидание ограничено 300 секундами")
+    print(
+        f"ok    один прогон — один вызов, ожидание ограничено "
+        f"{REQUEST_TIMEOUT_SECONDS:.0f} секундами"
+    )
     print("ok    параллельные сессии получают разные имена и не перезаписываются")
 
 

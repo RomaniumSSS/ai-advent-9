@@ -1,0 +1,168 @@
+{
+  "question": "Верни JSON с полями name, year, language для языка Python. Только JSON, без пояснений.",
+  "models": [
+    "gpt-oss-120b",
+    "deepseek-v4-flash",
+    "kimi-k3"
+  ],
+  "runs": 3,
+  "temperature": null,
+  "judge": false,
+  "at": "2026-09-06T11:59:25",
+  "by_model": {
+    "gpt-oss-120b": {
+      "records": [
+        {
+          "model": "gpt-oss-120b",
+          "answer": "{\n  \"name\": \"Python\",\n  \"year\": 1991,\n  \"language\": \"Python\"\n}",
+          "answer_chars": 62,
+          "finish_reason": "stop",
+          "elapsed": 5.409,
+          "prompt_tokens": 76,
+          "completion_tokens": 183,
+          "reasoning_tokens": null,
+          "cost": 3.415e-05,
+          "temperature": null,
+          "error": null
+        },
+        {
+          "model": "gpt-oss-120b",
+          "answer": "{\n  \"name\": \"Python\",\n  \"year\": 1991,\n  \"language\": \"Python\"\n}",
+          "answer_chars": 62,
+          "finish_reason": "stop",
+          "elapsed": 4.077,
+          "prompt_tokens": 76,
+          "completion_tokens": 141,
+          "reasoning_tokens": null,
+          "cost": 2.7010000000000004e-05,
+          "temperature": null,
+          "error": null
+        },
+        {
+          "model": "gpt-oss-120b",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.14,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "api_ok": 2,
+        "ok": 2,
+        "time_avg": 4.743,
+        "time_min": 4.077,
+        "time_max": 5.409,
+        "prompt_avg": 76.0,
+        "completion_avg": 162.0,
+        "chars_avg": 62.0,
+        "model_cost_total": 6.116e-05,
+        "judge_cost_total": null,
+        "cost_total": 6.116e-05,
+        "judge_avg": null
+      }
+    },
+    "deepseek-v4-flash": {
+      "records": [
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.148,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.148,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.144,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "api_ok": 0,
+        "ok": 0
+      }
+    },
+    "kimi-k3": {
+      "records": [
+        {
+          "model": "kimi-k3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.151,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "kimi-k3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.141,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "kimi-k3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.139,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "api_ok": 0,
+        "ok": 0
+      }
+    }
+  }
+}
