@@ -1,0 +1,163 @@
+{
+  "question": "Объясни рекурсию простыми словами",
+  "models": [
+    "gpt-oss-120b",
+    "deepseek-v4-flash",
+    "glm-5.3"
+  ],
+  "runs": 3,
+  "temperature": null,
+  "judge": false,
+  "at": "2026-09-05T21:50:38",
+  "by_model": {
+    "gpt-oss-120b": {
+      "records": [
+        {
+          "model": "gpt-oss-120b",
+          "answer": "**Рекурсия — это когда функция (или процесс) вызывает саму себя.**  \nЧтобы понять, как это работает, представьте несколько простых образов.\n\n---\n\n## 1. Сказка про «русскую матрешку»\n\nУ вас есть матрешка — кукла, внутри которой находится ещё одна такая же, только чуть меньше, и так дальше.  \nЧтобы добраться до самой маленькой, вы открываете одну матрешку, потом следующую, потом следующую…  \nНо в какой‑то момент вы находите самую маленькую, в которой уже ничего нет. Это «конец» процесса.\n\n**Рекурсия** работает точно так же:\n\n1. **Шаг** – выполнить действие и «погрузиться» в более простую (меньшую) задачу.  \n2. **База** – когда задача уже настолько простая, что её можно решить сразу (в матрешке это самая маленькая кукла).  \n\nЕсли базовый случай не задать, функция будет вызывать себя вечно и «застрянет» в бесконечном цикле.\n\n---\n\n## 2. Пример с факториалом\n\nФакториал числа `n` (обозначается `n!`) – это произведение всех целых чисел от 1 до `n`.\n\n```\n5! = 5 × 4 × 3 × 2 × 1\n```\n\nРекурсивно это выглядит так:\n\n- **База:** `0! = 1` (самый простой случай, уже известен).\n- **Шаг:** `n! = n × (n‑1)!` – чтобы посчитать `n!`, нужно умножить `n` на факториал числа `n‑1`.\n\nКод (на любом языке, например, Python):\n\n```python\ndef fact(n):\n    if n == 0:          # базовый случай\n        return 1\n    else:               # рекурсивный шаг\n        return n * fact(n-1)\n```\n\nКаждый вызов `fact` «делает шаг» к базе, уменьшая `n` на 1, пока не дойдёт до `0`.\n\n---\n\n## 3. Как это выглядит в реальной жизни\n\n| Задача | Рекурсивный подход | Обычный (итеративный) подход |\n|--------|-------------------|-----------------------------|\n| Поиск файла в папке, где в папке могут быть подпапки | Функция ищет в текущей папке, а для каждой подпапки вызывает сама себя | Пройти все папки в цикле, используя стек/очередь |\n| Вычисление чисел Фибоначчи | `F(n) = F(n‑1) + F(n‑2)`, базовые `F(0)=0, F(1)=1` | Цикл, где каждый шаг хранит два последних числа |\n| Разбор дерева (например, HTML‑документа) | Обрабатываем узел, а потом рекурсивно обрабатываем всех его детей | Храним список узлов и обходим их в цикле |\n\nВо всех этих примерах «делаем шаг», а потом «погружаемся» в более простую часть задачи.\n\n---\n\n## 4. Почему рекурсия иногда удобнее\n\n- **Краткость кода.** Вместо длинных вложенных циклов часто достаточно пары строк.\n- **Естественное соответствие структуре задачи.** Если данные уже имеют рекурсивную форму (дерево, граф, вложенные списки), рекурсия «читается» как описание этой структуры.\n- **Легче выразить некоторые алгоритмы** (поиск в глубину, сортировка «разделяй‑и‑властвуй», генерация комбинаций и т.п.).\n\n---\n\n## 5. Подводные камни\n\n1. **База обязана быть** – без неё будет бесконечный вызов и переполнение стека.\n2. **Глубина рекурсии** ограничена (в большинстве языков – несколько тысяч вызовов). Если задача требует очень глубокой вложенности, лучше использовать итерацию или «хвостовую рекурсию», которую некоторые компиляторы оптимизируют.\n3. **Память.** Каждый вызов хранит свои локальные переменные, поэтому рекурсия может потреблять больше памяти, чем эквивалентный цикл.\n\n---\n\n## 6. Кратко: формула рекурсии\n\n```\nРешить задачу = (базовый случай)  +  (шаг, который переводит задачу в более простую форму)\n```\n\nЕсли вы можете **разбить** большую задачу на **меньшую такую же** и знаете, как решить **самую простую**, то рекурсия – ваш инструмент.\n\n---\n\n### Запомните три ключевых слова\n\n1. **Вызов самого себя** – функция/процесс вызывает себя.\n2. **База (условие выхода)** – когда дальше вызывать не нужно.\n3. **Шаг к базе** – каждый вызов делает задачу «меньше», приближая к базе.\n\nЕсли эти три пункта присутствуют, у вас получилась рекурсия! 🚀",
+          "answer_chars": 3660,
+          "finish_reason": "stop",
+          "elapsed": 51.045,
+          "prompt_tokens": 63,
+          "completion_tokens": 1202,
+          "reasoning_tokens": null,
+          "cost": 0.00020686,
+          "temperature": null,
+          "error": null
+        },
+        {
+          "model": "gpt-oss-120b",
+          "answer": "**Рекурсия — это когда функция (или процесс) вызывает саму себя.**  \nГлавная идея проста: решить большую задачу, разбив её на несколько одинаковых, но более маленьких задач того же типа, пока не дойдём до самого простого случая, который уже можно решить «вручную».  \n\n### Как это выглядит в жизни?\n\n- **Матрешка**: внутри большой матрешки находится чуть меньшая, в ней — ещё меньшая, и так далее, пока не окажется самая крошечная, которую уже нельзя открыть. Чтобы добраться до самой маленькой, мы каждый раз «заглядываем» в следующую матрешку.\n- **Счёт до 1**: если я хочу посчитать от 5 до 1, я могу сказать: «Сначала скажи 5, а потом посчитай от 4 до 1». А «посчитать от 4 до 1» — это уже тот же процесс, только с числом на единицу меньше. Когда дойдём до 1, остановимся.\n\n### Формальная схема рекурсии\n\nЛюбая рекурсивная функция имеет две части:\n\n1. **База (base case)** – самое простое состояние, при котором функция **не** вызывает себя и сразу возвращает ответ. Это «остановка» рекурсии.\n2. **Шаг рекурсии (recursive step)** – часть, где функция **вызывает саму себя** с «меньшим» (ближе к базе) аргументом.\n\nЕсли база гарантированно будет достигнута, рекурсия завершится.\n\n### Пример: факториал\n\nФакториал — произведение всех целых чисел от 1 до n.\n\n\\[\nn! = n \\times (n-1) \\times (n-2) \\times \\dots \\times 1\n\\]\n\nРекурсивно это выглядит так:\n\n- **База:** 0! = 1 (по определению)\n- **Шаг:** n! = n × (n‑1)!\n\n```python\ndef fact(n):\n    if n == 0:          # база\n        return 1\n    else:               # рекурсивный шаг\n        return n * fact(n - 1)\n```\n\nЗапуск `fact(5)` происходит так:\n\n```\nfact(5) → 5 * fact(4)\n          → 5 * (4 * fact(3))\n                → 5 * (4 * (3 * fact(2)))\n                      → 5 * (4 * (3 * (2 * fact(1))))\n                            → 5 * (4 * (3 * (2 * (1 * fact(0)))))\n                                  → 5 * (4 * (3 * (2 * (1 * 1))))\n```\n\nКогда дошли до `fact(0)`, база вернула `1`, и все «вложенные» вызовы начали возвращать свои результаты наружу.\n\n### Почему рекурсия полезна?\n\n- **Простота кода**. Для задач, где решение естественно «самоподобно» (деревья, графы, разбиения), рекурсия делает код коротким и читаемым.\n- **Работа с вложенными структурами**. Например, обход файловой системы, поиск в дереве, вычисление чисел Фибоначчи, генерация всех перестановок и т.п.\n- **Лёгкость доказательства корректности**. Часто удобно доказывать, что функция работает, используя индукцию: если она правильно работает для «меньшего» случая, то и для текущего тоже.\n\n### Важные нюансы\n\n1. **Обязательно должна быть база** – иначе функция будет вызывать себя вечно и программа «упадёт» (переполнение стека).\n2. **Глубина рекурсии ограничена**. В большинстве языков есть ограничение на количество вложенных вызовов (стек вызовов). Если глубина слишком велика, лучше переписать алгоритм в итеративный вид (циклы) или использовать «хвостовую рекурсию», если язык её оптимизирует.\n3. **Память**. Каждый рекурсивный вызов хранит свои локальные переменные, поэтому рекурсия может потреблять больше памяти, чем эквивалентный цикл.\n\n### Кратко: запомните три слова\n\n- **База** – когда остановиться.\n- **Шаг** – как вызвать себя с «меньшим» аргументом.\n- **Гарантия** – каждый шаг приближает к базе.\n\nЕсли эти три условия выполнены, рекурсия будет работать, и вы сможете решать задачи, которые естественно «разбиваются на такие же подзадачи».",
+          "answer_chars": 3372,
+          "finish_reason": "stop",
+          "elapsed": 26.475,
+          "prompt_tokens": 63,
+          "completion_tokens": 1121,
+          "reasoning_tokens": null,
+          "cost": 0.00019309,
+          "temperature": null,
+          "error": null
+        },
+        {
+          "model": "gpt-oss-120b",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.155,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "ok": 2,
+        "time_avg": 38.76,
+        "time_min": 26.475,
+        "time_max": 51.045,
+        "prompt_avg": 63.0,
+        "completion_avg": 1161.5,
+        "chars_avg": 3516.0,
+        "cost_total": 0.00039995,
+        "judge_avg": null
+      }
+    },
+    "deepseek-v4-flash": {
+      "records": [
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.154,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.162,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.143,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "ok": 0
+      }
+    },
+    "glm-5.3": {
+      "records": [
+        {
+          "model": "glm-5.3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.147,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "glm-5.3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.145,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "glm-5.3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.143,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "ok": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "question": "Придумай название для сервиса доставки книг и три слогана",
+  "models": [
+    "gpt-oss-120b",
+    "deepseek-v4-flash",
+    "glm-5.3"
+  ],
+  "runs": 3,
+  "temperature": null,
+  "judge": false,
+  "at": "2026-09-06T09:31:00",
+  "by_model": {
+    "gpt-oss-120b": {
+      "records": [
+        {
+          "model": "gpt-oss-120b",
+          "answer": "**Название сервиса:** **«Книга‑Экспресс»**\n\n**Слоганы:**\n\n1. *«Книга к двери — мир в ваших руках»*  \n2. *«Читай, не выходя из дома»*  \n3. *«Доставим вдохновение в каждый уголок»*",
+          "answer_chars": 178,
+          "finish_reason": "stop",
+          "elapsed": 5.075,
+          "prompt_tokens": 69,
+          "completion_tokens": 222,
+          "reasoning_tokens": null,
+          "cost": 4.05e-05,
+          "temperature": null,
+          "error": null
+        },
+        {
+          "model": "gpt-oss-120b",
+          "answer": "**Название сервиса:** **«КнигаКурьер»**\n\n**Слоганы:**\n\n1. *«Книги к двери — мир в руках»*  \n2. *«Чтение без границ, доставка без задержек»*  \n3. *«От полки до вас за один клик»*",
+          "answer_chars": 177,
+          "finish_reason": "stop",
+          "elapsed": 4.943,
+          "prompt_tokens": 69,
+          "completion_tokens": 255,
+          "reasoning_tokens": null,
+          "cost": 4.6110000000000004e-05,
+          "temperature": null,
+          "error": null
+        },
+        {
+          "model": "gpt-oss-120b",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.143,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "api_ok": 2,
+        "ok": 2,
+        "time_avg": 5.009,
+        "time_min": 4.943,
+        "time_max": 5.075,
+        "prompt_avg": 69.0,
+        "completion_avg": 238.5,
+        "chars_avg": 177.5,
+        "model_cost_total": 8.661e-05,
+        "judge_cost_total": null,
+        "cost_total": 8.661e-05,
+        "judge_avg": null
+      }
+    },
+    "deepseek-v4-flash": {
+      "records": [
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.143,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.147,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.14,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "api_ok": 0,
+        "ok": 0
+      }
+    },
+    "glm-5.3": {
+      "records": [
+        {
+          "model": "glm-5.3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.14,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "glm-5.3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.146,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        },
+        {
+          "model": "glm-5.3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.14,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}"
+        }
+      ],
+      "summary": {
+        "runs": 3,
+        "api_ok": 0,
+        "ok": 0
+      }
+    }
+  }
+}

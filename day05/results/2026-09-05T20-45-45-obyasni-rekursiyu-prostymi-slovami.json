@@ -1,0 +1,80 @@
+{
+  "question": "Объясни рекурсию простыми словами",
+  "models": [
+    "gpt-oss-120b",
+    "deepseek-v4-flash",
+    "glm-5.3"
+  ],
+  "runs": 1,
+  "temperature": null,
+  "judge": true,
+  "at": "2026-09-05T20:45:45",
+  "by_model": {
+    "gpt-oss-120b": {
+      "records": [
+        {
+          "model": "gpt-oss-120b",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.43,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}",
+          "judge": null
+        }
+      ],
+      "summary": {
+        "runs": 1,
+        "ok": 0
+      }
+    },
+    "deepseek-v4-flash": {
+      "records": [
+        {
+          "model": "deepseek-v4-flash",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.142,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}",
+          "judge": null
+        }
+      ],
+      "summary": {
+        "runs": 1,
+        "ok": 0
+      }
+    },
+    "glm-5.3": {
+      "records": [
+        {
+          "model": "glm-5.3",
+          "answer": "",
+          "answer_chars": 0,
+          "finish_reason": "",
+          "elapsed": 0.17,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "cost": null,
+          "temperature": null,
+          "error": "APIStatusError: Error code: 402 - {'error': 'You have depleted your monthly included credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get 20x more included usage.'}",
+          "judge": null
+        }
+      ],
+      "summary": {
+        "runs": 1,
+        "ok": 0
+      }
+    }
+  }
+}
