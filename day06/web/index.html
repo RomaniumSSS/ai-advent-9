@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>День 6 — два агента в одном процессе</title>
+<style>
+  :root {
+    --bg: #0f1216;
+    --panel: #161b22;
+    --line: #262d36;
+    --text: #d7dee7;
+    --dim: #7d8894;
+    --accent: #4b9fd5;
+    --user: #5f8a52;
+    --bad: #c05a52;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 1.5rem;
+    background: var(--bg); color: var(--text);
+    font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  main { max-width: 84rem; margin: 0 auto; }
+  h1 { font-size: 1.2rem; margin: 0 0 .3rem; letter-spacing: .02em; }
+  p.lead { color: var(--dim); margin: 0 0 1.4rem; }
+  p.lead b { color: var(--text); font-weight: 600; }
+
+  .panels { display: flex; gap: 1rem; align-items: flex-start; flex-wrap: wrap; }
+  .panel {
+    flex: 1 1 30rem; min-width: 20rem;
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 8px; padding: 1rem;
+  }
+  .panel h2 {
+    font-size: .8rem; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--dim); margin: 0 0 .8rem; font-weight: 600;
+  }
+  label { display: block; font-size: .78rem; color: var(--dim); margin-bottom: .3rem; }
+  select, input, textarea {
+    width: 100%; padding: .45rem .6rem; font: inherit;
+    background: #0d1117; color: var(--text);
+    border: 1px solid var(--line); border-radius: 6px;
+  }
+  textarea { min-height: 3.4rem; resize: vertical; }
+  .row { display: flex; gap: .7rem; margin-bottom: .8rem; }
+  .row > div { flex: 1; }
+  .row > div.thin { flex: 0 0 7rem; }
+
+  .log {
+    border: 1px solid var(--line); border-radius: 6px; background: #0d1117;
+    padding: .7rem; height: 22rem; overflow-y: auto; margin-bottom: .8rem;
+  }
+  .log:empty::after { content: "разговор пуст"; color: var(--dim); }
+  .msg { margin-bottom: .9rem; white-space: pre-wrap; word-break: break-word; }
+  .msg .who { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--dim); }
+  .msg.user .who { color: var(--user); }
+  .msg.error { color: var(--bad); }
+  .debug { color: var(--dim); font-size: .78rem; margin-top: .25rem; }
+
+  .send { display: flex; gap: .7rem; align-items: flex-start; }
+  .send textarea { flex: 1; }
+  button {
+    padding: .5rem 1.2rem; font: inherit; cursor: pointer;
+    background: var(--accent); color: #08121a; border: 0; border-radius: 6px; font-weight: 600;
+  }
+  button.ghost { background: transparent; color: var(--dim); border: 1px solid var(--line); font-weight: 400; }
+  button:disabled { background: var(--line); color: var(--dim); cursor: not-allowed; }
+  .foot { display: flex; justify-content: space-between; margin-top: .7rem; font-size: .78rem; color: var(--dim); }
+</style>
+</head>
+<body>
+<main>
+  <h1>День 6 — два агента в одном процессе</h1>
+  <p class="lead">
+    Слева и справа — два объекта <b>Agent</b> внутри одного процесса, с раздельными
+    конфигами и раздельной историей. Проверка: напишите слева «меня зовут Роман»,
+    затем «как меня зовут» — вспомнит. Тот же вопрос справа — не вспомнит.
+    Под каждым ответом строка дебага: модель, время, токены, цена.
+  </p>
+
+  <div class="panels" id="panels"></div>
+</main>
+
+<script>
+const PANELS = ["left", "right"];
+let state = null;
+
+async function api(path, body) {
+  const options = body
+    ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }
+    : {};
+  const response = await fetch(path, options);
+  const data = await response.json();
+  if (!response.ok) throw new Error(data.error || "ошибка запроса");
+  return data;
+}
+
+function element(html) {
+  const wrapper = document.createElement("div");
+  wrapper.innerHTML = html.trim();
+  return wrapper.firstElementChild;
+}
+
+function renderPanel(name) {
+  const panel = state.panels[name];
+  const options = Object.entries(state.models)
+    .map(([key, params]) => `<option value="${key}"${key === panel.model ? " selected" : ""}>${key} (${params})</option>`)
+    .join("");
+
+  const node = element(`
+    <section class="panel" data-panel="${name}">
+      <h2>${panel.name} агент</h2>
+      <div class="row">
+        <div><label>модель</label><select class="model">${options}</select></div>
+        <div class="thin"><label>температура</label><input class="temp" type="number" step="0.1" min="0" max="2" placeholder="по умолч." value="${panel.temperature ?? ""}"></div>
+      </div>
+      <div class="row">
+        <div><label>роль (системный промпт)</label><textarea class="system" rows="2">${panel.system_prompt}</textarea></div>
+      </div>
+      <div class="log"></div>
+      <div class="send">
+        <textarea class="text" placeholder="сообщение… (Ctrl+Enter — отправить)"></textarea>
+        <button class="send-btn">→</button>
+      </div>
+      <div class="foot">
+        <span class="turns">ходов: ${panel.turns}</span>
+        <button class="ghost reset-btn">очистить историю</button>
+      </div>
+    </section>
+  `);
+
+  const log = node.querySelector(".log");
+  panel.history.forEach(message => appendMessage(log, message.role === "user" ? "вы" : "агент", message.content, message.role === "user" ? "user" : ""));
+
+  node.querySelector(".send-btn").onclick = () => send(name, node);
+  node.querySelector(".text").onkeydown = event => {
+    if (event.key === "Enter" && (event.ctrlKey || event.metaKey)) send(name, node);
+  };
+  node.querySelector(".reset-btn").onclick = async () => {
+    const fresh = await api("/api/reset", { panel: name });
+    state.panels[name] = fresh;
+    rerender();
+  };
+  node.querySelector(".model").onchange = event => applyConfig(name, { model: event.target.value });
+  node.querySelector(".temp").onchange = event => {
+    const raw = event.target.value.trim();
+    applyConfig(name, { temperature: raw === "" ? null : Number(raw) });
+  };
+  node.querySelector(".system").onchange = event => applyConfig(name, { system_prompt: event.target.value });
+  return node;
+}
+
+async function applyConfig(name, changes) {
+  try {
+    // Смена конфига поднимает нового агента: история очищается, и панель обязана
+    // это показать, иначе на экране останется переписка, которой у агента уже нет.
+    state.panels[name] = await api("/api/config", { panel: name, ...changes });
+    rerender();
+  } catch (error) {
+    alert(error.message);
+  }
+}
+
+function appendMessage(log, who, text, extraClass) {
+  const message = element(`<div class="msg ${extraClass || ""}"><div class="who">${who}</div><div class="body"></div></div>`);
+  message.querySelector(".body").textContent = text;
+  log.appendChild(message);
+  log.scrollTop = log.scrollHeight;
+  return message;
+}
+
+async function send(name, node) {
+  const field = node.querySelector(".text");
+  const text = field.value.trim();
+  if (!text) return;
+
+  const log = node.querySelector(".log");
+  const button = node.querySelector(".send-btn");
+  appendMessage(log, "вы", text, "user");
+  field.value = "";
+  button.disabled = true;
+  const pending = appendMessage(log, "агент", "думает…", "");
+
+  try {
+    const reply = await api("/api/chat", { panel: name, text });
+    pending.querySelector(".body").textContent = reply.error ? "ответа нет" : reply.text;
+    if (reply.error) pending.classList.add("error");
+    const debug = element(`<div class="debug"></div>`);
+    debug.textContent = reply.debug;
+    pending.appendChild(debug);
+    node.querySelector(".turns").textContent = `ходов: ${reply.turns}`;
+    // Локальное состояние держим в актуальном виде, чтобы перерисовка соседней
+    // панели не стёрла эту переписку с экрана.
+    state.panels[name].turns = reply.turns;
+    if (!reply.error) {
+      state.panels[name].history.push({ role: "user", content: text });
+      state.panels[name].history.push({ role: "assistant", content: reply.text });
+    }
+  } catch (error) {
+    pending.classList.add("error");
+    pending.querySelector(".body").textContent = error.message;
+  } finally {
+    button.disabled = false;
+    log.scrollTop = log.scrollHeight;
+  }
+}
+
+function rerender() {
+  const container = document.getElementById("panels");
+  container.innerHTML = "";
+  PANELS.forEach(name => container.appendChild(renderPanel(name)));
+}
+
+(async () => {
+  state = await api("/api/state");
+  rerender();
+})();
+</script>
+</body>
+</html>
