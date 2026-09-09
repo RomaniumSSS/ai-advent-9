@@ -1,0 +1,22 @@
+{
+  "scenario": "paid_empty_before_fix",
+  "model": "gpt-oss-20b",
+  "ok": true,
+  "empty": true,
+  "finish_reason": "length",
+  "prompt_tokens": 128,
+  "completion_tokens": 1,
+  "cost_reported": 6.6e-06,
+  "error": null,
+  "stats": {
+    "session": "empty-baseline",
+    "turns": 0,
+    "messages": 0,
+    "cost": null,
+    "prompt_tokens": null,
+    "completion_tokens": null,
+    "first_at": null,
+    "last_at": null
+  },
+  "history_messages": 0
+}

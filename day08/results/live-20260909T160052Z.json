@@ -1,0 +1,395 @@
+{
+  "timestamp_utc": "20260909T160052Z",
+  "model": "openai/gpt-oss-20b",
+  "endpoint": {
+    "name": "DeepInfra | openai/gpt-oss-20b",
+    "model_id": "openai/gpt-oss-20b",
+    "model_name": "OpenAI: gpt-oss-20b",
+    "context_length": 131072,
+    "pricing": {
+      "prompt": "0.00000003",
+      "completion": "0.00000014",
+      "discount": 0
+    },
+    "provider_name": "DeepInfra",
+    "tag": "deepinfra/bf16",
+    "quantization": "bf16",
+    "max_completion_tokens": 117964,
+    "max_prompt_tokens": null,
+    "supported_parameters": [
+      "reasoning",
+      "include_reasoning",
+      "max_tokens",
+      "temperature",
+      "top_p",
+      "stop",
+      "frequency_penalty",
+      "presence_penalty",
+      "repetition_penalty",
+      "top_k",
+      "seed",
+      "min_p",
+      "response_format",
+      "tools",
+      "tool_choice",
+      "structured_outputs",
+      "logit_bias",
+      "reasoning_effort"
+    ],
+    "supports_tool_choice": {
+      "none": true,
+      "auto": true,
+      "required": true,
+      "function": true
+    },
+    "status": 0,
+    "uptime_last_30m": 99.98509020426421,
+    "uptime_last_5m": 100,
+    "uptime_last_1d": 99.9573408885571,
+    "supports_implicit_caching": false,
+    "supports_voice_cloning": false,
+    "latency_last_30m": null,
+    "throughput_last_30m": null
+  },
+  "budget_usd": 0.1,
+  "rows": [
+    {
+      "scenario": "short-1",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 1.074,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}",
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 0,
+          "question": 21,
+          "overhead": 11,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 0,
+        "messages": 0,
+        "first_at": null,
+        "last_at": null,
+        "calls": 0,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null
+      },
+      "turns": 0,
+      "question_chars": 62,
+      "question_sha256": "79b6ad3804ce15f895c137e5f68d4cdcbaa8179d7b3f1be4b57bc3056091aca3"
+    },
+    {
+      "scenario": "short-2",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.562,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}",
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 0,
+          "question": 8,
+          "overhead": 11,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 0,
+        "messages": 0,
+        "first_at": null,
+        "last_at": null,
+        "calls": 0,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null
+      },
+      "turns": 0,
+      "question_chars": 27,
+      "question_sha256": "a34890e10452f43f58147f3d65c3233f540a9e3c4dd2b6ca8d06dffb7367a653"
+    },
+    {
+      "scenario": "long-3",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.228,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}",
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 0,
+          "question": 786,
+          "overhead": 11,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 0,
+        "messages": 0,
+        "first_at": null,
+        "last_at": null,
+        "calls": 0,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null
+      },
+      "turns": 0,
+      "question_chars": 3498,
+      "question_sha256": "d8f8b4567c170e7c949b3d93b18f0b92178b27d55d813bfbd2186d24500632e8"
+    },
+    {
+      "scenario": "paid-empty",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.236,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}",
+        "store_error": null,
+        "budget": {
+          "system": 40,
+          "history": 0,
+          "question": 14,
+          "overhead": 11,
+          "reserved": 1,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "empty",
+        "turns": 0,
+        "messages": 0,
+        "first_at": null,
+        "last_at": null,
+        "calls": 0,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null
+      },
+      "turns": 0,
+      "question_chars": 36,
+      "question_sha256": "014fb46a0534ce20862fb5b9439325026aa1afe19af3dfa9bea789e4a0be1bf2"
+    },
+    {
+      "scenario": "real-overflow",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 1.107,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\"error\":{\"message\":\"Input too long: 135258 input tokens, limit is 131072 for this model\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"context_length_exceeded\"}}', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'context_length_exceeded'}}, 'user_redacted': 'user_redacted'}",
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 0,
+          "question": 135177,
+          "overhead": 11,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 0,
+        "messages": 0,
+        "first_at": null,
+        "last_at": null,
+        "calls": 0,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null
+      },
+      "turns": 0,
+      "question_chars": 270367,
+      "question_sha256": "48563039d19bc88dfb9ecf2fdfbed0739458fd94fac61b987f7b4e8b7cd83a80"
+    },
+    {
+      "scenario": "local-guard",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.0,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "не влезает в окно: 136708 из 131072 (лишних 5636). оценка входа: роль 20 + история 0 + вопрос 135177 + разметка 11 = 135208; +1500 на ответ = 136708 из 131072 (свободно -5636)",
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 0,
+          "question": 135177,
+          "overhead": 11,
+          "reserved": 1500,
+          "limit": 131072
+        },
+        "overflow": true
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 0,
+        "messages": 0,
+        "first_at": null,
+        "last_at": null,
+        "calls": 0,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null
+      },
+      "turns": 0,
+      "question_chars": 270367,
+      "question_sha256": "48563039d19bc88dfb9ecf2fdfbed0739458fd94fac61b987f7b4e8b7cd83a80"
+    },
+    {
+      "scenario": "recovery",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.266,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}",
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 0,
+          "question": 15,
+          "overhead": 11,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 0,
+        "messages": 0,
+        "first_at": null,
+        "last_at": null,
+        "calls": 0,
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null
+      },
+      "turns": 0,
+      "question_chars": 58,
+      "question_sha256": "f5994b53bb3f09add358b7282c43a174f0c5a23d6b358be40a824f0e4e055f27"
+    }
+  ],
+  "checks": {
+    "restart_restores_two_turns": false,
+    "dialogue_has_12_answers": false,
+    "api_usage_present": false,
+    "empty_response_observed": false,
+    "empty_usage_survives_restart": false,
+    "real_overflow_reached_api": true,
+    "real_context_error": true,
+    "overflow_preserves_history": true,
+    "guard_prevents_network_call": true,
+    "recovery_after_overflow": false
+  },
+  "transport": [
+    {
+      "request_messages": 2,
+      "ceiling_usd": 0.0008221,
+      "error_type": "RateLimitError",
+      "status_code": 429,
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}"
+    },
+    {
+      "request_messages": 2,
+      "ceiling_usd": 0.000816,
+      "error_type": "RateLimitError",
+      "status_code": 429,
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}"
+    },
+    {
+      "request_messages": 2,
+      "ceiling_usd": 0.0014521,
+      "error_type": "RateLimitError",
+      "status_code": 429,
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}"
+    },
+    {
+      "request_messages": 2,
+      "ceiling_usd": 8.19e-05,
+      "error_type": "RateLimitError",
+      "status_code": 429,
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}"
+    },
+    {
+      "request_messages": 2,
+      "ceiling_usd": 0.0278504,
+      "error_type": "BadRequestError",
+      "status_code": 400,
+      "error": "Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\"error\":{\"message\":\"Input too long: 135258 input tokens, limit is 131072 for this model\",\"type\":\"invalid_request_error\",\"param\":null,\"code\":\"context_length_exceeded\"}}', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'context_length_exceeded'}}, 'user_redacted': 'user_redacted'}"
+    },
+    {
+      "request_messages": 2,
+      "ceiling_usd": 0.0008216,
+      "error_type": "RateLimitError",
+      "status_code": 429,
+      "error": "Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-oss-20b is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_redacted': 'user_redacted'}"
+    }
+  ],
+  "reserved_ceiling_usd": 0.0318441,
+  "reported_cost_usd": 0
+}

@@ -70,7 +70,8 @@ def count_text(text: str) -> int:
     """Токены голого текста, без обёртки роли."""
     if not text:
         return 0
-    return len(encoder().encode(text))
+    # Маркеры вроде <|endoftext|> в вопросе — обычный пользовательский текст.
+    return len(encoder().encode(text, disallowed_special=()))
 
 
 def count_messages(messages: list[dict]) -> int:

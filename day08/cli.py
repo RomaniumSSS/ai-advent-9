@@ -70,28 +70,32 @@ def show_tokens(agent: Agent) -> None:
         print(f"  свободно:    {budget.free}")
 
 
-def show_growth(store: SqliteStore) -> None:
-    """Таблица, ради которой день 8 и затевался.
+def token_total(stats: dict, key: str) -> str:
+    value = stats[key]
+    return str(value) if value is not None else ("0" if stats["calls"] == 0 else "?")
 
-    Накопительный столбец обязателен: поход за походом числа выглядят мелкими и
-    почти одинаковыми, и рост виден только в сумме. Оплачивается при этом каждый
-    ход целиком — вся история заново, — так что складывать надо именно входы.
-    """
+
+def show_growth(store: SqliteStore) -> None:
+    """Вход текущего вызова и сумма входов всех вызовов — факты из API."""
     rows = store.growth()
     if not rows:
-        print("  ходов с замерами пока нет")
+        print("  вызовов с замерами пока нет")
         return
-    print("   ход    вход  ответ      цена       вход всего     деньги всего")
+    print(" вызов    вход  ответ    вход всего    списано API   API всего")
     total_prompt = 0
     total_cost = 0.0
     for number, row in enumerate(rows, start=1):
-        prompt = row["prompt_tokens"] or 0
-        completion = row["completion_tokens"] or 0
-        total_prompt += prompt
-        total_cost += row["cost"] or 0.0
+        prompt = row["prompt_tokens"]
+        completion = row["completion_tokens"]
+        billed = row["cost_reported"]
+        total_prompt = total_prompt + prompt if total_prompt is not None and prompt is not None else None
+        total_cost = total_cost + billed if total_cost is not None and billed is not None else None
+        tokens = lambda value: str(value) if value is not None else "?"
+        money = lambda value: f"{value:.6f}" if value is not None else "?"
+        tail = "  пустой ответ" if row["empty"] else ""
         print(
-            f"  {number:>4}  {prompt:>6}  {completion:>5}  "
-            f"{(row['cost'] or 0.0):>9.6f}  {total_prompt:>15}  {total_cost:>15.6f}"
+            f"  {number:>4}  {tokens(prompt):>6}  {tokens(completion):>5}  "
+            f"{tokens(total_prompt):>12}  {money(billed):>13}  {money(total_cost):>10}{tail}"
         )
 
 
@@ -126,12 +130,14 @@ def show_store(store: SqliteStore) -> None:
     print(f"  сессия:      {stats['session']}")
     print(f"  ходов:       {stats['turns']}  (сообщений {stats['messages']})")
     print(
-        f"  токенов:     вход {stats['prompt_tokens'] or 0}, "
-        f"ответы {stats['completion_tokens'] or 0}"
+        f"  токенов:     вход {token_total(stats, 'prompt_tokens')}, "
+        f"ответы {token_total(stats, 'completion_tokens')}"
     )
     print(f"  первый ход:  {stats['first_at'] or '—'}")
     print(f"  последний:   {stats['last_at'] or '—'}")
-    print(f"  всего денег: {spent}")
+    print(f"  расчёт по прайсу: {spent}")
+    billed = stats["cost_reported"]
+    print(f"  списано API: {'?' if billed is None else f'${billed:.6f}'}")
 
 
 def show_sessions(store: SqliteStore) -> None:
@@ -318,10 +324,15 @@ def main() -> int:
         # интерфейсе это единственное видимое доказательство, что работает коробка,
         # а не один вызов API.
         print(f"  {reply.debug_line()}")
-        if reply.prompt_tokens:
-            run_prompt_tokens += reply.prompt_tokens
-        if reply.completion_tokens:
-            run_completion_tokens += reply.completion_tokens
+        if reply.ok:
+            run_prompt_tokens = (
+                run_prompt_tokens + reply.prompt_tokens
+                if run_prompt_tokens is not None and reply.prompt_tokens is not None else None
+            )
+            run_completion_tokens = (
+                run_completion_tokens + reply.completion_tokens
+                if run_completion_tokens is not None and reply.completion_tokens is not None else None
+            )
         if reply.cost is not None:
             run_cost += reply.cost
             # Токены рядом с деньгами, а не вместо: деньги за ход почти не растут
@@ -329,7 +340,7 @@ def main() -> int:
             # и упрётся в окно — раньше, чем счёт станет страшным.
             print(
                 f"  за этот запуск: ${run_cost:.6f}  "
-                f"вход {run_prompt_tokens}, ответы {run_completion_tokens}\n"
+                f"вход {run_prompt_tokens if run_prompt_tokens is not None else '?'}, ответы {run_completion_tokens if run_completion_tokens is not None else '?'}\n"
             )
         else:
             print()
@@ -338,12 +349,12 @@ def main() -> int:
     stats = store.stats()
     print(f"ходов в сессии {args.session!r}: {agent.turns}")
     print(
-        f"токенов за весь разговор: вход {stats['prompt_tokens'] or 0}, "
-        f"ответы {stats['completion_tokens'] or 0}"
+        f"токенов за весь разговор: вход {token_total(stats, 'prompt_tokens')}, "
+        f"ответы {token_total(stats, 'completion_tokens')}"
     )
     if stats["cost"] is not None:
         print(
-            f"за весь разговор: ${stats['cost']:.6f}  (за этот запуск ${run_cost:.6f})"
+            f"за весь разговор (по прайсу): ${stats['cost']:.6f}  (за этот запуск ${run_cost:.6f})"
         )
     return 0
 

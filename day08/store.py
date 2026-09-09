@@ -1,8 +1,8 @@
 """День 8: хранилище истории на SQLite. Модуль дня 7 плюс две суммы по токенам.
 
-Схема не менялась: `prompt_tokens` и `completion_tokens` лежали в таблице с дня 7,
-их просто никто не складывал. Дописаны `stats()` (суммы токенов рядом с деньгами)
-и `growth()` — таблица роста ход за ходом, ради которой день 8 и затевался.
+Замеры API хранятся в `calls` отдельно от переписки: пустой оплаченный ответ
+не становится сообщением, но входит в расход. Схема v1 переносится в v2 при
+открытии; восстановить расход старых несохранённых пустых ответов невозможно.
 
 Отдельный модуль, а не метод агента, — по той же причине, по которой в дне 6
 отдельной стала сама коробка: агент обязан знать, что у него есть память, и не
@@ -43,7 +43,7 @@ DEFAULT_SESSION = "main"
 # SQLite держит в самом файле специально для этого. Смысл в отказе: база,
 # написанная более новой версией кода, до нас не разберётся, и упасть на ней
 # честнее, чем прочитать половину полей и молча потерять остальные.
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS messages (
@@ -68,6 +68,20 @@ CREATE TABLE IF NOT EXISTS sessions (
     model         TEXT NOT NULL,
     system_prompt TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS calls (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    model TEXT NOT NULL,
+    prompt_tokens INTEGER,
+    completion_tokens INTEGER,
+    cost REAL,
+    cost_reported REAL,
+    empty INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS calls_by_session ON calls (session, id);
+
 """
 
 
@@ -111,15 +125,24 @@ class SqliteStore:
         if not self.path.parent.exists():
             raise FileNotFoundError(f"нет каталога {self.path.parent}")
         with self._connect() as connection:
-            version = connection.execute("PRAGMA user_version").fetchone()[0]
-            if version > SCHEMA_VERSION:
-                raise RuntimeError(
-                    f"база {self.path} написана схемой версии {version}, "
-                    f"этот код знает только {SCHEMA_VERSION}"
-                )
-            connection.executescript(SCHEMA)
-            connection.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
-            connection.commit()
+            with connection:
+                # Блокировка до чтения версии не даёт двум процессам перенести
+                # одни и те же старые замеры дважды.
+                connection.executescript("BEGIN IMMEDIATE;\n" + SCHEMA)
+                version = connection.execute("PRAGMA user_version").fetchone()[0]
+                if version > SCHEMA_VERSION:
+                    raise RuntimeError(
+                        f"база {self.path} написана схемой версии {version}, "
+                        f"этот код знает только {SCHEMA_VERSION}"
+                    )
+                if version < 2:
+                    connection.execute(
+                        "INSERT INTO calls (session, created_at, model, prompt_tokens, "
+                        "completion_tokens, cost) SELECT session, created_at, "
+                        "COALESCE(model, 'unknown'), prompt_tokens, completion_tokens, cost "
+                        "FROM messages WHERE role = 'assistant' ORDER BY id"
+                    )
+                connection.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
 
     def load(self) -> list[dict]:
         """История сессии в том виде, в каком она уедет в модель.
@@ -169,6 +192,24 @@ class SqliteStore:
                     (stamp, self.session),
                 )
 
+    def append_call(self, reply) -> None:
+        """Замер ответа API, в том числе пустого, до записи переписки.
+
+        Отдельная транзакция сохраняет расход даже при сбое записи сообщений.
+        Локальный отказ и ошибки без usage сюда не попадают.
+        """
+        with self._connect() as connection:
+            with connection:
+                connection.execute(
+                    "INSERT INTO calls (session, created_at, model, prompt_tokens, "
+                    "completion_tokens, cost, cost_reported, empty) "
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    (
+                        self.session, now(), reply.model, reply.prompt_tokens,
+                        reply.completion_tokens, reply.cost, reply.cost_reported, reply.empty,
+                    ),
+                )
+
     def remember_config(self, model: str, system_prompt: str) -> None:
         """Роль и модель сессии — в отдельной таблице, а не в списке сообщений.
 
@@ -199,54 +240,34 @@ class SqliteStore:
         return dict(row) if row else None
 
     def stats(self) -> dict:
-        """Сводка по сессии. Ходы и деньги считает база, а не счётчик в процессе.
+        """Переписка и расход имеют разные источники: messages и calls.
 
-        Счётчик в процессе обнулялся бы при каждом запуске — и «за сессию: $0.0001»
-        после часа разговора выглядело бы правдоподобно, что хуже, чем ошибка,
-        которая бросается в глаза.
+        SUM в SQLite пропускает NULL. Неполную сумму нельзя выдавать за итог:
+        если хотя бы один замер отсутствует, итог этого показателя неизвестен.
         """
         with self._connect() as connection:
             row = connection.execute(
-                "SELECT COUNT(*) FILTER (WHERE role = 'user')  AS turns, "
-                "       COUNT(*)                               AS messages, "
-                "       SUM(cost)                              AS cost, "
-                "       SUM(prompt_tokens)                     AS prompt_tokens, "
-                "       SUM(completion_tokens)                 AS completion_tokens, "
-                "       MIN(created_at)                        AS first_at, "
-                "       MAX(created_at)                        AS last_at "
-                "FROM messages WHERE session = ?",
+                "SELECT COUNT(*) FILTER (WHERE role = 'user') AS turns, "
+                "COUNT(*) AS messages, MIN(created_at) AS first_at, "
+                "MAX(created_at) AS last_at FROM messages WHERE session = ?",
                 (self.session,),
             ).fetchone()
-        return {
-            "session": self.session,
-            "turns": row["turns"] or 0,
-            "messages": row["messages"] or 0,
-            "cost": row["cost"],
-            # Суммы токенов, а не только денег. Деньги зависят от прайса и от
-            # модели и после переезда на другую становятся несравнимыми; токены
-            # — то, что разговор весит на самом деле, и они сравнимы всегда.
-            "prompt_tokens": row["prompt_tokens"],
-            "completion_tokens": row["completion_tokens"],
-            "first_at": row["first_at"],
-            "last_at": row["last_at"],
-        }
+        calls = self.growth()
+        result = {"session": self.session, **dict(row), "calls": len(calls)}
+        for key in ("prompt_tokens", "completion_tokens", "cost", "cost_reported"):
+            values = [call[key] for call in calls]
+            result[key] = (
+                sum(values) if values and all(value is not None for value in values)
+                else None
+            )
+        return result
 
     def growth(self) -> list[dict]:
-        """Ход за ходом: сколько ушло на вход, сколько вернулось, сколько стоило.
-
-        Ради этой таблицы день 8 и затевался. Одна строка ничего не показывает;
-        весь смысл в столбце `prompt_tokens` сверху вниз — он растёт, потому что
-        история уезжает в модель целиком на каждом ходу, и растёт быстрее, чем
-        длина разговора, потому что растут обе стороны переписки сразу.
-
-        Берутся строки ассистента: замеры лежат на них. Строки пользователя —
-        та же половина хода, но без цифр, и включать их значило бы получить
-        таблицу, наполовину состоящую из прочерков.
-        """
+        """Статистика каждого ответа API, включая пустые, в порядке вызовов."""
         with self._connect() as connection:
             rows = connection.execute(
-                "SELECT created_at, model, prompt_tokens, completion_tokens, cost "
-                "FROM messages WHERE session = ? AND role = 'assistant' ORDER BY id",
+                "SELECT created_at, model, prompt_tokens, completion_tokens, cost, "
+                "cost_reported, empty FROM calls WHERE session = ? ORDER BY id",
                 (self.session,),
             ).fetchall()
         return [dict(row) for row in rows]
@@ -276,4 +297,7 @@ class SqliteStore:
                 )
                 connection.execute(
                     "DELETE FROM sessions WHERE name = ?", (self.session,)
+                )
+                connection.execute(
+                    "DELETE FROM calls WHERE session = ?", (self.session,)
                 )

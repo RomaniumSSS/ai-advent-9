@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>День 7 — контекст, переживающий перезапуск</title>
+<title>День 8 — токены и стоимость диалога</title>
 <style>
   :root {
     --bg: #0f1216;
@@ -76,7 +76,7 @@
 </head>
 <body>
 <main>
-  <h1>День 7 — контекст, переживающий перезапуск</h1>
+  <h1>День 8 — токены и стоимость диалога</h1>
   <p class="lead">
     Слева и справа — два объекта <b>Agent</b> внутри одного процесса, с раздельными
     конфигами и раздельной историей. Проверка дня 6: напишите слева «меня зовут Роман»,
@@ -119,6 +119,14 @@ function budgetLine(budget) {
   return `${head}, с ответом ${budget.total} из ${budget.limit}`;
 }
 
+function usageLine(stats) {
+  if (!stats) return "";
+  const value = key => stats[key] ?? (stats.calls === 0 ? 0 : "?");
+  const money = stats.cost_reported === null
+    ? (stats.calls === 0 ? "$0" : "?") : `$${stats.cost_reported.toFixed(6)}`;
+  return `За диалог: вход ${value("prompt_tokens")} · ответы ${value("completion_tokens")} · API ${money}`;
+}
+
 function renderPanel(name) {
   const panel = state.panels[name];
   const options = Object.entries(state.models)
@@ -148,6 +156,7 @@ function renderPanel(name) {
       <!-- Вес СЛЕДУЮЩЕГО запроса, а не прошедшего. Смысл строки в том, чтобы
            человек видел цену продолжения до того, как нажмёт кнопку. -->
       <div class="debug budget">${budgetLine(panel.budget)}</div>
+      <div class="debug usage">${usageLine(panel.usage_summary)}</div>
     </section>
   `);
 
@@ -247,6 +256,8 @@ async function send(name, node) {
     // цифра на экране обязана стареть не позже, чем сама история.
     node.querySelector(".budget").textContent = budgetLine(reply.next_budget);
     state.panels[name].budget = reply.next_budget;
+    node.querySelector(".usage").textContent = usageLine(reply.usage_summary);
+    state.panels[name].usage_summary = reply.usage_summary;
     // Локальное состояние держим в актуальном виде, чтобы перерисовка соседней
     // панели не стёрла эту переписку с экрана.
     state.panels[name].turns = reply.turns;

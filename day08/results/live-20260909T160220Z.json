@@ -1,0 +1,1213 @@
+{
+  "timestamp_utc": "20260909T160220Z",
+  "model": "openai/gpt-oss-20b",
+  "endpoint": {
+    "name": "CoreWeave | openai/gpt-oss-20b",
+    "model_id": "openai/gpt-oss-20b",
+    "model_name": "OpenAI: gpt-oss-20b",
+    "context_length": 131072,
+    "pricing": {
+      "prompt": "0.00000003",
+      "completion": "0.00000013",
+      "input_cache_read": "0.00000003",
+      "discount": 0
+    },
+    "provider_name": "CoreWeave",
+    "tag": "coreweave/fp4",
+    "quantization": "fp4",
+    "max_completion_tokens": 117964,
+    "max_prompt_tokens": null,
+    "supported_parameters": [
+      "reasoning",
+      "include_reasoning",
+      "structured_outputs",
+      "response_format",
+      "max_tokens",
+      "temperature",
+      "top_p",
+      "top_k",
+      "repetition_penalty",
+      "frequency_penalty",
+      "presence_penalty",
+      "stop",
+      "seed",
+      "tools",
+      "tool_choice",
+      "logprobs",
+      "top_logprobs",
+      "reasoning_effort"
+    ],
+    "supports_tool_choice": {
+      "none": true,
+      "auto": true,
+      "required": true,
+      "function": true
+    },
+    "status": 0,
+    "uptime_last_30m": 99.98787205955752,
+    "uptime_last_5m": 99.9813252824551,
+    "uptime_last_1d": 99.99740873929409,
+    "supports_implicit_caching": false,
+    "supports_voice_cloning": false,
+    "latency_last_30m": null,
+    "throughput_last_30m": null
+  },
+  "budget_usd": 0.1,
+  "rows": [
+    {
+      "scenario": "short-1",
+      "reply": {
+        "text": "Код проекта – СЕВЕР‑824 запомнен.",
+        "model": "gpt-oss-20b",
+        "elapsed": 1.922,
+        "finish_reason": "stop",
+        "prompt_tokens": 110,
+        "completion_tokens": 164,
+        "cost": 2.6260000000000003e-05,
+        "cost_reported": 2.462e-05,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 0,
+          "question": 21,
+          "overhead": 11,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 1,
+        "messages": 2,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:22+00:00",
+        "calls": 1,
+        "prompt_tokens": 110,
+        "completion_tokens": 164,
+        "cost": 2.6260000000000003e-05,
+        "cost_reported": 2.462e-05
+      },
+      "turns": 1,
+      "question_chars": 62,
+      "question_sha256": "79b6ad3804ce15f895c137e5f68d4cdcbaa8179d7b3f1be4b57bc3056091aca3"
+    },
+    {
+      "scenario": "short-2",
+      "reply": {
+        "text": "Вы назвали код проекта «СЕВЕР‑824».",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.931,
+        "finish_reason": "stop",
+        "prompt_tokens": 142,
+        "completion_tokens": 70,
+        "cost": 1.406e-05,
+        "cost_reported": 1.336e-05,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 35,
+          "question": 8,
+          "overhead": 19,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 2,
+        "messages": 4,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:23+00:00",
+        "calls": 2,
+        "prompt_tokens": 252,
+        "completion_tokens": 234,
+        "cost": 4.032e-05,
+        "cost_reported": 3.798e-05
+      },
+      "turns": 2,
+      "question_chars": 27,
+      "question_sha256": "a34890e10452f43f58147f3d65c3233f540a9e3c4dd2b6ca8d06dffb7367a653"
+    },
+    {
+      "scenario": "long-3",
+      "reply": {
+        "text": "Получил порцию заметок о хранении истории диалога, отправке системной роли и статистике токенов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.684,
+        "finish_reason": "stop",
+        "prompt_tokens": 951,
+        "completion_tokens": 44,
+        "cost": 3.469e-05,
+        "cost_reported": 3.425e-05,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 56,
+          "question": 786,
+          "overhead": 27,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 3,
+        "messages": 6,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:24+00:00",
+        "calls": 3,
+        "prompt_tokens": 1203,
+        "completion_tokens": 278,
+        "cost": 7.501e-05,
+        "cost_reported": 7.223e-05
+      },
+      "turns": 3,
+      "question_chars": 3498,
+      "question_sha256": "d8f8b4567c170e7c949b3d93b18f0b92178b27d55d813bfbd2186d24500632e8"
+    },
+    {
+      "scenario": "long-4",
+      "reply": {
+        "text": "Получил порцию заметок о хранении истории диалога, отправке системной роли и статистике токенов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 1.469,
+        "finish_reason": "stop",
+        "prompt_tokens": 1773,
+        "completion_tokens": 136,
+        "cost": 7.223e-05,
+        "cost_reported": 7.087e-05,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 868,
+          "question": 786,
+          "overhead": 35,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 4,
+        "messages": 8,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:25+00:00",
+        "calls": 4,
+        "prompt_tokens": 2976,
+        "completion_tokens": 414,
+        "cost": 0.00014724,
+        "cost_reported": 0.0001431
+      },
+      "turns": 4,
+      "question_chars": 3498,
+      "question_sha256": "6aa52811f1f373aebbe09546ea6c6bd2b641e4d4ebca0be7309b63bcd0e1d9f1"
+    },
+    {
+      "scenario": "long-5",
+      "reply": {
+        "text": "Получил порцию заметок о хранении истории диалога, отправке системной роли и статистике токенов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 1.096,
+        "finish_reason": "stop",
+        "prompt_tokens": 2595,
+        "completion_tokens": 94,
+        "cost": 9.101e-05,
+        "cost_reported": 9.007e-05,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 1680,
+          "question": 786,
+          "overhead": 43,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 5,
+        "messages": 10,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:26+00:00",
+        "calls": 5,
+        "prompt_tokens": 5571,
+        "completion_tokens": 508,
+        "cost": 0.00023825000000000002,
+        "cost_reported": 0.00023317
+      },
+      "turns": 5,
+      "question_chars": 3498,
+      "question_sha256": "6e6b210ca7d2f8f22c3c45bc65da4435fd709a0d26660f7b157e2d9544ac562c"
+    },
+    {
+      "scenario": "long-6",
+      "reply": {
+        "text": "Получил порцию заметок о хранении истории диалога, отправке системной роли и статистике токенов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.705,
+        "finish_reason": "stop",
+        "prompt_tokens": 3417,
+        "completion_tokens": 47,
+        "cost": 0.00010908999999999999,
+        "cost_reported": 0.00010862,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 2492,
+          "question": 786,
+          "overhead": 51,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 6,
+        "messages": 12,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:27+00:00",
+        "calls": 6,
+        "prompt_tokens": 8988,
+        "completion_tokens": 555,
+        "cost": 0.00034734,
+        "cost_reported": 0.00034179
+      },
+      "turns": 6,
+      "question_chars": 3498,
+      "question_sha256": "877204adb82b03d1cb3a47b700b1461ae53a7fb47880d0b5e840bcdfd49c75d4"
+    },
+    {
+      "scenario": "long-7",
+      "reply": {
+        "text": "Получил порцию заметок о хранении истории диалога, отправке системной роли и статистике токенов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.641,
+        "finish_reason": "stop",
+        "prompt_tokens": 4239,
+        "completion_tokens": 44,
+        "cost": 0.00013333,
+        "cost_reported": 0.00013289,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 3304,
+          "question": 786,
+          "overhead": 59,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 7,
+        "messages": 14,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:27+00:00",
+        "calls": 7,
+        "prompt_tokens": 13227,
+        "completion_tokens": 599,
+        "cost": 0.00048067,
+        "cost_reported": 0.00047468
+      },
+      "turns": 7,
+      "question_chars": 3498,
+      "question_sha256": "6209e2aae75cd8159c7fae382ce49949a0814603ebb37d906632b7d106edb06a"
+    },
+    {
+      "scenario": "long-8",
+      "reply": {
+        "text": "Получил и зафиксировал порцию заметок о хранении истории диалога, отправке системной роли и статистике токенов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.993,
+        "finish_reason": "stop",
+        "prompt_tokens": 5061,
+        "completion_tokens": 87,
+        "cost": 0.00016401000000000002,
+        "cost_reported": 0.00016314,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 4116,
+          "question": 786,
+          "overhead": 67,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 8,
+        "messages": 16,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:28+00:00",
+        "calls": 8,
+        "prompt_tokens": 18288,
+        "completion_tokens": 686,
+        "cost": 0.00064468,
+        "cost_reported": 0.00063782
+      },
+      "turns": 8,
+      "question_chars": 3498,
+      "question_sha256": "5c2930ce9576803b41267a4b06192b9660b9dc5a0064281754767acba9a05c51"
+    },
+    {
+      "scenario": "long-9",
+      "reply": {
+        "text": "Получил и зафиксировал порцию заметок о хранении истории диалога, отправке системной роли и статистике токенов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.731,
+        "finish_reason": "stop",
+        "prompt_tokens": 5887,
+        "completion_tokens": 61,
+        "cost": 0.00018514999999999997,
+        "cost_reported": 0.00018454,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 4932,
+          "question": 786,
+          "overhead": 75,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 9,
+        "messages": 18,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:29+00:00",
+        "calls": 9,
+        "prompt_tokens": 24175,
+        "completion_tokens": 747,
+        "cost": 0.00082983,
+        "cost_reported": 0.0008223600000000001
+      },
+      "turns": 9,
+      "question_chars": 3498,
+      "question_sha256": "ab16160079acf4bcf86da0cbf7dde101b534a409fb8cbd9dce4f45cc507dd227"
+    },
+    {
+      "scenario": "long-10",
+      "reply": {
+        "text": "Получено и зафиксировано описание учебного проекта: хранение истории диалога, передача системной роли, предыдущих сообщений и нового вопроса, а также отдельный учёт токенов входа/выхода и расходов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.83,
+        "finish_reason": "stop",
+        "prompt_tokens": 6713,
+        "completion_tokens": 65,
+        "cost": 0.00021049,
+        "cost_reported": 0.00020984,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 5748,
+          "question": 786,
+          "overhead": 83,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 10,
+        "messages": 20,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:30+00:00",
+        "calls": 10,
+        "prompt_tokens": 30888,
+        "completion_tokens": 812,
+        "cost": 0.00104032,
+        "cost_reported": 0.0010322
+      },
+      "turns": 10,
+      "question_chars": 3499,
+      "question_sha256": "2bf74992aae33edac9aee6ce1171f273365b9f0f790779a83d5b0ba6df849bbe"
+    },
+    {
+      "scenario": "long-11",
+      "reply": {
+        "text": "Получено и зафиксировано описание учебного проекта: хранение истории диалога, отправка системной роли, предыдущих сообщений и нового вопроса, а также отдельный учёт токенов входа/выхода и расходов.",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.943,
+        "finish_reason": "stop",
+        "prompt_tokens": 7559,
+        "completion_tokens": 98,
+        "cost": 0.00024048999999999997,
+        "cost_reported": 0.00023951,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 6584,
+          "question": 786,
+          "overhead": 91,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 11,
+        "messages": 22,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:31+00:00",
+        "calls": 11,
+        "prompt_tokens": 38447,
+        "completion_tokens": 910,
+        "cost": 0.00128081,
+        "cost_reported": 0.0012717100000000001
+      },
+      "turns": 11,
+      "question_chars": 3499,
+      "question_sha256": "c0f161560c3398be0d11a34260b896f86111b1988724482ee445b4670fa99b01"
+    },
+    {
+      "scenario": "long-12",
+      "reply": {
+        "text": "Полученные данные о хранении истории диалога, отправке системной роли, предыдущих сообщениях и новом вопросе, а также о статистике токенов и отдельном учёте расходов, зафиксированы.",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.851,
+        "finish_reason": "stop",
+        "prompt_tokens": 8405,
+        "completion_tokens": 76,
+        "cost": 0.00026279,
+        "cost_reported": 0.00026203,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 7420,
+          "question": 786,
+          "overhead": 99,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 12,
+        "messages": 24,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:32+00:00",
+        "calls": 12,
+        "prompt_tokens": 46852,
+        "completion_tokens": 986,
+        "cost": 0.0015436,
+        "cost_reported": 0.00153374
+      },
+      "turns": 12,
+      "question_chars": 3499,
+      "question_sha256": "986d46fcea1822d500dc5e22de0fad6494de228f9c7b926e40025c34487bd697"
+    },
+    {
+      "scenario": "paid-empty",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.222,
+        "finish_reason": "length",
+        "prompt_tokens": 123,
+        "completion_tokens": 1,
+        "cost": 3.830000000000001e-06,
+        "cost_reported": 3.82e-06,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 40,
+          "history": 0,
+          "question": 14,
+          "overhead": 11,
+          "reserved": 1,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "empty",
+        "turns": 0,
+        "messages": 0,
+        "first_at": null,
+        "last_at": null,
+        "calls": 1,
+        "prompt_tokens": 123,
+        "completion_tokens": 1,
+        "cost": 3.830000000000001e-06,
+        "cost_reported": 3.82e-06
+      },
+      "turns": 0,
+      "question_chars": 36,
+      "question_sha256": "014fb46a0534ce20862fb5b9439325026aa1afe19af3dfa9bea789e4a0be1bf2"
+    },
+    {
+      "scenario": "real-overflow",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 1.513,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\"error\":{\"message\":\"max_tokens must be at least 1, got -12566. (parameter=max_tokens, value=-12566)\",\"type\":\"BadRequestError\",\"param\":\"max_tokens\",\"code\":400}}', 'provider_name': 'CoreWeave', 'is_byok': False, 'provider_error_code': '400'}}, 'user_redacted': 'user_redacted'}",
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 8252,
+          "question": 135177,
+          "overhead": 107,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 12,
+        "messages": 24,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:32+00:00",
+        "calls": 12,
+        "prompt_tokens": 46852,
+        "completion_tokens": 986,
+        "cost": 0.0015436,
+        "cost_reported": 0.00153374
+      },
+      "turns": 12,
+      "question_chars": 270367,
+      "question_sha256": "48563039d19bc88dfb9ecf2fdfbed0739458fd94fac61b987f7b4e8b7cd83a80"
+    },
+    {
+      "scenario": "local-guard",
+      "reply": {
+        "text": "",
+        "model": "gpt-oss-20b",
+        "elapsed": 0.0,
+        "finish_reason": "",
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "cost": null,
+        "cost_reported": null,
+        "served_by": null,
+        "error": "не влезает в окно: 145056 из 131072 (лишних 13984). оценка входа: роль 20 + история 8252 + вопрос 135177 + разметка 107 = 143556; +1500 на ответ = 145056 из 131072 (свободно -13984)",
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 8252,
+          "question": 135177,
+          "overhead": 107,
+          "reserved": 1500,
+          "limit": 131072
+        },
+        "overflow": true
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 12,
+        "messages": 24,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:32+00:00",
+        "calls": 12,
+        "prompt_tokens": 46852,
+        "completion_tokens": 986,
+        "cost": 0.0015436,
+        "cost_reported": 0.00153374
+      },
+      "turns": 12,
+      "question_chars": 270367,
+      "question_sha256": "48563039d19bc88dfb9ecf2fdfbed0739458fd94fac61b987f7b4e8b7cd83a80"
+    },
+    {
+      "scenario": "recovery",
+      "reply": {
+        "text": "СЕВЕР-824",
+        "model": "gpt-oss-20b",
+        "elapsed": 1.12,
+        "finish_reason": "stop",
+        "prompt_tokens": 8476,
+        "completion_tokens": 115,
+        "cost": 0.00027037999999999997,
+        "cost_reported": 0.00026923,
+        "served_by": "CoreWeave",
+        "error": null,
+        "store_error": null,
+        "budget": {
+          "system": 20,
+          "history": 8252,
+          "question": 15,
+          "overhead": 107,
+          "reserved": 1500,
+          "limit": null
+        },
+        "overflow": false
+      },
+      "stats": {
+        "session": "dialogue",
+        "turns": 13,
+        "messages": 26,
+        "first_at": "2026-09-09T16:02:22+00:00",
+        "last_at": "2026-09-09T16:02:35+00:00",
+        "calls": 13,
+        "prompt_tokens": 55328,
+        "completion_tokens": 1101,
+        "cost": 0.00181398,
+        "cost_reported": 0.00180297
+      },
+      "turns": 13,
+      "question_chars": 58,
+      "question_sha256": "f5994b53bb3f09add358b7282c43a174f0c5a23d6b358be40a824f0e4e055f27"
+    }
+  ],
+  "checks": {
+    "restart_restores_two_turns": true,
+    "dialogue_has_12_answers": true,
+    "api_usage_present": true,
+    "dialogue_sum_matches_api": true,
+    "long_input_larger_than_short": true,
+    "empty_response_observed": true,
+    "empty_usage_survives_restart": true,
+    "real_overflow_reached_api": true,
+    "real_context_error": false,
+    "overflow_preserves_history": true,
+    "guard_prevents_network_call": true,
+    "recovery_after_overflow": true
+  },
+  "transport": [
+    {
+      "request_messages": 2,
+      "ceiling_usd": 0.0008221,
+      "id": "gen-1788969741-M5Q2rgE1QryVqEWOQVcS",
+      "usage": {
+        "completion_tokens": 164,
+        "prompt_tokens": 110,
+        "total_tokens": 274,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 158,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 2.462e-05,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 2.462e-05,
+          "upstream_inference_prompt_cost": 3.3e-06,
+          "upstream_inference_completions_cost": 2.132e-05
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 4,
+      "ceiling_usd": 0.0008842,
+      "id": "gen-1788969742-tqB4jMWZO3mNpribFlD6",
+      "usage": {
+        "completion_tokens": 70,
+        "prompt_tokens": 142,
+        "total_tokens": 212,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 51,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 1.336e-05,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 1.336e-05,
+          "upstream_inference_prompt_cost": 4.26e-06,
+          "upstream_inference_completions_cost": 9.1e-06
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 6,
+      "ceiling_usd": 0.0015827,
+      "id": "gen-1788969743-moLm69ZuyYHEXPbnflqb",
+      "usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 951,
+        "total_tokens": 995,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 12,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 3.425e-05,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 3.425e-05,
+          "upstream_inference_prompt_cost": 2.853e-05,
+          "upstream_inference_completions_cost": 5.72e-06
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 8,
+      "ceiling_usd": 0.0022927,
+      "id": "gen-1788969744-8zSv4FJyKdVujSGZkKWB",
+      "usage": {
+        "completion_tokens": 136,
+        "prompt_tokens": 1773,
+        "total_tokens": 1909,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 133,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 128,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 7.087e-05,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 7.087e-05,
+          "upstream_inference_prompt_cost": 5.319e-05,
+          "upstream_inference_completions_cost": 1.768e-05
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 10,
+      "ceiling_usd": 0.0030027000000000005,
+      "id": "gen-1788969745-jNXWfwMtoaCtH9ks3iKA",
+      "usage": {
+        "completion_tokens": 94,
+        "prompt_tokens": 2595,
+        "total_tokens": 2689,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 75,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 9.007e-05,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 9.007e-05,
+          "upstream_inference_prompt_cost": 7.785e-05,
+          "upstream_inference_completions_cost": 1.222e-05
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 12,
+      "ceiling_usd": 0.0037127,
+      "id": "gen-1788969746-UPZkBM3EkUpw6Xk8eqNm",
+      "usage": {
+        "completion_tokens": 47,
+        "prompt_tokens": 3417,
+        "total_tokens": 3464,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 13,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00010862,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00010862,
+          "upstream_inference_prompt_cost": 0.00010251,
+          "upstream_inference_completions_cost": 6.11e-06
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 14,
+      "ceiling_usd": 0.0044227,
+      "id": "gen-1788969747-omndESrFbOaWH23jYACz",
+      "usage": {
+        "completion_tokens": 44,
+        "prompt_tokens": 4239,
+        "total_tokens": 4283,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 11,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00013289,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00013289,
+          "upstream_inference_prompt_cost": 0.00012717,
+          "upstream_inference_completions_cost": 5.72e-06
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 16,
+      "ceiling_usd": 0.0051327,
+      "id": "gen-1788969748-ZgTgjduPncaDqDKxdpll",
+      "usage": {
+        "completion_tokens": 87,
+        "prompt_tokens": 5061,
+        "total_tokens": 5148,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 62,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 2592,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00016314,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00016314,
+          "upstream_inference_prompt_cost": 0.00015183,
+          "upstream_inference_completions_cost": 1.131e-05
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 18,
+      "ceiling_usd": 0.0058455,
+      "id": "gen-1788969749-bUSXKjwmLv0icv3Ic0Ps",
+      "usage": {
+        "completion_tokens": 61,
+        "prompt_tokens": 5887,
+        "total_tokens": 5948,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 28,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 3392,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00018454,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00018454,
+          "upstream_inference_prompt_cost": 0.00017661,
+          "upstream_inference_completions_cost": 7.93e-06
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 20,
+      "ceiling_usd": 0.006558400000000001,
+      "id": "gen-1788969749-EOfocHfx5uSOWbd5NoGK",
+      "usage": {
+        "completion_tokens": 65,
+        "prompt_tokens": 6713,
+        "total_tokens": 6778,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 6,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00020984,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00020984,
+          "upstream_inference_prompt_cost": 0.00020139,
+          "upstream_inference_completions_cost": 8.45e-06
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 22,
+      "ceiling_usd": 0.0072871,
+      "id": "gen-1788969750-YjfDczzhhOKiDVOHiNVz",
+      "usage": {
+        "completion_tokens": 98,
+        "prompt_tokens": 7559,
+        "total_tokens": 7657,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 54,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00023951,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00023951,
+          "upstream_inference_prompt_cost": 0.00022677,
+          "upstream_inference_completions_cost": 1.274e-05
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 24,
+      "ceiling_usd": 0.0080158,
+      "id": "gen-1788969751-Hv4akWaR8EJDRq3M8n0E",
+      "usage": {
+        "completion_tokens": 76,
+        "prompt_tokens": 8405,
+        "total_tokens": 8481,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 28,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 4224,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00026203,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00026203,
+          "upstream_inference_prompt_cost": 0.00025215,
+          "upstream_inference_completions_cost": 9.88e-06
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 2,
+      "ceiling_usd": 8.19e-05,
+      "id": "gen-1788969752-fTQO4Q4O4KZZVdesEMV7",
+      "usage": {
+        "completion_tokens": 1,
+        "prompt_tokens": 123,
+        "total_tokens": 124,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 3.82e-06,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 3.82e-06,
+          "upstream_inference_prompt_cost": 3.69e-06,
+          "upstream_inference_completions_cost": 1.3e-07
+        }
+      },
+      "provider": "CoreWeave"
+    },
+    {
+      "request_messages": 26,
+      "ceiling_usd": 0.0351397,
+      "error_type": "BadRequestError",
+      "status_code": 400,
+      "error": "Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{\"error\":{\"message\":\"max_tokens must be at least 1, got -12566. (parameter=max_tokens, value=-12566)\",\"type\":\"BadRequestError\",\"param\":\"max_tokens\",\"code\":400}}', 'provider_name': 'CoreWeave', 'is_byok': False, 'provider_error_code': '400'}}, 'user_redacted': 'user_redacted'}"
+    },
+    {
+      "request_messages": 26,
+      "ceiling_usd": 0.0081109,
+      "id": "gen-1788969754-HWZ9907oeIuzTblL1vsi",
+      "usage": {
+        "completion_tokens": 115,
+        "prompt_tokens": 8476,
+        "total_tokens": 8591,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 119,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 32,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00026923,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00026923,
+          "upstream_inference_prompt_cost": 0.00025428,
+          "upstream_inference_completions_cost": 1.495e-05
+        }
+      },
+      "provider": "CoreWeave"
+    }
+  ],
+  "reserved_ceiling_usd": 0.09289180000000001,
+  "reported_cost_usd": 0.00180679
+}

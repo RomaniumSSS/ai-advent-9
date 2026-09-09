@@ -1,7 +1,7 @@
 """День 8: агент дня 7 плюс счёт токенов до вызова и отказ вместо переполнения.
 
-Коробка дня 7 целиком. Дописано ровно одно: агент теперь знает, сколько весит
-запрос, ДО того как его отправить, — и умеет не отправлять.
+Коробка дня 7 с локальной оценкой запроса до отправки и журналом расхода.
+Пустой ответ не добавляет сообщений, но его usage сохраняется отдельно.
 
 Раньше учёт был только постфактум: `usage.prompt_tokens` приезжал вместе с
 ответом, то есть сообщал цену уже потраченного. Одним числом на весь запрос.
@@ -226,8 +226,12 @@ class Reply:
             return f"[{self.model}] {self.error}"
         if self.error:
             return f"[{self.model}] ошибка за {self.elapsed:.1f} с: {self.error}"
-        tokens = f"{self.prompt_tokens or '?'}→{self.completion_tokens or '?'}"
-        spent = f"${self.cost:.6f}" if self.cost is not None else "цена неизвестна"
+        prompt = self.prompt_tokens if self.prompt_tokens is not None else '?'
+        completion = self.completion_tokens if self.completion_tokens is not None else '?'
+        tokens = f"{prompt}→{completion}"
+        spent = f"по прайсу ${self.cost:.6f}" if self.cost is not None else "прайс неизвестен"
+        if self.cost_reported is not None:
+            spent += f", списано API ${self.cost_reported:.6f}"
         # Три «ничего» различаются словами, а не одним общим «пусто»: причина
         # решает, что делать дальше. Потолок — поднять `--max-tokens`; молчание
         # модели — переспросить иначе.
@@ -421,6 +425,13 @@ class Agent:
 
         messages = self.build_messages(question)
         reply = self._call(messages, budget)
+        if reply.ok and self.store is not None:
+            try:
+                self.store.append_call(reply)
+            except Exception as error:
+                reply = replace(
+                    reply, store_error=f"учёт расхода: {type(error).__name__}: {error}"
+                )
         if reply.ok and not reply.empty:
             self._history.append({"role": "user", "content": question})
             self._history.append({"role": "assistant", "content": reply.text})
@@ -437,8 +448,8 @@ class Agent:
         этот выбор молча за человека агент не должен: любой из вариантов теряет
         то, что модель до сих пор помнила.
 
-        Ни история, ни база не трогаются. Неудавшийся ход не оставляет следа —
-        так же, как обрыв сети и пустой ответ в дне 7.
+        Ни история, ни база не трогаются: локального вызова API не было.
+        Пустой ответ API, напротив, сохраняет расход в отдельном журнале.
         """
         over = -budget.free
         return Reply(
@@ -469,7 +480,8 @@ class Agent:
         try:
             self.store.append_turn(question, reply)
         except Exception as error:
-            return replace(reply, store_error=f"{type(error).__name__}: {error}")
+            previous = f"{reply.store_error}; " if reply.store_error else ""
+            return replace(reply, store_error=f"{previous}{type(error).__name__}: {error}")
         return reply
 
     def _call(self, messages: list[dict], budget: Budget) -> Reply:

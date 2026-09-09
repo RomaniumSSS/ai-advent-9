@@ -119,6 +119,7 @@ def panel_state(name: str) -> dict:
         "session": agent.store.session,
         "restored_turns": agent.restored_turns,
         "context_limit": agent.config.context_limit,
+        "usage_summary": agent.store.stats(),
         # Вес запроса, который уедет, если написать в эту панель прямо сейчас.
         # Считается на пустой вопрос: интересен вес разговора, а не фразы.
         "budget": budget_json(agent.budget("")),
@@ -318,6 +319,7 @@ class Handler(BaseHTTPRequestHandler):
                 # с которым уходил этот вопрос.
                 "next_budget": budget_json(PANELS[panel].budget("")),
                 "turns": PANELS[panel].turns,
+                "usage_summary": PANELS[panel].store.stats(),
                 "error": reply.error,
             }
         )
