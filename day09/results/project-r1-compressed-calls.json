@@ -1,0 +1,145 @@
+[
+  {
+    "kind": "chat",
+    "ticket": 1,
+    "request": {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "max_tokens": 4000,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Ты — полезный собеседник. Отвечай по-русски, по существу и без воды. Если вопрос неполон, задай один уточняющий вопрос вместо догадки."
+        },
+        {
+          "role": "user",
+          "content": "Планируем сайт записи на занятия «Маяк». Бюджет 1200 евро, срок 18 октября. Запомни ограничения и предложи структуру проекта."
+        }
+      ],
+      "extra_body": {
+        "provider": {
+          "only": [
+            "deepinfra/fp8"
+          ],
+          "allow_fallbacks": false,
+          "require_parameters": true,
+          "max_price": {
+            "prompt": 0.07,
+            "completion": 0.2
+          }
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "usage": {
+          "include": true
+        }
+      },
+      "temperature": 0
+    },
+    "response": {
+      "id": "gen-1789114368-lBlKveL9Z3xc2hgVramB",
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "Принято. Ограничения: бюджет — 1200 €, дедлайн — 18 октября (сегодня, допустим, 1-е число, значит ~2.5 недели).\n\n**Структура проекта (MVP, без излишеств):**\n\n1. **Целевая страница (лендинг) + админка** — один разработчик (фрилансер или небольшая студия).\n2. **Стек:** WordPress + плагин бронирования (например, Amelia или Bookly) — быстрее и дешевле кастомной разработки. Либо Tilda + сторонний сервис (Calendly, YClients) — если нужна просто запись без сложной логики.\n3. **Функционал:**\n   - Выбор занятия (из списка).\n   - Выбор даты/времени (свободные слоты).\n   - Форма: имя, телефон/email.\n   - Автоматическое подтверждение на почту/WhatsApp.\n   - Админка: просмотр записей, ручное добавление, отмена.\n4. **Дизайн:** готовый шаблон (адаптивный) + логотип/цвета «Маяк». Без уникальных иллюстраций.\n5. **Домен и хостинг** — на год (около 50–80 €, если не входит в бюджет разработки).\n\n**Этапы (по неделям):**\n- **Неделя 1 (до 8 окт):** выбор платформы, настройка хостинга, установка шаблона, подключение плагина бронирования, настройка списка занятий.\n- **Неделя 2 (до 15 окт):** интеграция оплаты (если нужна — иначе пропустить), тестирование сценариев записи, адаптация под мобильные.\n- **Финал (16–18 окт):** финальные правки, перенос на боевой домен, проверка уведомлений.\n\n**Риски:** если нужна оплата онлайн — это +200–300 € к бюджету (платёжные системы). Если нет — укладываемся.\n\nУточните: **нужна ли онлайн-оплата** или только запись? И **сколько занятий** в расписании (5 или 50)? Это влияет на сложность админки.",
+            "refusal": null,
+            "role": "assistant",
+            "annotations": null,
+            "audio": null,
+            "function_call": null,
+            "tool_calls": null,
+            "reasoning": null
+          },
+          "native_finish_reason": "stop"
+        }
+      ],
+      "created": 1789114368,
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "object": "chat.completion",
+      "metadata": null,
+      "moderation": null,
+      "service_tier": null,
+      "system_fingerprint": null,
+      "usage": {
+        "completion_tokens": 546,
+        "prompt_tokens": 91,
+        "total_tokens": 637,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null,
+          "image_tokens": 0
+        },
+        "compute_units": null,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cache_write_tokens": 0,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null,
+          "video_tokens": 0
+        },
+        "cost": 0.00010374,
+        "is_byok": false,
+        "cost_details": {
+          "upstream_inference_cost": 0.00010374,
+          "upstream_inference_prompt_cost": 5.46e-06,
+          "upstream_inference_completions_cost": 9.828e-05
+        }
+      },
+      "provider": "DeepInfra"
+    }
+  },
+  {
+    "kind": "chat",
+    "ticket": 6,
+    "request": {
+      "model": "deepseek/deepseek-v4-flash-0731",
+      "max_tokens": 4000,
+      "messages": [
+        {
+          "role": "system",
+          "content": "Ты — полезный собеседник. Отвечай по-русски, по существу и без воды. Если вопрос неполон, задай один уточняющий вопрос вместо догадки."
+        },
+        {
+          "role": "user",
+          "content": "Планируем сайт записи на занятия «Маяк». Бюджет 1200 евро, срок 18 октября. Запомни ограничения и предложи структуру проекта."
+        },
+        {
+          "role": "assistant",
+          "content": "Принято. Ограничения: бюджет — 1200 €, дедлайн — 18 октября (сегодня, допустим, 1-е число, значит ~2.5 недели).\n\n**Структура проекта (MVP, без излишеств):**\n\n1. **Целевая страница (лендинг) + админка** — один разработчик (фрилансер или небольшая студия).\n2. **Стек:** WordPress + плагин бронирования (например, Amelia или Bookly) — быстрее и дешевле кастомной разработки. Либо Tilda + сторонний сервис (Calendly, YClients) — если нужна просто запись без сложной логики.\n3. **Функционал:**\n   - Выбор занятия (из списка).\n   - Выбор даты/времени (свободные слоты).\n   - Форма: имя, телефон/email.\n   - Автоматическое подтверждение на почту/WhatsApp.\n   - Админка: просмотр записей, ручное добавление, отмена.\n4. **Дизайн:** готовый шаблон (адаптивный) + логотип/цвета «Маяк». Без уникальных иллюстраций.\n5. **Домен и хостинг** — на год (около 50–80 €, если не входит в бюджет разработки).\n\n**Этапы (по неделям):**\n- **Неделя 1 (до 8 окт):** выбор платформы, настройка хостинга, установка шаблона, подключение плагина бронирования, настройка списка занятий.\n- **Неделя 2 (до 15 окт):** интеграция оплаты (если нужна — иначе пропустить), тестирование сценариев записи, адаптация под мобильные.\n- **Финал (16–18 окт):** финальные правки, перенос на боевой домен, проверка уведомлений.\n\n**Риски:** если нужна оплата онлайн — это +200–300 € к бюджету (платёжные системы). Если нет — укладываемся.\n\nУточните: **нужна ли онлайн-оплата** или только запись? И **сколько занятий** в расписании (5 или 50)? Это влияет на сложность админки."
+        },
+        {
+          "role": "user",
+          "content": "Обязательные языки: русский и польский. Онлайн-оплату не делаем. Распиши путь посетителя от выбора занятия до подтверждения."
+        }
+      ],
+      "extra_body": {
+        "provider": {
+          "only": [
+            "deepinfra/fp8"
+          ],
+          "allow_fallbacks": false,
+          "require_parameters": true,
+          "max_price": {
+            "prompt": 0.07,
+            "completion": 0.2
+          }
+        },
+        "reasoning": {
+          "enabled": false
+        },
+        "usage": {
+          "include": true
+        }
+      },
+      "temperature": 0
+    },
+    "error": "RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'deepseek/deepseek-v4-flash-0731 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'DeepInfra', 'is_byok': False, 'provider_error_code': 'engine_overloaded', 'limit_source': 'upstream_provider_shared_pool', 'remedy_hint': 'Retry shortly, add your own provider key (https://openrouter.ai/settings/integrations), or route to another provider with provider routing: https://openrouter.ai/docs/features/provider-routing'}}, 'user_id': 'user_37QxcuAAR8u4FdTAdIxK6GhuzuU'}"
+  }
+]

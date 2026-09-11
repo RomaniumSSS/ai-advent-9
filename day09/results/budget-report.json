@@ -1,0 +1,3744 @@
+{
+  "limit": 0.5,
+  "known_cost": 0.112834191,
+  "held_for_unknown": 0.045413083,
+  "available": 0.34175272599999995,
+  "reservations": [
+    {
+      "id": 1,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00010374,
+      "state": "settled",
+      "response_id": "gen-1789114368-lBlKveL9Z3xc2hgVramB"
+    },
+    {
+      "id": 2,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00011874,
+      "state": "settled",
+      "response_id": "gen-1789114368-l2as5hcYdY3HYSgJAQOv"
+    },
+    {
+      "id": 3,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 8.718e-05,
+      "state": "settled",
+      "response_id": "gen-1789114368-JzotBhGHmESv6aJfjoBH"
+    },
+    {
+      "id": 4,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00011658,
+      "state": "settled",
+      "response_id": "gen-1789114368-QhzjmFt2RkUNOMxYpseu"
+    },
+    {
+      "id": 5,
+      "label": "project-r1:full:chat",
+      "reserved": 0.013893733,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 6,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 7,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0001359,
+      "state": "settled",
+      "response_id": "gen-1789114468-Mf0f9C8SajYjVDSmATGt"
+    },
+    {
+      "id": 8,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00014706,
+      "state": "settled",
+      "response_id": "gen-1789114468-TqRtfEKfRjcp5kXWjumo"
+    },
+    {
+      "id": 9,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00016416,
+      "state": "settled",
+      "response_id": "gen-1789114495-oBucR6ICk3DcRCHwf9lr"
+    },
+    {
+      "id": 10,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00016584,
+      "state": "settled",
+      "response_id": "gen-1789114495-aqZp6U82U2QvxspthDqS"
+    },
+    {
+      "id": 11,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00020778,
+      "state": "settled",
+      "response_id": "gen-1789114529-ZO1H8I5it42eU0lACb4O"
+    },
+    {
+      "id": 12,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000189,
+      "state": "settled",
+      "response_id": "gen-1789114529-m1jFaBNKmv0m3ugeCRyO"
+    },
+    {
+      "id": 13,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 9.6703e-05,
+      "state": "settled",
+      "response_id": "gen-1789114559-C6v9OVtlA9JJnw19prZj"
+    },
+    {
+      "id": 14,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 9.9522e-05,
+      "state": "settled",
+      "response_id": "gen-1789114559-YRTSUHiVml7eShCN6Bqh"
+    },
+    {
+      "id": 15,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00021642,
+      "state": "settled",
+      "response_id": "gen-1789114565-JQHJf8lc2sxaZZOTWd3o"
+    },
+    {
+      "id": 16,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00018684,
+      "state": "settled",
+      "response_id": "gen-1789114565-yDFPMcGdI9KUsB8n914h"
+    },
+    {
+      "id": 17,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 8.437e-05,
+      "state": "settled",
+      "response_id": "gen-1789114587-5oGUgAlfZVTJMySLc7n3"
+    },
+    {
+      "id": 18,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 9.7965e-05,
+      "state": "settled",
+      "response_id": "gen-1789114587-ETlrijs1Ulquj40TbRb5"
+    },
+    {
+      "id": 19,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0003066,
+      "state": "settled",
+      "response_id": "gen-1789114609-GjziR3BLMrY4RGoDuiTz"
+    },
+    {
+      "id": 20,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0003231,
+      "state": "settled",
+      "response_id": "gen-1789114609-ulpcxN9HnwuHI1gShZUh"
+    },
+    {
+      "id": 21,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000109176,
+      "state": "settled",
+      "response_id": "gen-1789114611-ZS1CR4P3HkVgn7fNvQ9h"
+    },
+    {
+      "id": 22,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 9.9858e-05,
+      "state": "settled",
+      "response_id": "gen-1789114611-Ov3Ou6285zIcRTax1iU1"
+    },
+    {
+      "id": 23,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00032454,
+      "state": "settled",
+      "response_id": "gen-1789114624-vMROrqZ5jWK5PZwfbFfG"
+    },
+    {
+      "id": 24,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0003312,
+      "state": "settled",
+      "response_id": "gen-1789114624-ZoPxZhil1qAYFJ3yyLlu"
+    },
+    {
+      "id": 25,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000119768,
+      "state": "settled",
+      "response_id": "gen-1789114636-tnnNuajBpdsAjrlLLTYn"
+    },
+    {
+      "id": 26,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000122062,
+      "state": "settled",
+      "response_id": "gen-1789114636-0fSanULjWxcTzXOpZayH"
+    },
+    {
+      "id": 27,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00019188,
+      "state": "settled",
+      "response_id": "gen-1789114653-vSdHPMzyM7fxdN7AAccx"
+    },
+    {
+      "id": 28,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0002055,
+      "state": "settled",
+      "response_id": "gen-1789114653-ShYdurnkc6Poyj4SjBSe"
+    },
+    {
+      "id": 29,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000141335,
+      "state": "settled",
+      "response_id": "gen-1789114665-QK6wDpvboGGPCyeq4YvB"
+    },
+    {
+      "id": 30,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000147225,
+      "state": "settled",
+      "response_id": "gen-1789114665-MBYsExLreQPnHyYlh3cf"
+    },
+    {
+      "id": 31,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00012648,
+      "state": "settled",
+      "response_id": "gen-1789114683-WjhM0TcaMKhX5ygYOeEf"
+    },
+    {
+      "id": 32,
+      "label": "personal-r1:compressed:summary",
+      "reserved": 0.07380032,
+      "actual": 0.00030588,
+      "state": "settled",
+      "response_id": "gen-1789114683-0ZjbbckXu5PjQyMiC0DJ"
+    },
+    {
+      "id": 33,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000121975,
+      "state": "settled",
+      "response_id": "gen-1789114694-0d9T7Ifr7LmNIiM9qsC9"
+    },
+    {
+      "id": 34,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000138448,
+      "state": "settled",
+      "response_id": "gen-1789114694-sHFdGz7C1GfDmAvSLEoz"
+    },
+    {
+      "id": 35,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00015276,
+      "state": "settled",
+      "response_id": "gen-1789114697-S0T0Z1g3PyrPXA2P3FS4"
+    },
+    {
+      "id": 36,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00012978,
+      "state": "settled",
+      "response_id": "gen-1789114704-xFT0zNApWXtUmls1f3gA"
+    },
+    {
+      "id": 37,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0001656,
+      "state": "settled",
+      "response_id": "gen-1789114704-OD9rsVDmU85CXaHQ6f3m"
+    },
+    {
+      "id": 38,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00016626,
+      "state": "settled",
+      "response_id": "gen-1789114718-PezBwrqNYBNb8iNLcvaG"
+    },
+    {
+      "id": 39,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00043086,
+      "state": "settled",
+      "response_id": "gen-1789114718-5SUO8pFNiuzXucGzNRE0"
+    },
+    {
+      "id": 40,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000186035,
+      "state": "settled",
+      "response_id": "gen-1789114721-YmrDJC0soWI8W0hlPvG7"
+    },
+    {
+      "id": 41,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000173465,
+      "state": "settled",
+      "response_id": "gen-1789114721-KkwlRGpVG7778NuFglc6"
+    },
+    {
+      "id": 42,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00020322,
+      "state": "settled",
+      "response_id": "gen-1789114738-q962RWlm4brgTe7SUvoI"
+    },
+    {
+      "id": 43,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00030576,
+      "state": "settled",
+      "response_id": "gen-1789114738-wvHGeWH6o1ps5eounD41"
+    },
+    {
+      "id": 44,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000234388,
+      "state": "settled",
+      "response_id": "gen-1789114755-XBB43olQI3mmhV8404C1"
+    },
+    {
+      "id": 45,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000198203,
+      "state": "settled",
+      "response_id": "gen-1789114755-EVNw5NNatgCwv7XGYBu2"
+    },
+    {
+      "id": 46,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0002298,
+      "state": "settled",
+      "response_id": "gen-1789114760-6bUcx7HVrQlM6pRdfxxD"
+    },
+    {
+      "id": 47,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.0,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 48,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 8.0194e-05,
+      "state": "settled",
+      "response_id": "gen-1789114800-wKyhsThyulwECNelC7VL"
+    },
+    {
+      "id": 49,
+      "label": "project-r1:compressed:summary",
+      "reserved": 0.07380032,
+      "actual": 0.000129678,
+      "state": "settled",
+      "response_id": "gen-1789114799-2g6Lx5uARdwk0y4VzLSp"
+    },
+    {
+      "id": 50,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 5.757e-05,
+      "state": "settled",
+      "response_id": "gen-1789114824-mjhf0F8l1nSsCauCl344"
+    },
+    {
+      "id": 51,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000109336,
+      "state": "settled",
+      "response_id": "gen-1789114834-fAwacQnJ8BH0l2XVpa2D"
+    },
+    {
+      "id": 52,
+      "label": "project-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000145226,
+      "state": "settled",
+      "response_id": "gen-1789114834-v33OGtEojAI3oN298OBY"
+    },
+    {
+      "id": 53,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000153236,
+      "state": "settled",
+      "response_id": "gen-1789114859-CP2Rea9swM99cFSC4npX"
+    },
+    {
+      "id": 54,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 55,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000100474,
+      "state": "settled",
+      "response_id": "gen-1789114890-OJ6F87VeUePIrXuSNNcG"
+    },
+    {
+      "id": 56,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 9.5527e-05,
+      "state": "settled",
+      "response_id": "gen-1789114890-wbFGPCk2O6CAeSYCK7oH"
+    },
+    {
+      "id": 57,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 8.3335e-05,
+      "state": "settled",
+      "response_id": "gen-1789114920-wJSqNzH40zgC686sNdUg"
+    },
+    {
+      "id": 58,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0001046,
+      "state": "settled",
+      "response_id": "gen-1789114920-JseUmUdWdyj5qJpHzsmw"
+    },
+    {
+      "id": 59,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00013969,
+      "state": "settled",
+      "response_id": "gen-1789114949-OlTcIArlz26FJpCwojad"
+    },
+    {
+      "id": 60,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000129434,
+      "state": "settled",
+      "response_id": "gen-1789114949-5Lrfw2svrKAefnOH6A94"
+    },
+    {
+      "id": 61,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.00018113,
+      "state": "settled",
+      "response_id": "gen-1789114988-gbGWTJkTeo5OKv1ay9Ju"
+    },
+    {
+      "id": 62,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000147121,
+      "state": "settled",
+      "response_id": "gen-1789114988-B2tWMHuZYzj8RPyS9quj"
+    },
+    {
+      "id": 63,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000138929,
+      "state": "settled",
+      "response_id": "gen-1789115032-86Du9lUPmEh7q5im8kyd"
+    },
+    {
+      "id": 64,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000185564,
+      "state": "settled",
+      "response_id": "gen-1789115032-F2fIRVMaQpsNET6Yr3SV"
+    },
+    {
+      "id": 65,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000151426,
+      "state": "settled",
+      "response_id": "gen-1789115067-2r6EyonTs7ELSahPRMen"
+    },
+    {
+      "id": 66,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000185892,
+      "state": "settled",
+      "response_id": "gen-1789115067-7cyhJqM37AFBxvt0lRpf"
+    },
+    {
+      "id": 67,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000142349,
+      "state": "settled",
+      "response_id": "gen-1789115107-svIxGlMsD68YLqdd3SWl"
+    },
+    {
+      "id": 68,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000163504,
+      "state": "settled",
+      "response_id": "gen-1789115107-iWZw87ur50C9VnIprHVZ"
+    },
+    {
+      "id": 69,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.07420032,
+      "actual": 0.000153859,
+      "state": "settled",
+      "response_id": "gen-1789115136-fpUan5rbZFafpbPutGt2"
+    },
+    {
+      "id": 70,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.07420032,
+      "actual": 0.0001945,
+      "state": "settled",
+      "response_id": "gen-1789115136-qdnvU3obafOPUgQ5aWPK"
+    },
+    {
+      "id": 71,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0008187,
+      "actual": 0.000107354,
+      "state": "settled",
+      "response_id": "gen-1789115151-grpotvKtNH4YwEk2CmpI"
+    },
+    {
+      "id": 72,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0008187,
+      "actual": 0.000114998,
+      "state": "settled",
+      "response_id": "gen-1789115151-d6y1PuZK2gv3hgm9b4DB"
+    },
+    {
+      "id": 73,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 9.882e-05,
+      "state": "settled",
+      "response_id": "gen-1789115151-1PlmnOgu4bcL6QCyHQIm"
+    },
+    {
+      "id": 74,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 75,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.0,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 76,
+      "label": "personal-r1:compressed:summary",
+      "reserved": 0.07380032,
+      "actual": 0.000137445,
+      "state": "settled",
+      "response_id": "gen-1789115168-VDWMwxJ5fitLzE7r6mTa"
+    },
+    {
+      "id": 77,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 8.0703e-05,
+      "state": "settled",
+      "response_id": "gen-1789115180-UdzxK4tmez2icz3vUMUr"
+    },
+    {
+      "id": 78,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 7.0057e-05,
+      "state": "settled",
+      "response_id": "gen-1789115180-rodafFgtX0Th8bYEW5YK"
+    },
+    {
+      "id": 79,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.00112015,
+      "actual": 9.73e-05,
+      "state": "settled",
+      "response_id": "gen-1789115182-ZVu6gOznDBpU7mveHfoJ"
+    },
+    {
+      "id": 80,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 81,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 82,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0,
+      "actual": null,
+      "state": "reconciled_daily",
+      "response_id": null
+    },
+    {
+      "id": 83,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0010555,
+      "actual": 0.000116879,
+      "state": "settled",
+      "response_id": "gen-1789115200-Mcy1CKGV3wrLBBPGJhgJ"
+    },
+    {
+      "id": 84,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0008187,
+      "actual": 9.9379e-05,
+      "state": "settled",
+      "response_id": "gen-1789115215-gpWeX0VU3UFhWZ7P6RQK"
+    },
+    {
+      "id": 85,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0008187,
+      "actual": 0.00010034,
+      "state": "settled",
+      "response_id": "gen-1789115215-gMrpFGMTHw8ocIDC4BMX"
+    },
+    {
+      "id": 86,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 9.9263e-05,
+      "state": "settled",
+      "response_id": "gen-1789115232-4Yk9Q38eQGL50L4eKB8o"
+    },
+    {
+      "id": 87,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 0.000111903,
+      "state": "settled",
+      "response_id": "gen-1789115232-CVmaz9iWpnMNbc8NNzkr"
+    },
+    {
+      "id": 88,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0010861,
+      "actual": 8.6031e-05,
+      "state": "settled",
+      "response_id": "gen-1789115243-JeNeQsMAXMVcfMFMpbbh"
+    },
+    {
+      "id": 89,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0010876,
+      "actual": 0.00010287,
+      "state": "settled",
+      "response_id": "gen-1789115243-XUQker0L28r1EbXrFY0S"
+    },
+    {
+      "id": 90,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0010707,
+      "actual": 9.5316e-05,
+      "state": "settled",
+      "response_id": "gen-1789115260-BXQjuojuozFxMmtEgNPg"
+    },
+    {
+      "id": 91,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0010961500000000002,
+      "actual": 0.000131845,
+      "state": "settled",
+      "response_id": "gen-1789115260-JeFXqVAEIZD8dk1y5B0y"
+    },
+    {
+      "id": 92,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0013017,
+      "actual": 0.000105702,
+      "state": "settled",
+      "response_id": "gen-1789115264-2W9tvhlsWqE2w22eveMV"
+    },
+    {
+      "id": 93,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0013347,
+      "actual": 0.000140684,
+      "state": "settled",
+      "response_id": "gen-1789115264-fLH7tFTLIIEO7mHtF5Za"
+    },
+    {
+      "id": 94,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0013188000000000002,
+      "actual": 0.000109981,
+      "state": "settled",
+      "response_id": "gen-1789115287-NQl9NqQJnfXl608FhlSj"
+    },
+    {
+      "id": 95,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0013874,
+      "actual": 0.000163955,
+      "state": "settled",
+      "response_id": "gen-1789115287-TqlNOFkmNmmhkSgNUPBt"
+    },
+    {
+      "id": 96,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00154475,
+      "actual": 0.000152687,
+      "state": "settled",
+      "response_id": "gen-1789115299-N2lSMfsuyPn2qNQx3p1j"
+    },
+    {
+      "id": 97,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00161765,
+      "actual": 0.000198997,
+      "state": "settled",
+      "response_id": "gen-1789115299-sLoA7vfLN9VXfkbgNPcC"
+    },
+    {
+      "id": 98,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0015681500000000001,
+      "actual": 0.00017971,
+      "state": "settled",
+      "response_id": "gen-1789115329-cNXLTd1WsXRrewmCo8uM"
+    },
+    {
+      "id": 99,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.00169955,
+      "actual": 0.000218829,
+      "state": "settled",
+      "response_id": "gen-1789115329-uhtJ0bH8eMWNDwDwIAFX"
+    },
+    {
+      "id": 100,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00186095,
+      "actual": 0.00024811,
+      "state": "settled",
+      "response_id": "gen-1789115334-mH5pvmMvR1ztnJmXhxLm"
+    },
+    {
+      "id": 101,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00197595,
+      "actual": 0.000172322,
+      "state": "settled",
+      "response_id": "gen-1789115334-sAldAEEo7IFw8zSEolSp"
+    },
+    {
+      "id": 102,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00215705,
+      "actual": 0.00028233,
+      "state": "settled",
+      "response_id": "gen-1789115368-tdQaqYc9XmYU91Mqcm2A"
+    },
+    {
+      "id": 103,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00229645,
+      "actual": 0.000200746,
+      "state": "settled",
+      "response_id": "gen-1789115368-0N3j7vJ3kVMMQMQNAKpV"
+    },
+    {
+      "id": 104,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0018133,
+      "actual": 0.00021594,
+      "state": "settled",
+      "response_id": "gen-1789115370-PYXHkuZVTV59R3dilJh2"
+    },
+    {
+      "id": 105,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0020641500000000003,
+      "actual": 0.00031343,
+      "state": "settled",
+      "response_id": "gen-1789115370-bygi2iSH8P9dNCLycN4J"
+    },
+    {
+      "id": 106,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 0.00012615,
+      "state": "settled",
+      "response_id": "gen-1789115377-4kzfOBNp4pQiZLKIPRfa"
+    },
+    {
+      "id": 107,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0020695500000000003,
+      "actual": 0.000133816,
+      "state": "settled",
+      "response_id": "gen-1789115403-0E00GVFVQMzlMhEMmOtq"
+    },
+    {
+      "id": 108,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0023899,
+      "actual": 0.00039655,
+      "state": "settled",
+      "response_id": "gen-1789115403-NeGfFJSMWSDDEzhnTuOZ"
+    },
+    {
+      "id": 109,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0024237,
+      "actual": 0.00029849,
+      "state": "settled",
+      "response_id": "gen-1789115403-T8vY4gMkuL2BWsBisbiW"
+    },
+    {
+      "id": 110,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0025677,
+      "actual": 0.00032539,
+      "state": "settled",
+      "response_id": "gen-1789115404-bIZCKp1IvV6g3uJV7xjG"
+    },
+    {
+      "id": 111,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0010759,
+      "actual": 0.00014899,
+      "state": "settled",
+      "response_id": "gen-1789115407-vRyEOVGSEUIM7PLoBurp"
+    },
+    {
+      "id": 112,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0011197,
+      "actual": 0.00014225,
+      "state": "settled",
+      "response_id": "gen-1789115407-1gLANkMPCxmI0EM9JSHv"
+    },
+    {
+      "id": 113,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0026656,
+      "actual": 0.0003359,
+      "state": "settled",
+      "response_id": "gen-1789115432-lYqA084oTEDrHxqQUqmU"
+    },
+    {
+      "id": 114,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00281015,
+      "actual": 0.0003706,
+      "state": "settled",
+      "response_id": "gen-1789115432-adWiembu0TZYN1Xuqwy7"
+    },
+    {
+      "id": 115,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0013697,
+      "actual": 0.00020815,
+      "state": "settled",
+      "response_id": "gen-1789115435-CI3ITgHtyYpFUg2qDGAA"
+    },
+    {
+      "id": 116,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0013866500000000001,
+      "actual": 0.00020128,
+      "state": "settled",
+      "response_id": "gen-1789115435-MLoyeyjNCTHN5sGqwQAb"
+    },
+    {
+      "id": 117,
+      "label": "project-r4:full:chat",
+      "reserved": 0.00228095,
+      "actual": 0.0002829,
+      "state": "settled",
+      "response_id": "gen-1789115448-JyOYhQKghH1X3T9YR508"
+    },
+    {
+      "id": 118,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.00274405,
+      "actual": 0.00045942,
+      "state": "settled",
+      "response_id": "gen-1789115448-lOnNL09Ub6AqOpnJSBic"
+    },
+    {
+      "id": 119,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0029104,
+      "actual": 0.00028433,
+      "state": "settled",
+      "response_id": "gen-1789115465-YXNpDUgTcBIft5hlwkNN"
+    },
+    {
+      "id": 120,
+      "label": "personal-r3:compressed:summary",
+      "reserved": 0.00158825,
+      "actual": 0.000304258,
+      "state": "settled",
+      "response_id": "gen-1789115465-qb09IwzcD1A4qRGC5mKX"
+    },
+    {
+      "id": 121,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.001689,
+      "actual": 0.00024354,
+      "state": "settled",
+      "response_id": "gen-1789115468-HGqNweTNXfGsl8blgMdZ"
+    },
+    {
+      "id": 122,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0016772,
+      "actual": 0.00020423,
+      "state": "settled",
+      "response_id": "gen-1789115468-XwY9MytbZ3PRPhz6vXBD"
+    },
+    {
+      "id": 123,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0025635500000000004,
+      "actual": 0.00034114,
+      "state": "settled",
+      "response_id": "gen-1789115488-5wm0Bvs3MjXe23gVyrrf"
+    },
+    {
+      "id": 124,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.00313825,
+      "actual": 0.000409335,
+      "state": "settled",
+      "response_id": "gen-1789115488-GAkPVQE7fACBYaJIJe6V"
+    },
+    {
+      "id": 125,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0017913500000000001,
+      "actual": 0.00015429,
+      "state": "settled",
+      "response_id": "gen-1789115495-sTru1Hsh6FwzEal5hH9l"
+    },
+    {
+      "id": 126,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.00198525,
+      "actual": 0.00025932,
+      "state": "settled",
+      "response_id": "gen-1789115498-peshq7jy8KQKrYTZIbxu"
+    },
+    {
+      "id": 127,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00192545,
+      "actual": 0.00026707,
+      "state": "settled",
+      "response_id": "gen-1789115498-jQUgzUoZApssWcwL6xeP"
+    },
+    {
+      "id": 128,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00192165,
+      "actual": 0.00021005,
+      "state": "settled",
+      "response_id": "gen-1789115501-Xd74G9Y2vRBuL8oKK4RS"
+    },
+    {
+      "id": 129,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0030371,
+      "actual": 0.00032868,
+      "state": "settled",
+      "response_id": "gen-1789115501-nmJ3eqaN2tevxF6EqE97"
+    },
+    {
+      "id": 130,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0021349,
+      "actual": 0.0002802,
+      "state": "settled",
+      "response_id": "gen-1789115520-3JlFyQQs3ltBknVA743p"
+    },
+    {
+      "id": 131,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0032235500000000004,
+      "actual": 0.00038881,
+      "state": "settled",
+      "response_id": "gen-1789115520-SdshzHDjEmgY7GJ9swf3"
+    },
+    {
+      "id": 132,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0028264,
+      "actual": 0.00026441,
+      "state": "settled",
+      "response_id": "gen-1789115520-ZRqb20Ys0Ssl6iyCOSJw"
+    },
+    {
+      "id": 133,
+      "label": "project-r4:compressed:summary",
+      "reserved": 0.0016853000000000003,
+      "actual": 0.000296148,
+      "state": "settled",
+      "response_id": "gen-1789115520-XNHQca6EJizbmcfDt8fl"
+    },
+    {
+      "id": 134,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0022238,
+      "actual": 0.00035647,
+      "state": "settled",
+      "response_id": "gen-1789115535-PKqoZCWkBzynx5nLfOLQ"
+    },
+    {
+      "id": 135,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0022743500000000005,
+      "actual": 0.00028711,
+      "state": "settled",
+      "response_id": "gen-1789115535-92HZo6W3D3JxVEHZb1So"
+    },
+    {
+      "id": 136,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0020095,
+      "actual": 0.00019454,
+      "state": "settled",
+      "response_id": "gen-1789115547-eiTzyf7oihSnYkW5qhni"
+    },
+    {
+      "id": 137,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0021403000000000004,
+      "actual": 0.00031738,
+      "state": "settled",
+      "response_id": "gen-1789115552-1CsE4guQq7xxvLpQC6lX"
+    },
+    {
+      "id": 138,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0029502000000000005,
+      "actual": 0.00033161,
+      "state": "settled",
+      "response_id": "gen-1789115552-Yghyq2wobCaNpQ5VVRsV"
+    },
+    {
+      "id": 139,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00242725,
+      "actual": 0.0002991,
+      "state": "settled",
+      "response_id": "gen-1789115555-HxX7te71qs3cFXpcj9xL"
+    },
+    {
+      "id": 140,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00348955,
+      "actual": 0.000386358,
+      "state": "settled",
+      "response_id": "gen-1789115555-fOaxxCyN0cK3ZuGG2LQI"
+    },
+    {
+      "id": 141,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0024506999999999997,
+      "actual": 0.00036153,
+      "state": "settled",
+      "response_id": "gen-1789115584-KuI9bJgW4wqPIxlejQby"
+    },
+    {
+      "id": 142,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0031718500000000004,
+      "actual": 0.00040077,
+      "state": "settled",
+      "response_id": "gen-1789115584-LqCK5OCDWZS5xiZFSDAT"
+    },
+    {
+      "id": 143,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00266675,
+      "actual": 0.0003393,
+      "state": "settled",
+      "response_id": "gen-1789115585-6iYpTxYZgWl0sqBlcLik"
+    },
+    {
+      "id": 144,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00373165,
+      "actual": 0.000408219,
+      "state": "settled",
+      "response_id": "gen-1789115585-vPihPpt9HBX4AadJJsKW"
+    },
+    {
+      "id": 145,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.00253375,
+      "actual": 0.00033602,
+      "state": "settled",
+      "response_id": "gen-1789115585-X855GzVULb4qKgUD0OGf"
+    },
+    {
+      "id": 146,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0025876000000000002,
+      "actual": 0.00040157,
+      "state": "settled",
+      "response_id": "gen-1789115585-AA4tbYYCp8X3YAilkLor"
+    },
+    {
+      "id": 147,
+      "label": "personal-r3:compressed:summary",
+      "reserved": 0.001375,
+      "actual": 0.00029269,
+      "state": "settled",
+      "response_id": "gen-1789115619-niyvkgERmkGj0eVrzqr7"
+    },
+    {
+      "id": 148,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0040016,
+      "actual": 0.0003329,
+      "state": "settled",
+      "response_id": "gen-1789115619-5Mxy4b4LwOdbsEtz5dIm"
+    },
+    {
+      "id": 149,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0028251,
+      "actual": 0.00036781,
+      "state": "settled",
+      "response_id": "gen-1789115624-6jr4kYRPe98vaUt2Bghr"
+    },
+    {
+      "id": 150,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00296015,
+      "actual": 0.00048004,
+      "state": "settled",
+      "response_id": "gen-1789115624-qJTy3ugqn48mweSez3B3"
+    },
+    {
+      "id": 151,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.00277645,
+      "actual": 0.00044138,
+      "state": "settled",
+      "response_id": "gen-1789115624-jaWOp42ulD3zE1oTy8z0"
+    },
+    {
+      "id": 152,
+      "label": "project-r4:full:chat",
+      "reserved": 0.00348275,
+      "actual": 0.00031331,
+      "state": "settled",
+      "response_id": "gen-1789115624-Ga38jNveGo8gFRQMDiiJ"
+    },
+    {
+      "id": 153,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0018284500000000001,
+      "actual": 0.0001554,
+      "state": "settled",
+      "response_id": "gen-1789115647-d7Hy7QRHlIziSxE5Igz4"
+    },
+    {
+      "id": 154,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0019599500000000002,
+      "actual": 0.00022287,
+      "state": "settled",
+      "response_id": "gen-1789115653-wcVPKncvj8SD5pnUzUP1"
+    },
+    {
+      "id": 155,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0041328,
+      "actual": 0.000423196,
+      "state": "settled",
+      "response_id": "gen-1789115653-P1d4hQPwT3DLjZ0nEq2u"
+    },
+    {
+      "id": 156,
+      "label": "project-r2:compressed:summary",
+      "reserved": 0.0015660500000000003,
+      "actual": 0.000280278,
+      "state": "settled",
+      "response_id": "gen-1789115669-E6yhq4P2JvumG292T5A9"
+    },
+    {
+      "id": 157,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00335265,
+      "actual": 0.000318579,
+      "state": "settled",
+      "response_id": "gen-1789115669-vEoLDF5tWNWCy800GXj3"
+    },
+    {
+      "id": 158,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.00314065,
+      "actual": 0.00047162,
+      "state": "settled",
+      "response_id": "gen-1789115672-0uuc4KBd8O2kmDXLB0rY"
+    },
+    {
+      "id": 159,
+      "label": "project-r4:full:chat",
+      "reserved": 0.00377415,
+      "actual": 0.000441854,
+      "state": "settled",
+      "response_id": "gen-1789115672-GBJTM2iK5DeBvPqbuCZC"
+    },
+    {
+      "id": 160,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0021938500000000002,
+      "actual": 0.00020202,
+      "state": "settled",
+      "response_id": "gen-1789115687-XCdgUKRgdouf5I6H2kIN"
+    },
+    {
+      "id": 161,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00439265,
+      "actual": 0.000350228,
+      "state": "settled",
+      "response_id": "gen-1789115687-PAXUMkhqRXuzCueV18hd"
+    },
+    {
+      "id": 162,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0017986000000000002,
+      "actual": 0.00014979,
+      "state": "settled",
+      "response_id": "gen-1789115691-F8uXDGcwrJ4Y9n3NcBe3"
+    },
+    {
+      "id": 163,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.001936,
+      "actual": 0.00022787,
+      "state": "settled",
+      "response_id": "gen-1789115698-nCeBD9H12Zofw5GBlH0J"
+    },
+    {
+      "id": 164,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0034837,
+      "actual": 0.000383177,
+      "state": "settled",
+      "response_id": "gen-1789115698-FoLrW3rS18sJJ938rGAF"
+    },
+    {
+      "id": 165,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0008187,
+      "actual": 0.00011482,
+      "state": "settled",
+      "response_id": "gen-1789115703-5D9dxXXHwCRzlLhSvOqH"
+    },
+    {
+      "id": 166,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.0008187,
+      "actual": 0.00010058,
+      "state": "settled",
+      "response_id": "gen-1789115703-hMZvUoLAXOfbWqKxAK4d"
+    },
+    {
+      "id": 167,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0021843,
+      "actual": 0.00026752,
+      "state": "settled",
+      "response_id": "gen-1789115724-aBtHlPzph97QpqNVcDUY"
+    },
+    {
+      "id": 168,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0037168500000000003,
+      "actual": 0.000534831,
+      "state": "settled",
+      "response_id": "gen-1789115724-vwpnx6EaXtEy82QMDgPe"
+    },
+    {
+      "id": 169,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0010393,
+      "actual": 0.00011023,
+      "state": "settled",
+      "response_id": "gen-1789115726-U3aIvndldrLpY2k4TI57"
+    },
+    {
+      "id": 170,
+      "label": "project-r4:full:chat",
+      "reserved": 0.004120899999999999,
+      "actual": 0.000323973,
+      "state": "settled",
+      "response_id": "gen-1789115726-WYurgwgHKdXdsgv0BE9i"
+    },
+    {
+      "id": 171,
+      "label": "project-r4:compressed:summary",
+      "reserved": 0.0016944500000000001,
+      "actual": 0.000335211,
+      "state": "settled",
+      "response_id": "gen-1789115726-YofZlEdkMOsE7CRPjABs"
+    },
+    {
+      "id": 172,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.0010821,
+      "actual": 0.00012849,
+      "state": "settled",
+      "response_id": "gen-1789115734-fpdItA6c283RCSjcBqyi"
+    },
+    {
+      "id": 173,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0011057999999999999,
+      "actual": 0.00013966,
+      "state": "settled",
+      "response_id": "gen-1789115734-1XMsPat6mVKrp74C7ynl"
+    },
+    {
+      "id": 174,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0012795,
+      "actual": 0.00013529,
+      "state": "settled",
+      "response_id": "gen-1789115745-bS1yvc4R50H4Pee7BaME"
+    },
+    {
+      "id": 175,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00132475,
+      "actual": 0.00021938,
+      "state": "settled",
+      "response_id": "gen-1789115745-Ld7P04GVga4EFr0QE0qZ"
+    },
+    {
+      "id": 176,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.00351075,
+      "actual": 0.000344269,
+      "state": "settled",
+      "response_id": "gen-1789115759-oQscilwHJ25lY9nSN3n6"
+    },
+    {
+      "id": 177,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.0013242,
+      "actual": 0.00017558,
+      "state": "settled",
+      "response_id": "gen-1789115764-KBitYt8Z69dnsAlliFXL"
+    },
+    {
+      "id": 178,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0013569,
+      "actual": 0.00017285,
+      "state": "settled",
+      "response_id": "gen-1789115764-MtnVaMZu4ShhkTcOxGRj"
+    },
+    {
+      "id": 179,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0042476499999999995,
+      "actual": 0.000464491,
+      "state": "settled",
+      "response_id": "gen-1789115769-G5pSh31u0iDwlqnLDmGh"
+    },
+    {
+      "id": 180,
+      "label": "project-r4:compressed:summary",
+      "reserved": 0.0019235500000000002,
+      "actual": 0.000331507,
+      "state": "settled",
+      "response_id": "gen-1789115769-XKan2gkvKpV1PjmS106z"
+    },
+    {
+      "id": 181,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.00247575,
+      "actual": 0.00030093,
+      "state": "settled",
+      "response_id": "gen-1789115782-uEcOhykibfsvqiJDHtPN"
+    },
+    {
+      "id": 182,
+      "label": "project-r2:full:chat",
+      "reserved": 0.004199200000000001,
+      "actual": 0.000454764,
+      "state": "settled",
+      "response_id": "gen-1789115782-B2kpIIW5PZaoXnhAVsEf"
+    },
+    {
+      "id": 183,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0015065,
+      "actual": 0.00019256,
+      "state": "settled",
+      "response_id": "gen-1789115789-L7j2UmpWYatRIpp5TiWQ"
+    },
+    {
+      "id": 184,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0016716,
+      "actual": 0.00023985,
+      "state": "settled",
+      "response_id": "gen-1789115789-Y8haDvHLlJJHPSBkph5J"
+    },
+    {
+      "id": 185,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.0015852000000000002,
+      "actual": 0.00024839,
+      "state": "settled",
+      "response_id": "gen-1789115791-GABH5AjbuTWf1WqOsjOp"
+    },
+    {
+      "id": 186,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.00161185,
+      "actual": 0.00023092,
+      "state": "settled",
+      "response_id": "gen-1789115791-rxGJRKSNjlhM1AVq1hbI"
+    },
+    {
+      "id": 187,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0019043500000000002,
+      "actual": 0.00028409,
+      "state": "settled",
+      "response_id": "gen-1789115796-jCz6QT7ltiNdnsJIPipm"
+    },
+    {
+      "id": 188,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.002759,
+      "actual": 0.00030318,
+      "state": "settled",
+      "response_id": "gen-1789115818-hiTNYwnlIWW9w6Go6qr7"
+    },
+    {
+      "id": 189,
+      "label": "project-r2:full:chat",
+      "reserved": 0.004507,
+      "actual": 0.000516422,
+      "state": "settled",
+      "response_id": "gen-1789115818-Xzgotd1iftSeRgs51w4Z"
+    },
+    {
+      "id": 190,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.00177205,
+      "actual": 0.000166608,
+      "state": "settled",
+      "response_id": "gen-1789115826-y5jXrp0tOQOAsvAOH6kS"
+    },
+    {
+      "id": 191,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0019723500000000003,
+      "actual": 0.00028238,
+      "state": "settled",
+      "response_id": "gen-1789115826-Ww0uxw39odmxtgQ1R69o"
+    },
+    {
+      "id": 192,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0019335,
+      "actual": 0.00030583,
+      "state": "settled",
+      "response_id": "gen-1789115830-EMY1Q7qV1rWVNKM99GQs"
+    },
+    {
+      "id": 193,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.00193275,
+      "actual": 0.00026062,
+      "state": "settled",
+      "response_id": "gen-1789115830-drCGzjbBSQXUOtwAyBw1"
+    },
+    {
+      "id": 194,
+      "label": "project-r4:compressed:chat",
+      "reserved": 0.0022104499999999997,
+      "actual": 0.00025616,
+      "state": "settled",
+      "response_id": "gen-1789115832-T8r0Ybu2rCHbervLt1o7"
+    },
+    {
+      "id": 195,
+      "label": "project-r4:full:chat",
+      "reserved": 0.0045834,
+      "actual": 0.000342893,
+      "state": "settled",
+      "response_id": "gen-1789115832-abE7xRRtNpUv2GHk0sPN"
+    },
+    {
+      "id": 196,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0020661000000000004,
+      "actual": 0.00023434,
+      "state": "settled",
+      "response_id": "gen-1789115858-jJuBQ4d13ix8QRfnxjGd"
+    },
+    {
+      "id": 197,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0022919499999999996,
+      "actual": 0.00031054,
+      "state": "settled",
+      "response_id": "gen-1789115858-nN3ZXKen7Ho9KSTD0cE0"
+    },
+    {
+      "id": 198,
+      "label": "project-r2:compressed:summary",
+      "reserved": 0.0014246500000000002,
+      "actual": 0.00034384,
+      "state": "settled",
+      "response_id": "gen-1789115863-5Q6jgwyAHNxNOQ06Bh9I"
+    },
+    {
+      "id": 199,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0048842,
+      "actual": 0.000372409,
+      "state": "settled",
+      "response_id": "gen-1789115863-wYppQjzD7XGykPVBasU8"
+    },
+    {
+      "id": 200,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.002219,
+      "actual": 0.00027769,
+      "state": "settled",
+      "response_id": "gen-1789115870-nsySN5rocsBwBKRgPM4m"
+    },
+    {
+      "id": 201,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0022918,
+      "actual": 0.00028931,
+      "state": "settled",
+      "response_id": "gen-1789115870-rrAnzCg9Hcen5KjbBpke"
+    },
+    {
+      "id": 202,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.00229995,
+      "actual": 0.00028914,
+      "state": "settled",
+      "response_id": "gen-1789115887-qwPCgOd7h67l8eIMjIGN"
+    },
+    {
+      "id": 203,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0025776,
+      "actual": 0.00033694,
+      "state": "settled",
+      "response_id": "gen-1789115887-DC3xrA7c4n0FpfUVd3c8"
+    },
+    {
+      "id": 204,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.00246175,
+      "actual": 0.00030235,
+      "state": "settled",
+      "response_id": "gen-1789115896-w552nKTaL9MGhBinCmFM"
+    },
+    {
+      "id": 205,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.00252255,
+      "actual": 0.000255708,
+      "state": "settled",
+      "response_id": "gen-1789115896-pvWojlvuaCRVvQUTQbub"
+    },
+    {
+      "id": 206,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0029914,
+      "actual": 0.00027921,
+      "state": "settled",
+      "response_id": "gen-1789115901-WJ2aXOzOfO89jPvylrqB"
+    },
+    {
+      "id": 207,
+      "label": "project-r2:compressed:summary",
+      "reserved": 0.00161925,
+      "actual": 0.000326557,
+      "state": "settled",
+      "response_id": "gen-1789115909-kCMbABU4fMOkqtdSsB7Y"
+    },
+    {
+      "id": 208,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00501835,
+      "actual": 0.000470334,
+      "state": "settled",
+      "response_id": "gen-1789115909-KjC32pDECqRS9Z1aOtFr"
+    },
+    {
+      "id": 209,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.002596,
+      "actual": 0.00030165,
+      "state": "settled",
+      "response_id": "gen-1789115916-s5hEyx0b23U8Njhqrpoi"
+    },
+    {
+      "id": 210,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00286565,
+      "actual": 0.00038606,
+      "state": "settled",
+      "response_id": "gen-1789115916-9FpdoB6oSEmz59wzIdMa"
+    },
+    {
+      "id": 211,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.0026967000000000002,
+      "actual": 0.00034805,
+      "state": "settled",
+      "response_id": "gen-1789115929-UtLCdttDuD8CQ45tMHnT"
+    },
+    {
+      "id": 212,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.00282115,
+      "actual": 0.00037569,
+      "state": "settled",
+      "response_id": "gen-1789115929-68QO22pWefyPyCyibr0f"
+    },
+    {
+      "id": 213,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0031385500000000004,
+      "actual": 0.00038435,
+      "state": "settled",
+      "response_id": "gen-1789115942-O8z2qGL4O6jmE5Tf4Lqv"
+    },
+    {
+      "id": 214,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00315005,
+      "actual": 0.00031873,
+      "state": "settled",
+      "response_id": "gen-1789115945-YTQVSO8gEL2OGCKSstwi"
+    },
+    {
+      "id": 215,
+      "label": "project-r3:compressed:summary",
+      "reserved": 0.0013576500000000002,
+      "actual": 0.00026325,
+      "state": "settled",
+      "response_id": "gen-1789115945-tMFqQPLvwZMs8jIdV8hb"
+    },
+    {
+      "id": 216,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.0029562000000000004,
+      "actual": 0.00029933,
+      "state": "settled",
+      "response_id": "gen-1789115961-y1KZ4tvzWhmQZRxaqhiU"
+    },
+    {
+      "id": 217,
+      "label": "personal-r4:compressed:summary",
+      "reserved": 0.00158215,
+      "actual": 0.000317408,
+      "state": "settled",
+      "response_id": "gen-1789115962-TvZyQOciRRf8iL2TyvEO"
+    },
+    {
+      "id": 218,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.00176175,
+      "actual": 0.00013379,
+      "state": "settled",
+      "response_id": "gen-1789115969-01AE79zUrvmtU2ZTXPB5"
+    },
+    {
+      "id": 219,
+      "label": "project-r2:compressed:summary",
+      "reserved": 0.0018064,
+      "actual": 0.00032645,
+      "state": "settled",
+      "response_id": "gen-1789115973-oDQzXNfDYTqbtkmd71qP"
+    },
+    {
+      "id": 220,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0052965500000000006,
+      "actual": 0.000410215,
+      "state": "settled",
+      "response_id": "gen-1789115973-iYSPMnrFilGS6Cx4o8eT"
+    },
+    {
+      "id": 221,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.00189185,
+      "actual": 0.00020358,
+      "state": "settled",
+      "response_id": "gen-1789115974-qnNwHhmCpYFYt6Cnqn1i"
+    },
+    {
+      "id": 222,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00327675,
+      "actual": 0.000362678,
+      "state": "settled",
+      "response_id": "gen-1789115974-5dOidkXcRLaP3DHW1fuI"
+    },
+    {
+      "id": 223,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.001823,
+      "actual": 0.00016495,
+      "state": "settled",
+      "response_id": "gen-1789115993-aEgjksQNhus7QiAm4TfA"
+    },
+    {
+      "id": 224,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0021349499999999996,
+      "actual": 0.000148196,
+      "state": "settled",
+      "response_id": "gen-1789115997-3aOLzNl2kcZGgWMLfS7w"
+    },
+    {
+      "id": 225,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00351905,
+      "actual": 0.000404536,
+      "state": "settled",
+      "response_id": "gen-1789115997-h6qeIUrPjiIOT8R9wtJO"
+    },
+    {
+      "id": 226,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0019550500000000003,
+      "actual": 0.000146418,
+      "state": "settled",
+      "response_id": "gen-1789116000-Bv8iiAHAh9EGPMl0C0gs"
+    },
+    {
+      "id": 227,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.00309155,
+      "actual": 0.00034644,
+      "state": "settled",
+      "response_id": "gen-1789116000-0jyQ4fkDq44Xtjf7YM0C"
+    },
+    {
+      "id": 228,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.00345825,
+      "actual": 0.00035111,
+      "state": "settled",
+      "response_id": "gen-1789116003-nH7oQzvE9BxjlWxRCxDm"
+    },
+    {
+      "id": 229,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0010974000000000001,
+      "actual": 0.0001143,
+      "state": "settled",
+      "response_id": "gen-1789116021-TccTDtt7t77u6oF5UZ0U"
+    },
+    {
+      "id": 230,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0022048500000000004,
+      "actual": 0.00032119,
+      "state": "settled",
+      "response_id": "gen-1789116026-vf7FgzmPwVDjO9bYuSll"
+    },
+    {
+      "id": 231,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.0032904500000000003,
+      "actual": 0.0004019,
+      "state": "settled",
+      "response_id": "gen-1789116026-lh3AsOimEwn85ROk2nq9"
+    },
+    {
+      "id": 232,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.00240465,
+      "actual": 0.00028193,
+      "state": "settled",
+      "response_id": "gen-1789116026-sCtJ4yviW5BM9jNUolH7"
+    },
+    {
+      "id": 233,
+      "label": "project-r3:full:chat",
+      "reserved": 0.003804,
+      "actual": 0.000477854,
+      "state": "settled",
+      "response_id": "gen-1789116026-f8nroBVR2D0Q2inYTiEH"
+    },
+    {
+      "id": 234,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.00135085,
+      "actual": 0.00020266,
+      "state": "settled",
+      "response_id": "gen-1789116041-cQHbkihK0yyapceJMWE3"
+    },
+    {
+      "id": 235,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.00131485,
+      "actual": 0.00018858,
+      "state": "settled",
+      "response_id": "gen-1789116041-yssbRSqc7Kf2TM0JfZPF"
+    },
+    {
+      "id": 236,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0025237,
+      "actual": 0.00032599,
+      "state": "settled",
+      "response_id": "gen-1789116065-L0QgykOBe0b4Di6cpxa6"
+    },
+    {
+      "id": 237,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.00354915,
+      "actual": 0.000356691,
+      "state": "settled",
+      "response_id": "gen-1789116065-RRGNzpluf1xfSxYnigbL"
+    },
+    {
+      "id": 238,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0026721,
+      "actual": 0.00033689,
+      "state": "settled",
+      "response_id": "gen-1789116072-9iREJQ452ZoakAZ1Vzz9"
+    },
+    {
+      "id": 239,
+      "label": "project-r3:full:chat",
+      "reserved": 0.004167700000000001,
+      "actual": 0.000477652,
+      "state": "settled",
+      "response_id": "gen-1789116072-YHvGWsHn8jmbfWS8JalA"
+    },
+    {
+      "id": 240,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.00160215,
+      "actual": 0.00023126,
+      "state": "settled",
+      "response_id": "gen-1789116078-1koJkqMUQYX6JvF7nbPt"
+    },
+    {
+      "id": 241,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.00165265,
+      "actual": 0.00027359,
+      "state": "settled",
+      "response_id": "gen-1789116078-FVrL8Lg88lPo4Rmqqdt5"
+    },
+    {
+      "id": 242,
+      "label": "personal-r4:compressed:chat",
+      "reserved": 0.0027779000000000002,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 243,
+      "label": "personal-r4:full:chat",
+      "reserved": 0.00375715,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 244,
+      "label": "project-r3:compressed:summary",
+      "reserved": 0.001375,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 245,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0045318,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 246,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0019267,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 247,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0020297,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 248,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0029734,
+      "actual": 0.00027281,
+      "state": "settled",
+      "response_id": "gen-1789119855-VwRt74pG3wuFEP5Imovi"
+    },
+    {
+      "id": 249,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 250,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 0.00011607,
+      "state": "settled",
+      "response_id": "gen-1789120010-duZouwlqer5pCiADUEQw"
+    },
+    {
+      "id": 251,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 252,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.0008187,
+      "actual": 0.0001041,
+      "state": "settled",
+      "response_id": "gen-1789120010-I6fmrVaLOJapy8KoV3kX"
+    },
+    {
+      "id": 253,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0008187,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 254,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 7.431e-05,
+      "state": "settled",
+      "response_id": "gen-1789120010-AaJYAmRz7XnLx3cCiY9H"
+    },
+    {
+      "id": 255,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0008187,
+      "actual": 0.00010458,
+      "state": "settled",
+      "response_id": "gen-1789120035-SAPbMy9jcngOnZxnYBPS"
+    },
+    {
+      "id": 256,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 7.847e-05,
+      "state": "settled",
+      "response_id": "gen-1789120035-Cr4nl07hG9GyvBIz0Wc5"
+    },
+    {
+      "id": 257,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0010444500000000002,
+      "actual": 0.00010333,
+      "state": "settled",
+      "response_id": "gen-1789120043-peQnXmj2e4it9oeh0oR3"
+    },
+    {
+      "id": 258,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0010925,
+      "actual": 0.00013542,
+      "state": "settled",
+      "response_id": "gen-1789120043-s8lREruSqYrf8h2m1UNi"
+    },
+    {
+      "id": 259,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00108515,
+      "actual": 0.00013647,
+      "state": "settled",
+      "response_id": "gen-1789120064-YolMav2nKk45FLlaGHkv"
+    },
+    {
+      "id": 260,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.00108715,
+      "actual": 0.00013566,
+      "state": "settled",
+      "response_id": "gen-1789120064-A2kypu4KEEnXtnSYJKOO"
+    },
+    {
+      "id": 261,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 0.00010215,
+      "state": "settled",
+      "response_id": "gen-1789120072-21zep5me1PrpMU3W6bqf"
+    },
+    {
+      "id": 262,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.00127615,
+      "actual": 0.00013878,
+      "state": "settled",
+      "response_id": "gen-1789120077-CyA1kiid0ZWgEYtWJZKJ"
+    },
+    {
+      "id": 263,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0013538000000000003,
+      "actual": 0.00019714,
+      "state": "settled",
+      "response_id": "gen-1789120077-arNZEUQSrY78EbJPO5ot"
+    },
+    {
+      "id": 264,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00134225,
+      "actual": 0.00018651,
+      "state": "settled",
+      "response_id": "gen-1789120099-fiVnPHYyD1BBvx1jDqck"
+    },
+    {
+      "id": 265,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0013395500000000001,
+      "actual": 0.00019564,
+      "state": "settled",
+      "response_id": "gen-1789120099-7BLzi9S6kZPbFGrZ3CjI"
+    },
+    {
+      "id": 266,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0010427000000000001,
+      "actual": 0.00011087,
+      "state": "settled",
+      "response_id": "gen-1789120101-TJKst5PiQ6lH5r3shTJD"
+    },
+    {
+      "id": 267,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00107585,
+      "actual": 0.00014947,
+      "state": "settled",
+      "response_id": "gen-1789120101-vhBYZIQsJCD0yQXR2RfY"
+    },
+    {
+      "id": 268,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0015174000000000001,
+      "actual": 0.00018975,
+      "state": "settled",
+      "response_id": "gen-1789120119-gXEoSVFkZ4WCp6CvqX8e"
+    },
+    {
+      "id": 269,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0016338000000000001,
+      "actual": 0.00021513,
+      "state": "settled",
+      "response_id": "gen-1789120119-uA6NiFRjy49raCPPAmXR"
+    },
+    {
+      "id": 270,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0012925,
+      "actual": 0.00015595,
+      "state": "settled",
+      "response_id": "gen-1789120137-LBHBQeKa3TJOn3EmQVJw"
+    },
+    {
+      "id": 271,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00136465,
+      "actual": 0.00022622,
+      "state": "settled",
+      "response_id": "gen-1789120137-mwmLDrBG2LrXhHF8Tn5a"
+    },
+    {
+      "id": 272,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.0016224000000000002,
+      "actual": 0.00022508,
+      "state": "settled",
+      "response_id": "gen-1789120140-3is9h9N4TWydM0Y1VBx8"
+    },
+    {
+      "id": 273,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0016351500000000001,
+      "actual": 0.00020095,
+      "state": "settled",
+      "response_id": "gen-1789120140-DQWRyswGVTFU95iGYnEH"
+    },
+    {
+      "id": 274,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0017852,
+      "actual": 0.00021039,
+      "state": "settled",
+      "response_id": "gen-1789120150-eYXzy6ZI2dIdIkCZOkqa"
+    },
+    {
+      "id": 275,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0018995,
+      "actual": 0.000174688,
+      "state": "settled",
+      "response_id": "gen-1789120150-bX1C6b7lS2SM8kBlhnQX"
+    },
+    {
+      "id": 276,
+      "label": "video:left:chat",
+      "reserved": 0.00335265,
+      "actual": 0.000302696,
+      "state": "settled",
+      "response_id": "gen-1789120167-7tZvz732RyRF6vM8UOmv"
+    },
+    {
+      "id": 277,
+      "label": "video:right:summary",
+      "reserved": 0.0015368,
+      "actual": 0.000243473,
+      "state": "settled",
+      "response_id": "gen-1789120167-PJYwhg5JFdurUvLdbgjg"
+    },
+    {
+      "id": 278,
+      "label": "video:right:chat",
+      "reserved": 0.0017446500000000002,
+      "actual": 0.00013395,
+      "state": "settled",
+      "response_id": "gen-1789120181-zKa7jds0xVrPSep8E51G"
+    },
+    {
+      "id": 279,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0018936500000000002,
+      "actual": 0.00025909,
+      "state": "settled",
+      "response_id": "gen-1789120182-eclc1iAniLWcpvWUVXsP"
+    },
+    {
+      "id": 280,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.0019226000000000002,
+      "actual": 0.00026186,
+      "state": "settled",
+      "response_id": "gen-1789120182-2yLXdKW9nREOAyXXCYoI"
+    },
+    {
+      "id": 281,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0020482,
+      "actual": 0.00021434,
+      "state": "settled",
+      "response_id": "gen-1789120184-IgTPm1nZZTXIfNh4TUSS"
+    },
+    {
+      "id": 282,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0021888000000000003,
+      "actual": 0.00032955,
+      "state": "settled",
+      "response_id": "gen-1789120184-qvI5i3ZHmdvre2kt1LRX"
+    },
+    {
+      "id": 283,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0015613000000000003,
+      "actual": 0.00019575,
+      "state": "settled",
+      "response_id": "gen-1789120185-eY15p7kGL3VRD9lEySLq"
+    },
+    {
+      "id": 284,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0016971500000000001,
+      "actual": 0.00024006,
+      "state": "settled",
+      "response_id": "gen-1789120185-cmb4Jldaz5Dgdc6Czgpr"
+    },
+    {
+      "id": 285,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0021981500000000003,
+      "actual": 0.00033515,
+      "state": "settled",
+      "response_id": "gen-1789120219-Jxo0d70wuRKVRKElxRKb"
+    },
+    {
+      "id": 286,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00221475,
+      "actual": 0.0002751,
+      "state": "settled",
+      "response_id": "gen-1789120219-MbPMCPvWfxAELhVdd2U0"
+    },
+    {
+      "id": 287,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0019786,
+      "actual": 0.000237356,
+      "state": "settled",
+      "response_id": "gen-1789120221-JEboYzozc5itSGkQDcYq"
+    },
+    {
+      "id": 288,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0018419,
+      "actual": 0.00021781,
+      "state": "settled",
+      "response_id": "gen-1789120221-R2bTKV1M6m9jFTw43NKI"
+    },
+    {
+      "id": 289,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0025128500000000005,
+      "actual": 0.00036282,
+      "state": "settled",
+      "response_id": "gen-1789120229-aMWDZE4daUqGt2avOllD"
+    },
+    {
+      "id": 290,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0022626000000000005,
+      "actual": 0.00026071,
+      "state": "settled",
+      "response_id": "gen-1789120229-s1OQOKSb1trupmymPIZW"
+    },
+    {
+      "id": 291,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00244225,
+      "actual": 0.00029572,
+      "state": "settled",
+      "response_id": "gen-1789120265-HzhT82aeowOVWG3FR9mV"
+    },
+    {
+      "id": 292,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0025329000000000003,
+      "actual": 0.0003053,
+      "state": "settled",
+      "response_id": "gen-1789120265-a4PhVZFZbvk18gdZt4KE"
+    },
+    {
+      "id": 293,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.00252365,
+      "actual": 0.00029697,
+      "state": "settled",
+      "response_id": "gen-1789120272-zEuGIn86PXbyj7VoW8Q9"
+    },
+    {
+      "id": 294,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0028282000000000003,
+      "actual": 0.00038646,
+      "state": "settled",
+      "response_id": "gen-1789120272-w6jRdPDItr5rjN8Qm7lj"
+    },
+    {
+      "id": 295,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.00210495,
+      "actual": 0.00030122,
+      "state": "settled",
+      "response_id": "gen-1789120276-VCayJL0jclVK5vhxaZV0"
+    },
+    {
+      "id": 296,
+      "label": "project-r2:full:chat",
+      "reserved": 0.002344,
+      "actual": 0.00034092,
+      "state": "settled",
+      "response_id": "gen-1789120276-K5tDtX0QHRwgAJDtbuGq"
+    },
+    {
+      "id": 297,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.0026651000000000005,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 298,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.002752,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 299,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.0026651000000000005,
+      "actual": 0.0003557,
+      "state": "settled",
+      "response_id": "gen-1789120306-ZBLPkbRAFkVIuSiugtSK"
+    },
+    {
+      "id": 300,
+      "label": "project-r1:compressed:summary",
+      "reserved": 0.0013105500000000002,
+      "actual": 0.00021063,
+      "state": "settled",
+      "response_id": "gen-1789120307-7yHwKPzxOwZJ5FkzIyaG"
+    },
+    {
+      "id": 301,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0031008000000000003,
+      "actual": 0.000292911,
+      "state": "settled",
+      "response_id": "gen-1789120307-m6cJJY5f6OYfihDI6Oj2"
+    },
+    {
+      "id": 302,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0016373499999999999,
+      "actual": 0.00011518,
+      "state": "settled",
+      "response_id": "gen-1789120321-xxt5wSJqpfx8xfJlg4Fm"
+    },
+    {
+      "id": 303,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.00244445,
+      "actual": 0.00033249,
+      "state": "settled",
+      "response_id": "gen-1789120322-2N78Ngt9oT1G3qfR9uIp"
+    },
+    {
+      "id": 304,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00263485,
+      "actual": 0.00038802,
+      "state": "settled",
+      "response_id": "gen-1789120322-cCDwc2JIC1tRO1F4ZlAE"
+    },
+    {
+      "id": 305,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0017709000000000002,
+      "actual": 0.00016663,
+      "state": "settled",
+      "response_id": "gen-1789120328-6xPEvPvuO68xqwiShnXU"
+    },
+    {
+      "id": 306,
+      "label": "project-r1:full:chat",
+      "reserved": 0.00323125,
+      "actual": 0.000386531,
+      "state": "settled",
+      "response_id": "gen-1789120328-lSbL28GWc8o4D1rJLs17"
+    },
+    {
+      "id": 307,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.002752,
+      "actual": 0.00036567,
+      "state": "settled",
+      "response_id": "gen-1789120359-fYr2DAWk240mFhYQoQBH"
+    },
+    {
+      "id": 308,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.00198585,
+      "actual": 0.00020318,
+      "state": "settled",
+      "response_id": "gen-1789120365-GwIvtnKw6YeYKi8PIcfi"
+    },
+    {
+      "id": 309,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0035013500000000003,
+      "actual": 0.000371322,
+      "state": "settled",
+      "response_id": "gen-1789120365-66zWtSmMxvuR1s9HJ1nR"
+    },
+    {
+      "id": 310,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0027703000000000003,
+      "actual": 0.00037395,
+      "state": "settled",
+      "response_id": "gen-1789120377-hdp3dcEcvnfwLKoac59i"
+    },
+    {
+      "id": 311,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0029502000000000005,
+      "actual": 0.00043173,
+      "state": "settled",
+      "response_id": "gen-1789120377-0h0Lo05rXGaUrvhp1nn8"
+    },
+    {
+      "id": 312,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.002927,
+      "actual": 0.00029672,
+      "state": "settled",
+      "response_id": "gen-1789120395-LBAiS2Oygzp0Mytv1VoQ"
+    },
+    {
+      "id": 313,
+      "label": "personal-r1:compressed:summary",
+      "reserved": 0.0014594,
+      "actual": 0.00023301,
+      "state": "settled",
+      "response_id": "gen-1789120395-VbzX3QEahq2dPTh9VVDX"
+    },
+    {
+      "id": 314,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.002231,
+      "actual": 0.00028692,
+      "state": "settled",
+      "response_id": "gen-1789120400-eYpZ6GateX7Wdfc8i38t"
+    },
+    {
+      "id": 315,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0037853,
+      "actual": 0.000411615,
+      "state": "settled",
+      "response_id": "gen-1789120400-SixtKFqvc6lxCNZ4a5qb"
+    },
+    {
+      "id": 316,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0017231500000000001,
+      "actual": 0.00014263,
+      "state": "settled",
+      "response_id": "gen-1789120405-f7hiKdl45tKva8zCGsqx"
+    },
+    {
+      "id": 317,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0018540499999999999,
+      "actual": 0.000128516,
+      "state": "settled",
+      "response_id": "gen-1789120412-xP5TZ5znLjacVb3c19o5"
+    },
+    {
+      "id": 318,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00305885,
+      "actual": 0.00034335,
+      "state": "settled",
+      "response_id": "gen-1789120412-Ik3mQM7WdBgSjlmfClge"
+    },
+    {
+      "id": 319,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0032674,
+      "actual": 0.000267946,
+      "state": "settled",
+      "response_id": "gen-1789120419-Pid7Q4HmramtCwnMGVho"
+    },
+    {
+      "id": 320,
+      "label": "project-r2:compressed:summary",
+      "reserved": 0.00136515,
+      "actual": 0.00050085,
+      "state": "settled",
+      "response_id": "gen-1789120419-pjjp1AuxmfhdfmnKKqww"
+    },
+    {
+      "id": 321,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.00209505,
+      "actual": 0.00024578,
+      "state": "settled",
+      "response_id": "gen-1789120438-tdG0RlXfTdw1itxLzknM"
+    },
+    {
+      "id": 322,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00325355,
+      "actual": 0.00043203,
+      "state": "settled",
+      "response_id": "gen-1789120438-2NcIxkrP0mCX8bPCQznN"
+    },
+    {
+      "id": 323,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0025574,
+      "actual": 0.00034993,
+      "state": "settled",
+      "response_id": "gen-1789120441-jr4xaRlbtRN9OCbiSf4F"
+    },
+    {
+      "id": 324,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0040711,
+      "actual": 0.000464529,
+      "state": "settled",
+      "response_id": "gen-1789120441-muLDhGrzxCxOOolrPimW"
+    },
+    {
+      "id": 325,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.002337,
+      "actual": 0.00028118,
+      "state": "settled",
+      "response_id": "gen-1789120477-QAJijoJSATkJQy6dh3Nb"
+    },
+    {
+      "id": 326,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.0035539,
+      "actual": 0.00038246,
+      "state": "settled",
+      "response_id": "gen-1789120477-bsG1ZcH3MltWvqraZq7j"
+    },
+    {
+      "id": 327,
+      "label": "project-r1:compressed:summary",
+      "reserved": 0.0011950500000000002,
+      "actual": 0.00018732,
+      "state": "settled",
+      "response_id": "gen-1789120495-tTCzXupIjokf8UJ8NMow"
+    },
+    {
+      "id": 328,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0044484500000000005,
+      "actual": 0.000309,
+      "state": "settled",
+      "response_id": "gen-1789120495-vgDWYT4zv6VmrHr36vY2"
+    },
+    {
+      "id": 329,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0018498,
+      "actual": 0.00014788,
+      "state": "settled",
+      "response_id": "gen-1789120508-kskeUIjCnPfejegBCotc"
+    },
+    {
+      "id": 330,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0025855500000000003,
+      "actual": 0.00033884,
+      "state": "settled",
+      "response_id": "gen-1789120509-ZWypHyW5dCepPdTP6YdN"
+    },
+    {
+      "id": 331,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00380495,
+      "actual": 0.000399692,
+      "state": "settled",
+      "response_id": "gen-1789120509-bRgq1Ul0jN3PdDu0orUl"
+    },
+    {
+      "id": 332,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0030478000000000002,
+      "actual": 0.00030063,
+      "state": "settled",
+      "response_id": "gen-1789120513-3jpq6bHszfs2lRcQfdao"
+    },
+    {
+      "id": 333,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0019793000000000002,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 334,
+      "label": "project-r1:full:chat",
+      "reserved": 0.0046043,
+      "actual": 0.000348593,
+      "state": "settled",
+      "response_id": "gen-1789120516-9uEfJ1GvCou43V5kNuZb"
+    },
+    {
+      "id": 335,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00339405,
+      "actual": 0.000383282,
+      "state": "settled",
+      "response_id": "gen-1789120520-xHIZOJmpOq3O7eLbUsKE"
+    },
+    {
+      "id": 336,
+      "label": "project-r2:compressed:summary",
+      "reserved": 0.00161225,
+      "actual": 0.000519689,
+      "state": "settled",
+      "response_id": "gen-1789120520-qHhJZYMbryBcK3xTUVaV"
+    },
+    {
+      "id": 337,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0019793000000000002,
+      "actual": 0.00026957,
+      "state": "settled",
+      "response_id": "gen-1789120531-e8vpW1zdH8iB1iSq0UIw"
+    },
+    {
+      "id": 338,
+      "label": "personal-r1:compressed:summary",
+      "reserved": 0.0013068499999999998,
+      "actual": 0.0002183,
+      "state": "settled",
+      "response_id": "gen-1789120547-LSTNXB8y6a5oYSPdT7D4"
+    },
+    {
+      "id": 339,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00409365,
+      "actual": 0.000308067,
+      "state": "settled",
+      "response_id": "gen-1789120547-GsUATpHcAmD7fZxx9qyO"
+    },
+    {
+      "id": 340,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0017056500000000002,
+      "actual": 0.0001305,
+      "state": "settled",
+      "response_id": "gen-1789120559-iJ7848T9H3IdRdSKNN3t"
+    },
+    {
+      "id": 341,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.0018394000000000001,
+      "actual": 0.00017166,
+      "state": "settled",
+      "response_id": "gen-1789120567-NsyUkP8aC31HOs6Soatx"
+    },
+    {
+      "id": 342,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.00422885,
+      "actual": 0.00039906,
+      "state": "settled",
+      "response_id": "gen-1789120567-ZmA0XnxGJDEfv7NtbAkK"
+    },
+    {
+      "id": 343,
+      "label": "project-r1:compressed:chat",
+      "reserved": 0.0022879000000000003,
+      "actual": 0.00020981,
+      "state": "settled",
+      "response_id": "gen-1789120572-F0TRkrEmX0ZPOtURYCmZ"
+    },
+    {
+      "id": 344,
+      "label": "project-r1:full:chat",
+      "reserved": 0.004963100000000001,
+      "actual": 0.000374226,
+      "state": "settled",
+      "response_id": "gen-1789120572-BxyxVhsr87KyPnngz19n"
+    },
+    {
+      "id": 345,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0008187,
+      "actual": 0.00011098,
+      "state": "settled",
+      "response_id": "gen-1789120596-urJnUuqrqWEegxqKhnMq"
+    },
+    {
+      "id": 346,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0008187,
+      "actual": 0.00010058,
+      "state": "settled",
+      "response_id": "gen-1789120596-Opb59OOzVCCgWALiLo6p"
+    },
+    {
+      "id": 347,
+      "label": "personal-r1:compressed:chat",
+      "reserved": 0.00203145,
+      "actual": 0.00016676,
+      "state": "settled",
+      "response_id": "gen-1789120603-Yh5lB5XUWmpEcm6hKwWb"
+    },
+    {
+      "id": 348,
+      "label": "personal-r1:full:chat",
+      "reserved": 0.004504350000000001,
+      "actual": 0.000354652,
+      "state": "settled",
+      "response_id": "gen-1789120604-qMCQxGifiSQcoXJ9mkuF"
+    },
+    {
+      "id": 349,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.00317915,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 350,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 0.00010823,
+      "state": "settled",
+      "response_id": "gen-1789120621-Ex50aAi24EjTvqQF79cc"
+    },
+    {
+      "id": 351,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 0.00010615,
+      "state": "settled",
+      "response_id": "gen-1789120621-2nIG5NTV7OQIHzV6Q7Ma"
+    },
+    {
+      "id": 352,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0010821,
+      "actual": 0.00013137,
+      "state": "settled",
+      "response_id": "gen-1789120628-OSo2qLLJWJdEVPWffSSQ"
+    },
+    {
+      "id": 353,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.00109735,
+      "actual": 0.00011174,
+      "state": "settled",
+      "response_id": "gen-1789120628-aHi8hE4ZTzW8ll9vceYM"
+    },
+    {
+      "id": 354,
+      "label": "project-r2:compressed:summary",
+      "reserved": 0.00161225,
+      "actual": 0.000244169,
+      "state": "settled",
+      "response_id": "gen-1789120630-Swdq9zqn86SFAeWQ4BiM"
+    },
+    {
+      "id": 355,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0016726000000000002,
+      "actual": 0.00022761,
+      "state": "settled",
+      "response_id": "gen-1789120646-wsaZDdRyN1e7nsN7OdNy"
+    },
+    {
+      "id": 356,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.001308,
+      "actual": 0.00018186,
+      "state": "settled",
+      "response_id": "gen-1789120657-FxwnWwCcpud5MUfoKusW"
+    },
+    {
+      "id": 357,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0013322,
+      "actual": 0.00016432,
+      "state": "settled",
+      "response_id": "gen-1789120657-saJZZKdvIocI7Yc9mriN"
+    },
+    {
+      "id": 358,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0010768499999999999,
+      "actual": 0.00014945,
+      "state": "settled",
+      "response_id": "gen-1789120658-8gtP7QliYaUm3NcCse2S"
+    },
+    {
+      "id": 359,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0010833499999999999,
+      "actual": 0.00013648,
+      "state": "settled",
+      "response_id": "gen-1789120658-qZKMpgMA1hznZJZppchw"
+    },
+    {
+      "id": 360,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0019588500000000003,
+      "actual": 0.00026807,
+      "state": "settled",
+      "response_id": "gen-1789120681-5aWjHlCgH7rNc4IifR7m"
+    },
+    {
+      "id": 361,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0036408,
+      "actual": 0.000463524,
+      "state": "settled",
+      "response_id": "gen-1789120681-MMEfVWbZ2oY52aIr32fa"
+    },
+    {
+      "id": 362,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0013648000000000002,
+      "actual": 0.000243584,
+      "state": "settled",
+      "response_id": "gen-1789120690-fABj9brO3WWkuKFFaIQV"
+    },
+    {
+      "id": 363,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00135905,
+      "actual": 0.0001627,
+      "state": "settled",
+      "response_id": "gen-1789120690-sMuzbjTmumsFrPGN5rpi"
+    },
+    {
+      "id": 364,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0015960500000000001,
+      "actual": 0.00023725,
+      "state": "settled",
+      "response_id": "gen-1789120692-WFFaum8MF017EBtCZkdR"
+    },
+    {
+      "id": 365,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0015881500000000002,
+      "actual": 0.00027189,
+      "state": "settled",
+      "response_id": "gen-1789120692-JvMxnGrFsWjyBvKsWrN8"
+    },
+    {
+      "id": 366,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0022959499999999997,
+      "actual": 0.00033516,
+      "state": "settled",
+      "response_id": "gen-1789120733-xlRFAyEyWwXAP1dJbJJu"
+    },
+    {
+      "id": 367,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0040605500000000004,
+      "actual": 0.000439884,
+      "state": "settled",
+      "response_id": "gen-1789120733-cEWqa6a8hSrxJoHxmCPp"
+    },
+    {
+      "id": 368,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0016178499999999999,
+      "actual": 0.00018185,
+      "state": "settled",
+      "response_id": "gen-1789120739-aWeOjnDuDb9wngTFvyEN"
+    },
+    {
+      "id": 369,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0017167,
+      "actual": 0.0002765,
+      "state": "settled",
+      "response_id": "gen-1789120739-qg5HXlYoIjlqz0zCAeTQ"
+    },
+    {
+      "id": 370,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0019273500000000002,
+      "actual": 0.00028475,
+      "state": "settled",
+      "response_id": "gen-1789120743-RG2njVCphBvwjTYVeJNA"
+    },
+    {
+      "id": 371,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0019915500000000004,
+      "actual": 0.00027845,
+      "state": "settled",
+      "response_id": "gen-1789120742-y77xXHVjPFx8GDx7TvSH"
+    },
+    {
+      "id": 372,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0026454,
+      "actual": 0.00039565,
+      "state": "settled",
+      "response_id": "gen-1789120777-azamIt9zztansVRlrqv2"
+    },
+    {
+      "id": 373,
+      "label": "project-r2:full:chat",
+      "reserved": 0.004396,
+      "actual": 0.000543941,
+      "state": "settled",
+      "response_id": "gen-1789120777-uXIostkNIOYZMT0aqVlt"
+    },
+    {
+      "id": 374,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00185095,
+      "actual": 0.00020663,
+      "state": "settled",
+      "response_id": "gen-1789120782-qjuEh3dyMWaLEoqmVp0G"
+    },
+    {
+      "id": 375,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0020362,
+      "actual": 0.00032873,
+      "state": "settled",
+      "response_id": "gen-1789120782-fEGSijvX7ARBkGiQweeA"
+    },
+    {
+      "id": 376,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.00225705,
+      "actual": 0.00030567,
+      "state": "settled",
+      "response_id": "gen-1789120783-oeF2s7XwfMv4WdEJbjmh"
+    },
+    {
+      "id": 377,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.00230825,
+      "actual": 0.00024102,
+      "state": "settled",
+      "response_id": "gen-1789120783-NY93KGvjTFKSf1K6n8RG"
+    },
+    {
+      "id": 378,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0025495500000000003,
+      "actual": 0.00033621,
+      "state": "settled",
+      "response_id": "gen-1789120818-BPJeUPNZlqw694S3ZvHe"
+    },
+    {
+      "id": 379,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0025276000000000005,
+      "actual": 0.00030852,
+      "state": "settled",
+      "response_id": "gen-1789120818-U59DiokElWGyQRWtz64z"
+    },
+    {
+      "id": 380,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0020929499999999997,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 381,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0023821999999999997,
+      "actual": 0.00034743,
+      "state": "settled",
+      "response_id": "gen-1789120827-l5TYmh8EDGFjLDgF6qJt"
+    },
+    {
+      "id": 382,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0020929499999999997,
+      "actual": 0.00022475,
+      "state": "settled",
+      "response_id": "gen-1789120843-YeeMNWKH55Ro4Kld36ub"
+    },
+    {
+      "id": 383,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.00275025,
+      "actual": 0.00040208,
+      "state": "settled",
+      "response_id": "gen-1789120845-UWbCnmVl4vFyBg0P0rH1"
+    },
+    {
+      "id": 384,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0028164,
+      "actual": 0.00037538,
+      "state": "settled",
+      "response_id": "gen-1789120845-kXMa33sbRR5gk3qPgYMc"
+    },
+    {
+      "id": 385,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0030039500000000005,
+      "actual": 0.00029889,
+      "state": "settled",
+      "response_id": "gen-1789120847-2VeU8LMeq1kpvBhVXosL"
+    },
+    {
+      "id": 386,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0048756500000000005,
+      "actual": 0.00032609,
+      "state": "settled",
+      "response_id": "gen-1789120847-XQISMpPYExaZgwRE6uJc"
+    },
+    {
+      "id": 387,
+      "label": "project-r2:compressed:summary",
+      "reserved": 0.0015117000000000002,
+      "actual": 0.000243692,
+      "state": "settled",
+      "response_id": "gen-1789120859-HZZKbwUWFY3iUsLXz0vJ"
+    },
+    {
+      "id": 388,
+      "label": "project-r2:full:chat",
+      "reserved": 0.0050071000000000004,
+      "actual": 0.000469129,
+      "state": "settled",
+      "response_id": "gen-1789120859-5N6aN8qSd7f2LX8mkI3S"
+    },
+    {
+      "id": 389,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0023126,
+      "actual": 0.0002721,
+      "state": "settled",
+      "response_id": "gen-1789120870-DemQxVvhJnfRLpEv9SKL"
+    },
+    {
+      "id": 390,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.00266715,
+      "actual": 0.00046291,
+      "state": "settled",
+      "response_id": "gen-1789120870-8bPuvrFG3YENJJbrF7X8"
+    },
+    {
+      "id": 391,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.00177375,
+      "actual": 0.00024275,
+      "state": "settled",
+      "response_id": "gen-1789120874-uMvKn3niUbVoHBdlnwqX"
+    },
+    {
+      "id": 392,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.00307805,
+      "actual": 0.00031701,
+      "state": "settled",
+      "response_id": "gen-1789120889-XIBsQMiRcwv4QZZqC7SF"
+    },
+    {
+      "id": 393,
+      "label": "personal-r2:compressed:summary",
+      "reserved": 0.0015189000000000001,
+      "actual": 0.000236231,
+      "state": "settled",
+      "response_id": "gen-1789120889-KMrkpe0yXJlJd2NPgE7p"
+    },
+    {
+      "id": 394,
+      "label": "project-r2:compressed:chat",
+      "reserved": 0.0020895,
+      "actual": 0.00018668,
+      "state": "settled",
+      "response_id": "gen-1789120894-J0e9xgNKjUaV70jyJ7Ax"
+    },
+    {
+      "id": 395,
+      "label": "project-r2:full:chat",
+      "reserved": 0.00542875,
+      "actual": 0.000349226,
+      "state": "settled",
+      "response_id": "gen-1789120894-LCrQ3qSAiDVRt8A0CYql"
+    },
+    {
+      "id": 396,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0017312999999999999,
+      "actual": 0.00014493,
+      "state": "settled",
+      "response_id": "gen-1789120903-fxEvA36RYWTEVr1NzYWr"
+    },
+    {
+      "id": 397,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.00186115,
+      "actual": 0.0002152,
+      "state": "settled",
+      "response_id": "gen-1789120911-Z8KiQvoDTiqmirUwsL1W"
+    },
+    {
+      "id": 398,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.00320905,
+      "actual": 0.00036615,
+      "state": "settled",
+      "response_id": "gen-1789120911-dZX2KfrPGYeVrEAJzeQU"
+    },
+    {
+      "id": 399,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0008187,
+      "actual": 9.786e-05,
+      "state": "settled",
+      "response_id": "gen-1789120916-zD9hDrdTC3eSG9m10elV"
+    },
+    {
+      "id": 400,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0008187,
+      "actual": 7.706e-05,
+      "state": "settled",
+      "response_id": "gen-1789120916-KtRpPJV53AbZPvfzsfKB"
+    },
+    {
+      "id": 401,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0025793,
+      "actual": 0.00030748,
+      "state": "settled",
+      "response_id": "gen-1789120930-ruQi7VpvgLOZn5mTApme"
+    },
+    {
+      "id": 402,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0030716,
+      "actual": 0.000450778,
+      "state": "settled",
+      "response_id": "gen-1789120930-oYVm3hHuK0PRP5PlvsaD"
+    },
+    {
+      "id": 403,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0020883500000000005,
+      "actual": 0.00026649,
+      "state": "settled",
+      "response_id": "gen-1789120936-66fISH7VKCywFCe4ie7K"
+    },
+    {
+      "id": 404,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0034074500000000002,
+      "actual": 0.000382588,
+      "state": "settled",
+      "response_id": "gen-1789120936-QXFlOv7RJAJ1YMLv1Y2I"
+    },
+    {
+      "id": 405,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00103455,
+      "actual": 0.00010402,
+      "state": "settled",
+      "response_id": "gen-1789120944-2693cI6TwXSaQUGignb4"
+    },
+    {
+      "id": 406,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0010779000000000001,
+      "actual": 0.00012076,
+      "state": "settled",
+      "response_id": "gen-1789120944-7A2PoBBEScwcEsWBScWA"
+    },
+    {
+      "id": 407,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00125045,
+      "actual": 0.00015088,
+      "state": "settled",
+      "response_id": "gen-1789120969-SZKvSsoLT8ccQcxMbbHY"
+    },
+    {
+      "id": 408,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0013066,
+      "actual": 0.0001849,
+      "state": "settled",
+      "response_id": "gen-1789120969-40A02PC58ZeuIWFoXDlK"
+    },
+    {
+      "id": 409,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0023713000000000002,
+      "actual": 0.00028851,
+      "state": "settled",
+      "response_id": "gen-1789120970-irMR7hqSCCzftgMG2l5B"
+    },
+    {
+      "id": 410,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0036695,
+      "actual": 0.000388043,
+      "state": "settled",
+      "response_id": "gen-1789120970-xspd0vidSIKduSzlofph"
+    },
+    {
+      "id": 411,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0028197,
+      "actual": 0.00025176,
+      "state": "settled",
+      "response_id": "gen-1789120980-JaxYI7uz6k75MVve6oqY"
+    },
+    {
+      "id": 412,
+      "label": "project-r3:compressed:summary",
+      "reserved": 0.00165075,
+      "actual": 0.000519916,
+      "state": "settled",
+      "response_id": "gen-1789120980-bqvf9ZwaaRBibB3fqTEo"
+    },
+    {
+      "id": 413,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0026123500000000003,
+      "actual": 0.00033592,
+      "state": "settled",
+      "response_id": "gen-1789121001-FksxeaNI9klETkQVFPb4"
+    },
+    {
+      "id": 414,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.0039249,
+      "actual": 0.000413884,
+      "state": "settled",
+      "response_id": "gen-1789121001-8tdPPHbUU8aTyeSss6M8"
+    },
+    {
+      "id": 415,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.001507,
+      "actual": 0.00019402,
+      "state": "settled",
+      "response_id": "gen-1789121004-iLvMp0D2HEJdQJQnhimi"
+    },
+    {
+      "id": 416,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0015887,
+      "actual": 0.00023564,
+      "state": "settled",
+      "response_id": "gen-1789121004-gpmx1h4EThYZJHULN86D"
+    },
+    {
+      "id": 417,
+      "label": "personal-r2:compressed:summary",
+      "reserved": 0.0012993000000000002,
+      "actual": 0.00023296,
+      "state": "settled",
+      "response_id": "gen-1789121040-RdMxXQqOXdfgpWqjdwFv"
+    },
+    {
+      "id": 418,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.004229149999999999,
+      "actual": 0.000310592,
+      "state": "settled",
+      "response_id": "gen-1789121040-aMatJa4yB1NeKXEFitC4"
+    },
+    {
+      "id": 419,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0017933,
+      "actual": 0.00025056,
+      "state": "settled",
+      "response_id": "gen-1789121046-3N2zwpzGYbN6DIhjpVhD"
+    },
+    {
+      "id": 420,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00190535,
+      "actual": 0.00027562,
+      "state": "settled",
+      "response_id": "gen-1789121046-bw85yhbNpJEOrtXoRrBW"
+    },
+    {
+      "id": 421,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0017448,
+      "actual": 0.00013532,
+      "state": "settled",
+      "response_id": "gen-1789121048-IcbY4RDJY7xeoHqKDei8"
+    },
+    {
+      "id": 422,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0018753,
+      "actual": 0.00019839,
+      "state": "settled",
+      "response_id": "gen-1789121056-u2m9Uc35YgFrP3mxLR29"
+    },
+    {
+      "id": 423,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.004359700000000001,
+      "actual": 0.000416089,
+      "state": "settled",
+      "response_id": "gen-1789121056-usm8VqKiuYlYg9xYqPtE"
+    },
+    {
+      "id": 424,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0034329,
+      "actual": 0.00030524,
+      "state": "settled",
+      "response_id": "gen-1789121073-xjh8kdAhf6fjdCs0MiUa"
+    },
+    {
+      "id": 425,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0029434500000000002,
+      "actual": 0.000326,
+      "state": "settled",
+      "response_id": "gen-1789121082-AwuhpgjVUwKljKhCckRV"
+    },
+    {
+      "id": 426,
+      "label": "project-r3:compressed:summary",
+      "reserved": 0.0018426000000000002,
+      "actual": 0.000230988,
+      "state": "settled",
+      "response_id": "gen-1789121082-Z7JCbIH9ju7k9XnjUdjh"
+    },
+    {
+      "id": 427,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0021039,
+      "actual": 0.00024549,
+      "state": "settled",
+      "response_id": "gen-1789121084-uOFVAGbXaVe2hw4VF14U"
+    },
+    {
+      "id": 428,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00221255,
+      "actual": 0.00032228,
+      "state": "settled",
+      "response_id": "gen-1789121084-PCQN0UAzTguCfw55lDnj"
+    },
+    {
+      "id": 429,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0018113,
+      "actual": 0.00025392,
+      "state": "settled",
+      "response_id": "gen-1789121093-MHcXhnGXIqrS3ki7CqAU"
+    },
+    {
+      "id": 430,
+      "label": "personal-r2:compressed:chat",
+      "reserved": 0.0020991000000000004,
+      "actual": 0.000110642,
+      "state": "settled",
+      "response_id": "gen-1789121096-lxQUSMBnbYcCnct5cMPz"
+    },
+    {
+      "id": 431,
+      "label": "personal-r2:full:chat",
+      "reserved": 0.004655200000000001,
+      "actual": 0.000328878,
+      "state": "settled",
+      "response_id": "gen-1789121096-wXqIjO21qp2ZQ2pCYt1H"
+    },
+    {
+      "id": 432,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0023263000000000003,
+      "actual": 0.00024923,
+      "state": "settled",
+      "response_id": "gen-1789121110-mUVDE1D2yhZYW18KTsCX"
+    },
+    {
+      "id": 433,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00249915,
+      "actual": 0.00032222,
+      "state": "settled",
+      "response_id": "gen-1789121110-6WVjqh2cr6EgBSM2a47W"
+    },
+    {
+      "id": 434,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0025158000000000003,
+      "actual": 0.00031257,
+      "state": "settled",
+      "response_id": "gen-1789121129-WxeraTcypiAKWRMiLn2e"
+    },
+    {
+      "id": 435,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0027345,
+      "actual": 0.00036399,
+      "state": "settled",
+      "response_id": "gen-1789121129-I4FsrqePKORcnEAYbFyH"
+    },
+    {
+      "id": 436,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0020958500000000002,
+      "actual": 0.00034778,
+      "state": "settled",
+      "response_id": "gen-1789121130-sgjMV2tde97KQszRN1jK"
+    },
+    {
+      "id": 437,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00318525,
+      "actual": 0.00036776,
+      "state": "settled",
+      "response_id": "gen-1789121130-VuZoZhvWxUh8upBcsLTs"
+    },
+    {
+      "id": 438,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00298495,
+      "actual": 0.00031353,
+      "state": "settled",
+      "response_id": "gen-1789121163-f128xuzDwgljgICir9pH"
+    },
+    {
+      "id": 439,
+      "label": "personal-r3:compressed:summary",
+      "reserved": 0.0013656000000000002,
+      "actual": 0.000509,
+      "state": "settled",
+      "response_id": "gen-1789121163-Rqi8f7kwDRE0vzgoArsA"
+    },
+    {
+      "id": 440,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.002501,
+      "actual": 0.00038934,
+      "state": "settled",
+      "response_id": "gen-1789121180-RxbL1qorRpMHAfGRU9TX"
+    },
+    {
+      "id": 441,
+      "label": "project-r3:full:chat",
+      "reserved": 0.003464,
+      "actual": 0.00041288,
+      "state": "settled",
+      "response_id": "gen-1789121181-vYjb76kVwFBFxKSHlUXU"
+    },
+    {
+      "id": 442,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0027623,
+      "actual": 0.00025849,
+      "state": "settled",
+      "response_id": "gen-1789121222-zNHlWtRXVJWKQSaUM2rz"
+    },
+    {
+      "id": 443,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0028609,
+      "actual": 0.00045179,
+      "state": "settled",
+      "response_id": "gen-1789121225-LTHPEXF6g3NKq4Bw7adw"
+    },
+    {
+      "id": 444,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00374765,
+      "actual": 0.000472704,
+      "state": "settled",
+      "response_id": "gen-1789121225-84PtJoxlpkIBQOiNMJW4"
+    },
+    {
+      "id": 445,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.00311645,
+      "actual": 0.00036341,
+      "state": "settled",
+      "response_id": "gen-1789121229-Yq0nOoWG0qcL5jVLcFZv"
+    },
+    {
+      "id": 446,
+      "label": "personal-r3:compressed:summary",
+      "reserved": 0.00149295,
+      "actual": 0.000224536,
+      "state": "settled",
+      "response_id": "gen-1789121229-WOpneJC7bTA6U2NC9mhC"
+    },
+    {
+      "id": 447,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0014629,
+      "actual": 0.00012788,
+      "state": "settled",
+      "response_id": "gen-1789121236-J2DaYDaHQCEFOLDnJd3S"
+    },
+    {
+      "id": 448,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0016615999999999998,
+      "actual": 0.00017749,
+      "state": "settled",
+      "response_id": "gen-1789121249-7JfSzUqPL3aRFw8OfpRg"
+    },
+    {
+      "id": 449,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0033148,
+      "actual": 0.000387295,
+      "state": "settled",
+      "response_id": "gen-1789121249-DRizffBUe2fdr2r6kQkG"
+    },
+    {
+      "id": 450,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.00323915,
+      "actual": 0.000327319,
+      "state": "settled",
+      "response_id": "gen-1789121275-ZigbJSWVaxbg4f7oW2Cy"
+    },
+    {
+      "id": 451,
+      "label": "project-r3:full:chat",
+      "reserved": 0.0041354,
+      "actual": 0.000301977,
+      "state": "settled",
+      "response_id": "gen-1789121275-tBe0Y7l2uRoCxvvwmTq5"
+    },
+    {
+      "id": 452,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.001902,
+      "actual": 0.000184,
+      "state": "settled",
+      "response_id": "gen-1789121279-N1UMvbRHlbtmZTffF0qG"
+    },
+    {
+      "id": 453,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.003587,
+      "actual": 0.00037212,
+      "state": "settled",
+      "response_id": "gen-1789121279-14bRtPFB42C6bEhPiWfW"
+    },
+    {
+      "id": 454,
+      "label": "project-r3:full:chat",
+      "reserved": 0.004260600000000001,
+      "actual": 0.000452032,
+      "state": "settled",
+      "response_id": "gen-1789121285-ZMrk5VtGau3CQbUx9QAR"
+    },
+    {
+      "id": 455,
+      "label": "project-r3:compressed:summary",
+      "reserved": 0.00171615,
+      "actual": 0.000241299,
+      "state": "settled",
+      "response_id": "gen-1789121285-11mbj8246h4dEjZBwM1J"
+    },
+    {
+      "id": 456,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0018338500000000002,
+      "actual": 0.00027963,
+      "state": "settled",
+      "response_id": "gen-1789121295-P3U6sxjN7ltvupJqW7pw"
+    },
+    {
+      "id": 457,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0021071,
+      "actual": 0.00022325,
+      "state": "settled",
+      "response_id": "gen-1789121300-dYRaenyHF4qQDIsgJThM"
+    },
+    {
+      "id": 458,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0038369500000000004,
+      "actual": 0.000427258,
+      "state": "settled",
+      "response_id": "gen-1789121300-ohcW4nvTsmDd5DTqftBk"
+    },
+    {
+      "id": 459,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.002356,
+      "actual": 0.00018633,
+      "state": "settled",
+      "response_id": "gen-1789121328-FTAFh8yiJfHCOxNwFfck"
+    },
+    {
+      "id": 460,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0041769,
+      "actual": 0.000337606,
+      "state": "settled",
+      "response_id": "gen-1789121328-ow25mRUhCGKLcqOn8C4c"
+    },
+    {
+      "id": 461,
+      "label": "project-r3:compressed:chat",
+      "reserved": 0.0021480500000000003,
+      "actual": 0.00023772,
+      "state": "settled",
+      "response_id": "gen-1789121332-4n92hML9WjPOJuooHvMG"
+    },
+    {
+      "id": 462,
+      "label": "project-r3:full:chat",
+      "reserved": 0.00461115,
+      "actual": 0.000340707,
+      "state": "settled",
+      "response_id": "gen-1789121332-n38PkrMWAFpqzu7CZkoP"
+    },
+    {
+      "id": 463,
+      "label": "personal-r3:compressed:summary",
+      "reserved": 0.0011125,
+      "actual": 0.00017061,
+      "state": "settled",
+      "response_id": "gen-1789121339-NFbPRhzKtItiZe8Ds8TV"
+    },
+    {
+      "id": 464,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0043421499999999995,
+      "actual": 0.000428272,
+      "state": "settled",
+      "response_id": "gen-1789121339-DnJQfQJ0z1AGHe75GEdC"
+    },
+    {
+      "id": 465,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.00148845,
+      "actual": 0.0001533,
+      "state": "settled",
+      "response_id": "gen-1789121346-rWINh7T2CvSckrPmdAqs"
+    },
+    {
+      "id": 466,
+      "label": "personal-r3:compressed:chat",
+      "reserved": 0.0017214,
+      "actual": 0.00012955,
+      "state": "settled",
+      "response_id": "gen-1789121374-Ig1UsEMcuypHjSsyrcd4"
+    },
+    {
+      "id": 467,
+      "label": "personal-r3:full:chat",
+      "reserved": 0.0046384,
+      "actual": 0.000344945,
+      "state": "settled",
+      "response_id": "gen-1789121374-KV0vdzRUyiZutSBjNdB8"
+    }
+  ]
+}

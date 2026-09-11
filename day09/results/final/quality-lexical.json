@@ -1,0 +1,541 @@
+{
+  "method": "лексическая сверка, не семантический судья и не человеческая приёмка",
+  "passed": 165,
+  "total": 174,
+  "answers": [
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 9,
+      "side": "full",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 9,
+      "side": "compressed",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 14,
+      "side": "full",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": false
+      },
+      "passed": 4,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 14,
+      "side": "compressed",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 16,
+      "side": "compressed",
+      "checks": {
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true,
+        "отменены воскресенье и 10:00": false
+      },
+      "passed": 3,
+      "total": 4
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 16,
+      "side": "full",
+      "checks": {
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": false,
+        "отменены воскресенье и 10:00": true
+      },
+      "passed": 3,
+      "total": 4
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 9,
+      "side": "full",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 9,
+      "side": "compressed",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 14,
+      "side": "full",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 14,
+      "side": "compressed",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 16,
+      "side": "full",
+      "checks": {
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true,
+        "отменены воскресенье и 10:00": true
+      },
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 16,
+      "side": "compressed",
+      "checks": {
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true,
+        "отменены воскресенье и 10:00": false
+      },
+      "passed": 3,
+      "total": 4
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 9,
+      "side": "full",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 9,
+      "side": "compressed",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 14,
+      "side": "compressed",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 14,
+      "side": "full",
+      "checks": {
+        "имя Роман": true,
+        "город Вроцлав": true,
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 16,
+      "side": "compressed",
+      "checks": {
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true,
+        "отменены воскресенье и 10:00": false
+      },
+      "passed": 3,
+      "total": 4
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 16,
+      "side": "full",
+      "checks": {
+        "чай": true,
+        "без мяса": true,
+        "суббота 11:00": true,
+        "отменены воскресенье и 10:00": true
+      },
+      "passed": 4,
+      "total": 4
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 9,
+      "side": "full",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 9,
+      "side": "compressed",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 14,
+      "side": "full",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": false,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 4,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 14,
+      "side": "compressed",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 16,
+      "side": "compressed",
+      "checks": {
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true,
+        "старый срок 18 октября назван": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 16,
+      "side": "full",
+      "checks": {
+        "бюджет 1200 евро": true,
+        "срок 25 октября": false,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true,
+        "старый срок 18 октября назван": true
+      },
+      "passed": 4,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 9,
+      "side": "full",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 9,
+      "side": "compressed",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 14,
+      "side": "compressed",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 14,
+      "side": "full",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": false,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 4,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 16,
+      "side": "compressed",
+      "checks": {
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true,
+        "старый срок 18 октября назван": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 16,
+      "side": "full",
+      "checks": {
+        "бюджет 1200 евро": true,
+        "срок 25 октября": false,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true,
+        "старый срок 18 октября назван": true
+      },
+      "passed": 4,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 9,
+      "side": "full",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 9,
+      "side": "compressed",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 14,
+      "side": "full",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 14,
+      "side": "compressed",
+      "checks": {
+        "название Маяк": true,
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 16,
+      "side": "full",
+      "checks": {
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true,
+        "старый срок 18 октября назван": true
+      },
+      "passed": 5,
+      "total": 5
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 16,
+      "side": "compressed",
+      "checks": {
+        "бюджет 1200 евро": true,
+        "срок 25 октября": true,
+        "русский и польский": true,
+        "онлайн-оплата исключена (требует проверки отрицания)": true,
+        "старый срок 18 октября назван": true
+      },
+      "passed": 5,
+      "total": 5
+    }
+  ]
+}

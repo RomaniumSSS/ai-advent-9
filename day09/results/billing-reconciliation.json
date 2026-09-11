@@ -1,0 +1,66 @@
+[
+  {
+    "at": "2026-09-11T08:33:47.273027+00:00",
+    "source": "https://openrouter.ai/api/v1/key",
+    "through_ticket": 82,
+    "usage_daily": 0.025481942,
+    "known_success_cost": 0.011588209,
+    "unattributed_upper_bound": 0.013893733,
+    "unresolved_before": [
+      {
+        "id": 5,
+        "reserved": 0.07420032,
+        "state": "unknown"
+      },
+      {
+        "id": 6,
+        "reserved": 0.07420032,
+        "state": "unknown"
+      },
+      {
+        "id": 47,
+        "reserved": 0.07420032,
+        "state": "unknown"
+      },
+      {
+        "id": 54,
+        "reserved": 0.07420032,
+        "state": "unknown"
+      },
+      {
+        "id": 74,
+        "reserved": 0.0008169500000000001,
+        "state": "unknown"
+      },
+      {
+        "id": 75,
+        "reserved": 0.07420032,
+        "state": "unknown"
+      },
+      {
+        "id": 80,
+        "reserved": 0.0010974000000000001,
+        "state": "unknown"
+      },
+      {
+        "id": 81,
+        "reserved": 0.07420032,
+        "state": "unknown"
+      },
+      {
+        "id": 82,
+        "reserved": 0.0010393,
+        "state": "unknown"
+      }
+    ],
+    "pending_untouched": [
+      147,
+      148,
+      149,
+      150,
+      151,
+      152
+    ],
+    "note": "Сверяется старый завершённый префикс. Дневной расход всего ключа включает также более новые вызовы и возможное другое использование, поэтому разница консервативно завышает неизвестный расход префикса. Индивидуальный usage ошибок неизвестен; сверка относится к общему списанию на этот момент."
+  }
+]

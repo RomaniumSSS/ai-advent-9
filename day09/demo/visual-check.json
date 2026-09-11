@@ -1,0 +1,23 @@
+{
+  "environment": "Playwright Chromium, подставная модель, macOS",
+  "sizes": [
+    {
+      "width": 1280,
+      "height": 800,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "horizontal_overflow": false
+    }
+  ],
+  "reload_preserved_summary": true,
+  "both_scenarios": true,
+  "page_errors": []
+}

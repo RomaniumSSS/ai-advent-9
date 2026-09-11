@@ -1,0 +1,331 @@
+[
+  {
+    "scenario": "personal",
+    "repeat": 3,
+    "full_tokens": 81611,
+    "compressed_tokens": 66880,
+    "summary_tokens": 9732,
+    "failed_attempts_without_usage": 0,
+    "token_scope": "successful API responses including all summary attempts with usage",
+    "full_cost": 0.00451135,
+    "compressed_cost": 0.004072127,
+    "savings_percent": 18.050262832216248,
+    "compressions": [
+      {
+        "turn": 9,
+        "applied": true,
+        "before_estimate": 5251,
+        "covered": 10,
+        "error": null,
+        "prompt_tokens": 4572,
+        "completion_tokens": 613,
+        "after_estimate": 2345
+      },
+      {
+        "turn": 14,
+        "applied": true,
+        "before_estimate": 4735,
+        "covered": 20,
+        "error": null,
+        "prompt_tokens": 3953,
+        "completion_tokens": 594,
+        "after_estimate": 2383
+      }
+    ],
+    "checkpoints": [
+      {
+        "turn": 3,
+        "full": {
+          "total": 3734,
+          "input": 1259,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 4155,
+          "input": 1367,
+          "summary": 0
+        }
+      },
+      {
+        "turn": 8,
+        "full": {
+          "total": 23842,
+          "input": 4734,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 27139,
+          "input": 5316,
+          "summary": 0
+        }
+      },
+      {
+        "turn": 9,
+        "full": {
+          "total": 29324,
+          "input": 5389,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 35170,
+          "input": 2737,
+          "summary": 5185
+        }
+      },
+      {
+        "turn": 14,
+        "full": {
+          "total": 64253,
+          "input": 7750,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 59898,
+          "input": 2740,
+          "summary": 9732
+        }
+      },
+      {
+        "turn": 16,
+        "compressed": {
+          "total": 66880,
+          "input": 3410,
+          "summary": 9732
+        },
+        "full": {
+          "total": 81611,
+          "input": 8565,
+          "summary": 0
+        }
+      }
+    ]
+  },
+  {
+    "scenario": "project",
+    "repeat": 2,
+    "full_tokens": 108510,
+    "compressed_tokens": 86123,
+    "summary_tokens": 21570,
+    "failed_attempts_without_usage": 1,
+    "token_scope": "successful API responses including all summary attempts with usage",
+    "full_cost": 0.005626071,
+    "compressed_cost": 0.005504565,
+    "savings_percent": 20.63127822320523,
+    "compressions": [
+      {
+        "turn": 9,
+        "applied": true,
+        "before_estimate": 5325,
+        "covered": 10,
+        "error": null,
+        "prompt_tokens": 4494,
+        "completion_tokens": 469,
+        "after_estimate": 2342
+      },
+      {
+        "turn": 14,
+        "applied": false,
+        "before_estimate": 4566,
+        "covered": 10,
+        "error": "summary слишком длинное или не уменьшает контекст",
+        "prompt_tokens": 4048,
+        "completion_tokens": 884
+      },
+      {
+        "turn": 15,
+        "applied": false,
+        "before_estimate": 4720,
+        "covered": 10,
+        "error": "summary слишком длинное или не уменьшает контекст",
+        "prompt_tokens": 4764,
+        "completion_tokens": 737
+      },
+      {
+        "turn": 16,
+        "applied": false,
+        "before_estimate": 5389,
+        "covered": 10,
+        "error": "summary слишком длинное или не уменьшает контекст",
+        "prompt_tokens": 5498,
+        "completion_tokens": 676
+      }
+    ],
+    "checkpoints": [
+      {
+        "turn": 3,
+        "compressed": {
+          "total": 4668,
+          "input": 1536,
+          "summary": 0
+        },
+        "full": {
+          "total": 4458,
+          "input": 1475,
+          "summary": 0
+        }
+      },
+      {
+        "turn": 8,
+        "compressed": {
+          "total": 27064,
+          "input": 5193,
+          "summary": 0
+        },
+        "full": {
+          "total": 28640,
+          "input": 5844,
+          "summary": 0
+        }
+      },
+      {
+        "turn": 9,
+        "full": {
+          "total": 35789,
+          "input": 7054,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 34772,
+          "input": 2631,
+          "summary": 4963
+        }
+      },
+      {
+        "turn": 14,
+        "full": {
+          "total": 84513,
+          "input": 11030,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 62029,
+          "input": 5133,
+          "summary": 9895
+        }
+      },
+      {
+        "turn": 16,
+        "full": {
+          "total": 108510,
+          "input": 11877,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 86123,
+          "input": 6075,
+          "summary": 21570
+        }
+      }
+    ]
+  },
+  {
+    "scenario": "project",
+    "repeat": 4,
+    "full_tokens": 81436,
+    "compressed_tokens": 95323,
+    "summary_tokens": 18987,
+    "failed_attempts_without_usage": 0,
+    "token_scope": "successful API responses including all summary attempts with usage",
+    "full_cost": 0.0043413769999999996,
+    "compressed_cost": 0.005839102,
+    "savings_percent": -17.052654845522873,
+    "compressions": [
+      {
+        "turn": 9,
+        "applied": true,
+        "before_estimate": 6819,
+        "covered": 10,
+        "error": null,
+        "prompt_tokens": 5320,
+        "completion_tokens": 502,
+        "after_estimate": 3255
+      },
+      {
+        "turn": 14,
+        "applied": false,
+        "before_estimate": 6938,
+        "covered": 10,
+        "error": "summary слишком длинное или не уменьшает контекст",
+        "prompt_tokens": 5424,
+        "completion_tokens": 737
+      },
+      {
+        "turn": 15,
+        "applied": true,
+        "before_estimate": 7104,
+        "covered": 22,
+        "error": null,
+        "prompt_tokens": 6367,
+        "completion_tokens": 637,
+        "after_estimate": 2782
+      }
+    ],
+    "checkpoints": [
+      {
+        "turn": 3,
+        "full": {
+          "total": 3847,
+          "input": 1297,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 4855,
+          "input": 1615,
+          "summary": 0
+        }
+      },
+      {
+        "turn": 8,
+        "compressed": {
+          "total": 32563,
+          "input": 6737,
+          "summary": 0
+        },
+        "full": {
+          "total": 22097,
+          "input": 4234,
+          "summary": 0
+        }
+      },
+      {
+        "turn": 9,
+        "full": {
+          "total": 27240,
+          "input": 5077,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 42069,
+          "input": 3590,
+          "summary": 5822
+        }
+      },
+      {
+        "turn": 14,
+        "full": {
+          "total": 62816,
+          "input": 8162,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 80077,
+          "input": 7654,
+          "summary": 11983
+        }
+      },
+      {
+        "turn": 16,
+        "full": {
+          "total": 81436,
+          "input": 9242,
+          "summary": 0
+        },
+        "compressed": {
+          "total": 95323,
+          "input": 3952,
+          "summary": 18987
+        }
+      }
+    ]
+  }
+]

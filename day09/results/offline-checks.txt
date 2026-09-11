@@ -1,0 +1,22 @@
+2026-09-11, macOS, uv Python 3.12.12. Подставной API и временные SQLite.
+Команда: uv run day09/test_compression.py && uv run day09/test_budget.py && uv run day09/test_web.py && uv run day09/test_resume.py && uv run day09/test_reconcile.py && uv run python -m compileall -q day09 && git diff --check
+Exit code: 0
+
+ok test_context
+ok test_rejected
+ok test_store_failure
+ok test_full
+ok test_unknown
+ok test_invalid
+ok test_default_thresholds
+ok test_summary_api_failure
+ok test_summary_has_no_system_authority
+ok test_restore_in_new_process
+10 групп проверок без API пройдено
+ok: конкурентный резерв, восстановление, неизвестное списание, неизменность лимита
+ok: отказ до сети, неизвестный usage удерживает резерв
+ok: один API-вызов при повторе HTTP, повтор после восстановления, конфликт ID, незавершённый запрос, валидация, Origin, изоляция, занятая панель
+ok: продолжение неполной пары, без дубля успешного ответа, история попыток и неизвестный расход сохранены
+ok: обрезанный сохранённый ответ не дублируется при resume
+{"at": "2026-09-11T10:08:00.635369+00:00", "usage_daily": 0.02, "known_success_cost": 0.01, "unattributed_upper_bound": 0.01}
+ok: старый счётчик отвергнут, сверка префикса сохранена, неизвестный actual не обнулён, активный резерв не изменён

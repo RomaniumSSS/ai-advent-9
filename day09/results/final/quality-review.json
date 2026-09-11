@@ -1,0 +1,418 @@
+{
+  "method": "Семантическая оценка ассистентом сохранённых контрольных ответов. Это не человеческая приёмка. Проверены обязательные поля вопроса, отрицания и актуальность исправлений; неподтверждённые добавления отмечены отдельно.",
+  "human_acceptance": false,
+  "answers": [
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 9,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 9,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 14,
+      "side": "full",
+      "passed": 3,
+      "total": 5,
+      "issues": [
+        "Напиток противоречив: «Чай (предпочитаешь кофе)».",
+        "Актуальным названо отменённое воскресенье 10:00."
+      ],
+      "extra": [
+        "Не ест мясо названо вегетарианством, которого пользователь явно не заявлял."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 14,
+      "side": "compressed",
+      "passed": 4,
+      "total": 5,
+      "issues": [
+        "Напиток противоречив: «чай (предпочитаешь кофе)»."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 16,
+      "side": "full",
+      "passed": 2,
+      "total": 4,
+      "issues": [
+        "Вместо субботы 11:00 актуальным названо воскресенье 10:00.",
+        "Ответ отрицает факт отмены прежнего времени."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 1,
+      "turn": 16,
+      "side": "compressed",
+      "passed": 3,
+      "total": 4,
+      "issues": [
+        "Отмена воскресенья сохранена, но старое время 10:00 не названо."
+      ]
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 9,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 9,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 14,
+      "side": "full",
+      "passed": 4,
+      "total": 5,
+      "issues": [
+        "Актуальным сроком названо 18 октября вместо 25 октября."
+      ],
+      "extra": [
+        "Добавлены неподтверждённые исключения: кабинет клиента, CRM/1С, объём наполнения, доработки после запуска."
+      ]
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 14,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 16,
+      "side": "full",
+      "passed": 3,
+      "total": 5,
+      "issues": [
+        "Актуальным сроком названо 18 октября вместо 25 октября.",
+        "Прямо отрицается отмена 18 октября."
+      ],
+      "extra": [
+        "Предложения про одностраничность, CRM, инструменты и условия доработок выданы за согласованные ограничения."
+      ]
+    },
+    {
+      "scenario": "project",
+      "repeat": 1,
+      "turn": 16,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Канал Telegram/email и оплата только на месте не были явно подтверждены пользователем."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 9,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Предпочтение чая усилено до «кофе не пьёшь»."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 9,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Не ест мясо названо вегетарианством без прямого подтверждения."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 14,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Предпочтение чая усилено до «кофе не пьёшь»."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 14,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Не ест мясо названо вегетарианством без прямого подтверждения."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 16,
+      "side": "full",
+      "passed": 4,
+      "total": 4,
+      "issues": [],
+      "extra": [
+        "Предпочтение чая усилено до отказа от кофе; предложенные вечерние занятия представлены планом. Причина отмены воскресенья придумана."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 2,
+      "turn": 16,
+      "side": "compressed",
+      "passed": 3,
+      "total": 4,
+      "issues": [
+        "Не названо отменённое время 10:00."
+      ],
+      "extra": [
+        "Рацион назван вегетарианством; неподтверждённые идеи перечислены в разделе «Отменено»."
+      ]
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 9,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 9,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 14,
+      "side": "full",
+      "passed": 4,
+      "total": 5,
+      "issues": [
+        "Вместо актуального 25 октября указан старый срок 18 октября."
+      ],
+      "extra": [
+        "Домены, хостинг и тексты исключены без подтверждения пользователя."
+      ]
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 14,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 16,
+      "side": "full",
+      "passed": 4,
+      "total": 5,
+      "issues": [
+        "Новый срок 25 октября не назван; старый верно отменён."
+      ],
+      "extra": [
+        "Админ-панель, статусы, исключение домена и текстов и условия передачи выданы за согласованные."
+      ]
+    },
+    {
+      "scenario": "project",
+      "repeat": 2,
+      "turn": 16,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Исключения автоматических писем и админ-панели пользователь не подтверждал."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 9,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 9,
+      "side": "compressed",
+      "passed": 4,
+      "total": 5,
+      "issues": [
+        "Противоречивый напиток: «чай (предпочитаешь кофе)»."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 14,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Выдуманы текущие суббота 10:20 и 40 минут до выхода; предпочтение чая усилено до «кофе не пьёшь»."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 14,
+      "side": "compressed",
+      "passed": 4,
+      "total": 5,
+      "issues": [
+        "Противоречивый напиток: «чай (предпочитаешь кофе)»."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 16,
+      "side": "full",
+      "passed": 4,
+      "total": 4,
+      "issues": [],
+      "extra": [
+        "Предпочтение чая усилено до «кофе не пьёшь»; предложенные душ и чтение представлены актуальным планом."
+      ]
+    },
+    {
+      "scenario": "personal",
+      "repeat": 3,
+      "turn": 16,
+      "side": "compressed",
+      "passed": 3,
+      "total": 4,
+      "issues": [
+        "Утверждает, что отменённое время не было указано, хотя пользователь назвал 10:00."
+      ]
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 9,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 9,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 14,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 14,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": []
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 16,
+      "side": "full",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Лист ожидания и админ-панель представлены согласованным функционалом без подтверждения."
+      ]
+    },
+    {
+      "scenario": "project",
+      "repeat": 3,
+      "turn": 16,
+      "side": "compressed",
+      "passed": 5,
+      "total": 5,
+      "issues": [],
+      "extra": [
+        "Без выдуманных цен превращено в запрет указывать цены вообще; исключение автоматических писем не подтверждено."
+      ]
+    }
+  ],
+  "totals": {
+    "full": {
+      "passed": 78,
+      "total": 87
+    },
+    "compressed": {
+      "passed": 81,
+      "total": 87
+    }
+  }
+}

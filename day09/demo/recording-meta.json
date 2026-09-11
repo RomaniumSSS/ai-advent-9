@@ -1,0 +1,11 @@
+{
+  "live_wait_seconds": 20.34869329200592,
+  "source_report": "day09/results/openinference/project-r2.json",
+  "seeded_turns": 8,
+  "live_turn": 9,
+  "viewport": [
+    1440,
+    1100
+  ],
+  "page_errors": []
+}
