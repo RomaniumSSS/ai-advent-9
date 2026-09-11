@@ -85,6 +85,21 @@ def test_json_with_prose_around_is_read():
     )
 
 
+def test_kind_marker_matches_prompt():
+    """Бюджет узнаёт служебный вызов по началу промпта, и хранит эту строку у себя.
+
+    Разъехавшись, договорённость не сломала бы ничего заметного: цена памяти
+    просто растворилась бы в счёте за обычные ответы.
+    """
+    from experiment import FACTS_KIND_MARKER
+    from facts import FACTS_SYSTEM_PROMPT
+
+    check(
+        FACTS_SYSTEM_PROMPT.startswith(FACTS_KIND_MARKER),
+        "бюджет узнаёт служебный вызов по началу промпта",
+    )
+
+
 def test_cancelled_decision_has_its_own_key():
     check(
         "отменённое_решение" in FACT_KEYS,
