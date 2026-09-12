@@ -3,6 +3,15 @@
 Состояние работ. Что проект делает — в README и спеках, здесь только продвижение.
 
 ## Сделано
+- [x] 12.09 — **Open Research Watch + private Zapier integration собраны локально**.
+      Новый самостоятельный `zapier-open-research/`: реальные CC0-метаданные OpenAlex,
+      deployable Express/Postgres API, polling + REST hook, upsert, idempotent ledger,
+      search-or-create, автоматический объяснимый рейтинг и Render Blueprint.
+      8 API/unit + 12 harness + 1 live OpenAlex test
+      зелёные; Zapier validate: 26 passed, 0 failed. [Проверка](zapier-open-research/VERIFICATION.md).
+      Следующее (Роман): опубликовать ветку, развернуть Render, выполнить Zapier
+      `register`/`push`, собрать четыре live-скриншота. Upstream audit-риск Zapier Core
+      и прочие границы записаны в [LIMITS](zapier-open-research/LIMITS.md).
 - [x] 12.09 — **день 10: код и живой прогон готовы**, не сдан. `day10/` — три
       стратегии контекста без summary (`strategies.py`), фиксированные ключи
       фактов (`facts.py`), ветки поверх сессий (`branches.py`), панель на 8040

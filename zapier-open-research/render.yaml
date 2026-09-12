@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: open-research-watch-api
+    runtime: node
+    plan: free
+    region: frankfurt
+    rootDir: zapier-open-research
+    buildCommand: npm ci
+    startCommand: npm run migrate --workspace api && npm start --workspace api
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: DATABASE_URL
+        fromDatabase:
+          name: open-research-watch-db
+          property: connectionString
+      - key: API_KEY
+        sync: false
+      - key: HOOK_TARGET_ALLOWLIST
+        value: hooks.zapier.com
+
+databases:
+  - name: open-research-watch-db
+    plan: free
+    region: frankfurt
+    databaseName: open_research_watch
+    user: open_research_watch
+    postgresMajorVersion: "18"

@@ -1,0 +1,16 @@
+{
+  "name": "open-research-watch",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "api",
+    "zapier"
+  ],
+  "scripts": {
+    "test": "npm run test --workspace api && npm run test --workspace zapier",
+    "validate": "npm run validate --workspace zapier"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}
