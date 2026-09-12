@@ -1,0 +1,680 @@
+{
+  "limit": 0.5,
+  "known_cost": 0.012000067,
+  "held_for_unknown": 0.0022555500000000003,
+  "available": 0.485744383,
+  "reservations": [
+    {
+      "id": 1,
+      "label": "run:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 0.00015751,
+      "state": "settled",
+      "response_id": "gen-1789197235-a6GGoWwcNgUO2j92R8L1"
+    },
+    {
+      "id": 2,
+      "label": "run:chat",
+      "reserved": 0.00117105,
+      "actual": 0.00014581,
+      "state": "settled",
+      "response_id": "gen-1789197278-VFxYMjHZzEcECgAXtNcw"
+    },
+    {
+      "id": 3,
+      "label": "run:chat",
+      "reserved": 0.0014386,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 4,
+      "label": "run:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": null,
+      "state": "unknown",
+      "response_id": null
+    },
+    {
+      "id": 5,
+      "label": "run:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 0.00016775,
+      "state": "settled",
+      "response_id": "gen-1789197423-lYAKyOuUgts9Wx4UTgIK"
+    },
+    {
+      "id": 6,
+      "label": "run:chat",
+      "reserved": 0.00117885,
+      "actual": 0.00021376,
+      "state": "settled",
+      "response_id": "gen-1789197520-711lKNKCDp4HZGaIKA65"
+    },
+    {
+      "id": 7,
+      "label": "run:chat",
+      "reserved": 0.0015405500000000001,
+      "actual": 0.00018716,
+      "state": "settled",
+      "response_id": "gen-1789197563-JxxCQdfD1DkPVxYc1ACc"
+    },
+    {
+      "id": 8,
+      "label": "run:chat",
+      "reserved": 0.00196245,
+      "actual": 0.00022448,
+      "state": "settled",
+      "response_id": "gen-1789197616-MOB0eS6cGC4uB5nQap4K"
+    },
+    {
+      "id": 9,
+      "label": "run:chat",
+      "reserved": 0.0023383,
+      "actual": 0.00030324,
+      "state": "settled",
+      "response_id": "gen-1789197659-0kJLOMUpwLkqv6pIxpvi"
+    },
+    {
+      "id": 10,
+      "label": "run:chat",
+      "reserved": 0.0028448,
+      "actual": 0.00034608,
+      "state": "settled",
+      "response_id": "gen-1789197720-ZAIpIXwQmooGfo7FGHdw"
+    },
+    {
+      "id": 11,
+      "label": "run:chat",
+      "reserved": 0.00327175,
+      "actual": 0.000334549,
+      "state": "settled",
+      "response_id": "gen-1789197756-wUgPyQvLhpzhaD8eJCXQ"
+    },
+    {
+      "id": 12,
+      "label": "run:chat",
+      "reserved": 0.003878,
+      "actual": 0.000345709,
+      "state": "settled",
+      "response_id": "gen-1789197823-h0L9Oe4J0mUYM21Scwqx"
+    },
+    {
+      "id": 13,
+      "label": "run:chat",
+      "reserved": 0.0044039,
+      "actual": 0.000152318,
+      "state": "settled",
+      "response_id": "gen-1789197877-QCuNqhMt3Pdhx0aIznQh"
+    },
+    {
+      "id": 14,
+      "label": "run:chat",
+      "reserved": 0.004527700000000001,
+      "actual": 0.000214107,
+      "state": "settled",
+      "response_id": "gen-1789197881-f8lupNoFcvrCdBu38OOl"
+    },
+    {
+      "id": 15,
+      "label": "run:chat",
+      "reserved": 0.004940150000000001,
+      "actual": 0.000254075,
+      "state": "settled",
+      "response_id": "gen-1789197927-0Tfa0kX8Ai84s0rwhRjt"
+    },
+    {
+      "id": 16,
+      "label": "run:chat",
+      "reserved": 0.0053675500000000004,
+      "actual": 0.000254976,
+      "state": "settled",
+      "response_id": "gen-1789197969-z61y9gbK64hiZ3Xo8PhM"
+    },
+    {
+      "id": 17,
+      "label": "run:chat",
+      "reserved": 0.005950400000000001,
+      "actual": 0.00034656,
+      "state": "settled",
+      "response_id": "gen-1789198030-xAoljrZ4iTIpEhNIhD6Z"
+    },
+    {
+      "id": 18,
+      "label": "run:chat",
+      "reserved": 0.0068248,
+      "actual": 4.3168e-05,
+      "state": "settled",
+      "response_id": "gen-1789198111-TdFy71o5yap2OculwvcI"
+    },
+    {
+      "id": 19,
+      "label": "run:chat",
+      "reserved": 0.0069825,
+      "actual": 0.000148408,
+      "state": "settled",
+      "response_id": "gen-1789198117-cqoUlNYbeeVGKHlTniY6"
+    },
+    {
+      "id": 20,
+      "label": "run:chat",
+      "reserved": 0.0073144,
+      "actual": 5.4377e-05,
+      "state": "settled",
+      "response_id": "gen-1789198146-mJzLxTLFUfXUA31oScSF"
+    },
+    {
+      "id": 21,
+      "label": "run:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 4.908e-05,
+      "state": "settled",
+      "response_id": "gen-1789198155-TEOIU748VB9F47p4rPOw"
+    },
+    {
+      "id": 22,
+      "label": "run:chat",
+      "reserved": 0.0010618499999999998,
+      "actual": 6.668e-05,
+      "state": "settled",
+      "response_id": "gen-1789198171-9nPe08QFg9EwN475S7vK"
+    },
+    {
+      "id": 23,
+      "label": "run:chat",
+      "reserved": 0.0013028000000000002,
+      "actual": 9.684e-05,
+      "state": "settled",
+      "response_id": "gen-1789198185-v2W7QNl65ZDlNpa8Q5HA"
+    },
+    {
+      "id": 24,
+      "label": "run:chat",
+      "reserved": 0.00156115,
+      "actual": 0.0001306,
+      "state": "settled",
+      "response_id": "gen-1789198210-PF82IThN49bGaWD3uwmg"
+    },
+    {
+      "id": 25,
+      "label": "run:chat",
+      "reserved": 0.00161015,
+      "actual": 0.0001498,
+      "state": "settled",
+      "response_id": "gen-1789198230-OoxcdecTrZG7dvlXHfen"
+    },
+    {
+      "id": 26,
+      "label": "run:chat",
+      "reserved": 0.00169845,
+      "actual": 0.00015116,
+      "state": "settled",
+      "response_id": "gen-1789198269-M0pGiYu5ykhrQPyBDiut"
+    },
+    {
+      "id": 27,
+      "label": "run:chat",
+      "reserved": 0.0017249000000000001,
+      "actual": 0.000182,
+      "state": "settled",
+      "response_id": "gen-1789198293-OuqdROD2BJiczjTyuVlI"
+    },
+    {
+      "id": 28,
+      "label": "run:chat",
+      "reserved": 0.00181725,
+      "actual": 0.00019064,
+      "state": "settled",
+      "response_id": "gen-1789198322-hYraSaiv8fBkWmcrV9CU"
+    },
+    {
+      "id": 29,
+      "label": "run:chat",
+      "reserved": 0.001853,
+      "actual": 0.00012348,
+      "state": "settled",
+      "response_id": "gen-1789198350-pCIuKqfVG1pm6Y4Ti98y"
+    },
+    {
+      "id": 30,
+      "label": "run:chat",
+      "reserved": 0.0016946,
+      "actual": 0.000144,
+      "state": "settled",
+      "response_id": "gen-1789198354-DSxMj7vVD0rAMkYP7Nfv"
+    },
+    {
+      "id": 31,
+      "label": "run:chat",
+      "reserved": 0.0015948499999999999,
+      "actual": 0.00014748,
+      "state": "settled",
+      "response_id": "gen-1789198373-cYYr1iLUYGtRw4vBLNEz"
+    },
+    {
+      "id": 32,
+      "label": "run:chat",
+      "reserved": 0.0016113000000000002,
+      "actual": 0.00013888,
+      "state": "settled",
+      "response_id": "gen-1789198400-ivjw5uA77eJy2ypbNSLF"
+    },
+    {
+      "id": 33,
+      "label": "run:chat",
+      "reserved": 0.0018093,
+      "actual": 0.00016256,
+      "state": "settled",
+      "response_id": "gen-1789198423-fU7ZJxOMNoo1l7qFz2BQ"
+    },
+    {
+      "id": 34,
+      "label": "run:chat",
+      "reserved": 0.0018347,
+      "actual": 0.00012052,
+      "state": "settled",
+      "response_id": "gen-1789198445-Fmgx7scvFXkwb2LqdgGE"
+    },
+    {
+      "id": 35,
+      "label": "run:chat",
+      "reserved": 0.0016142,
+      "actual": 0.0001638,
+      "state": "settled",
+      "response_id": "gen-1789198451-mpi65HMyW5ZS0xDTWBNe"
+    },
+    {
+      "id": 36,
+      "label": "run:chat",
+      "reserved": 0.00165865,
+      "actual": 0.00010428,
+      "state": "settled",
+      "response_id": "gen-1789198485-XCg6p4PQwZ6jXJViGeYq"
+    },
+    {
+      "id": 37,
+      "label": "run:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 8.092e-05,
+      "state": "settled",
+      "response_id": "gen-1789198492-EGcYLI2oEsW0fgqIjP1q"
+    },
+    {
+      "id": 38,
+      "label": "run:facts",
+      "reserved": 0.0005734000000000001,
+      "actual": 5.608e-05,
+      "state": "settled",
+      "response_id": "gen-1789198520-JRL4LOM3XazOmdE5bh3M"
+    },
+    {
+      "id": 39,
+      "label": "run:chat",
+      "reserved": 0.00123075,
+      "actual": 0.00010816,
+      "state": "settled",
+      "response_id": "gen-1789198522-po8b1ueUlv1QK79lgzxg"
+    },
+    {
+      "id": 40,
+      "label": "run:facts",
+      "reserved": 0.00055345,
+      "actual": 5.42e-05,
+      "state": "settled",
+      "response_id": "gen-1789198547-NIHCIsgYhFvpT9JA1ePO"
+    },
+    {
+      "id": 41,
+      "label": "run:chat",
+      "reserved": 0.0015607000000000002,
+      "actual": 0.00014908,
+      "state": "settled",
+      "response_id": "gen-1789198550-7vyXGlFijZczVAmG5QjF"
+    },
+    {
+      "id": 42,
+      "label": "run:facts",
+      "reserved": 0.0005742999999999999,
+      "actual": 5.672e-05,
+      "state": "settled",
+      "response_id": "gen-1789198576-nRFwcbFURNqBxKWZxjGy"
+    },
+    {
+      "id": 43,
+      "label": "run:chat",
+      "reserved": 0.0018962,
+      "actual": 0.00019384,
+      "state": "settled",
+      "response_id": "gen-1789198579-iTn9KCy47SkrfnbosuPq"
+    },
+    {
+      "id": 44,
+      "label": "run:facts",
+      "reserved": 0.0005944500000000001,
+      "actual": 6.144e-05,
+      "state": "settled",
+      "response_id": "gen-1789198607-4jgdowyV9acNdSOkQvCf"
+    },
+    {
+      "id": 45,
+      "label": "run:chat",
+      "reserved": 0.00190295,
+      "actual": 0.00020588,
+      "state": "settled",
+      "response_id": "gen-1789198610-EM3XPMwIJ3UEQvLB8yG2"
+    },
+    {
+      "id": 46,
+      "label": "run:facts",
+      "reserved": 0.0006425,
+      "actual": 6.388e-05,
+      "state": "settled",
+      "response_id": "gen-1789198643-QiNLeormvMjF2J4ELWdG"
+    },
+    {
+      "id": 47,
+      "label": "run:chat",
+      "reserved": 0.0019882,
+      "actual": 0.00018176,
+      "state": "settled",
+      "response_id": "gen-1789198644-M67hdLuEE1WhJ0BQt1Sq"
+    },
+    {
+      "id": 48,
+      "label": "run:facts",
+      "reserved": 0.00051905,
+      "actual": 4.98e-05,
+      "state": "settled",
+      "response_id": "gen-1789198666-9Vq6RN92leO4ISce93ra"
+    },
+    {
+      "id": 49,
+      "label": "run:chat",
+      "reserved": 0.00193025,
+      "actual": 0.0002046,
+      "state": "settled",
+      "response_id": "gen-1789198669-xHyfzN8XS32rDowtl501"
+    },
+    {
+      "id": 50,
+      "label": "run:facts",
+      "reserved": 0.000628,
+      "actual": 6.8e-05,
+      "state": "settled",
+      "response_id": "gen-1789198699-Zkw4ktetO9xsoM5TRD0a"
+    },
+    {
+      "id": 51,
+      "label": "run:chat",
+      "reserved": 0.00195635,
+      "actual": 0.00018204,
+      "state": "settled",
+      "response_id": "gen-1789198703-dyYUcR561IMi1yROGF0Q"
+    },
+    {
+      "id": 52,
+      "label": "run:facts",
+      "reserved": 0.0005246500000000001,
+      "actual": 5.372e-05,
+      "state": "settled",
+      "response_id": "gen-1789198725-lai2xvbuaAj8y9ZVzVT6"
+    },
+    {
+      "id": 53,
+      "label": "run:chat",
+      "reserved": 0.0018349,
+      "actual": 0.00011412,
+      "state": "settled",
+      "response_id": "gen-1789198728-WNb0e2y9MdNcsHPNimUl"
+    },
+    {
+      "id": 54,
+      "label": "run:facts",
+      "reserved": 0.00037565000000000005,
+      "actual": 2.672e-05,
+      "state": "settled",
+      "response_id": "gen-1789198732-GJFtxVMEntzQKz4twb7S"
+    },
+    {
+      "id": 55,
+      "label": "run:chat",
+      "reserved": 0.00168695,
+      "actual": 0.00014448,
+      "state": "settled",
+      "response_id": "gen-1789198736-J7xfWEMSlD1j1cftizBS"
+    },
+    {
+      "id": 56,
+      "label": "run:facts",
+      "reserved": 0.00055395,
+      "actual": 5.492e-05,
+      "state": "settled",
+      "response_id": "gen-1789198758-jBU35GkicpcFiNg7j2Hn"
+    },
+    {
+      "id": 57,
+      "label": "run:chat",
+      "reserved": 0.0016138,
+      "actual": 0.0001186,
+      "state": "settled",
+      "response_id": "gen-1789198761-Ylrk1drrw5aWspo4d045"
+    },
+    {
+      "id": 58,
+      "label": "run:facts",
+      "reserved": 0.0005273,
+      "actual": 4.66e-05,
+      "state": "settled",
+      "response_id": "gen-1789198780-5M9NSiWqeyEqLO53Fry7"
+    },
+    {
+      "id": 59,
+      "label": "run:chat",
+      "reserved": 0.00161685,
+      "actual": 0.00013008,
+      "state": "settled",
+      "response_id": "gen-1789198783-bPF9Hm1SMJZIp4htjB3Z"
+    },
+    {
+      "id": 60,
+      "label": "run:facts",
+      "reserved": 0.0005656,
+      "actual": 5.728e-05,
+      "state": "settled",
+      "response_id": "gen-1789198806-m4wIA8ZkjfpTxqdKnmqv"
+    },
+    {
+      "id": 61,
+      "label": "run:chat",
+      "reserved": 0.0018032,
+      "actual": 0.00016792,
+      "state": "settled",
+      "response_id": "gen-1789198809-v2Ny5k2QPkpzsPYnxl8g"
+    },
+    {
+      "id": 62,
+      "label": "run:facts",
+      "reserved": 0.0005815,
+      "actual": 5.732e-05,
+      "state": "settled",
+      "response_id": "gen-1789198837-DmpBca95aapSctSPBvMA"
+    },
+    {
+      "id": 63,
+      "label": "run:chat",
+      "reserved": 0.00183185,
+      "actual": 0.00011416,
+      "state": "settled",
+      "response_id": "gen-1789198839-qsTSY6v3cnpDD5TFPn2m"
+    },
+    {
+      "id": 64,
+      "label": "run:facts",
+      "reserved": 0.00039860000000000004,
+      "actual": 2.904e-05,
+      "state": "settled",
+      "response_id": "gen-1789198844-KjZyZ7LtJwgiqWk61FUV"
+    },
+    {
+      "id": 65,
+      "label": "run:chat",
+      "reserved": 0.0017023,
+      "actual": 0.00016144,
+      "state": "settled",
+      "response_id": "gen-1789198848-i7YkvrPOj6j14bqtDOZg"
+    },
+    {
+      "id": 66,
+      "label": "run:facts",
+      "reserved": 0.0005982,
+      "actual": 6.444e-05,
+      "state": "settled",
+      "response_id": "gen-1789198875-YA6JWm26tQiQPjb8aouJ"
+    },
+    {
+      "id": 67,
+      "label": "run:chat",
+      "reserved": 0.0017343,
+      "actual": 0.000105712,
+      "state": "settled",
+      "response_id": "gen-1789198880-3pN29IAicI3azV7yaHM9"
+    },
+    {
+      "id": 68,
+      "label": "run:facts",
+      "reserved": 0.00042145,
+      "actual": 3.244e-05,
+      "state": "settled",
+      "response_id": "gen-1789198888-NQmn7PnX3ADDtfUY67Xm"
+    },
+    {
+      "id": 69,
+      "label": "run:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 6.252e-05,
+      "state": "settled",
+      "response_id": "gen-1789198894-wiOl5A2jlMhmBsl4iV1h"
+    },
+    {
+      "id": 70,
+      "label": "run:chat",
+      "reserved": 0.00110605,
+      "actual": 8.772e-05,
+      "state": "settled",
+      "response_id": "gen-1789198916-IAMEYUjAj11aGEFOXUlZ"
+    },
+    {
+      "id": 71,
+      "label": "run:chat",
+      "reserved": 0.0013905500000000002,
+      "actual": 0.0001308,
+      "state": "settled",
+      "response_id": "gen-1789198936-hHfO59W1AwdgWBQgLXk1"
+    },
+    {
+      "id": 72,
+      "label": "run:chat",
+      "reserved": 0.0017034,
+      "actual": 0.000101624,
+      "state": "settled",
+      "response_id": "gen-1789198963-zPZbRwOPMnmSdtTmL4ik"
+    },
+    {
+      "id": 73,
+      "label": "run:chat",
+      "reserved": 0.00201625,
+      "actual": 0.000120248,
+      "state": "settled",
+      "response_id": "gen-1789198993-95RCQxOBROHWz8ArePuk"
+    },
+    {
+      "id": 74,
+      "label": "run:chat",
+      "reserved": 0.0024019,
+      "actual": 0.00025928,
+      "state": "settled",
+      "response_id": "gen-1789199027-nrL8uaTpcZOMpc4Mtqki"
+    },
+    {
+      "id": 75,
+      "label": "run:chat",
+      "reserved": 0.00276275,
+      "actual": 0.00031296,
+      "state": "settled",
+      "response_id": "gen-1789199059-NuAv10HWRV6UJHRC1yyZ"
+    },
+    {
+      "id": 76,
+      "label": "run:chat",
+      "reserved": 0.00315775,
+      "actual": 0.000349616,
+      "state": "settled",
+      "response_id": "gen-1789199094-wj1BNWtb1mmbNkaPZy11"
+    },
+    {
+      "id": 77,
+      "label": "run:chat",
+      "reserved": 0.0036037000000000005,
+      "actual": 0.000272221,
+      "state": "settled",
+      "response_id": "gen-1789199138-ci1mOcaVToFZAkxWoRmT"
+    },
+    {
+      "id": 78,
+      "label": "run:chat",
+      "reserved": 0.0039521,
+      "actual": 0.000294517,
+      "state": "settled",
+      "response_id": "gen-1789199171-uxfCCyOd8EZit7k5DQfH"
+    },
+    {
+      "id": 79,
+      "label": "run:chat",
+      "reserved": 0.00360465,
+      "actual": 0.000255565,
+      "state": "settled",
+      "response_id": "gen-1789199222-8v9S4pzcnCZ6YMpT7ZK2"
+    },
+    {
+      "id": 80,
+      "label": "run:chat",
+      "reserved": 0.0040943,
+      "actual": 0.000310037,
+      "state": "settled",
+      "response_id": "gen-1789199273-AUKZGdOlYzvdO5mKVFLZ"
+    },
+    {
+      "id": 81,
+      "label": "panel:chat",
+      "reserved": 0.0008169500000000001,
+      "actual": 5.768e-05,
+      "state": "settled",
+      "response_id": "gen-1789199878-i2eZgIEuOJjAjmBK1bez"
+    },
+    {
+      "id": 82,
+      "label": "panel:chat",
+      "reserved": 0.0011205499999999999,
+      "actual": 6.849e-05,
+      "state": "settled",
+      "response_id": "gen-1789200030-ypYSnpe1NWFqtOfyYuIC"
+    },
+    {
+      "id": 83,
+      "label": "video:chat",
+      "reserved": 0.00183375,
+      "actual": 8.451e-05,
+      "state": "settled",
+      "response_id": "gen-1789201137-sQ73tRmDUG0tMixpRm8Y"
+    },
+    {
+      "id": 84,
+      "label": "video:facts",
+      "reserved": 0.00038480000000000003,
+      "actual": 2.105e-05,
+      "state": "settled",
+      "response_id": "gen-1789201142-WtpQJqqF6QxdMLJYPM1h"
+    }
+  ]
+}
