@@ -1,22 +1,16 @@
 # Setup
 
-## 1. Развернуть API из GitHub
+## 1. Развернуть API на VPS
 
-1. Опубликуйте текущую ветку в GitHub. Автоматический push этим проектом не выполняется.
-2. В Render откройте **New → Blueprint**, выберите репозиторий и укажите путь
-   `zapier-open-research/render.yaml`, если это не корень отдельного репозитория.
-3. Создайте ключ: `openssl rand -hex 32`. Передайте его в запрошенную переменную
-   `API_KEY`; не коммитьте и не вставляйте ключ в README или скриншоты.
-4. После deploy откройте корневой URL и `/health`. На корневой странице должен быть
+1. Используйте Docker Compose и Caddy по инструкции [DEPLOY_VPS.md](DEPLOY_VPS.md).
+2. Создайте отдельные ключи: `openssl rand -hex 32` для `API_KEY` и ещё раз для
+   `POSTGRES_PASSWORD`; не коммитьте и не вставляйте их в README или скриншоты.
+3. После deploy откройте корневой URL и `/health`. На корневой странице должен быть
    synthetic-demo banner, а `/health` должен вернуть `{"ok":true}`.
-5. Проверьте auth: `curl -H "x-api-key: $API_KEY" https://YOUR_HOST/v1/me`.
+4. Проверьте auth: `curl -H "x-api-key: $API_KEY" https://YOUR_HOST/v1/me`.
 
-`render.yaml` создаёт free web service и free PostgreSQL во Frankfurt. Миграция
-выполняется идемпотентно в start command: Render не поддерживает отдельный pre-deploy
-command на free web service. Free database
-на Render имеет срок жизни 30 дней, поэтому это demo, а не долговременное production
-хранилище. Для постоянной демонстрации выберите платный Postgres или другой совместимый
-PostgreSQL.
+`render.yaml` оставлен только как воспроизводимый запасной Blueprint. Основной demo
+работает на VPS и не зависит от сна сервиса или срока жизни бесплатной Render DB.
 
 Опционально добавьте в web service `OPENALEX_API_KEY` и `OPENALEX_MAILTO`. Для casual
 запросов OpenAlex допускает работу без ключа, но ключ подходит для стабильного demo.

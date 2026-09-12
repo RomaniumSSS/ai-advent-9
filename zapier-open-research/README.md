@@ -37,7 +37,8 @@ Trigger отдаёт `score`, четыре компонента, текст `sco
 Ссылка выбирается в порядке: open-access URL → DOI → карточка OpenAlex. Это рейтинг
 приоритета для чтения, а не научная экспертиза и не оценка достоверности выводов.
 
-`api/` разворачивается как отдельный сервис с PostgreSQL. `zapier/` загружается
+`api/` разворачивается на VPS как два изолированных Docker-сервиса: API и PostgreSQL.
+Caddy публикует только API по HTTPS; база данных снаружи недоступна. `zapier/` загружается
 в Zapier Platform и обращается к публичному API. На корневой странице API всегда
 показано, что это synthetic portfolio environment. Публикации реальные; сохранённые
 работы, заметки и оценки принадлежат только демонстрационному окружению.
@@ -80,7 +81,8 @@ npm run validate
 документации всё ещё называет `18.5.1`. Core и CLI намеренно зафиксированы на одной
 версии `19.1.0`.
 
-Развёртывание API и подключение private integration описаны в [SETUP.md](SETUP.md).
+Развёртывание API и подключение private integration описаны в [SETUP.md](SETUP.md),
+а серверная схема и команды — в [DEPLOY_VPS.md](DEPLOY_VPS.md).
 Честные ограничения и границы проверки — в [LIMITS.md](LIMITS.md).
 
 ## Источник данных
@@ -101,7 +103,8 @@ zapier-open-research/
 ├── api/          # Express 5, PostgreSQL, OpenAlex proxy, hooks, ledger
 ├── zapier/       # Zapier Platform CLI integration
 ├── screenshots/  # сюда добавляются доказательства ручных Zap runs
-├── render.yaml   # Render Blueprint: web service + PostgreSQL
+├── compose.vps.yml # основной VPS deploy: API + PostgreSQL
+├── render.yaml   # запасной Render Blueprint
 ├── SETUP.md
 └── LIMITS.md
 ```
