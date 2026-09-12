@@ -69,15 +69,20 @@ def switch(agent, session: str) -> None:
 
 
 def branch_list(agent) -> list[dict]:
-    """Ветки файла с пометкой, в какой из них агент сейчас находится."""
+    """Ветки файла с пометкой, в какой из них агент сейчас находится.
+
+    Текущая сессия попадает в список всегда, даже когда веток нет вовсе. Иначе
+    разговор без ветвления показывался бы совсем без кнопки «где я», а после
+    первого `fork` в интерфейсе разом появлялись бы сразу две.
+    """
     if agent.store is None:
         return []
     current = agent.store.session
     rows = [
         dict(row, active=row["session"] == current) for row in agent.store.branches()
     ]
-    parents = {row["parent"] for row in rows}
-    roots = sorted(parents - {row["session"] for row in rows})
+    known = {row["session"] for row in rows}
+    roots = sorted(({row["parent"] for row in rows} | {current}) - known)
     return [
         {
             "session": root,

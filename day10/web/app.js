@@ -1,77 +1,300 @@
+let panel = null,
+	busy = false,
+	pending = null,
+	steps = { project: 0, personal: 0 },
+	scenarios = {};
+const $ = (id) => document.getElementById(id);
+const num = (x) => (x == null ? "?" : x.toLocaleString("ru-RU"));
 
-let states={},busy=false,pending=null,steps={project:0,personal:0},scenarios={};
-const $=id=>document.getElementById(id),num=x=>x==null?'?':x.toLocaleString('ru-RU');
-for(const side of ['left','right']){$('panels').insertAdjacentHTML('beforeend',`<section class="panel"><div class="panel-head"><h2>${side==='left'?'Полная история':'Со сжатием'}</h2><p>${side==='left'?'Весь разговор отправляется каждый раз':'Старая часть заменяется краткой памятью'}</p><div class="metrics" id="metrics-${side}"></div><div class="details" id="details-${side}"></div></div><div class="history" id="history-${side}"></div><div class="status" id="status-${side}" role="status"></div><details class="memory" ${side==='right'?'open':''}><summary>${side==='right'?'Что сохранено в summary':'Как устроен контекст'}</summary><pre id="memory-${side}"></pre></details></section>`)}
-async function api(path,data){const r=await fetch('/api/'+path,data?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}:{});const result=await r.json();if(!r.ok)throw Error(result.error||'Ошибка сервера');return result}
-function render(side,s){states[side]=s;const u=s.usage;$('metrics-'+side).innerHTML=`<div class="metric">Учтено токенов<strong>${num(u.total.tokens)}</strong></div><div class="metric">Из них на summary<strong>${num(u.summary.tokens)}</strong></div><div class="metric">Оценка входа<strong>${num(s.budget.prompt)}</strong></div>`;$('details-'+side).textContent=`Ходов: ${s.turns} · Свежих сообщений: ${s.active_messages} · Покрыто summary: ${s.covered} · Вход / выход API: ${num(u.total.prompt_tokens)} / ${num(u.total.completion_tokens)}`;const h=$('history-'+side);h.replaceChildren();if(!s.history.length){const e=document.createElement('div');e.className='empty';e.textContent='Здесь появится разговор';h.append(e)}for(const m of s.history){const e=document.createElement('div');e.className='message '+m.role;const role=document.createElement('span');role.className='role';role.textContent=m.role==='user'?'Вы':'DeepSeek';e.append(role,document.createTextNode(m.content));h.append(e)}h.scrollTop=h.scrollHeight;$('memory-'+side).textContent=side==='left'?'Системная роль + весь архив сообщений + новый вопрос.':s.summary||'Сжатия ещё не было. Оно начнётся перед следующим вопросом после накопления 16 сообщений.';const event=s.compression_event;if(event){$('status-'+side).textContent=event.error||`Сжатие: оценка контекста ${num(event.before_estimate)} → ${num(event.after_estimate)}`;$('status-'+side).classList.toggle('error',!!event.error)}compare()}
-function compare(){if(!states.left||!states.right)return;const a=states.left.usage.total.tokens,b=states.right.usage.total.tokens;const matched=JSON.stringify(states.left.history.filter(m=>m.role==='user').map(m=>m.content))===JSON.stringify(states.right.history.filter(m=>m.role==='user').map(m=>m.content));$('comparison').textContent=!matched?'Истории вопросов различаются: сравнение пока не является парным.':a>0&&b!=null?`Учтённый расход: ${num(a)} / ${num(b)} токенов. ${a>=b?'Со сжатием меньше':'Со сжатием больше'} на ${Math.abs((a-b)/a*100).toFixed(1)}%. Ответы моделей могут различаться.`:'Расход появится после первых ответов.'}
-function lock(v){busy=v;for(const id of ['send','reset','next','scenario'])$(id).disabled=v||((id==='next'||id==='scenario')&&!!pending);$('question').disabled=v||!!pending;$('send').textContent=pending?'Повторить только неудавшиеся':'Отправить в оба режима'}
-$('chat').onsubmit = async e => {
-  e.preventDefault();
-  if (busy) return;
-  const text = pending?.text || $('question').value.trim();
-  if (!text) return;
-  const sides = pending?.sides || ['left', 'right'];
-  const ids = pending?.ids || Object.fromEntries(sides.map(side => [side, crypto.randomUUID()]));
-  lock(true);
-  const failed = [];
-  const nextIds = {};
-  await Promise.all(sides.map(async side => {
-    const status = $('status-' + side);
-    status.classList.remove('error');
-    status.textContent = 'Ожидаем ответ; при необходимости создаётся summary…';
-    try {
-      const r = await api('chat', {panel: side, text, request_id: ids[side]});
-      render(side, r.state);
-      if (r.error || r.empty) {
-        // Ответ получен: повтор модели — новый запрос, только для этой стороны.
-        failed.push(side);
-        nextIds[side] = crypto.randomUUID();
-        status.textContent = r.error || 'Пустой ответ. Можно повторить эту сторону.';
-        status.classList.add('error');
-      } else if (r.store_error) {
-        status.textContent = 'Ответ получен, но не сохранён: ' + r.store_error;
-        status.classList.add('error');
-      } else if (r.truncated) {
-        status.textContent = 'Ответ обрезан по лимиту; сохранён как есть.';
-      } else if (!r.state.compression_event) {
-        status.textContent = `Ответ за ${r.elapsed} с`;
-      }
-    } catch (err) {
-      // При обрыве HTTP тот же ID возвращает записанный результат без нового API.
-      failed.push(side);
-      nextIds[side] = ids[side];
-      status.textContent = err.message;
-      status.classList.add('error');
-    }
-  }));
-  pending = failed.length ? {text, sides: failed, ids: nextIds} : null;
-  if (!pending) $('question').value = '';
-  lock(false);
+async function api(path, data) {
+	const options = data
+		? {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(data),
+			}
+		: {};
+	const response = await fetch(`/api/${path}`, options);
+	const result = await response.json();
+	if (!response.ok) throw Error(result.error || "Ошибка сервера");
+	return result;
+}
+
+function renderStrategies(state) {
+	const box = $("strategies");
+	box.replaceChildren();
+	for (const item of state.strategies) {
+		const button = document.createElement("button");
+		button.textContent = item.label;
+		button.dataset.name = item.name;
+		button.className = item.name === panel.strategy ? "active" : "";
+		button.onclick = async () => {
+			if (busy) return;
+			lock(true);
+			try {
+				render(await api("strategy", { name: item.name }));
+			} catch (error) {
+				status(error.message, true);
+			} finally {
+				lock(false);
+			}
+		};
+		box.append(button);
+	}
+}
+
+function renderBranches() {
+	const box = $("branches");
+	box.replaceChildren();
+	for (const row of panel.branches) {
+		const button = document.createElement("button");
+		button.textContent = row.session;
+		button.className = row.active ? "active" : "";
+		button.title = row.parent
+			? `Ветка от ${row.parent}, точка ${row.checkpoint}`
+			: "Исходный разговор";
+		button.onclick = async () => {
+			if (busy || row.active) return;
+			lock(true);
+			try {
+				render(await api("switch", { session: row.session }));
+			} catch (error) {
+				status(error.message, true);
+			} finally {
+				lock(false);
+			}
+		};
+		box.append(button);
+	}
+}
+
+function status(text, isError = false) {
+	$("status").textContent = text;
+	$("status").classList.toggle("error", isError);
+}
+
+function render(state) {
+	panel = state;
+	const usage = state.usage;
+	$("panel-title").textContent = `${state.strategy_label} · ${state.session}`;
+	$("metrics").innerHTML =
+		`<div class="metric">Учтено токенов<strong>${num(usage.total.tokens)}</strong></div>` +
+		`<div class="metric">Из них на память<strong>${num(usage.facts.tokens)}</strong></div>` +
+		`<div class="metric">Оценка входа<strong>${num(state.budget.prompt)}</strong></div>` +
+		`<div class="metric">Уйдёт сообщений<strong>${state.sent_messages} / ${state.archived_messages}</strong></div>`;
+	$("details").textContent =
+		`Ходов: ${state.turns} · Вызовов: чат ${usage.chat.calls}, память ${usage.facts.calls} · ` +
+		`Вход / выход API: ${num(usage.total.prompt_tokens)} / ${num(usage.total.completion_tokens)}`;
+	$("strategy-note").textContent =
+		state.strategy === "full"
+			? "вся история в каждом запросе"
+			: `последние ${state.recent_messages} сообщений${state.strategy === "facts" ? " + факты" : ""}`;
+
+	const history = $("history");
+	history.replaceChildren();
+	if (!state.history.length) {
+		const empty = document.createElement("div");
+		empty.className = "empty";
+		empty.textContent = "Здесь появится разговор";
+		history.append(empty);
+	}
+	// Сообщения, которые в модель уже не уезжают, показываются бледными, но
+	// показываются: архив пользователя не режется ни одной стратегией.
+	const keep =
+		state.strategy === "full" ? state.history.length : state.recent_messages;
+	const firstSent = Math.max(0, state.history.length - keep);
+	state.history.forEach((message, index) => {
+		const node = document.createElement("div");
+		node.className = `message ${message.role}${index < firstSent ? " dropped" : ""}`;
+		const role = document.createElement("span");
+		role.className = "role";
+		role.textContent =
+			(message.role === "user" ? "Вы" : "DeepSeek") +
+			(index < firstSent ? " · вне контекста" : "");
+		node.append(role, document.createTextNode(message.content));
+		history.append(node);
+	});
+	history.scrollTop = history.scrollHeight;
+
+	const facts = Object.entries(state.facts);
+	$("facts").textContent = facts.length
+		? facts.map(([key, value]) => `${key}: ${value}`).join("\n")
+		: state.strategy === "facts"
+			? "Память пуста. Она пополнится после следующего ответа."
+			: "Память наполняется только в стратегии Sticky Facts.";
+
+	const event = state.facts_event;
+	if (event)
+		status(
+			event.error || `Память обновлена (revision ${event.revision})`,
+			!!event.error,
+		);
+	renderStrategies({ strategies: window.STRATEGIES });
+	renderBranches();
+}
+
+function lock(value) {
+	busy = value;
+	for (const id of [
+		"send",
+		"reset",
+		"next",
+		"scenario",
+		"branch",
+		"branch-name",
+		"question",
+	])
+		$(id).disabled = value;
+	for (const button of document.querySelectorAll(
+		"#strategies button, #branches button",
+	))
+		button.disabled = value;
+	$("send").textContent = pending ? "Повторить" : "Отправить";
+}
+
+$("chat").onsubmit = async (event) => {
+	event.preventDefault();
+	if (busy) return;
+	const text = pending?.text || $("question").value.trim();
+	if (!text) return;
+	const requestId = pending?.id || crypto.randomUUID();
+	lock(true);
+	status("Ожидаем ответ…");
+	try {
+		const result = await api("chat", { text, request_id: requestId });
+		render(result.state);
+		if (result.error || result.empty) {
+			// Ответ получен: повтор модели — это новый запрос, новый id.
+			pending = { text, id: crypto.randomUUID() };
+			status(result.error || "Пустой ответ. Можно повторить.", true);
+		} else if (result.store_error) {
+			pending = null;
+			status(`Ответ получен, но не сохранён: ${result.store_error}`, true);
+		} else {
+			pending = null;
+			if (!result.state.facts_event) status(`Ответ за ${result.elapsed} с`);
+			$("question").value = "";
+		}
+	} catch (error) {
+		// При обрыве HTTP тот же id возвращает записанный результат без нового вызова.
+		pending = { text, id: requestId };
+		status(error.message, true);
+	} finally {
+		lock(false);
+	}
 };
-$('reset').onclick=async()=>{if(!confirm('Удалить обе истории, summary и расход этого эксперимента?'))return;lock(true);try{for(const panel of ['left','right'])await api('reset',{panel});pending=null;steps={project:0,personal:0};for(const side of ['left','right'])$('status-'+side).textContent='';await refresh()}catch(e){alert(e.message)}finally{lock(false)}};
-$('next').onclick=()=>{if(pending)return;const key=$('scenario').value,items=scenarios[key]?.questions||[];if(steps[key]>=items.length){$('step').textContent='Все вопросы подставлены';return}$('question').value=items[steps[key]++];$('step').textContent=`Вопрос ${steps[key]} / ${items.length}`};
-async function refresh(){const s=await api('state');for(const side of ['left','right'])render(side,s.panels[side])}
-fetch('/api/scenarios').then(r=>r.json()).then(s=>scenarios=s).catch(()=>{});refresh().catch(e=>$('comparison').textContent=e.message);
 
-api('results').then(rows => {
-  const box = $('saved-results');
-  box.replaceChildren();
-  if (!rows.length) { box.textContent = 'Завершённых сравнений пока нет.'; return; }
-  const table = document.createElement('table');
-  const addRow = (values, header = false) => {
-    const tr = document.createElement('tr');
-    for (const value of values) {
-      const td = document.createElement(header ? 'th' : 'td');
-      td.textContent = value; tr.append(td);
-    }
-    table.append(tr);
-  };
-  addRow(['Сценарий', 'Прогон', 'Полная история', 'Со сжатием', 'Экономия токенов', 'Попыток без usage'], true);
-  for (const row of rows) addRow([row.scenario === 'project' ? 'Проект' : 'Беседа', row.repeat,
-    num(row.full_tokens), num(row.compressed_tokens), row.savings_percent.toFixed(1) + '%', row.failed_attempts_without_usage]);
-  box.append(table);
-  const note = document.createElement('p'); note.className = 'table-note';
-  note.textContent = 'Токены успешных API-ответов вместе с summary. Ошибки без usage отмечены отдельно. Отрицательная экономия означает больший расход.';
-  box.append(note);
-}).catch(e => $('saved-results').textContent = e.message);
+$("branch").onclick = async () => {
+	if (busy) return;
+	const name = $("branch-name").value.trim();
+	if (!name) {
+		status("Нужно имя ветки", true);
+		return;
+	}
+	lock(true);
+	try {
+		const result = await api("branch", { name });
+		render(result);
+		$("branch-name").value = "";
+		status(
+			`Создана ветка ${result.created}. Переключитесь, чтобы продолжить в ней.`,
+		);
+	} catch (error) {
+		status(error.message, true);
+	} finally {
+		lock(false);
+	}
+};
+
+$("reset").onclick = async () => {
+	if (!confirm("Удалить историю, память и все ветки этого эксперимента?"))
+		return;
+	lock(true);
+	try {
+		render(await api("reset", {}));
+		pending = null;
+		steps = { project: 0, personal: 0 };
+		$("step").textContent = "";
+		status("");
+	} catch (error) {
+		status(error.message, true);
+	} finally {
+		lock(false);
+	}
+};
+
+$("next").onclick = () => {
+	const key = $("scenario").value;
+	const items = scenarios[key]?.questions || [];
+	if (steps[key] >= items.length) {
+		$("step").textContent = "Все вопросы подставлены";
+		return;
+	}
+	$("question").value = items[steps[key]++];
+	$("step").textContent = `Вопрос ${steps[key]} / ${items.length}`;
+};
+
+async function refresh() {
+	const state = await api("state");
+	window.STRATEGIES = state.strategies;
+	$("hint").textContent =
+		`${state.panel.model} · потолок ответа ${num(state.max_tokens)} токенов`;
+	render(state.panel);
+}
+
+fetch("/api/scenarios")
+	.then((r) => r.json())
+	.then((s) => (scenarios = s))
+	.catch(() => {});
+refresh().catch((error) => status(error.message, true));
+
+api("results")
+	.then((rows) => {
+		const box = $("saved-results");
+		box.replaceChildren();
+		if (!rows.length) {
+			box.textContent = "Завершённых прогонов пока нет.";
+			return;
+		}
+		const table = document.createElement("table");
+		const addRow = (values, header = false) => {
+			const tr = document.createElement("tr");
+			for (const value of values) {
+				const cell = document.createElement(header ? "th" : "td");
+				cell.textContent = value;
+				tr.append(cell);
+			}
+			table.append(tr);
+		};
+		addRow(
+			[
+				"Стратегия",
+				"Ходов",
+				"Вызовов",
+				"Вход",
+				"Выход",
+				"Всего токенов",
+				"Фактов найдено",
+			],
+			true,
+		);
+		for (const row of rows)
+			addRow([
+				row.strategy_label,
+				row.turns,
+				row.calls,
+				num(row.prompt_tokens),
+				num(row.completion_tokens),
+				num(row.tokens),
+				row.facts_found == null
+					? "—"
+					: `${row.facts_found} / ${row.facts_total}`,
+			]);
+		box.append(table);
+		const note = document.createElement("p");
+		note.className = "table-note";
+		note.textContent =
+			"Токены успешных ответов вместе со служебными вызовами памяти. Ошибки без usage в сумму не входят.";
+		box.append(note);
+	})
+	.catch((error) => ($("saved-results").textContent = error.message));

@@ -1,67 +1,63 @@
-"""День 9: два режима диалога рядом на локальном HTTP-сервере.
+"""День 10: панель с переключателем стратегий и ветвлением.
 
-Один вопрос отправляется в независимые сессии полной и сжатой истории.
-Запуск: uv run day09/web.py (127.0.0.1:8039)."""
+Одна панель вместо двух панелей дня 9, и это не упрощение ради экономии. День 9
+сравнивал два режима на одном вопросе, поэтому ему нужны были две независимые
+истории рядом. Здесь сравниваются три стратегии на одном и том же разговоре:
+показать это можно только переключателем, который историю не трогает.
+
+Запуск: uv run day10/web.py (127.0.0.1:8040)."""
 
 import argparse
 import json
-import sys
-import threading
 import re
 import sqlite3
+import sys
+import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from agent import DEFAULT_SYSTEM_PROMPT, Agent, AgentConfig, CompressionConfig  # noqa: E402
+from agent import DEFAULT_SYSTEM_PROMPT, Agent, AgentConfig, StrategyConfig  # noqa: E402
+from branches import branch_list, checkpoint, fork, switch  # noqa: E402
 from models import DEFAULT_MODEL, MAX_TOKENS, MODELS  # noqa: E402
-from scenarios import SCENARIOS
+from scenarios import SCENARIOS  # noqa: E402
 from store import DEFAULT_DB, SqliteStore  # noqa: E402
+from strategies import STRATEGIES, STRATEGY_LABELS  # noqa: E402
 
 PAGE = Path(__file__).parent / "web" / "index.html"
 MAX_BODY_BYTES = 64 * 1024
 MAX_MESSAGE_CHARS = 20_000
 
-# Два агента живут, пока живёт процесс. Замок у каждого свой: два одновременных
-# сообщения в одну панель испортили бы историю, а замок на обе панели сразу мешал
-# бы им работать параллельно — то есть скрывал бы главное, что панель показывает.
-#
-# В отличие от дня 6, словарь наполняется не при импорте, а в main(): агентам
-# теперь нужен путь к базе, а он приходит из аргументов командной строки. Поднять
-# их раньше разбора аргументов означало бы прочитать не тот файл и узнать об этом
-# по пустой истории.
-PANELS: dict[str, Agent] = {}
-_locks: dict[str, threading.Lock] = {}
+# Агент живёт, пока живёт процесс. Замок один: панель тут одна, и два
+# одновременных сообщения в неё испортили бы историю.
+STATE: dict = {}
+_lock = threading.Lock()
 
 
-def build_panels(
-    db_path, sessions: dict[str, str], context_limit: int | None = None
+def build_panel(
+    db_path,
+    session: str,
+    strategy: str = "full",
+    recent_messages: int = 6,
+    context_limit: int | None = None,
 ) -> None:
-    titles = {"left": "Полная история", "right": "Со сжатием"}
-    PANELS.clear()
-    _locks.clear()
-    for side, session in sessions.items():
-        PANELS[side] = Agent(
-            config=AgentConfig(
-                model=DEFAULT_MODEL,
-                system_prompt=DEFAULT_SYSTEM_PROMPT,
-                context_limit=context_limit,
-            ),
-            name=titles[side],
-            compression=CompressionConfig(enabled=side == "right"),
-            store=SqliteStore(db_path, session),
-        )
-        _locks[side] = threading.Lock()
+    STATE["agent"] = Agent(
+        config=AgentConfig(
+            model=DEFAULT_MODEL,
+            system_prompt=DEFAULT_SYSTEM_PROMPT,
+            context_limit=context_limit,
+        ),
+        name="Агент дня 10",
+        strategy=StrategyConfig(name=strategy, recent_messages=recent_messages),
+        store=SqliteStore(db_path, session),
+    )
+    STATE["root"] = session
 
 
 def budget_json(budget) -> dict | None:
-    """Бюджет в вид, который переживёт JSON. None остаётся None.
-
-    Ноль вместо None соврал бы, что запрос ничего не весит; пустой словарь на
-    странице пришлось бы отличать от настоящего нуля прямо в шаблоне.
-    """
+    """Бюджет в вид, который переживёт JSON. None остаётся None."""
     if budget is None:
         return None
     return {
@@ -80,56 +76,52 @@ def budget_json(budget) -> dict | None:
     }
 
 
-def panel_state(name: str) -> dict:
-    agent = PANELS[name]
+def panel_state() -> dict:
+    agent = STATE["agent"]
     return {
         "name": agent.name,
         "model": agent.config.model,
         "system_prompt": agent.config.system_prompt,
-        "temperature": agent.config.temperature,
         "max_tokens": agent.config.max_tokens,
         "turns": agent.turns,
         "history": agent.history,
-        # Сессия и число восстановленных ходов уезжают на страницу не для красоты:
-        # без них панель с полной перепиской и панель, только что поднявшая ту же
-        # переписку с диска, выглядят одинаково — а это разные вещи.
         "session": agent.store.session,
         "restored_turns": agent.restored_turns,
         "context_limit": agent.config.context_limit,
         "usage_summary": agent.store.stats(),
         "usage": agent.store.usage_by_kind(),
-        "summary": agent.summary,
-        "covered": agent.covered,
-        "active_messages": len(agent.history) - (agent.covered if agent.compression.enabled else 0),
-        "compression_event": agent.compression_event,
-        "keep_messages": agent.compression.keep_messages,
-        "batch_messages": agent.compression.batch_messages,
-        # Вес запроса, который уедет, если написать в эту панель прямо сейчас.
-        # Считается на пустой вопрос: интересен вес разговора, а не фразы.
+        "strategy": agent.strategy.name,
+        "strategy_label": agent.strategy.label,
+        "recent_messages": agent.strategy.recent_messages,
+        "facts": agent.facts.values,
+        "facts_revision": agent.facts.revision,
+        "facts_event": agent.facts_event,
+        "branches": branch_list(agent),
+        "checkpoint": checkpoint(agent),
+        # Сколько сообщений архива реально уедет в модель на следующем ходу.
+        # Именно этим стратегии и отличаются: число ходов у них одинаковое.
+        "sent_messages": len(agent.context_history()),
+        "archived_messages": len(agent.history),
         "budget": budget_json(agent.budget("")),
     }
 
 
-def snapshot(name):
-    with _locks[name]:
-        return panel_state(name)
-
-
 def state() -> dict:
     """Всё, что нужно странице при загрузке. Ни одного обращения к API."""
-    return {
-        "models": {key: entry["params"] for key, entry in MODELS.items()},
-        "max_tokens": MAX_TOKENS,
-        "panels": {name: snapshot(name) for name in PANELS},
-    }
+    with _lock:
+        return {
+            "models": {key: entry["params"] for key, entry in MODELS.items()},
+            "max_tokens": MAX_TOKENS,
+            "strategies": [
+                {"name": name, "label": STRATEGY_LABELS[name]} for name in STRATEGIES
+            ],
+            "panel": panel_state(),
+        }
 
 
 def validate_chat(payload: dict) -> tuple[dict | None, str | None]:
     if not isinstance(payload, dict):
         return None, "тело JSON должно быть объектом"
-    panel = payload.get("panel")
-    if not isinstance(panel, str) or panel not in PANELS:
-        return None, "нет такой панели"
     text_value = payload.get("text")
     if not isinstance(text_value, str):
         return None, "сообщение должно быть строкой"
@@ -143,9 +135,11 @@ def validate_chat(payload: dict) -> tuple[dict | None, str | None]:
     if len(text) > MAX_MESSAGE_CHARS:
         return None, f"сообщение длиннее {MAX_MESSAGE_CHARS} символов"
     request_id = payload.get("request_id")
-    if not isinstance(request_id, str) or not re.fullmatch(r"[a-zA-Z0-9-]{1,80}", request_id):
+    if not isinstance(request_id, str) or not re.fullmatch(
+        r"[a-zA-Z0-9-]{1,80}", request_id
+    ):
         return None, "нужен уникальный request_id"
-    return {"panel": panel, "text": text, "request_id": request_id}, None
+    return {"text": text, "request_id": request_id}, None
 
 
 def same_origin(origin: str | None, host: str | None) -> bool:
@@ -181,23 +175,23 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def send_file(self, path: Path, content_type: str) -> None:
+        body = path.read_bytes()
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_GET(self) -> None:
         if self.path in ("/", "/index.html"):
-            body = PAGE.read_bytes()
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Content-Length", str(len(body)))
-            self.end_headers()
-            self.wfile.write(body)
+            self.send_file(PAGE, "text/html; charset=utf-8")
         elif self.path == "/app.js":
-            body = (PAGE.parent / "app.js").read_bytes()
-            self.send_response(200)
-            self.send_header("Content-Type", "application/javascript; charset=utf-8")
-            self.send_header("Content-Length", str(len(body)))
-            self.end_headers()
-            self.wfile.write(body)
+            self.send_file(
+                PAGE.parent / "app.js", "application/javascript; charset=utf-8"
+            )
         elif self.path == "/api/results":
-            report = PAGE.parent.parent / "results" / "final" / "analysis.json"
+            report = PAGE.parent.parent / "results" / "comparison.json"
             self.send_json(json.loads(report.read_text()) if report.exists() else [])
         elif self.path == "/api/scenarios":
             self.send_json(SCENARIOS)
@@ -220,7 +214,7 @@ class Handler(BaseHTTPRequestHandler):
         return payload, None
 
     def guard(self) -> str | None:
-        """Общая охрана платных endpoint-ов. Возвращает причину отказа или None."""
+        """Общая охрана endpoint-ов, меняющих состояние."""
         if self.headers.get_content_type() != "application/json":
             return "нужен Content-Type: application/json"
         if not is_loopback_host(self.headers.get("Host"), self.server.server_port):
@@ -230,7 +224,15 @@ class Handler(BaseHTTPRequestHandler):
         return None
 
     def do_POST(self) -> None:
-        if self.path not in ("/api/chat", "/api/reset"):
+        routes = {
+            "/api/chat": self.handle_chat,
+            "/api/reset": self.handle_reset,
+            "/api/strategy": self.handle_strategy,
+            "/api/branch": self.handle_branch,
+            "/api/switch": self.handle_switch,
+        }
+        handler = routes.get(self.path)
+        if handler is None:
             self.send_json({"error": "нет такого адреса"}, 404)
             return
 
@@ -243,56 +245,124 @@ class Handler(BaseHTTPRequestHandler):
         if error or payload is None:
             self.send_json({"error": error or "пустое тело"}, 400)
             return
-
-        if self.path == "/api/chat":
-            self.handle_chat(payload)
-        else:
-            self.handle_reset(payload)
+        handler(payload)
 
     def handle_chat(self, payload: dict) -> None:
         args, error = validate_chat(payload)
         if error or args is None:
             self.send_json({"error": error or "не разобрали запрос"}, 400)
             return
-
-        panel = args["panel"]
-        if not _locks[panel].acquire(blocking=False):
-            self.send_json({"error": "эта панель уже ждёт ответ"}, 409)
+        if not _lock.acquire(blocking=False):
+            self.send_json({"error": "панель уже ждёт ответ"}, 409)
             return
         try:
-            agent = PANELS[panel]
+            agent = STATE["agent"]
             cached = agent.store.begin_request(args["request_id"], args["text"])
             if cached is not None:
-                result = {**cached, "state": panel_state(panel)}
+                result = {**cached, "state": panel_state()}
             else:
                 reply = agent.ask(args["text"])
-                result = {"panel": panel, "text": reply.text, "elapsed": reply.elapsed,
-                          "error": reply.error, "empty": reply.empty, "truncated": reply.truncated,
-                          "store_error": reply.store_error, "state": panel_state(panel)}
+                result = {
+                    "text": reply.text,
+                    "elapsed": reply.elapsed,
+                    "error": reply.error,
+                    "empty": reply.empty,
+                    "truncated": reply.truncated,
+                    "store_error": reply.store_error,
+                    "state": panel_state(),
+                }
                 agent.store.finish_request(args["request_id"], result)
         except (ValueError, RuntimeError, OSError, sqlite3.Error) as error:
             self.send_json({"error": str(error)}, 409)
             return
         finally:
-            _locks[panel].release()
+            _lock.release()
         self.send_json(result)
 
-    def handle_reset(self, payload: dict) -> None:
-        panel = payload.get("panel") if isinstance(payload, dict) else None
-        if not isinstance(panel, str) or panel not in PANELS:
-            self.send_json({"error": "нет такой панели"}, 400)
-            return
-        if not _locks[panel].acquire(blocking=False):
+    def handle_strategy(self, payload: dict) -> None:
+        name = payload.get("name")
+        recent = payload.get("recent_messages")
+        if not _lock.acquire(blocking=False):
             self.send_json({"error": "панель ещё отвечает"}, 409)
             return
         try:
-            PANELS[panel].reset()
-            result = panel_state(panel)
+            STATE["agent"].switch_strategy(name, recent)
+            result = panel_state()
+        except (TypeError, ValueError) as error:
+            self.send_json({"error": str(error)}, 400)
+            return
+        finally:
+            _lock.release()
+        self.send_json(result)
+
+    def handle_branch(self, payload: dict) -> None:
+        name = payload.get("name")
+        point = payload.get("checkpoint")
+        if not isinstance(name, str):
+            self.send_json({"error": "имя ветки должно быть строкой"}, 400)
+            return
+        if point is not None and (isinstance(point, bool) or type(point) is not int):
+            self.send_json({"error": "checkpoint должен быть целым числом"}, 400)
+            return
+        if not _lock.acquire(blocking=False):
+            self.send_json({"error": "панель ещё отвечает"}, 409)
+            return
+        try:
+            session = fork(STATE["agent"], name, point)
+            result = {"created": session, **panel_state()}
+        except (ValueError, RuntimeError, sqlite3.Error) as error:
+            self.send_json({"error": str(error)}, 400)
+            return
+        finally:
+            _lock.release()
+        self.send_json(result)
+
+    def handle_switch(self, payload: dict) -> None:
+        session = payload.get("session")
+        if not isinstance(session, str):
+            self.send_json({"error": "имя сессии должно быть строкой"}, 400)
+            return
+        known = {row["session"] for row in branch_list(STATE["agent"])}
+        if session not in known:
+            self.send_json({"error": "нет такой ветки"}, 400)
+            return
+        if not _lock.acquire(blocking=False):
+            self.send_json({"error": "панель ещё отвечает"}, 409)
+            return
+        try:
+            switch(STATE["agent"], session)
+            result = panel_state()
+        except (ValueError, RuntimeError, OSError, sqlite3.Error) as error:
+            self.send_json({"error": str(error)}, 400)
+            return
+        finally:
+            _lock.release()
+        self.send_json(result)
+
+    def handle_reset(self, payload: dict) -> None:
+        if not _lock.acquire(blocking=False):
+            self.send_json({"error": "панель ещё отвечает"}, 409)
+            return
+        try:
+            agent = STATE["agent"]
+            known = [row["session"] for row in branch_list(agent)]
+            # Сначала вернуться в исходную сессию, потом чистить. Обратный
+            # порядок оставил бы агента стоять в ветке, которую только что стёрли.
+            if agent.store.session != STATE["root"]:
+                switch(agent, STATE["root"])
+            # Ветки — отдельные сессии, и сброс текущей их не касается. Чистим
+            # весь эксперимент: иначе «новый эксперимент» оставил бы позади ветки
+            # стёртого разговора, продолжающиеся с несуществующего места.
+            for session in known:
+                if session != agent.store.session:
+                    SqliteStore(agent.store.path, session).clear()
+            agent.reset()
+            result = panel_state()
         except (OSError, sqlite3.Error) as error:
             self.send_json({"error": f"не удалось очистить историю: {error}"}, 503)
             return
         finally:
-            _locks[panel].release()
+            _lock.release()
         self.send_json(result)
 
 
@@ -301,33 +371,36 @@ def main() -> None:
     parser.add_argument("--env-file", type=Path)
     parser.add_argument("--ledger", type=Path)
     parser.add_argument("--budget", type=float, default=0.50)
-    parser.add_argument("--port", type=int, default=8039)
+    parser.add_argument("--port", type=int, default=8040)
     parser.add_argument("--db", default=DEFAULT_DB, help="файл базы с историей")
-    parser.add_argument("--left", default="left", help="сессия левой панели")
-    parser.add_argument("--right", default="right", help="сессия правой панели")
+    parser.add_argument("--session", default="main", help="сессия панели")
+    parser.add_argument("--strategy", default="full", choices=STRATEGIES)
+    parser.add_argument(
+        "--recent",
+        type=int,
+        default=6,
+        help="сколько последних сообщений держать в контексте",
+    )
     parser.add_argument(
         "--context-limit",
         type=int,
         default=None,
-        help="окно модели в токенах: вход и ответ вместе. Общее на обе панели",
+        help="окно модели в токенах: вход и ответ вместе",
     )
     args = parser.parse_args()
 
-    if args.left == args.right:
-        parser.error("панелям нужны разные сессии, иначе они станут одним разговором")
-
     from dotenv import load_dotenv
     from experiment import BudgetLedger, MeasuredClient, real_client, DEFAULT_LEDGER
+
     load_dotenv(args.env_file) if args.env_file else load_dotenv()
     ledger = BudgetLedger(args.ledger or DEFAULT_LEDGER, args.budget)
-    build_panels(args.db, {"left": args.left, "right": args.right}, args.context_limit)
-    for side, agent in PANELS.items():
-        agent.client = MeasuredClient(real_client(), ledger, "panel:"+side)
+    build_panel(args.db, args.session, args.strategy, args.recent, args.context_limit)
+    STATE["agent"].client = MeasuredClient(real_client(), ledger, "panel")
 
-    for side, agent in PANELS.items():
-        restored = agent.restored_turns
-        note = f"восстановлено ходов: {restored}" if restored else "новый разговор"
-        print(f"{side:>5}: сессия {agent.store.session!r} — {note}")
+    agent = STATE["agent"]
+    restored = agent.restored_turns
+    note = f"восстановлено ходов: {restored}" if restored else "новый разговор"
+    print(f"сессия {agent.store.session!r} — {note}, стратегия {agent.strategy.label}")
 
     server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
     print(f"история: {args.db}")
