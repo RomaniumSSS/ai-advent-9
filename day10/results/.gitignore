@@ -1,0 +1,5 @@
+budget.db
+runs.db
+*.db-wal
+*.db-shm
+history.db

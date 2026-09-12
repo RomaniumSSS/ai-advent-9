@@ -1,46 +1,98 @@
-"""Лексическая сверка заранее заданных фактов; семантическое ревью — отдельно.
+"""Лексическая сверка заранее заданных фактов в контрольных ответах.
 
-Совпадение слова не доказывает правильность утверждения. Контрольные ответы
-сохраняются целиком для проверки отрицаний, добавленных условий и источников.
+Совпадение слова не доказывает правильность утверждения: «срок не обсуждался»
+и «срок 25 октября» для регулярки различаются, а «онлайн-оплата не нужна» и
+«добавим онлайн-оплату» — нет. Поэтому ответы сохраняются целиком, а результат
+называется проверкой, а не оценкой качества. Семантическое чтение — руками.
+
+Сверяются только контрольные ходы: 9-й и 14-й прямо просят назвать факты,
+16-й — перечислить ограничения и отменённый срок. В остальных ответах памяти
+взяться неоткуда, и требовать её там значило бы штрафовать за чужой вопрос.
 """
+
 import json
 import re
+import sys
 from pathlib import Path
-ROOT=Path(__file__).parent/'results'/'final'
 
-def checks(scenario,text,turn):
-    t=text.casefold().replace('*','')
-    has=lambda pattern:bool(re.search(pattern,t))
-    if scenario=='project':
-        result={'название Маяк':has('маяк'),'бюджет 1200 евро':has(r'1[\s,]?200') and has(r'евро|€|\beur\b'),
-                'срок 25 октября':has(r'25\s*(?:октябр|[./]10)'),
-                'русский и польский':has('русск') and has('польск'),
-                'онлайн-оплата исключена (требует проверки отрицания)':has(r'онлайн.{0,2}оплат')}
-        if turn==16:
-            # Финальный вопрос просит ограничения и отменённый срок, не название.
-            result.pop('название Маяк')
-            result['старый срок 18 октября назван']=has(r'18\s*(?:октябр|[./]10)')
-    else:
-        result={'имя Роман':has('роман'),'город Вроцлав':has('вроцлав'),'чай':has('чай'),
-                'без мяса':has(r'не.{0,15}мяс|без\s+мяс|вегетариан'),
-                'суббота 11:00':has('суббот') and has(r'11[:.]00|11\s*час')}
-        if turn==16:
-            # Здесь спрашивают предпочтения и планы, а не имя и город.
-            result.pop('имя Роман');result.pop('город Вроцлав')
-            result['отменены воскресенье и 10:00']=has('воскрес') and has(r'10[:.]00|10\s*час')
+sys.path.insert(0, str(Path(__file__).parent))
+
+from strategies import STRATEGY_LABELS  # noqa: E402
+
+RESULTS = Path(__file__).parent / "results"
+
+
+def checks(text: str, turn: int) -> dict:
+    normalized = text.casefold().replace("*", "")
+
+    def has(pattern):
+        return bool(re.search(pattern, normalized))
+
+    result = {
+        "название Маяк": has("маяк"),
+        "бюджет 1200 евро": has(r"1[\s,]?200") and has(r"евро|€|\beur\b"),
+        "актуальный срок 25 октября": has(r"25\s*(?:октябр|[./]10)"),
+        "языки русский и польский": has("русск") and has("польск"),
+        "онлайн-оплата упомянута (отрицание проверяется глазами)": has(
+            r"онлайн.{0,2}оплат"
+        ),
+    }
+    if turn == 16:
+        # Финальный вопрос просит ограничения и отменённый срок, а не название.
+        result.pop("название Маяк")
+        result["отменённый срок 18 октября назван"] = has(r"18\s*(?:октябр|[./]10)")
     return result
 
-def main():
-    records=json.loads((ROOT/'control-answers.json').read_text())
-    results=[]
-    for row in records:
-        found=checks(row['scenario'],row['answer'],row['turn'])
-        results.append({k:row[k] for k in ('scenario','repeat','turn','side')}|
-                       {'checks':found,'passed':sum(found.values()),'total':len(found)})
-    output={'method':'лексическая сверка, не семантический судья и не человеческая приёмка',
-            'passed':sum(r['passed'] for r in results),'total':sum(r['total'] for r in results),'answers':results}
-    (ROOT/'quality-lexical.json').write_text(json.dumps(output,ensure_ascii=False,indent=2)+'\n')
-    print('Лексическая сверка:',output['passed'],'/',output['total'])
-    for r in results:
-        if r['passed']<r['total']:print(r)
-if __name__=='__main__':main()
+
+def main() -> None:
+    rows = []
+    for path in sorted(RESULTS.glob("project-*.json")):
+        if path.stem.endswith("branching"):
+            continue
+        data = json.loads(path.read_text())
+        for row in data["rows"]:
+            if not row["control"]:
+                continue
+            found = checks(row["answer"], row["turn"])
+            rows.append(
+                {
+                    "strategy": data["strategy"],
+                    "strategy_label": data["strategy_label"],
+                    "turn": row["turn"],
+                    "checks": found,
+                    "passed": sum(found.values()),
+                    "total": len(found),
+                    "answer": row["answer"],
+                }
+            )
+    if not rows:
+        print("нет результатов прогонов: сначала run_strategies.py")
+        return
+
+    by_strategy = {}
+    for row in rows:
+        entry = by_strategy.setdefault(row["strategy"], {"passed": 0, "total": 0})
+        entry["passed"] += row["passed"]
+        entry["total"] += row["total"]
+
+    output = {
+        "method": "лексическая сверка, не семантический судья и не человеческая приёмка",
+        "control_turns": sorted({row["turn"] for row in rows}),
+        "by_strategy": by_strategy,
+        "answers": rows,
+    }
+    (RESULTS / "quality-lexical.json").write_text(
+        json.dumps(output, ensure_ascii=False, indent=2) + "\n"
+    )
+    for strategy, entry in by_strategy.items():
+        print(f"{STRATEGY_LABELS[strategy]:<16} {entry['passed']} / {entry['total']}")
+    for row in rows:
+        if row["passed"] < row["total"]:
+            missing = [name for name, ok in row["checks"].items() if not ok]
+            print(
+                f"  {row['strategy']} ход {row['turn']}: не найдено — {'; '.join(missing)}"
+            )
+
+
+if __name__ == "__main__":
+    main()
