@@ -14,12 +14,13 @@
 | Ошибки различаются | 401, missing field, malformed hook и 429 через harness | clear auth error, HaltedError, HaltedError, ThrottledError |
 | Integration допустима схемой | отдельный `npm run validate` | 26 checks passed, 0 failed, 0 publishing warnings, 4 advisory warnings |
 | Зависимости устанавливаются из lock | `npm ci --dry-run` | success |
-| Render YAML читается | разбор YAML и сверка web/database nodes | success; live Render deploy не выполнялся |
+| VPS stack запускается | Docker build + Compose с настоящим PostgreSQL на Ubuntu 24.04 | API и DB запущены; DB healthy, API только на `127.0.0.1:8050` |
+| API доступен Zapier | внешний HTTPS-запрос к Caddy, auth и два polling-запроса | health 200; invalid key 401; 3 real works; одинаковые ID |
 
 Итог последнего полного локального прогона после добавления автоматического рейтинга:
 8 API/unit tests и 12 Zapier harness tests passed. Live OpenAlex test: 1 passed.
 Окружение: macOS arm64, Node.js 24.11.1;
-целевой runtime в Blueprint — Node.js 22.12.0.
+контейнер VPS — Node.js 22, VPS — Ubuntu 24.04 amd64.
 
 ## Что review нашёл и исправил
 
@@ -42,11 +43,11 @@
 
 ## Непроверенное
 
-- deploy на Render и настоящий PostgreSQL;
 - `register`, `env:set`, `push` и connection в Zapier;
 - два live Zap и их run history;
 - deduplication и replay через фактический Zapier scheduler/runtime;
 - concurrency, >100 results between polls и durable webhook delivery.
 
-Эти пункты нельзя честно закрыть локальным harness. Точные ручные шаги и имена
-скриншотов находятся в `SETUP.md`.
+API развёрнут по адресу `https://research.89.167.40.172.sslip.io`; секреты хранятся
+только на VPS. Оставшиеся пункты нельзя честно закрыть без Zapier account/runtime.
+Точные ручные шаги и имена скриншотов находятся в `SETUP.md`.

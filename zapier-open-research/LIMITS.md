@@ -1,7 +1,7 @@
 # Limits and verification boundary
 
 - Интеграция private и не публиковалась в Zapier App Directory.
-- API и Zapier integration не разворачивались из этой рабочей сессии.
+- API и PostgreSQL развёрнуты на личном VPS; Zapier integration ещё не загружена.
 - В Zapier account не создавались connections или Zaps; скриншотов live run пока нет.
 - Метаданные публикаций реальные и получаются из OpenAlex CC0. Saved works, notes,
   review scores и API account — демонстрационные данные.
@@ -9,9 +9,10 @@
   открытому доступу и citation count. Он не измеряет научное качество, истинность,
   peer-review status или соответствие конкретному исследовательскому протоколу.
 - Локально проверены API contract-сценарии и Zapier harness-сценарии; точное число
-  выводится тест-раннером. Это не
-  проверка сетевых сбоев, конкуренции, больших объёмов или поведения Render/Zapier.
-- Отдельно проверяется чтение живого OpenAlex, но оно не доказывает работу deployed API.
+  выводится тест-раннером. Это не проверка сетевых сбоев, конкуренции, больших объёмов
+  или поведения Zapier.
+- Через deployed HTTPS API проверены health, auth и стабильность трёх OpenAlex ID между
+  двумя последовательными запросами. Это ещё не проверка scheduler/deduplication Zapier.
 - `zapier-platform validate` проверяет структуру. Оставшиеся advisory warnings про
   dynamic dropdown у ID-полей сознательно приняты: эти значения должны маппиться из
   trigger, а не выбираться из потенциально огромного списка. Warning для API key остаётся,
@@ -30,6 +31,6 @@
 - Volume, concurrency, webhook redelivery и multiple-instance delivery не проверены.
 - Webhook delivery сейчас best-effort: неуспешный target не откатывает идемпотентный
   upsert. Durable delivery queue не реализована.
-- Render Free Postgres истекает через 30 дней, не имеет backups и не подходит для
-  постоянного production-хранилища.
+- Резервное копирование PostgreSQL на VPS пока не настроено. Для synthetic demo это
+  допустимо, но потеря volume уничтожит сохранённые demo works и review ledger.
 - OpenAlex — внешний сервис со своими лимитами и изменяемой доступностью.

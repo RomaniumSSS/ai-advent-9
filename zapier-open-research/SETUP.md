@@ -20,16 +20,17 @@
 ```bash
 npm install -g zapier-platform-cli@19.1.0
 cd zapier-open-research/zapier
-zapier-platform login
+zapier-platform login --sso
 zapier-platform register "Open Research Watch"
-zapier-platform env:set OPEN_RESEARCH_API_BASE_URL https://YOUR_HOST
 npm test
 zapier-platform validate
 zapier-platform push
+zapier-platform env:set 1.0.0 OPEN_RESEARCH_API_BASE_URL=https://YOUR_HOST
 ```
 
-`register`, `env:set` и `push` изменяют внешний аккаунт Zapier и потому здесь
-автоматически не выполнялись. После `push` откройте Zapier editor, выберите
+При SSO официальный CLI использует deploy key из настроек Zapier Developer Platform;
+не передавайте его в чат и не коммитьте `~/.zapierrc`. После `push` и `env:set`
+откройте Zapier editor, выберите
 **Open Research Watch (Private)** и создайте connection с тем же `API_KEY`.
 
 ## 3. Двухшаговые demo Zap
