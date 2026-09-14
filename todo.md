@@ -9,15 +9,18 @@
       search-or-create, автоматический объяснимый рейтинг и Render Blueprint.
       8 API/unit + 12 harness + 1 live OpenAlex test
       зелёные; Zapier validate: 26 passed, 0 failed. [Проверка](zapier-open-research/VERIFICATION.md).
-      Следующее (Роман): опубликовать ветку, развернуть Render, выполнить Zapier
-      `register`/`push`, собрать четыре live-скриншота. Upstream audit-риск Zapier Core
+      Ветка опубликована; API развёрнут на VPS, integration загружена (см. ниже).
+      Остались actual Zap runs и live-скриншоты. Upstream audit-риск Zapier Core
       и прочие границы записаны в [LIMITS](zapier-open-research/LIMITS.md).
 - [x] 12.09 — **Open Research Watch API развёрнут на личном VPS**.
       Docker Compose запускает API + PostgreSQL, база не опубликована наружу, Caddy
       отдаёт HTTPS на `research.89.167.40.172.sslip.io`. Внешне проверены health,
       401/valid auth и два запроса реального OpenAlex со стабильными ID. Код VPS deploy:
-      `cd0a635`. Следующее: Роман входит в Zapier Developer Platform и создаёт deploy
-      key; затем CLI register/push, два Zap и live-скриншоты.
+      `cd0a635`. Deploy key получен; integration загружена (см. ниже).
+- [x] 14.09 — **Private integration загружена в Zapier**: ID `246309`, версия
+      `1.0.0`, Core `19.1.0`; register/push/env:set успешны, `versions` подтвердил private.
+      [Доказательства](zapier-open-research/VERIFICATION.md). Следующее: Роман входит
+      в Zapier в управляемом браузере; затем connection, реальные Zap и скриншоты.
 - [x] 12.09 — **день 10: код и живой прогон готовы**, не сдан. `day10/` — три
       стратегии контекста без summary (`strategies.py`), фиксированные ключи
       фактов (`facts.py`), ветки поверх сессий (`branches.py`), панель на 8040

@@ -43,7 +43,7 @@
 
 ## Непроверенное
 
-- `register`, `env:set`, `push` и connection в Zapier;
+- connection в Zapier;
 - два live Zap и их run history;
 - deduplication и replay через фактический Zapier scheduler/runtime;
 - concurrency, >100 results between polls и durable webhook delivery.
@@ -51,3 +51,11 @@
 API развёрнут по адресу `https://research.89.167.40.172.sslip.io`; секреты хранятся
 только на VPS. Оставшиеся пункты нельзя честно закрыть без Zapier account/runtime.
 Точные ручные шаги и имена скриншотов находятся в `SETUP.md`.
+
+## Загрузка в Zapier — 2026-09-14
+
+CLI авторизация проверена командой `integrations`, без вывода deploy key.
+Выполнены `register`, `push` и `env:set 1.0.0`: integration ID `246309`, версия
+`1.0.0`, Platform Core `19.1.0`, статус `private`. Команда `versions` подтвердила
+наличие загруженной версии. HTTPS `/health` на VPS повторно ответил успешно.
+Это подтверждает загрузку кода, но ещё не connection, actual Zap run или scheduler.

@@ -1,7 +1,8 @@
 # Limits and verification boundary
 
 - Интеграция private и не публиковалась в Zapier App Directory.
-- API и PostgreSQL развёрнуты на личном VPS; Zapier integration ещё не загружена.
+- API и PostgreSQL развёрнуты на личном VPS; версия integration `1.0.0` загружена в
+  Zapier как private, адрес HTTPS API задан через version environment.
 - В Zapier account не создавались connections или Zaps; скриншотов live run пока нет.
 - Метаданные публикаций реальные и получаются из OpenAlex CC0. Saved works, notes,
   review scores и API account — демонстрационные данные.
