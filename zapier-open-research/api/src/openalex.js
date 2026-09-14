@@ -19,8 +19,11 @@ export function normalizeWork(work) {
   };
 }
 
-export async function listWorks({ query, perPage = 25, fetchImpl = fetch }) {
+export async function listWorks({ query, perPage = 25, fetchImpl = fetch, now = new Date() }) {
   const url = new URL('/works', OPENALEX_BASE_URL);
+  const today = now.toISOString().slice(0, 10);
+  // AICODE-NOTE: live OpenAlex вернул даты 2028–2029; они вытесняли реальные новые работы.
+  url.searchParams.set('filter', `to_publication_date:${today}`);
   url.searchParams.set('sort', 'publication_date:desc');
   url.searchParams.set('per-page', String(Math.min(Math.max(perPage, 1), 100)));
   url.searchParams.set(
@@ -46,8 +49,8 @@ export async function listWorks({ query, perPage = 25, fetchImpl = fetch }) {
     throw error;
   }
   const body = await response.json();
-  return (body.results || []).map((rawWork) => {
+  return (body.results || []).filter((rawWork) => !rawWork.publication_date || rawWork.publication_date <= today).map((rawWork) => {
     const work = normalizeWork(rawWork);
-    return { ...work, ...scoreWork(work, query) };
+    return { ...work, ...scoreWork(work, query, now) };
   });
 }

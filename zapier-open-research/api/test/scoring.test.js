@@ -28,3 +28,8 @@ test('нет запроса, даты, OA и цитат — нет выдума�
   assert.equal(result.score, 0);
   assert.equal(result.article_url, undefined);
 });
+
+test('будущая дата публикации не получает баллы за свежесть', () => {
+  const result = scoreWork({title: 'Future', publication_date: '2029-05-06'}, '', new Date('2026-09-14'));
+  assert.equal(result.score_breakdown.recency, 0);
+});

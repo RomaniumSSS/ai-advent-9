@@ -15,7 +15,7 @@ function relevanceScore(title, query) {
 
 function recencyScore(publicationDate, now) {
   const published = new Date(publicationDate);
-  if (!publicationDate || Number.isNaN(published.getTime())) return 0;
+  if (!publicationDate || Number.isNaN(published.getTime()) || published > now) return 0;
   const ageDays = Math.max(0, Math.floor((now.getTime() - published.getTime()) / DAY_MS));
   if (ageDays <= 30) return 30;
   if (ageDays <= 365) return 20;
