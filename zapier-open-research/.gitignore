@@ -3,5 +3,4 @@ node_modules/
 .zapierapprc
 build/
 coverage/
-screenshots/*.png
 !screenshots/.gitkeep

@@ -38,6 +38,9 @@ zapier-platform env:set 1.0.0 OPEN_RESEARCH_API_BASE_URL=https://YOUR_HOST
 ### Zap A: polling → сохранить
 
 1. Trigger: **New Research Work**; query — `retrieval augmented generation`.
+   Для Free-демо задайте **Results Per Poll** ровно `3`: выделите всё старое
+   значение `25` перед вводом и проверьте итоговый текст поля. `325` даёт HTTP 422
+   и выключает Zap при попытке включения.
 2. Action: **Create or Update Saved Work**; сопоставьте OpenAlex ID, title, DOI,
    publication date, source и OA URL из trigger.
 
@@ -63,11 +66,15 @@ Zap либо выполните авторизованный `PUT /v1/saved-work
 
 После фактического прогона сохраните без секретов:
 
-- `screenshots/polling-zap.png` — trigger + action;
-- `screenshots/hook-notification-zap.png` — hook trigger + Email/Slack;
-- `screenshots/idempotent-review-zap.png` — hook trigger + ledger action;
-- `screenshots/successful-run.png` — успешная запись Zap history;
-- `screenshots/retry-no-duplicate.png` — две попытки с одним Event ID и одна строка ledger.
+- `screenshots/polling-zap.png` — опубликованный polling → upsert v1;
+- `screenshots/idempotent-review-zap.png` — опубликованный hook → ledger;
+- `screenshots/successful-run.png` — автоматический hook run со статусом Successful;
+- `screenshots/retry-no-duplicate.png` — Replay того же Event ID, `replayed: true`;
+- `screenshots/polling-run-history.png` — polling run v1, включая выявленную ошибку
+  качества отбора (0/40 title relevance).
 
-Последний пункт важнее зелёного unit-теста: только он подтверждает idempotency через
-реальный Zapier retry и deployed API.
+`screenshots/hook-notification-zap.png` остаётся обязательным доказательством для
+будущего Zap B, когда выбран личный адресат уведомления.
+
+Replay проверен через Zapier runtime и deployed API; автоповтор после сетевого сбоя
+ещё не наблюдался. Актуальные границы проверки — в [VERIFICATION.md](VERIFICATION.md).

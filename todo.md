@@ -17,10 +17,15 @@
       отдаёт HTTPS на `research.89.167.40.172.sslip.io`. Внешне проверены health,
       401/valid auth и два запроса реального OpenAlex со стабильными ID. Код VPS deploy:
       `cd0a635`. Deploy key получен; integration загружена (см. ниже).
-- [x] 14.09 — **Private integration загружена в Zapier**: ID `246309`, версия
-      `1.0.0`, Core `19.1.0`; register/push/env:set успешны, `versions` подтвердил private.
-      [Доказательства](zapier-open-research/VERIFICATION.md). Следующее: Роман входит
-      в Zapier в управляемом браузере; затем connection, реальные Zap и скриншоты.
+- [x] 15.09 — **Два private Zap созданы, hook и Replay проверены живым запуском**.
+      Connection с API key, polling → upsert и hook → ledger опубликованы. Первый
+      polling run прошёл, но выявил нерелевантные результаты; фильтр исправлен и
+      развёрнут на VPS. Hook run и Replay одного Event ID не удвоили ledger entry.
+      [Доказательства и failures](zapier-open-research/VERIFICATION.md), скриншоты
+      в `zapier-open-research/screenshots/`. Причина выключения v2 найдена в Zapier
+      HTTP logs: `per_page=325` → 422. Следующее: исправить поле на `3` в editor,
+      перепубликовать и проверить две реальные
+      итерации scheduler и создать Zap уведомления после выбора Романом адресата.
 - [x] 12.09 — **день 10: код и живой прогон готовы**, не сдан. `day10/` — три
       стратегии контекста без summary (`strategies.py`), фиксированные ключи
       фактов (`facts.py`), ветки поверх сессий (`branches.py`), панель на 8040
