@@ -25,7 +25,9 @@ export async function listWorks({ query, perPage = 25, fetchImpl = fetch, now = 
   // AICODE-NOTE: live OpenAlex вернул даты 2028–2029; они вытесняли реальные новые работы.
   url.searchParams.set('filter', `to_publication_date:${today}`);
   url.searchParams.set('sort', 'publication_date:desc');
-  url.searchParams.set('per-page', String(Math.min(Math.max(perPage, 1), 100)));
+  // AICODE-NOTE: OpenAlex full-text search may place unrelated titles first; scan one
+  // upstream page so a small Zap poll can still return relevant works.
+  url.searchParams.set('per-page', String(query ? 100 : Math.min(Math.max(perPage, 1), 100)));
   url.searchParams.set(
     'select',
     'id,display_name,doi,publication_date,primary_location,open_access,cited_by_count',
@@ -49,8 +51,12 @@ export async function listWorks({ query, perPage = 25, fetchImpl = fetch, now = 
     throw error;
   }
   const body = await response.json();
-  return (body.results || []).filter((rawWork) => !rawWork.publication_date || rawWork.publication_date <= today).map((rawWork) => {
-    const work = normalizeWork(rawWork);
-    return { ...work, ...scoreWork(work, query, now) };
-  });
+  return (body.results || [])
+    .filter((rawWork) => !rawWork.publication_date || rawWork.publication_date <= today)
+    .map((rawWork) => {
+      const work = normalizeWork(rawWork);
+      return { ...work, ...scoreWork(work, query, now) };
+    })
+    .filter((work) => !query || work.score_breakdown.relevance >= 20)
+    .slice(0, perPage);
 }
