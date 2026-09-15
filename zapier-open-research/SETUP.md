@@ -53,6 +53,14 @@ zapier-platform env:set 1.0.0 OPEN_RESEARCH_API_BASE_URL=https://YOUR_HOST
 2. Action: **Email by Zapier** (или уже подключённый Slack). В текст передайте title,
    Best Article URL, Automatic Score и Score Explanation.
 
+Для Email by Zapier задайте **Send Outbound Email**: `To` — личный адресат,
+`Subject` — `Новая статья: {{Title}} ({{Automatic Score}}/100)`, `Body` — title,
+Best Article URL, Automatic Score и Score Explanation. Не пишите API key в полях Zap.
+На Free-плане Email by Zapier допускает [до пяти писем за 24 часа](https://help.zapier.com/hc/en-us/articles/8496305915917-Send-emails-in-Zaps);
+во время editor test письмо отправляется только на email Zapier account, даже если
+в `To` указан другой адрес. Проверяйте доставку адресату по опубликованному run
+и подтверждению из его почтового ящика.
+
 ### Zap C: REST Hook → проверить replay-safe action
 
 1. Trigger: **Saved Research Work Changed**.

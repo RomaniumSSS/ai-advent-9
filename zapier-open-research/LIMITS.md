@@ -5,7 +5,8 @@
   Zapier как private, адрес HTTPS API задан через version environment.
 - В Zapier account создана API-key connection и два опубликованных двухшаговых Zap:
   polling → upsert и REST hook → ledger action. Скриншоты Zap и успешных live runs
-  сохранены. Zap с Email/Slack-уведомлением пока не создан: адресат не выбран.
+  сохранены. Личный адресат Email указан Романом, но Zap уведомления пока не создан:
+  управляемый браузерный канал недоступен.
 - Polling Zap v1 выполнил реальные задачи, но дал нерелевантные результаты с 0/40
   title relevance; API исправлен. Опубликованный v2 Zap сейчас выключен: Zapier HTTP
   logs показали GET `/v1/works` с `per_page=325` и статусом 422. В editor при
@@ -50,3 +51,7 @@
 - Резервное копирование PostgreSQL на VPS пока не настроено. Для synthetic demo это
   допустимо, но потеря volume уничтожит сохранённые demo works и review ledger.
 - OpenAlex — внешний сервис со своими лимитами и изменяемой доступностью.
+- [Email by Zapier](https://help.zapier.com/hc/en-us/articles/8496305915917-Send-emails-in-Zaps)
+  на Free отправляет не более пяти писем за 24 часа на account; editor test на
+  Free идёт только на email самого Zapier account. Даже Successful published run
+  не доказывает доставку в почтовый ящик адресата без его подтверждения.
