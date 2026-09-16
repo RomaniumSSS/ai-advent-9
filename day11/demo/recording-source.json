@@ -1,0 +1,12 @@
+{
+  "source_report": "day11/results/live-memory.json",
+  "source_calls": [
+    "city_new_task",
+    "city_other_user",
+    "deadline_after",
+    "deadline_before",
+    "short_new_session"
+  ],
+  "playback_call": "format_after",
+  "network_calls_during_recording": 0
+}

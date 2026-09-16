@@ -1,7 +1,10 @@
 .env
 .venv/
+.playwright-mcp/
 __pycache__/
 *.pyc
 *.db
 *.db-wal
 *.db-shm
+day11/demo/.build/
+day11/demo/*-silent.mp4
