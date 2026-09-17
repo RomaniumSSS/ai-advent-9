@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "max_retry_cycles": 3,
+  "rules": [
+    {"id": "protected_days", "enforcement": "manifest_and_review", "text": "day01-day13 не изменяются после baseline машины."},
+    {"id": "scope", "enforcement": "code_and_review", "text": "Продуктовые изменения находятся только в day14/."},
+    {"id": "preserve_day13", "enforcement": "regression_tests", "text": "FSM дня 13 и её границы остаются рабочими."},
+    {"id": "state_outside_chat", "enforcement": "schema_and_tests", "text": "Инварианты не являются сообщениями или заметками памяти."},
+    {"id": "preflight_denial", "enforcement": "code_and_tests", "text": "Явный конфликт блокируется до model call."},
+    {"id": "output_guard", "enforcement": "code_and_tests", "text": "Нарушающий ответ не сохраняется и не выдаётся наружу."},
+    {"id": "audit_without_cot", "enforcement": "tests_and_review", "text": "Audit хранит decision и ID правил, но не скрытые рассуждения модели."},
+    {"id": "external_actions", "enforcement": "human", "text": "Commit, push, deploy и платные вызовы требуют отдельного решения."}
+  ]
+}

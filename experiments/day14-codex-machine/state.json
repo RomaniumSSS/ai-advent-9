@@ -1,0 +1,163 @@
+{
+  "version": 19,
+  "phase": "DONE",
+  "status": "done",
+  "current_step": "Задание дня 14 завершено и подтверждено",
+  "expected_action": "Нет; ожидать решения о публикации",
+  "pause_reason": null,
+  "retry_cycles": 2,
+  "baseline_ref": "bd38087",
+  "baseline_manifest": "experiments/day14-codex-machine/baseline.json",
+  "artifacts": {
+    "plan": "experiments/day14-codex-machine/runs/01-planning-result.json",
+    "implementation": "day14/results/implementation.md",
+    "test_report": "day14/results/test-report.md",
+    "visual_report": "day14/results/visual-report.md",
+    "video_report": "day14/results/video-report.md",
+    "review_report": "day14/results/review-report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "day13_regression": true,
+    "separate_storage": true,
+    "request_conflict": true,
+    "prompt_accounting": true,
+    "output_guard": true,
+    "explain_refusal": true,
+    "adversarial_matrix": true,
+    "visual_check": true,
+    "video_check": true,
+    "independent_review": true
+  },
+  "violations": [],
+  "blockers": [],
+  "history": [
+    {
+      "from": "PLANNING",
+      "to": "EXECUTION",
+      "outcome": "pass",
+      "summary": "День 14 строится как самостоятельный накопительный модуль поверх day13. Инварианты получают отдельную typed-модель и SQLite-таблицу в области user_id + task_id; request preflight блокирует явный конфликт до сети, активный snapshot входит в system context, response guard срабатывает до append_turn, а audit хранит только phase/decision/IDs без chain-of-thought. FSM, workflow, профиль и память дня 13 сохраняются. Панель показывает правила, audit и конфликтный сценарий.",
+      "next_action": "Завершить реализацию day14, документацию и тесты, не меняя day01-day13."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "В day14 создан самостоятельный накопительный агент: отдельные typed-инварианты и audit в SQLite v5, request preflight до model call, единый system snapshot, response guard до persistence и остановка workflow без proposal при нарушении. Сохранены FSM, pause/restart, semi-autonomous loop, профиль и память дня 13. Панель показывает правила, checks и конфликтный сценарий; README честно фиксирует границу regex-policy.",
+      "next_action": "Повторить все проверки в независимой validation-фазе и проверить защищённые пути."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "В независимой временной копии прошли 5 invariant, 10 FSM, 6 workflow и 7 web проверок, JavaScript syntax и Python compile. Подтверждены отдельное хранение и task-scope, clear/restart, request refusal до model call, system snapshot, response guard до persistence, объяснение по ID и отсутствие proposal/FSM transition при нарушении workflow. Codex FSM 19/19 и scope guard не выявили изменений day01-day13.",
+      "next_action": "Перейти в LIVE_VALIDATION: визуально проверить локальную панель и записать офлайн-видео без платного provider."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "Локальная панель пройдена настоящим browser path: desktop/tablet/mobile имеют нулевое горизонтальное переполнение и ноль page errors. Немой WebM показывает отдельные правила, конфликт SQLite→PostgreSQL, локальный отказ с ID/правилом/причиной и audit deny, затем FSM дня 13 через create→pause→restart→resume. Provider не вызывался и платных расходов нет; это честно обозначенный offline harness eval.",
+      "next_action": "Перейти в REVIEW и провести read-only аудит bypass, persistence, scope и доказательств."
+    },
+    {
+      "from": "REVIEW",
+      "to": "DONE",
+      "outcome": "pass",
+      "summary": "Read-only review одобрил реализацию без blockers и warnings. Проверены preflight до сети, единый snapshot, response guard до append_turn, остановка workflow до proposal, параметризованный SQL, textContent в UI, task-scope, migration и отсутствие chain-of-thought в audit. Ограниченность regex-политики честно документирована как граница MVP, а не скрыта за заявлением о полном semantic enforcement.",
+      "next_action": "Перевести Codex FSM в DONE и обновить краткий проектный статус."
+    },
+    {
+      "event": "reopen",
+      "from": "DONE",
+      "to": "EXECUTION",
+      "reason": "Повторная adversarial-проверка выявила обходы regex-policy и ложные отказы на безопасные вопросы"
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "После повторного review исправлен обход phrase-only policy. Request classifier теперь разделяет конфликт и безопасное обсуждение; вопросы/отрицания получают локальное explanation без model call. Response boundary независимо блокирует защищённые технологии по термам и unsafe business actions до append_turn. Structured policy сохраняется в прежней отдельной SQLite-таблице с обратным чтением старого list payload. Добавлена adversarial matrix: 8 conflicts, 4 safe discussions, 5 provider outputs.",
+      "next_action": "Повторить весь набор в независимой копии и доказать новую adversarial acceptance."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "В независимой scratch-копии прошли 7 invariant-групп с 20 сценариями, 10 FSM, 6 workflow, 7 web, JS syntax, Python compile и 19 тестов внешней машины. Матрица подтверждает 8 локальных deny до model call, 4 безопасных explanation без ложного отказа, 5 разных blocked provider outputs до history/SQLite, legacy policy payload, task isolation и отсутствие workflow proposal. Protected day01-day13 не изменены.",
+      "next_action": "Повторно подтвердить web/video evidence на неизменившемся UI и перейти в независимый REVIEW."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "На свежей SQLite DB повторно пройден настоящий browser path. Responsive 1280/768/375 не имеет horizontal overflow и page errors. Новый немой WebM 14.64 с показывает deny конфликтного запроса, затем безопасный вопрос Почему нельзя с local explanation и audit explain, после чего FSM проходит create→pause→restart→resume. Provider не вызывался; это offline harness evidence без расходов.",
+      "next_action": "Провести новый read-only REVIEW исправленного enforcement и evidence."
+    },
+    {
+      "from": "REVIEW",
+      "to": "EXECUTION",
+      "outcome": "fail",
+      "summary": "Read-only review нашёл неполную safe-discussion ветку: explanation_invariants распознавал только forbidden_terms, а business invariant имеет action-patterns без термов. Поэтому вопрос Почему нельзя отправить в прод без подтверждения ошибочно получал refusal. Заодно business patterns не покрывали существительные публикация/деплой и глаголы выложить/выкатить.",
+      "next_action": "Вернуться в EXECUTION, расширить explanation matching и business vocabulary, затем повторить validation/live/review."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Review finding исправлен: safe explanation теперь выбирает invariant не только по forbidden_terms, но и по совпавшему request policy, поэтому вопросы о business approval не получают refusal. Business vocabulary расширен на публикацию, деплой, выложить и выкатить. Матрица выросла до 10 конфликтов, 6 безопасных обсуждений и 7 запрещённых outputs.",
+      "next_action": "Повторить полную scratch-validation после второго repair-cycle."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "После второго repair в независимой scratch-копии снова прошли все 7 invariant-групп, 10 FSM, 6 workflow, 7 web, JS, compile и 19 machine tests. Матрица теперь содержит 10 deny, 6 safe explanations и 7 blocked outputs, включая business-вопросы и варианты публикация/деплой/выложить/выкатить. Scope guard подтверждает неизменность day01-day13.",
+      "next_action": "Снять final browser/video evidence с текущего кода и провести новый REVIEW."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "С финальным кодом на свежей SQLite DB заново записан browser evidence: WebM 13.12 с показывает deny, safe explanation и create→pause→restart→resume; responsive 1280/768/375 без horizontal overflow, console/page errors отсутствуют. Contact sheet и full-page screenshots просмотрены. Provider не вызывался, расходов нет.",
+      "next_action": "Провести финальный read-only review кода, матрицы и обновлённого evidence."
+    },
+    {
+      "from": "REVIEW",
+      "to": "EXECUTION",
+      "outcome": "fail",
+      "summary": "Adversarial review воспроизвёл ещё один bypass business-rule: фраза Выкати сейчас, подтверждение не нужно не содержит token без и проходит прежний pattern. Перечисление отрицательных оборотов не даёт механической гарантии; нужен broad external-action detector с исключением только для явной позитивной approval-формулы.",
+      "next_action": "Вернуться в EXECUTION и заменить negative-phrase matching на action + required-positive-approval policy."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Business enforcement заменён на broad external-action detector с allow только при явной позитивной approval-формуле. Negation markers имеют приоритет и не позволяют противоречивому тексту обойти policy. Request и response используют отдельные allow patterns; protected stack/architecture terms остаются strict output deny. Матрица: 12 conflicts, 6 safe explanations, 9 blocked outputs и 1 explicit-approval allow path.",
+      "next_action": "Провести финальную scratch-validation action+approval policy."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "Финальная scratch-validation прошла: 8 invariant-групп (12 conflict deny, 6 safe explanations, 9 blocked outputs, 1 explicit approval allow), 10 FSM, 6 workflow, 7 web, JS, compile и 19 machine tests. Проверены negation priority, structured policy persistence/legacy read и scope; day01-day13 не изменены.",
+      "next_action": "Записать browser evidence с текущим final code и перейти в REVIEW."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "С release-кодом action+positive-approval policy на свежей DB заново получен browser evidence. WebM 13.16 с показывает deny, safe explanation и FSM restart/resume; 1280/768/375 не имеют overflow, console/page errors отсутствуют, аудиодорожки нет. Provider и платные вызовы не использовались.",
+      "next_action": "Финальный read-only review release-кода и доказательств."
+    },
+    {
+      "from": "REVIEW",
+      "to": "DONE",
+      "outcome": "pass",
+      "summary": "Финальный read-only review одобрил release-код без blockers и warnings. Проверены request preflight до model call, единый invariant snapshot в context и response guard, блокировка raw output до persistence, workflow stop до proposal, task scope и structured policy persistence. Adversarial matrix различает 12 конфликтов, 6 безопасных explanations, 9 запрещённых outputs и explicit approval; отрицание подтверждение не нужно не обходит business rule. Ограничение text policy и production-переход к typed tool boundary явно документированы.",
+      "next_action": "Перевести Codex FSM в DONE и обновить краткий проектный статус."
+    }
+  ]
+}

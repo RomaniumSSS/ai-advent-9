@@ -1,0 +1,17 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "В независимой временной копии прошли 5 invariant, 10 FSM, 6 workflow и 7 web проверок, JavaScript syntax и Python compile. Подтверждены отдельное хранение и task-scope, clear/restart, request refusal до model call, system snapshot, response guard до persistence, объяснение по ID и отсутствие proposal/FSM transition при нарушении workflow. Codex FSM 19/19 и scope guard не выявили изменений day01-day13.",
+  "artifacts": {"test_report": "day14/results/test-report.md"},
+  "checks": {
+    "day13_regression": true,
+    "separate_storage": true,
+    "request_conflict": true,
+    "prompt_accounting": true,
+    "output_guard": true,
+    "explain_refusal": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в LIVE_VALIDATION: визуально проверить локальную панель и записать офлайн-видео без платного provider."
+}

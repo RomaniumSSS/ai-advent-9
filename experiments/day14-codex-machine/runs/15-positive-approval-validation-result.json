@@ -1,0 +1,18 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "Финальная scratch-validation прошла: 8 invariant-групп (12 conflict deny, 6 safe explanations, 9 blocked outputs, 1 explicit approval allow), 10 FSM, 6 workflow, 7 web, JS, compile и 19 machine tests. Проверены negation priority, structured policy persistence/legacy read и scope; day01-day13 не изменены.",
+  "artifacts": {"test_report": "day14/results/test-report.md"},
+  "checks": {
+    "day13_regression": true,
+    "separate_storage": true,
+    "request_conflict": true,
+    "prompt_accounting": true,
+    "output_guard": true,
+    "explain_refusal": true,
+    "adversarial_matrix": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Записать browser evidence с текущим final code и перейти в REVIEW."
+}

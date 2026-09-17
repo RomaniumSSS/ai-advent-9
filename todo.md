@@ -4,6 +4,20 @@
 
 ## Сейчас — 17.09
 
+- День 14 завершён через внешнюю Codex FSM (`DONE`, 13/13 acceptance):
+  самостоятельный `day14/` сохраняет весь день 13 и добавляет отдельные typed-
+  инварианты + audit в SQLite. Конфликт запроса блокируется до model call с ID,
+  правилом и причиной; допустимый запрос получает system snapshot; нарушающий
+  output заменяется до истории/SQLite и не становится workflow proposal.
+  Проверки: invariant 8/8 (12 deny, 6 safe explanations, 9 blocked outputs и
+  explicit approval), FSM 10/10, workflow 6/6, web 7/7, machine 19/19,
+  JS/compile pass; responsive 3/3 без overflow. Немой offline harness-video
+  13,16 с показывает deny, explanation и pause → restart → resume. Real-provider
+  eval не выполнялся, commit/push/deploy не выполнялись. [Описание](day14/README.md),
+  [тесты](day14/results/test-report.md), [видео](day14/results/video-report.md),
+  [FSM](experiments/day14-codex-machine/state.json). Следующее: просмотр Романом;
+  публикация и сдача — отдельные действия.
+
 - Полуавтономный loop day13 завершён отдельной FSM ассистента (`DONE`): человек
   утверждает planning и финальный validation, а после approve harness сам делает
   `execution → validation` до следующей границы. Durable proposal переживает

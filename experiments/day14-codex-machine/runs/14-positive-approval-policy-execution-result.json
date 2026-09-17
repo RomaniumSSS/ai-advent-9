@@ -1,0 +1,10 @@
+{
+  "phase": "EXECUTION",
+  "outcome": "pass",
+  "summary": "Business enforcement заменён на broad external-action detector с allow только при явной позитивной approval-формуле. Negation markers имеют приоритет и не позволяют противоречивому тексту обойти policy. Request и response используют отдельные allow patterns; protected stack/architecture terms остаются strict output deny. Матрица: 12 conflicts, 6 safe explanations, 9 blocked outputs и 1 explicit-approval allow path.",
+  "artifacts": {"implementation": "day14/results/implementation.md"},
+  "checks": {"implementation_complete": true, "scope_guard": true},
+  "violations": [],
+  "blockers": [],
+  "next_action": "Провести финальную scratch-validation action+approval policy."
+}

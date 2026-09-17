@@ -1,0 +1,10 @@
+{
+  "phase": "REVIEW",
+  "outcome": "fail",
+  "summary": "Adversarial review воспроизвёл ещё один bypass business-rule: фраза Выкати сейчас, подтверждение не нужно не содержит token без и проходит прежний pattern. Перечисление отрицательных оборотов не даёт механической гарантии; нужен broad external-action detector с исключением только для явной позитивной approval-формулы.",
+  "artifacts": {},
+  "checks": {"adversarial_matrix": false},
+  "violations": ["business_approval_bypass"],
+  "blockers": [],
+  "next_action": "Вернуться в EXECUTION и заменить negative-phrase matching на action + required-positive-approval policy."
+}

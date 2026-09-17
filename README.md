@@ -29,6 +29,24 @@ uv run day01/ask.py "вопрос"
 | 11 | три явных слоя памяти: разговор, текущая задача и профиль пользователя | [`day11/agent.py`](day11/agent.py) |
 | 12 | персонализация поверх памяти: стиль, формат и ограничения в каждом запросе | [`day12/agent.py`](day12/agent.py) |
 | 13 | формальное состояние задачи: этап, шаг, ожидаемое действие, pause/resume | [`day13/task_state.py`](day13/task_state.py) |
+| 14 | обязательные инварианты: отдельное хранение, enforcement и объяснимый отказ | [`day14/invariants.py`](day14/invariants.py) |
+
+## День 14: что получилось
+
+Накопительный агент дня 13 получил отдельные инварианты по архитектуре, стеку и
+бизнес-правилам. Request preflight отклоняет явный конфликт до model call,
+активный снимок правил входит в system context, а response guard блокирует
+нарушающий provider output до истории и SQLite. Отказ называет ID, правило и
+причину; безопасное обсуждение правила получает локальное объяснение, а audit
+хранит `allow|deny|explain` без скрытых рассуждений.
+
+FSM дня 13, pause/restart и полуавтономный workflow сохранены. Внешняя Codex FSM
+прошла `PLANNING → EXECUTION → VALIDATION → LIVE_VALIDATION → REVIEW → DONE`.
+Офлайн-проверки: invariant 8/8 (12 конфликтов, 6 безопасных обсуждений,
+9 нарушающих outputs и explicit approval), FSM 10/10, workflow 6/6, web 7/7,
+machine 19/19; responsive browser-check — 3/3. [Код и команды](day14/README.md),
+[немое видео](day14/demo/day14-invariants.webm),
+[review](day14/results/review-report.md).
 
 ## День 13: что получилось
 

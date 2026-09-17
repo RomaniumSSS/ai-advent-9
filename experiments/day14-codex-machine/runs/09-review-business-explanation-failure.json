@@ -1,0 +1,10 @@
+{
+  "phase": "REVIEW",
+  "outcome": "fail",
+  "summary": "Read-only review нашёл неполную safe-discussion ветку: explanation_invariants распознавал только forbidden_terms, а business invariant имеет action-patterns без термов. Поэтому вопрос Почему нельзя отправить в прод без подтверждения ошибочно получал refusal. Заодно business patterns не покрывали существительные публикация/деплой и глаголы выложить/выкатить.",
+  "artifacts": {},
+  "checks": {"adversarial_matrix": false},
+  "violations": ["business_safe_discussion_false_refusal", "business_action_vocabulary_gap"],
+  "blockers": [],
+  "next_action": "Вернуться в EXECUTION, расширить explanation matching и business vocabulary, затем повторить validation/live/review."
+}

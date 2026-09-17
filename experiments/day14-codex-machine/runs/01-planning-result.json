@@ -1,0 +1,10 @@
+{
+  "phase": "PLANNING",
+  "outcome": "pass",
+  "summary": "День 14 строится как самостоятельный накопительный модуль поверх day13. Инварианты получают отдельную typed-модель и SQLite-таблицу в области user_id + task_id; request preflight блокирует явный конфликт до сети, активный snapshot входит в system context, response guard срабатывает до append_turn, а audit хранит только phase/decision/IDs без chain-of-thought. FSM, workflow, профиль и память дня 13 сохраняются. Панель показывает правила, audit и конфликтный сценарий.",
+  "artifacts": {"plan": "experiments/day14-codex-machine/runs/01-planning-result.json"},
+  "checks": {"planning_complete": true},
+  "violations": [],
+  "blockers": [],
+  "next_action": "Завершить реализацию day14, документацию и тесты, не меняя day01-day13."
+}

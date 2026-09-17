@@ -4,47 +4,39 @@
 рассуждения, отвергнутое, замеренное. Прогресс по задачам — в `todo.md`,
 что проект делает — в `README.md` и `CLAUDE.md`.
 
-Снимок: 17.09.2026, день 12 реализован, проверен и сдан комментарием в таблице.
-Детальный прогресс — в `todo.md`.
+Снимок: 17.09.2026, день 14 реализован локально через внешнюю Codex FSM и дошёл
+до `DONE`; commit, push, deploy и сдача не выполнялись. Детальный прогресс — в
+`todo.md`, устройство и команды — в `day14/README.md`.
 
 ## Где остановились
 
-Ветка `RomaniumSSS/day12-user-profile` запушена; HEAD и origin совпадают на
-`6dbc86d`. Ссылки дня 12 оставлены комментарием к `M132` строки
-`Ro (@jxh_uk)` (`A132`):
+Текущая ветка `RomaniumSSS/day13-task-state-machine`; локальный и удалённый HEAD
+совпадают на `bd38087`. Основная реализация — `9ee89dc`. Код:
+`https://github.com/RomaniumSSS/ai-advent-9/tree/RomaniumSSS/day13-task-state-machine`.
+Видео: `https://drive.google.com/file/d/15xgtpOf5CTi4Qeyk7IVt0Tx5zs6SRAKb/view?usp=sharing`;
+публичное скачивание без авторизации проверено. Ссылка в таблицу ещё не внесена:
+это отдельное внешнее действие.
 
-- код: `https://github.com/RomaniumSSS/ai-advent-9/tree/RomaniumSSS/day12-user-profile/day12`;
-- видео: `https://drive.google.com/file/d/1dfeolXiyUC1thOaVCHYea_YMXdMR8co4/view?usp=sharing`.
+День 13 принят Романом. Финальная проверка: FSM 10/10, workflow 6/6, web 6/6,
+детерминированная кампания 68/68, Codex-machine 19/19, compileall и JS syntax —
+pass. Реальный полный loop `run-04`: 3/3 вызова, финальный `done`, отчёт в
+`day13/results/live-workflow/run-04/report.md`. Ролик 49,68 с содержит один
+настоящий planning-вызов, pause/restart и кодовые переходы до `done`; подробности
+в `day13/results/video-report.md`.
 
-Аккаунт Google имеет только Comment access, поэтому значение `M132` осталось
-пустым. Комментарий создан и подтверждён интерфейсом Sheets. Для записи прямо в
-ячейку нужен Editor. День 11 в `L132` по-прежнему не сдан; не путать его с уже
-закрытым днём 12.
+Локальная online-панель на `http://127.0.0.1:8043` отвечала непосредственно перед
+handoff и использовала временную БД `/tmp/day13-online.zhqjBU/day13.db`. После
+`/clear` процесс обязательно проверить заново; handoff не гарантирует его жизнь.
 
-Для ручной проверки Романом поднят отдельный временный разговорный runtime на
-VPS: transient unit `day12-dialog2.service`, реальный DeepSeek V4 Flash,
-`offline=false`, отдельная БД `/tmp/day12-dialog.db`, без mass campaign и без
-старого proof-ledger. Он слушает только VPS loopback `127.0.0.1:8042`; локальный
-SSH-туннель процесса PID 70562 слушает `127.0.0.1:8042`. Открывать
-`http://127.0.0.1:8042/`. RuntimeMaxSec — 4 часа от запуска
-17.09.2026 07:58:20 UTC. Перед использованием после `/clear` обязательно заново
-проверить unit и tunnel: handoff не гарантирует, что процессы ещё живы. Основной
-`day12.service` не менялся и остаётся в завершённом mass mode; публичный
-`https://day12.89.167.40.172.sslip.io/` остаётся read-only.
-
-Роман записал живую демонстрацию. Локальные файлы вне репозитория:
-
-- исходник: `/Users/ramanpazharytski/Screenshots/Запись экрана 2026-09-17 в 11.46.04.mov`
-  (67 026 106 байт, 2918×1822, 60 fps, со звуком);
-- сжатый: `/Users/ramanpazharytski/Screenshots/День 12 — профиль ассистента — сжато.mp4`
-  (3 326 677 байт, 1920×1198, 30 fps, со звуком);
-- итоговый немой: `/Users/ramanpazharytski/Screenshots/День 12 — профиль ассистента — без звука.mp4`
-  (2 195 024 байта, H.264, 102,77 с, аудиопоток отсутствует).
-
-Итоговый немой файл полностью декодирован `ffmpeg -f null`; контрольный кадр
-визуально читаем. Он ещё не загружен на Drive и не заменяет опубликованное видео
-без отдельного решения Романа. Следующий безопасный шаг — спросить, нужно ли
-заменить Drive-видео этим живым роликом и обновить комментарий `M132`.
+День 14 находится в `day14/`: отдельные typed-инварианты и audit в SQLite,
+preflight до model call, system snapshot и response guard до persistence. Внешняя
+машина — `experiments/day14-codex-machine/`, состояние `DONE`, 13/13 acceptance.
+После adversarial review policy различает 12 конфликтов, 6 безопасных обсуждений,
+9 нарушающих outputs и positive approval; отрицание «подтверждение не нужно» не
+обходит business rule. Офлайн-видео 13,16 с лежит в
+`day14/demo/day14-invariants.webm`; это harness-demo, не real-provider eval. Точка
+продолжения: ручной просмотр Романом, затем отдельное решение о commit/push,
+загрузке видео и сдаче.
 
 ## Решения дня 11, которые не следует переигрывать без причины
 

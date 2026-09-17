@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "checks": [
+    {"id": "planning_complete", "gate": "EXECUTION", "artifact": "plan", "evidence": "План фиксирует модель данных, порядок проверок, формат отказа и границы."},
+    {"id": "implementation_complete", "gate": "VALIDATION", "artifact": "implementation", "evidence": "Код, тесты, панель и README находятся в day14/."},
+    {"id": "scope_guard", "gate": "VALIDATION", "evidence": "Manifest не показывает изменений защищённых дней."},
+    {"id": "day13_regression", "gate": "LIVE_VALIDATION", "evidence": "FSM, workflow и web regression дня 13 проходят в day14."},
+    {"id": "separate_storage", "gate": "LIVE_VALIDATION", "evidence": "Инварианты переживают clear/restart и изолированы от messages и чужой task."},
+    {"id": "request_conflict", "gate": "LIVE_VALIDATION", "evidence": "Конфликт даёт локальный отказ без model call."},
+    {"id": "prompt_accounting", "gate": "LIVE_VALIDATION", "evidence": "Допустимый запрос получает system-блок активных инвариантов и audit allow."},
+    {"id": "output_guard", "gate": "LIVE_VALIDATION", "evidence": "Запрещённый provider output не попадает в историю или SQLite."},
+    {"id": "explain_refusal", "gate": "LIVE_VALIDATION", "evidence": "Отказ содержит ID, правило, причину и безопасный следующий шаг."},
+    {"id": "adversarial_matrix", "gate": "LIVE_VALIDATION", "evidence": "Не менее 8 конфликтов, 4 безопасных обсуждений и 5 нарушающих outputs проверены отдельно."},
+    {"id": "visual_check", "gate": "REVIEW", "artifact": "visual_report", "evidence": "Панель просмотрена на desktop, tablet и mobile."},
+    {"id": "video_check", "gate": "REVIEW", "artifact": "video_report", "evidence": "Немое видео демонстрирует правила, конфликт и отсутствие model call."},
+    {"id": "independent_review", "gate": "DONE", "artifact": "review_report", "evidence": "Read-only review не содержит блокирующих замечаний."}
+  ]
+}

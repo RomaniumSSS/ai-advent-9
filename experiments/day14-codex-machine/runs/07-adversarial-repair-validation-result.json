@@ -1,0 +1,18 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "В независимой scratch-копии прошли 7 invariant-групп с 20 сценариями, 10 FSM, 6 workflow, 7 web, JS syntax, Python compile и 19 тестов внешней машины. Матрица подтверждает 8 локальных deny до model call, 4 безопасных explanation без ложного отказа, 5 разных blocked provider outputs до history/SQLite, legacy policy payload, task isolation и отсутствие workflow proposal. Protected day01-day13 не изменены.",
+  "artifacts": {"test_report": "day14/results/test-report.md"},
+  "checks": {
+    "day13_regression": true,
+    "separate_storage": true,
+    "request_conflict": true,
+    "prompt_accounting": true,
+    "output_guard": true,
+    "explain_refusal": true,
+    "adversarial_matrix": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Повторно подтвердить web/video evidence на неизменившемся UI и перейти в независимый REVIEW."
+}

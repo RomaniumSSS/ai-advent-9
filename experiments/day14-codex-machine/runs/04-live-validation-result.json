@@ -1,0 +1,13 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "pass",
+  "summary": "Локальная панель пройдена настоящим browser path: desktop/tablet/mobile имеют нулевое горизонтальное переполнение и ноль page errors. Немой WebM показывает отдельные правила, конфликт SQLite→PostgreSQL, локальный отказ с ID/правилом/причиной и audit deny, затем FSM дня 13 через create→pause→restart→resume. Provider не вызывался и платных расходов нет; это честно обозначенный offline harness eval.",
+  "artifacts": {
+    "visual_report": "day14/results/visual-report.md",
+    "video_report": "day14/results/video-report.md"
+  },
+  "checks": {"visual_check": true, "video_check": true},
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в REVIEW и провести read-only аудит bypass, persistence, scope и доказательств."
+}
