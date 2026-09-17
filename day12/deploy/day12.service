@@ -1,0 +1,31 @@
+[Unit]
+Description=AI Advent day 12 DeepSeek profile agent
+After=network.target
+
+[Service]
+Type=simple
+User=ai-advent-day12
+Group=ai-advent-day12
+WorkingDirectory=/opt/ai-advent-day12
+ExecStartPre=/opt/ai-advent-day12/.venv/bin/python /opt/ai-advent-day12/day12/deploy/check_secret.py
+ExecStartPre=/opt/ai-advent-day12/.venv/bin/python /opt/ai-advent-day12/day12/deploy/check_offline.py
+ExecStart=/opt/ai-advent-day12/.venv/bin/python /opt/ai-advent-day12/day12/web.py --live-policy /etc/ai-advent-day12/live-policy.json --live-ledger /var/lib/ai-advent-day12/live-ledger.json --read-port 8035 --run-port 8036 --db /var/lib/ai-advent-day12/history.db
+Environment=TIKTOKEN_CACHE_DIR=/opt/ai-advent-day12/tiktoken-cache
+Environment=PYTHONDONTWRITEBYTECODE=1
+EnvironmentFile=/etc/ai-advent-day12/openrouter.env
+StateDirectory=ai-advent-day12
+StateDirectoryMode=0700
+UMask=0077
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
+
+# Mass campaign uses the explicit opt-in mass-live.conf drop-in; never replace
+# or reset the legacy live-ledger.json. See README.md, mass-live section.

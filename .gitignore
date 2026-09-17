@@ -8,3 +8,4 @@ __pycache__/
 *.db-shm
 day11/demo/.build/
 day11/demo/*-silent.mp4
+day12/demo/raw-*/

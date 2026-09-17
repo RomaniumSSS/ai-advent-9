@@ -1,0 +1,10 @@
+{
+  "model": "deepseek/deepseek-v4-flash-0731",
+  "provider": "open-inference",
+  "prompt_usd_per_million": "0.04",
+  "completion_usd_per_million": "0.10",
+  "max_prompt_tokens": 8192,
+  "max_tokens": 512,
+  "price_source": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4-flash-0731/endpoints",
+  "verified_at": "2026-09-16T19:39:41Z"
+}

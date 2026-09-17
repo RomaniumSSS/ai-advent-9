@@ -1,0 +1,23 @@
+{
+  "environment": "primary local workspace with loopback bind permitted; no external model calls",
+  "working_directory": "day12",
+  "result": "pass",
+  "checks": [
+    {"command": "../.venv/bin/python test_memory.py", "returncode": 0},
+    {"command": "../.venv/bin/python test_profile.py", "returncode": 0},
+    {"command": "../.venv/bin/python test_web.py", "returncode": 0},
+    {"command": "../.venv/bin/python test_deploy.py", "returncode": 0, "evidence": "real local HTTP; public POST denied before action; loopback action listener works; bind cleanup and production unit checked"},
+    {"command": "../.venv/bin/python test_live_budget.py", "returncode": 0},
+    {"command": "../.venv/bin/python test_verify_live.py", "returncode": 0},
+    {"command": "../.venv/bin/python test_runtime.py", "returncode": 0},
+    {"command": "node --check web/app.js", "returncode": 0},
+    {"command": "node --check demo/record.cjs", "returncode": 0},
+    {"command": "node --check demo/record-offline.cjs", "returncode": 0},
+    {"command": "../.venv/bin/python -m compileall -q .", "returncode": 0}
+  ],
+  "external_calls": {
+    "model": 0,
+    "vps": 0
+  },
+  "note": "The isolated Codex validator cannot call socket.bind by sandbox policy. The same deployment test passed in the primary environment where loopback binding is permitted."
+}

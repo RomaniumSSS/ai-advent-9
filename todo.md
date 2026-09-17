@@ -17,8 +17,20 @@
   `Ro (@jxh_uk)` — `A132`, ячейка дня 11 — `L132`; ссылки туда ещё не добавлены.
   Сдача в таблице ещё не завершена. Следующее: внести ссылки в `L132` и
   дождаться внешней проверки.
-- Идея дня 12 от Романа: собрать в одну версию механизмы предыдущих дней и
-  добавить профиль пользователя. Это план на после сдачи дня 11.
+- День 12 реализован как накопительный агент дня 11 + автоматически подключаемый
+  профиль; Codex остаётся внешним контуром качества, runtime — реальный DeepSeek
+  через OpenRouter. Массовый production eval завершил 24/24 новых cases без retries:
+  память 8/8, состояние 4/4, adversarial 4/4, профиль 1/8; всего 17 pass и 7 честно
+  сохранённых quality_fail, safety_fail нет. Один restart сохранил историю и три
+  слоя памяти. Общий расход с тремя прежними попытками — $0.00032573. Публичная
+  панель `https://day12.89.167.40.172.sslip.io/` остаётся read-only; backend только
+  loopback. [Live report](day12/results/mass-live/day12-mass-01/live-report.md),
+  [raw report](day12/results/mass-live/day12-mass-01/report.json),
+  [VPS smoke](day12/results/mass-live/day12-mass-01/deploy-report.md),
+  [visual](day12/results/mass-live/day12-mass-01/visual-report.md),
+  [video](day12/results/mass-live/day12-mass-01/video-report.md). Независимый review
+  подтвердил ledger, hashes, profile reuse и отсутствие утечек/дублей; для DONE
+  остался только предусмотренный контрактом human semantic rubric от Романа.
 
 ## Сделано
 - [x] 12.09 — **день 10: код и живой прогон готовы**, не сдан. `day10/` — три

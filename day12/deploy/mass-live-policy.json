@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "campaign_id": "day12-mass-01",
+  "model": "deepseek/deepseek-v4-flash-0731",
+  "provider": "open-inference",
+  "provider_raw_names": ["open-inference", "OpenInference"],
+  "allow_fallbacks": false,
+  "reasoning_effort": "none",
+  "max_tokens": 256,
+  "max_prompt_tokens": 8192,
+  "temperature": 0.2,
+  "sdk_retries": 0,
+  "automatic_retries": 0,
+  "max_additional_calls": 24,
+  "max_total_reported_cost_usd": "0.02",
+  "prompt_usd_per_million": "0.04",
+  "completion_usd_per_million": "0.10",
+  "price_source": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4-flash-0731/endpoints",
+  "tariffs_status": "historical_requires_live_preflight"
+}
