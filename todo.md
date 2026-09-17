@@ -14,7 +14,9 @@
   68/68. Real-provider `run-04`: 3/3 OpenInference calls без fallback/retry,
   restart без дубля, два автономных turns, финальный `done`, 3982+3007 tokens,
   `$0.00043575`; cumulative `$0.0021920143/$0.005`. Secret scan прошёл. Final
-  review — `APPROVED`, blockers/warnings нет. Commit, push и deploy не выполнялись.
+  review — `APPROVED`, blockers/warnings нет. Код и evidence опубликованы
+  коммитом `9ee89dc` в ветке `RomaniumSSS/day13-task-state-machine`; deploy не
+  выполнялся.
   Онлайн-панель больше не режет ответы на 300 токенах: default и текущий запуск —
   8000, параметр доступен через `--max-tokens`; web/workflow regressions зелёные.
   [Состояние машины](experiments/semi-autonomous-loop-machine/state.json),
@@ -23,7 +25,7 @@
   [видео](https://drive.google.com/file/d/15xgtpOf5CTi4Qeyk7IVt0Tx5zs6SRAKb/view?usp=sharing).
   Роман принял работу. Новый немой live-ролик: 49,68 с, один настоящий call,
   pause/restart и переходы до done; публичное скачивание проверено без авторизации.
-  Следующее: commit/push ветки дня 13; сдача ссылки в таблицу — отдельное действие.
+  Следующее: сдача ссылки в таблицу — отдельное действие.
 - Модульная сборка контекста day13 завершена отдельной FSM ассистента:
   `AgentCapabilities` независимо включает профиль, слои памяти, FSM и недавнюю
   историю; default совместим с прежним режимом, отключённые источники не читаются
