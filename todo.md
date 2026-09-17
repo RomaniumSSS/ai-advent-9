@@ -29,8 +29,11 @@
   [VPS smoke](day12/results/mass-live/day12-mass-01/deploy-report.md),
   [visual](day12/results/mass-live/day12-mass-01/visual-report.md),
   [video](day12/results/mass-live/day12-mass-01/video-report.md). Независимый review
-  подтвердил ledger, hashes, profile reuse и отсутствие утечек/дублей; для DONE
-  остался только предусмотренный контрактом human semantic rubric от Романа.
+  подтвердил ledger, hashes, profile reuse и отсутствие утечек/дублей. Код запушен
+  в `RomaniumSSS/day12-user-profile` (`c199fb0`), replay опубликован на Google Drive.
+  Строка участника подтверждена: `Ro (@jxh_uk)` — `A132`, ячейка дня 12 — `M132`.
+  Следующее: внести ссылки в `M132`; текущий Google-аккаунт имеет только Comment
+  access, поэтому запись заблокирована владельцем таблицы.
 
 ## Сделано
 - [x] 12.09 — **день 10: код и живой прогон готовы**, не сдан. `day10/` — три
