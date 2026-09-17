@@ -5,6 +5,8 @@
 повторно. Видео показывает все ответы, request ID, стоимость, deterministic
 predicates, семь `quality_fail` и финальную сводку с restart evidence.
 
+[Смотреть видео на Google Drive](https://drive.google.com/file/d/1dfeolXiyUC1thOaVCHYea_YMXdMR8co4/view?usp=sharing).
+
 - длительность: 68,72 с;
 - VP8, 1280×800, 25 fps;
 - SHA-256: `9e9ce77d5a3ae811949f01a6bd6ba7d99e8a91d2a2fc67ed888297b7fb49a72b`;

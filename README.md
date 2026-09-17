@@ -44,7 +44,7 @@ uv run day01/ask.py "вопрос"
 формулировку. Эти отклонения сохранены в отчёте.
 
 [Запуск, профиль и ограничения](day12/README.md),
-[видео из сохранённых live-ответов](day12/demo/README.md),
+[видео из сохранённых live-ответов](https://drive.google.com/file/d/1dfeolXiyUC1thOaVCHYea_YMXdMR8co4/view?usp=sharing),
 [результат массового прогона](day12/results/mass-live/day12-mass-01/live-report.md).
 
 ## День 11: что получилось
