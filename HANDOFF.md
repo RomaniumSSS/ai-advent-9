@@ -4,15 +4,16 @@
 рассуждения, отвергнутое, замеренное. Прогресс по задачам — в `todo.md`,
 что проект делает — в `README.md` и `CLAUDE.md`.
 
-Снимок: 17.09.2026, день 14 реализован локально через внешнюю Codex FSM и дошёл
-до `DONE`; commit, push, deploy и сдача не выполнялись. Детальный прогресс — в
-`todo.md`, устройство и команды — в `day14/README.md`.
+Снимок: 17.09.2026, день 14 реализован через внешнюю Codex FSM, проверен и
+опубликован в GitHub; deploy, загрузка видео в Drive и сдача не выполнялись.
+Детальный прогресс — в `todo.md`, устройство и команды — в `day14/README.md`.
 
 ## Где остановились
 
-Текущая ветка `RomaniumSSS/day13-task-state-machine`; локальный и удалённый HEAD
-совпадают на `bd38087`. Основная реализация — `9ee89dc`. Код:
-`https://github.com/RomaniumSSS/ai-advent-9/tree/RomaniumSSS/day13-task-state-machine`.
+Текущая ветка `RomaniumSSS/day13-task-state-machine`. Реализация дня 14
+опубликована коммитом `7378fd9`; после push локальная и удалённая ветки совпадали.
+Код: `https://github.com/RomaniumSSS/ai-advent-9/tree/RomaniumSSS/day13-task-state-machine/day14`.
+Коммит: `https://github.com/RomaniumSSS/ai-advent-9/commit/7378fd9`.
 Видео: `https://drive.google.com/file/d/15xgtpOf5CTi4Qeyk7IVt0Tx5zs6SRAKb/view?usp=sharing`;
 публичное скачивание без авторизации проверено. Ссылка в таблицу ещё не внесена:
 это отдельное внешнее действие.
@@ -35,8 +36,8 @@ preflight до model call, system snapshot и response guard до persistence. �
 9 нарушающих outputs и positive approval; отрицание «подтверждение не нужно» не
 обходит business rule. Офлайн-видео 13,16 с лежит в
 `day14/demo/day14-invariants.webm`; это harness-demo, не real-provider eval. Точка
-продолжения: ручной просмотр Романом, затем отдельное решение о commit/push,
-загрузке видео и сдаче.
+продолжения и владелец действия: Роман загружает этот файл в Google Drive, затем
+отдельно сдаёт ссылки на GitHub и видео. Код повторно коммитить не требуется.
 
 ## Решения дня 11, которые не следует переигрывать без причины
 

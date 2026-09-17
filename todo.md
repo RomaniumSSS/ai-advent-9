@@ -13,10 +13,11 @@
   explicit approval), FSM 10/10, workflow 6/6, web 7/7, machine 19/19,
   JS/compile pass; responsive 3/3 без overflow. Немой offline harness-video
   13,16 с показывает deny, explanation и pause → restart → resume. Real-provider
-  eval не выполнялся, commit/push/deploy не выполнялись. [Описание](day14/README.md),
+  eval и deploy не выполнялись. Код и evidence опубликованы коммитом `7378fd9`
+  в ветке `RomaniumSSS/day13-task-state-machine`. [Описание](day14/README.md),
   [тесты](day14/results/test-report.md), [видео](day14/results/video-report.md),
-  [FSM](experiments/day14-codex-machine/state.json). Следующее: просмотр Романом;
-  публикация и сдача — отдельные действия.
+  [FSM](experiments/day14-codex-machine/state.json). Следующее: Роман загружает
+  `day14/demo/day14-invariants.webm` в Google Drive и отдельно сдаёт ссылки.
 
 - Полуавтономный loop day13 завершён отдельной FSM ассистента (`DONE`): человек
   утверждает planning и финальный validation, а после approve harness сам делает
