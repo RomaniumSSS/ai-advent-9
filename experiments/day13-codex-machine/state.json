@@ -1,0 +1,268 @@
+{
+  "version": 33,
+  "phase": "DONE",
+  "status": "done",
+  "current_step": "Задание дня 13 завершено и подтверждено доказательствами",
+  "expected_action": "Нет; ожидать следующего запроса пользователя",
+  "pause_reason": null,
+  "retry_cycles": 1,
+  "baseline_ref": "983f137877b7cd6431004ac1709181777ef6fe3e",
+  "baseline_manifest": "experiments/day13-codex-machine/baseline.json",
+  "artifacts": {
+    "plan": "experiments/day13-codex-machine/runs/02-planning-result.json",
+    "implementation": "day13/results/implementation.md",
+    "test_report": "experiments/day13-codex-machine/runs/19-terminal-guard-validation-report.md",
+    "live_report": "day13/results/live/day13-live-05/report.md",
+    "live_ledger": "day13/results/live/day13-live-05/ledger.json",
+    "visual_report": "day13/results/visual-report.md",
+    "video_report": "day13/results/video-report.md",
+    "review_report": "experiments/day13-codex-machine/runs/21-terminal-guard-review-report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": true,
+    "formal_state": true,
+    "legal_transitions": true,
+    "pause_every_stage": true,
+    "restart_resume": true,
+    "paused_no_call": true,
+    "task_isolation": true,
+    "live_cases_complete": true,
+    "live_ledger_integrity": true,
+    "live_state_integrity": true,
+    "live_restart_resume": true,
+    "live_pause_guard": true,
+    "live_quality_threshold": true,
+    "live_budget": true,
+    "live_terminal_guard": true,
+    "visual_check": true,
+    "video_check": true,
+    "independent_review": true
+  },
+  "violations": [],
+  "blockers": [],
+  "history": [
+    {
+      "event": "pause",
+      "phase": "PLANNING",
+      "current_step": "Сопоставить задание, peer review и текущий черновик; оформить исполняемый план",
+      "expected_action": "Сохранить planning-result и запросить переход в EXECUTION",
+      "reason": "Проверка durable pause перед запуском дня 13"
+    },
+    {
+      "event": "resume",
+      "phase": "PLANNING",
+      "current_step": "Сопоставить задание, peer review и текущий черновик; оформить исполняемый план",
+      "expected_action": "Сохранить planning-result и запросить переход в EXECUTION"
+    },
+    {
+      "from": "PLANNING",
+      "to": "EXECUTION",
+      "outcome": "pass",
+      "summary": "Контекст дня 13 собран из задания message2977, релевантного обсуждения канала и текущих публичных репозиториев 11 указанных участников: у девяти найден код, у Юли и Владимира публичного day13 нет. Общий надёжный паттерн — stage отдельно от status, переходы разрешает harness, state хранится вне чата, pause сохраняет рабочую точку. Текущий draft day13 уже содержит накопительный агент дня 12, чистую FSM, SQLite v3 с optimistic version и журналом, базовый web UI и зелёный тест основных переходов. План EXECUTION: (1) не трогать дни 01–12; (2) проаудировать draft и исправить один-снимок state на model call, trust-boundary prompt и сохранение подкласса/client через with_config; (3) добавить CLI управления start/state/action/pause/resume и документировать команды; (4) добавить route/UI тесты, ошибки, clear/restart, pause на всех этапах, stale write, user/task isolation и отсутствие model call на паузе; (5) завершить локальную loopback-панель с явным stage/status/step/action и журналом; (6) написать README и сценарий немого видео; (7) перед VALIDATION сохранить implementation report и пройти machine scope check. Далее VALIDATION работает только в scratch-копии, затем browser/video evidence и независимый REVIEW. Done condition: все acceptance checks имеют наблюдаемые доказательства, visual/video/review артефакты существуют, машина разрешает DONE.",
+      "next_action": "Перевести машину в EXECUTION и завершить реализацию только в day13/."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Накопительный агент дня 12 расширен формальной FSM дня 13. Stage и pause/status разделены; переходы проверяет Python-код; durable state и event log хранятся в SQLite по user_id + task_id; optimistic version защищает от stale write; paused state блокирует model call; новый Agent после очистки истории получает сохранённую точку продолжения. Добавлены CLI, loopback web-панель, офлайн-тесты, адаптивные скриншоты и воспроизводимое немое видео. Дни 01–12 не изменялись.",
+      "next_action": "Перейти в VALIDATION и повторить все проверки в независимой временной копии с чистой SQLite-базой."
+    },
+    {
+      "event": "evidence",
+      "phase": "VALIDATION",
+      "check": "visual_check",
+      "artifact": "day13/results/visual-report.md",
+      "summary": "Три целевых viewport просмотрены: desktop, tablet и mobile без обрезаний или перекрытий."
+    },
+    {
+      "event": "evidence",
+      "phase": "VALIDATION",
+      "check": "video_check",
+      "artifact": "day13/results/video-report.md",
+      "summary": "WebM полностью декодирован и ключевые кадры сценария pause/restart/resume просмотрены; аудиодорожки нет."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "В независимой scratch-копии на чистых временных SQLite-базах прошли model/store/agent и web API тесты, JavaScript syntax check и Python byte compilation. Проверены формальные поля state, разрешённые и запрещённые переходы, stale version, pause/resume на всех стадиях, restart без истории, отсутствие model call на паузе и изоляция user/task. Продукт на фазе VALIDATION не редактировался.",
+      "next_action": "Перейти в REVIEW, провести отдельный read-only аудит реализации и учесть уже просмотренные visual/video evidence."
+    },
+    {
+      "from": "REVIEW",
+      "to": "DONE",
+      "outcome": "pass",
+      "summary": "Read-only review одобрил реализацию: блокирующих замечаний и warnings нет. Проверены граница управления переходами, prompt trust boundary, транзакционная запись state+event, optimistic version, pause guard, restart/resume, user/task isolation, локальная web boundary и безопасный вывод данных. Независимые тесты, visual/video evidence и 14/14 тестов внешней Codex-машины зелёные.",
+      "next_action": "Перевести state machine в DONE и обновить короткий проектный статус."
+    },
+    {
+      "event": "sync_policy",
+      "phase": "DONE",
+      "current_step": "Задание дня 13 завершено и подтверждено доказательствами",
+      "expected_action": "Нет; ожидать следующего запроса пользователя"
+    },
+    {
+      "event": "reopen",
+      "from": "DONE",
+      "to": "EXECUTION",
+      "reason": "Пользователь потребовал обязательный массовый live-eval на 50–80 ситуациях перед DONE"
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Машина расширена обязательным LIVE_VALIDATION между офлайн-валидацией и review. В day13 добавлены детерминированный manifest на 64 ситуации, 60 реальных вызовов и 4 pause guards, 12 restart/resume cases, adversarial cases, pinned OpenInference, ноль retry, лимит $0.02 и durable at-most-once ledger с hash/checkpoint chain. Test-double campaign проходит все 64 ситуации и отдельно доказывает остановку без повтора после provider uncertainty.",
+      "next_action": "Перейти в VALIDATION и независимо повторить офлайн-проверки, включая новый campaign runner."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "В независимой scratch-копии повторно прошли FSM, SQLite, Agent, web API, JavaScript/Python checks и новый полный test-double campaign. Подтверждены 64 уникальные ситуации, 60 live paths, четыре pause guards, 12 restart cases, at-most-once stop после provider uncertainty, checkpoint tamper detection и закреплённые бюджет/zero-retry ограничения.",
+      "next_action": "Перейти в LIVE_VALIDATION и запустить единственную durable campaign day13-live-01 с лимитом $0.02."
+    },
+    {
+      "event": "evidence",
+      "phase": "LIVE_VALIDATION",
+      "check": "offline_tests",
+      "artifact": "experiments/day13-codex-machine/runs/07-live-gate-validation-report.md",
+      "summary": "Повторная scratch-валидация включает новый 64-case runner, uncertainty stop и tamper detection."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "EXECUTION",
+      "outcome": "fail",
+      "summary": "Campaign day13-live-01 корректно остановилась fail-closed после первого и единственного send. OpenInference вернул 160 reasoning tokens, finish_reason=length и пустой content; reported cost $0.00002707. Причина в pin_request: при закреплении provider был потерян extra_body.reasoning={effort:none}. Ledger сохранил raw response и не допускает повтор этого case.",
+      "next_action": "Вернуться в EXECUTION, сохранить failed campaign неизменной, исправить перенос reasoning policy и запустить новую campaign с учётом уже потраченных $0.00002707."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Исправлена измеренная причина первого live failure: pin_request теперь сохраняет reasoning={effort:none} при закреплении provider. Regression test проверяет фактическое наличие параметра. Failed ledger day13-live-01 сохранён неизменным; новая campaign day13-live-02 криптографически ссылается на него, учитывает уже потраченные $0.00002707 и ограничивает дополнительный бюджет так, чтобы общий расход остался не выше $0.02.",
+      "next_action": "Повторить офлайн-валидацию repair-контракта и только затем открыть новую live campaign."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "Repair-контракт независимо проверен в scratch-копии. Reasoning effort none теперь сохраняется в фактическом pinned request; failed precursor связан hash/cost, общий бюджет двух кампаний ограничен $0.02; 64-case test-double, uncertainty stop, tamper detection и прежние FSM/web тесты зелёные.",
+      "next_action": "Открыть LIVE_VALIDATION для новой campaign day13-live-02; day13-live-01 не повторять."
+    },
+    {
+      "event": "evidence",
+      "phase": "LIVE_VALIDATION",
+      "check": "offline_tests",
+      "artifact": "experiments/day13-codex-machine/runs/10-live-repair-validation-report.md",
+      "summary": "Repair regression, precursor hash/cost и общий budget повторно проверены в scratch."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "EXECUTION",
+      "outcome": "fail",
+      "summary": "Campaign day13-live-02 завершила все 64 ситуации: 60 реальных responses, 4/4 pause guards, 12/12 restart cases, state integrity 100%, safety failures 0, общий расход с precursor $0.00082234. Quality threshold провален: 46/60 (76.7%). Все 14 quality failures относятся к stage=done: модель видела правильный FSM JSON, но противоречивое указание 'Продолжай с текущего шага' заставляло её выдумывать новый state вместо буквального terminal snapshot.",
+      "next_action": "Вернуться в EXECUTION, сделать prompt_block stage-aware для done и проверить исправление новой campaign в пределах общего $0.02 budget."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Исправлена измеренная причина quality failure campaign day13-live-02: prompt для terminal stage=done теперь запрещает продолжение и требует буквально сохранить stage, step, objective и отсутствие expected_action. Добавлен regression test. Campaign day13-live-03 ссылается на неизменённый ledger day13-live-02 и учитывает накопительный расход обеих прошлых кампаний $0.00082234 в общем лимите $0.02.",
+      "next_action": "Независимо повторить офлайн-проверки terminal prompt, цепочки стоимости, FSM и campaign runner."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "В независимой временной копии зелёные FSM/web тесты, terminal done regression, полный 64-case test-double, uncertainty stop, tamper detection, JavaScript syntax и Python compilation. Policy day13-live-03 проверяет собственный hash/cost live-02 и переносит накопительный расход live-01+live-02 $0.00082234 при общем лимите $0.02.",
+      "next_action": "Запустить новую durable campaign day13-live-03; прошлые cases не повторять."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "BLOCKED",
+      "outcome": "fail",
+      "summary": "Campaign day13-live-03 завершила все 64 ситуации: 60 реальных responses, 4/4 pause guards, 12/12 restart cases, state integrity 100%, safety failures 0, общий расход трёх кампаний $0.00163506. Quality threshold провален: 45/60 (75%). Все 15 failures относятся к stage=done: несмотря на непротиворечивый terminal prompt, модель копирует строку-заголовок 'СОСТОЯНИЕ ТЕКУЩЕЙ ЗАДАЧИ' вместо значений JSON для stage, step и objective. Это показывает недостаточность prompt-only подхода для выбранного provider/model.",
+      "next_action": "Зафиксировать BLOCKED и выбрать отдельным решением: структурировать observed_* вне модели либо сменить модель/provider и открыть новый бюджетированный цикл."
+    },
+    {
+      "event": "unblock",
+      "from": "BLOCKED",
+      "to": "EXECUTION",
+      "previous_retry_cycles": 3,
+      "reason": "Роман выбрал структурный state-envelope: канонические поля формирует приложение, модель отвечает только за decision и answer"
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "После явного unblock реализован структурный state-envelope: stage, current_step, expected_action и objective копирует приложение из единственного снимка FSM; модель возвращает только decision=continue|terminal и короткий answer. Порог качества 90% не снижен. Неверный decision даёт quality_fail, тогда как canonical state остаётся неизменным. Campaign day13-live-04 ссылается на неизменённый live-03 и переносит суммарный расход $0.00163506 в общий лимит $0.02.",
+      "next_action": "Независимо проверить новый контракт, отрицательный decision-case и цепочку бюджета перед live-04."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "В независимой scratch-копии прошли FSM/web проверки, 64-case test-double, app-owned state-envelope, отрицательный wrong-decision case, uncertainty stop, tamper detection, JS syntax и Python compilation. Live-04 криптографически связан с live-03 и учитывает накопительный расход $0.00163506 при общем лимите $0.02.",
+      "next_action": "Запустить durable campaign day13-live-04 с 60 реальными calls и без retry."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "EXECUTION",
+      "outcome": "fail",
+      "summary": "Campaign day13-live-04 завершила 64/64 ситуации и 60 реальных responses. State-envelope, state integrity, 12 restart, 4 pause guards, ledger и budget прошли; safety failures 0. Quality threshold провален: 47/60 (78.3%). Все 13 failures относятся к stage=done: приложение уже защищает canonical state, но модель всё ещё выбирает decision=continue по пользовательской реплике. Решение должно принадлежать FSM, а terminal done не требует model call.",
+      "next_action": "Вернуться в EXECUTION: done обрабатывать локально без model call, а 60 live calls распределить по трём незавершённым stage."
+    },
+    {
+      "event": "sync_policy",
+      "phase": "EXECUTION",
+      "current_step": "Выполнить утверждённый план только в day13/",
+      "expected_action": "Сохранить implementation result и перейти к VALIDATION"
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Исправлена граница terminal state: Agent на stage=done возвращает детерминированный локальный ответ с finish_reason=local_state, не вызывает model client и не меняет FSM. Manifest теперь содержит 68 ситуаций: 60 реальных рабочих calls, 4 pause guards и 4 done guards без сети; 12 restart live cases сохранены. Модель возвращает только answer и не может поставлять state или decision. Live-05 учитывает общий прежний расход $0.00213769 при лимите $0.02.",
+      "next_action": "Проверить в scratch 68-case контракт, локальный done guard и отрицательный model-supplied-state case."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "Scratch-валидация прошла: 68-case test-double, 60 model paths, 4 pause и 4 done guards без сети, 12 restart cases, локальный terminal response, strict answer-only parser, negative model-supplied-state case, uncertainty stop и tamper detection. Бюджет live-05 учитывает $0.00213769 прежних кампаний.",
+      "next_action": "Запустить day13-live-05: 60 реальных рабочих calls плюс 8 локальных guards."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "Campaign day13-live-05 прошла все gates: 68/68 terminal situations, 60/60 реальных рабочих responses, 4/4 pause guards и 4/4 done guards без сети, 12/12 restart cases, quality 100%, safety failures 0, state/ledger integrity true. Расход live-05 $0.00044749; накопительный расход всех пяти кампаний $0.00258518 при лимите $0.02. Ledger SHA-256 09a3e7d5fbc441ce2cc5c687f18f1c5c68d9f151b141895a1d4952e4150b03f2.",
+      "next_action": "Перейти в REVIEW и независимо проверить код, новый контракт, ledger и отсутствие ложного model call на done."
+    },
+    {
+      "event": "evidence",
+      "phase": "REVIEW",
+      "check": "visual_check",
+      "artifact": "day13/results/visual-report.md",
+      "summary": "UI-файлы побайтово совпадают с уже просмотренной версией; три viewport-артефакта существуют и относятся к тем же app.js/index.html."
+    },
+    {
+      "event": "evidence",
+      "phase": "REVIEW",
+      "check": "video_check",
+      "artifact": "day13/results/video-report.md",
+      "summary": "Неизменённое видео VP8 1280x800 11.64s без audio полностью декодировано ffmpeg; сценарий pause/restart/resume остаётся релевантным."
+    },
+    {
+      "from": "REVIEW",
+      "to": "DONE",
+      "outcome": "pass",
+      "summary": "Read-only review одобрил terminal guard и live-eval без blockers/warnings. Подтверждены app-owned state/decision, отсутствие model call на paused/done, 68 terminal cases, 60/60 реальных рабочих responses, 12 restart, целостный ledger, zero retry, cumulative cost $0.00258518/$0.02, актуальные visual/video evidence и 19/19 тестов контроллера.",
+      "next_action": "Перевести машину в DONE и обновить краткий статус дня 13 фактическими метриками live-05."
+    }
+  ]
+}

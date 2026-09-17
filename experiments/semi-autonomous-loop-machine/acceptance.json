@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "checks": [
+    {"id":"planning_complete","gate":"EXECUTION","artifact":"plan","evidence":"План фиксирует actor model/user, durable proposal, version binding и stop rules."},
+    {"id":"implementation_complete","gate":"VALIDATION","artifact":"implementation","evidence":"Loop, persistence, API/UI и tests реализованы в day13/."},
+    {"id":"scope_guard","gate":"VALIDATION","evidence":"Protected paths неизменны."},
+    {"id":"offline_tests","gate":"LIVE_VALIDATION","artifact":"test_report","evidence":"Новый и существующий offline suites проходят."},
+    {"id":"approval_gates","gate":"LIVE_VALIDATION","evidence":"Planning/final boundaries нельзя обойти моделью."},
+    {"id":"pause_restart_stale","gate":"LIVE_VALIDATION","evidence":"Pause race, restart и stale version проверены."},
+    {"id":"bounded_turns","gate":"LIVE_VALIDATION","evidence":"Лимит останавливает цикл детерминированно."},
+    {"id":"integration_flow","gate":"REVIEW","artifact":"integration_report","evidence":"Fake-client выполняет multi-turn execution→validation без нового user message."},
+    {"id":"real_provider_live","gate":"REVIEW","artifact":"live_report","evidence":"Настоящий provider вернул непустые planning/execution/validation responses с provider metadata и usage."},
+    {"id":"live_budget","gate":"REVIEW","evidence":"Live-run сделал ровно 3 calls, без retry, и reported cost не превысил $0.005."},
+    {"id":"existing_regressions","gate":"REVIEW","evidence":"Прежние day13 tests зелёные."},
+    {"id":"independent_review","gate":"DONE","artifact":"review_report","evidence":"Review не обнаружил blockers."}
+  ]
+}

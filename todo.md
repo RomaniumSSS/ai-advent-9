@@ -4,6 +4,45 @@
 
 ## Сейчас — 17.09
 
+- Полуавтономный loop day13 завершён отдельной FSM ассистента (`DONE`): человек
+  утверждает planning и финальный validation, а после approve harness сам делает
+  `execution → validation` до следующей границы. Durable proposal переживает
+  restart и pause/resume, связан с version FSM; in-flight и commit-window pause,
+  stale/double apply, empty response и turn limit проверены. Каждый stage явно
+  получает objective и нужные артефакты из одного snapshot. Offline matrix:
+  workflow 6/6, task-state 10/10, web 6/6, live guards 2/2, deterministic campaign
+  68/68. Real-provider `run-04`: 3/3 OpenInference calls без fallback/retry,
+  restart без дубля, два автономных turns, финальный `done`, 3982+3007 tokens,
+  `$0.00043575`; cumulative `$0.0021920143/$0.005`. Secret scan прошёл. Final
+  review — `APPROVED`, blockers/warnings нет. Commit, push и deploy не выполнялись.
+  Онлайн-панель больше не режет ответы на 300 токенах: default и текущий запуск —
+  8000, параметр доступен через `--max-tokens`; web/workflow regressions зелёные.
+  [Состояние машины](experiments/semi-autonomous-loop-machine/state.json),
+  [live report](day13/results/live-workflow/run-04/report.md),
+  [review](experiments/semi-autonomous-loop-machine/runs/17-final-review-report.md),
+  [видео](https://drive.google.com/file/d/15xgtpOf5CTi4Qeyk7IVt0Tx5zs6SRAKb/view?usp=sharing).
+  Роман принял работу. Новый немой live-ролик: 49,68 с, один настоящий call,
+  pause/restart и переходы до done; публичное скачивание проверено без авторизации.
+  Следующее: commit/push ветки дня 13; сдача ссылки в таблицу — отдельное действие.
+- Модульная сборка контекста day13 завершена отдельной FSM ассистента:
+  `AgentCapabilities` независимо включает профиль, слои памяти, FSM и недавнюю
+  историю; default совместим с прежним режимом, отключённые источники не читаются
+  и не удаляются. Scratch-suite, 5/5 fake-client конфигураций и read-only review
+  прошли. Следующее: отдельный task-contract полуавтономного agent loop.
+- День 13 завершён во внешней quality state machine: итоговый цикл дошёл до
+  `DONE` без blockers/violations. FSM и решение этапа принадлежат приложению;
+  `paused` и `done` не вызывают модель. Campaign live-05 прошла 68/68 ситуаций:
+  60/60 реальных рабочих responses, 4/4 pause guards, 4/4 done guards, 12/12
+  restart cases, quality 100%, safety failures 0. Накопительный расход всех
+  пяти кампаний `$0.00258518` при лимите `$0.02`; неудачные precursor-runs
+  сохранены. [Live report](day13/results/live/day13-live-05/report.md),
+  [ledger](day13/results/live/day13-live-05/ledger.json),
+  [review](experiments/day13-codex-machine/runs/21-terminal-guard-review-report.md),
+  [состояние машины](experiments/day13-codex-machine/state.json). Commit, push,
+  deploy и сдача не выполнялись. Локальная панель объединена с возможностями дня
+  12: профиль, три слоя памяти, области и чат работают рядом с FSM; объединённый
+  API-тест, FSM/live-eval тесты, JS syntax check и responsive overflow-check
+  прошли. Следующее: ручной просмотр Романом и отдельное решение о публикации/сдаче.
 - День 11 технически готов, опубликован и прошёл внутреннее ревью: самостоятельная реализация в `day11/` прошла офлайн-
   проверки и локальная панель прошли; девять вызовов реальной модели подтвердили
   границы трёх слоёв ([результат](day11/results/live-memory.json)). Подготовлено

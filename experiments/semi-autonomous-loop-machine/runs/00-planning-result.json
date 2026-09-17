@@ -1,0 +1,10 @@
+{
+  "phase": "PLANNING",
+  "outcome": "pass",
+  "summary": "Архитектура: TaskState получает optional durable pending_proposal с action, result и based_on_version; SQLite schema v4 хранит proposal_json в той же task_states row, а optimistic save атомарно связывает предложение с текущей FSM. Derived actor: pending→user, planning/execution/validation без pending→model, done→none. run_to_boundary(max_model_turns) циклически перечитывает state: planning вызывает модель и сохраняет submit_plan proposal, затем останавливается; execution вызывает модель, при неизменной active version автоматически применяет submit_result и продолжает; validation вызывает модель и сохраняет approve proposal, затем останавливается. approve_pending применяет proposal; revise_pending в planning сохраняет feedback и просит новый план, в validation выполняет request_changes и возвращает execution. Model turn отделяется от commit истории/FSM: после ответа harness повторно проверяет version/status и только затем атомарно сохраняет принятый результат, поэтому pause/in-flight или stale state не применяют ответ. Loop имеет max_model_turns и структурированные stop reasons. Web API/UI добавляют run, approve, revise, actor/proposal/stop; старые ручные routes остаются. Тесты покрывают normal/revision, restart proposal, pause before/in-flight, stale version, limit, error и regressions; только fake clients.",
+  "artifacts": {"plan":"experiments/semi-autonomous-loop-machine/runs/00-planning-result.json"},
+  "checks": {"planning_complete":true},
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в EXECUTION и реализовать durable proposal, bounded run_to_boundary, approval API/UI и offline tests без реального provider."
+}

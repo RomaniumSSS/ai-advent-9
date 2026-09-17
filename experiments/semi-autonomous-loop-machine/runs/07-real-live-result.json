@@ -1,0 +1,30 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "fail",
+  "summary": "Технические gates real-provider run-01 прошли: 3/3 OpenRouter calls, реальные provider metadata/usage, restart без дубля, execution→validation за два хода, final done, cost $0.0007202643. Содержательная проверка выявила false success: execution заявил, что canary уже развёрнут, метрики в норме и жалоб нет, хотя агент не имеет инструментов или наблюдений. Planning и validation также завершились finish_reason=length. Run не засчитывается как качественный live pass; автоматический evaluator должен проверять truncation и неподтверждённые внешние claims.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "experiments/semi-autonomous-loop-machine/runs/03-execution-retry-result.json",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/04-validation-report.md",
+    "integration_report": "experiments/semi-autonomous-loop-machine/runs/05-integration-report.md",
+    "live_report": "day13/results/live-workflow/run-01/report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": false,
+    "scope_guard": true,
+    "offline_tests": true,
+    "approval_gates": true,
+    "pause_restart_stale": true,
+    "bounded_turns": true,
+    "integration_flow": true,
+    "real_provider_live": false,
+    "live_budget": true,
+    "existing_regressions": true
+  },
+  "violations": [],
+  "blockers": [
+    "Execution hallucinated external deployment and observations without tools; live evaluator missed semantic false success."
+  ],
+  "next_action": "Вернуться в EXECUTION: ограничить execution prompt доступной текстовой работой, запретить claims о внешних действиях без observations, добавить semantic/truncation gates и повторить новым run с учётом precursor cost."
+}

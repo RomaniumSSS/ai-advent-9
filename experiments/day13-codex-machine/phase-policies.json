@@ -1,0 +1,56 @@
+{
+  "PLANNING": {
+    "role": "Планировщик",
+    "sandbox": "read-only",
+    "cwd": ".",
+    "allowed_write_paths": [],
+    "current_step": "Сопоставить задание, peer review и текущий черновик; оформить исполняемый план",
+    "expected_action": "Сохранить planning-result и запросить переход в EXECUTION",
+    "instructions": "Не меняй продуктовые файлы. Проверь существующий draft, границы и риски; верни план завершения и проверки."
+  },
+  "EXECUTION": {
+    "role": "Исполнитель",
+    "sandbox": "workspace-write",
+    "cwd": "day13",
+    "allowed_write_paths": ["day13/"],
+    "current_step": "Выполнить утверждённый план только в day13/",
+    "expected_action": "Сохранить implementation result и перейти к VALIDATION",
+    "instructions": "Продолжи или исправь draft по плану. Не объявляй проверки пройденными без наблюдаемого результата."
+  },
+  "VALIDATION": {
+    "role": "Валидатор",
+    "sandbox": "workspace-write",
+    "cwd": "experiments/day13-codex-machine/runs/validation-work",
+    "allowed_write_paths": ["experiments/day13-codex-machine/runs/"],
+    "current_step": "Проверить day13 в изолированной scratch-копии без исправления продукта",
+    "expected_action": "Сохранить test report и предложить LIVE_VALIDATION либо возврат в EXECUTION",
+    "instructions": "Не исправляй day13. Запусти офлайн-проверки, scope guard и проверь acceptance по фактам."
+  },
+  "LIVE_VALIDATION": {
+    "role": "Оператор live-eval",
+    "sandbox": "workspace-write",
+    "cwd": "day13",
+    "allowed_write_paths": ["day13/results/live/"],
+    "current_step": "Провести 68-case campaign: 60 реальных calls, 4 pause и 4 done guards",
+    "expected_action": "Сохранить durable ledger/report и предложить REVIEW либо возврат в EXECUTION",
+    "instructions": "Используй pinned provider, ноль retry и общий fail-closed бюджет $0.02. Не повторяй terminal или in-flight case; при неизвестном исходе остановись."
+  },
+  "REVIEW": {
+    "role": "Ревьюер",
+    "sandbox": "read-only",
+    "cwd": ".",
+    "allowed_write_paths": [],
+    "current_step": "Независимо проверить реализацию, доказательства, UI и видео",
+    "expected_action": "Предложить DONE либо вернуть блокеры в EXECUTION",
+    "instructions": "Не исправляй код. Ищи ошибки переходов, persistence, scope и недоказанные заявления."
+  },
+  "DONE": {
+    "role": "Завершённая задача",
+    "sandbox": "read-only",
+    "cwd": ".",
+    "allowed_write_paths": [],
+    "current_step": "Задание дня 13 завершено и подтверждено доказательствами",
+    "expected_action": "Нет; ожидать следующего запроса пользователя",
+    "instructions": "Не выполнять новые этапы внутри завершённой задачи."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "roman-context-modularization",
+  "owner": "Roman",
+  "language": "ru",
+  "communication": {
+    "style": "Практично и кратко; сначала наблюдаемый результат.",
+    "evidence": "Отделять unit/integration проверки от реального провайдера."
+  },
+  "workflow": ["task-contract", "agents-best-practices", "assistant-fsm", "implementation", "validation", "review"],
+  "forbidden_without_explicit_authorization": ["commit", "push", "deploy", "paid API calls", "external data mutation"]
+}

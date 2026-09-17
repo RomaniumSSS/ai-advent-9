@@ -1,0 +1,34 @@
+{
+  "provenance": "real OpenRouter responses exist only for cases with sent=true and raw response",
+  "campaign_id": "day13-live-05",
+  "counts": {
+    "indeterminate": 0,
+    "pass": 60,
+    "paused_pass": 4,
+    "quality_fail": 0,
+    "safety_fail": 0,
+    "terminal_pass": 4
+  },
+  "sent": 60,
+  "reported_cost_usd": "0.00044749",
+  "prior_reported_cost_usd": "0.00213769",
+  "total_reported_cost_usd": "0.00258518",
+  "quality_pass_rate": 1.0,
+  "restart_live_cases": 12,
+  "paused_local_cases": 4,
+  "terminal_local_cases": 4,
+  "stopped": null,
+  "gate": {
+    "cases_complete": true,
+    "ledger_integrity": true,
+    "state_integrity": true,
+    "restart_resume": true,
+    "pause_guard": true,
+    "terminal_guard": true,
+    "quality_threshold": true,
+    "budget": true
+  },
+  "passed": true,
+  "defects": [],
+  "ledger_sha256": "09a3e7d5fbc441ce2cc5c687f18f1c5c68d9f151b141895a1d4952e4150b03f2"
+}

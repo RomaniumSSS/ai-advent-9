@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "checks": [
+    {"id": "planning_complete", "gate": "EXECUTION", "artifact": "plan", "evidence": "План фиксирует API capabilities, границы и обратную совместимость."},
+    {"id": "implementation_complete", "gate": "VALIDATION", "artifact": "implementation", "evidence": "Модульная сборка и её тесты реализованы в day13/."},
+    {"id": "scope_guard", "gate": "VALIDATION", "evidence": "Нет новых изменений защищённых путей относительно baseline."},
+    {"id": "offline_tests", "gate": "LIVE_VALIDATION", "artifact": "test_report", "evidence": "Полный offline suite day13 проходит."},
+    {"id": "default_compatibility", "gate": "LIVE_VALIDATION", "evidence": "Default capabilities сохраняют прежний набор и порядок messages."},
+    {"id": "selective_loading", "gate": "LIVE_VALIDATION", "evidence": "Отключённые источники не читаются и не включаются."},
+    {"id": "non_destructive_disable", "gate": "LIVE_VALIDATION", "evidence": "Сохранённые данные не меняются при отключении."},
+    {"id": "request_snapshot", "gate": "LIVE_VALIDATION", "evidence": "Capabilities и FSM фиксируются один раз на model request."},
+    {"id": "integration_matrix", "gate": "REVIEW", "artifact": "integration_report", "evidence": "Fake-client runtime проверяет репрезентативные комбинации capabilities и фактические messages."},
+    {"id": "existing_regressions", "gate": "REVIEW", "evidence": "Существующие FSM, web и live-eval unit tests не регрессировали."},
+    {"id": "independent_review", "gate": "DONE", "artifact": "review_report", "evidence": "Read-only review не обнаружил блокирующих дефектов."}
+  ]
+}

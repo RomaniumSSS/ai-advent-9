@@ -1,0 +1,56 @@
+{
+  "PLANNING": {
+    "role": "Планировщик",
+    "sandbox": "read-only",
+    "cwd": ".",
+    "allowed_write_paths": ["experiments/context-modularization-machine/runs/"],
+    "current_step": "Оформить исполнимый план модульной сборки контекста",
+    "expected_action": "Сохранить planning result и предложить EXECUTION",
+    "instructions": "Не меняй day13. Определи минимальный API, compatibility path, тестовую матрицу и риски."
+  },
+  "EXECUTION": {
+    "role": "Исполнитель",
+    "sandbox": "workspace-write",
+    "cwd": "day13",
+    "allowed_write_paths": ["day13/", "experiments/context-modularization-machine/runs/"],
+    "current_step": "Реализовать модульную сборку контекста без agent loop",
+    "expected_action": "Сохранить implementation result и предложить VALIDATION",
+    "instructions": "Сохрани default behavior; добавь узкие тесты. Не реализуй автономный loop и UI capabilities."
+  },
+  "VALIDATION": {
+    "role": "Валидатор",
+    "sandbox": "workspace-write",
+    "cwd": "experiments/context-modularization-machine/runs/validation-work",
+    "allowed_write_paths": ["experiments/context-modularization-machine/runs/"],
+    "current_step": "Проверить реализацию в scratch-копии без исправления продукта",
+    "expected_action": "Сохранить test report и предложить LIVE_VALIDATION либо возврат в EXECUTION",
+    "instructions": "Не исправляй day13. Проверь scope, полный suite, compatibility, selective reads и snapshot invariants."
+  },
+  "LIVE_VALIDATION": {
+    "role": "Интеграционный валидатор",
+    "sandbox": "workspace-write",
+    "cwd": "experiments/context-modularization-machine/runs/",
+    "allowed_write_paths": ["experiments/context-modularization-machine/runs/"],
+    "current_step": "Прогнать локальную матрицу runtime с fake client",
+    "expected_action": "Сохранить integration report и предложить REVIEW либо возврат в EXECUTION",
+    "instructions": "Без сети и платных API. Проверяй фактически отправленные messages и отсутствие чтений отключённых источников."
+  },
+  "REVIEW": {
+    "role": "Ревьюер",
+    "sandbox": "read-only",
+    "cwd": ".",
+    "allowed_write_paths": ["experiments/context-modularization-machine/runs/"],
+    "current_step": "Независимо проверить API, границы и доказательства",
+    "expected_action": "Сохранить review report и предложить DONE либо вернуть дефекты в EXECUTION",
+    "instructions": "Не исправляй продукт. Ищи скрытые чтения, bool-soup, mutable config, регрессии guards и расхождение документации."
+  },
+  "DONE": {
+    "role": "Завершённая задача",
+    "sandbox": "read-only",
+    "cwd": ".",
+    "allowed_write_paths": [],
+    "current_step": "Модульная сборка контекста завершена",
+    "expected_action": "Открыть отдельный task-contract полуавтономного agent loop",
+    "instructions": "Не смешивать дальнейший agent loop с завершённым контрактом."
+  }
+}

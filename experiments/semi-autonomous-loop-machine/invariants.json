@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "max_retry_cycles": 3,
+  "rules": [
+    {"id":"scope","enforcement":"manifest","text":"Продуктовые изменения только в day13/."},
+    {"id":"separate_fsms","enforcement":"review","text":"FSM Codex управляет разработкой; FSM агента управляет runtime-задачей."},
+    {"id":"human_boundaries","enforcement":"tests","text":"План и финальное принятие требуют явного действия пользователя."},
+    {"id":"version_bound","enforcement":"tests","text":"Ответ модели применяется только к версии FSM, для которой был сформирован запрос."},
+    {"id":"bounded_loop","enforcement":"tests","text":"Цикл имеет жёсткий лимит model turns."},
+    {"id":"pause_safe","enforcement":"tests","text":"Пауза не допускает применения in-flight результата."},
+    {"id":"durable_boundary","enforcement":"tests","text":"Pending proposal переживает restart без повторного вызова."},
+    {"id":"live_means_real","enforcement":"evidence","text":"LIVE_VALIDATION засчитывается только по ответам настоящего внешнего provider; fake/mock является INTEGRATION."},
+    {"id":"live_budget","enforcement":"harness","text":"Каждая попытка имеет максимум 3 provider calls и 0 automatic retries; cumulative reported cost с precursors не выше $0.005."},
+    {"id":"secret_boundary","enforcement":"review","text":"Evidence не содержит API key или содержимое credential-файла."}
+  ]
+}

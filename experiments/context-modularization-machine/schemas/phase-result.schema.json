@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["phase", "outcome", "summary", "artifacts", "checks", "violations", "blockers", "next_action"],
+  "properties": {
+    "phase": {"type": "string", "enum": ["PLANNING", "EXECUTION", "VALIDATION", "LIVE_VALIDATION", "REVIEW"]},
+    "outcome": {"type": "string", "enum": ["pass", "fail"]},
+    "summary": {"type": "string", "minLength": 1},
+    "artifacts": {"type": "object"},
+    "checks": {"type": "object"},
+    "violations": {"type": "array", "items": {"type": "string"}},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "next_action": {"type": "string", "minLength": 1}
+  }
+}

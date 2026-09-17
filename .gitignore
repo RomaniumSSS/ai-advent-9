@@ -9,3 +9,4 @@ __pycache__/
 day11/demo/.build/
 day11/demo/*-silent.mp4
 day12/demo/raw-*/
+day13/results/page@*.webm

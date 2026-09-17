@@ -1,0 +1,15 @@
+{
+  "phase": "EXECUTION",
+  "outcome": "pass",
+  "summary": "В day13 добавлен immutable AgentCapabilities(profile, memory_layers, task_state, recent_history_turns). Default сохраняет прежний envelope: профиль, FSM, short/working/long и 6 ходов. Сборка читает только разрешённые memory layers; profile и task_state при отключении не читаются. ask() фиксирует capabilities и TaskState на один model request, поэтому замена конфигурации во время сборки не создаёт смешанный контекст. task_state=false переводит Agent в обычный chat path без FSM guards, не удаляя состояние. Runtime преобразует прежний recent_turns CLI-параметр в capabilities, поэтому внешний интерфейс панели совместим. Добавлены characterization, stable-order, spy-read, non-destructive и request-snapshot тесты; README показывает API. Полуавтономный loop и UI capabilities не добавлялись. Локально прошли test_task_state.py, test_web.py, test_live_eval.py и py_compile через проектную .venv.",
+  "artifacts": {
+    "implementation": "day13/agent.py"
+  },
+  "checks": {
+    "implementation_complete": true,
+    "scope_guard": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в VALIDATION и повторить полный offline suite и инварианты в независимой scratch-копии без исправления продукта."
+}

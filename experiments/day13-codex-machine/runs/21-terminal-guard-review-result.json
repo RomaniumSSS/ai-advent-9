@@ -1,0 +1,14 @@
+{
+  "phase": "REVIEW",
+  "outcome": "pass",
+  "summary": "Read-only review одобрил terminal guard и live-eval без blockers/warnings. Подтверждены app-owned state/decision, отсутствие model call на paused/done, 68 terminal cases, 60/60 реальных рабочих responses, 12 restart, целостный ledger, zero retry, cumulative cost $0.00258518/$0.02, актуальные visual/video evidence и 19/19 тестов контроллера.",
+  "artifacts": {
+    "review_report": "experiments/day13-codex-machine/runs/21-terminal-guard-review-report.md"
+  },
+  "checks": {
+    "independent_review": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перевести машину в DONE и обновить краткий статус дня 13 фактическими метриками live-05."
+}

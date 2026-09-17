@@ -1,0 +1,15 @@
+{
+  "phase": "EXECUTION",
+  "outcome": "pass",
+  "summary": "Исправлена граница terminal state: Agent на stage=done возвращает детерминированный локальный ответ с finish_reason=local_state, не вызывает model client и не меняет FSM. Manifest теперь содержит 68 ситуаций: 60 реальных рабочих calls, 4 pause guards и 4 done guards без сети; 12 restart live cases сохранены. Модель возвращает только answer и не может поставлять state или decision. Live-05 учитывает общий прежний расход $0.00213769 при лимите $0.02.",
+  "artifacts": {
+    "implementation": "day13/results/implementation.md"
+  },
+  "checks": {
+    "implementation_complete": true,
+    "scope_guard": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Проверить в scratch 68-case контракт, локальный done guard и отрицательный model-supplied-state case."
+}

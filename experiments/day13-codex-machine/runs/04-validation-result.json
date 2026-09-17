@@ -1,0 +1,20 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "В независимой scratch-копии на чистых временных SQLite-базах прошли model/store/agent и web API тесты, JavaScript syntax check и Python byte compilation. Проверены формальные поля state, разрешённые и запрещённые переходы, stale version, pause/resume на всех стадиях, restart без истории, отсутствие model call на паузе и изоляция user/task. Продукт на фазе VALIDATION не редактировался.",
+  "artifacts": {
+    "test_report": "experiments/day13-codex-machine/runs/04-validation-report.md"
+  },
+  "checks": {
+    "offline_tests": true,
+    "formal_state": true,
+    "legal_transitions": true,
+    "pause_every_stage": true,
+    "restart_resume": true,
+    "paused_no_call": true,
+    "task_isolation": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в REVIEW, провести отдельный read-only аудит реализации и учесть уже просмотренные visual/video evidence."
+}

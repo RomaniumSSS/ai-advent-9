@@ -1,0 +1,19 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "fail",
+  "summary": "Campaign day13-live-01 корректно остановилась fail-closed после первого и единственного send. OpenInference вернул 160 reasoning tokens, finish_reason=length и пустой content; reported cost $0.00002707. Причина в pin_request: при закреплении provider был потерян extra_body.reasoning={effort:none}. Ledger сохранил raw response и не допускает повтор этого case.",
+  "artifacts": {
+    "live_report": "day13/results/live/day13-live-01/report.md",
+    "live_ledger": "day13/results/live/day13-live-01/ledger.json"
+  },
+  "checks": {
+    "live_cases_complete": false,
+    "live_ledger_integrity": true,
+    "live_budget": true
+  },
+  "violations": [
+    "pin_request удалил reasoning effort none, поэтому весь max_tokens ушёл во внутреннее рассуждение"
+  ],
+  "blockers": [],
+  "next_action": "Вернуться в EXECUTION, сохранить failed campaign неизменной, исправить перенос reasoning policy и запустить новую campaign с учётом уже потраченных $0.00002707."
+}

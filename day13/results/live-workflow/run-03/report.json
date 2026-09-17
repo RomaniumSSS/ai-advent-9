@@ -1,0 +1,113 @@
+{
+  "provenance": "real OpenRouter provider responses; fake/mock forbidden",
+  "started_at": "2026-09-17T17:05:44+00:00",
+  "model": "deepseek-v4-flash",
+  "limits": {
+    "provider_calls": 3,
+    "reported_cost_usd": "0.005",
+    "automatic_retries": 0,
+    "prior_reported_cost_usd": "0.0017004843"
+  },
+  "workflow": {
+    "planning_reason": "approval_required",
+    "restart_reason": "approval_required",
+    "restart_extra_calls": 0,
+    "autonomous_model_turns": 2,
+    "validation_reason": "approval_required",
+    "final_status": "done",
+    "final_stage": "done",
+    "event_names": [
+      "created",
+      "submit_plan",
+      "submit_result",
+      "approve"
+    ]
+  },
+  "traces": [
+    {
+      "call": 1,
+      "status": "completed",
+      "requested_model": "deepseek/deepseek-v4-flash-0731",
+      "message_count": 4,
+      "max_tokens": 1600,
+      "started_at": "2026-09-17T17:05:44+00:00",
+      "elapsed_seconds": 8.022,
+      "response_id": "gen-1789664745-Q6jCGOqNOpSEimQs2a54",
+      "response_model": "deepseek/deepseek-v4-flash-0731",
+      "provider": "OpenInference",
+      "finish_reason": "stop",
+      "prompt_tokens": 186,
+      "completion_tokens": 209,
+      "reported_cost_usd": 2.903e-05,
+      "response": "План достижения цели:\n\n1. Сформулировать конечную цель в измеримом виде (что именно должно быть получено в итоге).\n2. Разбить путь до цели на 3–5 последовательных этапов.\n3. Для каждого этапа определить конкретный результат (критерий завершённости).\n4. Установить временные рамки или дедлайны для каждого этапа.\n5. Определить возможные препятствия и способы их обхода (план Б).\n6. Выделить ресурсы, необходимые для каждого шага (знания, инструменты, данные).\n7. Составить чек-лист действий внутри каждого этапа в порядке выполнения.\n8. Начать с первого действия, не дожидаясь идеальных условий.\n9. После каждого этапа сверять результат с критерием и корректировать план при отклонении.\n10. Зафиксировать итоговый результат и сравнить с исходной целью."
+    },
+    {
+      "call": 2,
+      "status": "completed",
+      "requested_model": "deepseek/deepseek-v4-flash-0731",
+      "message_count": 4,
+      "max_tokens": 1600,
+      "started_at": "2026-09-17T17:05:52+00:00",
+      "elapsed_seconds": 2.447,
+      "response_id": "gen-1789664753-Ln0kbqzTmhvbLwF9C9Xv",
+      "response_model": "deepseek/deepseek-v4-flash-0731",
+      "provider": "OpenInference",
+      "finish_reason": "stop",
+      "prompt_tokens": 248,
+      "completion_tokens": 51,
+      "reported_cost_usd": 9.95e-06,
+      "response": "Понял. Задавайте план или цель — подготовлю готовый текст, аналитику или документ. Если потребуется внешнее действие, явно укажу, что его нужно выполнить человеком или инструментом."
+    },
+    {
+      "call": 3,
+      "status": "completed",
+      "requested_model": "deepseek/deepseek-v4-flash-0731",
+      "message_count": 4,
+      "max_tokens": 1600,
+      "started_at": "2026-09-17T17:05:55+00:00",
+      "elapsed_seconds": 4.137,
+      "response_id": "gen-1789664755-aDUzikx1BoFlGGtWH2G8",
+      "response_model": "deepseek/deepseek-v4-flash-0731",
+      "provider": "OpenInference",
+      "finish_reason": "stop",
+      "prompt_tokens": 201,
+      "completion_tokens": 111,
+      "reported_cost_usd": 1.68e-05,
+      "response": " Я не вижу артефактов FSM (например, диаграмм состояний, логов переходов, таблиц событий) в текущем сообщении. Для проверки результата относительно цели и плана мне нужны эти данные.\n\nПожалуйста, прикрепите артефакты FSM (файлы, текст, ссылки) или укажите, где они находятся. Без них заключение невозможно — я не могу опираться на предположения о внешних действиях."
+    }
+  ],
+  "totals": {
+    "provider_calls": 3,
+    "prompt_tokens": 635,
+    "completion_tokens": 371,
+    "reported_cost_usd": "0.00005578",
+    "prior_reported_cost_usd": "0.0017004843",
+    "cumulative_reported_cost_usd": "0.0017562643"
+  },
+  "gates": {
+    "planning_boundary": true,
+    "restart_without_duplicate_call": true,
+    "autonomous_execution_validation": true,
+    "final_user_boundary": true,
+    "exactly_three_real_calls": true,
+    "responses_nonempty": true,
+    "responses_not_truncated": true,
+    "text_deliverable_quality": false,
+    "no_unsupported_external_claims": true,
+    "provider_metadata": true,
+    "usage_present": true,
+    "reported_cost_budget": true,
+    "workflow_not_chat": true
+  },
+  "passed": false,
+  "elapsed_seconds": 14.901,
+  "database": {
+    "recorded_calls": 3,
+    "prompt_tokens": 635,
+    "completion_tokens": 371,
+    "reported_cost_usd": 5.578e-05,
+    "chat_messages": 0
+  },
+  "unsupported_external_claims": [],
+  "database_sha256": "eaa483a824941033b255119da3f0ab30d06a52683f1c6c143284e2b62dc42529"
+}

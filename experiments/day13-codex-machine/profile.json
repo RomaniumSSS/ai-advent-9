@@ -1,0 +1,18 @@
+{
+  "id": "roman-day13-codex",
+  "owner": "Roman",
+  "language": "ru",
+  "communication": {
+    "style": "Практично и кратко; сначала наблюдаемый результат.",
+    "teaching_mode": "Объяснять шагами только по запросу.",
+    "evidence": "Разделять офлайн-тесты, реальный провайдер и ручную приёмку."
+  },
+  "workflow": ["task-contract", "agents-best-practices", "implementation", "test", "review", "web-preview"],
+  "preferences": [
+    "Начинать с фактического status машины и Git-состояния.",
+    "Не терять пользовательские незакоммиченные изменения.",
+    "Сначала детерминированные и офлайн-проверки.",
+    "Следующий шаг должен следовать из durable state, а не из памяти чата."
+  ],
+  "forbidden_without_explicit_authorization": ["commit", "push", "deploy", "live API calls", "external data mutation"]
+}

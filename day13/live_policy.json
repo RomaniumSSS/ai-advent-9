@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "campaign_id": "day13-live-05",
+  "model": "deepseek/deepseek-v4-flash-0731",
+  "provider": "open-inference",
+  "provider_raw_names": ["open-inference", "OpenInference"],
+  "allow_fallbacks": false,
+  "sdk_retries": 0,
+  "automatic_retries": 0,
+  "max_live_calls": 60,
+  "max_prompt_tokens": 4096,
+  "max_tokens": 160,
+  "temperature": 0.1,
+  "max_total_reported_cost_usd": "0.02",
+  "max_additional_reported_cost_usd": "0.01786231",
+  "prompt_usd_per_million_ceiling": "0.05",
+  "completion_usd_per_million_ceiling": "0.16",
+  "minimum_quality_pass_rate": 0.9,
+  "price_source": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4-flash-0731/endpoints",
+  "price_verified_at": "2026-09-17",
+  "prior_campaign": {
+    "campaign_id": "day13-live-04",
+    "ledger_path": "results/live/day13-live-04/ledger.json",
+    "ledger_sha256": "39c0255f20c5b21971ae8d03e382a72f6ef6ad4464ad08072f1465c019a4f056",
+    "ledger_reported_cost_usd": "0.00050263",
+    "cumulative_reported_cost_usd": "0.00213769",
+    "outcome": "quality_fail"
+  }
+}

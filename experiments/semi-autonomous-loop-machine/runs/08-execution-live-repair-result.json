@@ -1,0 +1,20 @@
+{
+  "phase": "EXECUTION",
+  "outcome": "pass",
+  "summary": "Исправлен false-success path real run-01. Execution prompt теперь явно ограничивает модель текстовой/аналитической работой, запрещает заявлять внешние действия без tool observations и требует runbook/document/checklist с явной человеческой границей. Validation prompt проверяет только FSM artifacts. Live evaluator переведён на текстовый deliverable, увеличил output budget до устранения truncation, добавил gates для finish_reason=stop, содержательности и unsupported external claims, а budget считает failed precursor cost. Offline workflow/task/web regressions зелёные.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "experiments/semi-autonomous-loop-machine/runs/08-execution-live-repair-result.json",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/04-validation-report.md",
+    "integration_report": "experiments/semi-autonomous-loop-machine/runs/05-integration-report.md",
+    "live_report": "day13/results/live-workflow/run-01/report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Повторить offline validation prompt guards и regressions, затем новый real-provider run-02 с prior cost $0.0007202643."
+}

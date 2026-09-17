@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "max_retry_cycles": 3,
+  "rules": [
+    {"id": "protected_days", "enforcement": "manifest_and_review", "text": "day01-day12 не изменяются после baseline машины."},
+    {"id": "scope", "enforcement": "code_and_review", "text": "Продуктовые изменения находятся только в day13/."},
+    {"id": "state_outside_chat", "enforcement": "tests", "text": "FSM хранится отдельно от истории сообщений."},
+    {"id": "harness_controls_transitions", "enforcement": "tests_and_review", "text": "Модель не меняет stage напрямую."},
+    {"id": "pause_is_orthogonal", "enforcement": "tests", "text": "Pause/resume меняет только status и version."},
+    {"id": "resume_without_history", "enforcement": "tests", "text": "Новый агент продолжает по сохранённому step/action без истории."},
+    {"id": "paused_no_model_call", "enforcement": "tests", "text": "На паузе клиент модели не вызывается."},
+    {"id": "task_isolation", "enforcement": "tests", "text": "Состояние не протекает между user_id/task_id."},
+    {"id": "external_cost_gate", "enforcement": "human", "text": "Платный API требует отдельного решения; пользователь дал его для day13-live-01."},
+    {"id": "live_eval_gate", "enforcement": "ledger_and_tests", "text": "Live-eval использует максимум 60 send, ноль retry, at-most-once ledger и бюджет не выше $0.02."},
+    {"id": "done_gate", "enforcement": "code", "text": "DONE требует офлайн-тестов, обязательного live-eval, visual check, видео и нового независимого review."}
+  ]
+}

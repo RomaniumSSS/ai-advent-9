@@ -1,0 +1,6 @@
+interface:
+  display_name: "Day 13 Quality Machine"
+  short_description: "Управляет проверяемым циклом задания дня 13"
+  default_prompt: "Используй $day13-quality-machine, чтобы продолжить задание дня 13 с сохранённого этапа."
+policy:
+  allow_implicit_invocation: false

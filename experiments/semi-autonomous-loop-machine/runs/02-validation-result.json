@@ -1,0 +1,24 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "fail",
+  "summary": "Основные offline suites, approval gate, restart, stale proposal, empty response, turn limit и UI regressions прошли. Дополнительная точечная race-проверка воспроизвела узкий дефект: pause между post-call version check и proposal/transition commit безопасно блокирует запись, но RuntimeError выходит наружу вместо LoopResult(reason=paused/state_changed). Требуется нормализовать optimistic conflict в structured stop и закрепить тестом для proposal и execution commit paths.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "experiments/semi-autonomous-loop-machine/runs/01-execution-result.json",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/02-validation-result.json"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": false,
+    "approval_gates": true,
+    "pause_restart_stale": false,
+    "bounded_turns": true
+  },
+  "violations": [],
+  "blockers": [
+    "Commit-window pause возвращает исключение вместо структурированной остановки loop."
+  ],
+  "next_action": "Вернуться в EXECUTION, перехватить optimistic conflict после model turn, перечитать FSM и вернуть paused/state_changed; добавить regression tests обоих commit paths."
+}

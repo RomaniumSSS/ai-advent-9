@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>День 13 · Накопительный агент с FSM</title>
+  <style>
+    :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#172329;background:#f4f6f3;--green:#217a59;--soft:#e9f6ef;--line:#dfe7e0;--muted:#60716d}
+    *{box-sizing:border-box}body{margin:0}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{cursor:wait;opacity:.5}
+    .wrap{max-width:1320px;margin:auto;padding:30px 32px 48px}header{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:26px}.eyebrow{color:#267e67;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}h1{font-size:clamp(28px,4vw,44px);letter-spacing:-.045em;line-height:1.08;margin:8px 0}h2{font-size:20px;letter-spacing:-.025em;margin:0 0 6px}h3{font-size:17px;margin:0}p{margin:0;color:var(--muted);line-height:1.5}.badge{border:1px solid #b8d9cb;background:var(--soft);color:#247258;border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;white-space:nowrap}
+    .panel,.scope,.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 26px rgba(22,46,33,.045)}.panel{padding:22px 24px;margin-bottom:22px}.scope{padding:21px 24px;display:grid;grid-template-columns:1fr repeat(3,minmax(115px,1fr)) auto;align-items:end;gap:14px;margin-bottom:22px}.scope-title{align-self:center}
+    label{font-size:12px;font-weight:750;color:#50635c;display:block;margin-bottom:7px}input,textarea{width:100%;border:1px solid #cad8cf;border-radius:10px;background:#fbfcfa;color:#192620;padding:11px 12px;outline:none}input:focus,textarea:focus{border-color:#399d79;box-shadow:0 0 0 3px #d6f1e2}textarea{resize:vertical;min-height:84px}
+    .btn{border:1px solid #b9d6c8;border-radius:10px;background:#eef7f1;color:#1e6d51;font-size:13px;font-weight:750;padding:11px 14px;white-space:nowrap}.btn:hover{background:#dbefe2}.btn.primary{background:var(--green);border-color:var(--green);color:#fff}.btn.primary:hover{background:#146847}.btn.warn{border-color:#e0c7ad;background:#fff7ec;color:#8a5422}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+    .section-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin:0 0 14px}.section-heading small{color:#72817a}.fields{display:grid;gap:14px}.save-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.save-actions .btn{white-space:normal;min-height:58px;padding:9px}.save-actions .btn span{display:block;font-size:11px;font-weight:500;opacity:.8;margin-top:3px}
+    .fsm{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:18px;margin-bottom:22px}.fsm .panel{margin:0}.pipeline{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:17px 0}.stage{border:1px solid #dbe7df;background:#f8faf8;border-radius:12px;padding:12px;color:#82928a}.stage strong{display:block;font-size:10px;letter-spacing:.08em;margin-bottom:5px}.stage.active{border-color:#45a17c;background:#eaf7f0;color:#176746;box-shadow:0 0 0 1px #45a17c inset}.stage.done{color:#3c8c6a}.objective{font-size:19px;font-weight:750;line-height:1.35}.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:14px 0}.fact{border:1px solid #e0e8e2;background:#f8faf8;border-radius:11px;padding:11px}.fact small{display:block;color:#718078;font-size:10px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}.fact div{overflow-wrap:anywhere}.events{display:grid;gap:8px;max-height:330px;overflow:auto}.event{border-left:2px solid #75b99a;padding:3px 0 3px 10px;font-size:12px;color:#64766d}.event strong{color:#285d45}.task-empty{display:grid;grid-template-columns:1fr auto;gap:9px;align-items:end;margin-top:16px}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:22px}.card{padding:18px 19px;min-height:172px}.card-top{display:flex;align-items:start;justify-content:space-between;gap:10px}.number{height:28px;min-width:28px;border-radius:9px;background:#ebf4ed;color:#277b59;display:grid;place-items:center;font-size:12px;font-weight:800}.card p{font-size:13px;margin:8px 0 14px}.notes{display:grid;gap:7px}.note{display:flex;gap:8px;align-items:start;justify-content:space-between;border:1px solid #e8eee9;background:#f8faf7;border-radius:9px;padding:8px 10px;font-size:13px;line-height:1.4;overflow-wrap:anywhere}.note strong{color:#335c47}.note button{border:0;background:transparent;color:#9aa8a0;padding:0 2px;font-size:16px;line-height:1}.note button:hover{color:#a43f3f}.empty{font-size:13px;color:#90a098;font-style:italic}
+    .main-grid{display:grid;grid-template-columns:minmax(325px,.88fr) minmax(420px,1.12fr);gap:18px}.main-grid .panel{margin:0}.chat-top{flex-wrap:wrap;display:flex;justify-content:space-between;gap:16px;align-items:start}.history{height:255px;overflow:auto;display:grid;align-content:start;gap:9px;background:#f8faf8;border:1px solid #e5ece6;border-radius:12px;padding:15px}.message{max-width:90%;padding:10px 12px;border-radius:12px;font-size:13px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}.message.user{justify-self:end;background:#e1f1e6;color:#214c38;border-bottom-right-radius:3px}.message.assistant{justify-self:start;background:#fff;border:1px solid #e2e9e2;border-bottom-left-radius:3px}.chat-form{display:flex;gap:9px;margin-top:12px}.chat-form input{min-width:0;flex:1}.status{white-space:pre-wrap;overflow-wrap:anywhere;min-height:23px;margin:0 0 18px;color:#36765b;font-size:13px}.status.error{color:#a94c41}.hint{margin-top:16px;font-size:12px;color:#8a9890}details{margin-bottom:18px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;max-height:300px;overflow:auto}
+    @media(max-width:1050px){.scope{grid-template-columns:repeat(3,1fr)}.scope-title{grid-column:1/-1}.scope>.btn{grid-column:1/-1}.fsm,.main-grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}}
+    @media(max-width:720px){.wrap{padding:18px 15px 34px}header{display:block}.badge{display:inline-block;margin-top:14px}.scope{grid-template-columns:1fr;gap:12px;padding:18px}.scope-title,.scope>.btn{grid-column:auto}.pipeline{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.panel{padding:18px}.history{height:220px}.save-actions{grid-template-columns:1fr}.save-actions .btn{min-height:auto}.save-actions .btn span{display:inline;margin-left:5px}.task-empty{grid-template-columns:1fr}}
+    @media(max-width:430px){.pipeline,.facts{grid-template-columns:1fr}.actions .btn{width:100%}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div><div class="eyebrow">AI Advent Challenge · День 13</div><h1>Накопительный агент + FSM</h1><p>Профиль, память и чат дня 12 дополнены формальным состоянием задачи.</p></div>
+      <div class="badge" id="mode">Режим загружается…</div>
+    </header>
+
+    <section class="panel" aria-label="Профиль пользователя">
+      <div class="section-heading"><h2>Активный профиль: <span id="active-user"></span></h2><small id="agent-generation"></small></div>
+      <p>Профиль хранится отдельно от истории, памяти и состояния задачи.</p>
+      <div class="fields" style="margin-top:16px">
+        <div><label for="profile-style">Стиль</label><input disabled id="profile-style" maxlength="1000"></div>
+        <div><label for="profile-format">Формат</label><input disabled id="profile-format" maxlength="1000"></div>
+        <div><label for="profile-constraints">Ограничения</label><input disabled id="profile-constraints" maxlength="1000"></div>
+      </div>
+      <div class="save-actions"><button disabled class="btn primary" id="save-profile">Сохранить профиль</button><button disabled class="btn" data-demo="brief">Пользователь brief<span>кратко, списком</span></button><button disabled class="btn" data-demo="detail">Пользователь detail<span>подробно, с примерами</span></button></div>
+    </section>
+
+    <div id="status" class="status" role="status"></div>
+    <details id="context-box" hidden><summary>Фактический контекст запроса</summary><pre id="context"></pre></details>
+
+    <section class="scope" aria-label="Области памяти и задачи">
+      <div class="scope-title"><h2>Текущая область</h2><p>FSM привязана к пользователю и задаче; разговор можно менять независимо.</p></div>
+      <div><label for="user">Пользователь</label><input disabled id="user" maxlength="80"></div>
+      <div><label for="task">Задача</label><input disabled id="task" maxlength="80"></div>
+      <div><label for="session">Разговор</label><input disabled id="session" maxlength="80"></div>
+      <button disabled id="open-scope" class="btn">Открыть область</button>
+    </section>
+
+    <section class="fsm" aria-label="Task State Machine">
+      <div class="panel">
+        <div class="section-heading"><div><h2>Состояние задачи</h2><p>Этап меняет приложение, а модель формирует только ответ.</p></div></div>
+        <div class="pipeline" id="pipeline" aria-label="Этапы задачи"></div>
+        <div id="task-empty">
+          <p class="empty">В этой области формализованная задача ещё не создана.</p>
+          <div class="task-empty"><div><label for="task-objective">Цель задачи</label><input id="task-objective" maxlength="2000" value="Подготовить план безопасного релиза мобильного приложения"></div><button class="btn primary" id="start-task">Создать задачу</button></div>
+        </div>
+        <div id="task-state" hidden>
+          <div class="objective" id="objective"></div>
+          <div class="facts"><div class="fact"><small>Текущий шаг</small><div id="current_step"></div></div><div class="fact"><small>Ожидаемое действие</small><div id="expected"></div></div><div class="fact"><small>Статус</small><div id="task-status"></div></div><div class="fact"><small>Версия</small><div id="version"></div></div></div>
+          <div class="facts"><div class="fact"><small>Чья очередь</small><div id="workflow-actor"></div></div><div class="fact"><small>Предложение модели</small><div id="workflow-proposal"></div></div></div>
+          <div><label for="task-result">Результат текущего этапа</label><textarea id="task-result" maxlength="20000" placeholder="Что было получено на этом этапе"></textarea></div>
+          <div class="actions"><button class="btn primary" id="advance">Завершить этап</button><button class="btn warn" id="changes" hidden>Вернуть на доработку</button><button class="btn" id="pause">Пауза</button><button class="btn" id="resume">Продолжить</button></div>
+          <div class="actions"><button class="btn primary" id="workflow-run">Запустить до границы</button><button class="btn primary" id="workflow-approve">Одобрить предложение</button><button class="btn warn" id="workflow-revise">Вернуть с замечанием</button></div>
+        </div>
+        <div class="actions"><button class="btn" id="restart">Новый экземпляр агента</button><button class="btn" id="continue">Сказать «Продолжай»</button></div>
+      </div>
+      <aside class="panel"><h2>Журнал переходов</h2><p style="font-size:13px;margin-bottom:15px">Успешные изменения FSM записываются вместе с версией.</p><div id="events" class="events"></div></aside>
+    </section>
+
+    <div class="section-heading"><h2>Что агент помнит сейчас</h2><small id="archive-metric"></small></div>
+    <section class="cards" aria-label="Слои памяти">
+      <article class="card"><div class="card-top"><h3>Краткосрочная</h3><div class="number">01</div></div><p>Текущий разговор · сессия</p><div class="notes" id="short-notes"></div></article>
+      <article class="card"><div class="card-top"><h3>Рабочая</h3><div class="number">02</div></div><p>Цель и детали текущей задачи</p><div class="notes" id="working-notes"></div></article>
+      <article class="card"><div class="card-top"><h3>Долговременная</h3><div class="number">03</div></div><p>Сведения для будущих задач пользователя</p><div class="notes" id="long-notes"></div></article>
+    </section>
+
+    <div class="main-grid">
+      <section class="panel"><h2>Сохранить сведение</h2><p>Три кнопки направляют одну запись в разные области.</p>
+        <div class="fields" style="margin-top:16px"><div><label for="key">Название</label><input disabled id="key" maxlength="80" placeholder="например: срок"></div><div><label for="value">Сведение</label><textarea disabled id="value" maxlength="2000" placeholder="например: 27 октября 2031 года"></textarea></div></div>
+        <div class="save-actions"><button disabled class="btn" data-save="short">В разговор<span>до смены сессии</span></button><button disabled class="btn" data-save="working">В задачу<span>до смены задачи</span></button><button disabled class="btn" data-save="long">Пользователю<span>для будущих задач</span></button></div>
+      </section>
+      <section class="panel"><div class="chat-top"><div><h2>Разговор с агентом</h2><p>Профиль, память и один снимок FSM входят в запрос.</p></div><button disabled id="reset" class="btn">Очистить разговор</button></div>
+        <div class="history" id="history" aria-live="polite"></div>
+        <form id="chat-form" class="chat-form"><input disabled id="question" maxlength="20000" aria-label="Вопрос агенту" placeholder="Например: что мне делать дальше?" required><button disabled class="btn primary" type="submit">Спросить</button></form>
+      </section>
+    </div>
+    <div class="hint">Архив, профиль, память, снимок FSM и журнал переходов хранятся в одной SQLite-базе, но имеют разные области и сроки жизни.</div>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

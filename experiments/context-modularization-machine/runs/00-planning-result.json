@@ -1,0 +1,14 @@
+{
+  "phase": "PLANNING",
+  "outcome": "pass",
+  "summary": "Минимальный API: immutable AgentCapabilities с profile, memory_layers, task_state и recent_history_turns; default воспроизводит нынешние profile + FSM + short/working/long + 6 ходов. Agent получает capabilities при создании, валидирует их и собирает request context только из разрешённых источников в прежнем порядке. ask() делает один request snapshot, включающий capabilities и при включённой FSM один TaskState; guards действуют только когда task_state capability включена. Отключение влияет только на чтение и prompt, но не удаляет данные. Реализация ограничена day13/agent.py и тестами; Runtime продолжает использовать default. Characterization, spy-store, комбинационная и regression проверки выполняются без сети. Полуавтономный loop и UI-конфигурация отложены в отдельный контракт.",
+  "artifacts": {
+    "plan": "experiments/context-modularization-machine/runs/00-planning-result.json"
+  },
+  "checks": {
+    "planning_complete": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в EXECUTION, реализовать AgentCapabilities и тесты совместимости/избирательных чтений без добавления agent loop."
+}

@@ -1,0 +1,15 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "pass",
+  "summary": "На временной SQLite-базе отдельный runtime/fake-client прогон проверил 5/5 конфигураций: default включил profile+FSM+short+working+long; stateless отправил только system+question; profile_only включил только профиль; task_working включил только FSM+working; history_only во втором вызове отправил ровно system, последнюю user/assistant пару и новый вопрос. Проверялись фактические messages, полученные provider adapter. Все model calls были fake/local, сеть и стоимость отсутствовали. Полный существующий suite ранее повторён в scratch и остаётся зелёным.",
+  "artifacts": {
+    "integration_report": "experiments/context-modularization-machine/runs/03-integration-report.md"
+  },
+  "checks": {
+    "integration_matrix": true,
+    "existing_regressions": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в REVIEW и провести read-only аудит API, snapshot semantics, hidden reads и совместимости без исправления кода."
+}

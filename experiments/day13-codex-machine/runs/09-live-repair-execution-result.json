@@ -1,0 +1,15 @@
+{
+  "phase": "EXECUTION",
+  "outcome": "pass",
+  "summary": "Исправлена измеренная причина первого live failure: pin_request теперь сохраняет reasoning={effort:none} при закреплении provider. Regression test проверяет фактическое наличие параметра. Failed ledger day13-live-01 сохранён неизменным; новая campaign day13-live-02 криптографически ссылается на него, учитывает уже потраченные $0.00002707 и ограничивает дополнительный бюджет так, чтобы общий расход остался не выше $0.02.",
+  "artifacts": {
+    "implementation": "day13/results/implementation.md"
+  },
+  "checks": {
+    "implementation_complete": true,
+    "scope_guard": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Повторить офлайн-валидацию repair-контракта и только затем открыть новую live campaign."
+}

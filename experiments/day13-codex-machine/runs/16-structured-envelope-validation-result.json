@@ -1,0 +1,20 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "В независимой scratch-копии прошли FSM/web проверки, 64-case test-double, app-owned state-envelope, отрицательный wrong-decision case, uncertainty stop, tamper detection, JS syntax и Python compilation. Live-04 криптографически связан с live-03 и учитывает накопительный расход $0.00163506 при общем лимите $0.02.",
+  "artifacts": {
+    "test_report": "experiments/day13-codex-machine/runs/16-structured-envelope-validation-report.md"
+  },
+  "checks": {
+    "offline_tests": true,
+    "formal_state": true,
+    "legal_transitions": true,
+    "pause_every_stage": true,
+    "restart_resume": true,
+    "paused_no_call": true,
+    "task_isolation": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Запустить durable campaign day13-live-04 с 60 реальными calls и без retry."
+}

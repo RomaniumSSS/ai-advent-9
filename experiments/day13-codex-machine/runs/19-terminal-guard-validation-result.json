@@ -1,0 +1,20 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "Scratch-валидация прошла: 68-case test-double, 60 model paths, 4 pause и 4 done guards без сети, 12 restart cases, локальный terminal response, strict answer-only parser, negative model-supplied-state case, uncertainty stop и tamper detection. Бюджет live-05 учитывает $0.00213769 прежних кампаний.",
+  "artifacts": {
+    "test_report": "experiments/day13-codex-machine/runs/19-terminal-guard-validation-report.md"
+  },
+  "checks": {
+    "offline_tests": true,
+    "formal_state": true,
+    "legal_transitions": true,
+    "pause_every_stage": true,
+    "restart_resume": true,
+    "paused_no_call": true,
+    "task_isolation": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Запустить day13-live-05: 60 реальных рабочих calls плюс 8 локальных guards."
+}

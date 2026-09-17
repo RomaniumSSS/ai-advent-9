@@ -1,0 +1,18 @@
+{
+  "phase": "EXECUTION",
+  "outcome": "pass",
+  "summary": "Закрыта найденная validation-гонка: optimistic RuntimeError в узком окне между post-call check и SQLite commit преобразуется после перечитывания FSM в LoopResult(reason=paused/state_changed). Late result не записывается ни в FSM, ни в proposal, ни в историю. Добавлен regression test для planning proposal commit и execution transition commit; оба возвращают structured paused stop. Основные workflow, task-state и web suites зелёные.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "experiments/semi-autonomous-loop-machine/runs/03-execution-retry-result.json",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/02-validation-result.json"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Повторить VALIDATION matrix, включая оба commit-window pause scenarios."
+}

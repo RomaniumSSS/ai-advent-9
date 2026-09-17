@@ -1,0 +1,70 @@
+{
+  "version": 6,
+  "phase": "DONE",
+  "status": "done",
+  "retry_cycles": 0,
+  "baseline_ref": "HEAD",
+  "baseline_manifest": "experiments/context-modularization-machine/baseline.json",
+  "current_step": "Модульная сборка контекста завершена",
+  "expected_action": "Открыть отдельный task-contract полуавтономного agent loop",
+  "pause_reason": null,
+  "artifacts": {
+    "plan": "experiments/context-modularization-machine/runs/00-planning-result.json",
+    "implementation": "day13/agent.py",
+    "test_report": "experiments/context-modularization-machine/runs/02-validation-report.md",
+    "integration_report": "experiments/context-modularization-machine/runs/03-integration-report.md",
+    "review_report": "experiments/context-modularization-machine/runs/04-review-report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": true,
+    "default_compatibility": true,
+    "selective_loading": true,
+    "non_destructive_disable": true,
+    "request_snapshot": true,
+    "integration_matrix": true,
+    "existing_regressions": true,
+    "independent_review": true
+  },
+  "violations": [],
+  "blockers": [],
+  "history": [
+    {
+      "from": "PLANNING",
+      "to": "EXECUTION",
+      "outcome": "pass",
+      "summary": "Минимальный API: immutable AgentCapabilities с profile, memory_layers, task_state и recent_history_turns; default воспроизводит нынешние profile + FSM + short/working/long + 6 ходов. Agent получает capabilities при создании, валидирует их и собирает request context только из разрешённых источников в прежнем порядке. ask() делает один request snapshot, включающий capabilities и при включённой FSM один TaskState; guards действуют только когда task_state capability включена. Отключение влияет только на чтение и prompt, но не удаляет данные. Реализация ограничена day13/agent.py и тестами; Runtime продолжает использовать default. Characterization, spy-store, комбинационная и regression проверки выполняются без сети. Полуавтономный loop и UI-конфигурация отложены в отдельный контракт.",
+      "next_action": "Перейти в EXECUTION, реализовать AgentCapabilities и тесты совместимости/избирательных чтений без добавления agent loop."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "В day13 добавлен immutable AgentCapabilities(profile, memory_layers, task_state, recent_history_turns). Default сохраняет прежний envelope: профиль, FSM, short/working/long и 6 ходов. Сборка читает только разрешённые memory layers; profile и task_state при отключении не читаются. ask() фиксирует capabilities и TaskState на один model request, поэтому замена конфигурации во время сборки не создаёт смешанный контекст. task_state=false переводит Agent в обычный chat path без FSM guards, не удаляя состояние. Runtime преобразует прежний recent_turns CLI-параметр в capabilities, поэтому внешний интерфейс панели совместим. Добавлены characterization, stable-order, spy-read, non-destructive и request-snapshot тесты; README показывает API. Полуавтономный loop и UI capabilities не добавлялись. Локально прошли test_task_state.py, test_web.py, test_live_eval.py и py_compile через проектную .venv.",
+      "next_action": "Перейти в VALIDATION и повторить полный offline suite и инварианты в независимой scratch-копии без исправления продукта."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "В независимой scratch-копии без исправления day13 прошли py_compile, 10 task-state/context сценариев, 5 web сценариев и 4 группы live-eval unit tests. Characterization подтверждает default profile+FSM+3 memory layers+6 turns; selective case включает только short+long в каноническом порядке; spy-store фиксирует ноль вызовов load_profile/load_notes/load_task_state при полном отключении; повторное открытие store подтверждает сохранность данных; mutation-during-build подтверждает один immutable capabilities snapshot и один FSM read. Scope check не обнаружил protected или unexpected changes. Сеть не использовалась.",
+      "next_action": "Перейти в LIVE_VALIDATION и выполнить отдельный локальный runtime/fake-client прогон матрицы фактически отправленных messages без сети."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "На временной SQLite-базе отдельный runtime/fake-client прогон проверил 5/5 конфигураций: default включил profile+FSM+short+working+long; stateless отправил только system+question; profile_only включил только профиль; task_working включил только FSM+working; history_only во втором вызове отправил ровно system, последнюю user/assistant пару и новый вопрос. Проверялись фактические messages, полученные provider adapter. Все model calls были fake/local, сеть и стоимость отсутствовали. Полный существующий suite ранее повторён в scratch и остаётся зелёным.",
+      "next_action": "Перейти в REVIEW и провести read-only аудит API, snapshot semantics, hidden reads и совместимости без исправления кода."
+    },
+    {
+      "from": "REVIEW",
+      "to": "DONE",
+      "outcome": "pass",
+      "summary": "Read-only review одобрил изменение без blockers/warnings. Проверены validation API, канонический порядок, отсутствие скрытого store.notes в request path, zero-read semantics для profile/task_state/memory, finally-cleanup request snapshot, сохранение pause/done guards при включённой FSM, явный plain-chat режим при task_state=false, совместимость Runtime --recent-turns и все внутренние Agent constructors. Отключение контекста не мутирует SQLite. Scope machine чист; секретов, сети и внешних side effects нет. Реальный provider обоснованно не запускался, поскольку проверяемая граница — детерминированный payload builder.",
+      "next_action": "Перевести контракт в DONE; следующим отдельным task-contract создать полуавтономный agent loop поверх завершённой модульной сборки."
+    }
+  ]
+}

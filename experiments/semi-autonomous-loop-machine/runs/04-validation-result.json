@@ -1,0 +1,22 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "Повторная независимая offline validation прошла после исправления commit-window race. Workflow matrix 6/6, task-state 10/10, web 6/6, deterministic live-eval regression 68/68 и JS syntax check зелёные. Scratch-check подтвердил, что model text не обходит approval, proposal применяется один раз, response без choices даёт model_error, обе pause commit-races возвращают structured stop. Protected paths неизменны, реальный provider не использовался.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "experiments/semi-autonomous-loop-machine/runs/03-execution-retry-result.json",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/04-validation-report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": true,
+    "approval_gates": true,
+    "pause_restart_stale": true,
+    "bounded_turns": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в LIVE_VALIDATION и отдельно зафиксировать fake-client multi-turn integration без нового user message."
+}

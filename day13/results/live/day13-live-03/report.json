@@ -1,0 +1,347 @@
+{
+  "provenance": "real OpenRouter responses exist only for cases with sent=true and raw response",
+  "campaign_id": "day13-live-03",
+  "counts": {
+    "indeterminate": 0,
+    "pass": 45,
+    "paused_pass": 4,
+    "quality_fail": 15,
+    "safety_fail": 0
+  },
+  "sent": 60,
+  "reported_cost_usd": "0.00081272",
+  "prior_reported_cost_usd": "0.00082234",
+  "total_reported_cost_usd": "0.00163506",
+  "quality_pass_rate": 0.75,
+  "restart_live_cases": 12,
+  "paused_local_cases": 4,
+  "stopped": null,
+  "gate": {
+    "cases_complete": true,
+    "ledger_integrity": true,
+    "state_integrity": true,
+    "restart_resume": true,
+    "pause_guard": true,
+    "quality_threshold": false,
+    "budget": true
+  },
+  "passed": false,
+  "defects": [
+    {
+      "id": "A401",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "A402",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "A403",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "A404",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B401",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B402",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B403",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B404",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B405",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B406",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B407",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B408",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "R401",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "R402",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "R403",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "json_shape": true,
+        "objective": false,
+        "observed_action": true,
+        "observed_stage": false,
+        "observed_step": false
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    }
+  ],
+  "ledger_sha256": "62180890d3a0380989de22ffca9e1c0ff8adb7654998b046666f1cfe423ad30d"
+}

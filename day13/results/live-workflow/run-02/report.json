@@ -1,0 +1,77 @@
+{
+  "provenance": "real OpenRouter provider responses; fake/mock forbidden",
+  "started_at": "2026-09-17T16:59:16+00:00",
+  "model": "deepseek-v4-flash",
+  "limits": {
+    "provider_calls": 3,
+    "reported_cost_usd": "0.005",
+    "automatic_retries": 0,
+    "prior_reported_cost_usd": "0.0007202643"
+  },
+  "workflow": {},
+  "traces": [
+    {
+      "call": 1,
+      "status": "completed",
+      "requested_model": "deepseek/deepseek-v4-flash-0731",
+      "message_count": 4,
+      "max_tokens": 800,
+      "started_at": "2026-09-17T16:59:17+00:00",
+      "elapsed_seconds": 5.816,
+      "response_id": "gen-1789664357-Qqg9NOPy0JpL8TjLIHuA",
+      "response_model": "deepseek/deepseek-v4-flash-0731",
+      "provider": "Reka",
+      "finish_reason": "length",
+      "prompt_tokens": 468,
+      "completion_tokens": 800,
+      "reported_cost_usd": 0.00057948,
+      "response": ""
+    },
+    {
+      "call": 2,
+      "status": "completed",
+      "requested_model": "deepseek/deepseek-v4-flash-0731",
+      "message_count": 4,
+      "max_tokens": 800,
+      "started_at": "2026-09-17T16:59:23+00:00",
+      "elapsed_seconds": 14.831,
+      "response_id": "gen-1789664363-I4eIyvNm5oLuGmVJeJlC",
+      "response_model": "deepseek/deepseek-v4-flash-0731",
+      "provider": "Wafer",
+      "finish_reason": "stop",
+      "prompt_tokens": 412,
+      "completion_tokens": 1175,
+      "reported_cost_usd": 0.00033495,
+      "response": "1. Уточнить ожидаемый формат итогового документа: единый текст runbook с заголовками и командами, без внешних вложений.\n\n2. Составить каркас runbook со следующими обязательными разделами:\n   - цель и область применения;\n   - роли и ответственность: оператор, дежурный инженер, владелец сервиса;\n   - требования перед выпуском: версия сборки, окружение, feature flags, доступы;\n   - процедура canary-выпуска: выкат на 10% пользователей;\n   - команды и шаги оператора: опубликовать сборку, включить canary, проверить статус;\n   - метрики контроля: error rate, latency p50/p95, crash-free rate, проценты пользователей;\n   - пороговые значения метрик для продолжения или остановки;\n   - критерии rollback: превышение error rate или latency, рост падений, аномалии в дашборде;\n   - пошаговая процедура rollback с конкретными командами: отключить canary, вернуть предыдущую версию, откатить feature flag;\n   - коммуникация: кому сообщать, в какой срок.\n\n3. Заполнить каждый раздел конкретикой: указать гипотетические команды в виде плейсхолдеров, например `release --canary 10`, `rollback --version <prev>`, и явно пометить, что команды выполняет оператор, а не модель.\n\n4. Проверить текст на полноту:\n   - есть ли ответ на «как выпустить 10%»;\n   - есть ли ответ на «какие метрики смотреть»;\n   - есть ли ответ на «когда и как откатывать»;\n   - есть ли роли и последовательность действий.\n\n5. Итоговый результат: один готовый текстовый runbook, который можно передать оператору; никаких реальных развёртываний и внешних действий не выполняется."
+    },
+    {
+      "call": 3,
+      "status": "completed",
+      "requested_model": "deepseek/deepseek-v4-flash-0731",
+      "message_count": 4,
+      "max_tokens": 800,
+      "started_at": "2026-09-17T16:59:37+00:00",
+      "elapsed_seconds": 12.568,
+      "response_id": "gen-1789664377-mnshs4cQHAZ8FTZHV28s",
+      "response_model": "deepseek/deepseek-v4-flash-0731",
+      "provider": "OpenInference",
+      "finish_reason": "stop",
+      "prompt_tokens": 327,
+      "completion_tokens": 476,
+      "reported_cost_usd": 6.579e-05,
+      "response": "Плана в нашем диалоге нет — он не был согласован ранее. Пожалуйста, пришлите план (или хотя бы тему и формат нужного результата: аналитика, текст, чек-лист, runbook и т.п.).\n\nКак только вы пришлёте план, я подготовлю по нему готовый результат. Если выполнение требует действий вне моего контекста (отправка, публикация, запуск и т.п.), я составлю документ или чек-лист для человека, который это выполнит, и явно укажу, что фактическое выполнение — вне моих возможностей."
+    }
+  ],
+  "totals": {
+    "provider_calls": 3,
+    "prompt_tokens": 1207,
+    "completion_tokens": 2451,
+    "reported_cost_usd": "0.00098022",
+    "prior_reported_cost_usd": "0.0007202643",
+    "cumulative_reported_cost_usd": "0.0017004843"
+  },
+  "gates": {},
+  "passed": false,
+  "elapsed_seconds": 33.504,
+  "error": "ValueError: нет предложения, ожидающего решения"
+}

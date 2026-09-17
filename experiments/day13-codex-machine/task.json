@@ -1,0 +1,33 @@
+{
+  "id": "ai-advent-day13-task-state-machine",
+  "objective": "Реализовать день 13 в накопительном агенте через внешнюю state machine работы Codex.",
+  "authoritative_assignment": "Формализовать состояние задачи: этап, текущий шаг, ожидаемое действие; planning → execution → validation → done; проверить паузу на любом этапе и продолжение без повторных объяснений; результат — видео и код/текст.",
+  "scope": {
+    "write_paths": ["day13/"],
+    "control_paths": ["experiments/day13-codex-machine/", ".agents/skills/day13-quality-machine/"],
+    "status_paths": ["todo.md", "HANDOFF.md", "README.md", "docs/superpowers/specs/2026-09-17-day13-task-state-machine-design.md"],
+    "protected_paths": ["day01/", "day02/", "day03/", "day04/", "day05/", "day06/", "day07/", "day08/", "day09/", "day10/", "day11/", "day12/"]
+  },
+  "product_requirements": [
+    "Накопительный агент дня 12 сохранён: профиль, три слоя памяти, история и офлайн-путь запроса.",
+    "FSM хранит stage, status, current_step, expected_action, objective, artifacts и version отдельно от диалога.",
+    "Переходы разрешает код, а не модель; недопустимые события отклоняются.",
+    "Пауза не меняет этап, шаг, ожидаемое действие или результаты этапов.",
+    "После очистки диалога и создания нового экземпляра агент продолжает без повторного объяснения.",
+    "На паузе harness не вызывает модель.",
+    "Состояния изолированы по пользователю и задаче; изменения имеют журнал событий.",
+    "Панель и видео показывают состояние, паузу, restart, resume и фактический контекст запроса.",
+    "Массовый live-eval проверяет 68 ситуаций: 60 реальных вызовов на рабочих этапах, restart/adversarial, 4 pause и 4 done guards без сети."
+  ],
+  "non_goals": [
+    "Не добавлять мультиагентность, разные модели по этапам или внешний таск-трекер.",
+    "Не переписывать дни 01–12.",
+    "Не запускать deploy, commit или push без отдельного решения; live API разрешён только в рамках day13-live-01 и бюджета $0.02."
+  ],
+  "source_context": [
+    "Telegram export message2977",
+    "Telegram export messages 3046, 3065-3080, 3093-3135",
+    "Сдачи девяти участников, проверенные 17.09.2026",
+    "docs/superpowers/specs/2026-09-17-day13-task-state-machine-design.md"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "В независимой scratch-копии повторно прошли FSM, SQLite, Agent, web API, JavaScript/Python checks и новый полный test-double campaign. Подтверждены 64 уникальные ситуации, 60 live paths, четыре pause guards, 12 restart cases, at-most-once stop после provider uncertainty, checkpoint tamper detection и закреплённые бюджет/zero-retry ограничения.",
+  "artifacts": {
+    "test_report": "experiments/day13-codex-machine/runs/07-live-gate-validation-report.md"
+  },
+  "checks": {
+    "offline_tests": true,
+    "formal_state": true,
+    "legal_transitions": true,
+    "pause_every_stage": true,
+    "restart_resume": true,
+    "paused_no_call": true,
+    "task_isolation": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в LIVE_VALIDATION и запустить единственную durable campaign day13-live-01 с лимитом $0.02."
+}

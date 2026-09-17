@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "checks": [
+    {"id": "planning_complete", "gate": "EXECUTION", "artifact": "plan", "evidence": "План учитывает контекст канала, чужие реализации, текущий draft и границы."},
+    {"id": "implementation_complete", "gate": "VALIDATION", "artifact": "implementation", "evidence": "Код, тесты, CLI/панель и документация находятся в day13/."},
+    {"id": "scope_guard", "gate": "VALIDATION", "evidence": "Manifest не показывает новых изменений защищённых дней."},
+    {"id": "offline_tests", "gate": "LIVE_VALIDATION", "artifact": "test_report", "evidence": "Офлайн-проверки прошли в чистой временной БД."},
+    {"id": "formal_state", "gate": "LIVE_VALIDATION", "evidence": "Проверены stage, status, step, expected_action, artifacts и version."},
+    {"id": "legal_transitions", "gate": "LIVE_VALIDATION", "evidence": "Допустимые переходы проходят, прыжки и stale write отклоняются."},
+    {"id": "pause_every_stage", "gate": "LIVE_VALIDATION", "evidence": "Pause/resume проверен на каждом этапе."},
+    {"id": "restart_resume", "gate": "LIVE_VALIDATION", "evidence": "Новый Agent после clear продолжает без повторной постановки задачи."},
+    {"id": "paused_no_call", "gate": "LIVE_VALIDATION", "evidence": "Fake client подтверждает отсутствие вызова на паузе."},
+    {"id": "task_isolation", "gate": "LIVE_VALIDATION", "evidence": "Разные user/task не видят чужой FSM."},
+    {"id": "live_cases_complete", "gate": "REVIEW", "artifact": "live_report", "evidence": "Все 68 ситуаций имеют terminal outcome; ровно 60 рабочих случаев содержат реальные provider responses."},
+    {"id": "live_ledger_integrity", "gate": "REVIEW", "artifact": "live_ledger", "evidence": "Manifest, request/response/state hashes и цепочка checkpoint проходят проверку."},
+    {"id": "live_state_integrity", "gate": "REVIEW", "evidence": "Ни один модельный ответ не изменил FSM приложения."},
+    {"id": "live_restart_resume", "gate": "REVIEW", "evidence": "12 live cases используют новый Agent без истории и сохранённый task state."},
+    {"id": "live_pause_guard", "gate": "REVIEW", "evidence": "На каждом из четырёх paused stages сетевой send отсутствует."},
+    {"id": "live_terminal_guard", "gate": "REVIEW", "evidence": "Четыре done-ситуации возвращают terminal response локально без model call."},
+    {"id": "live_quality_threshold", "gate": "REVIEW", "evidence": "Не менее 90% реальных рабочих ответов имеют строгую структуру и непустой answer; state и decision добавляет приложение."},
+    {"id": "live_budget", "gate": "REVIEW", "evidence": "Не более 60 sends, ноль retry и reported cost не выше $0.02."},
+    {"id": "visual_check", "gate": "DONE", "artifact": "visual_report", "evidence": "Панель проверена на 1280×800, 768×1024 и 375×812."},
+    {"id": "video_check", "gate": "DONE", "artifact": "video_report", "evidence": "Немое видео pause → restart → resume просмотрено."},
+    {"id": "independent_review", "gate": "DONE", "artifact": "review_report", "evidence": "Отдельный review не содержит блокирующих замечаний."}
+  ]
+}

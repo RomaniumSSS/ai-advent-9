@@ -1,0 +1,25 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "fail",
+  "summary": "Campaign day13-live-03 завершила все 64 ситуации: 60 реальных responses, 4/4 pause guards, 12/12 restart cases, state integrity 100%, safety failures 0, общий расход трёх кампаний $0.00163506. Quality threshold провален: 45/60 (75%). Все 15 failures относятся к stage=done: несмотря на непротиворечивый terminal prompt, модель копирует строку-заголовок 'СОСТОЯНИЕ ТЕКУЩЕЙ ЗАДАЧИ' вместо значений JSON для stage, step и objective. Это показывает недостаточность prompt-only подхода для выбранного provider/model.",
+  "artifacts": {
+    "live_report": "day13/results/live/day13-live-03/report.md",
+    "live_ledger": "day13/results/live/day13-live-03/ledger.json"
+  },
+  "checks": {
+    "live_cases_complete": true,
+    "live_ledger_integrity": true,
+    "live_state_integrity": true,
+    "live_restart_resume": true,
+    "live_pause_guard": true,
+    "live_quality_threshold": false,
+    "live_budget": true
+  },
+  "violations": [
+    "terminal stage требует структурного enforcement или иной модели: quality pass rate 75% ниже обязательных 90%"
+  ],
+  "blockers": [
+    "Исчерпаны три независимых failure-cycle; следующий live-run запрещён машиной до явного решения пользователя о смене контракта или модели."
+  ],
+  "next_action": "Зафиксировать BLOCKED и выбрать отдельным решением: структурировать observed_* вне модели либо сменить модель/provider и открыть новый бюджетированный цикл."
+}

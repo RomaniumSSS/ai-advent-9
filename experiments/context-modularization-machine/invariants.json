@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "max_retry_cycles": 3,
+  "rules": [
+    {"id": "scope", "enforcement": "manifest", "text": "Продуктовые изменения только в day13/."},
+    {"id": "separate_fsms", "enforcement": "review", "text": "Эта FSM управляет разработкой; продуктовая FSM задачи не используется как управляющий контур Codex."},
+    {"id": "default_compatibility", "enforcement": "tests", "text": "Default capabilities воспроизводят прежний context envelope."},
+    {"id": "disabled_means_unread", "enforcement": "tests", "text": "Отключённый источник контекста не читается из хранилища."},
+    {"id": "disable_is_non_destructive", "enforcement": "tests", "text": "Отключение не удаляет сохранённые профиль, память или FSM."},
+    {"id": "single_request_snapshot", "enforcement": "tests", "text": "Один запрос использует один снимок capabilities и FSM."},
+    {"id": "no_live_cost", "enforcement": "human", "text": "Контракт не разрешает платные или внешние вызовы."},
+    {"id": "done_gate", "enforcement": "code", "text": "DONE требует локальной валидации, интеграционного fake-client прогона и независимого review."}
+  ]
+}

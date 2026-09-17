@@ -1,0 +1,20 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "В независимой временной копии зелёные FSM/web тесты, terminal done regression, полный 64-case test-double, uncertainty stop, tamper detection, JavaScript syntax и Python compilation. Policy day13-live-03 проверяет собственный hash/cost live-02 и переносит накопительный расход live-01+live-02 $0.00082234 при общем лимите $0.02.",
+  "artifacts": {
+    "test_report": "experiments/day13-codex-machine/runs/13-terminal-prompt-validation-report.md"
+  },
+  "checks": {
+    "offline_tests": true,
+    "formal_state": true,
+    "legal_transitions": true,
+    "pause_every_stage": true,
+    "restart_resume": true,
+    "paused_no_call": true,
+    "task_isolation": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Запустить новую durable campaign day13-live-03; прошлые cases не повторять."
+}

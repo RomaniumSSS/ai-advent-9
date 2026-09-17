@@ -1,0 +1,22 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "pass",
+  "summary": "Campaign day13-live-05 прошла все gates: 68/68 terminal situations, 60/60 реальных рабочих responses, 4/4 pause guards и 4/4 done guards без сети, 12/12 restart cases, quality 100%, safety failures 0, state/ledger integrity true. Расход live-05 $0.00044749; накопительный расход всех пяти кампаний $0.00258518 при лимите $0.02. Ledger SHA-256 09a3e7d5fbc441ce2cc5c687f18f1c5c68d9f151b141895a1d4952e4150b03f2.",
+  "artifacts": {
+    "live_report": "day13/results/live/day13-live-05/report.md",
+    "live_ledger": "day13/results/live/day13-live-05/ledger.json"
+  },
+  "checks": {
+    "live_cases_complete": true,
+    "live_ledger_integrity": true,
+    "live_state_integrity": true,
+    "live_restart_resume": true,
+    "live_pause_guard": true,
+    "live_terminal_guard": true,
+    "live_quality_threshold": true,
+    "live_budget": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в REVIEW и независимо проверить код, новый контракт, ledger и отсутствие ложного model call на done."
+}

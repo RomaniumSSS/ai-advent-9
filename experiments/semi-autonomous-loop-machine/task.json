@@ -1,0 +1,42 @@
+{
+  "id": "day13-semi-autonomous-loop",
+  "objective": "Добавить в накопительный агент безопасный полуавтономный цикл поверх модульного контекста и существующей FSM задачи.",
+  "authoritative_assignment": "Человек задаёт цель, утверждает план и принимает итог; между approval boundaries harness сам вызывает модель, проверяет состояние, фиксирует результат этапа и продолжает до следующей человеческой границы.",
+  "scope": {
+    "write_paths": ["day13/"],
+    "control_paths": ["experiments/semi-autonomous-loop-machine/"],
+    "status_paths": ["todo.md"],
+    "protected_paths": ["day01/", "day02/", "day03/", "day04/", "day05/", "day06/", "day07/", "day08/", "day09/", "day10/", "day11/", "day12/", "experiments/day13-codex-machine/", "experiments/context-modularization-machine/"]
+  },
+  "product_requirements": [
+    "Loop различает очередь model и user и автоматически работает только при actor=model.",
+    "Planning создаёт сохраняемое предложение и останавливается для approve/revise пользователя.",
+    "После approve планирования harness автоматически выполняет execution и validation до следующей границы пользователя.",
+    "Пользователь принимает validation либо возвращает задачу в execution с feedback.",
+    "Каждый model turn использует capabilities/FSM snapshot и результат применяется только к той же version.",
+    "Pause до, во время или между ходами прекращает цикл без применения устаревшего ответа.",
+    "Pending proposal и checkpoint переживают restart без повторного model call.",
+    "Есть жёсткий max_model_turns; достижение лимита возвращает stopped, а не продолжает бесконечно.",
+    "Существующий ручной чат и ручные FSM actions остаются рабочими.",
+    "Панель показывает actor, pending proposal, причину остановки и действия approve/revise/run."
+  ],
+  "non_goals": [
+    "Не выполнять внешние инструменты и side effects.",
+    "Не добавлять мультиагентность или разные модели по стадиям.",
+    "Не выполнять commit, push, deploy или платные API-вызовы без отдельного разрешения."
+  ],
+  "validation": [
+    "Offline matrix покрывает normal flow, revision flow, pause races, restart, stale proposal, malformed/empty response и budget stop.",
+    "Fake-client end-to-end является INTEGRATION-проверкой и подтверждает несколько model turns без новых сообщений пользователя.",
+    "LIVE_VALIDATION означает только полный прогон через настоящий внешний provider: должны быть provider metadata, фактические tokens/cost и три непустых ответа planning/execution/validation.",
+    "Каждая live-попытка ограничена тремя provider calls без автоматических retries; общий reported-cost всех попыток, включая failed precursors, не превышает $0.005.",
+    "Существующие day13 suites остаются зелёными.",
+    "Read-only review проверяет атомарность, idempotency и отсутствие обхода approval gate."
+  ],
+  "live_authorization": {
+    "source": "Явное сообщение Романа после разъяснения стоимости",
+    "max_provider_calls_per_attempt": 3,
+    "max_reported_cost_usd": 0.005,
+    "automatic_retries": 0
+  }
+}

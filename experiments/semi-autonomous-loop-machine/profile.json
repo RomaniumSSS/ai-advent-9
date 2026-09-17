@@ -1,0 +1,1 @@
+{"id":"roman-semi-loop","owner":"Roman","language":"ru","workflow":["task-contract","agents-best-practices","assistant-fsm","implementation","validation","review"],"forbidden_without_explicit_authorization":["commit","push","deploy","paid API calls","external data mutation"]}

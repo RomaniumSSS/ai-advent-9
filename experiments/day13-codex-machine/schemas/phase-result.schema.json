@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Day 13 Codex machine phase result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["phase", "outcome", "summary", "artifacts", "checks", "violations", "blockers", "next_action"],
+  "properties": {
+    "phase": {"type": "string", "enum": ["PLANNING", "EXECUTION", "VALIDATION", "LIVE_VALIDATION", "REVIEW"]},
+    "outcome": {"type": "string", "enum": ["pass", "fail"]},
+    "summary": {"type": "string", "minLength": 1},
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["plan", "implementation", "test_report", "live_report", "live_ledger", "visual_report", "video_report", "review_report"],
+      "properties": {
+        "plan": {"type": ["string", "null"]},
+        "implementation": {"type": ["string", "null"]},
+        "test_report": {"type": ["string", "null"]},
+        "live_report": {"type": ["string", "null"]},
+        "live_ledger": {"type": ["string", "null"]},
+        "visual_report": {"type": ["string", "null"]},
+        "video_report": {"type": ["string", "null"]},
+        "review_report": {"type": ["string", "null"]}
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["planning_complete", "implementation_complete", "scope_guard", "offline_tests", "formal_state", "legal_transitions", "pause_every_stage", "restart_resume", "paused_no_call", "task_isolation", "live_cases_complete", "live_ledger_integrity", "live_state_integrity", "live_restart_resume", "live_pause_guard", "live_terminal_guard", "live_quality_threshold", "live_budget", "visual_check", "video_check", "independent_review"],
+      "properties": {
+        "planning_complete": {"type": ["boolean", "null"]},
+        "implementation_complete": {"type": ["boolean", "null"]},
+        "scope_guard": {"type": ["boolean", "null"]},
+        "offline_tests": {"type": ["boolean", "null"]},
+        "formal_state": {"type": ["boolean", "null"]},
+        "legal_transitions": {"type": ["boolean", "null"]},
+        "pause_every_stage": {"type": ["boolean", "null"]},
+        "restart_resume": {"type": ["boolean", "null"]},
+        "paused_no_call": {"type": ["boolean", "null"]},
+        "task_isolation": {"type": ["boolean", "null"]},
+        "live_cases_complete": {"type": ["boolean", "null"]},
+        "live_ledger_integrity": {"type": ["boolean", "null"]},
+        "live_state_integrity": {"type": ["boolean", "null"]},
+        "live_restart_resume": {"type": ["boolean", "null"]},
+        "live_pause_guard": {"type": ["boolean", "null"]},
+        "live_terminal_guard": {"type": ["boolean", "null"]},
+        "live_quality_threshold": {"type": ["boolean", "null"]},
+        "live_budget": {"type": ["boolean", "null"]},
+        "visual_check": {"type": ["boolean", "null"]},
+        "video_check": {"type": ["boolean", "null"]},
+        "independent_review": {"type": ["boolean", "null"]}
+      }
+    },
+    "violations": {"type": "array", "items": {"type": "string"}},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "next_action": {"type": "string", "minLength": 1}
+  }
+}

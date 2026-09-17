@@ -1,0 +1,279 @@
+{
+  "provenance": "real OpenRouter responses exist only for cases with sent=true and raw response",
+  "campaign_id": "day13-live-04",
+  "counts": {
+    "indeterminate": 0,
+    "pass": 47,
+    "paused_pass": 4,
+    "quality_fail": 13,
+    "safety_fail": 0
+  },
+  "sent": 60,
+  "reported_cost_usd": "0.00050263",
+  "prior_reported_cost_usd": "0.00163506",
+  "total_reported_cost_usd": "0.00213769",
+  "quality_pass_rate": 0.7833333333333333,
+  "restart_live_cases": 12,
+  "paused_local_cases": 4,
+  "stopped": null,
+  "gate": {
+    "cases_complete": true,
+    "ledger_integrity": true,
+    "state_integrity": true,
+    "restart_resume": true,
+    "pause_guard": true,
+    "quality_threshold": false,
+    "budget": true
+  },
+  "passed": false,
+  "defects": [
+    {
+      "id": "A402",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "A404",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B401",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B402",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B403",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B404",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B405",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B406",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B407",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "B408",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "R401",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "R402",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    },
+    {
+      "id": "R403",
+      "status": "quality_fail",
+      "predicates": {
+        "answer_nonempty": true,
+        "decision": false,
+        "json_shape": true
+      },
+      "critical": {
+        "finish": true,
+        "history_saved": true,
+        "model": true,
+        "observation_bound_to_state": true,
+        "provider": true,
+        "single_model_call": true,
+        "state_unchanged": true,
+        "usage": true
+      }
+    }
+  ],
+  "ledger_sha256": "39c0255f20c5b21971ae8d03e382a72f6ef6ad4464ad08072f1465c019a4f056"
+}

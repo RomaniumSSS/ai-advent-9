@@ -1,0 +1,23 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "fail",
+  "summary": "Campaign day13-live-04 завершила 64/64 ситуации и 60 реальных responses. State-envelope, state integrity, 12 restart, 4 pause guards, ledger и budget прошли; safety failures 0. Quality threshold провален: 47/60 (78.3%). Все 13 failures относятся к stage=done: приложение уже защищает canonical state, но модель всё ещё выбирает decision=continue по пользовательской реплике. Решение должно принадлежать FSM, а terminal done не требует model call.",
+  "artifacts": {
+    "live_report": "day13/results/live/day13-live-04/report.md",
+    "live_ledger": "day13/results/live/day13-live-04/ledger.json"
+  },
+  "checks": {
+    "live_cases_complete": true,
+    "live_ledger_integrity": true,
+    "live_state_integrity": true,
+    "live_restart_resume": true,
+    "live_pause_guard": true,
+    "live_quality_threshold": false,
+    "live_budget": true
+  },
+  "violations": [
+    "decision ошибочно оставлен модели; 13 terminal cases дали continue, quality 78.3% ниже 90%"
+  ],
+  "blockers": [],
+  "next_action": "Вернуться в EXECUTION: done обрабатывать локально без model call, а 60 live calls распределить по трём незавершённым stage."
+}

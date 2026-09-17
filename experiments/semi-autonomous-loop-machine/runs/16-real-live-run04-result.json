@@ -1,0 +1,28 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "pass",
+  "summary": "Real-provider run-04 прошёл автоматическую и ручную проверку. Ровно 3 OpenInference calls без fallback и automatic retry дали непустые finish_reason=stop ответы planning/execution/validation; restart не вызвал модель повторно, approve планирования автономно выполнил execution→validation за 2 turns, final approve перевёл FSM в done. Execution создал содержательный runbook с canary 10%, error/latency metrics, rollback thresholds, ролями, checklist и явным требованием человеческого выполнения; validation сослался на конкретные разделы и не приписал внешние действия. Run cost $0.00043575, cumulative всех попыток $0.0021920143/$0.005. Secret scan evidence: PASS.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "day13/agent.py",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/15-validation-explicit-stage-inputs-result.json",
+    "integration_report": "experiments/semi-autonomous-loop-machine/runs/05-integration-report.md",
+    "live_report": "day13/results/live-workflow/run-04/report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": true,
+    "approval_gates": true,
+    "pause_restart_stale": true,
+    "bounded_turns": true,
+    "integration_flow": true,
+    "real_provider_live": true,
+    "live_budget": true,
+    "existing_regressions": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в REVIEW и read-only проверить финальные изменения, evidence и инварианты."
+}

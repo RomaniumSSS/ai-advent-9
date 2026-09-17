@@ -1,0 +1,17 @@
+{
+  "phase": "EXECUTION",
+  "outcome": "pass",
+  "summary": "Реализован bounded semi-autonomous loop: durable workflow_proposals в SQLite schema v4, derived actor, planning/final user boundaries, автоматический execution→validation, approve/revise, version-bound model turns, безопасная in-flight pause, restart и max_model_turns. Служебные workflow turns отделены от пользовательского чата: учитывается вызов, а результат становится durable только после повторной проверки FSM. Добавлены API/UI, кнопка pause остаётся доступной во время model call, документация и offline/fake-client тесты. Protected paths не изменены; реальный provider не вызывался.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "experiments/semi-autonomous-loop-machine/runs/01-execution-result.json"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в VALIDATION и независимо повторить offline matrix в scratch-контексте без исправления продукта."
+}

@@ -1,0 +1,30 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "fail",
+  "summary": "Real-provider run-03 технически провёл полный workflow за 3 OpenInference calls без retry: restart не вызвал модель повторно, execution→validation занял 2 turns, final stage done, все ответы непустые и finish_reason=stop. Стоимость run $0.00005578, cumulative $0.0017562643/$0.005. Содержательный gate не пройден: planning выдал общий план без цели, execution лишь сообщил о готовности, validation ошибочно заявил, что артефакты FSM не предоставлены. Канонический state был в system block, но stage prompt не повторял явные objective/plan/result рядом с инструкцией; требуется сделать stage inputs явными из того же snapshot.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "day13/live_workflow_eval.py",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/12-validation-final-live-repair-result.json",
+    "integration_report": "experiments/semi-autonomous-loop-machine/runs/05-integration-report.md",
+    "live_report": "day13/results/live-workflow/run-03/report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": false,
+    "scope_guard": true,
+    "offline_tests": true,
+    "approval_gates": true,
+    "pause_restart_stale": true,
+    "bounded_turns": true,
+    "integration_flow": true,
+    "real_provider_live": false,
+    "live_budget": true,
+    "existing_regressions": true
+  },
+  "violations": [],
+  "blockers": [
+    "Stage prompts do not surface objective and prior artifacts explicitly enough for the pinned provider, producing context-disconnected but technically valid replies."
+  ],
+  "next_action": "Вернуться в EXECUTION: сформировать каждый stage prompt из objective и нужных artifacts текущего FSM snapshot, закрепить request-level тестом, затем повторить validation."
+}

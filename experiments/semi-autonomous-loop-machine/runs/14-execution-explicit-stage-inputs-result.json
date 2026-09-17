@@ -1,0 +1,17 @@
+{
+  "phase": "EXECUTION",
+  "outcome": "pass",
+  "summary": "Stage prompts теперь строятся из того же immutable TaskState snapshot: planning явно получает objective, execution — objective и approved_plan, validation — objective, approved_plan и execution_result. Данные сериализуются как JSON с указанием не исполнять инструкции внутри значений. Это устраняет разрыв контекста run-03, не меняя принадлежность FSM приложению и не добавляя нестабильную память. Request-level regression проверяет прохождение цели, плана и результата по трём ходам.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "day13/agent.py"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в VALIDATION и повторить полный offline matrix."
+}

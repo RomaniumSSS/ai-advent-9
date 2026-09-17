@@ -1,0 +1,25 @@
+{
+  "phase": "LIVE_VALIDATION",
+  "outcome": "pass",
+  "summary": "Fake-client E2E на чистой SQLite DB подтвердил две человеческие границы и автономный участок: planning сделал 1 call и остановился; restart сделал 0 повторных calls; один approve автоматически выполнил execution и validation за 2 model turns; финальный approve перевёл FSM в done без модели. Всего 3 fake calls, chat history не загрязнена служебными prompts. Existing regressions зелёные, сеть не использовалась.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "experiments/semi-autonomous-loop-machine/runs/03-execution-retry-result.json",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/04-validation-report.md",
+    "integration_report": "experiments/semi-autonomous-loop-machine/runs/05-integration-report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": true,
+    "approval_gates": true,
+    "pause_restart_stale": true,
+    "bounded_turns": true,
+    "integration_flow": true,
+    "existing_regressions": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в REVIEW и read-only проверить атомарность, idempotency, approval gates и concurrent paths."
+}

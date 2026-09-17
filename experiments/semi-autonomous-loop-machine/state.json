@@ -1,0 +1,182 @@
+{
+  "version": 22,
+  "phase": "DONE",
+  "status": "done",
+  "retry_cycles": 1,
+  "baseline_ref": "HEAD",
+  "baseline_manifest": "experiments/semi-autonomous-loop-machine/baseline.json",
+  "current_step": "Полуавтономный agent loop завершён",
+  "expected_action": "Ручная приёмка Романом",
+  "pause_reason": null,
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "day13/agent.py",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/15-validation-explicit-stage-inputs-result.json",
+    "integration_report": "experiments/semi-autonomous-loop-machine/runs/05-integration-report.md",
+    "live_report": "day13/results/live-workflow/run-04/report.md",
+    "review_report": "experiments/semi-autonomous-loop-machine/runs/17-final-review-report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": true,
+    "approval_gates": true,
+    "pause_restart_stale": true,
+    "bounded_turns": true,
+    "integration_flow": true,
+    "real_provider_live": true,
+    "live_budget": true,
+    "existing_regressions": true,
+    "independent_review": true
+  },
+  "violations": [],
+  "blockers": [],
+  "history": [
+    {
+      "from": "PLANNING",
+      "to": "EXECUTION",
+      "outcome": "pass",
+      "summary": "Архитектура: TaskState получает optional durable pending_proposal с action, result и based_on_version; SQLite schema v4 хранит proposal_json в той же task_states row, а optimistic save атомарно связывает предложение с текущей FSM. Derived actor: pending→user, planning/execution/validation без pending→model, done→none. run_to_boundary(max_model_turns) циклически перечитывает state: planning вызывает модель и сохраняет submit_plan proposal, затем останавливается; execution вызывает модель, при неизменной active version автоматически применяет submit_result и продолжает; validation вызывает модель и сохраняет approve proposal, затем останавливается. approve_pending применяет proposal; revise_pending в planning сохраняет feedback и просит новый план, в validation выполняет request_changes и возвращает execution. Model turn отделяется от commit истории/FSM: после ответа harness повторно проверяет version/status и только затем атомарно сохраняет принятый результат, поэтому pause/in-flight или stale state не применяют ответ. Loop имеет max_model_turns и структурированные stop reasons. Web API/UI добавляют run, approve, revise, actor/proposal/stop; старые ручные routes остаются. Тесты покрывают normal/revision, restart proposal, pause before/in-flight, stale version, limit, error и regressions; только fake clients.",
+      "next_action": "Перейти в EXECUTION и реализовать durable proposal, bounded run_to_boundary, approval API/UI и offline tests без реального provider."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Реализован bounded semi-autonomous loop: durable workflow_proposals в SQLite schema v4, derived actor, planning/final user boundaries, автоматический execution→validation, approve/revise, version-bound model turns, безопасная in-flight pause, restart и max_model_turns. Служебные workflow turns отделены от пользовательского чата: учитывается вызов, а результат становится durable только после повторной проверки FSM. Добавлены API/UI, кнопка pause остаётся доступной во время model call, документация и offline/fake-client тесты. Protected paths не изменены; реальный provider не вызывался.",
+      "next_action": "Перейти в VALIDATION и независимо повторить offline matrix в scratch-контексте без исправления продукта."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "EXECUTION",
+      "outcome": "fail",
+      "summary": "Основные offline suites, approval gate, restart, stale proposal, empty response, turn limit и UI regressions прошли. Дополнительная точечная race-проверка воспроизвела узкий дефект: pause между post-call version check и proposal/transition commit безопасно блокирует запись, но RuntimeError выходит наружу вместо LoopResult(reason=paused/state_changed). Требуется нормализовать optimistic conflict в structured stop и закрепить тестом для proposal и execution commit paths.",
+      "next_action": "Вернуться в EXECUTION, перехватить optimistic conflict после model turn, перечитать FSM и вернуть paused/state_changed; добавить regression tests обоих commit paths."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Закрыта найденная validation-гонка: optimistic RuntimeError в узком окне между post-call check и SQLite commit преобразуется после перечитывания FSM в LoopResult(reason=paused/state_changed). Late result не записывается ни в FSM, ни в proposal, ни в историю. Добавлен regression test для planning proposal commit и execution transition commit; оба возвращают structured paused stop. Основные workflow, task-state и web suites зелёные.",
+      "next_action": "Повторить VALIDATION matrix, включая оба commit-window pause scenarios."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "Повторная независимая offline validation прошла после исправления commit-window race. Workflow matrix 6/6, task-state 10/10, web 6/6, deterministic live-eval regression 68/68 и JS syntax check зелёные. Scratch-check подтвердил, что model text не обходит approval, proposal применяется один раз, response без choices даёт model_error, обе pause commit-races возвращают structured stop. Protected paths неизменны, реальный provider не использовался.",
+      "next_action": "Перейти в LIVE_VALIDATION и отдельно зафиксировать fake-client multi-turn integration без нового user message."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "Fake-client E2E на чистой SQLite DB подтвердил две человеческие границы и автономный участок: planning сделал 1 call и остановился; restart сделал 0 повторных calls; один approve автоматически выполнил execution и validation за 2 model turns; финальный approve перевёл FSM в done без модели. Всего 3 fake calls, chat history не загрязнена служебными prompts. Existing regressions зелёные, сеть не использовалась.",
+      "next_action": "Перейти в REVIEW и read-only проверить атомарность, idempotency, approval gates и concurrent paths."
+    },
+    {
+      "from": "REVIEW",
+      "to": "DONE",
+      "outcome": "pass",
+      "summary": "Read-only review: APPROVED, blockers и warnings нет. Proposal/state/event операции атомарны и version-bound; duplicate/stale apply отклоняется; approval gates, pause races, bounded loop и restart persistence доказаны. UI/API не добавили XSS, SQL injection или secret exposure. Неблокирующее расширение для будущего multi-worker режима — durable lease до provider/tool call; текущий single-runtime сериализован Runtime.lock и не выполняет внешние tools.",
+      "next_action": "Перейти в DONE; следующая внешняя граница — ручная приёмка Романом."
+    },
+    {
+      "event": "reopen",
+      "from": "DONE",
+      "to": "LIVE_VALIDATION",
+      "reason": "Roman explicitly required LIVE_VALIDATION to mean a real provider run, not fake integration"
+    },
+    {
+      "event": "sync_policy",
+      "phase": "LIVE_VALIDATION",
+      "current_step": "Прогнать полный semi-autonomous loop через настоящий provider",
+      "expected_action": "Сохранить live report с provider/tokens/cost и предложить REVIEW либо EXECUTION"
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "EXECUTION",
+      "outcome": "fail",
+      "summary": "Технические gates real-provider run-01 прошли: 3/3 OpenRouter calls, реальные provider metadata/usage, restart без дубля, execution→validation за два хода, final done, cost $0.0007202643. Содержательная проверка выявила false success: execution заявил, что canary уже развёрнут, метрики в норме и жалоб нет, хотя агент не имеет инструментов или наблюдений. Planning и validation также завершились finish_reason=length. Run не засчитывается как качественный live pass; автоматический evaluator должен проверять truncation и неподтверждённые внешние claims.",
+      "next_action": "Вернуться в EXECUTION: ограничить execution prompt доступной текстовой работой, запретить claims о внешних действиях без observations, добавить semantic/truncation gates и повторить новым run с учётом precursor cost."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Исправлен false-success path real run-01. Execution prompt теперь явно ограничивает модель текстовой/аналитической работой, запрещает заявлять внешние действия без tool observations и требует runbook/document/checklist с явной человеческой границей. Validation prompt проверяет только FSM artifacts. Live evaluator переведён на текстовый deliverable, увеличил output budget до устранения truncation, добавил gates для finish_reason=stop, содержательности и unsupported external claims, а budget считает failed precursor cost. Offline workflow/task/web regressions зелёные.",
+      "next_action": "Повторить offline validation prompt guards и regressions, затем новый real-provider run-02 с prior cost $0.0007202643."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "После false-success repair повторная offline validation зелёная: workflow 6/6, task-state 10/10, web 6/6, deterministic campaign 68/68, live evaluator компилируется. Regression прямо проверяет, что execution prompt сообщает об отсутствии инструментов, а validation требует tool observation для внешних claims. Scope guard чистый.",
+      "next_action": "Перейти в LIVE_VALIDATION и выполнить ровно один run-02 через настоящий provider с prior reported cost $0.0007202643."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "BLOCKED",
+      "outcome": "fail",
+      "summary": "Real-provider run-02 сделал ровно 3 calls без SDK retry и остался в cumulative budget $0.0017004843/$0.005, но workflow не завершился. Первый planning call через Reka вернул пустой content с finish_reason=length (800 completion tokens). Evaluator не остановился сразу: restart сделал второй planning call, а третий дошёл только до execution; затем final approve закономерно не нашёл validation proposal. Это одновременно provider-variance defect и fail-fast defect evaluator. Run не засчитан.",
+      "next_action": "Последний EXECUTION repair: pin OpenInference without fallback, reasoning=none, larger output ceiling and fail-fast boundary assertions; then validate and run-03 with prior cost $0.0017004843."
+    },
+    {
+      "event": "unblock",
+      "from": "BLOCKED",
+      "to": "EXECUTION",
+      "previous_retry_cycles": 3,
+      "reason": "Roman explicitly authorized continuing the real-provider validation and one bounded final repair cycle"
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Исправлен live evaluator после run-02: каждый запрос жёстко направляется в OpenInference без fallback, при этом сохраняется reasoning=none; output ceiling увеличен до 1600. После planning, restart и validation добавлены fail-fast boundary assertions, поэтому нарушение checkpoint останавливает попытку до следующего provider call. Provider gate теперь требует именно OpenInference. Новый офлайн-тест подтверждает pinning, сохранение reasoning, лимит в 3 calls и fail-fast.",
+      "next_action": "Перейти в VALIDATION и прогнать полный offline regression matrix перед real-provider run-03."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "Полная офлайн-регрессия после финального live-evaluator repair прошла: task-state 10/10, workflow 6/6, web 6/6, deterministic campaign 68/68, live guard 2/2, JS syntax и Python compile. Новый guard подтверждает OpenInference-only без fallback, reasoning=none, максимум 3 calls и fail-fast на нарушенной boundary. На VALIDATION сеть и реальный provider не использовались; protected paths не изменены.",
+      "next_action": "Перейти в LIVE_VALIDATION и выполнить run-03 через настоящий OpenInference provider с cumulative precursor cost $0.0017004843."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "EXECUTION",
+      "outcome": "fail",
+      "summary": "Real-provider run-03 технически провёл полный workflow за 3 OpenInference calls без retry: restart не вызвал модель повторно, execution→validation занял 2 turns, final stage done, все ответы непустые и finish_reason=stop. Стоимость run $0.00005578, cumulative $0.0017562643/$0.005. Содержательный gate не пройден: planning выдал общий план без цели, execution лишь сообщил о готовности, validation ошибочно заявил, что артефакты FSM не предоставлены. Канонический state был в system block, но stage prompt не повторял явные objective/plan/result рядом с инструкцией; требуется сделать stage inputs явными из того же snapshot.",
+      "next_action": "Вернуться в EXECUTION: сформировать каждый stage prompt из objective и нужных artifacts текущего FSM snapshot, закрепить request-level тестом, затем повторить validation."
+    },
+    {
+      "from": "EXECUTION",
+      "to": "VALIDATION",
+      "outcome": "pass",
+      "summary": "Stage prompts теперь строятся из того же immutable TaskState snapshot: planning явно получает objective, execution — objective и approved_plan, validation — objective, approved_plan и execution_result. Данные сериализуются как JSON с указанием не исполнять инструкции внутри значений. Это устраняет разрыв контекста run-03, не меняя принадлежность FSM приложению и не добавляя нестабильную память. Request-level regression проверяет прохождение цели, плана и результата по трём ходам.",
+      "next_action": "Перейти в VALIDATION и повторить полный offline matrix."
+    },
+    {
+      "from": "VALIDATION",
+      "to": "LIVE_VALIDATION",
+      "outcome": "pass",
+      "summary": "После явной передачи stage inputs вся offline matrix снова зелёная: task-state 10/10, workflow 6/6, web 6/6, deterministic campaign 68/68, live guards 2/2, JS syntax и Python compile. Request-level проверка подтверждает, что planning получает objective, execution — утверждённый plan, validation — execution result; все берутся из одного version-bound snapshot. Protected paths неизменны, сеть не использовалась.",
+      "next_action": "Перейти в LIVE_VALIDATION и выполнить run-04 с prior cumulative cost $0.0017562643."
+    },
+    {
+      "from": "LIVE_VALIDATION",
+      "to": "REVIEW",
+      "outcome": "pass",
+      "summary": "Real-provider run-04 прошёл автоматическую и ручную проверку. Ровно 3 OpenInference calls без fallback и automatic retry дали непустые finish_reason=stop ответы planning/execution/validation; restart не вызвал модель повторно, approve планирования автономно выполнил execution→validation за 2 turns, final approve перевёл FSM в done. Execution создал содержательный runbook с canary 10%, error/latency metrics, rollback thresholds, ролями, checklist и явным требованием человеческого выполнения; validation сослался на конкретные разделы и не приписал внешние действия. Run cost $0.00043575, cumulative всех попыток $0.0021920143/$0.005. Secret scan evidence: PASS.",
+      "next_action": "Перейти в REVIEW и read-only проверить финальные изменения, evidence и инварианты."
+    },
+    {
+      "from": "REVIEW",
+      "to": "DONE",
+      "outcome": "pass",
+      "summary": "Final read-only review: APPROVED, blockers и warnings нет. Модель не владеет FSM: planning/validation остаются single-use user proposals, execution применяется только после same-version check; stale/in-flight результаты отбрасываются. Явные objective/plan/result берутся из одного snapshot и помечены как данные. OpenInference pin, fail-fast checkpoints, 3-call/no-retry/cumulative-cost guards и secret boundary подтверждены кодом, offline matrix и real run-04.",
+      "next_action": "Перейти в DONE; далее только ручная приёмка, видео и публикация по отдельному решению Романа."
+    }
+  ]
+}

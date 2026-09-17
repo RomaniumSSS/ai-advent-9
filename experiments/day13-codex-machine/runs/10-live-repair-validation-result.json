@@ -1,0 +1,20 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "Repair-контракт независимо проверен в scratch-копии. Reasoning effort none теперь сохраняется в фактическом pinned request; failed precursor связан hash/cost, общий бюджет двух кампаний ограничен $0.02; 64-case test-double, uncertainty stop, tamper detection и прежние FSM/web тесты зелёные.",
+  "artifacts": {
+    "test_report": "experiments/day13-codex-machine/runs/10-live-repair-validation-report.md"
+  },
+  "checks": {
+    "offline_tests": true,
+    "formal_state": true,
+    "legal_transitions": true,
+    "pause_every_stage": true,
+    "restart_resume": true,
+    "paused_no_call": true,
+    "task_isolation": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Открыть LIVE_VALIDATION для новой campaign day13-live-02; day13-live-01 не повторять."
+}

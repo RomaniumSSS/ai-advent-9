@@ -1,0 +1,22 @@
+{
+  "phase": "VALIDATION",
+  "outcome": "pass",
+  "summary": "После явной передачи stage inputs вся offline matrix снова зелёная: task-state 10/10, workflow 6/6, web 6/6, deterministic campaign 68/68, live guards 2/2, JS syntax и Python compile. Request-level проверка подтверждает, что planning получает objective, execution — утверждённый plan, validation — execution result; все берутся из одного version-bound snapshot. Protected paths неизменны, сеть не использовалась.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "day13/agent.py",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/15-validation-explicit-stage-inputs-result.json"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": true,
+    "approval_gates": true,
+    "pause_restart_stale": true,
+    "bounded_turns": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в LIVE_VALIDATION и выполнить run-04 с prior cumulative cost $0.0017562643."
+}

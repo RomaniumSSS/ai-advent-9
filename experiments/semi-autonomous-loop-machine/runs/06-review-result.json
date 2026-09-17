@@ -1,0 +1,27 @@
+{
+  "phase": "REVIEW",
+  "outcome": "pass",
+  "summary": "Read-only review: APPROVED, blockers и warnings нет. Proposal/state/event операции атомарны и version-bound; duplicate/stale apply отклоняется; approval gates, pause races, bounded loop и restart persistence доказаны. UI/API не добавили XSS, SQL injection или secret exposure. Неблокирующее расширение для будущего multi-worker режима — durable lease до provider/tool call; текущий single-runtime сериализован Runtime.lock и не выполняет внешние tools.",
+  "artifacts": {
+    "plan": "experiments/semi-autonomous-loop-machine/runs/00-planning-result.json",
+    "implementation": "experiments/semi-autonomous-loop-machine/runs/03-execution-retry-result.json",
+    "test_report": "experiments/semi-autonomous-loop-machine/runs/04-validation-report.md",
+    "integration_report": "experiments/semi-autonomous-loop-machine/runs/05-integration-report.md",
+    "review_report": "experiments/semi-autonomous-loop-machine/runs/06-review-report.md"
+  },
+  "checks": {
+    "planning_complete": true,
+    "implementation_complete": true,
+    "scope_guard": true,
+    "offline_tests": true,
+    "approval_gates": true,
+    "pause_restart_stale": true,
+    "bounded_turns": true,
+    "integration_flow": true,
+    "existing_regressions": true,
+    "independent_review": true
+  },
+  "violations": [],
+  "blockers": [],
+  "next_action": "Перейти в DONE; следующая внешняя граница — ручная приёмка Романом."
+}
