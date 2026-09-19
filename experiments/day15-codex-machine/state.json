@@ -1,0 +1,194 @@
+{
+  "version": 26,
+  "phase": "CI",
+  "status": "active",
+  "current_step": "Проверить GitHub Actions run после пуша",
+  "expected_action": "Завершить CI с файлом доказательства",
+  "plan_approval": "Роман, 19.09.2026: «план утвержден»",
+  "artifacts": {
+    "plan": "experiments/day15-codex-machine/plan.md",
+    "implement": "day15/results/implementation.md",
+    "verify": "day15/results/test-report.md",
+    "demo": "day15/results/video-report.md",
+    "review": "day15/results/review-report.md",
+    "live_validation": "day15/results/live-run-01/report.json"
+  },
+  "blocker": null,
+  "history": [
+    {
+      "time": "2026-09-19T12:05:07.472982+00:00",
+      "from": "PLAN",
+      "action": "approve-plan",
+      "to": "PLAN",
+      "evidence": "Роман, 19.09.2026: «план утвержден»"
+    },
+    {
+      "time": "2026-09-19T12:05:07.543212+00:00",
+      "from": "PLAN",
+      "action": "advance",
+      "to": "IMPLEMENT",
+      "evidence": "experiments/day15-codex-machine/plan.md"
+    },
+    {
+      "time": "2026-09-19T12:16:09.715065+00:00",
+      "from": "IMPLEMENT",
+      "action": "advance",
+      "to": "VERIFY",
+      "evidence": "day15/results/implementation.md"
+    },
+    {
+      "time": "2026-09-19T12:16:29.123788+00:00",
+      "from": "VERIFY",
+      "action": "advance",
+      "to": "DEMO",
+      "evidence": "day15/results/test-report.md"
+    },
+    {
+      "time": "2026-09-19T12:17:23.581599+00:00",
+      "from": "DEMO",
+      "action": "advance",
+      "to": "REVIEW",
+      "evidence": "day15/results/video-report.md"
+    },
+    {
+      "time": "2026-09-19T12:17:56.086803+00:00",
+      "from": "REVIEW",
+      "action": "repair",
+      "to": "IMPLEMENT",
+      "evidence": "REVIEW: дублирование графа и разрешённая команда перехода через чат"
+    },
+    {
+      "time": "2026-09-19T12:18:15.486524+00:00",
+      "from": "IMPLEMENT",
+      "action": "advance",
+      "to": "VERIFY",
+      "evidence": "day15/results/implementation.md"
+    },
+    {
+      "time": "2026-09-19T12:18:43.033377+00:00",
+      "from": "VERIFY",
+      "action": "advance",
+      "to": "DEMO",
+      "evidence": "day15/results/test-report.md"
+    },
+    {
+      "time": "2026-09-19T12:18:43.094427+00:00",
+      "from": "DEMO",
+      "action": "repair",
+      "to": "IMPLEMENT",
+      "evidence": "DEMO: в done UI показывает active и кнопку Пауза; терминальное состояние не должно паузиться"
+    },
+    {
+      "time": "2026-09-19T12:19:15.058165+00:00",
+      "from": "IMPLEMENT",
+      "action": "advance",
+      "to": "VERIFY",
+      "evidence": "day15/results/implementation.md"
+    },
+    {
+      "time": "2026-09-19T12:19:24.837487+00:00",
+      "from": "VERIFY",
+      "action": "advance",
+      "to": "DEMO",
+      "evidence": "day15/results/test-report.md"
+    },
+    {
+      "time": "2026-09-19T12:19:56.414942+00:00",
+      "from": "DEMO",
+      "action": "advance",
+      "to": "REVIEW",
+      "evidence": "day15/results/video-report.md"
+    },
+    {
+      "time": "2026-09-19T12:22:44.716867+00:00",
+      "from": "REVIEW",
+      "action": "advance",
+      "to": "CI",
+      "evidence": "day15/results/review-report.md"
+    },
+    {
+      "time": "2026-09-19T14:35:48.575797+00:00",
+      "from": "CI",
+      "action": "route_change",
+      "to": "LIVE_VALIDATION",
+      "evidence": "Роман потребовал длинный реальный прогон до коммита и CI"
+    },
+    {
+      "time": "2026-09-19T14:43:00.180712+00:00",
+      "from": "LIVE_VALIDATION",
+      "action": "repair",
+      "to": "IMPLEMENT",
+      "evidence": "LIVE_VALIDATION: реальный DeepInfra выявил обрезанный execution и неверное ожидание проверки в evaluator; исправить gate и сценарий"
+    },
+    {
+      "time": "2026-09-19T14:43:57.317350+00:00",
+      "from": "IMPLEMENT",
+      "action": "advance",
+      "to": "VERIFY",
+      "evidence": "day15/results/implementation.md"
+    },
+    {
+      "time": "2026-09-19T14:43:57.393396+00:00",
+      "from": "VERIFY",
+      "action": "advance",
+      "to": "DEMO",
+      "evidence": "day15/results/test-report.md"
+    },
+    {
+      "time": "2026-09-19T14:44:01.095328+00:00",
+      "from": "DEMO",
+      "action": "advance",
+      "to": "REVIEW",
+      "evidence": "day15/results/video-report.md"
+    },
+    {
+      "time": "2026-09-19T14:45:49.578907+00:00",
+      "from": "REVIEW",
+      "action": "advance",
+      "to": "LIVE_VALIDATION",
+      "evidence": "day15/results/review-report.md"
+    },
+    {
+      "time": "2026-09-19T14:49:25.140441+00:00",
+      "from": "LIVE_VALIDATION",
+      "action": "repair",
+      "to": "IMPLEMENT",
+      "evidence": "LIVE_VALIDATION: DeepInfra обрезал повторное выполнение при 3200 токенах; guard сохранил execution, evaluator нужен короче и лимит выше"
+    },
+    {
+      "time": "2026-09-19T14:49:56.385984+00:00",
+      "from": "IMPLEMENT",
+      "action": "advance",
+      "to": "VERIFY",
+      "evidence": "day15/results/implementation.md"
+    },
+    {
+      "time": "2026-09-19T14:49:56.467554+00:00",
+      "from": "VERIFY",
+      "action": "advance",
+      "to": "DEMO",
+      "evidence": "day15/results/test-report.md"
+    },
+    {
+      "time": "2026-09-19T14:49:56.548781+00:00",
+      "from": "DEMO",
+      "action": "advance",
+      "to": "REVIEW",
+      "evidence": "day15/results/video-report.md"
+    },
+    {
+      "time": "2026-09-19T14:49:56.622618+00:00",
+      "from": "REVIEW",
+      "action": "advance",
+      "to": "LIVE_VALIDATION",
+      "evidence": "day15/results/review-report.md"
+    },
+    {
+      "time": "2026-09-19T14:59:04.767997+00:00",
+      "from": "LIVE_VALIDATION",
+      "action": "advance",
+      "to": "CI",
+      "evidence": "day15/results/live-run-01/report.json"
+    }
+  ]
+}

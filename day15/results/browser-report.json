@@ -1,0 +1,21 @@
+{
+  "video": "demo/day15-controlled-transitions.webm",
+  "responsive": [
+    {
+      "viewport": 1280,
+      "page": 1280,
+      "offenders": []
+    },
+    {
+      "viewport": 768,
+      "page": 768,
+      "offenders": []
+    },
+    {
+      "viewport": 375,
+      "page": 375,
+      "offenders": []
+    }
+  ],
+  "page_errors": []
+}

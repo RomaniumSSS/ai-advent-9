@@ -9,3 +9,8 @@ dependencies = [
     "python-dotenv>=1.2.3",
     "tiktoken>=0.14.0",
 ]
+
+[dependency-groups]
+dev = [
+    "playwright>=1.63.0",
+]

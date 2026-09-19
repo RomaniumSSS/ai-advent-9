@@ -1,0 +1,45 @@
+name: Day 15 controlled transitions
+
+on:
+  push:
+    paths:
+      - 'day15/**'
+      - 'experiments/day15-codex-machine/**'
+      - '.github/workflows/day15.yml'
+      - 'pyproject.toml'
+      - 'uv.lock'
+  pull_request:
+    paths:
+      - 'day15/**'
+      - 'experiments/day15-codex-machine/**'
+      - '.github/workflows/day15.yml'
+      - 'pyproject.toml'
+      - 'uv.lock'
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install project dependencies
+        run: python -m pip install -e .
+      - name: Controlled transition tests
+        run: python day15/test_controlled_transitions.py
+      - name: Cumulative agent regressions
+        run: |
+          python day15/test_task_state.py
+          python day15/test_workflow_loop.py
+          python day15/test_invariants.py
+          python day15/test_web.py
+      - name: Syntax and external FSM
+        run: |
+          python -m compileall -q day15
+          node --check day15/web/app.js
+          python experiments/day15-codex-machine/machine.py check
