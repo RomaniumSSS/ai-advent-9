@@ -29,17 +29,19 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install project dependencies
-        run: python -m pip install -e .
+        run: |
+          python -m pip install uv
+          uv sync --no-dev --locked
       - name: Controlled transition tests
-        run: python day15/test_controlled_transitions.py
+        run: uv run --no-dev --no-sync python day15/test_controlled_transitions.py
       - name: Cumulative agent regressions
         run: |
-          python day15/test_task_state.py
-          python day15/test_workflow_loop.py
-          python day15/test_invariants.py
-          python day15/test_web.py
+          uv run --no-dev --no-sync python day15/test_task_state.py
+          uv run --no-dev --no-sync python day15/test_workflow_loop.py
+          uv run --no-dev --no-sync python day15/test_invariants.py
+          uv run --no-dev --no-sync python day15/test_web.py
       - name: Syntax and external FSM
         run: |
-          python -m compileall -q day15
+          uv run --no-dev --no-sync python -m compileall -q day15
           node --check day15/web/app.js
           python experiments/day15-codex-machine/machine.py check

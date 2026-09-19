@@ -1,5 +1,5 @@
 {
-  "version": 26,
+  "version": 32,
   "phase": "CI",
   "status": "active",
   "current_step": "Проверить GitHub Actions run после пуша",
@@ -185,6 +185,48 @@
     },
     {
       "time": "2026-09-19T14:59:04.767997+00:00",
+      "from": "LIVE_VALIDATION",
+      "action": "advance",
+      "to": "CI",
+      "evidence": "day15/results/live-run-01/report.json"
+    },
+    {
+      "time": "2026-09-19T15:06:17.445161+00:00",
+      "from": "CI",
+      "action": "repair",
+      "to": "IMPLEMENT",
+      "evidence": "CI run 35450727531 failed before tests: pip install -e . cannot package flat dayNN layout; use uv sync --no-dev"
+    },
+    {
+      "time": "2026-09-19T15:07:21.137015+00:00",
+      "from": "IMPLEMENT",
+      "action": "advance",
+      "to": "VERIFY",
+      "evidence": "day15/results/implementation.md"
+    },
+    {
+      "time": "2026-09-19T15:07:21.207985+00:00",
+      "from": "VERIFY",
+      "action": "advance",
+      "to": "DEMO",
+      "evidence": "day15/results/test-report.md"
+    },
+    {
+      "time": "2026-09-19T15:07:21.279146+00:00",
+      "from": "DEMO",
+      "action": "advance",
+      "to": "REVIEW",
+      "evidence": "day15/results/video-report.md"
+    },
+    {
+      "time": "2026-09-19T15:07:21.349207+00:00",
+      "from": "REVIEW",
+      "action": "advance",
+      "to": "LIVE_VALIDATION",
+      "evidence": "day15/results/review-report.md"
+    },
+    {
+      "time": "2026-09-19T15:07:21.420475+00:00",
       "from": "LIVE_VALIDATION",
       "action": "advance",
       "to": "CI",
