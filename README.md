@@ -38,7 +38,7 @@ uv run day01/ask.py "вопрос"
 утверждаются из сохранённого предложения текущей версии, выполнение переводит
 задачу к проверке после успешного хода workflow. Недопустимая попытка оставляет
 этап и версию без изменений и попадает в отдельный журнал отказов. Есть
-[офлайн-видео](day15/demo/day15-controlled-transitions.webm),
+[видео для сдачи](https://drive.google.com/file/d/1JKKzrdfJurLZjVuug73tgE3O6He8onrE/view?usp=sharing),
 [проверки](day15/results/test-report.md),
 [длинный реальный прогон](day15/results/live-run-01/report.md) и
 [CI на push](.github/workflows/day15.yml).
