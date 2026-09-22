@@ -31,6 +31,18 @@ uv run day01/ask.py "вопрос"
 | 13 | формальное состояние задачи: этап, шаг, ожидаемое действие, pause/resume | [`day13/task_state.py`](day13/task_state.py) |
 | 14 | обязательные инварианты: отдельное хранение, enforcement и объяснимый отказ | [`day14/invariants.py`](day14/invariants.py) |
 | 15 | контролируемые переходы: условия, отказ в перескоке и продолжение после паузы | [`day15/README.md`](day15/README.md) |
+| 16 | MCP-клиент: соединение, negotiation и discovery доступных tools без выполнения | [`day16/README.md`](day16/README.md) |
+
+## День 16: MCP discovery
+
+Агент дня 15 сохранён без tool calling. Отдельное действие приложения запускает
+Everything MCP Server через stdio, согласует протокол, получает все страницы
+`tools/list`, показывает непустой список в панели и закрывает session. Эти tools
+не попадают в LLM-контекст, историю или SQLite и не могут быть выполнены.
+
+[Код, запуск и проверки](day16/README.md),
+[offline CI](.github/workflows/day16.yml) и
+[live-видео](day16/demo/day16-mcp-discovery.mp4).
 
 ## День 15: контролируемые переходы
 

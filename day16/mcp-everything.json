@@ -1,0 +1,10 @@
+{
+  "name": "Everything MCP Server",
+  "transport": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-everything@2026.8.31",
+    "stdio"
+  ]
+}
