@@ -1,0 +1,55 @@
+{
+  "status": "pass",
+  "timestamp_utc": "2026-09-23T09:48:31.909403+00:00",
+  "model": "deepseek-v4-flash",
+  "scenarios": {
+    "direct_chat": {
+      "trace": [
+        "provider_initial"
+      ],
+      "provider": {
+        "calls": 1,
+        "prompt_tokens": 1709,
+        "completion_tokens": 51,
+        "reported_cost_usd": 4.26e-05
+      },
+      "mcp_executions": 0,
+      "persisted": true
+    },
+    "tool_success": {
+      "trace": [
+        "provider_initial",
+        "mcp_execution",
+        "provider_final"
+      ],
+      "provider": {
+        "calls": 2,
+        "prompt_tokens": 3450,
+        "completion_tokens": 236,
+        "reported_cost_usd": 0.00024948
+      },
+      "mcp_executions": 1,
+      "grounded": true,
+      "persisted": true
+    },
+    "tool_failure": {
+      "trace": [
+        "provider_initial",
+        "mcp_execution",
+        "provider_final",
+        "local_result"
+      ],
+      "provider": {
+        "calls": 2,
+        "prompt_tokens": 3128,
+        "completion_tokens": 225,
+        "reported_cost_usd": 0.00017057999999999998
+      },
+      "mcp_executions": 1,
+      "false_success": false,
+      "persisted": true
+    }
+  },
+  "git_unchanged": true,
+  "conclusion": "Direct chat used one provider call and no MCP execution; successful tool chat used two provider calls and one grounded execution; failed execution used two provider calls but persisted only the canonical safe response."
+}

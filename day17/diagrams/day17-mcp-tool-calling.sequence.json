@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "День 17 · Первый MCP-инструмент",
+    "output": "day17-mcp-tool-calling.html",
+    "viewBox": [1480, 780],
+    "column_fit": "spread",
+    "quality_profile": "showcase"
+  },
+  "participants": [
+    { "id": "person", "type": "external", "label": "Пользователь" },
+    { "id": "chat", "type": "frontend", "label": "Приложение" },
+    { "id": "harness", "type": "security", "label": "Harness" },
+    { "id": "model", "type": "cloud", "label": "LLM provider" },
+    { "id": "mcp", "type": "messagebus", "label": "Git MCP server" },
+    { "id": "repository", "type": "database", "label": "Git repository" },
+    { "id": "audit", "type": "database", "label": "Turn audit" },
+    { "id": "conversation", "type": "database", "label": "Conversation" }
+  ],
+  "segments": [
+    { "from": 150, "to": 258, "label": "Discovery и LLM1" },
+    { "from": 268, "to": 430, "label": "Validation и MCP execution" },
+    { "from": 440, "to": 610, "label": "Observation, LLM2 и persistence" }
+  ],
+  "messages": [
+    { "id": "send_question", "from": "person", "to": "chat", "y": 160, "label": "user message", "variant": "default" },
+    { "id": "discover_tools", "from": "harness", "to": "mcp", "y": 188, "label": "tools/list, если snapshot отсутствует", "variant": "dashed" },
+    { "id": "return_schema", "from": "mcp", "to": "harness", "y": 216, "label": "name + description + input schema", "variant": "return" },
+    { "id": "first_model_call", "from": "harness", "to": "model", "y": 244, "label": "LLM1: request + discovered schema", "variant": "emphasis" },
+    { "id": "tool_decision", "from": "model", "to": "harness", "y": 278, "label": "tool request: get_recent_commits", "variant": "return" },
+    { "id": "audit_initial", "from": "harness", "to": "audit", "y": 306, "label": "provider_initial + usage", "variant": "dashed" },
+    { "id": "validate_request", "from": "chat", "to": "harness", "y": 334, "label": "validate name, JSON, schema, limit и FSM", "variant": "security" },
+    { "id": "execute_tool", "from": "harness", "to": "mcp", "y": 362, "label": "один validated tools/call", "variant": "emphasis" },
+    { "id": "read_history", "from": "mcp", "to": "repository", "y": 390, "label": "git log -- read-only", "variant": "default" },
+    { "id": "git_rows", "from": "repository", "to": "mcp", "y": 418, "label": "ordered commits", "variant": "return" },
+    { "id": "structured_observation", "from": "mcp", "to": "harness", "y": 452, "label": "bounded structured result", "variant": "return" },
+    { "id": "audit_execution", "from": "harness", "to": "audit", "y": 480, "label": "mcp_execution + safe summary", "variant": "dashed" },
+    { "id": "second_model_call", "from": "harness", "to": "model", "y": 508, "label": "LLM2: request + linked observation", "variant": "emphasis" },
+    { "id": "candidate_final", "from": "model", "to": "harness", "y": 536, "label": "candidate final response", "variant": "return" },
+    { "id": "audit_final", "from": "harness", "to": "audit", "y": 564, "label": "provider_final + usage", "variant": "dashed" },
+    { "id": "persist_verified", "from": "harness", "to": "conversation", "y": 592, "label": "atomic save: user + verified final", "variant": "security" },
+    { "id": "show_final", "from": "chat", "to": "person", "y": 620, "label": "проверенный final response", "variant": "return" }
+  ],
+  "activations": [
+    { "participant": "chat", "from": 156, "to": 628, "type": "frontend" },
+    { "participant": "harness", "from": 180, "to": 606, "type": "security" },
+    { "participant": "model", "from": 238, "to": 286, "type": "cloud" },
+    { "participant": "model", "from": 502, "to": 544, "type": "cloud" },
+    { "participant": "mcp", "from": 184, "to": 224, "type": "messagebus" },
+    { "participant": "mcp", "from": 356, "to": 460, "type": "messagebus" },
+    { "participant": "repository", "from": 384, "to": 426, "type": "database" },
+    { "participant": "audit", "from": 300, "to": 572, "type": "database" },
+    { "participant": "conversation", "from": 586, "to": 608, "type": "database" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Bounded happy path",
+      "items": ["Не более двух provider calls", "Не более одного MCP tools/call", "Schema модели происходит из MCP discovery"]
+    },
+    {
+      "dot": "rose",
+      "title": "Fail closed",
+      "items": ["Invalid request не исполняется", "Error observation не доказывает успех", "Повторный request LLM2 не создаёт LLM3"]
+    },
+    {
+      "dot": "amber",
+      "title": "FSM и доказательства",
+      "items": ["paused/done блокируют execution", "State проверяется перед MCP, LLM2 и persistence", "MCP observation подтверждает только возвращённые Git-данные"]
+    }
+  ]
+}

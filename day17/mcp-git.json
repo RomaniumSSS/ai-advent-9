@@ -1,0 +1,15 @@
+{
+  "name": "Day 17 Git",
+  "transport": "stdio",
+  "command": "uv",
+  "args": [
+    "run",
+    "--no-dev",
+    "--no-sync",
+    "python",
+    "-B",
+    "day17/git_mcp_server.py",
+    "--repo",
+    "."
+  ]
+}
