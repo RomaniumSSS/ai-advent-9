@@ -2,7 +2,38 @@
 
 Состояние работ. Что проект делает — в README и спеках, здесь только продвижение.
 
+## Сейчас — 27.09
+
+- Day 18: локальная реализация анализирует до 20 статей за выпуск и показывает
+  максимум две ссылки, включая явно помеченные возможные личные применения.
+  55/55 offline tests на macOS и VPS под `day18`; real-model no-send с 20
+  статьями прошёл. [Локальная проверка](day18/results/local-validation.md).
+- На `crm-agent` установлен ежедневный cron для 18:00 `Europe/Warsaw`.
+  Одноразовый cron-backfill в 00:15 27.09 вызвал агентный проход: 2 model calls,
+  1 MCP, 12/12 статей очереди, 2 ссылки, Bot API `message_id=6`, `DELIVERED`.
+  Пользователь подтвердил, что сводка видна в чате. Одноразовый cron снят;
+  ежедневный активен. [VPS evidence](day18/results/vps-live-20260927.md),
+  [видео](day18/demo/day18-scheduled-agent.mp4).
+- Следующее: наблюдать первый именно ежедневный trigger 27.09 в 18:00 Варшава;
+  формальная A01 требует его timestamp, а A14 — пользовательский просмотр
+  видео. Код и видео пока только в рабочем дереве, commit/push не выполнены.
+
 ## Сейчас — 23.09
+
+- День 17 реализован по frozen SPEC: один read-only `get_recent_commits` доступен
+  только обычному chat flow; validation, ≤1 MCP execution, observation → LLM2,
+  FSM freshness, fail-closed audit и atomic final persistence проверены. Все
+  `day17/test_*.py` и исходные Day 15/16 suites зелёные. Real-provider probe:
+  модель сама выбрала tool с `tool_choice=auto`, 2 provider calls + 1 настоящий
+  MCP call, exact commit IDs совпали с независимым `git log`, Git не изменился.
+  Comparative evaluation direct/success/error прошла без false success. Видео
+  35,56 с: `day17/demo/day17-mcp-tool-calling.mp4`; machine evidence —
+  `day17/results/`. SPEC не менялась. Финальный conformance review:
+  `SPEC SATISFIED`, все normative пункты PASS. Код и видео опубликованы
+  коммитом `e1ad49d` в ветке `RomaniumSSS/day17-mcp-tool-calling`; локальный и
+  удалённый HEAD совпадают. Внешняя сдача не завершена: `R132` пустая, Google
+  Drive не подключён, видео туда не загружено. Следующее: Роман подключает
+  Google Drive; затем загрузить видео, проверить ссылку и заполнить `R132`.
 
 - День 16 реализован, проверен и опубликован в рабочей ветке.
   Ветка `RomaniumSSS/day16-mcp-discovery` создана от baseline `5ee3571`.
@@ -11,8 +42,9 @@
   модели. 43/43 проверки Day 16 и 34/34 исходные regression-проверки Day 15
   зелёные. Живой Everything `2026.8.31`: protocol `2025-11-25`, 13 tools,
   ноль model calls, state без изменений. Видео 22,12 с:
-  `day16/demo/day16-mcp-discovery.mp4`. Следующее: дождаться GitHub Actions и
-  использовать ссылки на код и видео для сдачи.
+  `day16/demo/day16-mcp-discovery.mp4`. Коммит `b37d97b`; оба GitHub Actions
+  workflow зелёные. Следующее: использовать ссылки на код и видео для сдачи;
+  PR/merge и внешняя сдача не выполнялись.
 
 - День 14 завершён через внешнюю Codex FSM (`DONE`, 13/13 acceptance):
   самостоятельный `day14/` сохраняет весь день 13 и добавляет отдельные typed-

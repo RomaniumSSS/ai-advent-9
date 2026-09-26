@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "scheduled_slot", "period_start_utc", "period_end_utc", "timezone", "source_profile_id", "idempotency_key"],
+  "properties": {
+    "run_id": {"type": "string", "format": "uuid"},
+    "scheduled_slot": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+    "period_start_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "period_end_utc": {"type": "string", "format": "date-time", "pattern": "Z$"},
+    "timezone": {"const": "Europe/Warsaw"},
+    "source_profile_id": {"const": "habr_ai_agents_ru_v1"},
+    "idempotency_key": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

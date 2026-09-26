@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "run_id", "batch_id", "source_profile_id", "period_start_utc", "period_end_utc", "read_at_utc", "counts", "coverage", "candidates", "reason_code"],
+  "properties": {
+    "status": {"enum": ["success_with_items", "success_empty", "success_no_matching_cases", "partial_coverage", "source_error", "storage_error", "invalid_request"]},
+    "run_id": {"type": "string", "format": "uuid"},
+    "batch_id": {"type": ["string", "null"], "format": "uuid"},
+    "source_profile_id": {"const": "habr_ai_agents_ru_v1"},
+    "period_start_utc": {"type": "string", "format": "date-time"},
+    "period_end_utc": {"type": "string", "format": "date-time"},
+    "read_at_utc": {"type": ["string", "null"], "format": "date-time"},
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["feed_seen", "in_period", "new_observations", "repeated_articles", "eligible_candidates", "omitted_candidates", "invalid_entries", "out_of_profile"],
+      "properties": {
+        "feed_seen": {"type": "integer", "minimum": 0, "maximum": 100},
+        "in_period": {"type": "integer", "minimum": 0, "maximum": 100},
+        "new_observations": {"type": "integer", "minimum": 0, "maximum": 100},
+        "repeated_articles": {"type": "integer", "minimum": 0, "maximum": 100},
+        "eligible_candidates": {"type": "integer", "minimum": 0, "maximum": 100},
+        "omitted_candidates": {"type": "integer", "minimum": 0, "maximum": 100},
+        "invalid_entries": {"type": "integer", "minimum": 0, "maximum": 100},
+        "out_of_profile": {"type": "integer", "minimum": 0, "maximum": 100}
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "feed_limit_hit", "window_complete", "oldest_entry_utc"],
+      "properties": {
+        "kind": {"enum": ["complete_for_profile", "partial", "unknown"]},
+        "feed_limit_hit": {"type": "boolean"},
+        "window_complete": {"type": "boolean"},
+        "oldest_entry_utc": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "candidates": {
+      "type": "array", "maxItems": 10,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["article_id", "observation_id", "url", "title", "rss_excerpt", "published_at_utc"],
+        "properties": {
+          "article_id": {"type": "string", "maxLength": 100},
+          "observation_id": {"type": "string", "format": "uuid"},
+          "url": {"type": "string", "format": "uri", "maxLength": 500},
+          "title": {"type": "string", "maxLength": 240},
+          "rss_excerpt": {"type": "string", "maxLength": 512},
+          "published_at_utc": {"type": ["string", "null"], "format": "date-time"}
+        }
+      }
+    },
+    "reason_code": {"enum": ["none", "no_feed_entries", "no_new_entries", "no_eligible_candidates", "invalid_entries", "feed_limit", "oversize", "rss_unavailable", "rss_malformed", "storage_failure", "schema_violation", "context_mismatch", "budget_exhausted", "tool_not_allowed", "multiple_calls", "timeout", "protocol_error"]}
+  }
+}

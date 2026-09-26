@@ -1,0 +1,6 @@
+# /etc/cron.d/day18-agent на VPS с системной зоной UTC.
+# 18:00 в Варшаве = 16:00 UTC летом или 17:00 UTC зимой.
+# due_now проверяет зону Europe/Warsaw: из двух cron-триггеров только один
+# запускает агентный ход, а slot identity исключает повторную публикацию.
+SHELL=/bin/sh
+0 16,17 * * * day18 /opt/day18-agent/run-scheduled.sh

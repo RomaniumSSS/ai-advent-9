@@ -32,6 +32,17 @@ uv run day01/ask.py "вопрос"
 | 14 | обязательные инварианты: отдельное хранение, enforcement и объяснимый отказ | [`day14/invariants.py`](day14/invariants.py) |
 | 15 | контролируемые переходы: условия, отказ в перескоке и продолжение после паузы | [`day15/README.md`](day15/README.md) |
 | 16 | MCP-клиент: соединение, negotiation и discovery доступных tools без выполнения | [`day16/README.md`](day16/README.md) |
+| 17 | MCP-инструмент в обычном ходе агента | [`day17/README.md`](day17/README.md) |
+| 18 | агент по расписанию: RSS → MCP → сводка → Telegram | [`day18/README.md`](day18/README.md) |
+
+## День 18: агент по расписанию
+
+На VPS установлен ежедневный запуск в 18:00 `Europe/Warsaw`. Проверочный
+cron-backfill уже запустил реальный агентный проход и доставил сводку в
+Telegram; первый именно ежедневный trigger после установки ещё не наступил.
+[Код и запуск](day18/README.md),
+[факты VPS и доставки](day18/results/vps-live-20260927.md),
+[видео](day18/demo/day18-scheduled-agent.mp4).
 
 ## День 16: MCP discovery
 

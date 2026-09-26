@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Day 18 · запуск по cron на VPS</title>
+<style>
+  :root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #101a27; color: #f2f7fb; }
+  main { width: 1440px; height: 900px; margin: auto; padding: 52px 70px; background: radial-gradient(circle at 90% 5%, #20475e, transparent 38%), #101a27; }
+  .eyebrow { color: #74d5b2; letter-spacing: .17em; text-transform: uppercase; font-size: 15px; font-weight: 700; }
+  h1 { font-size: 47px; letter-spacing: -.04em; margin: 10px 0 4px; }
+  .subtitle { color: #b5c7d4; font-size: 21px; margin: 0 0 30px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .card { background: #192b3b; border: 1px solid #3c5c6d; border-radius: 18px; padding: 23px 28px; min-height: 190px; box-shadow: 0 10px 30px #0003; }
+  .wide { grid-column: span 2; min-height: 151px; }
+  h2 { font-size: 21px; color: #84dbb9; margin: 0 0 14px; }
+  p, li { font-size: 20px; line-height: 1.43; margin: 6px 0; }
+  code { font: 17px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; color: #d0e8f4; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .big { font-size: 28px; font-weight: 750; color: #fff; }
+  .pill { display: inline-block; padding: 7px 14px; border-radius: 999px; background: #226653; color: #d4ffeb; font-weight: 750; }
+  .muted { color: #a9beca; }
+  .slide { display: none; }
+  .slide.active { display: block; }
+  footer { position: absolute; top: 846px; color: #8ba7b8; font-size: 14px; }
+</style>
+<main>
+  <div class="eyebrow">Day 18 · доказательство запуска</div>
+  <h1>Агент по расписанию на VPS</h1>
+  <p class="subtitle">Сохранённые журналы cron и SQLite · 27 сентября 2026, Варшава</p>
+
+  <section class="slide active" id="s1">
+    <div class="grid">
+      <div class="card"><h2>Ежедневное расписание</h2><p class="big">18:00 Europe/Warsaw</p><p>UTC cron: <code>0 16,17 * * *</code></p><p class="muted">Проверка местного времени пропускает второй trigger.</p></div>
+      <div class="card"><h2>Проверка сейчас</h2><p class="big">00:15, 27.09 по Варшаве</p><p>Одноразовый cron вызвал <code>backfill --date 2026-09-26</code>.</p><p class="muted">Затем одноразовое задание снято.</p></div>
+      <div class="card wide"><h2>Один вызов запускает весь агентный проход</h2><p>cron → модель выбирает MCP → RSS и SQLite → модель готовит сводку → Telegram</p></div>
+    </div>
+  </section>
+
+  <section class="slide" id="s2">
+    <div class="grid">
+      <div class="card wide"><h2>Системный журнал cron · реальный запуск</h2><code>2026-09-26 22:15:01 UTC  (day18) CMD
+/usr/bin/env -C /opt/day18-agent /opt/day18-agent/.venv/bin/python
+-B -m day18.cli ... backfill --date 2026-09-26 --actor cron-demo</code></div>
+      <div class="card"><h2>Сохранённый run</h2><p><span class="pill">DELIVERED</span></p><p><code>6e5cdddf-fa3f-4a70-987e-a6bfa8dafb7e</code></p></div>
+      <div class="card"><h2>Время выполнения</h2><p class="big">22:15:02–22:15:19 UTC</p><p>18 секунд от cron trigger до завершения.</p></div>
+    </div>
+  </section>
+
+  <section class="slide" id="s3">
+    <div class="grid">
+      <div class="card"><h2>Agent turn в SQLite</h2><p class="big">2 вызова модели · 1 MCP</p><p>Модель получила RSS через MCP и подготовила отчёт.</p></div>
+      <div class="card"><h2>Охват выпуска</h2><p class="big">12 из 12</p><p>статей очереди проанализированы; в сообщении 2 ссылки.</p></div>
+      <div class="card wide"><h2>Фактическое содержание</h2><p>1. DBA Agent — описанный кейс поддержки БД · habr.com/ru/articles/1086740/</p><p>2. Агентный QA — возможный кейс, помечен как неподтверждённый · habr.com/ru/articles/1086968/</p></div>
+    </div>
+  </section>
+
+  <section class="slide" id="s4">
+    <div class="grid">
+      <div class="card"><h2>Telegram</h2><p class="big">message_id = 6</p><p>Одна попытка · Bot API <span class="pill">accepted</span></p></div>
+      <div class="card"><h2>Подтверждение адресата</h2><p class="big">Сообщение видно в чате</p><p>Пользователь подтвердил получение в <code>@habbsr_bot</code>.</p></div>
+      <div class="card wide"><h2>Текущее состояние</h2><p>Checkpoint: 2026-09-26. Одноразовый cron отключён. Ежедневный cron остаётся активным.</p><p class="muted">Это просмотр сохранённых доказательств; ближайший ежедневный запуск в 18:00 ещё не наступил.</p></div>
+    </div>
+  </section>
+  <footer>Источник: journalctl cron · /var/lib/day18/day18.sqlite3 · подтверждение пользователя. Секреты и chat ID скрыты.</footer>
+</main>
+</html>
