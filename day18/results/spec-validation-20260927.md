@@ -7,8 +7,9 @@ SPEC: `docs/superpowers/specs/2026-09-25-day18-background-agent.md`, SHA-256
 Runtime-код локально и на VPS: комбинированный SHA-256 вывода `sha256sum
 day18/*.py day18/schemas/*.json day18/deploy/*.sh` —
 `09bd0b36dc24c566abdbcd9823ac1f81631c75c901aa6ef04854c22b103c3962`.
-Код Day 18 ещё не закоммичен. Проверено в рабочем дереве и на установленном
-экземпляре `crm-agent`, а не на удалённом GitHub HEAD.
+Runtime-код опубликован коммитом
+`de025db6b397142c2f806a044d59b0226cb73731`; удалённый HEAD этой ветки
+совпал. Проверено в рабочем дереве и на установленном экземпляре `crm-agent`.
 
 - macOS/Python 3.12: `.venv/bin/python -B -m unittest day18.test_architecture day18.test_offline -q` → **55/55 OK**; `compileall -q day18`, `git diff --check`, пустой `git diff --name-only -- day17` → OK.
 - Ubuntu VPS/Python 3.12 под пользователем `day18`: те же 55/55 offline tests → OK. Локальный stdio MCP в тестах настоящий, но модель/RSS/Telegram там подменены.
