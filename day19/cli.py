@@ -29,6 +29,7 @@ def main() -> None:
     parser.add_argument("--start",help="Начало периода в UTC, ISO 8601 Z")
     parser.add_argument("--end",help="Конец периода в UTC, ISO 8601 Z")
     parser.add_argument("--request",default="Собери сводку о применении ИИ-агентов из RSS Хабра и сохрани её")
+    parser.add_argument("--show-steps",action="store_true",help="Показывать безопасные события агентного цикла в stdout")
     args = parser.parse_args()
     profile = select_profile(args.profile)
     if args.env_file.is_file():
@@ -54,7 +55,12 @@ def main() -> None:
         argv += ["--rss-file",str(args.rss_file.resolve())]
     config = McpConfig(sys.executable,tuple(argv))
     provider = OpenRouterProvider(profile)
-    trace = Agent(store,config,provider,profile,trace_path=args.trace,preflight=preflight).run(run_id,args.request)
+    def show_event(event: dict) -> None:
+        print(json.dumps(event,ensure_ascii=False),flush=True)
+    if args.show_steps:
+        show_event({"event":"request","text":args.request,"source":"saved_rss" if args.rss_file else "live_rss"})
+    trace = Agent(store,config,provider,profile,trace_path=args.trace,preflight=preflight,
+                  on_event=show_event if args.show_steps else None).run(run_id,args.request)
     print(json.dumps({"run_id":run_id,"status":trace["status"],"reason":trace["reason"],
                       "tool_calls":len(trace["tool_calls"]),"model_calls":len(trace["model_calls"]),
                       "reported_cost_usd":trace["reported_cost_usd"],"preflight_upper_usd":preflight["conservative_upper_usd"],"trace":str(args.trace)},ensure_ascii=False))

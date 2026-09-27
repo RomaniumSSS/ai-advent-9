@@ -7,7 +7,7 @@ import sys
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Protocol
+from typing import Callable, Protocol
 
 from jsonschema import Draft202012Validator, FormatChecker
 from .config import (MAX_ARGS_BYTES, MAX_MCP_CALLS, MAX_MODEL_CALLS,
@@ -96,13 +96,25 @@ def initial_messages(run: dict, request: str) -> list[dict]:
 
 class Agent:
     def __init__(self, store: Store, config: McpConfig, provider: Provider, profile: ModelProfile,
-                 *, trace_path: Path | None = None, preflight: dict | None = None):
+                 *, trace_path: Path | None = None, preflight: dict | None = None,
+                 on_event: Callable[[dict], None] | None = None):
         self.store = store
         self.config = config
         self.provider = provider
         self.profile = profile
         self.trace_path = trace_path
         self.preflight = preflight
+        self.on_event = on_event
+
+    def _emit(self, event: dict) -> None:
+        if self.on_event is None:
+            return
+        try:
+            self.on_event(event)
+        except Exception:
+            # AICODE-NOTE: отказ необязательного отображения не должен менять
+            # результат агентного прогона или состояние сохранённого отчёта.
+            pass
 
     def run(self, run_id: str, request: str) -> dict:
         run = self.store.run(run_id)
@@ -113,6 +125,7 @@ class Agent:
             raw_tools = discover(self.config)
             if {t["name"] for t in raw_tools} != set(TOOL_NAMES) or len(raw_tools) != 3:
                 raise ValueError("tool_catalog_mismatch")
+            self._emit({"event":"catalog","tools":[t["name"] for t in raw_tools]})
             tools = [{"type":"function","function":{"name":t["name"],
                       "description":t["description"],"parameters":t["input_schema"]}} for t in raw_tools]
             schemas = {t["name"]:t["input_schema"] for t in raw_tools}
@@ -124,6 +137,7 @@ class Agent:
                     raise ValueError("provider_request_too_large")
                 if cost >= self.profile.max_cost_usd:
                     raise ValueError("cost_limit")
+                self._emit({"event":"model_call","sequence":sequence})
                 started = time.monotonic()
                 response = self.provider.complete(messages,tools=tools,max_tokens=self.profile.max_tokens,
                                                   tool_choice="auto")
@@ -181,6 +195,19 @@ class Agent:
                         "arguments":args if args is not None else {"rejected":True},
                         "result":result,"at_utc":now(),
                         "elapsed_ms":round((time.monotonic()-begun)*1000)})
+                    event = {"event":"tool_call","sequence":attempts,"name":name,
+                             "call_id":ident,"status":result.get("status"),
+                             "code":result.get("code")}
+                    for field in ("batch_id","preview_id","sha256","path"):
+                        if field in result:
+                            event[field] = result[field]
+                    if args is not None:
+                        for field in ("batch_id","preview_id","sha256"):
+                            if field in args:
+                                event["used_" + field] = args[field]
+                    if name == "collect_habr_agent_cases" and "model_seen" in result:
+                        event["model_seen_count"] = len(result["model_seen"])
+                    self._emit(event)
                     messages.append({"role":"tool","tool_call_id":ident,"content":compact(result)})
                     if attempts >= MAX_MCP_CALLS and result.get("status") != "saved":
                         raise ValueError("mcp_call_limit")

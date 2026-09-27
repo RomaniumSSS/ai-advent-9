@@ -41,9 +41,9 @@ uv run day01/ask.py "вопрос"
 Локальный агент с DeepSeek получает схемы трёх инструментов, выбирает каждый
 следующий вызов по результату предыдущего и сохраняет проверенный отчёт.
 [Код и команды](day19/README.md),
-[trace реального CLI-прогона](day19/demo/live-trace.json),
-[созданный файл](day19/output/report-17d91602-69d5-4cdf-9ea4-893cad8c6979.txt)
-и [видео с запросом, вызовами и ответом](day19/demo/day19-three-mcp-tools.mp4).
+[trace реального CLI-прогона](day19/demo/live-screen-trace.json),
+[созданный файл](day19/output/report-f5a2f541-1145-4a7f-b2fa-5e0b8d2c114c.txt)
+и [видео прямого запуска агента](day19/demo/day19-live-agent.mp4).
 
 ## День 18: агент по расписанию
 

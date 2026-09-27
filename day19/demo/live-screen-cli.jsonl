@@ -1,0 +1,10 @@
+{"event": "request", "text": "Собери сводку реального бизнес- и личного применения ИИ-агентов. Отличай практику от мнений и учебных примеров; сохрани отчёт.", "source": "saved_rss"}
+{"event": "catalog", "tools": ["collect_habr_agent_cases", "prepare_report_preview", "save_report"]}
+{"event": "model_call", "sequence": 1}
+{"event": "tool_call", "sequence": 1, "name": "collect_habr_agent_cases", "call_id": "chatcmpl-tool-95ec6fb3a0ca64b4", "status": "data_ready", "code": null, "batch_id": "fb2d42bd-73ca-4608-8983-55af61a1232f", "model_seen_count": 4}
+{"event": "model_call", "sequence": 2}
+{"event": "tool_call", "sequence": 2, "name": "prepare_report_preview", "call_id": "chatcmpl-tool-8be7d71318b4354b", "status": "preview_ready", "code": null, "preview_id": "25bcf1c2-25f3-451c-8cf6-380b025cb87e", "sha256": "218fd654beff91cf3ca6ca1b8b271f6c959819e5601f965706c8a71e24084e91", "used_batch_id": "fb2d42bd-73ca-4608-8983-55af61a1232f"}
+{"event": "model_call", "sequence": 3}
+{"event": "tool_call", "sequence": 3, "name": "save_report", "call_id": "chatcmpl-tool-857b87c51855dde0", "status": "saved", "code": null, "sha256": "218fd654beff91cf3ca6ca1b8b271f6c959819e5601f965706c8a71e24084e91", "path": "output/report-f5a2f541-1145-4a7f-b2fa-5e0b8d2c114c.txt", "used_preview_id": "25bcf1c2-25f3-451c-8cf6-380b025cb87e", "used_sha256": "218fd654beff91cf3ca6ca1b8b271f6c959819e5601f965706c8a71e24084e91"}
+{"event": "model_call", "sequence": 4}
+{"run_id": "f5a2f541-1145-4a7f-b2fa-5e0b8d2c114c", "status": "saved", "reason": null, "tool_calls": 3, "model_calls": 4, "reported_cost_usd": 0.0018586568, "preflight_upper_usd": 0.155654, "trace": "/var/folders/g2/d42wvg5d3fzb07qklb2rcfy40000gn/T/day19-live-screen-4lljgt1s/trace.json"}
