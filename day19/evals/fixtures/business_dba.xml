@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><item>
+      <title>DBA Agent в действии: 10 тысяч тикетов и 99,6% автоматизации второй линии поддержки</title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/sberbank/articles/1086740/</guid>
+      <link>https://habr.com/ru/companies/sberbank/articles/1086740/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086740</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/0c5/0f5/f0d/0c50f5f0d0072602458b3df5d0c21856.jpeg" /&gt;&lt;p&gt;Привет, Хабр! Это четвёртая статья цикла про&amp;nbsp;R&amp;amp;D‑исследование для&amp;nbsp;небольшой команды DBA. &lt;/p&gt;&lt;p&gt;Мы начали с&amp;nbsp;того, что&amp;nbsp;решили упростить мониторинг парка из более чем 800 экземпляров нашей СУБД Platform V Pangolin DB (реляционная СУБД на&amp;nbsp;базе PostgreSQL) с помощью доработки postgres_exporter. А&amp;nbsp;потом и вовсе собрали автономный агент, который сам обрабатывает тикеты: очищает дисковое пространство, выполняет VACUUM/ANALYZE и планирует остановки БД. &lt;/p&gt;&lt;p&gt;В&amp;nbsp;этой статье расскажу, как&amp;nbsp;мы продолжили тестировать гипотезу с&amp;nbsp;агентом: перевели его в&amp;nbsp;режим второй&amp;nbsp;линии поддержки и замеряли реальные результаты. Будут числа, примеры, использование LLM для&amp;nbsp;анализа паттернов, миграция задач из&amp;nbsp;Pipeliner и планы по&amp;nbsp;дальнейшему R&amp;amp;D и превращению агента в&amp;nbsp;полноценную вторую&amp;nbsp;линию поддержки.&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1086740/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1086740#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Fri, 25 Sep 2026 16:13:01 GMT</pubDate>
+      <dc:creator>Pelmen421 (Сбер)</dc:creator>
+      <category>Блог компании Сбер</category><category>Искусственный интеллект</category><category>Базы данных</category>
+      <category>platform v</category><category>сбертех</category><category>ии-агенты</category><category>мониторинг</category><category>базы_данных</category><category>субд</category><category>postgresql</category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    </channel></rss>

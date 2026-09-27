@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><item>
+      <title>Собрал платный API для ИИ‑агентов на x402. Рынка не нашёл — зато нашёл четыре бага</title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086276/</guid>
+      <link>https://habr.com/ru/articles/1086276/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086276</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/df3/c61/90b/df3c6190b7c146a3de541f2c10271828.jpg" /&gt;&lt;p&gt;Собрал платный API для&amp;nbsp;проверки кода на&amp;nbsp;протоколе x402&amp;nbsp;— агент получает HTTP 402, платит в&amp;nbsp;USDC, получает подписанный сертификат. Довёл до&amp;nbsp;продакшена и наткнулся на&amp;nbsp;четыре бага, каждый из&amp;nbsp;которых выглядел как&amp;nbsp;рабочий код. Заодно проверил, есть&amp;nbsp;ли вообще спрос&amp;nbsp;— и вот что&amp;nbsp;показали цифры. &lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1086276/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1086276#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Thu, 24 Sep 2026 13:55:51 GMT</pubDate>
+      <dc:creator>Laratok</dc:creator>
+      <category>Python</category><category>Монетизация IT-систем</category><category>Финансы в IT</category><category>Информационная безопасность</category>
+      <category>x402</category><category>HTTP 402</category><category>AI-агенты</category><category>FastAPI</category><category>Docker</category><category>PostgreSQL</category><category>ed25519</category><category>Claude Code</category><category>DevSecOps</category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    </channel></rss>

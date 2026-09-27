@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><item>
+      <title>1700 строк JS и ни одного видеофайла: как ИИ-агент снимает кино на Canvas и рендерит его в MP4</title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086766/</guid>
+      <link>https://habr.com/ru/articles/1086766/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086766</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/d5d/97e/e98/d5d97ee983daada0aeb47bd4092b1d3a.jpg" /&gt;&lt;p&gt;В этом минутном фильме нет ни одной картинки, видеофайла или сэмпла. Огонь, гравюру, 3D-сферу, пиксельную игру и музыку рисует и синтезирует один HTML-файл на 1700 строк, и написал его ИИ-агент. Без правил тот же агент выдаёт унылую заставку: синий фон, неон, всё ползёт линейно. Разбираю, что это меняет: кадр как чистая функция draw(ctx, t), рендер в MP4 без единого рывка и агент, который сам проверяет фильм по таймкодам.&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1086766/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1086766#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Fri, 25 Sep 2026 13:49:51 GMT</pubDate>
+      <dc:creator>Kisel_n</dc:creator>
+      <category>Искусственный интеллект</category><category>Open source</category><category>WebGL</category><category>Canvas</category><category>Программирование</category>
+      <category>canvas</category><category>webgl</category><category>three.js</category><category>web audio</category><category>ffmpeg</category><category>playwright</category><category>claude code</category><category>codex</category><category>ии-агенты</category><category>моушн-графика</category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    </channel></rss>

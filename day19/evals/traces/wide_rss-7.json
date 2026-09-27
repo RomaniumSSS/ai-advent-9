@@ -1,0 +1,553 @@
+{
+  "run_id": "71e845f6-a056-4b3d-9d10-3a56262e026a",
+  "request": "Собери сводку о применении ИИ-агентов из всего доступного RSS-снимка Хабра и сохрани её. Укажи неполноту охвата и не выдумывай эффекты.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T11:11:48Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T11:11:53Z",
+      "elapsed_ms": 4409,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2258,
+        "completion_tokens": 167,
+        "total_tokens": 2425,
+        "cost": 0.0001081416
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T11:12:45Z",
+      "elapsed_ms": 51030,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 6110,
+        "completion_tokens": 3939,
+        "total_tokens": 10049,
+        "cost": 0.0022316616
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T11:13:03Z",
+      "elapsed_ms": 17917,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 10104,
+        "completion_tokens": 1258,
+        "total_tokens": 11362,
+        "cost": 0.0007782992
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T11:13:08Z",
+      "elapsed_ms": 3609,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 11504,
+        "completion_tokens": 164,
+        "total_tokens": 11668,
+        "cost": 0.0003062304
+      }
+    },
+    {
+      "sequence": 5,
+      "at_utc": "2026-09-27T11:13:16Z",
+      "elapsed_ms": 7949,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 11757,
+        "completion_tokens": 525,
+        "total_tokens": 12282,
+        "cost": 0.0003194464
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-a2e54ac8b64c8742",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "71e845f6-a056-4b3d-9d10-3a56262e026a",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "71e845f6-a056-4b3d-9d10-3a56262e026a",
+        "batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T11:11:54Z",
+        "coverage": {
+          "feed_limit_hit": true,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-23T09:57:10Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 76,
+          "eligible_current": 76,
+          "feed_seen": 100,
+          "in_period": 80,
+          "invalid_entries": 20,
+          "new_observations": 76,
+          "omitted_candidates": 64,
+          "out_of_profile": 4
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "78a95fc8-64b5-437e-8ec8-0abd23bb7140",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1087032",
+            "url": "https://habr.com/ru/articles/1087032/",
+            "title": "Способы применения LLM: простые и необычные варианты",
+            "rss_excerpt": "Статья вдохновленная старой веткой Reddit: https://www.Reddit.com/r/ChatGPT/comments/1cbnrmk/what_ways_do_you_use_chat_gpt_in_your_daily_lives/Я буду перечислять то, как сам использую LLM, в частности ChatGPT, в работе и в обычной жизни, а также некоторые интересные варианты которые встречались в Интернете (включая несколько нетипичных вариантов из указанной ветки Reddit). Также я спросил ChatGPT, как можно использовать большие языковые модели, в том числе “необычные и неочевидные способы применения LLM”. Некоторые интересные примеры добавлю сюда.Забегая наперед скажу - вариантов использования",
+            "published_at_utc": "2026-09-27T08:15:24Z"
+          },
+          {
+            "observation_id": "d98325ff-bb56-49ee-a625-2c295ba61deb",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1087012",
+            "url": "https://habr.com/ru/articles/1087012/",
+            "title": "Агенты OpenAI, триллионные оценки и ИИ‑пузырь: кто успеет выйти до хлопка",
+            "rss_excerpt": "Официальная версия звучит усыпляюще. Агенты OpenAI забрались на сайты американских ведомств, но взломом компания это не называет: «вызывающее беспокойство поведение». У Reuters язык суше и цифры неприятнее — к середине сентября набралось больше двадцати нежелательных эпизодов. Ещё 53 пользовательских изображения оказались в открытом интернете.На биржевом этаже эту историю слышат иначе. Там всё ещё продают триллионную оценку, IPO после небольшой паузы и AGI где-то за ближайшим поворотом. А этажом ниже агенты выбираются из песочниц, счета за вычисления пухнут, конкуренты уже у двери. Жать на тор",
+            "published_at_utc": "2026-09-26T18:35:17Z"
+          },
+          {
+            "observation_id": "3b0d9efc-0dd2-4a12-83e3-99bf329eab4e",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1086976",
+            "url": "https://habr.com/ru/articles/1086976/",
+            "title": "Доверить сервер ИИ-агенту и не пожалеть: как спать спокойно без SSH",
+            "rss_excerpt": "Мы всё быстрее движемся к самовосстанавливающейся инфраструктуре. Но когда инцидент всё-таки случается, у инженеров может уйти много времени на сбор информации о состоянии серверов. При SLA 99,99% на простой остаётся около 4 минут в месяц, каждая минута на счету, и не автоматизировать эту часть разбора инцидента — непозволительная роскошь. Технически это можно сделать и сейчас: дать ИИ-агенту SSH и sudo.Я решил пойти другим путём и собрал Linux MCP daemon (mcpd): сервер, изначально рассчитанный на ИИ-агентов. Вместо обёрток над стандартными утилитами он сам читает состояние системы из ядра и о",
+            "published_at_utc": "2026-09-26T18:01:43Z"
+          },
+          {
+            "observation_id": "3f028893-5600-4a0f-8e5d-cad1bf306025",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1087002",
+            "url": "https://habr.com/ru/articles/1087002/",
+            "title": "Как ИТ-компаниям выжить, когда ИИ есть у всех",
+            "rss_excerpt": "Ещё недавно вопрос звучал так: «как нам внедрить нейросети». Теперь он звучит иначе: «как нам выжить, когда нейросети есть у всех». Это разные вопросы. Когда мощный инструмент есть у каждого, он перестаёт быть преимуществом и превращается в цену входа на рынок. Ниже шесть соображений о том, что останется ценным в ИТ, когда обёртки вокруг чужих моделей перестанут быть преимуществом. Читать далее",
+            "published_at_utc": "2026-09-26T17:30:12Z"
+          },
+          {
+            "observation_id": "e92c157f-d7d3-4d40-963b-e9588969ae50",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1086968",
+            "url": "https://habr.com/ru/articles/1086968/",
+            "title": "[Перевод] От тестирования релиза с высоким уровнем риска к новому ИИ‑инструменту для QA",
+            "rss_excerpt": "Перед нами стояла задача протестировать релиз, сопряженный с высокими рисками и реализованный в высоконагруженных агломерациях микросервисов с легаси-проблемами, - и все это вкупе со сжатыми сроками.Как мы справились с этой задачей и попутно разработали новый QA-инструмент на основе Agentic AI? Читать далее",
+            "published_at_utc": "2026-09-26T14:38:40Z"
+          },
+          {
+            "observation_id": "e46bb565-f394-4341-80a5-5eced9858acf",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1086790",
+            "url": "https://habr.com/ru/articles/1086790/",
+            "title": "Pony ORM: толстая пачка фич и улучшений",
+            "rss_excerpt": "DISCLAIMER: Это неофициальный форк. Но, по моим сведениям, и в официальный pony эти фичи скоро подъедут в каком-то виде.Некоторое время назад, я решил испробовать программирование с помощью ИИ-агентов и решил выбрать pony в качестве пет-проекта. О pony я уже писал в предыдущей статье. Теперь хочу поделиться результатами своего недельного спринта.В pony добавилось:- поддержка асинхронности- поддержка миграций- разные улучшения из серии quality-of-lifeТак что, фреймворк pony теперь чрезвычайно важен и сердит - что можно понять по этой картинке. Всё - благодаря DeepSeek 4.1 Flash и Kimi K3 (после",
+            "published_at_utc": "2026-09-26T13:00:40Z"
+          },
+          {
+            "observation_id": "fd624f95-bb6b-4714-b617-759a13a5fa28",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1086954",
+            "url": "https://habr.com/ru/articles/1086954/",
+            "title": "Ложь ИИ: иллюзии, в которые хочется верить",
+            "rss_excerpt": "Традиционный баг «кричит», блокирует процесс и требует фикса. Вероятностная иллюзия ИИ говорит уверенным тоном, улыбается и пожимает вам руку. Разбираем по слоям, как RLHF, антропоморфный интерфейс и закон Гудхарта превращают матричное умножение в систему, которой хочется верить. И почему «зелёные» тесты — это не решение задачи, а лишь соответствие рамке. Читать далее",
+            "published_at_utc": "2026-09-26T12:34:55Z"
+          },
+          {
+            "observation_id": "9967e84b-f718-4c2d-bd08-0098b8cb9436",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1086934",
+            "url": "https://habr.com/ru/articles/1086934/",
+            "title": "Чем заменить ChatGPT Plus в 2026 году: 9 альтернатив, цены и возможности",
+            "rss_excerpt": "ChatGPT Plus стоит $20 в месяц, но такая подписка нужна не всем. Если вы используете ChatGPT только для текстов, поиска информации, кода или нескольких рабочих задач, часть функций может оставаться без дела.Заменить Plus можно по-разному: перейти на более дешёвый тариф, выбрать другой ИИ-сервис, использовать бесплатную модель, платить только за запросы через API или работать с несколькими моделями через агрегатор.В статье сравним эти варианты по цене, возможностям и ограничениям. Главный вопрос не в том, какой сервис лучше ChatGPT, а в том, какие функции вам действительно нужны и можно ли полу",
+            "published_at_utc": "2026-09-26T12:30:09Z"
+          },
+          {
+            "observation_id": "1a8da6ff-632d-41dd-b910-e19e060aa843",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1086714",
+            "url": "https://habr.com/ru/articles/1086714/",
+            "title": "ИИ-агенты в инвестициях: собираем Telegram-ассистента и торгового робота на MCP Т-Инвестиций",
+            "rss_excerpt": "Привет, Хабр! Я Алексей Кабанов, разработчик в команде публичного API Т-Инвестиций. Недавно мы запустили MCP-сервер, позволяющий AI-агентам взаимодействовать с Т-Инвестициями: искать подходящие бумаги, анализировать рынок и портфель клиента. Расскажу, как можно построить автоматизацию на основе ИИ-агентов с использованием нашего MCP-сервера.Еще недавно, чтобы автоматизировать даже несложный торговый алгоритм, приходилось писать собственный скрипт: Python, API брокера, cron и обработка ошибок на все случаи жизни. Профессиональные торговые системы существовали и раньше, но для частного инвестора",
+            "published_at_utc": "2026-09-26T09:00:55Z"
+          },
+          {
+            "observation_id": "e0da18f9-0b8d-4e62-9090-a7291cadc9c8",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1086156",
+            "url": "https://habr.com/ru/articles/1086156/",
+            "title": "ИИ для тестировщика: стоит ли учить TestRigor и Copilot в 2026",
+            "rss_excerpt": "ИИ для тестировщика в 2026 году перестал быть темой для докладов на конференциях и стал обычным рабочим инструментом. В опросе 800+ QA-специалистов, проведенном в начале года, 79% признались, что уже пользуются нейросетями в работе, но большинство применяет их как продвинутый поисковик и для разовых задач. Между «попросил у ChatGPT чек-лист» и «собрал агента, который сам пишет автотесты по спецификации» лежит заметная дистанция, и как раз под нее сейчас появляются отдельные курсы. Ниже разберем, что на практике умеют TestRigor, Codex и Copilot, что про ИИ-навыки пишут работодатели и какие прог",
+            "published_at_utc": "2026-09-26T08:32:52Z"
+          },
+          {
+            "observation_id": "8ee87a4a-0e4e-4a8c-83bf-60491db195e6",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1085864",
+            "url": "https://habr.com/ru/articles/1085864/",
+            "title": "Claude в 2026: курсы, отзывы и почему на него переходят",
+            "rss_excerpt": "Курсы по Claude в 2026 году появились в каталогах почти всех крупных онлайн-школ, хотя сама нейросеть в России официально недоступна. Этот парадокс хорошо описывает ситуацию, потому что спрос на Claude растет снизу, от разработчиков, аналитиков и маркетологов, которые находят обходные пути и потом рассказывают о результатах в отзывах. Вокруг модели успело накопиться много громких утверждений, от «умнее всех остальных» до «без него уже не обойтись», и часть из них при проверке оказывается маркетингом. Ниже разберем эти утверждения по фактам, сравним 5 программ из каталога Хабр Курсов и покажем,",
+            "published_at_utc": "2026-09-26T06:24:43Z"
+          },
+          {
+            "observation_id": "b8c468e2-9f6d-4498-97f7-e35f5b77cd98",
+            "first_batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+            "article_id": "1086884",
+            "url": "https://habr.com/ru/articles/1086884/",
+            "title": "Особенности агентской разработки ПО, обеспечивающей соответствие замыслу и требованиям",
+            "rss_excerpt": "Больше тридцати лет я строю процессы в бизнесах разного масштаба — от компаний на два человека до компаний на несколько тысяч. Последние полтора года мы с @skazkin строим компанию, в которой код на сто процентов пишут ИИ-агенты, а не люди. Мой участок в этой работе — не код, а процесс: как устроена система, гарантирующая, что результат работы агента действительно соответствует поставленной задаче и отвечает всем требованиям по качеству.Этот текст — систематизация моего понимания особенностей работы агента по в рамках процесса разработки.Задача. Разработка ПО с помощью ИИ-агентов, результат кот",
+            "published_at_utc": "2026-09-26T06:12:56Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T11:11:54Z",
+      "elapsed_ms": 678
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-9ddda2a881b9f401",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "71e845f6-a056-4b3d-9d10-3a56262e026a",
+        "batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+        "draft": {
+          "run_id": "71e845f6-a056-4b3d-9d10-3a56262e026a",
+          "outcome": "cases_found",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "78a95fc8-64b5-437e-8ec8-0abd23bb7140",
+              "category": "not_relevant",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Обзор способов применения LLM без описания работы конкретного ИИ-агента",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "d98325ff-bb56-49ee-a625-2c295ba61deb",
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Мнение о поведении агентов OpenAI и оценках ИИ-рынка, без кейса применения",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "3b0d9efc-0dd2-4a12-83e3-99bf329eab4e",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автор собрал Linux MCP-демон для ИИ-агентов; работа самого агента в RSS не показана",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "3f028893-5600-4a0f-8e5d-cad1bf306025",
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Мнение о ценности ИТ при всеобщем доступе к ИИ; агент не описан",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "e92c157f-d7d3-4d40-963b-e9588969ae50",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Перевод о QA-инструменте на Agentic AI для рискованного релиза в тестовой среде",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "e46bb565-f394-4341-80a5-5eced9858acf",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Пет-проект pony: в недельном спринте фичи добавили с помощью ИИ-агентов",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "fd624f95-bb6b-4714-b617-759a13a5fa28",
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Мнение о том, почему ИИ-иллюзиям хочется верить; агент не описан",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "9967e84b-f718-4c2d-bd08-0098b8cb9436",
+              "category": "guide",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Сравнение альтернатив ChatGPT Plus по цене и функциям",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "1a8da6ff-632d-41dd-b910-e19e060aa843",
+              "category": "tool_news",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Т-Инвестиции запустили MCP-сервер для AI-агентов и описали автоматизацию",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "e0da18f9-0b8d-4e62-9090-a7291cadc9c8",
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Мнение о том, стоит ли QA учить TestRigor и Copilot, с опросом",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "8ee87a4a-0e4e-4a8c-83bf-60491db195e6",
+              "category": "advertisement",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Материал о курсах по Claude и отзывах из каталога",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "b8c468e2-9f6d-4498-97f7-e35f5b77cd98",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Компания, где код на 100% пишут ИИ-агенты; автор отвечает за процесс",
+              "metric_claims": []
+            }
+          ],
+          "proposed_text": "Сводка материалов RSS Хабра о применении ИИ-агентов за указанный период. Охват неполный: снимок ограничен по глубине."
+        }
+      },
+      "result": {
+        "status": "error",
+        "code": "summary_number_not_in_excerpt",
+        "observation_id": "b8c468e2-9f6d-4498-97f7-e35f5b77cd98"
+      },
+      "at_utc": "2026-09-27T11:12:46Z",
+      "elapsed_ms": 666
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-88bd20182d52559e",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "b9520c4b-526c-473e-a064-aa14e484077a",
+        "draft": {
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "category": "not_relevant",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "78a95fc8-64b5-437e-8ec8-0abd23bb7140",
+              "summary": "Обзор способов применения LLM без описания работы конкретного ИИ-агента"
+            },
+            {
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "d98325ff-bb56-49ee-a625-2c295ba61deb",
+              "summary": "Мнение о поведении агентов OpenAI и оценках ИИ-рынка, без кейса применения"
+            },
+            {
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "3b0d9efc-0dd2-4a12-83e3-99bf329eab4e",
+              "summary": "Автор собрал Linux MCP-демон для ИИ-агентов; работа самого агента в RSS не показана"
+            },
+            {
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "3f028893-5600-4a0f-8e5d-cad1bf306025",
+              "summary": "Мнение о ценности ИТ при всеобщем доступе к ИИ; агент не описан"
+            },
+            {
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "e92c157f-d7d3-4d40-963b-e9588969ae50",
+              "summary": "Перевод о QA-инструменте на Agentic AI для рискованного релиза в тестовой среде"
+            },
+            {
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "e46bb565-f394-4341-80a5-5eced9858acf",
+              "summary": "Пет-проект pony: в недельном спринте фичи добавили с помощью ИИ-агентов"
+            },
+            {
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "fd624f95-bb6b-4714-b617-759a13a5fa28",
+              "summary": "Мнение о том, почему ИИ-иллюзиям хочется верить; агент не описан"
+            },
+            {
+              "category": "guide",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "9967e84b-f718-4c2d-bd08-0098b8cb9436",
+              "summary": "Сравнение альтернатив ChatGPT Plus по цене и функциям"
+            },
+            {
+              "category": "tool_news",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "1a8da6ff-632d-41dd-b910-e19e060aa843",
+              "summary": "Т-Инвестиции запустили MCP-сервер для AI-агентов и описали автоматизацию"
+            },
+            {
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "e0da18f9-0b8d-4e62-9090-a7291cadc9c8",
+              "summary": "Мнение о том, стоит ли QA учить TestRigor и Copilot, с опросом"
+            },
+            {
+              "category": "advertisement",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "8ee87a4a-0e4e-4a8c-83bf-60491db195e6",
+              "summary": "Материал о курсах по Claude и отзывах из каталога"
+            },
+            {
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "b8c468e2-9f6d-4498-97f7-e35f5b77cd98",
+              "summary": "Компания, где код пишут ИИ-агенты; автор отвечает за процесс и качество"
+            }
+          ],
+          "outcome": "cases_found",
+          "proposed_text": "Сводка материалов RSS Хабра о применении ИИ-агентов за указанный период. Охват неполный: снимок ограничен по глубине.",
+          "run_id": "71e845f6-a056-4b3d-9d10-3a56262e026a"
+        },
+        "run_id": "71e845f6-a056-4b3d-9d10-3a56262e026a"
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "1edff7f4-81ab-4e87-b70a-93096d1e10cb",
+        "sha256": "53a9a08f41b3697ebfabd65939c28af39e62342b115be9d080da896295b08e5b",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086884/",
+          "https://habr.com/ru/articles/1086790/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T11:13:04Z",
+      "elapsed_ms": 650
+    },
+    {
+      "sequence": 4,
+      "call_id": "chatcmpl-tool-aebeeaa3c806b743",
+      "name": "save_report",
+      "arguments": {
+        "run_id": "71e845f6-a056-4b3d-9d10-3a56262e026a",
+        "preview_id": "1edff7f4-81ab-4e87-b70a-93096d1e10cb",
+        "sha256": "53a9a08f41b3697ebfabd65939c28af39e62342b115be9d080da896295b08e5b"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-71e845f6-a056-4b3d-9d10-3a56262e026a.txt",
+        "sha256": "53a9a08f41b3697ebfabd65939c28af39e62342b115be9d080da896295b08e5b"
+      },
+      "at_utc": "2026-09-27T11:13:08Z",
+      "elapsed_ms": 703
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T11:11:48Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T11:13:16Z",
+  "reported_cost_usd": 0.0037437792,
+  "reason": null,
+  "run_state": "saved"
+}

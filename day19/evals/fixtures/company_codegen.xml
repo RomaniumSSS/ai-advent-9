@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><item>
+      <title>Особенности агентской разработки ПО, обеспечивающей соответствие замыслу и требованиям</title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086884/</guid>
+      <link>https://habr.com/ru/articles/1086884/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086884</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/204/8d0/c82/2048d0c82ab91375b171bf50baaf8844.jpg" /&gt;&lt;p&gt;Больше тридцати лет я строю процессы в бизнесах разного масштаба — от компаний на два человека до компаний на несколько тысяч. Последние полтора года мы с&amp;nbsp;&lt;a href="https://habr.com/users/skazkin" rel="noopener nofollow"&gt;@skazkin&lt;/a&gt;  &amp;nbsp;строим компанию, в которой код на сто процентов пишут ИИ-агенты, а не люди. Мой участок в этой работе — не код, а процесс: как устроена система, гарантирующая, что результат работы агента действительно соответствует поставленной задаче и отвечает всем требованиям по качеству.&lt;/p&gt;&lt;p&gt;Этот текст — систематизация моего понимания особенностей работы агента по в рамках процесса разработки.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Задача.&lt;/strong&gt;&amp;nbsp;Разработка ПО с помощью ИИ-агентов, результат которой &lt;strong&gt;должен&amp;nbsp;соответствовать замыслу доказано соответствовать требованиям&lt;/strong&gt;&amp;nbsp;— а не просто быть написанным и запущенным.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Основная идея.&lt;/strong&gt;&amp;nbsp;Чтобы получить код, соответствующий требованиям, не нужно изобретать новую методологию. Управление требованиями и их изменением, независимая верификация, контроль кода, статистический контроль процесса — всё это давно разработано, формализовано в стандартах и опробовано на людях; в своих принципах эта дисциплина переносится на агентов целиком. Систему агентской разработки следует строить из тех же контуров. Но агент как исполнитель обладает свойствами, отличными от свойств человека-исполнителя, и эти свойства&amp;nbsp;&lt;strong&gt;смещают акценты внутри знакомых контуров&lt;/strong&gt;: значительная часть того, что в человеческой разработке получалась «сама собой» — за счёт памяти исполнителей, их вопросов, неловкости перед коллегами, выученных привычек, — для агента не существует, и соответствующая функция должна исполняться системой явно, как механически закреплённый элемент.&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1086884/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1086884#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Sat, 26 Sep 2026 06:12:56 GMT</pubDate>
+      <dc:creator>exsoko</dc:creator>
+      <category>Developer Relations</category><category>IT-стандарты</category>
+      <category>aicoding</category><category>development</category><category>management</category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    </channel></rss>

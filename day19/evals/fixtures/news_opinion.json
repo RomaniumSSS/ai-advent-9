@@ -1,0 +1,14 @@
+{
+  "case_id": "news_opinion",
+  "source_kind": "curated_real_rss",
+  "source_snapshot": "fixtures/habr-real-20260927.xml",
+  "source_sha256": "5aafe6af81940dc9bc0453639410c4ccd8c375c63d3deff568a9c5cbd2dc3f70",
+  "fixture_sha256": "014b845f92ce3c3831f67d27ef045f0feeb843d66c8ed7feafe16460667d6868",
+  "article_ids": [
+    "1087012",
+    "1086066"
+  ],
+  "created_utc": "2026-09-27T10:55:30Z",
+  "start": "2026-09-22T00:00:00Z",
+  "end": "2026-09-27T09:38:00Z"
+}

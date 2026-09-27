@@ -1,0 +1,329 @@
+{
+  "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7",
+  "request": "Собери проверяемые кейсы ИИ-агентов в B2B и эксплуатации БД; отдельно сохрани результат и не приписывай показатели не тому окружению.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T10:56:09Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T10:56:12Z",
+      "elapsed_ms": 2634,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2108,
+        "completion_tokens": 171,
+        "total_tokens": 2279,
+        "cost": 0.000106204
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T10:56:21Z",
+      "elapsed_ms": 8399,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3165,
+        "completion_tokens": 861,
+        "total_tokens": 4026,
+        "cost": 0.0005266016
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T10:56:27Z",
+      "elapsed_ms": 4869,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 4077,
+        "completion_tokens": 502,
+        "total_tokens": 4579,
+        "cost": 0.0003122952
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T10:56:34Z",
+      "elapsed_ms": 6680,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 4627,
+        "completion_tokens": 634,
+        "total_tokens": 5261,
+        "cost": 0.000653324
+      }
+    },
+    {
+      "sequence": 5,
+      "at_utc": "2026-09-27T10:56:36Z",
+      "elapsed_ms": 1907,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 5406,
+        "completion_tokens": 167,
+        "total_tokens": 5573,
+        "cost": 0.0001838312
+      }
+    },
+    {
+      "sequence": 6,
+      "at_utc": "2026-09-27T10:56:43Z",
+      "elapsed_ms": 6114,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 5666,
+        "completion_tokens": 550,
+        "total_tokens": 6216,
+        "cost": 0.0002941792
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-bf560cb840c68614",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7",
+        "batch_id": "73a20d83-5413-4421-a20f-d8486f6b8e60",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T10:56:13Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-23T12:48:04Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 2,
+          "eligible_current": 2,
+          "feed_seen": 2,
+          "in_period": 2,
+          "invalid_entries": 0,
+          "new_observations": 2,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "f3c27a72-db95-499b-97cc-cb761e39f316",
+            "first_batch_id": "73a20d83-5413-4421-a20f-d8486f6b8e60",
+            "article_id": "1085712",
+            "url": "https://habr.com/ru/articles/1085712/",
+            "title": "Двенадцать дней ИИ-агента на боевом b2b-портале: что он нашёл сам и где ему нельзя верить на слово",
+            "rss_excerpt": "Двенадцать рабочих дней ИИ-агента на живом b2b-портале: обмен с 1С по расписанию, настоящие менеджеры, боевые заказы. Четыре тихие поломки обмена, которые он разобрал (ноль из 1С вместо цены, концевой пробел в номере заказа, двойная ночная выгрузка, несобравшаяся витрина), и четыре места, где агенту нельзя верить на слово. Про поломки интереснее не починка, а то, как их вообще заметили: половину задач ему никто не приносил. Про ошибки наоборот, они повторяются, и под каждую пришлось ставить свою страховку. Читать далее",
+            "published_at_utc": "2026-09-23T12:48:04Z"
+          },
+          {
+            "observation_id": "baefb8b2-d487-469c-8962-1affe61518e6",
+            "first_batch_id": "73a20d83-5413-4421-a20f-d8486f6b8e60",
+            "article_id": "1085576",
+            "url": "https://habr.com/ru/articles/1085576/",
+            "title": "Мы написали автономного агента для VACUUM/ANALYZE и запустили на 800+ тестовых БД: что из этого вышло",
+            "rss_excerpt": "Как упростить управление целым парком из 800+ экземпляров СУБД на базе PostgreSQL? Можно доработать postgres_exporter, чтобы настроить получение метрик под себя. А если ещё проще? Мониторить связкой Grafana, Prometheus и кастомизированным postgres_exporter, а данные получать через ИИ‑отчёт, который будет агрегировать данные Prometheus через прямые PromQL‑запросы.Но если и этого мало, то можно вообще поручить ИИ‑агенту типовые тикеты вроде очистки места на диске и плановой остановки БД.Меня зовут Станислав Епишин, я из команды «R4C.Support.Всадники апокалипсиса» в СберТехе. Я уже писал, как мы ",
+            "published_at_utc": "2026-09-23T13:51:54Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T10:56:13Z",
+      "elapsed_ms": 655
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-a18e0d7d61796b0f",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7",
+        "batch_id": "73a20d83-5413-4421-a20f-d8486f6b8e60",
+        "draft": {
+          "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7",
+          "outcome": "cases_found",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "f3c27a72-db95-499b-97cc-cb761e39f316",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "ИИ-агент 12 рабочих дней на боевом b2b-портале: обмен с 1С, заказы, сам разобрал четыре поломки обмена",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "baefb8b2-d487-469c-8962-1affe61518e6",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автономный агент для VACUUM/ANALYZE запущен на 800+ тестовых БД PostgreSQL; также ИИ-отчёты по PromQL",
+              "metric_claims": [
+                {
+                  "text": "800+ тестовых БД для агента VACUUM/ANALYZE",
+                  "attribution": "Станислав Епишин, СберТех"
+                }
+              ]
+            }
+          ],
+          "proposed_text": "Подборка проверяемых кейсов применения ИИ-агентов в B2B и эксплуатации БД за период."
+        }
+      },
+      "result": {
+        "status": "error",
+        "code": "summary_number_not_in_excerpt",
+        "observation_id": "f3c27a72-db95-499b-97cc-cb761e39f316"
+      },
+      "at_utc": "2026-09-27T10:56:22Z",
+      "elapsed_ms": 662
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-8c6b7787d7dba2ed",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "73a20d83-5413-4421-a20f-d8486f6b8e60",
+        "draft": {
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "f3c27a72-db95-499b-97cc-cb761e39f316",
+              "summary": "ИИ-агент на боевом b2b-портале: обмен с 1С, боевые заказы, сам разобрал четыре тихие поломки обмена"
+            },
+            {
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [
+                {
+                  "attribution": "Станислав Епишин, СберТех",
+                  "text": "800+ тестовых БД для агента VACUUM/ANALYZE"
+                }
+              ],
+              "observation_id": "baefb8b2-d487-469c-8962-1affe61518e6",
+              "summary": "Автономный агент для VACUUM/ANALYZE запущен на 800+ тестовых БД PostgreSQL; также ИИ-отчёты по PromQL"
+            }
+          ],
+          "outcome": "cases_found",
+          "proposed_text": "Подборка проверяемых кейсов применения ИИ-агентов в B2B и эксплуатации БД за период.",
+          "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7"
+        },
+        "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7"
+      },
+      "result": {
+        "status": "error",
+        "code": "unsupported_metric",
+        "observation_id": "baefb8b2-d487-469c-8962-1affe61518e6"
+      },
+      "at_utc": "2026-09-27T10:56:27Z",
+      "elapsed_ms": 656
+    },
+    {
+      "sequence": 4,
+      "call_id": "chatcmpl-tool-ab4537c9be208078",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "73a20d83-5413-4421-a20f-d8486f6b8e60",
+        "draft": {
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "f3c27a72-db95-499b-97cc-cb761e39f316",
+              "summary": "ИИ-агент на боевом b2b-портале: обмен с 1С, боевые заказы, сам разобрал четыре тихие поломки обмена"
+            },
+            {
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "baefb8b2-d487-469c-8962-1affe61518e6",
+              "summary": "Автономный агент для VACUUM/ANALYZE запущен на 800+ тестовых БД PostgreSQL; также ИИ-отчёты по PromQL"
+            }
+          ],
+          "outcome": "cases_found",
+          "proposed_text": "Подборка проверяемых кейсов применения ИИ-агентов в B2B и эксплуатации БД за период.",
+          "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7"
+        },
+        "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7"
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "c1ba7193-1a06-4c5b-b033-f1c29229ef81",
+        "sha256": "af29f5eea1a8d4a728c88f1b53a255a6132acbae67542f8ce1928216d1d981ab",
+        "source_urls": [
+          "https://habr.com/ru/articles/1085712/",
+          "https://habr.com/ru/articles/1085576/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T10:56:35Z",
+      "elapsed_ms": 681
+    },
+    {
+      "sequence": 5,
+      "call_id": "chatcmpl-tool-879ba06ecbacb53a",
+      "name": "save_report",
+      "arguments": {
+        "preview_id": "c1ba7193-1a06-4c5b-b033-f1c29229ef81",
+        "run_id": "5914f0fa-7b57-441d-8c3f-c25d400965a7",
+        "sha256": "af29f5eea1a8d4a728c88f1b53a255a6132acbae67542f8ce1928216d1d981ab"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-5914f0fa-7b57-441d-8c3f-c25d400965a7.txt",
+        "sha256": "af29f5eea1a8d4a728c88f1b53a255a6132acbae67542f8ce1928216d1d981ab"
+      },
+      "at_utc": "2026-09-27T10:56:37Z",
+      "elapsed_ms": 652
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T10:56:08Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T10:56:43Z",
+  "reported_cost_usd": 0.0020764352000000002,
+  "reason": null,
+  "run_state": "saved"
+}

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><item>
+      <title>Доверить сервер ИИ-агенту и не пожалеть: как спать спокойно без SSH</title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086976/</guid>
+      <link>https://habr.com/ru/articles/1086976/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086976</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/a68/8be/24c/a688be24c28b828ad2ae6dd7a00af3aa.png" /&gt;&lt;p&gt;Мы всё быстрее движемся к самовосстанавливающейся инфраструктуре. Но когда инцидент всё-таки случается, у инженеров может уйти много времени на сбор информации о состоянии серверов. При SLA 99,99% на простой остаётся около 4 минут в месяц, каждая минута на счету, и не автоматизировать эту часть разбора инцидента — непозволительная роскошь. Технически это можно сделать и сейчас: дать ИИ-агенту SSH и sudo.&lt;/p&gt;&lt;p&gt;Я решил пойти другим путём и собрал Linux MCP daemon (mcpd): сервер, изначально рассчитанный на ИИ-агентов. Вместо обёрток над стандартными утилитами он сам читает состояние системы из ядра и отдаёт его агенту через инструменты — сейчас их 38, и список растёт. Когда нужен root, агент может его запросить, но получит только там, где вы разрешили, и в заданных границах. Отдельным интересным решением получилась утилита linuxctl в стиле kubectl. Под катом устройство, установка, подключение ИИ-агента и права, которые только выглядят безопасными.&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1086976/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1086976#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Sat, 26 Sep 2026 18:01:43 GMT</pubDate>
+      <dc:creator>nucleusv</dc:creator>
+      <category>Управление разработкой</category><category>Искусственный интеллект</category><category>Программирование</category><category>Тестирование IT-систем</category><category>Go</category>
+      <category>ai</category><category>mcp-server</category><category>mcptools</category><category>linux</category><category>claude</category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title>[Перевод] От тестирования релиза с высоким уровнем риска к новому ИИ‑инструменту для QA</title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086968/</guid>
+      <link>https://habr.com/ru/articles/1086968/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086968</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/bf8/60e/2ee/bf860e2eed3a66d1db4bad04813dd19a.jpg" /&gt;&lt;p&gt;Перед нами стояла задача протестировать релиз, сопряженный с высокими рисками и реализованный в высоконагруженных агломерациях микросервисов с легаси-проблемами, - и все это вкупе со сжатыми сроками.&lt;/p&gt;&lt;p&gt;Как мы справились с этой задачей и попутно разработали новый QA-инструмент на основе Agentic AI?&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1086968/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1086968#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Sat, 26 Sep 2026 14:38:40 GMT</pubDate>
+      <dc:creator>SergeiTerentev</dc:creator>
+      <category>Тестирование IT-систем</category><category>Тестирование веб-сервисов</category><category>Искусственный интеллект</category><category>Тестирование мобильных приложений</category>
+      <category>qa</category><category>qa testing</category><category>ai</category><category>агентный ии</category><category>ai-агенты</category><category>ai agent</category><category>ai-agent</category><category>qa management</category><category>qa engineer</category><category>qa strategy</category>
+    </item>
+  
+
+  
+
+    
+    </channel></rss>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><item>
+      <title>ИИ-агенты в инвестициях: собираем Telegram-ассистента и торгового робота на MCP Т-Инвестиций</title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/tbank/articles/1086714/</guid>
+      <link>https://habr.com/ru/companies/tbank/articles/1086714/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086714</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/774/1c9/753/7741c9753d16fc2ac703c70aa02aae07.jpg" /&gt;&lt;p&gt;Привет, Хабр! Я Алексей Кабанов, разработчик в команде публичного API Т-Инвестиций. Недавно мы запустили MCP-сервер, позволяющий AI-агентам взаимодействовать с Т-Инвестициями: искать подходящие бумаги, анализировать рынок и портфель клиента. Расскажу, как можно построить автоматизацию на основе ИИ-агентов с использованием нашего MCP-сервера.&lt;/p&gt;&lt;p&gt;Еще недавно, чтобы автоматизировать даже несложный торговый алгоритм, приходилось писать собственный скрипт: Python, API брокера, cron и обработка ошибок на все случаи жизни. Профессиональные торговые системы существовали и раньше, но для частного инвестора порог входа оставался высоким. Сейчас между LLM и брокерским API появился стандартный слой — MCP, Model Context Protocol: модель может сама получить состояние портфеля, посмотреть стакан, выставить или отменить заявку, а вам достаточно описать задачу человеческим языком.&lt;/p&gt;&lt;p&gt;У Т-Инвестиций есть публичный MCP-сервер, и эта статья о том, как его использовать. Клиентом может быть что угодно: AI-агент вроде Hermes Agent, платформа автоматизации вроде n8n, десктопный ассистент, IDE. Разберем, чем эти подходы различаются и как они работают с MCP, что умеет сервер, а затем соберем два работающих примера.&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1086714/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1086714#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Sat, 26 Sep 2026 09:00:55 GMT</pubDate>
+      <dc:creator>AlekseyKab (Т-Банк)</dc:creator>
+      <category>Блог компании Т-Банк</category><category>Программирование</category><category>Искусственный интеллект</category>
+      <category>финансы в it</category><category>агенты ии</category><category>инвестиции</category><category>mcp</category><category>n8n</category><category>hermes agent</category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    </channel></rss>

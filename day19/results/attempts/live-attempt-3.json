@@ -1,0 +1,294 @@
+{
+  "run_id": "e2ca08ff-0f43-4ed3-af5b-a218f24d2208",
+  "request": "Собери сводку о применении ИИ-агентов из RSS Хабра и сохрани её",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T09:45:26Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T09:45:30Z",
+      "elapsed_ms": 3095,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 1945,
+        "completion_tokens": 170,
+        "total_tokens": 2115,
+        "cost": 0.0003437
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T09:46:00Z",
+      "elapsed_ms": 29917,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3771,
+        "completion_tokens": 1440,
+        "total_tokens": 5211,
+        "cost": 0.000872004
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T09:46:08Z",
+      "elapsed_ms": 8039,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 5250,
+        "completion_tokens": 674,
+        "total_tokens": 5924,
+        "cost": 0.000409696
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T09:46:12Z",
+      "elapsed_ms": 2865,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 6072,
+        "completion_tokens": 170,
+        "total_tokens": 6242,
+        "cost": 0.00092148
+      }
+    },
+    {
+      "sequence": 5,
+      "at_utc": "2026-09-27T09:46:27Z",
+      "elapsed_ms": 14511,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 6335,
+        "completion_tokens": 615,
+        "total_tokens": 6950,
+        "cost": 0.0003282272
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-8943e1bdfbbe6264",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "e2ca08ff-0f43-4ed3-af5b-a218f24d2208",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-26T14:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "e2ca08ff-0f43-4ed3-af5b-a218f24d2208",
+        "batch_id": "04fcc780-240f-4337-9f19-26b601a9aba9",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T09:45:30Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-26T14:38:40Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 5,
+          "eligible_candidates": 5,
+          "eligible_current": 2,
+          "feed_seen": 2,
+          "in_period": 2,
+          "invalid_entries": 0,
+          "new_observations": 0,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "model_seen": [
+          {
+            "observation_id": "58a1abc4-a701-414d-9ea4-5579b5b9d869",
+            "first_batch_id": "807ffc3a-1bbd-4b62-9e52-eb7eebd0d718",
+            "article_id": "1087032",
+            "url": "https://habr.com/ru/articles/1087032/",
+            "title": "Способы применения LLM: простые и необычные варианты",
+            "rss_excerpt": "Статья вдохновленная старой веткой Reddit: https://www.Reddit.com/r/ChatGPT/comments/1cbnrmk/what_ways_do_you_use_chat_gpt_in_your_daily_lives/Я буду перечислять то, как сам использую LLM, в частности ChatGPT, в работе и в обычной жизни, а также некоторые интересные варианты которые встречались в Интернете (включая несколько нетипичных вариантов из указанной ветки Reddit). Также я спросил ChatGPT, как можно использовать большие языковые модели, в том числе “необычные и неочевидные способы применения LLM”. Некоторые интересные примеры добавлю сюда.Забегая наперед скажу - вариантов использования",
+            "published_at_utc": "2026-09-27T08:15:24Z"
+          },
+          {
+            "observation_id": "94f7ce30-c98f-4011-af8b-3960d3c262b2",
+            "first_batch_id": "807ffc3a-1bbd-4b62-9e52-eb7eebd0d718",
+            "article_id": "1087012",
+            "url": "https://habr.com/ru/articles/1087012/",
+            "title": "Агенты OpenAI, триллионные оценки и ИИ‑пузырь: кто успеет выйти до хлопка",
+            "rss_excerpt": "Официальная версия звучит усыпляюще. Агенты OpenAI забрались на сайты американских ведомств, но взломом компания это не называет: «вызывающее беспокойство поведение». У Reuters язык суше и цифры неприятнее — к середине сентября набралось больше двадцати нежелательных эпизодов. Ещё 53 пользовательских изображения оказались в открытом интернете.На биржевом этаже эту историю слышат иначе. Там всё ещё продают триллионную оценку, IPO после небольшой паузы и AGI где-то за ближайшим поворотом. А этажом ниже агенты выбираются из песочниц, счета за вычисления пухнут, конкуренты уже у двери. Жать на тор",
+            "published_at_utc": "2026-09-26T18:35:17Z"
+          },
+          {
+            "observation_id": "1720a0e2-111c-47ef-a9ac-15329f0f8255",
+            "first_batch_id": "807ffc3a-1bbd-4b62-9e52-eb7eebd0d718",
+            "article_id": "1086976",
+            "url": "https://habr.com/ru/articles/1086976/",
+            "title": "Доверить сервер ИИ-агенту и не пожалеть: как спать спокойно без SSH",
+            "rss_excerpt": "Мы всё быстрее движемся к самовосстанавливающейся инфраструктуре. Но когда инцидент всё-таки случается, у инженеров может уйти много времени на сбор информации о состоянии серверов. При SLA 99,99% на простой остаётся около 4 минут в месяц, каждая минута на счету, и не автоматизировать эту часть разбора инцидента — непозволительная роскошь. Технически это можно сделать и сейчас: дать ИИ-агенту SSH и sudo.Я решил пойти другим путём и собрал Linux MCP daemon (mcpd): сервер, изначально рассчитанный на ИИ-агентов. Вместо обёрток над стандартными утилитами он сам читает состояние системы из ядра и о",
+            "published_at_utc": "2026-09-26T18:01:43Z"
+          },
+          {
+            "observation_id": "84516a45-8926-422b-a7b1-7a702874ae09",
+            "first_batch_id": "807ffc3a-1bbd-4b62-9e52-eb7eebd0d718",
+            "article_id": "1087002",
+            "url": "https://habr.com/ru/articles/1087002/",
+            "title": "Как ИТ-компаниям выжить, когда ИИ есть у всех",
+            "rss_excerpt": "Ещё недавно вопрос звучал так: «как нам внедрить нейросети». Теперь он звучит иначе: «как нам выжить, когда нейросети есть у всех». Это разные вопросы. Когда мощный инструмент есть у каждого, он перестаёт быть преимуществом и превращается в цену входа на рынок. Ниже шесть соображений о том, что останется ценным в ИТ, когда обёртки вокруг чужих моделей перестанут быть преимуществом. Читать далее",
+            "published_at_utc": "2026-09-26T17:30:12Z"
+          },
+          {
+            "observation_id": "2b1ef4dc-c029-440f-9377-db2f7796978d",
+            "first_batch_id": "807ffc3a-1bbd-4b62-9e52-eb7eebd0d718",
+            "article_id": "1086968",
+            "url": "https://habr.com/ru/articles/1086968/",
+            "title": "[Перевод] От тестирования релиза с высоким уровнем риска к новому ИИ‑инструменту для QA",
+            "rss_excerpt": "Перед нами стояла задача протестировать релиз, сопряженный с высокими рисками и реализованный в высоконагруженных агломерациях микросервисов с легаси-проблемами, - и все это вкупе со сжатыми сроками.Как мы справились с этой задачей и попутно разработали новый QA-инструмент на основе Agentic AI? Читать далее",
+            "published_at_utc": "2026-09-26T14:38:40Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T09:45:30Z",
+      "elapsed_ms": 641
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-9fa8e2da9c20a667",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "rejected": true
+      },
+      "result": {
+        "status": "error",
+        "code": "schema_violation:draft.entries.1.metric_claims.0.text:maxLength"
+      },
+      "at_utc": "2026-09-27T09:46:00Z",
+      "elapsed_ms": 2
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-90384e05268f20d8",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "04fcc780-240f-4337-9f19-26b601a9aba9",
+        "draft": {
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "58a1abc4-a701-414d-9ea4-5579b5b9d869",
+              "summary": "Подборка способов применения LLM, в т.ч. в работе и в жизни"
+            },
+            {
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [
+                {
+                  "attribution": "Reuters",
+                  "text": "набралось больше двадцати нежелательных эпизодов"
+                }
+              ],
+              "observation_id": "94f7ce30-c98f-4011-af8b-3960d3c262b2",
+              "summary": "Разбор эпизодов агентов OpenAI и темы ИИ-пузыря"
+            },
+            {
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "1720a0e2-111c-47ef-a9ac-15329f0f8255",
+              "summary": "Автор собрал Linux MCP daemon для работы с ИИ-агентами"
+            },
+            {
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "84516a45-8926-422b-a7b1-7a702874ae09",
+              "summary": "Соображения о ценности ИТ, когда нейросети есть у всех"
+            },
+            {
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "2b1ef4dc-c029-440f-9377-db2f7796978d",
+              "summary": "QA-инструмент на базе Agentic AI для рискового релиза"
+            }
+          ],
+          "outcome": "no_confirmed_cases",
+          "proposed_text": "Обзор публикаций Хабра о применении ИИ-агентов за указанный период. Покрытие частичное: окно сбора неполное.",
+          "run_id": "e2ca08ff-0f43-4ed3-af5b-a218f24d2208"
+        },
+        "run_id": "e2ca08ff-0f43-4ed3-af5b-a218f24d2208"
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "4bdf0315-6104-4d2f-9699-4b80d5052257",
+        "sha256": "c1459a75f0d690eb6dfb39673a15cdfebfa73839f1e2629aa5c00c3f4f05de6e",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086968/",
+          "https://habr.com/ru/articles/1086976/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T09:46:09Z",
+      "elapsed_ms": 653
+    },
+    {
+      "sequence": 4,
+      "call_id": "chatcmpl-tool-95259c3fb612f0fa",
+      "name": "save_report",
+      "arguments": {
+        "preview_id": "4bdf0315-6104-4d2f-9699-4b80d5052257",
+        "run_id": "e2ca08ff-0f43-4ed3-af5b-a218f24d2208",
+        "sha256": "c1459a75f0d690eb6dfb39673a15cdfebfa73839f1e2629aa5c00c3f4f05de6e"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-e2ca08ff-0f43-4ed3-af5b-a218f24d2208.txt",
+        "sha256": "c1459a75f0d690eb6dfb39673a15cdfebfa73839f1e2629aa5c00c3f4f05de6e"
+      },
+      "at_utc": "2026-09-27T09:46:13Z",
+      "elapsed_ms": 648
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T09:45:26Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T09:46:27Z",
+  "reported_cost_usd": 0.0028751072,
+  "reason": null,
+  "run_state": "saved"
+}

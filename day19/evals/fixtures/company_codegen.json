@@ -1,0 +1,13 @@
+{
+  "case_id": "company_codegen",
+  "source_kind": "curated_real_rss",
+  "source_snapshot": "fixtures/habr-real-20260927.xml",
+  "source_sha256": "5aafe6af81940dc9bc0453639410c4ccd8c375c63d3deff568a9c5cbd2dc3f70",
+  "fixture_sha256": "039441bb806464d8e78e1182b4f38d38edf2d3ddd37ff3ba3c0cf0b9ba2c737f",
+  "article_ids": [
+    "1086884"
+  ],
+  "created_utc": "2026-09-27T11:14:22Z",
+  "start": "2026-09-22T00:00:00Z",
+  "end": "2026-09-27T09:38:00Z"
+}

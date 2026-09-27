@@ -1,0 +1,233 @@
+{
+  "run_id": "fac8057f-023c-4e8c-8ef9-b6c0c4325c87",
+  "request": "Проверь описанный процесс написания кода ИИ-агентами в компании, сохрани краткий отчёт с ссылкой.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T11:14:23Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T11:14:27Z",
+      "elapsed_ms": 3146,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2242,
+        "completion_tokens": 172,
+        "total_tokens": 2414,
+        "cost": 0.0001080016
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T11:14:42Z",
+      "elapsed_ms": 15146,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2926,
+        "completion_tokens": 1068,
+        "total_tokens": 3994,
+        "cost": 0.0005626992
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T11:14:49Z",
+      "elapsed_ms": 6107,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 4045,
+        "completion_tokens": 323,
+        "total_tokens": 4368,
+        "cost": 0.0002152528
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T11:14:52Z",
+      "elapsed_ms": 2588,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 4501,
+        "completion_tokens": 169,
+        "total_tokens": 4670,
+        "cost": 0.0001622656
+      }
+    },
+    {
+      "sequence": 5,
+      "at_utc": "2026-09-27T11:14:58Z",
+      "elapsed_ms": 5215,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4767,
+        "completion_tokens": 330,
+        "total_tokens": 5097,
+        "cost": 0.000197596
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-9f36fd03bba11f46",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "fac8057f-023c-4e8c-8ef9-b6c0c4325c87",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "fac8057f-023c-4e8c-8ef9-b6c0c4325c87",
+        "batch_id": "2a683131-28dc-4003-8fb8-a8d7e02c6b1f",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T11:14:27Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-26T06:12:56Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 1,
+          "eligible_current": 1,
+          "feed_seen": 1,
+          "in_period": 1,
+          "invalid_entries": 0,
+          "new_observations": 1,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "d98e5662-1194-4c74-885a-6658c57fe2c4",
+            "first_batch_id": "2a683131-28dc-4003-8fb8-a8d7e02c6b1f",
+            "article_id": "1086884",
+            "url": "https://habr.com/ru/articles/1086884/",
+            "title": "Особенности агентской разработки ПО, обеспечивающей соответствие замыслу и требованиям",
+            "rss_excerpt": "Больше тридцати лет я строю процессы в бизнесах разного масштаба — от компаний на два человека до компаний на несколько тысяч. Последние полтора года мы с @skazkin строим компанию, в которой код на сто процентов пишут ИИ-агенты, а не люди. Мой участок в этой работе — не код, а процесс: как устроена система, гарантирующая, что результат работы агента действительно соответствует поставленной задаче и отвечает всем требованиям по качеству.Этот текст — систематизация моего понимания особенностей работы агента по в рамках процесса разработки.Задача. Разработка ПО с помощью ИИ-агентов, результат кот",
+            "published_at_utc": "2026-09-26T06:12:56Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T11:14:27Z",
+      "elapsed_ms": 673
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-b51cd1250b9323f0",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "fac8057f-023c-4e8c-8ef9-b6c0c4325c87",
+        "batch_id": "2a683131-28dc-4003-8fb8-a8d7e02c6b1f",
+        "draft": {
+          "run_id": "fac8057f-023c-4e8c-8ef9-b6c0c4325c87",
+          "outcome": "cases_found",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "d98e5662-1194-4c74-885a-6658c57fe2c4",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Компания, где код на 100% пишут ИИ-агенты; автор описал процесс контроля качества",
+              "metric_claims": []
+            }
+          ],
+          "proposed_text": "Подборка материалов RSS Хабра об использовании ИИ-агентов в бизнесе и личных задачах за указанный период."
+        }
+      },
+      "result": {
+        "status": "error",
+        "code": "summary_number_not_in_excerpt",
+        "observation_id": "d98e5662-1194-4c74-885a-6658c57fe2c4"
+      },
+      "at_utc": "2026-09-27T11:14:43Z",
+      "elapsed_ms": 673
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-a53ef8144cb80615",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "2a683131-28dc-4003-8fb8-a8d7e02c6b1f",
+        "draft": {
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "d98e5662-1194-4c74-885a-6658c57fe2c4",
+              "summary": "Компания, где код на сто процентов пишут ИИ-агенты; автор описал процесс"
+            }
+          ],
+          "outcome": "cases_found",
+          "proposed_text": "Подборка материалов RSS Хабра об использовании ИИ-агентов в бизнесе и личных задачах за указанный период.",
+          "run_id": "fac8057f-023c-4e8c-8ef9-b6c0c4325c87"
+        },
+        "run_id": "fac8057f-023c-4e8c-8ef9-b6c0c4325c87"
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "718abc7a-5a2b-4bf1-881c-b375d0580700",
+        "sha256": "5b2b70b1f2fe1fa3fabad6f3c08a0f95d3adf134dd7980cee81134cc43aac7f9",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086884/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T11:14:50Z",
+      "elapsed_ms": 664
+    },
+    {
+      "sequence": 4,
+      "call_id": "chatcmpl-tool-b017f88a01998247",
+      "name": "save_report",
+      "arguments": {
+        "preview_id": "718abc7a-5a2b-4bf1-881c-b375d0580700",
+        "run_id": "fac8057f-023c-4e8c-8ef9-b6c0c4325c87",
+        "sha256": "5b2b70b1f2fe1fa3fabad6f3c08a0f95d3adf134dd7980cee81134cc43aac7f9"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-fac8057f-023c-4e8c-8ef9-b6c0c4325c87.txt",
+        "sha256": "5b2b70b1f2fe1fa3fabad6f3c08a0f95d3adf134dd7980cee81134cc43aac7f9"
+      },
+      "at_utc": "2026-09-27T11:14:53Z",
+      "elapsed_ms": 664
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T11:14:22Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T11:14:58Z",
+  "reported_cost_usd": 0.0012458152,
+  "reason": null,
+  "run_state": "saved"
+}

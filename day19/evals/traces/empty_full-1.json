@@ -1,0 +1,132 @@
+{
+  "run_id": "ffda9065-ebfa-4614-a26f-2255a9b7f022",
+  "request": "Проверь RSS по периоду и сохрани отчёт, если материалы есть. Если поиск действительно пустой, честно сообщи об этом.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T10:43:49Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T10:43:52Z",
+      "elapsed_ms": 2944,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2034,
+        "completion_tokens": 169,
+        "total_tokens": 2203,
+        "cost": 0.0001123864
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T10:43:56Z",
+      "elapsed_ms": 3276,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2412,
+        "completion_tokens": 229,
+        "total_tokens": 2641,
+        "cost": 0.000173124
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T10:44:04Z",
+      "elapsed_ms": 7591,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2662,
+        "completion_tokens": 348,
+        "total_tokens": 3010,
+        "cost": 0.0001885744
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-abbd87b92783c450",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "ffda9065-ebfa-4614-a26f-2255a9b7f022",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "no_data",
+        "run_id": "ffda9065-ebfa-4614-a26f-2255a9b7f022",
+        "batch_id": "2698529f-bad2-48e8-81e7-3b3eadca8ac4",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T10:43:53Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "complete_for_profile",
+          "oldest_entry_utc": null,
+          "window_complete": true
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 0,
+          "eligible_current": 0,
+          "feed_seen": 0,
+          "in_period": 0,
+          "invalid_entries": 0,
+          "new_observations": 0,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": []
+      },
+      "at_utc": "2026-09-27T10:43:53Z",
+      "elapsed_ms": 651
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-b9f5956d7f6d325c",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "ffda9065-ebfa-4614-a26f-2255a9b7f022",
+        "batch_id": "2698529f-bad2-48e8-81e7-3b3eadca8ac4",
+        "draft": {
+          "run_id": "ffda9065-ebfa-4614-a26f-2255a9b7f022",
+          "outcome": "empty_feed",
+          "coverage_label": "complete_for_profile",
+          "entries": [],
+          "proposed_text": "За указанный период материалы по AI-агентам в RSS-ленте Хабра не обнаружены."
+        }
+      },
+      "result": {
+        "status": "error",
+        "code": "invalid_state"
+      },
+      "at_utc": "2026-09-27T10:43:57Z",
+      "elapsed_ms": 660
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T10:43:48Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "no_data",
+  "finished_utc": "2026-09-27T10:44:04Z",
+  "reported_cost_usd": 0.0004740848,
+  "reason": null,
+  "run_state": "no_data"
+}

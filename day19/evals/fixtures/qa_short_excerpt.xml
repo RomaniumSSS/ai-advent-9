@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><item>
+      <title>[Перевод] От тестирования релиза с высоким уровнем риска к новому ИИ‑инструменту для QA</title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086968/</guid>
+      <link>https://habr.com/ru/articles/1086968/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086968</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/bf8/60e/2ee/bf860e2eed3a66d1db4bad04813dd19a.jpg" /&gt;&lt;p&gt;Перед нами стояла задача протестировать релиз, сопряженный с высокими рисками и реализованный в высоконагруженных агломерациях микросервисов с легаси-проблемами, - и все это вкупе со сжатыми сроками.&lt;/p&gt;&lt;p&gt;Как мы справились с этой задачей и попутно разработали новый QA-инструмент на основе Agentic AI?&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1086968/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1086968#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Sat, 26 Sep 2026 14:38:40 GMT</pubDate>
+      <dc:creator>SergeiTerentev</dc:creator>
+      <category>Тестирование IT-систем</category><category>Тестирование веб-сервисов</category><category>Искусственный интеллект</category><category>Тестирование мобильных приложений</category>
+      <category>qa</category><category>qa testing</category><category>ai</category><category>агентный ии</category><category>ai-агенты</category><category>ai agent</category><category>ai-agent</category><category>qa management</category><category>qa engineer</category><category>qa strategy</category>
+    </item>
+  
+
+  
+
+    
+    </channel></rss>

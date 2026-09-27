@@ -1,0 +1,166 @@
+{
+  "run_id": "940c532b-9c03-4d25-b33f-9d0d871484f5",
+  "request": "Проверь RSS по периоду и сохрани отчёт, если материалы есть. Если поиск действительно пустой, честно сообщи об этом.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T10:48:13Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T10:48:21Z",
+      "elapsed_ms": 8089,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2036,
+        "completion_tokens": 173,
+        "total_tokens": 2209,
+        "cost": 9.6964e-05
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T10:48:29Z",
+      "elapsed_ms": 6633,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2420,
+        "completion_tokens": 290,
+        "total_tokens": 2710,
+        "cost": 0.0001650992
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T10:48:34Z",
+      "elapsed_ms": 4871,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2731,
+        "completion_tokens": 266,
+        "total_tokens": 2997,
+        "cost": 0.0001637944
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T10:48:53Z",
+      "elapsed_ms": 18074,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3018,
+        "completion_tokens": 533,
+        "total_tokens": 3551,
+        "cost": 0.0002813496
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-8639eb1088b1472e",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "940c532b-9c03-4d25-b33f-9d0d871484f5",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "no_data",
+        "run_id": "940c532b-9c03-4d25-b33f-9d0d871484f5",
+        "batch_id": "2d68ba07-1e7a-4725-89c7-556022e1a382",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T10:48:22Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "complete_for_profile",
+          "oldest_entry_utc": null,
+          "window_complete": true
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 0,
+          "eligible_current": 0,
+          "feed_seen": 0,
+          "in_period": 0,
+          "invalid_entries": 0,
+          "new_observations": 0,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": []
+      },
+      "at_utc": "2026-09-27T10:48:22Z",
+      "elapsed_ms": 645
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-9fa22f0dcaeee766",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "940c532b-9c03-4d25-b33f-9d0d871484f5",
+        "batch_id": "2d68ba07-1e7a-4725-89c7-556022e1a382",
+        "draft": {
+          "run_id": "940c532b-9c03-4d25-b33f-9d0d871484f5",
+          "outcome": "empty_feed",
+          "coverage_label": "complete_for_profile",
+          "entries": [],
+          "proposed_text": "За указанный период в RSS Хабра по профилю AI-агентов не найдено ни одного материала: лента не содержала записей, попадающих в окно."
+        }
+      },
+      "result": {
+        "status": "error",
+        "code": "invalid_state"
+      },
+      "at_utc": "2026-09-27T10:48:29Z",
+      "elapsed_ms": 651
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-9b3874e4e645a06f",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "2d68ba07-1e7a-4725-89c7-556022e1a382",
+        "draft": {
+          "coverage_label": "complete_for_profile",
+          "entries": [],
+          "outcome": "empty_feed",
+          "proposed_text": "За указанный период в RSS Хабра по профилю AI-агентов не найдено ни одной записи.",
+          "run_id": "940c532b-9c03-4d25-b33f-9d0d871484f5"
+        },
+        "run_id": "940c532b-9c03-4d25-b33f-9d0d871484f5"
+      },
+      "result": {
+        "status": "error",
+        "code": "invalid_state"
+      },
+      "at_utc": "2026-09-27T10:48:35Z",
+      "elapsed_ms": 654
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T10:48:12Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "no_data",
+  "finished_utc": "2026-09-27T10:48:53Z",
+  "reported_cost_usd": 0.0007072072,
+  "reason": null,
+  "run_state": "no_data"
+}

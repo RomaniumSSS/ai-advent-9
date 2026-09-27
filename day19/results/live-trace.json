@@ -1,0 +1,207 @@
+{
+  "run_id": "b860eff3-bf8f-4525-b159-478201c8cb8c",
+  "request": "Собери сводку о применении ИИ-агентов из RSS Хабра и сохрани её",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T09:55:05Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T09:55:10Z",
+      "elapsed_ms": 3452,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2022,
+        "completion_tokens": 168,
+        "total_tokens": 2190,
+        "cost": 0.0003188752
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T09:55:21Z",
+      "elapsed_ms": 10703,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2962,
+        "completion_tokens": 830,
+        "total_tokens": 3792,
+        "cost": 0.000502544
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T09:55:24Z",
+      "elapsed_ms": 2516,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3929,
+        "completion_tokens": 154,
+        "total_tokens": 4083,
+        "cost": 0.0001627976
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T09:55:31Z",
+      "elapsed_ms": 6766,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4166,
+        "completion_tokens": 405,
+        "total_tokens": 4571,
+        "cost": 0.0002144856
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-855d743d43aaa1e3",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "b860eff3-bf8f-4525-b159-478201c8cb8c",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-26T14:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "b860eff3-bf8f-4525-b159-478201c8cb8c",
+        "batch_id": "9c189a46-868f-4df2-ae01-da3d91e39564",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T09:55:10Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-26T14:38:40Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 2,
+          "eligible_current": 2,
+          "feed_seen": 2,
+          "in_period": 2,
+          "invalid_entries": 0,
+          "new_observations": 2,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "47c4b632-f98a-4db5-86e7-c8208c3bd724",
+            "first_batch_id": "9c189a46-868f-4df2-ae01-da3d91e39564",
+            "article_id": "1086976",
+            "url": "https://habr.com/ru/articles/1086976/",
+            "title": "Доверить сервер ИИ-агенту и не пожалеть: как спать спокойно без SSH",
+            "rss_excerpt": "Мы всё быстрее движемся к самовосстанавливающейся инфраструктуре. Но когда инцидент всё-таки случается, у инженеров может уйти много времени на сбор информации о состоянии серверов. При SLA 99,99% на простой остаётся около 4 минут в месяц, каждая минута на счету, и не автоматизировать эту часть разбора инцидента — непозволительная роскошь. Технически это можно сделать и сейчас: дать ИИ-агенту SSH и sudo.Я решил пойти другим путём и собрал Linux MCP daemon (mcpd): сервер, изначально рассчитанный на ИИ-агентов. Вместо обёрток над стандартными утилитами он сам читает состояние системы из ядра и о",
+            "published_at_utc": "2026-09-26T18:01:43Z"
+          },
+          {
+            "observation_id": "0bb68b91-688d-418f-aba5-e1645d958cb1",
+            "first_batch_id": "9c189a46-868f-4df2-ae01-da3d91e39564",
+            "article_id": "1086968",
+            "url": "https://habr.com/ru/articles/1086968/",
+            "title": "[Перевод] От тестирования релиза с высоким уровнем риска к новому ИИ‑инструменту для QA",
+            "rss_excerpt": "Перед нами стояла задача протестировать релиз, сопряженный с высокими рисками и реализованный в высоконагруженных агломерациях микросервисов с легаси-проблемами, - и все это вкупе со сжатыми сроками.Как мы справились с этой задачей и попутно разработали новый QA-инструмент на основе Agentic AI? Читать далее",
+            "published_at_utc": "2026-09-26T14:38:40Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T09:55:10Z",
+      "elapsed_ms": 646
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-ae5ad7f73960e3d2",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "b860eff3-bf8f-4525-b159-478201c8cb8c",
+        "batch_id": "9c189a46-868f-4df2-ae01-da3d91e39564",
+        "draft": {
+          "run_id": "b860eff3-bf8f-4525-b159-478201c8cb8c",
+          "outcome": "no_confirmed_cases",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "47c4b632-f98a-4db5-86e7-c8208c3bd724",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автор собрал Linux MCP daemon для ИИ-агентов вместо SSH-доступа; применение агента не описано.",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "0bb68b91-688d-418f-aba5-e1645d958cb1",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Команда разработала QA-инструмент на основе Agentic AI для рискованного релиза; применение не описано.",
+              "metric_claims": []
+            }
+          ],
+          "proposed_text": "Обзор материалов RSS Хабра за указанный период о применении ИИ-агентов для бизнес- и личных задач."
+        }
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "d92532f3-f521-4ef2-864a-69f665397c40",
+        "sha256": "398007a19b347ba788aea43efa3e6b3a7410098ffb5d059ca152c782f7b17022",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086968/",
+          "https://habr.com/ru/articles/1086976/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T09:55:22Z",
+      "elapsed_ms": 656
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-a6138546170ab6d2",
+      "name": "save_report",
+      "arguments": {
+        "run_id": "b860eff3-bf8f-4525-b159-478201c8cb8c",
+        "preview_id": "d92532f3-f521-4ef2-864a-69f665397c40",
+        "sha256": "398007a19b347ba788aea43efa3e6b3a7410098ffb5d059ca152c782f7b17022"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-b860eff3-bf8f-4525-b159-478201c8cb8c.txt",
+        "sha256": "398007a19b347ba788aea43efa3e6b3a7410098ffb5d059ca152c782f7b17022"
+      },
+      "at_utc": "2026-09-27T09:55:25Z",
+      "elapsed_ms": 647
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T09:55:05Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T09:55:31Z",
+  "reported_cost_usd": 0.0011987023999999998,
+  "reason": null,
+  "run_state": "saved"
+}

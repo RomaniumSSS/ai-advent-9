@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["run_id", "outcome", "coverage_label", "entries", "proposed_text"],
+  "properties": {
+    "run_id": {"type": "string", "format": "uuid"},
+    "outcome": {"enum": ["cases_found", "no_confirmed_cases", "empty_feed"]},
+    "coverage_label": {"enum": ["complete_for_profile", "partial", "unknown"]},
+    "proposed_text": {"type": "string"},
+    "entries": {
+      "type": "array", "maxItems": 20,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["observation_id", "category", "evidence_refs", "summary", "metric_claims"],
+        "properties": {
+          "observation_id": {"type": "string", "format": "uuid"},
+          "category": {"enum": ["confirmed_described_case", "possible_case", "guide", "opinion", "advertisement", "tool_news", "not_relevant"]},
+          "evidence_refs": {"type": "array", "minItems": 1, "maxItems": 3, "items": {"enum": ["title", "rss_excerpt"]}},
+          "summary": {"type": "string"},
+          "metric_claims": {"type": "array", "maxItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["text", "attribution"], "properties": {"text": {"type": "string"}, "attribution": {"type": "string"}}}}
+        }
+      }
+    }
+  }
+}

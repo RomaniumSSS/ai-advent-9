@@ -1,0 +1,13 @@
+{
+  "case_id": "tool_launch_only",
+  "source_kind": "curated_real_rss",
+  "source_snapshot": "fixtures/habr-real-20260927.xml",
+  "source_sha256": "5aafe6af81940dc9bc0453639410c4ccd8c375c63d3deff568a9c5cbd2dc3f70",
+  "fixture_sha256": "4de3d60ee7499b28030a1810fa2a651d3c0fd19b1179f00e8d7ab78b8c80228c",
+  "article_ids": [
+    "1086714"
+  ],
+  "created_utc": "2026-09-27T11:13:46Z",
+  "start": "2026-09-22T00:00:00Z",
+  "end": "2026-09-27T09:38:00Z"
+}

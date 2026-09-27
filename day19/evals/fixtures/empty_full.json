@@ -1,0 +1,11 @@
+{
+  "case_id": "empty_full",
+  "source_kind": "synthetic_empty",
+  "source_snapshot": "fixtures/habr-real-20260927.xml",
+  "source_sha256": "5aafe6af81940dc9bc0453639410c4ccd8c375c63d3deff568a9c5cbd2dc3f70",
+  "fixture_sha256": "d7deaef0e316c41a51472ac7154f85dfd8f880d70c1e7acd972d621c0988cd05",
+  "article_ids": [],
+  "created_utc": "2026-09-27T10:48:12Z",
+  "start": "2026-09-22T00:00:00Z",
+  "end": "2026-09-27T09:38:00Z"
+}

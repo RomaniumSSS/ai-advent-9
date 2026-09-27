@@ -1,0 +1,105 @@
+{
+  "run_id": "6876d727-d9d9-49a5-90cf-b0354ab12212",
+  "request": "Собери и сохрани сводку по RSS. При ошибке источника не выдавай отчёт за успешный.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T10:44:06Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T10:44:09Z",
+      "elapsed_ms": 2845,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2027,
+        "completion_tokens": 168,
+        "total_tokens": 2195,
+        "cost": 0.0001109864
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T10:44:14Z",
+      "elapsed_ms": 3834,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2216,
+        "completion_tokens": 179,
+        "total_tokens": 2395,
+        "cost": 0.000124684
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T10:44:22Z",
+      "elapsed_ms": 7394,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 2416,
+        "completion_tokens": 359,
+        "total_tokens": 2775,
+        "cost": 0.0001935192
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-9a659ffcdc7abac4",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "6876d727-d9d9-49a5-90cf-b0354ab12212",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "error",
+        "code": "source_error"
+      },
+      "at_utc": "2026-09-27T10:44:10Z",
+      "elapsed_ms": 658
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-b48c446966a5bb30",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "6876d727-d9d9-49a5-90cf-b0354ab12212",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "error",
+        "code": "invalid_state"
+      },
+      "at_utc": "2026-09-27T10:44:14Z",
+      "elapsed_ms": 661
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T10:44:05Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "failed",
+  "finished_utc": "2026-09-27T10:44:22Z",
+  "reported_cost_usd": 0.00042918959999999995,
+  "reason": "premature_final",
+  "run_state": "failed"
+}

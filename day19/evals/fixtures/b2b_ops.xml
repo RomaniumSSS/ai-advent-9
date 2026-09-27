@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0"><channel><item>
+      <title>Двенадцать дней ИИ-агента на боевом b2b-портале: что он нашёл сам и где ему нельзя верить на слово</title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085712/</guid>
+      <link>https://habr.com/ru/articles/1085712/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085712</link>
+      <description>&lt;p&gt;Двенадцать рабочих дней ИИ-агента на живом b2b-портале: обмен с 1С по расписанию, настоящие менеджеры, боевые заказы. Четыре тихие поломки обмена, которые он разобрал (ноль из 1С вместо цены, концевой пробел в номере заказа, двойная ночная выгрузка, несобравшаяся витрина), и четыре места, где агенту нельзя верить на слово. Про поломки интереснее не починка, а то, как их вообще заметили: половину задач ему никто не приносил. Про ошибки наоборот, они повторяются, и под каждую пришлось ставить свою страховку.&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1085712/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1085712#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Wed, 23 Sep 2026 12:48:04 GMT</pubDate>
+      <dc:creator>autopasha</dc:creator>
+      <category>Искусственный интеллект</category><category>1С</category><category>Управление продуктом</category>
+      <category>1С</category><category>обмен данными</category><category>ИИ-агенты</category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title>Мы написали автономного агента для VACUUM/ANALYZE и запустили на 800+ тестовых БД: что из этого вышло</title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/sberbank/articles/1085576/</guid>
+      <link>https://habr.com/ru/companies/sberbank/articles/1085576/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085576</link>
+      <description>&lt;img src="https://habrastorage.org/getpro/habr/upload_files/a24/048/59a/a2404859a93e5f35fdd67d9ed5f88dd1.png" /&gt;&lt;p&gt;Как&amp;nbsp;упростить управление целым парком из 800+ экземпляров СУБД на&amp;nbsp;базе PostgreSQL? Можно доработать&amp;nbsp;postgres_exporter, чтобы настроить получение метрик под&amp;nbsp;себя. А если ещё проще? Мониторить связкой Grafana, Prometheus и кастомизированным&amp;nbsp;postgres_exporter, а&amp;nbsp;данные получать через ИИ‑отчёт, который будет агрегировать данные Prometheus через прямые PromQL‑запросы.&lt;/p&gt;&lt;p&gt;Но&amp;nbsp;если и этого мало, то можно вообще поручить ИИ‑агенту типовые тикеты вроде очистки места на&amp;nbsp;диске и плановой остановки БД.&lt;/p&gt;&lt;p&gt;Меня зовут Станислав Епишин, я из&amp;nbsp;команды «R4C.Support.Всадники апокалипсиса» в&amp;nbsp;СберТехе. Я уже писал, как&amp;nbsp;мы &lt;a href="https://habr.com/ru/companies/sberbank/articles/845616/"&gt;дорабатывали postgres_exporter → pangolin_exporter&lt;/a&gt;, исправляя баг в&amp;nbsp;расчёте длительности транзакций, и как &lt;a href="https://habr.com/ru/companies/sberbank/articles/1051076/"&gt;внедряли связку Prometheus + Pipeliner + TaskTracker + GigaChat&lt;/a&gt; для&amp;nbsp;автоматического создания тикетов. &lt;/p&gt;&lt;p&gt;В&amp;nbsp;этой статье расскажу про&amp;nbsp;R&amp;amp;D‑исследование для&amp;nbsp;небольшой команды DBA, в&amp;nbsp;котором мы тестировали гипотезу: получится&amp;nbsp;ли собрать автономного агента, который сам будет обрабатывать тикеты: очищать дисковое пространство, выполнять VACUUM/ANALYZE и планировать остановки БД?&lt;/p&gt;&lt;p&gt;Здесь я описал&amp;nbsp;инструкцию по&amp;nbsp;созданию агента&amp;nbsp;(с полным кодом и пояснениями) и&amp;nbsp;развёрнутый реальный пример про&amp;nbsp;автономный VACUUM/ANALYZE с&amp;nbsp;обнаружением аномалий через LLM. Также покажу, как&amp;nbsp;организовать&amp;nbsp;ленту событий&amp;nbsp;для&amp;nbsp;мониторинга работы агента, и детально разберу, где и как&amp;nbsp;в&amp;nbsp;проекте используется LLM.&lt;/p&gt; &lt;a href="https://habr.com/ru/articles/1085576/?utm_source=habrahabr&amp;amp;utm_medium=rss&amp;amp;utm_campaign=1085576#habracut"&gt;Читать далее&lt;/a&gt;</description>
+      
+      <pubDate>Wed, 23 Sep 2026 13:51:54 GMT</pubDate>
+      <dc:creator>Pelmen421 (Сбер)</dc:creator>
+      <category>Блог компании Сбер</category><category>Базы данных</category><category>PostgreSQL</category><category>Искусственный интеллект</category>
+      <category>сбертех</category><category>postgesql</category><category>базы данных</category><category>мониторинг</category><category>ии-агенты</category><category>platform v</category><category>pangolin</category><category>сезон код будущего</category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	</channel></rss>

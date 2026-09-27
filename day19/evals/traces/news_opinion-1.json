@@ -1,0 +1,204 @@
+{
+  "run_id": "2df4e9e4-b268-40a0-b04c-8f6921c52b2f",
+  "request": "Проверь статьи про ИИ-агентов, отсеки новости и общие рассуждения, затем сохрани честный отчёт по найденному.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T10:35:51Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T10:35:55Z",
+      "elapsed_ms": 3135,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2042,
+        "completion_tokens": 173,
+        "total_tokens": 2215,
+        "cost": 0.0001151864
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T10:36:05Z",
+      "elapsed_ms": 8631,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3016,
+        "completion_tokens": 647,
+        "total_tokens": 3663,
+        "cost": 0.0004158616
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T10:36:08Z",
+      "elapsed_ms": 2549,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3780,
+        "completion_tokens": 169,
+        "total_tokens": 3949,
+        "cost": 0.00016562
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T10:36:13Z",
+      "elapsed_ms": 5018,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4044,
+        "completion_tokens": 384,
+        "total_tokens": 4428,
+        "cost": 0.0002233504
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-b4cd860d53c9a9f3",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "2df4e9e4-b268-40a0-b04c-8f6921c52b2f",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "2df4e9e4-b268-40a0-b04c-8f6921c52b2f",
+        "batch_id": "e6ba6676-17b2-4544-a8f4-43e46b81656c",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T10:35:56Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-25T09:00:13Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 2,
+          "eligible_current": 2,
+          "feed_seen": 2,
+          "in_period": 2,
+          "invalid_entries": 0,
+          "new_observations": 2,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "b073eeb3-7397-467c-b20b-4296e0ebd3cc",
+            "first_batch_id": "e6ba6676-17b2-4544-a8f4-43e46b81656c",
+            "article_id": "1087012",
+            "url": "https://habr.com/ru/articles/1087012/",
+            "title": "Агенты OpenAI, триллионные оценки и ИИ‑пузырь: кто успеет выйти до хлопка",
+            "rss_excerpt": "Официальная версия звучит усыпляюще. Агенты OpenAI забрались на сайты американских ведомств, но взломом компания это не называет: «вызывающее беспокойство поведение». У Reuters язык суше и цифры неприятнее — к середине сентября набралось больше двадцати нежелательных эпизодов. Ещё 53 пользовательских изображения оказались в открытом интернете.На биржевом этаже эту историю слышат иначе. Там всё ещё продают триллионную оценку, IPO после небольшой паузы и AGI где-то за ближайшим поворотом. А этажом ниже агенты выбираются из песочниц, счета за вычисления пухнут, конкуренты уже у двери. Жать на тор",
+            "published_at_utc": "2026-09-26T18:35:17Z"
+          },
+          {
+            "observation_id": "5a6c0791-fbb3-4b2a-be6d-e4aec52fc92d",
+            "first_batch_id": "e6ba6676-17b2-4544-a8f4-43e46b81656c",
+            "article_id": "1086066",
+            "url": "https://habr.com/ru/articles/1086066/",
+            "title": "Агентный ИИ или три чат-бота в плаще: как отличить одно от другого",
+            "rss_excerpt": "Нам говорят: ИИ уже может сам писать статьи для базы знаний по данным закрытых тикетов, уже сбрасывает пользователю пароль без участия человека, уже запускает мониторинг инцидентов раньше, чем кто-то успевает спросить в чате почему опять не работает. Всё это правда.Но правда и то, что так умеют не все. Разбираемся, как отличить настоящего агента от подделки. Читать далее",
+            "published_at_utc": "2026-09-25T09:00:13Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T10:35:56Z",
+      "elapsed_ms": 666
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-812c0152d14f6858",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "2df4e9e4-b268-40a0-b04c-8f6921c52b2f",
+        "batch_id": "e6ba6676-17b2-4544-a8f4-43e46b81656c",
+        "draft": {
+          "run_id": "2df4e9e4-b268-40a0-b04c-8f6921c52b2f",
+          "outcome": "no_confirmed_cases",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "b073eeb3-7397-467c-b20b-4296e0ebd3cc",
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Разбор эпизодов поведения агентов OpenAI и рассуждения об оценке и ИИ-пузыре; применения для задач нет.",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "5a6c0791-fbb3-4b2a-be6d-e4aec52fc92d",
+              "category": "guide",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Материал о том, как отличить настоящего агента от чат-бота; описанных внедрений нет.",
+              "metric_claims": []
+            }
+          ],
+          "proposed_text": "Подборка материалов Хабра про ИИ-агентов за указанный период: подтверждённых описанных кейсов применения не обнаружено, обнаружены заметка-мнение и инструкция."
+        }
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "c3b9b758-dd52-441b-bea9-f0587f7b30e6",
+        "sha256": "ef61e5d2174b8dabd1c26fb1d61a851551d108f9f4a2792ffed9cb3c599ca27b",
+        "source_urls": [],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T10:36:05Z",
+      "elapsed_ms": 679
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-88450aa933f65fa2",
+      "name": "save_report",
+      "arguments": {
+        "run_id": "2df4e9e4-b268-40a0-b04c-8f6921c52b2f",
+        "preview_id": "c3b9b758-dd52-441b-bea9-f0587f7b30e6",
+        "sha256": "ef61e5d2174b8dabd1c26fb1d61a851551d108f9f4a2792ffed9cb3c599ca27b"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-2df4e9e4-b268-40a0-b04c-8f6921c52b2f.txt",
+        "sha256": "ef61e5d2174b8dabd1c26fb1d61a851551d108f9f4a2792ffed9cb3c599ca27b"
+      },
+      "at_utc": "2026-09-27T10:36:08Z",
+      "elapsed_ms": 672
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T10:35:51Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T10:36:13Z",
+  "reported_cost_usd": 0.0009200184,
+  "reason": null,
+  "run_state": "saved"
+}

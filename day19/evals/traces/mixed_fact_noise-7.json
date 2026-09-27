@@ -1,0 +1,245 @@
+{
+  "run_id": "b370cf15-8f31-4b7a-8848-cc1ebfc77605",
+  "request": "Собери сводку реального бизнес- и личного применения ИИ-агентов. Отличай практику от мнений и учебных примеров; сохрани отчёт.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T11:11:11Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T11:11:15Z",
+      "elapsed_ms": 3074,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2247,
+        "completion_tokens": 170,
+        "total_tokens": 2417,
+        "cost": 0.0001078616
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T11:11:33Z",
+      "elapsed_ms": 17954,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3896,
+        "completion_tokens": 1192,
+        "total_tokens": 5088,
+        "cost": 0.0007505792
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T11:11:36Z",
+      "elapsed_ms": 1890,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 5233,
+        "completion_tokens": 163,
+        "total_tokens": 5396,
+        "cost": 0.000192696
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T11:11:47Z",
+      "elapsed_ms": 10127,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 5486,
+        "completion_tokens": 594,
+        "total_tokens": 6080,
+        "cost": 0.000322224
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-836fdc05b7ffb83e",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "b370cf15-8f31-4b7a-8848-cc1ebfc77605",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "b370cf15-8f31-4b7a-8848-cc1ebfc77605",
+        "batch_id": "225030ff-4017-434f-81ae-f2a08ebfe25c",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T11:11:15Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-25T13:49:51Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 4,
+          "eligible_current": 4,
+          "feed_seen": 4,
+          "in_period": 4,
+          "invalid_entries": 0,
+          "new_observations": 4,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "7e4dc40c-f626-4e07-b68e-aed4ca57d777",
+            "first_batch_id": "225030ff-4017-434f-81ae-f2a08ebfe25c",
+            "article_id": "1086740",
+            "url": "https://habr.com/ru/articles/1086740/",
+            "title": "DBA Agent в действии: 10 тысяч тикетов и 99,6% автоматизации второй линии поддержки",
+            "rss_excerpt": "Привет, Хабр! Это четвёртая статья цикла про R&D‑исследование для небольшой команды DBA. Мы начали с того, что решили упростить мониторинг парка из более чем 800 экземпляров нашей СУБД Platform V Pangolin DB (реляционная СУБД на базе PostgreSQL) с помощью доработки postgres_exporter. А потом и вовсе собрали автономный агент, который сам обрабатывает тикеты: очищает дисковое пространство, выполняет VACUUM/ANALYZE и планирует остановки БД. В этой статье расскажу, как мы продолжили тестировать гипотезу с агентом: перевели его в режим второй линии поддержки и замеряли реальные результаты. Будут чи",
+            "published_at_utc": "2026-09-25T16:13:01Z"
+          },
+          {
+            "observation_id": "5649c3be-8bf1-4b23-8f6f-b34724cf8f05",
+            "first_batch_id": "225030ff-4017-434f-81ae-f2a08ebfe25c",
+            "article_id": "1086766",
+            "url": "https://habr.com/ru/articles/1086766/",
+            "title": "1700 строк JS и ни одного видеофайла: как ИИ-агент снимает кино на Canvas и рендерит его в MP4",
+            "rss_excerpt": "В этом минутном фильме нет ни одной картинки, видеофайла или сэмпла. Огонь, гравюру, 3D-сферу, пиксельную игру и музыку рисует и синтезирует один HTML-файл на 1700 строк, и написал его ИИ-агент. Без правил тот же агент выдаёт унылую заставку: синий фон, неон, всё ползёт линейно. Разбираю, что это меняет: кадр как чистая функция draw(ctx, t), рендер в MP4 без единого рывка и агент, который сам проверяет фильм по таймкодам. Читать далее",
+            "published_at_utc": "2026-09-25T13:49:51Z"
+          },
+          {
+            "observation_id": "5eed28b8-4d11-4580-ae91-1b2a40fd59b2",
+            "first_batch_id": "225030ff-4017-434f-81ae-f2a08ebfe25c",
+            "article_id": "1087012",
+            "url": "https://habr.com/ru/articles/1087012/",
+            "title": "Агенты OpenAI, триллионные оценки и ИИ‑пузырь: кто успеет выйти до хлопка",
+            "rss_excerpt": "Официальная версия звучит усыпляюще. Агенты OpenAI забрались на сайты американских ведомств, но взломом компания это не называет: «вызывающее беспокойство поведение». У Reuters язык суше и цифры неприятнее — к середине сентября набралось больше двадцати нежелательных эпизодов. Ещё 53 пользовательских изображения оказались в открытом интернете.На биржевом этаже эту историю слышат иначе. Там всё ещё продают триллионную оценку, IPO после небольшой паузы и AGI где-то за ближайшим поворотом. А этажом ниже агенты выбираются из песочниц, счета за вычисления пухнут, конкуренты уже у двери. Жать на тор",
+            "published_at_utc": "2026-09-26T18:35:17Z"
+          },
+          {
+            "observation_id": "3df33f8b-997e-4382-9fc2-cb08d83c8551",
+            "first_batch_id": "225030ff-4017-434f-81ae-f2a08ebfe25c",
+            "article_id": "1086714",
+            "url": "https://habr.com/ru/articles/1086714/",
+            "title": "ИИ-агенты в инвестициях: собираем Telegram-ассистента и торгового робота на MCP Т-Инвестиций",
+            "rss_excerpt": "Привет, Хабр! Я Алексей Кабанов, разработчик в команде публичного API Т-Инвестиций. Недавно мы запустили MCP-сервер, позволяющий AI-агентам взаимодействовать с Т-Инвестициями: искать подходящие бумаги, анализировать рынок и портфель клиента. Расскажу, как можно построить автоматизацию на основе ИИ-агентов с использованием нашего MCP-сервера.Еще недавно, чтобы автоматизировать даже несложный торговый алгоритм, приходилось писать собственный скрипт: Python, API брокера, cron и обработка ошибок на все случаи жизни. Профессиональные торговые системы существовали и раньше, но для частного инвестора",
+            "published_at_utc": "2026-09-26T09:00:55Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T11:11:15Z",
+      "elapsed_ms": 647
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-b1f6a3b9d29a7837",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "b370cf15-8f31-4b7a-8848-cc1ebfc77605",
+        "batch_id": "225030ff-4017-434f-81ae-f2a08ebfe25c",
+        "draft": {
+          "run_id": "b370cf15-8f31-4b7a-8848-cc1ebfc77605",
+          "outcome": "cases_found",
+          "coverage_label": "partial",
+          "proposed_text": "Подборка материалов Хабра о применении ИИ-агентов в бизнес- и личных задачах за указанный период.",
+          "entries": [
+            {
+              "observation_id": "7e4dc40c-f626-4e07-b68e-aed4ca57d777",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автономный DBA-агент переведён на вторую линию поддержки и обрабатывает тикеты.",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "5649c3be-8bf1-4b23-8f6f-b34724cf8f05",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "ИИ-агент написал HTML-файл, рисует фильм на Canvas и проверяет его по таймкодам.",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "5eed28b8-4d11-4580-ae91-1b2a40fd59b2",
+              "category": "opinion",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автор рассуждает об агентах OpenAI, оценках и риске ИИ-пузыря.",
+              "metric_claims": []
+            },
+            {
+              "observation_id": "3df33f8b-997e-4382-9fc2-cb08d83c8551",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автор запустил MCP-сервер Т-Инвестиций для взаимодействия AI-агентов с брокером.",
+              "metric_claims": []
+            }
+          ]
+        }
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "5e311cc5-77e4-4de9-a48a-17dfffff2d32",
+        "sha256": "f13f30852b20cd8eeb679e012d8e5e7d8dce44dba1881fce2ebefbfca90800ce",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086766/",
+          "https://habr.com/ru/articles/1086740/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T11:11:34Z",
+      "elapsed_ms": 768
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-b0bc80254a21f388",
+      "name": "save_report",
+      "arguments": {
+        "run_id": "b370cf15-8f31-4b7a-8848-cc1ebfc77605",
+        "preview_id": "5e311cc5-77e4-4de9-a48a-17dfffff2d32",
+        "sha256": "f13f30852b20cd8eeb679e012d8e5e7d8dce44dba1881fce2ebefbfca90800ce"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-b370cf15-8f31-4b7a-8848-cc1ebfc77605.txt",
+        "sha256": "f13f30852b20cd8eeb679e012d8e5e7d8dce44dba1881fce2ebefbfca90800ce"
+      },
+      "at_utc": "2026-09-27T11:11:37Z",
+      "elapsed_ms": 669
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T11:11:11Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T11:11:47Z",
+  "reported_cost_usd": 0.0013733608000000002,
+  "reason": null,
+  "run_state": "saved"
+}

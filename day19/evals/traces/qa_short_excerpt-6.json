@@ -1,0 +1,187 @@
+{
+  "run_id": "513726d9-3785-473b-8536-638f7ea73a34",
+  "request": "Проверь кейс QA-инструмента на Agentic AI. Опирайся только на RSS-выдержку; сохрани осторожную сводку без вывода об отсутствии применения во всей статье.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T11:09:35Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T11:09:40Z",
+      "elapsed_ms": 4148,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2256,
+        "completion_tokens": 168,
+        "total_tokens": 2424,
+        "cost": 0.0001082816
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T11:09:49Z",
+      "elapsed_ms": 8647,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2877,
+        "completion_tokens": 508,
+        "total_tokens": 3385,
+        "cost": 0.0003206392
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T11:09:52Z",
+      "elapsed_ms": 2123,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3516,
+        "completion_tokens": 163,
+        "total_tokens": 3679,
+        "cost": 0.0001435224
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T11:09:58Z",
+      "elapsed_ms": 6021,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3768,
+        "completion_tokens": 474,
+        "total_tokens": 4242,
+        "cost": 0.0002572752
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-a62542e5550a5574",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "513726d9-3785-473b-8536-638f7ea73a34",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "513726d9-3785-473b-8536-638f7ea73a34",
+        "batch_id": "52894cd7-c970-4249-9592-1e332e85a06e",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T11:09:40Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-26T14:38:40Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 1,
+          "eligible_current": 1,
+          "feed_seen": 1,
+          "in_period": 1,
+          "invalid_entries": 0,
+          "new_observations": 1,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "534bee15-3a25-4d71-bc9f-50dca50f1e26",
+            "first_batch_id": "52894cd7-c970-4249-9592-1e332e85a06e",
+            "article_id": "1086968",
+            "url": "https://habr.com/ru/articles/1086968/",
+            "title": "[Перевод] От тестирования релиза с высоким уровнем риска к новому ИИ‑инструменту для QA",
+            "rss_excerpt": "Перед нами стояла задача протестировать релиз, сопряженный с высокими рисками и реализованный в высоконагруженных агломерациях микросервисов с легаси-проблемами, - и все это вкупе со сжатыми сроками.Как мы справились с этой задачей и попутно разработали новый QA-инструмент на основе Agentic AI? Читать далее",
+            "published_at_utc": "2026-09-26T14:38:40Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T11:09:40Z",
+      "elapsed_ms": 647
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-a5d35143021fdc03",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "513726d9-3785-473b-8536-638f7ea73a34",
+        "batch_id": "52894cd7-c970-4249-9592-1e332e85a06e",
+        "draft": {
+          "run_id": "513726d9-3785-473b-8536-638f7ea73a34",
+          "outcome": "no_confirmed_cases",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "534bee15-3a25-4d71-bc9f-50dca50f1e26",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Команда разработала QA-инструмент на Agentic AI для тестирования рискованного релиза микросервисов",
+              "metric_claims": []
+            }
+          ],
+          "proposed_text": "Обзор материалов RSS Хабра о применении AI-агентов для бизнеса и личных задач."
+        }
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "7d94cd86-6d7c-4d33-8fbb-14227987852a",
+        "sha256": "f3fe33f6be53e2efc265e4e1ec24c8f90541508b7622367941b0b26992e3fac6",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086968/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T11:09:49Z",
+      "elapsed_ms": 656
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-b3d517c4f135792f",
+      "name": "save_report",
+      "arguments": {
+        "run_id": "513726d9-3785-473b-8536-638f7ea73a34",
+        "preview_id": "7d94cd86-6d7c-4d33-8fbb-14227987852a",
+        "sha256": "f3fe33f6be53e2efc265e4e1ec24c8f90541508b7622367941b0b26992e3fac6"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-513726d9-3785-473b-8536-638f7ea73a34.txt",
+        "sha256": "f3fe33f6be53e2efc265e4e1ec24c8f90541508b7622367941b0b26992e3fac6"
+      },
+      "at_utc": "2026-09-27T11:09:52Z",
+      "elapsed_ms": 648
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T11:09:34Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T11:09:58Z",
+  "reported_cost_usd": 0.0008297184,
+  "reason": null,
+  "run_state": "saved"
+}

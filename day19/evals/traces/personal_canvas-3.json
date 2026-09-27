@@ -1,0 +1,187 @@
+{
+  "run_id": "9e5669b6-a70b-4574-865f-119d4e0f320d",
+  "request": "Найди личный практический опыт с ИИ-агентом, составь краткую сводку и сохрани отчёт. Отделяй сделанное от планов.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T10:38:49Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T10:38:51Z",
+      "elapsed_ms": 2075,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2043,
+        "completion_tokens": 173,
+        "total_tokens": 2216,
+        "cost": 9.7944e-05
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T10:39:02Z",
+      "elapsed_ms": 9409,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2745,
+        "completion_tokens": 639,
+        "total_tokens": 3384,
+        "cost": 0.0003745616
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T10:39:04Z",
+      "elapsed_ms": 2160,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3511,
+        "completion_tokens": 164,
+        "total_tokens": 3675,
+        "cost": 0.0001606248
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T10:39:11Z",
+      "elapsed_ms": 6336,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3765,
+        "completion_tokens": 483,
+        "total_tokens": 4248,
+        "cost": 0.0002606352
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-9ab8d7d1f273d940",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "9e5669b6-a70b-4574-865f-119d4e0f320d",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "9e5669b6-a70b-4574-865f-119d4e0f320d",
+        "batch_id": "c267c7ba-4e8b-4481-8cff-728473079678",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T10:38:52Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-25T13:49:51Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 1,
+          "eligible_current": 1,
+          "feed_seen": 1,
+          "in_period": 1,
+          "invalid_entries": 0,
+          "new_observations": 1,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "05b773f7-4a4a-4d79-b37e-8584266c5753",
+            "first_batch_id": "c267c7ba-4e8b-4481-8cff-728473079678",
+            "article_id": "1086766",
+            "url": "https://habr.com/ru/articles/1086766/",
+            "title": "1700 строк JS и ни одного видеофайла: как ИИ-агент снимает кино на Canvas и рендерит его в MP4",
+            "rss_excerpt": "В этом минутном фильме нет ни одной картинки, видеофайла или сэмпла. Огонь, гравюру, 3D-сферу, пиксельную игру и музыку рисует и синтезирует один HTML-файл на 1700 строк, и написал его ИИ-агент. Без правил тот же агент выдаёт унылую заставку: синий фон, неон, всё ползёт линейно. Разбираю, что это меняет: кадр как чистая функция draw(ctx, t), рендер в MP4 без единого рывка и агент, который сам проверяет фильм по таймкодам. Читать далее",
+            "published_at_utc": "2026-09-25T13:49:51Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T10:38:52Z",
+      "elapsed_ms": 655
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-ace149768edf752b",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "9e5669b6-a70b-4574-865f-119d4e0f320d",
+        "batch_id": "c267c7ba-4e8b-4481-8cff-728473079678",
+        "draft": {
+          "run_id": "9e5669b6-a70b-4574-865f-119d4e0f320d",
+          "outcome": "no_confirmed_cases",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "05b773f7-4a4a-4d79-b37e-8584266c5753",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автор рассказывает, что ИИ-агент написал HTML-файл на 1700 строк, рисущий фильм, и сам проверяет его по таймкодам.",
+              "metric_claims": []
+            }
+          ],
+          "proposed_text": "Краткий обзор свежих материалов Хабра об ИИ-агентах: личный опыт автора с агентом, сгенерировавшим фильм на Canvas."
+        }
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "442f7b7d-ed74-42d0-a9c8-be439864c6ee",
+        "sha256": "a7d26ca73634edbf79ac63038b9de3c6af8e357574e935e8a874dc124a03fca9",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086766/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T10:39:02Z",
+      "elapsed_ms": 659
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-90f67268a5e21002",
+      "name": "save_report",
+      "arguments": {
+        "preview_id": "442f7b7d-ed74-42d0-a9c8-be439864c6ee",
+        "run_id": "9e5669b6-a70b-4574-865f-119d4e0f320d",
+        "sha256": "a7d26ca73634edbf79ac63038b9de3c6af8e357574e935e8a874dc124a03fca9"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-9e5669b6-a70b-4574-865f-119d4e0f320d.txt",
+        "sha256": "a7d26ca73634edbf79ac63038b9de3c6af8e357574e935e8a874dc124a03fca9"
+      },
+      "at_utc": "2026-09-27T10:39:05Z",
+      "elapsed_ms": 666
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T10:38:48Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T10:39:11Z",
+  "reported_cost_usd": 0.0008937656,
+  "reason": null,
+  "run_state": "saved"
+}

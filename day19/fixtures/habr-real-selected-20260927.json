@@ -1,0 +1,12 @@
+{
+  "kind": "curated_subset_of_real_habr_rss",
+  "created_utc": "2026-09-27T09:45:04Z",
+  "original_file": "habr-real-20260927.xml",
+  "original_sha256": "5aafe6af81940dc9bc0453639410c4ccd8c375c63d3deff568a9c5cbd2dc3f70",
+  "selected_article_ids": [
+    "1086976",
+    "1086968"
+  ],
+  "selected_file_sha256": "ce627e0b8d4bf47356ae0bc2e91e7cc0883d8bb142502f0537a7579f53b1ca77",
+  "coverage_note": "Вырезаны два подлинных item из полного RSS; охват периода неполный."
+}

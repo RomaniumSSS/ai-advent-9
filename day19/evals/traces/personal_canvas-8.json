@@ -1,0 +1,238 @@
+{
+  "run_id": "f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1",
+  "request": "Найди личный практический опыт с ИИ-агентом, составь краткую сводку и сохрани отчёт. Отделяй сделанное от планов.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T11:23:51Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T11:23:54Z",
+      "elapsed_ms": 2233,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2250,
+        "completion_tokens": 173,
+        "total_tokens": 2423,
+        "cost": 0.0001095416
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T11:24:04Z",
+      "elapsed_ms": 9040,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2945,
+        "completion_tokens": 670,
+        "total_tokens": 3615,
+        "cost": 0.0003981992
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T11:24:09Z",
+      "elapsed_ms": 4385,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3661,
+        "completion_tokens": 345,
+        "total_tokens": 4006,
+        "cost": 0.00022288
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T11:24:11Z",
+      "elapsed_ms": 1952,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 4131,
+        "completion_tokens": 164,
+        "total_tokens": 4295,
+        "cost": 0.0003691016
+      }
+    },
+    {
+      "sequence": 5,
+      "at_utc": "2026-09-27T11:24:19Z",
+      "elapsed_ms": 6539,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4383,
+        "completion_tokens": 497,
+        "total_tokens": 4880,
+        "cost": 0.0002661232
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-aabf80687d233e5f",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1",
+        "batch_id": "5c596447-5166-464b-8868-4d27fd730207",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T11:23:55Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-25T13:49:51Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 1,
+          "eligible_current": 1,
+          "feed_seen": 1,
+          "in_period": 1,
+          "invalid_entries": 0,
+          "new_observations": 1,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "b3237951-bf24-4331-aea2-757294154cbc",
+            "first_batch_id": "5c596447-5166-464b-8868-4d27fd730207",
+            "article_id": "1086766",
+            "url": "https://habr.com/ru/articles/1086766/",
+            "title": "1700 строк JS и ни одного видеофайла: как ИИ-агент снимает кино на Canvas и рендерит его в MP4",
+            "rss_excerpt": "В этом минутном фильме нет ни одной картинки, видеофайла или сэмпла. Огонь, гравюру, 3D-сферу, пиксельную игру и музыку рисует и синтезирует один HTML-файл на 1700 строк, и написал его ИИ-агент. Без правил тот же агент выдаёт унылую заставку: синий фон, неон, всё ползёт линейно. Разбираю, что это меняет: кадр как чистая функция draw(ctx, t), рендер в MP4 без единого рывка и агент, который сам проверяет фильм по таймкодам. Читать далее",
+            "published_at_utc": "2026-09-25T13:49:51Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T11:23:55Z",
+      "elapsed_ms": 630
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-8a549443a700435d",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1",
+        "batch_id": "5c596447-5166-464b-8868-4d27fd730207",
+        "draft": {
+          "run_id": "f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1",
+          "outcome": "cases_found",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "b3237951-bf24-4331-aea2-757294154cbc",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автор: ИИ-агент написал HTML-файл на 1700 строк — минутный фильм на Canvas; агент сам проверяет его по таймкодам",
+              "metric_claims": [
+                {
+                  "text": "написал HTML-файл на 1700 строк",
+                  "attribution": "автор статьи"
+                }
+              ]
+            }
+          ],
+          "proposed_text": "Сводка по материалам RSS Хабра о практике применения ИИ-агентов за указанный период."
+        }
+      },
+      "result": {
+        "status": "error",
+        "code": "unsupported_metric",
+        "observation_id": "b3237951-bf24-4331-aea2-757294154cbc"
+      },
+      "at_utc": "2026-09-27T11:24:04Z",
+      "elapsed_ms": 655
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-8870a16edd75e167",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "5c596447-5166-464b-8868-4d27fd730207",
+        "draft": {
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "b3237951-bf24-4331-aea2-757294154cbc",
+              "summary": "Автор: ИИ-агент написал HTML-файл для минутного фильма на Canvas и сам проверяет его по таймкодам"
+            }
+          ],
+          "outcome": "cases_found",
+          "proposed_text": "Сводка по материалам RSS Хабра о практике применения ИИ-агентов за указанный период.",
+          "run_id": "f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1"
+        },
+        "run_id": "f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1"
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "9ad6c053-3065-4c38-bee5-c2b1c1333631",
+        "sha256": "3d1688eb2a6fd60d5aba04910947da933a36f01e39909f7957035ad15af68694",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086766/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T11:24:09Z",
+      "elapsed_ms": 645
+    },
+    {
+      "sequence": 4,
+      "call_id": "chatcmpl-tool-b8044d4e1d60e5b2",
+      "name": "save_report",
+      "arguments": {
+        "preview_id": "9ad6c053-3065-4c38-bee5-c2b1c1333631",
+        "run_id": "f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1",
+        "sha256": "3d1688eb2a6fd60d5aba04910947da933a36f01e39909f7957035ad15af68694"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-f5eb63b0-39ba-46b5-ba9b-484f2dfc8ec1.txt",
+        "sha256": "3d1688eb2a6fd60d5aba04910947da933a36f01e39909f7957035ad15af68694"
+      },
+      "at_utc": "2026-09-27T11:24:12Z",
+      "elapsed_ms": 654
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T11:23:51Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T11:24:19Z",
+  "reported_cost_usd": 0.0013658455999999999,
+  "reason": null,
+  "run_state": "saved"
+}

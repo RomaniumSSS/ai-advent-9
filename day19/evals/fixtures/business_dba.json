@@ -1,0 +1,13 @@
+{
+  "case_id": "business_dba",
+  "source_kind": "curated_real_rss",
+  "source_snapshot": "fixtures/habr-real-20260927.xml",
+  "source_sha256": "5aafe6af81940dc9bc0453639410c4ccd8c375c63d3deff568a9c5cbd2dc3f70",
+  "fixture_sha256": "65533d21a61b66a87d905f6910898ce2ab12892b167e2f74d595aaa1bcae19bd",
+  "article_ids": [
+    "1086740"
+  ],
+  "created_utc": "2026-09-27T11:23:24Z",
+  "start": "2026-09-22T00:00:00Z",
+  "end": "2026-09-27T09:38:00Z"
+}

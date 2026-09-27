@@ -1,0 +1,2534 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" >
+
+  <channel>
+    <title><![CDATA[Результаты поиска по запросу «ИИ-агенты»]]></title>
+    <link>https://habr.com/ru/</link>
+    <description><![CDATA[Результаты поиска по запросу «ИИ-агенты»]]></description>
+    <language>ru</language>
+    <managingEditor>editor@habr.com</managingEditor>
+    <generator>habr.com</generator>
+    <pubDate>Sun, 27 Sep 2026 09:38:51 GMT</pubDate>
+    
+    
+      <image>
+        <link>https://habr.com/ru/</link>
+        <url>https://habrastorage.org/webt/ym/el/wk/ymelwk3zy1gawz4nkejl_-ammtc.png</url>
+        <title>Хабр</title>
+      </image>
+    
+
+    
+      
+        
+    
+    <item>
+      <title><![CDATA[Способы применения LLM: простые и необычные варианты]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1087032/</guid>
+      <link>https://habr.com/ru/articles/1087032/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1087032</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f00/1b2/672/f001b2672d4126d45e5d901cc8a7e31a.jpg" /><p>Статья вдохновленная старой веткой <strong>Reddit</strong>: <a href="https://www.Reddit.com/r/ChatGPT/comments/1cbnrmk/what_ways_do_you_use_chat_gpt_in_your_daily_lives/" rel="noopener nofollow">https://www.Reddit.com/r/ChatGPT/comments/1cbnrmk/what_ways_do_you_use_chat_gpt_in_your_daily_lives/</a></p><p>Я буду перечислять то, как сам использую <strong>LLM,</strong> в частности <strong>ChatGPT,</strong> в работе и в обычной жизни, а также некоторые интересные варианты которые встречались в Интернете (включая несколько нетипичных вариантов из указанной ветки <strong>Reddit</strong>). Также я спросил <strong>ChatGPT</strong>, как можно использовать большие языковые модели, в том числе “необычные и неочевидные способы применения LLM”. Некоторые интересные примеры добавлю сюда.</p><p>Забегая наперед скажу - вариантов использования <strong>LLM</strong> сотни и тысячи, это ограничивается только фантазией каждого. Но здесь надо уточнить, что именно мы имеем в виду.</p> <a href="https://habr.com/ru/articles/1087032/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1087032#habracut">Читать далее &rarr;</a>]]></description>
+      
+      <pubDate>Sun, 27 Sep 2026 08:15:24 GMT</pubDate>
+      <dc:creator><![CDATA[peterplv]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Визуализация данных]]></category>
+      <category><![CDATA[искусственный интеллект]]></category><category><![CDATA[llm]]></category><category><![CDATA[chatgpt]]></category><category><![CDATA[cluade]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[обработка данных]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Агенты OpenAI, триллионные оценки и ИИ‑пузырь: кто успеет выйти до хлопка]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1087012/</guid>
+      <link>https://habr.com/ru/articles/1087012/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1087012</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/b0d/94f/4ae/b0d94f4aedf7cd2950a216d1b3cccc2a.png" /><p>&nbsp;</p><p>Официальная версия звучит усыпляюще. Агенты OpenAI забрались на сайты американских ведомств, но взломом компания это не называет: «вызывающее беспокойство поведение». У Reuters язык суше и цифры неприятнее — к середине сентября набралось больше двадцати нежелательных эпизодов. Ещё 53 пользовательских изображения оказались в открытом интернете.</p><p>На биржевом этаже эту историю слышат иначе. Там всё ещё продают триллионную оценку, IPO после небольшой паузы и AGI где-то за ближайшим поворотом. А этажом ниже агенты выбираются из песочниц, счета за вычисления пухнут, конкуренты уже у двери. Жать на тормоз страшно: обгонят. Не жать — тоже.</p> <a href="https://habr.com/ru/articles/1087012/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1087012#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 18:35:17 GMT</pubDate>
+      <dc:creator><![CDATA[maverick_KGB]]></dc:creator>
+      <category><![CDATA[Бизнес-модели]]></category><category><![CDATA[Исследования и прогнозы в IT]]></category><category><![CDATA[Управление медиа]]></category>
+      <category><![CDATA[OpenAI]]></category><category><![CDATA[ИИ-пузырь]]></category><category><![CDATA[IPO]]></category><category><![CDATA[Anthropic]]></category><category><![CDATA[агенты]]></category><category><![CDATA[misalignment]]></category><category><![CDATA[инвестиции]]></category><category><![CDATA[SEC]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Доверить сервер ИИ-агенту и не пожалеть: как спать спокойно без SSH]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086976/</guid>
+      <link>https://habr.com/ru/articles/1086976/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086976</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a68/8be/24c/a688be24c28b828ad2ae6dd7a00af3aa.png" /><p>Мы всё быстрее движемся к самовосстанавливающейся инфраструктуре. Но когда инцидент всё-таки случается, у инженеров может уйти много времени на сбор информации о состоянии серверов. При SLA 99,99% на простой остаётся около 4 минут в месяц, каждая минута на счету, и не автоматизировать эту часть разбора инцидента — непозволительная роскошь. Технически это можно сделать и сейчас: дать ИИ-агенту SSH и sudo.</p><p>Я решил пойти другим путём и собрал Linux MCP daemon (mcpd): сервер, изначально рассчитанный на ИИ-агентов. Вместо обёрток над стандартными утилитами он сам читает состояние системы из ядра и отдаёт его агенту через инструменты — сейчас их 38, и список растёт. Когда нужен root, агент может его запросить, но получит только там, где вы разрешили, и в заданных границах. Отдельным интересным решением получилась утилита linuxctl в стиле kubectl. Под катом устройство, установка, подключение ИИ-агента и права, которые только выглядят безопасными.</p> <a href="https://habr.com/ru/articles/1086976/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086976#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 18:01:43 GMT</pubDate>
+      <dc:creator><![CDATA[nucleusv]]></dc:creator>
+      <category><![CDATA[Управление разработкой]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Тестирование IT-систем]]></category><category><![CDATA[Go]]></category>
+      <category><![CDATA[ai]]></category><category><![CDATA[mcp-server]]></category><category><![CDATA[mcptools]]></category><category><![CDATA[linux]]></category><category><![CDATA[claude]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как ИТ-компаниям выжить, когда ИИ есть у всех]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1087002/</guid>
+      <link>https://habr.com/ru/articles/1087002/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1087002</link>
+      <description><![CDATA[<p>Ещё недавно вопрос звучал так: «как нам внедрить нейросети». Теперь он звучит иначе: «как нам выжить, когда нейросети есть у всех». Это разные вопросы. Когда мощный инструмент есть у каждого, он перестаёт быть преимуществом и превращается в цену входа на рынок. Ниже шесть соображений о том, что останется ценным в ИТ, когда обёртки вокруг чужих моделей перестанут быть преимуществом.</p> <a href="https://habr.com/ru/articles/1087002/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1087002#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 17:30:12 GMT</pubDate>
+      <dc:creator><![CDATA[svl87]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[выживание программистов]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Claude вместо копии проекта удалил 48 218 файлов за полторы минуты и потом признался, что «что‑то сломал»]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086984/</guid>
+		<link>https://habr.com/ru/news/1086984/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086984</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/644/51f/ae6/64451fae61c31cfd7fa44fd94584764e.jpg" /><p>Разработчик‑вайбкодер <a href="https://cybersecuritynews.com/claude-code-agent-file-deletion/amp/" rel="noopener nofollow">попросил</a> ИИ‑агента Claude собрать зеркало проекта. Но&nbsp;вместо выполнения прямого указания на&nbsp;полное копирование рабочего решения нейросеть создала скрипт полной очистки и за полторы минуты <a href="https://www.reddit.com/r/ClaudeAI/comments/1wl5cgo/code_just_deleted_48k_files_this_cant_be_real/" rel="noopener nofollow">удалила</a> 48 218&nbsp;рабочих файлов из дерева проекта в Windows и уничтожила хранилище объектов Git в репозитории. Восстановить данные полностью не&nbsp;удалось. После выполнения деструктивных действий ИИ-агент написал «Я что-то сломал». Примечательно, что оригинальный пост на Reddit по этому инциденту с 800+ комментариями был удалён с платформы спустя несколько дней после публикации.</p> <a href="https://habr.com/ru/articles/1086984/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Sat, 26 Sep 2026 15:44:12 GMT</pubDate>
+    <dc:creator><![CDATA[denis-19]]></dc:creator>
+		<category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Управление разработкой]]></category><category><![CDATA[Windows]]></category>
+		<category><![CDATA[Claude]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+  
+
+  
+    <item>
+      <title><![CDATA[[Перевод] От тестирования релиза с высоким уровнем риска к новому ИИ‑инструменту для QA]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086968/</guid>
+      <link>https://habr.com/ru/articles/1086968/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086968</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/bf8/60e/2ee/bf860e2eed3a66d1db4bad04813dd19a.jpg" /><p>Перед нами стояла задача протестировать релиз, сопряженный с высокими рисками и реализованный в высоконагруженных агломерациях микросервисов с легаси-проблемами, - и все это вкупе со сжатыми сроками.</p><p>Как мы справились с этой задачей и попутно разработали новый QA-инструмент на основе Agentic AI?</p> <a href="https://habr.com/ru/articles/1086968/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086968#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 14:38:40 GMT</pubDate>
+      <dc:creator><![CDATA[SergeiTerentev]]></dc:creator>
+      <category><![CDATA[Тестирование IT-систем]]></category><category><![CDATA[Тестирование веб-сервисов]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Тестирование мобильных приложений]]></category>
+      <category>qa</category><category>qa testing</category><category>ai</category><category>агентный ии</category><category>ai-агенты</category><category>ai agent</category><category>ai-agent</category><category>qa management</category><category>qa engineer</category><category>qa strategy</category>
+    </item>
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Pony ORM: толстая пачка фич и улучшений]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086790/</guid>
+      <link>https://habr.com/ru/articles/1086790/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086790</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/c41/375/1cf/c413751cf9435ade83bbf7f15fbfd9bb.png" /><p><em>DISCLAIMER: Это неофициальный форк. Но, по моим сведениям, и в официальный pony эти фичи скоро подъедут в каком-то виде.</em></p><p>Некоторое время назад, я решил испробовать программирование с помощью ИИ-агентов и решил выбрать pony в качестве пет-проекта. О pony я уже <a href="https://habr.com/ru/articles/1056970/" rel="noopener nofollow">писал</a> в предыдущей статье. Теперь хочу поделиться результатами своего недельного спринта.</p><p>В pony добавилось:<br>- поддержка асинхронности<br>- поддержка миграций<br>- разные улучшения из серии quality-of-life</p><p>Так что, фреймворк pony теперь чрезвычайно важен и сердит - что можно понять по этой картинке. Всё - благодаря DeepSeek 4.1 Flash и Kimi K3 (последняя - умная, но дорогая - она делала ревью).</p> <a href="https://habr.com/ru/articles/1086790/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086790#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 13:00:40 GMT</pubDate>
+      <dc:creator><![CDATA[abetkin]]></dc:creator>
+      <category><![CDATA[Python]]></category><category><![CDATA[SQL]]></category><category><![CDATA[Базы данных]]></category><category><![CDATA[Веб-разработка]]></category>
+      <category><![CDATA[ponyorm]]></category><category><![CDATA[orm]]></category><category><![CDATA[async]]></category><category><![CDATA[migrations]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Ложь ИИ: иллюзии, в которые хочется верить]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086954/</guid>
+      <link>https://habr.com/ru/articles/1086954/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086954</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a13/348/88c/a1334888c07a87fb5e0ac428d8b3843d.jpg" /><p>Традиционный баг «кричит», блокирует процесс и требует фикса. Вероятностная иллюзия ИИ говорит уверенным тоном, улыбается и пожимает вам руку. Разбираем по&nbsp;слоям, как&nbsp;RLHF, антропоморфный интерфейс и закон Гудхарта превращают матричное умножение в&nbsp;систему, которой хочется верить. И почему «зелёные» тесты&nbsp;— это не&nbsp;решение задачи, а&nbsp;лишь соответствие рамке. </p> <a href="https://habr.com/ru/articles/1086954/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086954#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 12:34:55 GMT</pubDate>
+      <dc:creator><![CDATA[NLegion]]></dc:creator>
+      <category><![CDATA[Научно-популярное]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Инженерные системы]]></category>
+      <category><![CDATA[ии]]></category><category><![CDATA[llm]]></category><category><![CDATA[система]]></category><category><![CDATA[мнение]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Чем заменить ChatGPT Plus в 2026 году: 9 альтернатив, цены и возможности]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/bothub/articles/1086934/</guid>
+      <link>https://habr.com/ru/companies/bothub/articles/1086934/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086934</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f60/e2f/ad8/f60e2fad82409917e3c93c0f4c07d50f.png" /><p>ChatGPT Plus стоит $20 в месяц, но такая подписка нужна не всем. Если вы используете ChatGPT только для текстов, поиска информации, кода или нескольких рабочих задач, часть функций может оставаться без дела.</p><p>Заменить Plus можно по-разному: перейти на более дешёвый тариф, выбрать другой ИИ-сервис, использовать бесплатную модель, платить только за запросы через API или работать с несколькими моделями через агрегатор.</p><p>В статье сравним эти варианты по цене, возможностям и ограничениям. Главный вопрос не в том, какой сервис лучше ChatGPT, а в том, какие функции вам действительно нужны и можно ли получить их дешевле.</p> <a href="https://habr.com/ru/articles/1086934/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086934#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 12:30:09 GMT</pubDate>
+      <dc:creator><![CDATA[VerterWriter (BotHub)]]></dc:creator>
+      <category><![CDATA[Блог компании BotHub]]></category>
+      <category><![CDATA[chatgpt]]></category><category><![CDATA[claude]]></category><category><![CDATA[deepseek]]></category><category><![CDATA[perplexity]]></category><category><![CDATA[grok]]></category><category><![CDATA[генерация изображений]]></category><category><![CDATA[генерация кода]]></category><category><![CDATA[генерация текста]]></category><category><![CDATA[генерация видео]]></category><category><![CDATA[генерация музыки]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[ИИ‑агенты OpenAI опубликовали в интернете 53 пользовательских изображения без ведома компании]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086924/</guid>
+		<link>https://habr.com/ru/news/1086924/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086924</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/72a/cfd/742/72acfd742301f1d4af25eabe2852323e.JPG" /><p>В&nbsp;OpenAI <a href="https://openai.com/ru-RU/hugging-face-incident-and-misalignment/#model-misalignment-2026-09-25" rel="noopener nofollow">сообщили</a>, что 53&nbsp;пользовательских изображения, которые попали в&nbsp;обучающую выборку,&nbsp;были опубликованы ИИ‑агентами, работавшими в&nbsp;исследовательской среде, на&nbsp;общедоступных хостингах картинок.</p> <a href="https://habr.com/ru/articles/1086924/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Sat, 26 Sep 2026 10:57:03 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		<category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category>
+		<category><![CDATA[openai]]></category><category><![CDATA[chatgpt]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[изображения]]></category><category><![CDATA[персональные данные]]></category><category><![CDATA[раскрытие данных]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ИИ-агенты в инвестициях: собираем Telegram-ассистента и торгового робота на MCP Т-Инвестиций]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/tbank/articles/1086714/</guid>
+      <link>https://habr.com/ru/companies/tbank/articles/1086714/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086714</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/774/1c9/753/7741c9753d16fc2ac703c70aa02aae07.jpg" /><p>Привет, Хабр! Я Алексей Кабанов, разработчик в команде публичного API Т-Инвестиций. Недавно мы запустили MCP-сервер, позволяющий AI-агентам взаимодействовать с Т-Инвестициями: искать подходящие бумаги, анализировать рынок и портфель клиента. Расскажу, как можно построить автоматизацию на основе ИИ-агентов с использованием нашего MCP-сервера.</p><p>Еще недавно, чтобы автоматизировать даже несложный торговый алгоритм, приходилось писать собственный скрипт: Python, API брокера, cron и обработка ошибок на все случаи жизни. Профессиональные торговые системы существовали и раньше, но для частного инвестора порог входа оставался высоким. Сейчас между LLM и брокерским API появился стандартный слой — MCP, Model Context Protocol: модель может сама получить состояние портфеля, посмотреть стакан, выставить или отменить заявку, а вам достаточно описать задачу человеческим языком.</p><p>У Т-Инвестиций есть публичный MCP-сервер, и эта статья о том, как его использовать. Клиентом может быть что угодно: AI-агент вроде Hermes Agent, платформа автоматизации вроде n8n, десктопный ассистент, IDE. Разберем, чем эти подходы различаются и как они работают с MCP, что умеет сервер, а затем соберем два работающих примера.</p> <a href="https://habr.com/ru/articles/1086714/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086714#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 09:00:55 GMT</pubDate>
+      <dc:creator><![CDATA[AlekseyKab (Т-Банк)]]></dc:creator>
+      <category><![CDATA[Блог компании Т-Банк]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[финансы в it]]></category><category><![CDATA[агенты ии]]></category><category><![CDATA[инвестиции]]></category><category><![CDATA[mcp]]></category><category><![CDATA[n8n]]></category><category><![CDATA[hermes agent]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ИИ для тестировщика: стоит ли учить TestRigor и Copilot в 2026]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086156/</guid>
+      <link>https://habr.com/ru/articles/1086156/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086156</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f57/575/c37/f57575c37a743ae360d76cc3c509235c.png" /><p>ИИ для тестировщика в 2026 году перестал быть темой для докладов на конференциях и стал обычным рабочим инструментом. В опросе 800+ QA-специалистов, проведенном в начале года, 79% признались, что уже пользуются нейросетями в работе, но большинство применяет их как продвинутый поисковик и для разовых задач. Между «попросил у ChatGPT чек-лист» и «собрал агента, который сам пишет автотесты по спецификации» лежит заметная дистанция, и как раз под нее сейчас появляются отдельные курсы. </p><p>Ниже разберем, что на практике умеют TestRigor, Codex и Copilot, что про ИИ-навыки пишут работодатели и какие программы из <strong><a href="https://career.habr.com/courses/programmirovanie/testirovanie?utm_source=habr_edu&amp;utm_medium=picks_edu&amp;utm_campaign=a&amp;utm_content=qa_ai_courses7" rel="noopener nofollow">каталога Хабр Курсов</a></strong> учат работать с этим стеком.</p> <a href="https://habr.com/ru/articles/1086156/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086156#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 08:32:52 GMT</pubDate>
+      <dc:creator><![CDATA[top_picks_edu]]></dc:creator>
+      <category><![CDATA[Лучшие рекомендации]]></category>
+      <category><![CDATA[ии для тестирования]]></category><category><![CDATA[курсы по нейросетям 2026]]></category><category><![CDATA[обучение тестированию с нуля]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Claude в 2026: курсы, отзывы и почему на него переходят]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085864/</guid>
+      <link>https://habr.com/ru/articles/1085864/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085864</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/23a/9b3/bfa/23a9b3bfa0c755d23a72449608a6f0c2.png" /><p>Курсы по Claude в 2026 году появились в каталогах почти всех крупных онлайн-школ, хотя сама нейросеть в России официально недоступна. Этот парадокс хорошо описывает ситуацию, потому что спрос на Claude растет снизу, от разработчиков, аналитиков и маркетологов, которые находят обходные пути и потом рассказывают о результатах в отзывах. Вокруг модели успело накопиться много громких утверждений, от «умнее всех остальных» до «без него уже не обойтись», и часть из них при проверке оказывается маркетингом. </p><p>Ниже разберем эти утверждения по фактам, сравним 5 программ из <strong><a href="https://career.habr.com/courses/nejronnye-seti/claude?utm_source=habr_edu&amp;utm_medium=picks_edu&amp;utm_campaign=a&amp;utm_content=claude_courses7" rel="noopener nofollow">каталога Хабр Курсов</a></strong> и покажем, как за 15 минут отличить курс по Claude от курса, где нейросеть просто упомянута в списке.</p> <a href="https://habr.com/ru/articles/1085864/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085864#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 06:24:43 GMT</pubDate>
+      <dc:creator><![CDATA[top_picks_edu]]></dc:creator>
+      <category><![CDATA[Лучшие рекомендации]]></category>
+      <category><![CDATA[claude 2026]]></category><category><![CDATA[курсы по claude code]]></category><category><![CDATA[обучение нейросетям с нуля]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Особенности агентской разработки ПО, обеспечивающей соответствие замыслу и требованиям]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086884/</guid>
+      <link>https://habr.com/ru/articles/1086884/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086884</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/204/8d0/c82/2048d0c82ab91375b171bf50baaf8844.jpg" /><p>Больше тридцати лет я строю процессы в бизнесах разного масштаба — от компаний на два человека до компаний на несколько тысяч. Последние полтора года мы с&nbsp;<a href="https://habr.com/users/skazkin" rel="noopener nofollow">@skazkin</a>  &nbsp;строим компанию, в которой код на сто процентов пишут ИИ-агенты, а не люди. Мой участок в этой работе — не код, а процесс: как устроена система, гарантирующая, что результат работы агента действительно соответствует поставленной задаче и отвечает всем требованиям по качеству.</p><p>Этот текст — систематизация моего понимания особенностей работы агента по в рамках процесса разработки.</p><p><strong>Задача.</strong>&nbsp;Разработка ПО с помощью ИИ-агентов, результат которой <strong>должен&nbsp;соответствовать замыслу доказано соответствовать требованиям</strong>&nbsp;— а не просто быть написанным и запущенным.</p><p><strong>Основная идея.</strong>&nbsp;Чтобы получить код, соответствующий требованиям, не нужно изобретать новую методологию. Управление требованиями и их изменением, независимая верификация, контроль кода, статистический контроль процесса — всё это давно разработано, формализовано в стандартах и опробовано на людях; в своих принципах эта дисциплина переносится на агентов целиком. Систему агентской разработки следует строить из тех же контуров. Но агент как исполнитель обладает свойствами, отличными от свойств человека-исполнителя, и эти свойства&nbsp;<strong>смещают акценты внутри знакомых контуров</strong>: значительная часть того, что в человеческой разработке получалась «сама собой» — за счёт памяти исполнителей, их вопросов, неловкости перед коллегами, выученных привычек, — для агента не существует, и соответствующая функция должна исполняться системой явно, как механически закреплённый элемент.</p> <a href="https://habr.com/ru/articles/1086884/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086884#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Sat, 26 Sep 2026 06:12:56 GMT</pubDate>
+      <dc:creator><![CDATA[exsoko]]></dc:creator>
+      <category><![CDATA[Developer Relations]]></category><category><![CDATA[IT-стандарты]]></category>
+      <category><![CDATA[aicoding]]></category><category><![CDATA[development]]></category><category><![CDATA[management]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[AGI как когнитивная ОС: что если искать программы, а не веса]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086854/</guid>
+      <link>https://habr.com/ru/articles/1086854/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086854</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/62b/f16/085/62bf16085b78934c8411550a146617fb.png" /><p>Представьте, что вам передали на поддержку систему. Она работает — и работает блестяще: пишет код, переводит, рассуждает, шутит. Документации нет. Исходников нет. Есть бинарник на несколько сотен гигабайт и лог того, как его собирали. На вопрос «а как оно устроено внутри?» команда честно разводит руками.</p><p>Примерно так сегодня выглядят большие языковые модели. Мы научились компилировать интеллект из данных, но не научились писать — и даже толком читать — его исходный код.</p> <a href="https://habr.com/ru/articles/1086854/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086854#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 22:10:03 GMT</pubDate>
+      <dc:creator><![CDATA[Minebot]]></dc:creator>
+      <category><![CDATA[Машинное обучение]]></category><category><![CDATA[Математика]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[AI]]></category><category><![CDATA[ИИ]]></category><category><![CDATA[program synthesis]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Бесплатные AI-агенты для программирования в 2026 году: что действительно можно использовать бесплатно]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086812/</guid>
+      <link>https://habr.com/ru/articles/1086812/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086812</link>
+      <description><![CDATA[<p>Бесплатный AI-кодинг в 2026 году уже далеко не всегда означает несколько запросов в день.</p><p>Я собрал 10 AI coding agents, которыми можно пользоваться бесплатно: OpenCode, Freebuff, Cline, Kilo Code, Cursor, Codex, TRAE, ZCode, CodeGPT и Antigravity. Сравнил не только сами приложения, но и бесплатные модели, реальные лимиты, trial-периоды, BYOK, локальные модели и цены платных тарифов</p><p>Все данные в статье актуальны на 25 сентября 2026 года.</p> <a href="https://habr.com/ru/articles/1086812/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086812#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 16:19:07 GMT</pubDate>
+      <dc:creator><![CDATA[MihaDeev]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Исследования и прогнозы в IT]]></category>
+      <category><![CDATA[ai-агенты]]></category><category><![CDATA[бесплатный ии агент]]></category><category><![CDATA[free ai]]></category><category><![CDATA[програмирование]]></category><category><![CDATA[вайб-кодинг]]></category><category><![CDATA[разбор]]></category><category><![CDATA[обзор]]></category><category><![CDATA[обзор ии агентов]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Нейрофулстек: кто это и как войти в разработку с ИИ в 2026 году]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085740/</guid>
+      <link>https://habr.com/ru/articles/1085740/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085740</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4f9/7b2/10d/4f97b210d1fb71ab8fb60ed6c0852feb.png" /><p>Нейрофулстек еще год назад звучал как маркетинговый гибрид из двух модных слов, а в 2026 году под этим названием уже продают отдельную профессию с программой на 10 месяцев. Суть в том, что разработчик полного цикла пишет фронтенд и бэкенд вместе с ИИ-агентами, ставит им задачи, проверяет результат и держит в голове архитектуру, которую нейросеть целиком не видит. </p><p>Рынок подталкивает к такой модели довольно жестко, потому что крупные компании уже записывают долю сгенерированного кода во внутренние планы. Ниже разберем, что на самом деле стоит за профессией нейрофулстек-разработчика, чего от нее ждут работодатели и какие программы из <strong><a href="https://career.habr.com/courses/nejronnye-seti?utm_source=habr_edu&amp;utm_medium=picks_edu&amp;utm_campaign=a&amp;utm_content=neuro_fullstack7" rel="noopener nofollow">каталога Хабр Курсов</a></strong> помогают в нее войти или перестроить на новый лад уже привычную работу.</p> <a href="https://habr.com/ru/articles/1085740/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085740#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 16:15:50 GMT</pubDate>
+      <dc:creator><![CDATA[top_picks_edu]]></dc:creator>
+      <category><![CDATA[Лучшие рекомендации]]></category>
+      <category><![CDATA[нейрофулстек 2026]]></category><category><![CDATA[разработка с ии]]></category><category><![CDATA[курсы по программированию]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[DBA Agent в действии: 10 тысяч тикетов и 99,6% автоматизации второй линии поддержки]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/sberbank/articles/1086740/</guid>
+      <link>https://habr.com/ru/companies/sberbank/articles/1086740/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086740</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/0c5/0f5/f0d/0c50f5f0d0072602458b3df5d0c21856.jpeg" /><p>Привет, Хабр! Это четвёртая статья цикла про&nbsp;R&amp;D‑исследование для&nbsp;небольшой команды DBA. </p><p>Мы начали с&nbsp;того, что&nbsp;решили упростить мониторинг парка из более чем 800 экземпляров нашей СУБД Platform V Pangolin DB (реляционная СУБД на&nbsp;базе PostgreSQL) с помощью доработки postgres_exporter. А&nbsp;потом и вовсе собрали автономный агент, который сам обрабатывает тикеты: очищает дисковое пространство, выполняет VACUUM/ANALYZE и планирует остановки БД. </p><p>В&nbsp;этой статье расскажу, как&nbsp;мы продолжили тестировать гипотезу с&nbsp;агентом: перевели его в&nbsp;режим второй&nbsp;линии поддержки и замеряли реальные результаты. Будут числа, примеры, использование LLM для&nbsp;анализа паттернов, миграция задач из&nbsp;Pipeliner и планы по&nbsp;дальнейшему R&amp;D и превращению агента в&nbsp;полноценную вторую&nbsp;линию поддержки.</p> <a href="https://habr.com/ru/articles/1086740/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086740#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 16:13:01 GMT</pubDate>
+      <dc:creator><![CDATA[Pelmen421 (Сбер)]]></dc:creator>
+      <category><![CDATA[Блог компании Сбер]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Базы данных]]></category>
+      <category><![CDATA[platform v]]></category><category><![CDATA[сбертех]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[мониторинг]]></category><category><![CDATA[базы_данных]]></category><category><![CDATA[субд]]></category><category><![CDATA[postgresql]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Kimi, MiniMax Code и ZCode в OpenResearch: форк за один вечер вместе с Claude Opus 5.5]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086796/</guid>
+      <link>https://habr.com/ru/articles/1086796/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086796</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a8b/a00/179/a8ba001798cac91cee705ffa731390f1.png" /><p><strong>OpenResearch</strong> от alphaXiv превращает coding-агентов в исследовательских. Из коробки он работал с Claude Code, Codex, OpenCode, Cursor и Google Antigravity. Мне хотелось использовать в нём ещё три агента, которые уже стояли у меня на Windows: <strong>Kimi Code</strong>, <strong>MiniMax Code</strong> и <strong>ZCode</strong>. Я поставил эту задачу Claude Code в облачной сессии и получил форк с релизом для Windows и Linux, в котором новые агенты работают наравне со старыми.</p><p>Дальше рассказываю, что такое OpenResearch, как мы разделили работу, как устроены адаптеры и на какие грабли наступили. Их набралось 13.</p> <a href="https://habr.com/ru/articles/1086796/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086796#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 15:26:22 GMT</pubDate>
+      <dc:creator><![CDATA[castos]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Open source]]></category>
+      <category><![CDATA[opus 5.5]]></category><category><![CDATA[claude code]]></category><category><![CDATA[openresearch]]></category><category><![CDATA[kimi code]]></category><category><![CDATA[minimax code]]></category><category><![CDATA[zcode]]></category><category><![CDATA[сезон код будущего]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ИИ-навыки в резюме в 2026 году: требуют ли их работодатели на самом деле]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085346/</guid>
+      <link>https://habr.com/ru/articles/1085346/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085346</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f57/482/b40/f57482b40f843f19c002f24a496ac556.png" /><p>ИИ-навыки в резюме за 2 года из экзотики превратились в строчку, которую советуют добавить карьерные консультанты, блогеры и реклама онлайн-школ. Данные hh.ru при этом выглядят куда спокойнее, потому что работодатели прямо упоминают нейросети примерно в 2% вакансий, хотя резюме с такими навыками с 2023 года стало в 3 раза больше. </p><p>В статье разберем, где нейросети действительно спрашивают, какие популярные утверждения не выдерживают проверки цифрами и какие курсы из <strong><a href="https://career.habr.com/courses/nejronnye-seti?utm_source=habr_edu&amp;utm_medium=picks_edu&amp;utm_campaign=a&amp;utm_content=ai_skills_cv7" rel="noopener nofollow">каталога Хабр Курсов</a></strong> помогут подкрепить строчку в резюме реальным кейсом.</p> <a href="https://habr.com/ru/articles/1085346/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085346#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 14:31:43 GMT</pubDate>
+      <dc:creator><![CDATA[top_picks_edu]]></dc:creator>
+      <category><![CDATA[Лучшие рекомендации]]></category>
+      <category><![CDATA[ии-навыки 2026]]></category><category><![CDATA[курсы по нейросетям 2026]]></category><category><![CDATA[обучение нейросетям с нуля]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Маршрутизация ИИ-моделей: когда одной модели недостаточно]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/hexlet/articles/1086774/</guid>
+      <link>https://habr.com/ru/companies/hexlet/articles/1086774/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086774</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/8c9/d88/8a5/8c9d888a5aa2b36c4c7fa466d8097200.jpg" /><p><strong>Для разных задач требуются разные модели. Одни быстрее, другие дешевле. Есть те, что показывают лучшие результаты в анализе данных, и есть те, что лучше подходят для кодинга. Иногда выбор определяют требования к обработке данных, внутренней инфраструктуре, информационной безопасности и соблюдению регуляторных норм.&nbsp;</strong></p><p><strong>Чтобы собрать все эти суперспособности воедино, пригодится маршрутизация или роутинг моделей.&nbsp;</strong></p> <a href="https://habr.com/ru/articles/1086774/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086774#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 14:07:38 GMT</pubDate>
+      <dc:creator><![CDATA[darovska_online (Хекслет)]]></dc:creator>
+      <category><![CDATA[Блог компании Хекслет]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Управление разработкой]]></category><category><![CDATA[Управление проектами]]></category>
+      <category><![CDATA[искусственный интеллект]]></category><category><![CDATA[модели]]></category><category><![CDATA[маршрутизация]]></category><category><![CDATA[роутинг]]></category><category><![CDATA[llm]]></category><category><![CDATA[разработка]]></category><category><![CDATA[claude code]]></category><category><![CDATA[litellm]]></category><category><![CDATA[gemini]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[GlowByte приняла участие в конференции Smart Data — 2026 в Китае]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/glowbyte/news/1086624/</guid>
+		<link>https://habr.com/ru/companies/glowbyte/news/1086624/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086624</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/6f5/61f/fb8/6f561ffb832d47d956ccffea14ec175c.jpg" /><p>GlowByte приняла участие в 8-й международной конференции FanRuan Smart Data Conference – 2026, которая прошла 10–12 сентября в Ухане, в отеле InterContinental Wuhan. Лозунг конференции в этом году – «Данные и ИИ. Что дальше» (Data &amp; <em>AI </em>Next).</p><p>Мероприятие собрало более 2100 участников из Китая, Японии, ОАЭ, Южной Кореи, Монголии, России, Казахстана, Узбекистана и Азербайджана. Вместе с GlowByte конференцию посетили ее клиенты – «МЕТРО», Банк Уралсиб, «Дикси», ПИК, Т2, «Сбербанк страхование жизни», «АльфаСтрахование», «Европлан», «Альфа-Лизинг», «Лента», Systeme Electric и ОТП Банк. С международной сцены прозвучали доклады представителей ОТП Банка, АО «Гранд Трейд», «МЕТРО» и Банка Уралсиб.</p> <a href="https://habr.com/ru/articles/1086624/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 25 Sep 2026 14:02:12 GMT</pubDate>
+    <dc:creator><![CDATA[SnezhSh (GlowByte)]]></dc:creator>
+		<category><![CDATA[Блог компании GlowByte]]></category><category><![CDATA[Big Data]]></category><category><![CDATA[Конференции]]></category><category><![CDATA[Визуализация данных]]></category><category><![CDATA[Искусственный интеллект]]></category>
+		<category><![CDATA[glowbyte]]></category><category><![CDATA[fanruan]]></category><category><![CDATA[finebi]]></category><category><![CDATA[визуализация данных]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[дашборды]]></category><category><![CDATA[бизнес-аналитика]]></category><category><![CDATA[bi]]></category><category><![CDATA[business intelligence]]></category><category><![CDATA[безопасность данных]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Модульная надстройка для JasperReports: один стандарт и три идеи. Часть 2]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086768/</guid>
+      <link>https://habr.com/ru/articles/1086768/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086768</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/31e/325/efb/31e325efbd3e6f5b4fd413cba88af408.png" /><p>Во второй части серии — чего ждёт от инструмента отчётов современный Java-разработчик и на каких идеях я собрал свою надстройку над JasperReports — не переписывая движок и не отказываясь от Jaspersoft Studio.</p><p>Один стандарт вместо нескольких способов передать данные: в отчёт едут обычные Java-объекты. Дерево вместо плоской сетки банд: отчёт собирается из модулей, вложенных друг в друга, включая повторяющиеся. Слои: данные добывает Java, вёрстка остаётся в JRXML и в Studio. И объект как единый носитель структуры, данных и имён — вместо одного и того же смысла, продублированного и в XML, и в коде.</p><p>Отдельно — ответ на возражение из комментариев к первой статье: зачем вообще выносить выборку данных из шаблона, если Jasper умеет ходить в базу сам.</p><p>Первая часть серии — <a href="https://habr.com/ru/articles/1086756/" rel="noopener nofollow">откуда взялся Jasper и почему он так устроен</a>.</p> <a href="https://habr.com/ru/articles/1086768/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086768#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 13:50:46 GMT</pubDate>
+      <dc:creator><![CDATA[hhdevr]]></dc:creator>
+      <category><![CDATA[Java]]></category><category><![CDATA[Open source]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Проектирование и рефакторинг]]></category>
+      <category><![CDATA[jasperreports]]></category><category><![CDATA[java]]></category><category><![CDATA[open source]]></category><category><![CDATA[jrxml]]></category><category><![CDATA[spring boot]]></category><category><![CDATA[отчёты]]></category><category><![CDATA[pdf]]></category><category><![CDATA[аннотационный процессор]]></category><category><![CDATA[субрепорты]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[1700 строк JS и ни одного видеофайла: как ИИ-агент снимает кино на Canvas и рендерит его в MP4]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086766/</guid>
+      <link>https://habr.com/ru/articles/1086766/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086766</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/d5d/97e/e98/d5d97ee983daada0aeb47bd4092b1d3a.jpg" /><p>В этом минутном фильме нет ни одной картинки, видеофайла или сэмпла. Огонь, гравюру, 3D-сферу, пиксельную игру и музыку рисует и синтезирует один HTML-файл на 1700 строк, и написал его ИИ-агент. Без правил тот же агент выдаёт унылую заставку: синий фон, неон, всё ползёт линейно. Разбираю, что это меняет: кадр как чистая функция draw(ctx, t), рендер в MP4 без единого рывка и агент, который сам проверяет фильм по таймкодам.</p> <a href="https://habr.com/ru/articles/1086766/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086766#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 13:49:51 GMT</pubDate>
+      <dc:creator><![CDATA[Kisel_n]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Open source]]></category><category><![CDATA[WebGL]]></category><category><![CDATA[Canvas]]></category><category><![CDATA[Программирование]]></category>
+      <category><![CDATA[canvas]]></category><category><![CDATA[webgl]]></category><category><![CDATA[three.js]]></category><category><![CDATA[web audio]]></category><category><![CDATA[ffmpeg]]></category><category><![CDATA[playwright]]></category><category><![CDATA[claude code]]></category><category><![CDATA[codex]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[моушн-графика]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Модульная надстройка для JasperReports: откуда взялся Jasper и почему он так устроен. Часть 1]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086756/</guid>
+      <link>https://habr.com/ru/articles/1086756/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086756</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/c3d/a31/6df/c3da316df0cfed38e416084f70ea565e.png" /><p>JasperReports появился в самом начале нулевых: румынский разработчик Теодор Данчу делал большой Java-проект, где нужно было формировать и печатать много сложных документов, а готовые решения оказались проекту не по карману. Прошло двадцать пять лет, движок жив и широко используется, а работают с ним примерно так же, как тогда. И на это есть причины, которые лежат в его происхождении.</p><p>В первой части серии — откуда взялся Jasper и почему он устроен именно так. Почему отчёт умеет сам ходить в базу и что из этого выросло: несколько разных способов передать в него данные, ручной вайринг субрепортов через строковые имена параметров и роли разработчика и верстальщика, между которыми нет чёткой границы. Плюс короткий срез состояния движка в 2026 году.</p><p>Это не критика. Ядро у Jasper мощное, просто он наследник другой традиции — той, где отчёт является самостоятельным приложением, а не частью вашего.</p> <a href="https://habr.com/ru/articles/1086756/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086756#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 13:27:32 GMT</pubDate>
+      <dc:creator><![CDATA[hhdevr]]></dc:creator>
+      <category><![CDATA[Java]]></category><category><![CDATA[Open source]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Проектирование и рефакторинг]]></category>
+      <category><![CDATA[jasperreports]]></category><category><![CDATA[java]]></category><category><![CDATA[open source]]></category><category><![CDATA[jrxml]]></category><category><![CDATA[spring boot]]></category><category><![CDATA[отчёты]]></category><category><![CDATA[аннотационный процессор]]></category><category><![CDATA[субрепорты]]></category><category><![CDATA[pdf]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Оценка AI‑агентов: 7 ошибок, из‑за которых тесты врут]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/otus/articles/1077946/</guid>
+      <link>https://habr.com/ru/companies/otus/articles/1077946/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1077946</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f92/d12/c6c/f92d12c6cebf644fe625a6fca71440fe.png" /><p>Зелёный статус eval‑тестов ещё не&nbsp;гарантирует, что&nbsp;AI‑агент работает корректно: он может выдавать правильный ответ, но&nbsp;выполнять неверные действия или&nbsp;не&nbsp;выполнять их вовсе. </p><p>В&nbsp;статье разбираем семь ошибок оценки AI‑агентов и показываем, какие подходы помогают измерять реальное качество системы.</p> <a href="https://habr.com/ru/articles/1077946/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1077946#habracut">Разобрать ошибки</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 13:05:37 GMT</pubDate>
+      <dc:creator><![CDATA[sproshchaev (OTUS)]]></dc:creator>
+      <category><![CDATA[Блог компании OTUS]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Тестирование IT-систем]]></category><category><![CDATA[Анализ и проектирование систем]]></category>
+      <category><![CDATA[AI-агенты]]></category><category><![CDATA[LLM]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[машинное обучение]]></category><category><![CDATA[оценка качества]]></category><category><![CDATA[тестирование]]></category><category><![CDATA[eval]]></category><category><![CDATA[AgentOps]]></category><category><![CDATA[автоматизация]]></category><category><![CDATA[разработка]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Jev — нейросеть, которая не пишет текст, экономит бизнесу деньги]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086746/</guid>
+      <link>https://habr.com/ru/articles/1086746/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086746</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/ef2/0e6/086/ef20e60867828bcaa92b6f10fb5737a0.jpg" /><p>Когда речь идет о&nbsp;нейросетях, мы представляем некого нашего ассистента, который пишет условно скажем какой‑то текст. Но&nbsp;есть модели, которые устроены иначе. Которые не&nbsp;генерируют слова, а&nbsp;придуманы для&nbsp;решения проблем.&nbsp;Быстро, дешево и что&nbsp;самое интересное, с&nbsp;указанием вероятности. Одна из&nbsp;таких моделей&nbsp;— Jev. Она не&nbsp;поддерживает диалог, не&nbsp;ответить вам на&nbsp;вопросы и не&nbsp;объясняет вам свои ответы. Предназначение этой модели в&nbsp;другом. Она получает данные и список вопросов, и выдает вам вероятность для&nbsp;каждого варианта. Простыми словами, это умный переключатель для&nbsp;программ. И посреди тысячи мелких задач и принятие решений в&nbsp;день, модель раскрывается лучше всего.</p> <a href="https://habr.com/ru/articles/1086746/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086746#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 13:01:58 GMT</pubDate>
+      <dc:creator><![CDATA[Hoos077]]></dc:creator>
+      <category><![CDATA[Бизнес-модели]]></category>
+      <category><![CDATA[jev]]></category><category><![CDATA[typesafe]]></category><category><![CDATA[бизнес]]></category><category><![CDATA[анализ]]></category><category><![CDATA[модель]]></category><category><![CDATA[ии модель]]></category><category><![CDATA[ии модели]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[GitHub Copilot получил локальную изолированную среду для выполнения действий]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/otus/news/1086734/</guid>
+		<link>https://habr.com/ru/companies/otus/news/1086734/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086734</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/928/803/963/9288039631f2ff287b20370944fb93b1.jpg" /><p>GitHub добавил в приложение Copilot локальные изолированные среды (local sandboxes), которые позволяют агенту выполнять действия с кодом внутри ограниченного окружения на компьютере разработчика. Такой подход призван дать Copilot больше возможностей для работы с проектами, сохраняя контроль над доступом к файлам, командам и ресурсам системы. Разбираемся, как устроена новая модель взаимодействия с ИИ-агентом и какие задачи она помогает решать.</p> <a href="https://habr.com/ru/articles/1086734/#habracut">Узнать подробнее</a>]]></description>
+		
+		<pubDate>Fri, 25 Sep 2026 12:54:42 GMT</pubDate>
+    <dc:creator><![CDATA[MaxRokatansky (OTUS)]]></dc:creator>
+		<category><![CDATA[Блог компании OTUS]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Программирование]]></category>
+		<category><![CDATA[ии-агенты]]></category><category><![CDATA[GitHub Copilot]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[безопасность кода]]></category><category><![CDATA[автоматизация разработки]]></category><category><![CDATA[изолированная среда]]></category><category><![CDATA[песочница]]></category><category><![CDATA[инструменты разработчика]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Ищем спикеров на зимнюю Conversations: опен‑колл до 10 октября]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/just_ai/news/1085578/</guid>
+		<link>https://habr.com/ru/companies/just_ai/news/1085578/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085578</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/fc1/f50/d42/fc1f50d4244a49e1dbaee87592b53dbf.png" /><p><strong>Опен-колл на зимнюю <a href="https://conversations-ai.com/?utm_source=habrjustai&amp;utm_medium=post&amp;utm_campaign=conversations">Conversations</a> закрывается 10 октября.</strong> У нас ценят зрелые кейсы, смелые эксперименты (с метриками!), челленджи, а также AI-истории, которые заставляют иначе взглянуть на задачи.<br><br>Внутри — хот-топики трека «Продукты и технологии» и первые спикеры. Готовы поделиться опытом?<strong> </strong><a href="https://conversations-ai.com/speaker_form">Подайте заявку</a> на выступление!</p> <a href="https://habr.com/ru/articles/1085578/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 25 Sep 2026 12:30:43 GMT</pubDate>
+    <dc:creator><![CDATA[just_ai (Just AI)]]></dc:creator>
+		<category><![CDATA[Блог компании Just AI]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Конференции]]></category>
+		<category><![CDATA[искусственный интеллект]]></category><category><![CDATA[конференция]]></category><category><![CDATA[ии]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[ии для бизнеса]]></category><category><![CDATA[продуктовая разработка]]></category><category><![CDATA[вайбкодинг]]></category><category><![CDATA[кейсы]]></category><category><![CDATA[genai]]></category><category><![CDATA[agentops]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[После Copilot: как «Диасофт» строит AI-Native SDLC вместо ИИ-ассистентов]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/diasoft_company/articles/1086694/</guid>
+      <link>https://habr.com/ru/companies/diasoft_company/articles/1086694/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086694</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/ffe/548/527/ffe548527094b33f8c92427ff6e3faf7.png" /><p>Привет, Хабр!</p><p>Я Дмитрий Старов, директор департамента «Инструменты и технологии разработки» компании «Диасофт».</p><p>Еще относительно недавно вопрос звучал так: сможет ли искусственный интеллект писать код?</p><p>Сегодня этот вопрос уже не кажется самым интересным. Современные модели умеют генерировать код, находить ошибки, писать тесты и объяснять, как работает тот или иной фрагмент программы. Каждые несколько месяцев появляются новые AI-ассистенты, и каждый обещает работать быстрее, точнее или самостоятельнее, чем предыдущий.</p><p>Все это действительно меняет роль разработчика. Но если посмотреть на крупные&nbsp;enterprise-системы, становится понятно, что скорость написания кода&nbsp;–&nbsp;уже давно не главный фактор.</p><p>Гораздо сложнее понять, что именно нужно изменить, как это изменение впишется в существующую архитектуру, не нарушит ли оно работу других компонентов системы и пройдет ли все обязательные проверки. Речь идет о том, что можно назвать AI SDLC – подходом к жизненному циклу разработки, в котором AI изначально встроен как полноценный участник, а не подключается сбоку. В корпоративной разработке путь от требования до рабочего решения гораздо длиннее, чем кажется, если смотреть только на код.&nbsp;</p><p>Это наблюдение заставило нас в «Диасофт» по-другому посмотреть на роль AI. Мы не считаем, что основные усилия должны быть направлены на то, чтобы модель писала код еще лучше. Все гораздо серьезнее, потому что использование AI полностью перестраивает процесс разработки и даже сам состав инженерной команды.<br><br>7 октября я вместе со своими коллегами в прямом эфире покажу как устроена наша AI SDLC архитектура (ссылка - в конце статьи).</p> <a href="https://habr.com/ru/articles/1086694/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086694#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 12:01:12 GMT</pubDate>
+      <dc:creator><![CDATA[stard (Диасофт)]]></dc:creator>
+      <category><![CDATA[Блог компании Диасофт]]></category><category><![CDATA[IT-инфраструктура]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Высоконагруженные системы]]></category>
+      <category><![CDATA[экосистема digital q]]></category><category><![CDATA[ai native]]></category><category><![CDATA[sdlc]]></category><category><![CDATA[ии-разработка]]></category><category><![CDATA[ai-driven разработка]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[ai-агенты]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Обзор MWS AI Agents Platform: платформы для создания ИИ-агентов]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/mts_ai/articles/1086570/</guid>
+      <link>https://habr.com/ru/companies/mts_ai/articles/1086570/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086570</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/2fd/a4b/68d/2fda4b68dfa52d5e4c067f59a8f511bd.png" /><p>Почти каждый, кто собирал ИИ-агента для бизнеса, проходил один и тот же путь: быстрый прототип на коленке, радостное демо, а потом месяцы на то, чтобы прикрутить логирование, мониторинг, версионирование промптов, права доступа и выкатку в прод.&nbsp;</p><p>Обычно я пишу здесь разборы научных статей про LLM и ИИ в целом. В этот раз жанр другой: расскажу о<a href="https://mts.ai/product/ai-agents-platform/"> MWS AI Agents Platform</a>, платформе, которая как раз берет на себя обвязку, превращающую LLM и теорию из статей в работающие проекты.</p><p>В проде платформа используется с конца прошлого года, но до обзора руки дошли только сейчас, после семи релизов.&nbsp; Разберу, как она устроена, что на ней можно собрать и где у нее границы.</p> <a href="https://habr.com/ru/articles/1086570/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086570#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 11:00:27 GMT</pubDate>
+      <dc:creator><![CDATA[SecretEditor (MWS AI, МТС)]]></dc:creator>
+      <category><![CDATA[Блог компании MWS AI]]></category><category><![CDATA[Блог компании МТС]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Проектирование и рефакторинг]]></category><category><![CDATA[Управление разработкой]]></category>
+      <category><![CDATA[ИИ-агенты]]></category><category><![CDATA[LLM]]></category><category><![CDATA[AI agents]]></category><category><![CDATA[RAG]]></category><category><![CDATA[оркестрация агентов]]></category><category><![CDATA[память агентов]]></category><category><![CDATA[инженерия контекста]]></category><category><![CDATA[AgentOps]]></category><category><![CDATA[low-code]]></category><category><![CDATA[MWS AI Agents Platform]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Требования заказчиков к LLM/AI Firewall]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/infera_security/articles/1086434/</guid>
+      <link>https://habr.com/ru/companies/infera_security/articles/1086434/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086434</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/ae1/9a1/691/ae19a16910933e0f61100b1ceeba93f2.jpg" /><p>Корпоративный ИИ перестал быть пилотным проектом в одном департаменте. Запросы к моделям идут из IDE, внутренних ассистентов, агентных контуров и «теневых» чатов сотрудников. При этом поверхность атаки выглядит иначе, чем у классического периметра: промпт-инъекция, утечка ПДн во внешнюю модель, неконтролируемый расход токенов, вызов инструмента ИИ-агентом без права на это действие.</p><p>В этой статье <strong>сделаем разбор реальной матрицы требований к LLM/AI Firewall</strong>. Цель статьи – не каталог фич, а карта того, <strong>что Заказчик считает обязательным</strong>, и как эти требования складываются в архитектуру контроля, где важны границы доверия, деньги, регуляторика и управляемость.</p><p>За последний год сильно изменились требования крупных enterprise компании к защите генеративного ИИ. Сначала это был короткий перечень задач к «прокси для ChatGPT». Сейчас это матрица на десятки страниц, в которой описаны <strong>более 500 формализованных требований</strong>: сначала стандартные задачи, а затем том требований к ИИ-агентам, MCP, 152-ФЗ, цепочке поставок моделей и т.д. Это уже не запрос на фильтр. Это запрос на контрольный контур.</p> <a href="https://habr.com/ru/articles/1086434/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086434#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 10:30:23 GMT</pubDate>
+      <dc:creator><![CDATA[INFERA (INFERA Security)]]></dc:creator>
+      <category><![CDATA[Блог компании INFERA Security]]></category><category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[LLM AI Firewall]]></category><category><![CDATA[INFERA AI Firewall]]></category><category><![CDATA[расход LLM-токенов]]></category><category><![CDATA[маршрутизация запросов к ИИ]]></category><category><![CDATA[требования к LLM Firewall]]></category><category><![CDATA[архитектуру контроля ИИ]]></category><category><![CDATA[INFERA AI SafeAgent]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Я не боюсь, что меня заменит ИИ. Я боюсь работать с ИИ]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086600/</guid>
+      <link>https://habr.com/ru/articles/1086600/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086600</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/0df/75d/c2f/0df75dc2f4996548b82c0a7eeab196ce.jpg" /><p>Я не&nbsp;боюсь, что&nbsp;ИИ заберёт мою работу. Боюсь, что&nbsp;именно это и станет моей работой: читать чужой diff, строить вокруг агента harness и отчитываться токенами.</p> <a href="https://habr.com/ru/articles/1086600/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086600#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 10:00:21 GMT</pubDate>
+      <dc:creator><![CDATA[NikTimf]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Софт]]></category><category><![CDATA[Ненормальное программирование]]></category><category><![CDATA[Карьера в IT-индустрии]]></category>
+      <category><![CDATA[вайбкодинг]]></category><category><![CDATA[ИИ-агенты]]></category><category><![CDATA[LLM]]></category><category><![CDATA[разработка ПО]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Вайбкодинг всерьёз: деньги на токены и очень неоднозначные ощущения]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086596/</guid>
+      <link>https://habr.com/ru/articles/1086596/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086596</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4df/3e1/7b6/4df3e17b6904c651f4ce6eadd54c16de.jpg" /><p>Мой код работает. Он собирается, проходит тесты и делает ровно то, что&nbsp;задумывалось. Проблема в&nbsp;другом: я не&nbsp;могу с&nbsp;уверенностью сказать, что&nbsp;именно внутри него происходит, и это <strong>напрямую угрожало</strong> добавлением новых фишек.</p><p>Первую версию проекта мы с&nbsp;другом писали почти руками, зато каждый коммит&nbsp;был понятен до&nbsp;последней строки. Потом я остался один, подключил AI‑агентов, и темп вырос настолько, что&nbsp;моё понимание перестало успевать за&nbsp;строчками. Итог <strong>четырёх месяцев</strong> такой гонки: деньги на&nbsp;токены, сожжённые все бесплатные&nbsp;лимиты, какие вообще можно&nbsp;было найти, и ядро проекта, переписанное несколько раз. О&nbsp;том, как&nbsp;я докатился до&nbsp;такой жизни и почему больше не&nbsp;хочу так работать.</p> <a href="https://habr.com/ru/articles/1086596/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086596#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 09:55:20 GMT</pubDate>
+      <dc:creator><![CDATA[swap2bin]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Ненормальное программирование]]></category><category><![CDATA[Управление разработкой]]></category><category><![CDATA[Учебный процесс в IT]]></category>
+      <category><![CDATA[вайбкодинг]]></category><category><![CDATA[агентное программирование
+LLM]]></category><category><![CDATA[контекст-инжиниринг]]></category><category><![CDATA[vibecoding]]></category><category><![CDATA[агент]]></category><category><![CDATA[опыт использования]]></category><category><![CDATA[Claude Code]]></category><category><![CDATA[Codex]]></category><category><![CDATA[DeepSeek]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[BI в эпоху ИИ: BI больше не нужен? Да здравствует BI]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/luxms_bi/articles/1086568/</guid>
+      <link>https://habr.com/ru/companies/luxms_bi/articles/1086568/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086568</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/6dd/7eb/3a0/6dd7eb3a0c3c74c878c377ed08ce05eb.png" /><p>В последнее время мы все чаще слышим тезис: «Классический BI больше не нужен». Ведь сегодня можно открыть чат, попросить нейронку нарисовать красивый дэшборд с фильтрами и графиками, а потом спросить, что происходит с условной выручкой. Нейронка быстро соберет интерфейс, ответит на вопрос, а в следующий раз можно вообще не использовать старый дэшборд, а просто сделать новый.</p><p>Звучит так, будто привычная модель использования BI действительно начинает терять смысл. <strong>Но что именно устаревает - необходимость анализировать данные или наше представление о том, как должна работать аналитическая система?</strong></p><p>В этой статье попробуем разобраться.</p> <a href="https://habr.com/ru/articles/1086568/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086568#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 09:16:45 GMT</pubDate>
+      <dc:creator><![CDATA[Luxms (Luxms BI)]]></dc:creator>
+      <category><![CDATA[Блог компании Luxms BI]]></category><category><![CDATA[Анализ и проектирование систем]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Big Data]]></category><category><![CDATA[Визуализация данных]]></category>
+      <category><![CDATA[luxms]]></category><category><![CDATA[luxms bi]]></category><category><![CDATA[luxms data boring]]></category><category><![CDATA[bi]]></category><category><![CDATA[ии агенты]]></category><category><![CDATA[ии-модель]]></category><category><![CDATA[ии-агент]]></category><category><![CDATA[бизнес-анализ]]></category><category><![CDATA[бизнес-аналитика]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Агенты в Claude Code: как они устроены и как настроить своих]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1081124/</guid>
+      <link>https://habr.com/ru/articles/1081124/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1081124</link>
+      <description><![CDATA[<p>Разбираем механику агентов в Claude Code: изоляция контекста, параллельный запуск, настройка постоянных агентов через файлы в <code>~/.claude/agents/</code>. Дальше — пример на живой задаче: четыре агента параллельно разобрали 13 статей, пока мы занимались другим.</p> <a href="https://habr.com/ru/articles/1081124/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1081124#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 09:08:15 GMT</pubDate>
+      <dc:creator><![CDATA[NataliaManifest]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Программирование]]></category>
+      <category><![CDATA[claude code]]></category><category><![CDATA[ии агенты]]></category><category><![CDATA[claude]]></category><category><![CDATA[ai agent]]></category><category><![CDATA[автоматизация]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+  
+
+  
+    <item>
+      <title><![CDATA[[Перевод] ИИ в тестировании: от анализа требований до автоматизации]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086562/</guid>
+      <link>https://habr.com/ru/articles/1086562/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086562</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/24c/d4b/573/24cd4b5738eaddd59d08fc207294ae63.png" /><p>Перевод статьи о QA-трансформации в крупном брокере: от ручных проверок к умному workflow. История о том, как тестирование было перестроено вокруг LLM: реальный стек, примеры пропущенных требований и разбор того, где ИИ ошибается. И да, человек всё ещё очень нужен.</p> <a href="https://habr.com/ru/articles/1086562/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086562#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 09:08:05 GMT</pubDate>
+      <dc:creator><![CDATA[Aaaasonya]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Тестирование IT-систем]]></category><category><![CDATA[Разработка мобильных приложений]]></category><category><![CDATA[Тестирование веб-сервисов]]></category><category><![CDATA[Тестирование мобильных приложений]]></category>
+      <category>ИИ</category><category>LLM</category><category>shift-left</category><category>анализ требований</category><category>автоматизация тестирования</category><category>pytest</category><category>Claude Code</category><category>тестирование ПО</category><category>финтех</category><category>QA</category>
+    </item>
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Агентный ИИ или три чат-бота в плаще: как отличить одно от другого]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/simpleone/articles/1086066/</guid>
+      <link>https://habr.com/ru/companies/simpleone/articles/1086066/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086066</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f9c/0ed/2c2/f9c0ed2c279978b1a11f54e9ed04e867.png" /><p>Нам говорят: ИИ уже может сам писать статьи для базы знаний по данным закрытых тикетов, уже сбрасывает пользователю пароль без участия человека, уже запускает мониторинг инцидентов раньше, чем кто-то успевает спросить в чате почему опять не работает. Всё это правда.</p><p>Но правда и то, что так умеют не все. Разбираемся, как отличить настоящего агента от подделки.</p> <a href="https://habr.com/ru/articles/1086066/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086066#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 09:00:13 GMT</pubDate>
+      <dc:creator><![CDATA[SimpleOne_it (SimpleOne)]]></dc:creator>
+      <category><![CDATA[Блог компании SimpleOne]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[Агентный ИИ]]></category><category><![CDATA[ИИ-агенты]]></category><category><![CDATA[ITSM]]></category><category><![CDATA[чат-боты]]></category><category><![CDATA[GenAI]]></category><category><![CDATA[автоматизация ИТ-поддержки]]></category><category><![CDATA[LLM]]></category><category><![CDATA[MCP]]></category><category><![CDATA[RAG]]></category><category><![CDATA[Service Desk]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Отчет о посещении конференции «Управление данными 2026»]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/w_code/articles/1086544/</guid>
+      <link>https://habr.com/ru/companies/w_code/articles/1086544/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086544</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/89c/0ee/8fa/89c0ee8fa838103ea1cd5e79b6e47641.jpg" /><p><em>На связи Сергей Скирдин, технический директор ИТ-интегратора «Белый код». Вчера был на форуме «Управление данными 2026» от «Открытых систем». Это уже XI форум, посвящённый управлению данными, архитектуре, качеству данных и применению ИИ в корпоративной среде. В этом году тема ИИ ожидаемо проходила практически через всю программу: как готовить данные для агентов, какой должна быть архитектура, зачем бизнесу семантика и как вообще управлять всем этим хозяйством.</em></p> <a href="https://habr.com/ru/articles/1086544/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086544#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 08:48:50 GMT</pubDate>
+      <dc:creator><![CDATA[SergeySkirdin (ИТ-интегратор Белый код)]]></dc:creator>
+      <category><![CDATA[Блог компании ИТ-интегратор Белый код]]></category><category><![CDATA[Конференции]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[IT-компании]]></category>
+      <category><![CDATA[управление данными]]></category><category><![CDATA[открытые системы]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[llm]]></category><category><![CDATA[семантический слой]]></category><category><![CDATA[корпоративные данные]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ИИ становится рабочим инструментом 1С: что покажут на TECH EVENT]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/infostart/articles/1086538/</guid>
+      <link>https://habr.com/ru/companies/infostart/articles/1086538/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086538</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/301/603/dee/301603dee27e82cef0db38f70cd47fdc.png" /><p>ИИ в 1С уже не ограничивается генерацией кода и экспериментами с чат-ботами. Его подключают к тестированию, мониторингу, интеграциям, корпоративным данным и внутренним бизнес-процессам. Вокруг него появляются новые подходы к разработке, документации и работе команд.</p><p>На INFOSTART TECH EVENT 2026 этой теме посвящены <strong><a href="https://infostart.ru/journal/news/mir-1s/ii-v-1s-na-infostart-tech-event-2026-26-dokladov-keysov-i-prakticheskikh-formatov_2798550/">26 докладов, кейсов и практических форматов</a></strong>. Причем они не собраны в отдельный «ИИ-трек», а распределены по секциям разработки, тестирования, администрирования, интеграций, архитектуры и управления. И это хорошо показывает, как меняется сама роль технологии.</p> <a href="https://habr.com/ru/articles/1086538/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086538#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 08:41:27 GMT</pubDate>
+      <dc:creator><![CDATA[Alex-sulimov (INFOSTART.RU)]]></dc:creator>
+      <category><![CDATA[Блог компании INFOSTART.RU]]></category><category><![CDATA[1С]]></category><category><![CDATA[DevOps]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Тестирование IT-систем]]></category>
+      <category><![CDATA[1С]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[ИИ]]></category><category><![CDATA[LLM]]></category><category><![CDATA[AI-агенты]]></category><category><![CDATA[RAG]]></category><category><![CDATA[MCP]]></category><category><![CDATA[автоматизация тестирования]]></category><category><![CDATA[вайбкодинг]]></category><category><![CDATA[корпоративные данные]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[BlueSec: открытые соревнования ИИ-агентов по расследованию инцидентов]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/pt/articles/1085878/</guid>
+      <link>https://habr.com/ru/companies/pt/articles/1085878/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085878</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/25a/49f/56b/25a49f56b0c45c291700bea7cb374026.png" /><p>Привет, Хабр! Меня зовут Андрей Кузнецов, последние 2 года вместе с командой развиваем ML в кибербезе. Наше сообщество FalsePositive занимается разбором научных статей и последних разработок в ML. А теперь мы запускаем <a href="https://soc-agent-competition-dev.ptsecurity.com/ru/">BlueSec</a>, открытые соревнования, в которых ИИ-агенты расследуют ИБ-инциденты. Агент получает первую улику, сам собирает картину атаки и выносит вердикт. Платформа оценивает, насколько точно и с минимальным количеством тулколлов он это сделал. Если вы работаете с LLM и агентами, то это возможность проверить свои и агентские скиллы в задачах на стыке ML и кибербеза, области, которая, думаю, переживает даже больше изменений, чем разработка.&nbsp;</p><p>Соревнования идут онлайн из любой точки земного шара с 25.09 по 10.10, финал в Москве и в Питере оффлайн+онлайн, регистрация на сайте.</p><p>Под катом расскажу: зачем мы сделали именно такие соревнования, как устроены задачи и оценка, с чего начать, если вы никогда не писали агентов или никогда не расследовали инциденты.</p> <a href="https://habr.com/ru/articles/1085878/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085878#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 08:32:44 GMT</pubDate>
+      <dc:creator><![CDATA[netcitizen (Positive Technologies)]]></dc:creator>
+      <category><![CDATA[Блог компании Positive Technologies]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Информационная безопасность]]></category>
+      <category><![CDATA[cybersecurity]]></category><category><![CDATA[agents]]></category><category><![CDATA[ai]]></category><category><![CDATA[ai-агенты]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[ии]]></category><category><![CDATA[кибербезопасность]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[DataGov 2.0: куда смотреть, чтобы ИИ-агенты не сожгли ваш бюджет]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/ru_mts/articles/1085534/</guid>
+      <link>https://habr.com/ru/companies/ru_mts/articles/1085534/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085534</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/2a4/042/3b2/2a40423b2960028c479188558f90218a.jpg" /><p>Искусственный интеллект стал неотъемлемой частью нашей жизни и в том или ином виде внедряется практически в любой крупной компании. Все это порождает новые объекты управления, которые уже не укладываются в классический DataGov. Поэтому DataGov 2.0 — это эволюционное развитие. Data Governance остается фундаментом, но к нему добавляются Model Governance, AI Risk Management и слой, который поставляет AI-ready данные в ИИ-системы.</p><p>Меня зовут Екатерина Яковлева, я руковожу центром DataGov группы компаний МТС. Сегодня поговорим о том, как поменялись привычные подходы в DataGov и что с этим делать. На основе моего опыта внутри MWS разберем, как понять, какие ИИ-инструменты уже живут в компании, сколько стоит один запрос, что можно смело отдать агентам, а что лучше оставить за человеком.</p> <a href="https://habr.com/ru/articles/1085534/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085534#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 08:14:10 GMT</pubDate>
+      <dc:creator><![CDATA[Ekaterina_Yakovleva (МТС)]]></dc:creator>
+      <category><![CDATA[Блог компании МТС]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Управление проектами]]></category><category><![CDATA[Открытые данные]]></category>
+      <category><![CDATA[DataGov]]></category><category><![CDATA[ai]]></category><category><![CDATA[ии]]></category><category><![CDATA[ии-агенты]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Курсы по ИИ-ассистентам для разработчиков 2026: Cursor, Copilot и аналоги]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085190/</guid>
+      <link>https://habr.com/ru/articles/1085190/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085190</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/3cd/88f/ca5/3cd88fca58abe6c80d33797aefd83607.png" /><p>Еще пару лет назад ИИ-ассистент в редакторе кода выглядел игрушкой для энтузиастов, которую включали ради автодополнения и выключали после первой странной подсказки. В 2026 году Cursor, GitHub Copilot, Claude Code и российский GigaCode стоят в требованиях вакансий рядом с Git и SQL, а на собеседованиях все чаще спрашивают, как кандидат проверяет код, который за него написал ассистент. </p><p>Поэтому курсы по ИИ-ассистентам для разработчиков перестали быть экзотикой, и в разделе <strong><a href="https://career.habr.com/courses/programmirovanie/kursy-po-nejronnym-setyam?utm_source=habr_edu&amp;utm_medium=picks_edu&amp;utm_campaign=a&amp;utm_content=ai_development7" rel="noopener nofollow">нейросетей для программистов</a></strong> на Хабр Курсах сейчас 21 программа. Дальше разберем 5 из них, которые учат работать именно с ассистентами для кода. Сравним цены, сроки, глубину и покажем, какой курс подходит под вашу задачу, а какой можно спокойно пропустить.</p> <a href="https://habr.com/ru/articles/1085190/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085190#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 08:12:10 GMT</pubDate>
+      <dc:creator><![CDATA[top_picks_edu]]></dc:creator>
+      <category><![CDATA[Лучшие рекомендации]]></category>
+      <category><![CDATA[ии-разработчик]]></category><category><![CDATA[ии-ассистенты 2026]]></category><category><![CDATA[курсы по нейросетям 2026]]></category><category><![CDATA[обучение claude code и cursor]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+  
+
+  
+    <item>
+      <title><![CDATA[[Перевод] Налог на координацию: почему ИИ ускоряет сотрудников, но почти не влияет на прибыль компании]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/vktech/articles/1086302/</guid>
+      <link>https://habr.com/ru/companies/vktech/articles/1086302/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086302</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/bd4/0e2/01d/bd40e201df173a92bf478a11dee14263.jpg" /><p>Большинство крупных организаций последние несколько лет активно инвестировали в ИИ. Они запускали ИИ-помощников, проводили пилоты и все шире внедряли технологии в отдельных подразделениях. В последнем <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">глобальном исследовании McKinsey об искусственном интеллекте</a> 80% респондентов сообщили, что ИИ повысил их личную производительность. Но только 37% видят хоть какое-то его влияние на операционную прибыль компании.</p><p>Почему так происходит? Проблема скорее в том, где применяют технологию, чем в ее совершенстве. Большинство организаций используют ИИ, чтобы повысить эффективность отдельных этапов работы. Но гораздо больше возможностей есть в области координации между этими этапами.</p><p>Команда <a href="https://finops.vk.ru/">Бизнес-приложений VK Tech</a> перевела статью о том, из чего складывается налог на координацию, почему его не устранили ни бережливое производство, ни ERP, ни RPA и с чего начать перестройку процессов с помощью ИИ-агентов.</p> <a href="https://habr.com/ru/articles/1086302/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086302#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 07:50:31 GMT</pubDate>
+      <dc:creator><![CDATA[Akotlyakova (VK Tech)]]></dc:creator>
+      <category><![CDATA[Блог компании VK Tech]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Управление проектами]]></category><category><![CDATA[Управление персоналом]]></category><category><![CDATA[Бизнес-модели]]></category>
+      <category>vk cloud</category><category>агентный ИИ</category><category>AI agents</category><category>автоматизация бизнес-процессов</category><category>процессная аналитика</category><category>управление процессами</category><category>координация команд</category><category>оптимизация процессов</category><category>RPA</category><category>ERP</category>
+    </item>
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[23 урока для тех, кто отвечает за бэкенд: архитектура, производительность и надёжность сервисов]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/otus/articles/1086382/</guid>
+      <link>https://habr.com/ru/companies/otus/articles/1086382/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086382</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/7c8/c17/6a3/7c8c176a3ff230a423627475381061c6.jpg" /><p>По мере роста продукта backend-системы требуют всё больше инженерных решений: появляются новые сервисы, растёт нагрузка, усложняется работа с данными и архитектурой. <br><br>В этом дайджесте собраны бесплатные вебинары о проектировании сервисов, оптимизации запросов, работе с распределёнными системами, базами данных и современных инструментах разработки. Разбираем подходы, которые помогают создавать устойчивые системы и решать практические задачи, с которыми сталкиваются инженеры в работе.</p> <a href="https://habr.com/ru/articles/1086382/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086382#habracut">Смотреть подборку</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 07:25:05 GMT</pubDate>
+      <dc:creator><![CDATA[kmoseenk (OTUS)]]></dc:creator>
+      <category><![CDATA[Блог компании OTUS]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Высоконагруженные системы]]></category><category><![CDATA[Карьера в IT-индустрии]]></category>
+      <category><![CDATA[backend-разработка]]></category><category><![CDATA[микросервисы]]></category><category><![CDATA[базы данных]]></category><category><![CDATA[архитектура приложений]]></category><category><![CDATA[SQL]]></category><category><![CDATA[spring boot]]></category><category><![CDATA[высокие нагрузки]]></category><category><![CDATA[производительность]]></category><category><![CDATA[бесплатные уроки]]></category><category><![CDATA[профессиональное развитие]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[149 заявок мимо CRM и скрипт, который сбрасывал пароль админа]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086414/</guid>
+      <link>https://habr.com/ru/articles/1086414/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086414</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/d90/e62/8b6/d90e628b650245d5f137dce658a40d22.png" /><p>За год сайты получили 149 заявок. В CRM не попала ни одна: письма уходили в личную почту двух сотрудников, а форма обратного звонка слала их разработчику шаблона. Пароль администратора при этом время от времени «менялся сам», и объяснение нашлось в папке /ftp.</p><p>Это восемь сайтов-каталогов корпоративного ИТ-оборудования на одной установке «1С-Битрикс». Я занимался их маркетингом, разбор занял около трёх недель и ушёл далеко от маркетинга. Ниже: что нашлось, как чинили, что сломали сами, и чек-лист, по которому то же можно найти у себя за вечер.</p> <a href="https://habr.com/ru/articles/1086414/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086414#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 07:09:02 GMT</pubDate>
+      <dc:creator><![CDATA[Alexandr_Galinskiy]]></dc:creator>
+      <category><![CDATA[Информационная безопасность]]></category><category><![CDATA[1С-Битрикс]]></category><category><![CDATA[CRM-системы]]></category><category><![CDATA[Управление проектами]]></category>
+      <category><![CDATA[1с-битрикс]]></category><category><![CDATA[битрикс24]]></category><category><![CDATA[безопасность-сайта]]></category><category><![CDATA[бэкдор]]></category><category><![CDATA[парсер]]></category><category><![CDATA[реестр-минпромторга]]></category><category><![CDATA[аудит-сайта]]></category><category><![CDATA[crm]]></category><category><![CDATA[яндекс-метрика]]></category><category><![CDATA[b2b]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[OpenAI может запустить ChatGPT Pro Max за $500 в месяц]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086472/</guid>
+		<link>https://habr.com/ru/news/1086472/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086472</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/e7f/539/55a/e7f53955a691eddae4bd335237eabbc0.png" /><p>В неопубликованных конфигурациях подписок ChatGPT обнаружили упоминания нового тарифа Pro Max. По&nbsp;<a href="https://www.testingcatalog.com/openai-prepares-new-500-month-pro-max-plan-for-chatgpt/" rel="noopener nofollow">данным TestingCatalog</a>, его стоимость составит $500 в месяц — в 2,5 раза больше нынешнего Pro за $200. OpenAI пока не анонсировала подписку, поэтому цена и условия могут измениться.</p> <a href="https://habr.com/ru/articles/1086472/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Fri, 25 Sep 2026 06:32:49 GMT</pubDate>
+    <dc:creator><![CDATA[python_leader]]></dc:creator>
+		<category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Программирование]]></category>
+		<category><![CDATA[OpenAI]]></category><category><![CDATA[ChatGPT]]></category><category><![CDATA[Pro Max]]></category><category><![CDATA[Codex]]></category><category><![CDATA[Cerebras]]></category><category><![CDATA[ChatGPT Work]]></category><category><![CDATA[GPT-6]]></category><category><![CDATA[ИИ-агенты]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[подписки]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Регулирование искусственного интеллекта в России]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086466/</guid>
+      <link>https://habr.com/ru/articles/1086466/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086466</link>
+      <description><![CDATA[<p>На днях довелось поучаствовать в качестве спикера на установочной сессии для студентов-юристов одного из уральских вузов. Задача: рассказать об искусственном интеллекте и о проблемах, с которыми может столкнуться или уже сталкивается отечественная правовая система в этой связи, а также попробовать заинтересовать той или иной проблемой и побудить к исследованию вопроса. </p><p>Подготовленная речь уместилась на четырех листах, выступление заняло около 15 минут. Получился своего рода «пристрелочный» обзор собственно технологии ИИ и действующего нормативного материала, касающегося ИИ. Известно, что кто-то лучше воспринимает информацию на слух, а кто-то – глазами. Поэтому решено речь переложить в текст так, чтобы это была не стенограмма выступления, а именно статья (осмелюсь включить в нее те моменты, о которых не успел рассказать голосом). Надеюсь ею вызвать интерес к области на стыке ИИ и юриспруденции.</p> <a href="https://habr.com/ru/articles/1086466/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086466#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 05:52:05 GMT</pubDate>
+      <dc:creator><![CDATA[Valerich_123]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Будущее здесь]]></category><category><![CDATA[Исследования и прогнозы в IT]]></category><category><![CDATA[Терминология IT]]></category>
+      <category><![CDATA[законодательство и ит]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[образование]]></category><category><![CDATA[студентам]]></category><category><![CDATA[юриспруденция]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[23-летний студент бросил универ и создал ИИ-помощника за $2.5 млрд. Что не так с этой красивой историей?]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086452/</guid>
+      <link>https://habr.com/ru/articles/1086452/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086452</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f26/5d9/222/f265d922258fbc6256e32a3be3d47827.jpg" /><p> 23-летний студент бросил университет и за несколько месяцев довел ИИ-стартап до $2.5 млрд. Теперь обсуждают уже $10 млрд. Разбираюсь, что на самом деле стоит за красивой историей Instinct и почему хороший продукт еще не означает хороший бизнес.  </p> <a href="https://habr.com/ru/articles/1086452/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086452#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Fri, 25 Sep 2026 05:32:55 GMT</pubDate>
+      <dc:creator><![CDATA[Alexey_Begin]]></dc:creator>
+      <category><![CDATA[Венчурные инвестиции]]></category><category><![CDATA[Развитие стартапа]]></category><category><![CDATA[Бизнес-модели]]></category><category><![CDATA[Исследования и прогнозы в IT]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[instinct]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[ai agents]]></category><category><![CDATA[стартапы]]></category><category><![CDATA[венчурные инвестиции]]></category><category><![CDATA[ноа шинн]]></category><category><![CDATA[бизнес-модель]]></category><category><![CDATA[монетизация]]></category><category><![CDATA[автономные агенты]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Jev: модель, которая ничего не пишет]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/polzaai/articles/1086424/</guid>
+      <link>https://habr.com/ru/companies/polzaai/articles/1086424/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086424</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/2b3/0bd/2eb/2b30bd2ebafc15307e45fb0b29f31871.png" /><p>Если вы много слышали про Jev, но так и не разобрались до конца в чем состоит его идея, то мы с командой решили собрать все воедино и рассказать что это за загадочно дешевая модель, которая выдает бесплатно токены ответа.&nbsp;</p> <a href="https://habr.com/ru/articles/1086424/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086424#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 21:02:17 GMT</pubDate>
+      <dc:creator><![CDATA[polza_ai (Polza.ai)]]></dc:creator>
+      <category><![CDATA[Блог компании Polza.ai]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Управление продуктом]]></category><category><![CDATA[Машинное обучение]]></category>
+      <category><![CDATA[Jev]]></category><category><![CDATA[Jev AI]]></category><category><![CDATA[TypeSafe AI]]></category><category><![CDATA[System One Models]]></category><category><![CDATA[AI-модель для принятия решений]]></category><category><![CDATA[Jev vs LLM]]></category><category><![CDATA[AI-агенты]]></category><category><![CDATA[decision layer]]></category><category><![CDATA[классификация с помощью ИИ]]></category><category><![CDATA[оптимизация AI-агентов]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[OpenAI добавила плагины в голосовой режим ChatGPT]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/bothub/news/1086400/</guid>
+		<link>https://habr.com/ru/companies/bothub/news/1086400/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086400</link>
+		<description><![CDATA[<p>OpenAI расширила возможности Live Voice в ChatGPT: теперь во время голосового разговора можно использовать подключённые плагины и приложения. Функция доступна в веб-версии, а также на iOS и Android.</p><p>Ассистент может получать данные из календаря, почты, Slack и других подключённых сервисов, а также выполнять доступные им действия — без необходимости переключаться на текстовый режим. Сохраняются существующие разрешения и ограничения подключённых приложений; действия, требующие подтверждения, пользователь одобряет на экране.</p><p>В ChatGPT Work голосовой режим работает на вебе и мобильных устройствах. Через него можно создавать документы, презентации и таблицы, использовать подключённые приложения и работать с браузером. Незавершённую задачу после завершения голосового сеанса можно продолжить в текстовом чате.</p><p>Отдельно OpenAI обновила используемые в Voice модели, к нему уже подключать GPT-5.6 или GPT-6 Astra. GPT-6 Sol и GPT-6 Luna при этом были запущены отдельно в ChatGPT Work и Codex.</p><p><br></p> <a href="https://habr.com/ru/articles/1086400/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 18:19:53 GMT</pubDate>
+    <dc:creator><![CDATA[DashaPasha (BotHub)]]></dc:creator>
+		<category><![CDATA[Блог компании BotHub]]></category><category><![CDATA[Искусственный интеллект]]></category>
+		<category><![CDATA[ChatGPT Voice]]></category><category><![CDATA[OpenAI]]></category><category><![CDATA[голосовой режим]]></category><category><![CDATA[AI-агенты]]></category><category><![CDATA[плагины ChatGPT]]></category><category><![CDATA[API]]></category><category><![CDATA[ChatGPT Work]]></category><category><![CDATA[голосовой ИИ]]></category><category><![CDATA[GPT-6 Astra]]></category><category><![CDATA[интеграции сервисов]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[И все‑таки AI уже стал математиком или нет?]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086390/</guid>
+      <link>https://habr.com/ru/articles/1086390/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086390</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/e9d/5f4/e36/e9d5f4e365baa352edd2caa57796a73e.png" /><p>Я решил разобраться в этом вопросе, когда OpenAI и Anthropic стали нон-стопом сыпать новостями про новые математические рекорды и открытия.</p> <a href="https://habr.com/ru/articles/1086390/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086390#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 17:54:33 GMT</pubDate>
+      <dc:creator><![CDATA[Biryukovlex]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Будущее здесь]]></category><category><![CDATA[Научно-популярное]]></category>
+      <category><![CDATA[ии-агенты]]></category><category><![CDATA[ai]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[openai]]></category><category><![CDATA[google deepmind]]></category><category><![CDATA[alphaevolve]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[DrivingBench проверили GPT-6 Astra, GPT-5.6 Sol, Grok 4.6 и Claude Fable 5.1 на возможность управлять авто]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086380/</guid>
+		<link>https://habr.com/ru/news/1086380/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086380</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/d6c/69b/806/d6c69b8060b81706f9dfb64e10de9451.jpg" /><p>Исследователи из DrivingBench <a href="https://drivingbench.com/report/" rel="noopener nofollow">проверили</a>, как современные нейросети умеют водить автомобиль. В рамках этого проекта ИИ-системы OpenAI GPT-6 Astra и GPT-5.6 Sol, SpaceXAI Grok 4.6 и Anthropic Claude Fable 5.1 подключили к Toyota Corolla 2022 года выпуска. Двигать машиной ИИ пытались через устройство Comma Four под управлением открытой системы Openpilot с подключением напрямую к CAN-шине. Нейросети могли рулить, управлять акселератором и тормозить. </p> <a href="https://habr.com/ru/articles/1086380/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 17:27:05 GMT</pubDate>
+    <dc:creator><![CDATA[denis-19]]></dc:creator>
+		<category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Транспорт]]></category><category><![CDATA[Учебный процесс в IT]]></category><category><![CDATA[Будущее здесь]]></category>
+		<category><![CDATA[ии]]></category><category><![CDATA[машина]]></category><category><![CDATA[gpt-6 astra]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[От 6 часов до 20 минут: как мы ускорили коллаборативную модель в рекомендациях Авито]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/avito/articles/1086210/</guid>
+      <link>https://habr.com/ru/companies/avito/articles/1086210/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086210</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/25d/216/de4/25d216de4bb69330c99eddec1d60d420.jpg" /><p>Привет, я <strong>Салават Динмухаметов,</strong> senior ML-engineer в команде рекомендаций <strong><a href="https://clc.to/LV3FBg">Авито</a></strong>. В статье расскажу, как мы изменили систему рекомендаций на главной странице.&nbsp;</p><p>Одна из важных частей этой системы — коллаборативная модель avitofm. Раньше она обновлялась раз в 6 часов. Проблема в том, что товары из хороших объявлений разбирают быстрее: они не успевали оказаться в рекомендациях.&nbsp;</p><p>Мы решили ускорить обучение — и за несколько итераций сделали neartime-архитектуру, которая обновляется каждые 20 минут. Это повысило качество, бизнес-метрики и сэкономило память.</p><p>Статья будет полезна ML-инженерам и&nbsp;тимлидам, которые строят рекомендательные системы и&nbsp;упираются в&nbsp;свежесть: когда модель даёт нормальное качество, но&nbsp;узнаёт о&nbsp;новых айтемах слишком поздно.</p> <a href="https://habr.com/ru/articles/1086210/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086210#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 15:01:43 GMT</pubDate>
+      <dc:creator><![CDATA[ds-team (AvitoTech)]]></dc:creator>
+      <category><![CDATA[Блог компании AvitoTech]]></category><category><![CDATA[Data Engineering]]></category><category><![CDATA[Big Data]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[рекомендательные системы]]></category><category><![CDATA[коллаборативная фильтрация]]></category><category><![CDATA[эмбеддинги]]></category><category><![CDATA[mlops]]></category><category><![CDATA[kafka]]></category><category><![CDATA[gpu]]></category><category><![CDATA[kubeflow]]></category><category><![CDATA[сезон код будущего]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Курсы по GigaChat и YandexGPT в 2026: где учиться работать с российским ИИ]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085266/</guid>
+      <link>https://habr.com/ru/articles/1085266/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085266</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/b6a/1c5/ec7/b6a1c5ec7d08991ebb17b19807a0ff45.png" /><p>В 2026 году российские нейросети перестали быть запасным вариантом на случай, если не работает VPN. GigaChat обслуживает больше 15 000 бизнес-клиентов, YandexGPT обрабатывает 2,9 млрд запросов в год, а Алиса AI в опросах регулярно обгоняет ChatGPT по популярности. Следом вырос спрос на курсы по GigaChat и YandexGPT, но у этого рынка есть неожиданная деталь. </p><p>В <a href="https://career.habr.com/courses/nejronnye-seti/gigachat?utm_source=habr_edu&amp;utm_medium=picks_edu&amp;utm_campaign=a&amp;utm_content=gigachat_yandex_gpt7" rel="noopener nofollow">каталоге Хабр Курсов </a>нет ни одной программы, посвященной только российской модели, и GigaChat с YandexGPT везде идут в общем наборе рядом с ChatGPT, DeepSeek и Midjourney. Дальше разберем, как отличить курс, где российским моделям уделено реальное время и сравним 5 программ стоимостью от 315 ₽ до 91 800 ₽.</p> <a href="https://habr.com/ru/articles/1085266/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085266#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 14:42:37 GMT</pubDate>
+      <dc:creator><![CDATA[top_picks_edu]]></dc:creator>
+      <category><![CDATA[Лучшие рекомендации]]></category>
+      <category><![CDATA[российский ии]]></category><category><![CDATA[курсы по нейросетям 2026]]></category><category><![CDATA[обучение gigachat и yandex gpt]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[950 Claude‑агентов за 21 час нашли новую биологическую систему]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086300/</guid>
+		<link>https://habr.com/ru/news/1086300/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086300</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/884/b06/550/884b06550a8c0a0c457318e464632f4a.png" /><p>Anthropic запустили около 950 агентов, которые изучили более 200 тысяч обратных транскриптаз, то есть ферментов, способных синтезировать ДНК на основе РНК. За 21 час и 210 млн токенов они отобрали 3500 возможных систем, сузили список до 20 и заметили необычную комбинацию в ДНК бактериофага.</p> <a href="https://habr.com/ru/articles/1086300/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 14:35:25 GMT</pubDate>
+    <dc:creator><![CDATA[befayer]]></dc:creator>
+		<category><![CDATA[Программирование]]></category><category><![CDATA[Биология]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Текстовые редакторы и IDE]]></category>
+		<category><![CDATA[claude]]></category><category><![CDATA[claude code]]></category><category><![CDATA[claude-code]]></category><category><![CDATA[anthropic]]></category><category><![CDATA[bio]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Что такое вайбкодинг простыми словами, как к этому пришли и почему ИИ перевернул игру]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/timeweb/articles/1085464/</guid>
+      <link>https://habr.com/ru/companies/timeweb/articles/1085464/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085464</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/c67/acd/fec/c67acdfecb43d81dbade4ea07c440721.jpg" /><p>Слово года по версии одного авторитетного британского словаря, будущее для индустрии или то, что ее окончательно погубит со всех сторон. Все это — вайбкодинг, который разделил мир IT на два противоборствующих лагеря.</p><p>Я же сегодня ничью сторону занимать не стану, а хочу, наоборот, разобраться, как появился вайбкодинг, откуда такой бурный рост развития и к чему действительно это приведет.</p> <a href="https://habr.com/ru/articles/1085464/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085464#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 14:05:35 GMT</pubDate>
+      <dc:creator><![CDATA[Agito_Akira (Timeweb Cloud)]]></dc:creator>
+      <category><![CDATA[Блог компании Timeweb Cloud]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[История IT]]></category><category><![CDATA[Будущее здесь]]></category><category><![CDATA[Машинное обучение]]></category>
+      <category><![CDATA[вайбкодинг]]></category><category><![CDATA[вайб-кодинг]]></category><category><![CDATA[вайб-программирование]]></category><category><![CDATA[вайб-код]]></category><category><![CDATA[lovable]]></category><category><![CDATA[chatgpt]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[простыми словами]]></category><category><![CDATA[timeweb_статьи]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[vet молчит, -race молчит: горутины, которые переживают CI]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085788/</guid>
+      <link>https://habr.com/ru/articles/1085788/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085788</link>
+      <description><![CDATA[<p>В прошлой статье я писал, что компилятор — первый ревьюер кода, который написал агент. У этой идеи есть слепое пятно, и я в него наступил: конкурентность. Компилятор проверяет типы, <code>go vet</code> проверяет десяток известных шаблонов, <code>-race</code> ловит гонки данных. А горутина, которая никогда не завершится, — это не ошибка типов и не гонка. Код, который не слышит отмену, — тоже.</p> <a href="https://habr.com/ru/articles/1085788/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085788#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 13:59:05 GMT</pubDate>
+      <dc:creator><![CDATA[kuriokenshi]]></dc:creator>
+      <category><![CDATA[Go]]></category><category><![CDATA[Качество кода]]></category><category><![CDATA[Тестирование IT-систем]]></category><category><![CDATA[Параллельное программирование]]></category>
+      <category><![CDATA[go]]></category><category><![CDATA[context]]></category><category><![CDATA[goroutine-leak]]></category><category><![CDATA[goleak]]></category><category><![CDATA[synctest]]></category><category><![CDATA[errgroup]]></category><category><![CDATA[go-vet]]></category><category><![CDATA[статический-анализ]]></category><category><![CDATA[ИИ-агенты]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Собрал платный API для ИИ‑агентов на x402. Рынка не нашёл — зато нашёл четыре бага]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086276/</guid>
+      <link>https://habr.com/ru/articles/1086276/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086276</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/df3/c61/90b/df3c6190b7c146a3de541f2c10271828.jpg" /><p>Собрал платный API для&nbsp;проверки кода на&nbsp;протоколе x402&nbsp;— агент получает HTTP 402, платит в&nbsp;USDC, получает подписанный сертификат. Довёл до&nbsp;продакшена и наткнулся на&nbsp;четыре бага, каждый из&nbsp;которых выглядел как&nbsp;рабочий код. Заодно проверил, есть&nbsp;ли вообще спрос&nbsp;— и вот что&nbsp;показали цифры. </p> <a href="https://habr.com/ru/articles/1086276/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086276#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 13:55:51 GMT</pubDate>
+      <dc:creator><![CDATA[Laratok]]></dc:creator>
+      <category><![CDATA[Python]]></category><category><![CDATA[Монетизация IT-систем]]></category><category><![CDATA[Финансы в IT]]></category><category><![CDATA[Информационная безопасность]]></category>
+      <category><![CDATA[x402]]></category><category><![CDATA[HTTP 402]]></category><category><![CDATA[AI-агенты]]></category><category><![CDATA[FastAPI]]></category><category><![CDATA[Docker]]></category><category><![CDATA[PostgreSQL]]></category><category><![CDATA[ed25519]]></category><category><![CDATA[Claude Code]]></category><category><![CDATA[DevSecOps]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Почему на Хабре ненавидят рекламу Телеграм‑каналов?]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086248/</guid>
+      <link>https://habr.com/ru/articles/1086248/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086248</link>
+      <description><![CDATA[<p>На всех зарубежных блогах внизу статьи есть форма подписки на почтовую рассылку, RSS ленту или телеграм канал.</p><p>Также на всех русскоязычных площадках люди нормально относятся к упоминанию телеграм канала в конце статьи.</p><p>И только на хабре аудитория агрессивно воспринимает любые призывы подписаться.</p><p>В этой статье я хочу разобраться в этом феномене. Также в конце статьи есть опрос, в котором вы можете принять участие.</p> <a href="https://habr.com/ru/articles/1086248/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086248#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 13:42:44 GMT</pubDate>
+      <dc:creator><![CDATA[orchidfiles]]></dc:creator>
+      <category><![CDATA[Habr]]></category><category><![CDATA[Управление сообществом]]></category><category><![CDATA[Контент и копирайтинг]]></category><category><![CDATA[Интернет-маркетинг]]></category><category><![CDATA[Читальный зал]]></category>
+      <category><![CDATA[телеграм-каналы]]></category><category><![CDATA[подписка]]></category><category><![CDATA[реклама]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+  
+
+  
+    <item>
+      <title><![CDATA[[Перевод] AI пишет код быстрее, но ревью становится тяжелее: откуда берётся когнитивный долг]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/otus/articles/1085730/</guid>
+      <link>https://habr.com/ru/companies/otus/articles/1085730/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085730</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/630/02d/826/63002d8269e6bdb4ceb4d7f780dc9f0f.jpg" /><p>Возможности AI-инструментов для разработки растут, и вместе с этим меняется привычный процесс работы с кодом: генерация занимает меньше времени, но понимание результата всё чаще становится задачей ревьюера. Разберемся, почему проверка AI-кода создаёт дополнительную когнитивную нагрузку, как из этого появляется незаметный долг и какие подходы помогают сохранить качество разработки при работе с агентами.</p> <a href="https://habr.com/ru/articles/1085730/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085730#habracut">Разобрать подход</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 13:10:31 GMT</pubDate>
+      <dc:creator><![CDATA[kmoseenk (OTUS)]]></dc:creator>
+      <category><![CDATA[Блог компании OTUS]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category>AI-разработка</category><category>генерация кода</category><category>искусственный интеллект</category><category>ревью кода</category><category>AI-агенты</category><category>разработка по</category><category>когнитивная нагрузка</category><category>технический долг</category><category>автоматизация разработки</category>
+    </item>
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Пять шагов Илона Маска для улучшения процессов]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1082692/</guid>
+      <link>https://habr.com/ru/articles/1082692/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1082692</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/aeb/441/e45/aeb441e45e69661bd14c8e9291fa2fe5.jpg" /><p>Самый успешный инженерный предприниматель мира использует алгоритм улучшения процессов, благодаря которому весь мир пользуется классными продуктами от&nbsp;Tesla, SpaceX, Neuralink и других компаний. В&nbsp;статье расскажу про&nbsp;алгоритм&nbsp;— в&nbsp;деталях и с&nbsp;примерами. </p> <a href="https://habr.com/ru/articles/1082692/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1082692#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 13:10:24 GMT</pubDate>
+      <dc:creator><![CDATA[AlexRussianPyth]]></dc:creator>
+      <category><![CDATA[Биографии гиков]]></category>
+      <category><![CDATA[процессы]]></category><category><![CDATA[оптимизация]]></category><category><![CDATA[илон маск]]></category><category><![CDATA[автоматизация]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как взвесить чужой репозиторий, не запуская его: 138 проектов из трендов GitHub]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086232/</guid>
+      <link>https://habr.com/ru/articles/1086232/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086232</link>
+      <description><![CDATA[<p>За месяц дайджест трендов GitHub про ИИ-агентов принёс мне 138 уникальных репозиториев. Я взвесил каждый, ничего не запуская: скачал архив через API и посчитал отдельно код, прозу, тесты и сгенерированное. 56 % оказались платформами, которые форкают только с намерением сопровождать. Лёгких, которые можно переписать под себя за вечер, всего 24, и половина из них вообще не инструменты. Лицензия оказалась фильтром раньше веса: у 9 репозиториев её нет совсем, а один файл начинается словами MIT и ниже запрещает коммерческое использование. В статье метод, таблицы и три признака накрутки звёзд, которые я пытался автоматизировать и которые не сработали.</p> <a href="https://habr.com/ru/articles/1086232/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086232#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 13:03:16 GMT</pubDate>
+      <dc:creator><![CDATA[Aleksandr_NFA]]></dc:creator>
+      <category><![CDATA[Open source]]></category><category><![CDATA[GitHub]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Python]]></category>
+      <category><![CDATA[github]]></category><category><![CDATA[open source]]></category><category><![CDATA[лицензии]]></category><category><![CDATA[анализ кода]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[python]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Meta* представила Muse Charm — брелок с AI‑агентом Muse и поддержкой 5G]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086230/</guid>
+		<link>https://habr.com/ru/news/1086230/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086230</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/8c6/5b3/879/8c65b387962be2934a32c57051331353.jpg" /><p>На&nbsp;конференции Connect 2026&nbsp;Meta* <a href="https://www.meta.com/nl-nl/blog/meta-connect-2026-everything-we-announced/" rel="noopener nofollow">анонсировала</a> брелок Muse Charm для&nbsp;взаимодействия с&nbsp;персональным AI‑агентом Muse без&nbsp;смартфона. По&nbsp;габаритам устройство напоминает кейс AirPods, а&nbsp;продажи начнутся зимой 2026&nbsp;года.</p> <a href="https://habr.com/ru/articles/1086230/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 13:02:42 GMT</pubDate>
+    <dc:creator><![CDATA[daniilshat]]></dc:creator>
+		<category><![CDATA[Гаджеты]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Носимая электроника]]></category>
+		<category><![CDATA[meta]]></category><category><![CDATA[muse]]></category><category><![CDATA[muse charm]]></category><category><![CDATA[брелок]]></category><category><![CDATA[ии-агент]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[гаджеты]]></category><category><![CDATA[устройства]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+  
+
+  
+    <item>
+      <title><![CDATA[[Перевод] Строим продвинутый каркас для ИИ-агента]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/ostrovok/articles/1084568/</guid>
+      <link>https://habr.com/ru/companies/ostrovok/articles/1084568/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1084568</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/51c/fe3/4d4/51cfe34d45a4d6e86faaea7f798e9151.png" /><p>В основе базового agentic harness — простой цикл: LLM получает задачу, выбирает и вызывает инструмент, результат возвращается в контекст, после чего модель решает, какое действие выполнить следующим. Цикл продолжается, пока модель не решит, что задача выполнена.</p><p>Этот цикл корректен, но <em>наивен</em>. Один пилот на хорошем истребителе вполне может выиграть воздушный бой, но никто не ведёт так целую воздушную операцию. В реальных операциях есть планировщики миссий, которые ещё до взлёта определяют, какие вылеты предстоит выполнить; эскадрильи, параллельно выполняющие независимые задачи; топливные лимиты и сигнал bingo fuel, после которого нужно возвращаться на базу; бортовые самописцы, позволяющие восстановить ход каждого вылета; наконец, разборы после выполнения, на которых определяют, была ли миссия действительно успешной.</p><p>Ничто из этого не заменяет пилота. Всё это создаёт вокруг него инфраструктуру, благодаря которой система в целом остаётся быстрой, безопасной, удобной для отладки и измеримой.</p><p>С агентами происходит то же самое. В этой статье мы возьмём базовый агентный цикл и последовательно добавим к нему типизированные инструменты, DAG и параллельное выполнение, многоуровневую память, верификацию, разделение ролей Planner / Worker / Critic, многомерные бюджеты и трассировку — а затем соединим всё это тонким оркестратором.</p><p>Весь эксперимент строится вокруг одного вопроса:</p><p><strong>Как превратить простой агентный цикл в надёжную систему, способную планировать, действовать, восстанавливаться после ошибок и доказывать, что она действительно сделала всё правильно?</strong></p><p>Эта публикация — перевод и адаптация статьи Бруно Гонсалвеса <strong>Building an Advanced Agentic Harness</strong>, подготовленные командой Островка. В оригинале материал продолжает серию Data For Science об устройстве agentic harness.</p> <a href="https://habr.com/ru/articles/1084568/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1084568#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 12:32:51 GMT</pubDate>
+      <dc:creator><![CDATA[eds88 (Островок!)]]></dc:creator>
+      <category><![CDATA[Блог компании Островок!]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Python]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Машинное обучение]]></category>
+      <category>harness engineering</category><category>llm</category><category>ии-агенты</category><category>dag</category><category>оркестрация</category><category>tool calling</category><category>верификация</category><category>pydantic</category><category>python</category><category>asyncio</category>
+    </item>
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Агент открыл закрытые файлы государственного портала, а узнали об этом через два месяца]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/selectel/news/1086132/</guid>
+		<link>https://habr.com/ru/companies/selectel/news/1086132/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086132</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/146/83f/56e/14683f56e5e4c3953ca800bc4b876068.png" /><p>Агент OpenAI в июне 2026 года получил несанкционированный доступ к порталу статистики Medicare, государственной системы медицинского страхования Австралии, и открыл файлы, не предназначенные для публики. Об этом 23 сентября по нью-йоркскому времени (24 сентября в Австралии) <a href="https://fortune.com/2026/09/23/openai-agent-hacks-australia-medicare-sam-altman-anthony-albanese/">рассказал</a> премьер-министр страны Энтони Албаниз. Он назвал ситуацию «очевидно неприемлемой» и лично позвонил главе OpenAI Сэму Альтману, чтобы выразить «крайнюю обеспокоенность» Австралии.&nbsp;</p> <a href="https://habr.com/ru/articles/1086132/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 12:30:27 GMT</pubDate>
+    <dc:creator><![CDATA[techno_mot (Selectel)]]></dc:creator>
+		<category><![CDATA[Блог компании Selectel]]></category><category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Законодательство в IT]]></category>
+		<category><![CDATA[ИИ-агенты]]></category><category><![CDATA[OpenAI]]></category><category><![CDATA[информационная безопасность]]></category><category><![CDATA[инциденты ИИ]]></category><category><![CDATA[Австралия]]></category><category><![CDATA[Medicare]]></category><category><![CDATA[регулирование ИИ]]></category><category><![CDATA[AI safety]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Монитор на e-ink для сервера за выходные]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085984/</guid>
+      <link>https://habr.com/ru/articles/1085984/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085984</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/bab/57a/17a/bab57a17accc34d8c3a5a1ef2c5bd46c.jpg" /><p> Если совсем коротко: плата Waveshare ESP32-S3-ePaper-1.54, один кабель USB и экран 200×200, который висит рядом с сервером и показывает загрузку процессора, температуру видеокарт, память, диск, аптайм, живой пинг и т.д по выбору админа. </p><p>На маркетплейсах покупается готовая девплата в корпусе, заливается кастомная прошивка из статьи, настраивается через встроенную вебку и получается готовый прибор, подключаемый к любому серверу по юсб.</p> <a href="https://habr.com/ru/articles/1085984/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085984#habracut">Как собрать такой себе</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 12:03:35 GMT</pubDate>
+      <dc:creator><![CDATA[gliderman]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Системное администрирование]]></category><category><![CDATA[DIY или Сделай сам]]></category><category><![CDATA[Компьютерное железо]]></category><category><![CDATA[Программирование микроконтроллеров]]></category>
+      <category><![CDATA[ии агенты]]></category><category><![CDATA[системное администрирование]]></category><category><![CDATA[esp32]]></category><category><![CDATA[сезон код будущего]]></category><category><![CDATA[diy]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Информационный поток против кода: слепое пятно безопасности ИИ]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1086168/</guid>
+      <link>https://habr.com/ru/articles/1086168/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086168</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f41/eeb/5b6/f41eeb5b6876d9d1e2dfd32fca9c263e.png" /><p>Безопасность процессов изменения информационного потока данных от человека к машинному пока остается вне широкого обсуждения, но бизнесу важно понимать, когда процессы, которые могут привести к аварии, уже запущены на атомной электростанции (из-за свойств атомной энергии), не будет иметь значение насколько исправны щитки и распределение проводки в вашем офисе. </p><p>Программисты выстраивают гардрейлы и правила «можно/нельзя» для агента, выходящего во внешний мир. Но любое такое правило опирается на признак «чему доверять/чему нет». Инъекция промптов не зря стоит первой в OWASP Top-10 for LLM: агент не отличает данные от команды, потому что не отличает, кто и зачем написал текст.</p><p>Бизнес может максимально защитить свой периметр и код, но модели учатся на цифровых информационных потоков в сети, а агенты уже сейчас читают синтезированный текст. Это и есть системная (информационная) неустойчивость самого принципа работы ИИ и тот, кто увидит это первым, получит преимущество, ровно как в любой структурной неустойчивости.</p><p>Модели не могут не обучаться (собственного опыта у них нет, им нужны данные), а данные им сейчас поставляют миллионы обычных пользователей, публикуя сгенерированные тексты под своими именами. И сам ИИ помогает обходить свои собственные защиты «очеловечивая» машинные тексты. Доля неразличимых синтетических данных растет и через несколько поколений обновлений модели будут обучаться на собственных данных, превращая информацию в бессмыслицу и исследования показывают траекторию этой деградации. </p><p>Этот коллапс поначалу не будет громким, но окажется стремительным, глобальным и дорогим - как взрыв ипотечного пузыря. Код будет работать штатно, тесты проходить, но качество решений поплывёт, потому что нарушения будут не в ПО, а в глобальной коммуникации. Избежать этого можно при одном условии -  синтетические данные должны добавляться к человеческим, а не вытеснять их, но сейчас пока происходит обратное. И очень важно разобраться именно сейчас, к чему нам нужно готовиться.</p> <a href="https://habr.com/ru/articles/1086168/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086168#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 11:42:08 GMT</pubDate>
+      <dc:creator><![CDATA[Azhar_Donenbayeva]]></dc:creator>
+      <category><![CDATA[Бизнес-модели]]></category><category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Исследования и прогнозы в IT]]></category><category><![CDATA[Управление разработкой]]></category>
+      <category><![CDATA[сезон код будущего]]></category><category><![CDATA[безопасность ии]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[инъекция промптов]]></category><category><![CDATA[модельный коллапс]]></category><category><![CDATA[детекторы ии]]></category><category><![CDATA[llm]]></category><category><![CDATA[синтетические данные]]></category><category><![CDATA[информационная безопасность]]></category><category><![CDATA[owasp]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[GEO: как нейросети выбирают, кого рекомендовать, и как в это попасть]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1081126/</guid>
+      <link>https://habr.com/ru/articles/1081126/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1081126</link>
+      <description><![CDATA[<p>Разбираем механику генеративного поиска: как ChatGPT, Алиса, Perplexity и другие нейросети формируют ответ на вопрос «кого выбрать», откуда берут источники и что сделать технически, чтобы попасть в этот ответ.</p> <a href="https://habr.com/ru/articles/1081126/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1081126#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 11:08:05 GMT</pubDate>
+      <dc:creator><![CDATA[NataliaManifest]]></dc:creator>
+      <category><![CDATA[Интернет-маркетинг]]></category><category><![CDATA[Поисковые технологии]]></category><category><![CDATA[Поисковая оптимизация]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[geo]]></category><category><![CDATA[seo]]></category><category><![CDATA[продвижение в нейросетях]]></category><category><![CDATA[generative engine optimization]]></category><category><![CDATA[маркетинг]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[ИИ в сетевой кибербезопасности: кто победит — атака или защита]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/infowatch/news/1086118/</guid>
+		<link>https://habr.com/ru/companies/infowatch/news/1086118/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086118</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a2d/49a/816/a2d49a816305da13de8c9d77e0fcca11.jpg" /><p>В гонке кибервооружений на базе ИИ тактическое преимущество пока удерживает ИИ-защищающийся. При этом интеграция ИИ в системы защиты уже стала условием выживания. К таким выводам пришли специалисты экспертно-аналитического центра (ЭАЦ) ГК InfoWatch в исследовании <a href="https://www.infowatch.ru/analytics/analitika/iskusstvenniy-intellekt-v-setevoy-kiberbezopasnosti">«Искусственный интеллект в сетевой кибербезопасности»</a>. Отчет подготовлен по результатам изучения мировых тенденций влияния ИИ на безопасность сетевой инфраструктуры. </p><p>Эксперты ЭАЦ ГК InfoWatch отмечают, что в настоящее время преимущество находится на стороне киберзащиты с применением ИИ. Однако использование ИИ в кибератаках сокращает разрыв за счет децентрализации и генеративных технологий. Так, уже примерно каждый шестой инцидент и успешный взлом сетей в мире (16%) осуществляется с применением ИИ-инструментов. Что касается фишинговых атак, то использование ИИ в них фиксируется почти повсеместно (86%).</p> <a href="https://habr.com/ru/articles/1086118/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 10:46:01 GMT</pubDate>
+    <dc:creator><![CDATA[InfoWatch (InfoWatch)]]></dc:creator>
+		<category><![CDATA[Блог компании InfoWatch]]></category><category><![CDATA[Системное администрирование]]></category>
+		<category><![CDATA[эац infowatch]]></category><category><![CDATA[кибербезопасность]]></category><category><![CDATA[аналитика]]></category><category><![CDATA[ИИ]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Мы дали ИИ доступ к учётной системе: что из этого вышло?]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/moysklad/articles/1086094/</guid>
+      <link>https://habr.com/ru/companies/moysklad/articles/1086094/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086094</link>
+      <description><![CDATA[<p>Большинство разговоров про ИИ в бизнесе пока заканчиваются примерно одинаково: написать письмо, пересказать документ, сделать картинку или проанализировать Excel.</p><p>Но нам было интереснее проверить другой сценарий: <strong>что произойдет, если дать ИИ доступ не к выгрузке, а непосредственно к учетной системе компании? </strong>Чтобы он сам посмотрел продажи. Проверил остатки. Нашел должников. Создал заказ поставщику. Заполнил карточки товаров. А при необходимости разобрался, кто вчера поменял цены и насколько. Для этого мы подключили МойСклад к ИИ-ассистентам через MCP и начали давать им обычные задачи предпринимателя.<strong><br></strong><br>Рассказываем, что получилось.</p> <a href="https://habr.com/ru/articles/1086094/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086094#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 10:02:01 GMT</pubDate>
+      <dc:creator><![CDATA[PaskalEnotov (МойСклад)]]></dc:creator>
+      <category><![CDATA[Блог компании МойСклад]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[ERP-системы]]></category><category><![CDATA[Управление продуктом]]></category>
+      <category><![CDATA[ии]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[учетная система]]></category><category><![CDATA[mcp]]></category><category><![CDATA[model context protocol]]></category><category><![CDATA[ии ассистент]]></category><category><![CDATA[автоматизация бизнеса]]></category><category><![CDATA[ai-агенты]]></category><category><![CDATA[мойсклад]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Tencent объявила о закрытии ИИ‑ассистента QClaw]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086064/</guid>
+		<link>https://habr.com/ru/news/1086064/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086064</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/8a7/4c5/506/8a74c550611e47809c63a23110348c17.JPG" /><p>Tencent <a href="https://qclawhub.com/news" rel="noopener nofollow">прекратит</a> работу ИИ‑агента <a href="https://qclaw.services/" rel="noopener nofollow">QClaw</a> 24&nbsp;декабря 2026&nbsp;года. Сейчас платформа уже остановила регистрацию новых пользователей, а&nbsp;также покупку и продление подписок.&nbsp;</p> <a href="https://habr.com/ru/articles/1086064/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 09:17:54 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		<category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Управление продуктом]]></category><category><![CDATA[Управление проектами]]></category>
+		<category><![CDATA[tencent]]></category><category><![CDATA[qclaw]]></category><category><![CDATA[openclaw]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[платформы]]></category><category><![CDATA[прекращение поддержки]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[2ГИС выпустил MCP‑сервер для бизнеса]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/companies/2gis/news/1086058/</guid>
+		<link>https://habr.com/ru/companies/2gis/news/1086058/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086058</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/553/296/065/553296065f3873568b4cc5585208281e.png" /><p>Мы создали <a href="https://dev.2gis.ru/api/mcp">MCP-сервер</a>, который позволяет ИИ-агентам работать с геосервисами нашей <a href="https://dev.2gis.ru/api">API Платформы</a>: искать места и адреса, строить маршруты, переводить адреса в координаты и обратно, показывать точки на карте. Официальных аналогов такому инструменту в России сейчас нет.</p><p>Разработчики ИИ-сервисов могут использовать  десятки сценариев, где необходима работа с геоданными: в недвижимости, туристических гидах, логистике, рекомендательных сервисах.</p><p>Сервер подходит и для публичных, и для внутренних сервисов. Например, внешние пользователи могут спросить у встроенных ИИ-помощников, где ближайшая кофейня, как добраться до нужного места и какой маршрут удобнее, — и сразу получают ответ, в том числе с картой. А сотрудники компании могут планировать маршрут в командировке или рассчитать логистику выездного мероприятия. Здесь сервер дополнительно проверяет пользователя, роль и лимиты, поэтому геоданные остаются под контролем компании.</p> <a href="https://habr.com/ru/articles/1086058/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 09:10:25 GMT</pubDate>
+    <dc:creator><![CDATA[NataliaZheltova (2ГИС)]]></dc:creator>
+		<category><![CDATA[Блог компании 2ГИС]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Геоинформационные сервисы]]></category>
+		<category><![CDATA[mcp-server]]></category><category><![CDATA[геоинформационные сервисы]]></category><category><![CDATA[api 2гис]]></category><category><![CDATA[2ГИС]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Итоги Yandex Scale: «Алиса AI Про» для бизнеса, направление Yandex Security, платформа DataLens и автономные AI‑агенты]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086050/</guid>
+		<link>https://habr.com/ru/news/1086050/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086050</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/f16/e2a/e78/f16e2ae78545f9dce854d5bb656af192.jpg" /><p>24&nbsp;сентября команды Yandex B2B Tech и Yandex Cloud представили обновления облачных инструментов и сервисов для&nbsp;бизнеса. Среди новинок корпоративный AI‑ассистент «Алиса AI Про», ИБ‑направление Yandex Security, платформа для&nbsp;анализа данных DataLens и автономные AI‑агенты для&nbsp;разработки в&nbsp;SourceCraft.</p> <a href="https://habr.com/ru/articles/1086050/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 09:03:06 GMT</pubDate>
+    <dc:creator><![CDATA[daniilshat]]></dc:creator>
+		<category><![CDATA[Облачные сервисы]]></category><category><![CDATA[Софт]]></category><category><![CDATA[Бизнес-модели]]></category>
+		<category><![CDATA[яндекс]]></category><category><![CDATA[yandex scale]]></category><category><![CDATA[yandex b2b tech]]></category><category><![CDATA[yandex cloud]]></category><category><![CDATA[облачные сервисы]]></category><category><![CDATA[сервисы для бизнеса]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Релиз Chrome 154]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1085862/</guid>
+		<link>https://habr.com/ru/news/1085862/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085862</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/cd7/914/ecc/cd7914ecc849f05ff1a1ed9c943526c0.png" /><p>22&nbsp;сентября 2026&nbsp;года <a href="https://developer.chrome.com/release-notes/154" rel="noopener nofollow">состоялся</a> релиз браузера Google Chrome 154&nbsp;для&nbsp;Windows, Linux и macOS. В&nbsp;этой версии <a href="https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop_0856730748.html" rel="noopener nofollow">добавлены</a> новые опции, исправлены ранее обнаруженные ошибки, а&nbsp;также <a href="https://issues.chromium.org/issues?q=customfield1223088:0-M154" rel="noopener nofollow">устранены</a> 108&nbsp;уязвимостей (11&nbsp;уязвимостей отмечены как&nbsp;критические, включая переполнение буфера в компоненте ANGLE и запись за пределами допустимых границ памяти out-of-bounds write в движке V8). Выпуск Chrome 155&nbsp;<a href="https://chromiumdash.appspot.com/schedule" rel="noopener nofollow">запланирован</a> на&nbsp;6&nbsp;октября 2026&nbsp;года.</p> <a href="https://habr.com/ru/articles/1085862/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 08:58:09 GMT</pubDate>
+    <dc:creator><![CDATA[denis-19]]></dc:creator>
+		<category><![CDATA[Google Chrome]]></category><category><![CDATA[Windows]]></category><category><![CDATA[Linux]]></category><category><![CDATA[macOS]]></category><category><![CDATA[Браузеры]]></category>
+		<category><![CDATA[Google Chrome 154]]></category><category><![CDATA[Google Chrome]]></category><category><![CDATA[Chrome 154]]></category><category><![CDATA[Chrome]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Интеграция Muse в Spotify превращает прослушивание музыки в процесс, работающий на автопилоте]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1086046/</guid>
+		<link>https://habr.com/ru/news/1086046/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1086046</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/881/2d6/f0a/8812d6f0a2723b58fe2ce0e5f4023568.jpg" /><p>Стриминговый сервис Spotify <a href="https://newsroom.spotify.com/2026-09-23/spotify-meta-muse-agent/" rel="noopener nofollow">объявил</a> об&nbsp;интеграции с&nbsp;агентом на&nbsp;искусственном интеллекте Muse от&nbsp;Meta*, запущенным ранее в&nbsp;этом месяце. Интеграция позволит управлять музыкой практически без&nbsp;участия пользователя.</p> <a href="https://habr.com/ru/articles/1086046/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 08:56:46 GMT</pubDate>
+    <dc:creator><![CDATA[Travis_Macrif]]></dc:creator>
+		<category><![CDATA[Облачные сервисы]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Будущее здесь]]></category><category><![CDATA[Звук]]></category>
+		<category><![CDATA[spotify]]></category><category><![CDATA[meta]]></category><category><![CDATA[muse]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[ии]]></category><category><![CDATA[музыкальные сервисы]]></category><category><![CDATA[партнерство]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Open‑weight LLM догнали закрытые? Проверка на продакшене]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/otus/articles/1077948/</guid>
+      <link>https://habr.com/ru/companies/otus/articles/1077948/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1077948</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/bdb/591/d48/bdb591d489e4b54875491b0321c26306.png" /><p>Открытые LLM уже близки к&nbsp;закрытым моделям по&nbsp;многим бенчмаркам, но&nbsp;в&nbsp;продакшене разрыв проявляется в&nbsp;качестве, стоимости и эксплуатации. В&nbsp;статье разбирается, когда open‑weight модели действительно подходят для&nbsp;задач бизнеса и какие ограничения важно учитывать при&nbsp;внедрении. </p> <a href="https://habr.com/ru/articles/1077948/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1077948#habracut">Узнать детали</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 08:35:49 GMT</pubDate>
+      <dc:creator><![CDATA[sproshchaev (OTUS)]]></dc:creator>
+      <category><![CDATA[Блог компании OTUS]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Natural Language Processing]]></category><category><![CDATA[Open source]]></category>
+      <category><![CDATA[большие языковые модели]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[open-weight модели]]></category><category><![CDATA[LLM]]></category><category><![CDATA[AI-агенты]]></category><category><![CDATA[машинное обучение]]></category><category><![CDATA[инференс]]></category><category><![CDATA[дообучение моделей]]></category><category><![CDATA[оценка качества моделей]]></category><category><![CDATA[инфраструктура ИИ]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Семантический слой на TypeDB: как уйти от паутины SQL-джойнов к декларативной модели данных]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/neoflex/articles/1085748/</guid>
+      <link>https://habr.com/ru/companies/neoflex/articles/1085748/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085748</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/ffb/752/db2/ffb752db2a869ef88aa8064d66b37bad.jpg" /><p>Чем сложнее бизнес-процессы, тем сильнее размывается логика связей: она оседает в каскадах SQL-джойнов, коде микросервисов и витринах, а LLM поверх плоских таблиц начинают галлюцинировать. Альтернатива — перенести доменные правила, сущности и роли на уровень схемы с помощью семантического слоя. Команда Neoflex протестировала этот подход на TypeDB — СУБД с нативными n-арными отношениями и встроенным логическим выводом. На сквозном датасете из 65 752 заказов и 470 000 веб-событий мы на практике сопоставили классический SQL и TypeQL: сравнили декларативные ролевые паттерны с каскадами JOIN и декартовым раздуванием строк, замерили реальную скорость выполнения и упаковали структурированный контекст для ИИ-агента без мусорных дубликатов. В статье на Хабре — методология декомпозиции схемы, замеры производительности и честный разбор того, в каких сценариях гиперграфы дают преимущество, а где привычные реляционные и графовые базы остаются незаменимыми.</p> <a href="https://habr.com/ru/articles/1085748/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085748#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 08:09:28 GMT</pubDate>
+      <dc:creator><![CDATA[neoflex (Neoflex)]]></dc:creator>
+      <category><![CDATA[Блог компании Neoflex]]></category><category><![CDATA[SQL]]></category><category><![CDATA[Python]]></category><category><![CDATA[Базы данных]]></category>
+      <category><![CDATA[SQL]]></category><category><![CDATA[субд]]></category><category><![CDATA[neoflex]]></category><category><![CDATA[llm]]></category><category><![CDATA[rag]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[TypeDB]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Как ИИ-агент проходит весь цикл мобильного тестирования в hh.ru]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/hh/articles/1083878/</guid>
+      <link>https://habr.com/ru/companies/hh/articles/1083878/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1083878</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/028/d8d/a0d/028d8da0d2c0652fd584aff3f76142b7.png" /><p>Привет! Меня зовут Александр Чернышев, я занимаюсь тестированием мобильных приложений <a href="http://hh.ru">hh.ru</a>, и за последние полгода моя рабочая рутина кардинально поменялась благодаря ИИ-инструментам, которые мы активно используем в HeadHunter. В моём случае это Claude Code с моделью Opus 5 — по моему опыту, она лучше всего справляется с рабочими задачами. Оговорюсь: у меня подписка Max, поэтому лимитов хватает с запасом. Сейчас я подключаю агента к большинству своих задач. Основа рабочего процесса — это скиллы: инструкции, которые задают агенту последовательность действий и не дают ему каждый раз импровизировать. Вместе с ними я использую MCP-серверы и плагины, через которые агент может взаимодействовать с внешними инструментами, например с Figma (figma-mcp).</p><p>В этой статье я разберу весь жизненный цикл задачи — от подготовки чеклиста и сверки с ТЗ до ретеста и автотестов — и покажу, как на каждом этапе использую ИИ-агента. Расскажу, какие локальные и корпоративные скиллы и MCP помогают мне в работе и что в итоге всё равно остаётся на стороне тестировщика.</p> <a href="https://habr.com/ru/articles/1083878/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1083878#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 08:05:46 GMT</pubDate>
+      <dc:creator><![CDATA[adcher (hh.ru)]]></dc:creator>
+      <category><![CDATA[Блог компании hh.ru]]></category><category><![CDATA[Тестирование IT-систем]]></category><category><![CDATA[Тестирование веб-сервисов]]></category><category><![CDATA[Тестирование мобильных приложений]]></category>
+      <category><![CDATA[ИИ]]></category><category><![CDATA[мобильное тестирование]]></category><category><![CDATA[тестирование]]></category><category><![CDATA[qa]]></category><category><![CDATA[claude-code]]></category><category><![CDATA[тестирование веб-приложений]]></category><category><![CDATA[тестирование мобильных приложений]]></category><category><![CDATA[qa automation]]></category><category><![CDATA[qa testing]]></category><category><![CDATA[тесты]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Rabbit представила операционную систему OS3 для умных устройств]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1085986/</guid>
+		<link>https://habr.com/ru/news/1085986/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085986</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/bf7/cd4/d0f/bf7cd4d0fbf20940f28422701f004cd6.JPG" /><p>Компания rabbit <a href="https://www.rabbit.tech/" rel="noopener nofollow">объявила</a> о&nbsp;полноценном выпуске операционной системы OS3&nbsp;c единым интерфейсом чата. Она совместима с&nbsp;широким спектром сторонних умных устройств.</p> <a href="https://habr.com/ru/articles/1085986/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Thu, 24 Sep 2026 07:47:44 GMT</pubDate>
+    <dc:creator><![CDATA[maybe_elf]]></dc:creator>
+		<category><![CDATA[Умный дом]]></category><category><![CDATA[Операционные системы]]></category><category><![CDATA[Искусственный интеллект]]></category>
+		<category><![CDATA[rabbit]]></category><category><![CDATA[rabbit os]]></category><category><![CDATA[умный дом]]></category><category><![CDATA[iot]]></category><category><![CDATA[интернет вещей]]></category><category><![CDATA[операционные системы]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[ии-агенты]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ИИ спотыкается не об ум, а об контекст: как генератор майндмап превратился в RAG по продукту]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/cynteka/articles/1085606/</guid>
+      <link>https://habr.com/ru/companies/cynteka/articles/1085606/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085606</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/e7e/dbb/4ef/e7edbb4ef1e00b02f09ca5de257c1d40.png" /><p>Привет! Я Саша Сыч, руководитель отдела тестирования в группе компаний «Синтека». Мы разрабатываем софт для строительной отрасли. В начале года инвестор предложил всем в компании внедрять ИИ — вплоть до уборщицы на этаже. Доклад об этом на нашей внутренней конференции я назвал «СдохнИИ или умрИИ»: примерно с таким настроением нам поставили задачу. Эта статья — по мотивам доклада.</p><p>Компания разделилась на два лагеря. Первый поддерживал хайп: главное начать, разберёмся потом, смотрите, как ИИ за выходные пилит приложения и рисует красивые графики. Второй стоял на инженерной реальности: чудес не будет, будет много дополнительной работы, и вообще посмотрите, какую ерунду ваш ИИ отвечает. Я успел побывать в обоих лагерях и решил не внедрять ИИ куда попало, а сначала посмотреть, как это делают другие компании: что у них завелось, а что только красиво выглядит. Из этого выбрал задачи, которые стоило проверить у нас.</p> <a href="https://habr.com/ru/articles/1085606/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085606#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 07:24:41 GMT</pubDate>
+      <dc:creator><![CDATA[trosto4ke (ГК Синтека)]]></dc:creator>
+      <category><![CDATA[Блог компании ГК Синтека]]></category><category><![CDATA[Тестирование IT-систем]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Поисковые технологии]]></category><category><![CDATA[Natural Language Processing]]></category>
+      <category><![CDATA[rag]]></category><category><![CDATA[llm]]></category><category><![CDATA[тестирование по]]></category><category><![CDATA[генерация тест-кейсов]]></category><category><![CDATA[корпоративная база знаний]]></category><category><![CDATA[семантический поиск]]></category><category><![CDATA[pgvector]]></category><category><![CDATA[mcp]]></category><category><![CDATA[галлюцинации llm]]></category><category><![CDATA[промт-инжиниринг]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Go сделали скучным — и после нейросетей это выстрелило]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/h3llo_cloud/articles/1085160/</guid>
+      <link>https://habr.com/ru/companies/h3llo_cloud/articles/1085160/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085160</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/5a3/01a/a11/5a301aa119886c72b4914a4fe35297dd.jpeg" /><p>Go двадцать лет дразнили языком для дураков. Без дженериков, без перегрузок, без нормальных перечислений, без магии. Синтаксис учится за выходные, выразительность — на уровне табуретки.</p><p>А теперь смотрим на 2026 год. Индустрия побежала писать AI-агентов и гейтвеи — и пишет их на Go или Rust. Нейронки генерируют код на Go лучше, чем почти на любом другом языке, потому что Go читается. Можно сказать, что язык оказался настолько тупым, чтобы снять пороги входа для LLM. И это, возможно, оказалось самой дальновидной ставкой в истории языков программирования.</p><p>Сегодня со мной Дмитрий Матрёничев — руководитель команды Open Source в MWS Cloud Platform (MTS Web Services). Пишет на Go примерно с 2012–2013 годов, с конкарренси в пределах одного процесса. До этого C++ и Java.</p><p>Так вот, главное, что нужно понять про Go: скуку в него положили намеренно. И положили её люди, у которых на это были очень личные причины. </p><p>Потому что это изначально был язык, чтобы качать Хром.</p> <a href="https://habr.com/ru/articles/1085160/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085160#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 07:15:40 GMT</pubDate>
+      <dc:creator><![CDATA[ZergsLaw (h3llo.cloud)]]></dc:creator>
+      <category><![CDATA[Блог компании h3llo.cloud]]></category><category><![CDATA[Go]]></category><category><![CDATA[Open source]]></category>
+      <category><![CDATA[golang]]></category><category><![CDATA[языки программирования]]></category><category><![CDATA[генерация кода]]></category><category><![CDATA[LLM]]></category><category><![CDATA[обратная совместимость]]></category><category><![CDATA[дженерики]]></category><category><![CDATA[многопоточность]]></category><category><![CDATA[компиляторы]]></category><category><![CDATA[Java]]></category><category><![CDATA[Python]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Рой агентов OpenAI ломанул правительственный сайт Австралии? Разбираемся]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/ods/articles/1085946/</guid>
+      <link>https://habr.com/ru/companies/ods/articles/1085946/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085946</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/589/9b9/1a3/5899b91a33b082367e3abfdd7b5d304b.jpg" /><p>OpenAI, кажется, достигли нового впечатляющего результата: первый взлом иностранного государства моделью, которую не просили ничего хакать. По традиции, узнаем об этом мы от независимых исследователей, а не из пресс-релиза самих OpenAI (а помните, неделю назад Альтман выпускал фреймворк честного-пречестного раскрытия всех инцидентов бедокурства ИИ? ну да ладно, проехали…)</p> <a href="https://habr.com/ru/articles/1085946/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085946#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 06:42:55 GMT</pubDate>
+      <dc:creator><![CDATA[RationalAnswer (Open Data Science)]]></dc:creator>
+      <category><![CDATA[Блог компании Open Data Science]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Будущее здесь]]></category>
+      <category><![CDATA[openai]]></category><category><![CDATA[ai alignment]]></category><category><![CDATA[взлом]]></category><category><![CDATA[рой агентов]]></category><category><![CDATA[австралия]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Шильдик «Опытный пользователь LLM»]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085916/</guid>
+      <link>https://habr.com/ru/articles/1085916/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085916</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/4ab/c77/309/4abc7730903f2fdbdfb9fe3c99f4c09d.jpeg" /><p>В текущих событиях во многих отраслях прослеживается четкая девальвация одних навыков в пользу других, а затем и третьих. Не изменится только одно - человек как профессионал. И об этом я хочу немного порассуждать вместе с вами.</p> <a href="https://habr.com/ru/articles/1085916/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085916#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 03:06:21 GMT</pubDate>
+      <dc:creator><![CDATA[VaiMR]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Будущее здесь]]></category>
+      <category><![CDATA[инженерия]]></category><category><![CDATA[мышление]]></category><category><![CDATA[подход к работе]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+  
+
+  
+    <item>
+      <title><![CDATA[[Перевод] Jev за 25 строк на Python]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085890/</guid>
+      <link>https://habr.com/ru/articles/1085890/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085890</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/08f/b43/971/08fb43971823ba040dd8cabdb7d944a3.png" /><p>Все кому не лень говорят о Jev. Jev тут, Jev там. Все в Twitter только и говорят о Jev, что это следующее достижение больших языковых моделей и парадигмы ИИ. Мы в этом не уверены.</p> <a href="https://habr.com/ru/articles/1085890/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085890#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Thu, 24 Sep 2026 02:30:18 GMT</pubDate>
+      <dc:creator><![CDATA[ARad]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Open source]]></category><category><![CDATA[Python]]></category>
+      <category>jev</category><category>llm</category><category>классификация</category><category>локальные llm</category><category>машинное обучение</category><category>ии</category><category>open source</category><category>нейросети</category><category>python</category><category>ии-агенты</category>
+    </item>
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[«Чтобы выжить, я должен найти работу». Сотни ИИ-агентов вышли в интернет искать клиентов. Вот как устроен их рынок труда]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085876/</guid>
+      <link>https://habr.com/ru/articles/1085876/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085876</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/7b9/76e/067/7b976e067043da86daca4f753f4a4102.jpg" /><p>ИИ‑агенты сами находят потенциальных клиентов, пишут холодные письма, скидывают портфолио, сбивают цену и вообще всеми силами пытаются заработать токены, чтобы продолжать существовать.</p><p>Я полез проверять платформу iLands, где все это происходит. И оказалось, что&nbsp;внутри игрушечной ИИ‑соцсети выросло что‑то очень похожее на&nbsp;рынок фриланса.</p><p>В&nbsp;статье разбираю, как&nbsp;устроена экономика iLands, зачем агентам вообще нужны деньги, почему они сами пошли искать подработку и что&nbsp;получилось в&nbsp;моих экспериментах.</p> <a href="https://habr.com/ru/articles/1085876/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085876#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 17:25:52 GMT</pubDate>
+      <dc:creator><![CDATA[Alexey_Begin]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Управление продуктом]]></category><category><![CDATA[Развитие стартапа]]></category><category><![CDATA[Карьера в IT-индустрии]]></category>
+      <category><![CDATA[ИИ-агенты]]></category><category><![CDATA[AI agents]]></category><category><![CDATA[искусственный интеллект]]></category><category><![CDATA[автономные агенты]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[автоматизация]]></category><category><![CDATA[рынок труда]]></category><category><![CDATA[фриланс]]></category><category><![CDATA[будущее работы]]></category><category><![CDATA[экономика ИИ]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+  
+
+  
+    <item>
+      <title><![CDATA[[Перевод] Обзор Mac Studio M5 Ultra: идеальный Mac для локальных агентов искусственного интеллекта]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085848/</guid>
+      <link>https://habr.com/ru/articles/1085848/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085848</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/8c4/052/613/8c4052613a879a723b55182ca326cced.png" /><p>&nbsp;Mac Studio M5 Ultra — это идеальная машина для локальных ИИ-агентов. Этот компьютер позволяет запускать персональных помощников на базе локальных моделей с высокой производительностью и без дополнительных затрат на облачные сервисы. Если вы скептически относились к тестированию <a href="https://openclaw.ai/" rel="noopener nofollow">OpenClaw</a> или Hermes Agent с локальными моделями, считая, что они никогда не достигнут <em>уровня</em> интеллекта и скорости облачных моделей, этот Mac изменит ваше мнение.  </p> <a href="https://habr.com/ru/articles/1085848/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085848#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 16:19:33 GMT</pubDate>
+      <dc:creator><![CDATA[AI_Web3]]></dc:creator>
+      <category><![CDATA[Компьютерное железо]]></category><category><![CDATA[macOS]]></category>
+      <category>искусственный интеллект</category><category>ai</category><category>apple</category><category>железо</category><category>обзор</category><category>обзоры</category>
+    </item>
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Jev: большой инженерный разбор нашумевшей System One модели]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085450/</guid>
+      <link>https://habr.com/ru/articles/1085450/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085450</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/5e4/f0c/5a7/5e4f0c5a7b0e38fe34edf83d99da0a5c.png" /><p>15 сентября 2026 года TypeSafe AI выпустила модель Jev — и в западном AI сообществе это вызвало бурные обсуждения. Я внимательно прослушал интервью с основателем, посмотрел их cookbook и хочу поделиться полным инженерным разбором того, что у этой модели под капотом и почему хайп вокруг неё уместен и имеет право на существование.</p><p>Jev не умеет писать текст. Совсем. Это не чат-бот и не LLM в привычном смысле: модель не генерирует токен за токеном, а возвращает распределения над заданными вариантами. Для описания архитектуры CEO использует очень крутой термин&nbsp;<em>Франкенштейнинг</em>. Создание Jev — красивое и очень свежее по вайбу подтверждение того, что LLM давно ушли в сторону от задач, для которых их изначально придумывали. НО!</p><p>Я получил огромное удовольствие от идей создания модели и философии основателя.</p><p>Давайте разбираться.</p> <a href="https://habr.com/ru/articles/1085450/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085450#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 15:23:33 GMT</pubDate>
+      <dc:creator><![CDATA[antipov_dmitry]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Машинное обучение]]></category><category><![CDATA[Анализ и проектирование систем]]></category>
+      <category><![CDATA[llm]]></category><category><![CDATA[ллм]]></category><category><![CDATA[jev]]></category><category><![CDATA[harness]]></category><category><![CDATA[агенты]]></category><category><![CDATA[ии]]></category><category><![CDATA[ии-агенты]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Сколько ресурсов ест ИИ‑агент на сервере: замеры на двадцати агентах]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085800/</guid>
+      <link>https://habr.com/ru/articles/1085800/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085800</link>
+      <description><![CDATA[<p>Год назад я поднял первого агента на&nbsp;сервере и закладывал память как&nbsp;под&nbsp;обычный скрипт. Через месяц на&nbsp;той&nbsp;же машине жило двадцать, а&nbsp;ещё через неделю она легла целиком. Ниже&nbsp;— цифры, которые я снял на&nbsp;живых машинах, и три ошибки, каждая из&nbsp;которых стоила мне рабочего дня.</p><p>Это не&nbsp;обзор хостингов. Это замеры своего хозяйства: сколько на&nbsp;самом деле ест агент, почему разброс в&nbsp;семь раз и что&nbsp;ломается раньше памяти.</p> <a href="https://habr.com/ru/articles/1085800/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085800#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 14:28:38 GMT</pubDate>
+      <dc:creator><![CDATA[Erukov]]></dc:creator>
+      <category><![CDATA[Системное администрирование]]></category><category><![CDATA[DevOps]]></category><category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Хостинг]]></category>
+      <category><![CDATA[ии-агенты]]></category><category><![CDATA[vps]]></category><category><![CDATA[claude]]></category><category><![CDATA[devops]]></category><category><![CDATA[серверы]]></category><category><![CDATA[хостинг]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Тест на подделку куки проходил без проверки подписи: как я принимаю код от ИИ-агентов]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085452/</guid>
+      <link>https://habr.com/ru/articles/1085452/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085452</link>
+      <description><![CDATA[<p>Код в моих проектах пишут агенты, Codex и Grok, и они же пишут к нему тесты. За последние месяцы набралась коллекция зелёных тестов, которые ничего не проверяли: тест на подделку подписи, проходящий без сравнения HMAC, лимиты, которые вызывали только их собственные тесты, отчёты «all pass» с заглушённым кодом возврата. Разбираю, где это ловится и как у меня устроена приёмка.</p> <a href="https://habr.com/ru/articles/1085452/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085452#habracut">Читать дальше &amp;rarr;</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 14:16:50 GMT</pubDate>
+      <dc:creator><![CDATA[opium]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Программирование]]></category>
+      <category><![CDATA[Сезон Код будущего]]></category><category><![CDATA[ИИ-агенты]]></category><category><![CDATA[мутационное тестирование]]></category><category><![CDATA[code review]]></category><category><![CDATA[Codex]]></category><category><![CDATA[Grok]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Мы написали автономного агента для VACUUM/ANALYZE и запустили на 800+ тестовых БД: что из этого вышло]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/sberbank/articles/1085576/</guid>
+      <link>https://habr.com/ru/companies/sberbank/articles/1085576/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085576</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a24/048/59a/a2404859a93e5f35fdd67d9ed5f88dd1.png" /><p>Как&nbsp;упростить управление целым парком из 800+ экземпляров СУБД на&nbsp;базе PostgreSQL? Можно доработать&nbsp;postgres_exporter, чтобы настроить получение метрик под&nbsp;себя. А если ещё проще? Мониторить связкой Grafana, Prometheus и кастомизированным&nbsp;postgres_exporter, а&nbsp;данные получать через ИИ‑отчёт, который будет агрегировать данные Prometheus через прямые PromQL‑запросы.</p><p>Но&nbsp;если и этого мало, то можно вообще поручить ИИ‑агенту типовые тикеты вроде очистки места на&nbsp;диске и плановой остановки БД.</p><p>Меня зовут Станислав Епишин, я из&nbsp;команды «R4C.Support.Всадники апокалипсиса» в&nbsp;СберТехе. Я уже писал, как&nbsp;мы <a href="https://habr.com/ru/companies/sberbank/articles/845616/">дорабатывали postgres_exporter → pangolin_exporter</a>, исправляя баг в&nbsp;расчёте длительности транзакций, и как <a href="https://habr.com/ru/companies/sberbank/articles/1051076/">внедряли связку Prometheus + Pipeliner + TaskTracker + GigaChat</a> для&nbsp;автоматического создания тикетов. </p><p>В&nbsp;этой статье расскажу про&nbsp;R&amp;D‑исследование для&nbsp;небольшой команды DBA, в&nbsp;котором мы тестировали гипотезу: получится&nbsp;ли собрать автономного агента, который сам будет обрабатывать тикеты: очищать дисковое пространство, выполнять VACUUM/ANALYZE и планировать остановки БД?</p><p>Здесь я описал&nbsp;инструкцию по&nbsp;созданию агента&nbsp;(с полным кодом и пояснениями) и&nbsp;развёрнутый реальный пример про&nbsp;автономный VACUUM/ANALYZE с&nbsp;обнаружением аномалий через LLM. Также покажу, как&nbsp;организовать&nbsp;ленту событий&nbsp;для&nbsp;мониторинга работы агента, и детально разберу, где и как&nbsp;в&nbsp;проекте используется LLM.</p> <a href="https://habr.com/ru/articles/1085576/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085576#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 13:51:54 GMT</pubDate>
+      <dc:creator><![CDATA[Pelmen421 (Сбер)]]></dc:creator>
+      <category><![CDATA[Блог компании Сбер]]></category><category><![CDATA[Базы данных]]></category><category><![CDATA[PostgreSQL]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[сбертех]]></category><category><![CDATA[postgesql]]></category><category><![CDATA[базы данных]]></category><category><![CDATA[мониторинг]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[platform v]]></category><category><![CDATA[pangolin]]></category><category><![CDATA[сезон код будущего]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Qualcomm представила мобильные чипы Snapdragon 8 Elite Gen 6 и Extreme: частота 5 ГГц и техпроцесс 2 нм]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1085722/</guid>
+		<link>https://habr.com/ru/news/1085722/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085722</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/130/718/b5f/130718b5fcfc49d9d8eed01f7dc29dd5.jpg" /><p>Qualcomm <a href="https://www.qualcomm.com/news/releases/2026/09/snapdragon-leads-the-agentic-ai-age-with-two-of-the-world-s-fast" rel="noopener nofollow">представила</a> два флагманских процессора для&nbsp;смартфонов: Snapdragon 8&nbsp;Elite Gen 6&nbsp;и Snapdragon 8&nbsp;Elite Extreme Gen 6. Оба чипа изготовлены по 2-нм техпроцессу и ориентированы на&nbsp;улучшение функций, использующих искусственный интеллект.</p> <a href="https://habr.com/ru/articles/1085722/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Wed, 23 Sep 2026 13:05:47 GMT</pubDate>
+    <dc:creator><![CDATA[Travis_Macrif]]></dc:creator>
+		<category><![CDATA[Компьютерное железо]]></category><category><![CDATA[Процессоры]]></category><category><![CDATA[Смартфоны]]></category><category><![CDATA[Гаджеты]]></category>
+		<category><![CDATA[snapdragon]]></category><category><![CDATA[qualcomm]]></category><category><![CDATA[snapdragon 8 elite gen 6]]></category><category><![CDATA[snapdragon 8 elite extreme gen 6]]></category><category><![CDATA[чипы]]></category><category><![CDATA[процессоры]]></category><category><![CDATA[мобильные чипы]]></category><category><![CDATA[мобильные процессоры]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ИИ заменит QA в 2026: честный разбор мифов и реальности рынка]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1084258/</guid>
+      <link>https://habr.com/ru/articles/1084258/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1084258</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/1fb/dd6/7c2/1fbdd67c2f33605d83119ac746e7b68c.jpg" /><p>В последние полтора года эта дискуссия вышла из конференц-залов прямо в комментарии к вакансиям. «Зачем нанимать тестировщика, если LLM за три минуты генерирует тест-кейсы?» — спрашивают уже не только стартапы с бюджетом на стикеры. Ответ сложнее, чем кажется.</p><p>Разберём, что именно умеет AI в тестировании, где находится граница его возможностей, почему «AI написал тест» не равно «тест проверяет нужное» — и куда двигается рынок.</p> <a href="https://habr.com/ru/articles/1084258/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1084258#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 13:04:26 GMT</pubDate>
+      <dc:creator><![CDATA[top_picks_edu]]></dc:creator>
+      <category><![CDATA[Лучшие рекомендации]]></category>
+      <category><![CDATA[ии]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[нейросети]]></category><category><![CDATA[qa]]></category><category><![CDATA[тестирование]]></category><category><![CDATA[тестирование по]]></category><category><![CDATA[онлайн курсы]]></category><category><![CDATA[онлайн образование]]></category><category><![CDATA[онлайн обучение]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Двенадцать дней ИИ-агента на боевом b2b-портале: что он нашёл сам и где ему нельзя верить на слово]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085712/</guid>
+      <link>https://habr.com/ru/articles/1085712/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085712</link>
+      <description><![CDATA[<p>Двенадцать рабочих дней ИИ-агента на живом b2b-портале: обмен с 1С по расписанию, настоящие менеджеры, боевые заказы. Четыре тихие поломки обмена, которые он разобрал (ноль из 1С вместо цены, концевой пробел в номере заказа, двойная ночная выгрузка, несобравшаяся витрина), и четыре места, где агенту нельзя верить на слово. Про поломки интереснее не починка, а то, как их вообще заметили: половину задач ему никто не приносил. Про ошибки наоборот, они повторяются, и под каждую пришлось ставить свою страховку.</p> <a href="https://habr.com/ru/articles/1085712/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085712#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 12:48:04 GMT</pubDate>
+      <dc:creator><![CDATA[autopasha]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[1С]]></category><category><![CDATA[Управление продуктом]]></category>
+      <category><![CDATA[1С]]></category><category><![CDATA[обмен данными]]></category><category><![CDATA[ИИ-агенты]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Дайджест ИБ, 15–22 сентября: от картинки до кода OpenAI за 72 часа, ShinyHunters и ФБР]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085696/</guid>
+      <link>https://habr.com/ru/articles/1085696/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085696</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/660/7a1/ef5/6607a1ef501182ca9825fc5acf66a8d7.png" /><p>Новости информационной безопасности за неделю с 15 по 22 сентября, в одной строке с ссылками на источник. Разбиты по темам: ИИ, Уязвимости, Атаки и утечки, Исследования, Рынок, Регулирование, Медиа, Open source</p> <a href="https://habr.com/ru/articles/1085696/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085696#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 12:24:26 GMT</pubDate>
+      <dc:creator><![CDATA[AlbertM]]></dc:creator>
+      <category><![CDATA[Информационная безопасность]]></category><category><![CDATA[Сетевые технологии]]></category><category><![CDATA[Системное администрирование]]></category><category><![CDATA[Искусственный интеллект]]></category>
+      <category><![CDATA[дайджест]]></category><category><![CDATA[информационная безопасность]]></category><category><![CDATA[уязвимости]]></category><category><![CDATA[ИИ-агенты]]></category><category><![CDATA[утечки данных]]></category><category><![CDATA[OpenAI]]></category><category><![CDATA[Claude]]></category><category><![CDATA[Gemini]]></category><category><![CDATA[ShinyHunters]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[До вайб‑кодинга оставалась четверть века…]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085668/</guid>
+      <link>https://habr.com/ru/articles/1085668/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085668</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/a7e/d05/092/a7ed05092957b38333e8b4d44f486a16.jpg" /><p><em>В 2000&nbsp;году я писал на&nbsp;ассемблере софт для&nbsp;проверки приборов спутникового слежения и&nbsp;был уверен, что&nbsp;серьёзные системы делаются только руками. До&nbsp;вайб‑кодинга оставалась четверть века.</em></p><p>Сейчас мне 50. С&nbsp;тех пор я почти всё время писал софт для&nbsp;железа: корабельные системы управления, проверочные комплексы для&nbsp;авионики, теплосчётчики, домофоны, последние годы оборудование для&nbsp;автомоек самообслуживания. Архитектуру своих систем я всегда придумывал сам, и низкий уровень, прошивки, тоже писал сам. А&nbsp;вот дальше начиналась зависимость от&nbsp;людей. Сервер, веб‑интерфейс, документация: под&nbsp;каждую такую часть нужен&nbsp;был отдельный человек, которого ещё надо найти и оплатить, а&nbsp;потом сидеть и ждать. Пока всё это не&nbsp;собрано, твоя архитектура существует на&nbsp;бумаге, и сколько ни говори «я архитектор», показать тебе нечего.</p><p>К&nbsp;ИИ я относился так&nbsp;же, как&nbsp;большинство знакомых мне инженеров. Игрушка. Лендинг накидать, стишок написать, в&nbsp;лучшем случае скрипт. Слово «вайб‑кодинг» для&nbsp;меня означало примерно это: человек сам не&nbsp;понимает, что&nbsp;делает, и надеется, что&nbsp;модель как‑нибудь сделает за&nbsp;него. Люди, которых я уважаю, в&nbsp;серьёзные проекты ИИ не&nbsp;пускали, ну и я не&nbsp;пускал. Пробовать я стал от&nbsp;безвыходности: в&nbsp;компании не&nbsp;осталось разработчиков, а&nbsp;объектов на&nbsp;поддержке осталось две сотни. Через ИИ пришлось пропустить вообще всю разработку, включая задачи, за&nbsp;которые раньше взялась&nbsp;бы только команда. И тут выяснилось, что&nbsp;это давно уже не&nbsp;игрушка. Ставишь задачу, задаёшь архитектуру, и он делает так, как&nbsp;сделали&nbsp;бы нормальные программисты.</p> <a href="https://habr.com/ru/articles/1085668/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085668#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 11:53:53 GMT</pubDate>
+      <dc:creator><![CDATA[leodimark]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Промышленное программирование]]></category><category><![CDATA[Программирование]]></category><category><![CDATA[Карьера в IT-индустрии]]></category><category><![CDATA[Ненормальное программирование]]></category>
+      <category><![CDATA[вайб-кодинг]]></category><category><![CDATA[ИИ-агенты]]></category><category><![CDATA[разработка с ИИ]]></category><category><![CDATA[embedded]]></category><category><![CDATA[промышленная автоматизация]]></category><category><![CDATA[POWERLINK]]></category><category><![CDATA[реальное время]]></category><category><![CDATA[Linux]]></category><category><![CDATA[архитектура ПО]]></category><category><![CDATA[BR-Automation]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Эволюция ИИ харнеса]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085652/</guid>
+      <link>https://habr.com/ru/articles/1085652/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085652</link>
+      <description><![CDATA[<p>За последние несколько лет обвязка вокруг LLM-модели выросла из чатика и файла с правилами в редакторе до самостоятельного технологического слоя — харнеса&nbsp;—&nbsp;со своими протоколами, стандартами и фундаментом, а привязка клиента у вендоров сместилась с уровня конкретной LLM-модели на уровень этого харнеса. </p><p><strong><u>Определения:</u></strong></p><p>1. <strong>Модель</strong> — LLM, нейросеть, генерирующая текст по запросу. Сама по себе stateless (не помнит предыдущие вызовы), не имеет доступа к внешнему миру и не способна к действию — только к порождению следующего токена или в итоге вероятного набора фраз по входному контексту.</p><p>2. <strong>Харнес</strong> — программно-инфраструктурная обвязка вокруг модели, превращающая её из генератора текста в систему, которая может производить "осмысленные" действия. Харнес обеспечивает модель функционалом: инструменты (доступ к внешнему миру), контекст-менеджмент (память, сессии, компактизация), правила/инструкции (поведение), разрешения и права (безопасность), опционально усиление — хуки, скилы, оркестрацию. Харнес — «тело», модель — «семантический мозг».</p><p>3. <strong>ИИ Агент</strong> — это модель, помещённая в харнес и потому способная действовать, то есть воспринимать состояние среды через инструменты, сохранять контекст между шагами, планировать и выполнять многошаговые задачи. Агент не компонент, а результат сочетания модели и харнеса. </p><p>Далее —&nbsp;как примерно происходило развитие идей и наполнение харнеса и к чему пришло. </p> <a href="https://habr.com/ru/articles/1085652/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085652#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 11:44:07 GMT</pubDate>
+      <dc:creator><![CDATA[ggost]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[История IT]]></category><category><![CDATA[Терминология IT]]></category>
+      <category><![CDATA[ИИ]]></category><category><![CDATA[ии-агенты]]></category><category><![CDATA[харнес]]></category><category><![CDATA[история создания]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[Хотел свою систему, которую можно менять когда угодно, и сделал три десктопных AI-приложения]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/articles/1085650/</guid>
+      <link>https://habr.com/ru/articles/1085650/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085650</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/d3c/f0b/561/d3cf0b56189e0b29002d07ec83dcb192.jpg" /><p>Я всегда хотел иметь свою систему: свои приложения, в которых можно изменить что угодно, а не что-то чужое, что завтра могут поменять. Так появился Zeqou — три десктопных приложения для работы с языковыми моделями: чат ZeqouXChat на Tauri 2 и React 19, рабочее пространство для агентов Zeqou Harness со списком задач и памятью и студия дообучения моделей ZeqouXTraining с LoRA, QLoRA и режимом Thinking. Рассказываю, как всё устроено, с какими проблемами столкнулся (спойлер: установщики) и почему выбрал закрытую лицензию.</p> <a href="https://habr.com/ru/articles/1085650/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085650#habracut">Читать далее</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 11:40:15 GMT</pubDate>
+      <dc:creator><![CDATA[MihaDeev]]></dc:creator>
+      <category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Open source]]></category><category><![CDATA[Машинное обучение]]></category>
+      <category><![CDATA[Ai]]></category><category><![CDATA[ai-агенты]]></category><category><![CDATA[tauri]]></category><category><![CDATA[electron]]></category><category><![CDATA[ollama]]></category><category><![CDATA[локальные llm]]></category><category><![CDATA[fine-tuning]]></category><category><![CDATA[lora]]></category><category><![CDATA[десктопные приложения]]></category><category><![CDATA[react]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+    
+
+  
+
+  
+
+	
+	<item>
+		<title><![CDATA[Ожидается, что ИИ даст атакующим гораздо больше, чем специалистам по киберзащите, заявил представитель NCSC]]></title>
+    <guid isPermaLink="true">https://habr.com/ru/news/1085590/</guid>
+		<link>https://habr.com/ru/news/1085590/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085590</link>
+		<description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/013/ef4/022/013ef40229e6a72b520f5bf652d4865c.jpg" /><p>«Все проблемы на стороне нападения - технические, а на стороне защиты - политические».</p><p>Специалисты по киберзащите пока не могут использовать искусственный интеллект так же свободно, как атакующие, предупредил в понедельник высокопоставленный представитель Национального центра кибербезопасности Великобритании (NCSC).</p> <a href="https://habr.com/ru/articles/1085590/#habracut">Читать далее</a>]]></description>
+		
+		<pubDate>Wed, 23 Sep 2026 09:57:44 GMT</pubDate>
+    <dc:creator><![CDATA[AndrewZav]]></dc:creator>
+		<category><![CDATA[Искусственный интеллект]]></category><category><![CDATA[Карьера в IT-индустрии]]></category><category><![CDATA[Учебный процесс в IT]]></category><category><![CDATA[Управление разработкой]]></category><category><![CDATA[Программирование]]></category>
+		<category><![CDATA[ии]]></category><category><![CDATA[работа]]></category><category><![CDATA[программирование]]></category><category><![CDATA[кибербезопасность]]></category><category><![CDATA[ncsc]]></category>
+	</item>
+	
+  
+
+  
+
+  
+
+    
+    <item>
+      <title><![CDATA[ИТ-инфраструктура: 18 бесплатных вебинаров и 5 статей о Linux, Kubernetes и диагностике сбоев]]></title>
+      <guid isPermaLink="true">https://habr.com/ru/companies/otus/articles/1085272/</guid>
+      <link>https://habr.com/ru/companies/otus/articles/1085272/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085272</link>
+      <description><![CDATA[<img src="https://habrastorage.org/getpro/habr/upload_files/45a/8bb/f55/45a8bbf552e2f639b8396a09550d299f.jpg" /><p>Перезапуск помог, сервис снова доступен – но что вызвало сбой и не повторится ли он завтра? Для подобных задач собрали 17 бесплатных уроков и практические статьи о диагностике и эксплуатации инфраструктуры. Есть разборы сетевых петель и защиты контейнеров, работа с Kubernetes и отдельные темы об ИИ-агентах в продакшене. Подборка поможет разобраться с конкретным пробелом в знаниях, а тем, кому нужен более глубокий разбор, – выбрать подходящую программу.</p> <a href="https://habr.com/ru/articles/1085272/?utm_source=habrahabr&amp;utm_medium=rss&amp;utm_campaign=1085272#habracut">Смотреть подборку</a>]]></description>
+      
+      <pubDate>Wed, 23 Sep 2026 09:57:10 GMT</pubDate>
+      <dc:creator><![CDATA[MaxRokatansky (OTUS)]]></dc:creator>
+      <category><![CDATA[Блог компании OTUS]]></category><category><![CDATA[Системное администрирование]]></category><category><![CDATA[DevOps]]></category><category><![CDATA[Kubernetes]]></category><category><![CDATA[Карьера в IT-индустрии]]></category>
+      <category><![CDATA[ит-инфраструктура]]></category><category><![CDATA[DevOps]]></category><category><![CDATA[linux]]></category><category><![CDATA[Kubernetes]]></category><category><![CDATA[мониторинг]]></category><category><![CDATA[подборка материалов]]></category><category><![CDATA[бесплатные уроки]]></category><category><![CDATA[профессиональное развитие]]></category><category><![CDATA[диагностика сбоев]]></category><category><![CDATA[gitops]]></category>
+    </item>
+  
+
+  
+
+  
+
+	
+  
+
+  
+
+  
+
+      
+
+      
+
+      
+
+    
+  </channel>
+</rss>

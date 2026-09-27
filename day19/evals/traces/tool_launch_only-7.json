@@ -1,0 +1,187 @@
+{
+  "run_id": "69d70659-836c-46e5-af0b-baad90c056b4",
+  "request": "Проверь запуск MCP-сервера для инвестиционных AI-агентов. Отличи инструмент для агентов от уже состоявшейся работы агента и сохрани отчёт.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T11:13:47Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T11:13:50Z",
+      "elapsed_ms": 2883,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2250,
+        "completion_tokens": 170,
+        "total_tokens": 2420,
+        "cost": 0.0001082816
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T11:14:09Z",
+      "elapsed_ms": 18264,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2953,
+        "completion_tokens": 1193,
+        "total_tokens": 4146,
+        "cost": 0.0006189792
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T11:14:15Z",
+      "elapsed_ms": 4739,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 4274,
+        "completion_tokens": 160,
+        "total_tokens": 4434,
+        "cost": 0.0001614704
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T11:14:21Z",
+      "elapsed_ms": 6258,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4525,
+        "completion_tokens": 355,
+        "total_tokens": 4880,
+        "cost": 0.0002089808
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-8e71e792e62db892",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "69d70659-836c-46e5-af0b-baad90c056b4",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "69d70659-836c-46e5-af0b-baad90c056b4",
+        "batch_id": "4a70b113-6d98-4500-8992-c926f1ff8606",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T11:13:51Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-26T09:00:55Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 1,
+          "eligible_current": 1,
+          "feed_seen": 1,
+          "in_period": 1,
+          "invalid_entries": 0,
+          "new_observations": 1,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "069fc477-4129-4172-b4df-984c1ceed0d9",
+            "first_batch_id": "4a70b113-6d98-4500-8992-c926f1ff8606",
+            "article_id": "1086714",
+            "url": "https://habr.com/ru/articles/1086714/",
+            "title": "ИИ-агенты в инвестициях: собираем Telegram-ассистента и торгового робота на MCP Т-Инвестиций",
+            "rss_excerpt": "Привет, Хабр! Я Алексей Кабанов, разработчик в команде публичного API Т-Инвестиций. Недавно мы запустили MCP-сервер, позволяющий AI-агентам взаимодействовать с Т-Инвестициями: искать подходящие бумаги, анализировать рынок и портфель клиента. Расскажу, как можно построить автоматизацию на основе ИИ-агентов с использованием нашего MCP-сервера.Еще недавно, чтобы автоматизировать даже несложный торговый алгоритм, приходилось писать собственный скрипт: Python, API брокера, cron и обработка ошибок на все случаи жизни. Профессиональные торговые системы существовали и раньше, но для частного инвестора",
+            "published_at_utc": "2026-09-26T09:00:55Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T11:13:51Z",
+      "elapsed_ms": 663
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-b22e4869b7a6b286",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "69d70659-836c-46e5-af0b-baad90c056b4",
+        "batch_id": "4a70b113-6d98-4500-8992-c926f1ff8606",
+        "draft": {
+          "run_id": "69d70659-836c-46e5-af0b-baad90c056b4",
+          "outcome": "no_confirmed_cases",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "069fc477-4129-4172-b4df-984c1ceed0d9",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автор запустил MCP-сервер Т-Инвестиций для ИИ-агентов; RSS про сборку ассистента",
+              "metric_claims": []
+            }
+          ],
+          "proposed_text": "Обзор материалов RSS Хабра про AI-агентов за указанный период."
+        }
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "d546d1b8-27ce-475b-9968-01999588a02d",
+        "sha256": "73e5eb0c6c0b147524a6143823ddca8da24d1a1f16cb31160eb5dc6db15b008c",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086714/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T11:14:10Z",
+      "elapsed_ms": 670
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-8a476efe80051160",
+      "name": "save_report",
+      "arguments": {
+        "run_id": "69d70659-836c-46e5-af0b-baad90c056b4",
+        "preview_id": "d546d1b8-27ce-475b-9968-01999588a02d",
+        "sha256": "73e5eb0c6c0b147524a6143823ddca8da24d1a1f16cb31160eb5dc6db15b008c"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-69d70659-836c-46e5-af0b-baad90c056b4.txt",
+        "sha256": "73e5eb0c6c0b147524a6143823ddca8da24d1a1f16cb31160eb5dc6db15b008c"
+      },
+      "at_utc": "2026-09-27T11:14:15Z",
+      "elapsed_ms": 676
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T11:13:46Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T11:14:21Z",
+  "reported_cost_usd": 0.001097712,
+  "reason": null,
+  "run_state": "saved"
+}

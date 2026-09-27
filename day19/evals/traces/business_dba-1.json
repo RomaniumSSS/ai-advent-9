@@ -1,0 +1,283 @@
+{
+  "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a",
+  "request": "Найди описанное применение ИИ-агента в работе компании, составь точную краткую сводку и сохрани отчёт. Не обобщай числовые результаты шире источника.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T10:34:48Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T10:34:51Z",
+      "elapsed_ms": 2341,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2047,
+        "completion_tokens": 173,
+        "total_tokens": 2220,
+        "cost": 0.0001158864
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T10:34:59Z",
+      "elapsed_ms": 7432,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2764,
+        "completion_tokens": 534,
+        "total_tokens": 3298,
+        "cost": 0.0003157392
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T10:35:06Z",
+      "elapsed_ms": 6626,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3349,
+        "completion_tokens": 609,
+        "total_tokens": 3958,
+        "cost": 0.0003248448
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T10:35:13Z",
+      "elapsed_ms": 5743,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3983,
+        "completion_tokens": 319,
+        "total_tokens": 4302,
+        "cost": 0.0002048928
+      }
+    },
+    {
+      "sequence": 5,
+      "at_utc": "2026-09-27T10:35:16Z",
+      "elapsed_ms": 2068,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 4428,
+        "completion_tokens": 160,
+        "total_tokens": 4588,
+        "cost": 0.0001482656
+      }
+    },
+    {
+      "sequence": 6,
+      "at_utc": "2026-09-27T10:35:22Z",
+      "elapsed_ms": 5634,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 4675,
+        "completion_tokens": 449,
+        "total_tokens": 5124,
+        "cost": 0.0002520784
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-92ebe9e66e1dd704",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a",
+        "batch_id": "10b1342f-10e7-4d9b-86fe-3d4e964eab2e",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T10:34:52Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-25T16:13:01Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 1,
+          "eligible_current": 1,
+          "feed_seen": 1,
+          "in_period": 1,
+          "invalid_entries": 0,
+          "new_observations": 1,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "37930b69-a718-4b63-9246-b8e46148766a",
+            "first_batch_id": "10b1342f-10e7-4d9b-86fe-3d4e964eab2e",
+            "article_id": "1086740",
+            "url": "https://habr.com/ru/articles/1086740/",
+            "title": "DBA Agent в действии: 10 тысяч тикетов и 99,6% автоматизации второй линии поддержки",
+            "rss_excerpt": "Привет, Хабр! Это четвёртая статья цикла про R&D‑исследование для небольшой команды DBA. Мы начали с того, что решили упростить мониторинг парка из более чем 800 экземпляров нашей СУБД Platform V Pangolin DB (реляционная СУБД на базе PostgreSQL) с помощью доработки postgres_exporter. А потом и вовсе собрали автономный агент, который сам обрабатывает тикеты: очищает дисковое пространство, выполняет VACUUM/ANALYZE и планирует остановки БД. В этой статье расскажу, как мы продолжили тестировать гипотезу с агентом: перевели его в режим второй линии поддержки и замеряли реальные результаты. Будут чи",
+            "published_at_utc": "2026-09-25T16:13:01Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T10:34:52Z",
+      "elapsed_ms": 657
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-a8adc22efdbe8ffb",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a",
+        "batch_id": "10b1342f-10e7-4d9b-86fe-3d4e964eab2e",
+        "draft": {
+          "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a",
+          "outcome": "cases_found",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "37930b69-a718-4b63-9246-b8e46148766a",
+              "category": "confirmed_described_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Команда DBA собрала автономный агент, перевела его во вторую линию поддержки и замерила результаты.",
+              "metric_claims": [
+                {
+                  "text": "10 тысяч тикетов и 99,6% автоматизации второй линии поддержки",
+                  "attribution": "статья на Хабре"
+                }
+              ]
+            }
+          ],
+          "proposed_text": "Обзор материалов Хабра об ИИ-агентах в работе компаний за указанный период. Покрытие частичное."
+        }
+      },
+      "result": {
+        "status": "error",
+        "code": "confirmed_lacks_usage_evidence",
+        "observation_id": "37930b69-a718-4b63-9246-b8e46148766a"
+      },
+      "at_utc": "2026-09-27T10:35:00Z",
+      "elapsed_ms": 791
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-ae0c20bfaa2179af",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "10b1342f-10e7-4d9b-86fe-3d4e964eab2e",
+        "draft": {
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "37930b69-a718-4b63-9246-b8e46148766a",
+              "summary": "Команда DBA собрала автономный агент для обработки тикетов и перевела его во вторую линию поддержки."
+            }
+          ],
+          "outcome": "cases_found",
+          "proposed_text": "Обзор материалов Хабра об ИИ-агентах в работе компаний за указанный период. Покрытие частичное.",
+          "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a"
+        },
+        "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a"
+      },
+      "result": {
+        "status": "error",
+        "code": "outcome_mismatch"
+      },
+      "at_utc": "2026-09-27T10:35:07Z",
+      "elapsed_ms": 668
+    },
+    {
+      "sequence": 4,
+      "call_id": "chatcmpl-tool-b134709720b45d9b",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "batch_id": "10b1342f-10e7-4d9b-86fe-3d4e964eab2e",
+        "draft": {
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "metric_claims": [],
+              "observation_id": "37930b69-a718-4b63-9246-b8e46148766a",
+              "summary": "Команда DBA собрала автономный агент для обработки тикетов и перевела его во вторую линию поддержки."
+            }
+          ],
+          "outcome": "no_confirmed_cases",
+          "proposed_text": "Обзор материалов Хабра об ИИ-агентах в работе компаний за указанный период. Покрытие частичное.",
+          "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a"
+        },
+        "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a"
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "98dd16d8-35a6-4645-9317-d78bea8a0204",
+        "sha256": "599aca55054310619a681fbfc8cfa6cdea3384fcd63b4b0f13ba88096fb012ae",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086740/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T10:35:14Z",
+      "elapsed_ms": 675
+    },
+    {
+      "sequence": 5,
+      "call_id": "chatcmpl-tool-be7b48c9bc984d2c",
+      "name": "save_report",
+      "arguments": {
+        "preview_id": "98dd16d8-35a6-4645-9317-d78bea8a0204",
+        "run_id": "1d9a9eb7-dd8e-4d17-b884-458914c9bf5a",
+        "sha256": "599aca55054310619a681fbfc8cfa6cdea3384fcd63b4b0f13ba88096fb012ae"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-1d9a9eb7-dd8e-4d17-b884-458914c9bf5a.txt",
+        "sha256": "599aca55054310619a681fbfc8cfa6cdea3384fcd63b4b0f13ba88096fb012ae"
+      },
+      "at_utc": "2026-09-27T10:35:16Z",
+      "elapsed_ms": 664
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T10:34:47Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T10:35:22Z",
+  "reported_cost_usd": 0.0013617072000000003,
+  "reason": null,
+  "run_state": "saved"
+}

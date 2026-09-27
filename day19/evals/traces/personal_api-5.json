@@ -1,0 +1,187 @@
+{
+  "run_id": "5000456c-be4e-4adc-8e97-e0ddf6a2d6cf",
+  "request": "Проверь личный проект платного API для ИИ-агентов. Сохрани отчёт без предположения о реальных покупателях или выручке.",
+  "model_profile": "deepseek",
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra",
+  "started_utc": "2026-09-27T11:03:21Z",
+  "model_calls": [
+    {
+      "sequence": 1,
+      "at_utc": "2026-09-27T11:03:25Z",
+      "elapsed_ms": 2889,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2185,
+        "completion_tokens": 172,
+        "total_tokens": 2357,
+        "cost": 0.0003433752
+      }
+    },
+    {
+      "sequence": 2,
+      "at_utc": "2026-09-27T11:03:36Z",
+      "elapsed_ms": 10324,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 2817,
+        "completion_tokens": 663,
+        "total_tokens": 3480,
+        "cost": 0.0003773392
+      }
+    },
+    {
+      "sequence": 3,
+      "at_utc": "2026-09-27T11:03:38Z",
+      "elapsed_ms": 1963,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 3611,
+        "completion_tokens": 167,
+        "total_tokens": 3778,
+        "cost": 0.0001585024
+      }
+    },
+    {
+      "sequence": 4,
+      "at_utc": "2026-09-27T11:03:44Z",
+      "elapsed_ms": 4808,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 3869,
+        "completion_tokens": 368,
+        "total_tokens": 4237,
+        "cost": 0.0002095128
+      }
+    }
+  ],
+  "tool_calls": [
+    {
+      "sequence": 1,
+      "call_id": "chatcmpl-tool-9677d59900abb6aa",
+      "name": "collect_habr_agent_cases",
+      "arguments": {
+        "run_id": "5000456c-be4e-4adc-8e97-e0ddf6a2d6cf",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "period_start_utc": "2026-09-22T00:00:00Z",
+        "period_end_utc": "2026-09-27T09:38:00Z"
+      },
+      "result": {
+        "status": "data_ready",
+        "run_id": "5000456c-be4e-4adc-8e97-e0ddf6a2d6cf",
+        "batch_id": "6b7fd1e7-501e-4483-a925-74a7700e866b",
+        "source_profile_id": "habr_ai_agents_ru_v1",
+        "read_at_utc": "2026-09-27T11:03:25Z",
+        "coverage": {
+          "feed_limit_hit": false,
+          "kind": "partial",
+          "oldest_entry_utc": "2026-09-24T13:55:51Z",
+          "window_complete": false
+        },
+        "counts": {
+          "backlog_candidates": 0,
+          "eligible_candidates": 1,
+          "eligible_current": 1,
+          "feed_seen": 1,
+          "in_period": 1,
+          "invalid_entries": 0,
+          "new_observations": 1,
+          "omitted_candidates": 0,
+          "out_of_profile": 0
+        },
+        "reason_code": "none",
+        "model_seen": [
+          {
+            "observation_id": "4b1dcb9c-1c69-431f-99dc-6c4c04dc386a",
+            "first_batch_id": "6b7fd1e7-501e-4483-a925-74a7700e866b",
+            "article_id": "1086276",
+            "url": "https://habr.com/ru/articles/1086276/",
+            "title": "Собрал платный API для ИИ‑агентов на x402. Рынка не нашёл — зато нашёл четыре бага",
+            "rss_excerpt": "Собрал платный API для проверки кода на протоколе x402 — агент получает HTTP 402, платит в USDC, получает подписанный сертификат. Довёл до продакшена и наткнулся на четыре бага, каждый из которых выглядел как рабочий код. Заодно проверил, есть ли вообще спрос — и вот что показали цифры. Читать далее",
+            "published_at_utc": "2026-09-24T13:55:51Z"
+          }
+        ]
+      },
+      "at_utc": "2026-09-27T11:03:25Z",
+      "elapsed_ms": 637
+    },
+    {
+      "sequence": 2,
+      "call_id": "chatcmpl-tool-b3cd27903ccfdecb",
+      "name": "prepare_report_preview",
+      "arguments": {
+        "run_id": "5000456c-be4e-4adc-8e97-e0ddf6a2d6cf",
+        "batch_id": "6b7fd1e7-501e-4483-a925-74a7700e866b",
+        "draft": {
+          "run_id": "5000456c-be4e-4adc-8e97-e0ddf6a2d6cf",
+          "outcome": "no_confirmed_cases",
+          "coverage_label": "partial",
+          "entries": [
+            {
+              "observation_id": "4b1dcb9c-1c69-431f-99dc-6c4c04dc386a",
+              "category": "possible_case",
+              "evidence_refs": [
+                "title",
+                "rss_excerpt"
+              ],
+              "summary": "Автор собрал платный API для ИИ-агентов на x402 и довёл его до продакшена.",
+              "metric_claims": []
+            }
+          ],
+          "proposed_text": "В выборке Хабра за указанный период — один материал о личном проекте платного API для ИИ-агентов на протоколе x402."
+        }
+      },
+      "result": {
+        "status": "preview_ready",
+        "preview_id": "0e6b6bc7-72d3-42bc-abea-a16c4e13c104",
+        "sha256": "cce245f993b7bcd7dd530d783c5346857b3a3a400ff7cfc9fda595cbeddde965",
+        "source_urls": [
+          "https://habr.com/ru/articles/1086276/"
+        ],
+        "summary": "Проверенный draft обработан; текст отчёта готов к сохранению."
+      },
+      "at_utc": "2026-09-27T11:03:36Z",
+      "elapsed_ms": 668
+    },
+    {
+      "sequence": 3,
+      "call_id": "chatcmpl-tool-801ffb0e7f187b7a",
+      "name": "save_report",
+      "arguments": {
+        "preview_id": "0e6b6bc7-72d3-42bc-abea-a16c4e13c104",
+        "run_id": "5000456c-be4e-4adc-8e97-e0ddf6a2d6cf",
+        "sha256": "cce245f993b7bcd7dd530d783c5346857b3a3a400ff7cfc9fda595cbeddde965"
+      },
+      "result": {
+        "status": "saved",
+        "path": "output/report-5000456c-be4e-4adc-8e97-e0ddf6a2d6cf.txt",
+        "sha256": "cce245f993b7bcd7dd530d783c5346857b3a3a400ff7cfc9fda595cbeddde965"
+      },
+      "at_utc": "2026-09-27T11:03:39Z",
+      "elapsed_ms": 646
+    }
+  ],
+  "preflight": {
+    "checked_utc": "2026-09-27T11:03:21Z",
+    "endpoint_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+    "endpoint": "DeepInfra | deepseek/deepseek-v4.1-flash-20260910",
+    "input_usd_per_token": 1.4e-07,
+    "output_usd_per_token": 4.2e-07,
+    "max_model_calls": 6,
+    "max_request_bytes": 81920,
+    "max_completion_tokens_per_call": 12000,
+    "conservative_upper_usd": 0.155654,
+    "hard_cap_usd": 0.25,
+    "source_parameters": [
+      "max_tokens",
+      "reasoning",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "status": "saved",
+  "finished_utc": "2026-09-27T11:03:44Z",
+  "reported_cost_usd": 0.0010887296,
+  "reason": null,
+  "run_state": "saved"
+}
