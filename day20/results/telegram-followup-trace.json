@@ -1,0 +1,152 @@
+{
+  "request_id": "ac01292d-bc75-4514-9c81-8d35725b0ca1",
+  "started_utc": "2026-09-28T08:32:16+00:00",
+  "model": "qwen/qwen3.8-27b",
+  "provider": "deepinfra",
+  "calls": [
+    {
+      "at_utc": "2026-09-28T08:32:21+00:00",
+      "call_id": "chatcmpl-tool-ad5d762acb4fc792",
+      "server": "habr",
+      "tool": "habr__read_habr_article",
+      "arguments": {
+        "url": "https://habr.com/ru/articles/1007122/"
+      },
+      "status": "ok",
+      "code": null,
+      "elapsed_ms": 1677,
+      "observation_sha256": "e09cab9c72a58565582c568785699b2a6d282a2a83f0dbfc858230a026104ced",
+      "evidence_ref": "chatcmpl-tool-ad5d762acb4fc792"
+    },
+    {
+      "at_utc": "2026-09-28T08:32:27+00:00",
+      "call_id": "chatcmpl-tool-b9ebeae167171f7d",
+      "server": "habr",
+      "tool": "habr__read_habr_article",
+      "arguments": {
+        "url": "https://habr.com/ru/articles/1007122/",
+        "cursor": "836e141b-1155-4b82-9516-e35559147e44:1"
+      },
+      "status": "ok",
+      "code": null,
+      "elapsed_ms": 1024,
+      "observation_sha256": "606a73a80795d4256766804f9cfa665d8ae9eed1d2fc3367f1e4d041bb8df5fb",
+      "evidence_ref": "chatcmpl-tool-b9ebeae167171f7d"
+    },
+    {
+      "at_utc": "2026-09-28T08:32:35+00:00",
+      "call_id": "chatcmpl-tool-bd734e0168b3b4db",
+      "server": "github",
+      "tool": "github__get_file_contents",
+      "arguments": {
+        "owner": "vuguzum",
+        "repo": "self-aware-mcp-server",
+        "path": "README.md"
+      },
+      "status": "ok",
+      "code": null,
+      "elapsed_ms": 1247,
+      "observation_sha256": "0af94a97e80787f89e7242db99477c1feec08256bfa3dd7e5c4e48837bf0dd30",
+      "evidence_ref": "chatcmpl-tool-bd734e0168b3b4db"
+    },
+    {
+      "at_utc": "2026-09-28T08:32:37+00:00",
+      "call_id": "chatcmpl-tool-b555753ddac7a794",
+      "server": "github",
+      "tool": "github__get_latest_release",
+      "arguments": {},
+      "status": "error",
+      "code": "one_tool_per_turn",
+      "elapsed_ms": 0,
+      "observation_sha256": "ab07170cb0a1e7d8f57b5509d8fa3ad4663a71f2a0167df10e12200d951f3d18",
+      "evidence_ref": null
+    },
+    {
+      "at_utc": "2026-09-28T08:32:41+00:00",
+      "call_id": "chatcmpl-tool-9dbeb7f6d5d671e1",
+      "server": "github",
+      "tool": "github__get_latest_release",
+      "arguments": {
+        "owner": "vuguzum",
+        "repo": "self-aware-mcp-server"
+      },
+      "status": "ok",
+      "code": null,
+      "elapsed_ms": 404,
+      "observation_sha256": "e8b41b419cb1dfa7d667c3d84fbf45c3d16a4feeee1f0bc271a99c52346d69b4",
+      "evidence_ref": "chatcmpl-tool-9dbeb7f6d5d671e1"
+    }
+  ],
+  "model_calls": [
+    {
+      "turn": 1,
+      "at_utc": "2026-09-28T08:32:21+00:00",
+      "usage": {
+        "prompt_tokens": 2244,
+        "completion_tokens": 131,
+        "total_tokens": 2375
+      },
+      "charged_usd": 0.00058223,
+      "cost_is_reserve": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "turn": 2,
+      "at_utc": "2026-09-28T08:32:27+00:00",
+      "usage": {
+        "prompt_tokens": 4173,
+        "completion_tokens": 105,
+        "total_tokens": 4278
+      },
+      "charged_usd": 0.00082283,
+      "cost_is_reserve": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "turn": 3,
+      "at_utc": "2026-09-28T08:32:35+00:00",
+      "usage": {
+        "prompt_tokens": 5454,
+        "completion_tokens": 155,
+        "total_tokens": 5609
+      },
+      "charged_usd": 0.00066772,
+      "cost_is_reserve": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "turn": 4,
+      "at_utc": "2026-09-28T08:32:41+00:00",
+      "usage": {
+        "prompt_tokens": 6955,
+        "completion_tokens": 140,
+        "total_tokens": 7095
+      },
+      "charged_usd": 0.00077655,
+      "cost_is_reserve": false,
+      "finish_reason": "tool_calls"
+    },
+    {
+      "turn": 5,
+      "at_utc": "2026-09-28T08:33:42+00:00",
+      "usage": {
+        "prompt_tokens": 7738,
+        "completion_tokens": 1139,
+        "total_tokens": 8877
+      },
+      "charged_usd": 0.00259072,
+      "cost_is_reserve": false,
+      "finish_reason": "stop"
+    }
+  ],
+  "evidence_path": "/var/lib/day20/evidence/ac01292d-bc75-4514-9c81-8d35725b0ca1.json",
+  "evidence_summary": {
+    "article_snapshot": "836e141b-1155-4b82-9516-e35559147e44",
+    "github_readme_call": "chatcmpl-tool-bd734e0168b3b4db",
+    "linked_repo": "vuguzum/self-aware-mcp-server",
+    "link_basis": "article_link",
+    "full_article": true
+  },
+  "outcome": "verified",
+  "finished_utc": "2026-09-28T08:33:42+00:00"
+}
