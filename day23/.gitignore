@@ -1,0 +1,5 @@
+private/
+__pycache__/
+.venv/
+.env
+video/frames/
