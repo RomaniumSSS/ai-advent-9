@@ -1,0 +1,259 @@
+{
+  "scope": "public: assignment:18 only",
+  "real_http": true,
+  "mocked_responses": false,
+  "new_cloud_calls": 3,
+  "local_refusals": 1,
+  "video_cost": 0.0005702984,
+  "semantic_review": "Root checked public answers against the original assignment: main requested facts supported; this does not prove full-corpus quality.",
+  "results": [
+    {
+      "question": "Какие требования у задания дня 18?",
+      "status": "verified",
+      "cost": 0.0001987328,
+      "answer": {
+        "answer": "Требования задания дня 18 («Планировщик и фоновые задачи»): сделать MCP-инструмент с отложенным или периодическим выполнением (примеры: reminder, периодический сбор данных, регулярный summary). Инструмент должен: сохранять данные (JSON / SQLite); выполняться по расписанию; возвращать агрегированный результат. Результат: агент, который работает 24/7 и периодически выдаёт сводку. Формат сдачи: видео + код.",
+        "sources": [
+          {
+            "source": "assignment",
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05"
+          }
+        ],
+        "quotes": [
+          {
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+            "text": "🔥 День 18. Планировщик и фоновые задачи\n\nСделайте MCP-инструмент с отложенным или периодическим выполнением.\n\nПример:\n\n👉 reminder\n👉 периодический сбор данных\n👉 регулярный summary\n\nИнструмент должен:\n\n👉 сохранять данные (JSON / SQLite)\n👉 выполняться по расписанию\n👉 возвращать агрегированный результат\n\nРезультат:\n\nАгент, который работает 24/7 и периодически выдаёт сводку\n\nФормат:\n\nВидео + Код"
+          }
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "errors": [],
+        "answer": {
+          "answer": "Требования задания дня 18 («Планировщик и фоновые задачи»): сделать MCP-инструмент с отложенным или периодическим выполнением (примеры: reminder, периодический сбор данных, регулярный summary). Инструмент должен: сохранять данные (JSON / SQLite); выполняться по расписанию; возвращать агрегированный результат. Результат: агент, который работает 24/7 и периодически выдаёт сводку. Формат сдачи: видео + код.",
+          "sources": [
+            {
+              "source": "assignment",
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05"
+            }
+          ],
+          "quotes": [
+            {
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+              "text": "🔥 День 18. Планировщик и фоновые задачи\n\nСделайте MCP-инструмент с отложенным или периодическим выполнением.\n\nПример:\n\n👉 reminder\n👉 периодический сбор данных\n👉 регулярный summary\n\nИнструмент должен:\n\n👉 сохранять данные (JSON / SQLite)\n👉 выполняться по расписанию\n👉 возвращать агрегированный результат\n\nРезультат:\n\nАгент, который работает 24/7 и периодически выдаёт сводку\n\nФормат:\n\nВидео + Код"
+            }
+          ]
+        },
+        "sources_present": true,
+        "quotes_present": true,
+        "semantic_match": null,
+        "normalization": "none"
+      },
+      "candidates": [
+        {
+          "document_id": "assignment:18",
+          "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+          "cosine": 0.4024818903920055,
+          "mixed_score": 0.3219855123136044,
+          "exact_reason": "explicit_assignment_intent_day_18"
+        }
+      ],
+      "selected": 1,
+      "transmitted": 1,
+      "timings": {
+        "search": 3.8879248750163242,
+        "generation": 2.842347916041035,
+        "total": 6.910664250026457
+      }
+    },
+    {
+      "question": "В задании 18 хочу сделать напоминалку. Что она должна сохранять и возвращать?",
+      "status": "verified",
+      "cost": 0.0001833328,
+      "answer": {
+        "answer": "В переданном контексте по заданию 18 указано, что MCP-инструмент с отложенным или периодическим выполнением (например, reminder, периодический сбор данных или регулярный summary) должен: сохранять данные (JSON / SQLite), выполняться по расписанию и возвращать агрегированный результат. Итогом должен быть агент, который работает 24/7 и периодически выдаёт сводку. Формат сдачи: видео + код.",
+        "sources": [
+          {
+            "source": "assignment",
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05"
+          }
+        ],
+        "quotes": [
+          {
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+            "text": "Инструмент должен:\n\n👉 сохранять данные (JSON / SQLite)\n👉 выполняться по расписанию\n👉 возвращать агрегированный результат"
+          },
+          {
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+            "text": "Агент, который работает 24/7 и периодически выдаёт сводку"
+          }
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "errors": [],
+        "answer": {
+          "answer": "В переданном контексте по заданию 18 указано, что MCP-инструмент с отложенным или периодическим выполнением (например, reminder, периодический сбор данных или регулярный summary) должен: сохранять данные (JSON / SQLite), выполняться по расписанию и возвращать агрегированный результат. Итогом должен быть агент, который работает 24/7 и периодически выдаёт сводку. Формат сдачи: видео + код.",
+          "sources": [
+            {
+              "source": "assignment",
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05"
+            }
+          ],
+          "quotes": [
+            {
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+              "text": "Инструмент должен:\n\n👉 сохранять данные (JSON / SQLite)\n👉 выполняться по расписанию\n👉 возвращать агрегированный результат"
+            },
+            {
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+              "text": "Агент, который работает 24/7 и периодически выдаёт сводку"
+            }
+          ]
+        },
+        "sources_present": true,
+        "quotes_present": true,
+        "semantic_match": null,
+        "normalization": "none"
+      },
+      "candidates": [
+        {
+          "document_id": "assignment:18",
+          "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+          "cosine": 0.4761514051493638,
+          "mixed_score": 0.42536556856393554,
+          "exact_reason": "explicit_assignment_intent_day_18"
+        }
+      ],
+      "selected": 1,
+      "transmitted": 1,
+      "timings": {
+        "search": 2.762969958013855,
+        "generation": 3.217472459014971,
+        "total": 6.068241540982854
+      }
+    },
+    {
+      "question": "Какой инструмент выполняется по расписанию и возвращает агрегированный результат?",
+      "status": "verified",
+      "cost": 0.0001882328,
+      "answer": {
+        "answer": "В переданном контексте не назван конкретный инструмент — задание требует сделать MCP-инструмент с отложенным или периодическим выполнением, который должен выполняться по расписанию и возвращать агрегированный результат. В качестве примеров такого инструмента приведены reminder, периодический сбор данных и регулярный summary.",
+        "sources": [
+          {
+            "source": "assignment",
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05"
+          }
+        ],
+        "quotes": [
+          {
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+            "text": "Сделайте MCP-инструмент с отложенным или периодическим выполнением."
+          },
+          {
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+            "text": "👉 выполняться по расписанию\n👉 возвращать агрегированный результат"
+          },
+          {
+            "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+            "text": "👉 reminder\n👉 периодический сбор данных\n👉 регулярный summary"
+          }
+        ]
+      },
+      "validation": {
+        "valid": true,
+        "errors": [],
+        "answer": {
+          "answer": "В переданном контексте не назван конкретный инструмент — задание требует сделать MCP-инструмент с отложенным или периодическим выполнением, который должен выполняться по расписанию и возвращать агрегированный результат. В качестве примеров такого инструмента приведены reminder, периодический сбор данных и регулярный summary.",
+          "sources": [
+            {
+              "source": "assignment",
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05"
+            }
+          ],
+          "quotes": [
+            {
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+              "text": "Сделайте MCP-инструмент с отложенным или периодическим выполнением."
+            },
+            {
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+              "text": "👉 выполняться по расписанию\n👉 возвращать агрегированный результат"
+            },
+            {
+              "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+              "text": "👉 reminder\n👉 периодический сбор данных\n👉 регулярный summary"
+            }
+          ]
+        },
+        "sources_present": true,
+        "quotes_present": true,
+        "semantic_match": null,
+        "normalization": "none"
+      },
+      "candidates": [
+        {
+          "document_id": "assignment:18",
+          "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+          "cosine": 0.6287363832791921,
+          "mixed_score": 0.617274820909068,
+          "exact_reason": null
+        }
+      ],
+      "selected": 1,
+      "transmitted": 1,
+      "timings": {
+        "search": 2.599817709007766,
+        "generation": 3.2249327080207877,
+        "total": 5.945391250017565
+      }
+    },
+    {
+      "question": "Какая температура нужна для выпечки яблочного штруделя?",
+      "status": "no_context",
+      "cost": 0,
+      "answer": {
+        "answer": "Не знаю: недостаточно релевантных сведений. Уточни день задания или тему вопроса.",
+        "sources": [],
+        "quotes": [],
+        "status": "no_context"
+      },
+      "validation": null,
+      "candidates": [
+        {
+          "document_id": "assignment:18",
+          "chunk_id": "1b0e868124195cc3acbacd91aed6a0a2f7d1eef6e1a51fa44a915b2167064e05",
+          "cosine": 0.17923789987393188,
+          "mixed_score": 0.1433903198991455,
+          "exact_reason": null
+        }
+      ],
+      "selected": 0,
+      "transmitted": 0,
+      "timings": {
+        "search": 2.9414830419700593,
+        "total": 2.9414924169541337
+      }
+    }
+  ],
+  "code_sha256": {
+    "answers.py": "b62ad381e5d17093b9af9297ae709c7fad90cdd484134c9b20616449ee37c979",
+    "app.js": "07812205339dbaa60d5dc7792b91f97aa716b2b776da37c6cf411179290a664c",
+    "check_assignments.py": "91eb7065a87536aab1ade7bebf1687734e317c80f288bebef2665410f44aff72",
+    "common.py": "a63b14b5e78d71a2241f4faef4098c76f74865c2ef2caedd3c8060eadcec0bc9",
+    "import_history.py": "55430680951a00c3cf2d4dcfb9e582d54d5be52cc97932ea7347f0bac5efb991",
+    "index.html": "658a1d2099ee75a6909b31cb960a4d510aa5a73108a3c16ae3f823bd1988e6cb",
+    "preview_fixture.py": "ee8d20b86c17db5468de4ab0916d93ebab26285ada9cc1474815b37410c9c7f7",
+    "retrieval.py": "cc07ed55c7c22f8a6cb3730030126c8fdc9022a8f748c405d9d829c502da6a7f",
+    "search.py": "03dc9f784f18b3175904a9f61433d67b6239dcfa4bedb0daa68adb8b746aaf08",
+    "service.py": "54cbb2069de64cd9167de7d268abf9ac47c7956073ee47136df9b211760d7b6f",
+    "style.css": "a6eb35d3eb470f6f0d9c3443bb23c519a0f9f4a2a48d5d71bb7ceed782625e26",
+    "temporal.py": "5a4147ade7c292d047363f24bc4745de2db5bd1de994a467776368c569da9814",
+    "test_failures.py": "bbea15bf701a15d9f0a36168627600aafde5f280cf5b0990d6f2714d5bc598b9",
+    "test_mentor.py": "9fe7f9a163753a5802274249ddd7c085a16d6b391be85fc7f27280f2ef20f86f",
+    "test_public.py": "1d3e4626936a41327f3d1f30d60f1a7ad0ff90f529810f994bc6c5701c65b86d",
+    "test_quality.py": "653d085c520725101e97da64daf72b2a40eee34331b586a7e2f107b947dd9b7a",
+    "web.py": "f1228577b24f79855a397e411617c96cbcf6d7714446211885665479b18c1d6e"
+  },
+  "video_sha256": "727fbae4424ba7ee4a65939d5d72a6ee76d6e6f3c5685d9b5f01da3c89020836"
+}
