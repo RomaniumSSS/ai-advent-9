@@ -42,7 +42,7 @@ def main():
             for index,(kind,question) in enumerate(cases,1):
                 page.locator('#question').scroll_into_view_if_needed()
                 if kind=='prepared':
-                    page.get_by_role('button',name=question,exact=True).click()
+                    page.get_by_role('button',name=question,exact=True).first.click()
                 else:
                     page.locator('#question').fill('')
                     page.locator('#question').press_sequentially(question,delay=35)
@@ -60,6 +60,9 @@ def main():
                 page.locator('#result').scroll_into_view_if_needed()
                 page.wait_for_timeout(9000)
                 page.screenshot(path=str(out/f'{index:02d}-answer.png'))
+                if selected:
+                    page.locator('.answer-evidence').scroll_into_view_if_needed();page.wait_for_timeout(8000)
+                    page.screenshot(path=str(out/f'{index:02d}-citations.png'))
                 if index in (1,3) and selected:
                     sources=page.locator('#result > details').filter(has=page.locator('summary')).first
                     sources.locator(':scope > summary').click()
@@ -72,7 +75,7 @@ def main():
                     diag.click();diag.scroll_into_view_if_needed();page.wait_for_timeout(7000)
                     page.screenshot(path=str(out/f'{index:02d}-diagnostics.png'))
             page.reload(wait_until='networkidle');page.wait_for_timeout(2000)
-            page.get_by_role('button',name=cases[0][1],exact=True).last.click()
+            page.locator('#history').get_by_role('button',name=cases[0][1],exact=True).first.click()
             page.locator('#result').scroll_into_view_if_needed();page.wait_for_timeout(6000)
             page.screenshot(path=str(out/'05-history.png'))
             events.append({'event':'end','at':time.time()});save()
