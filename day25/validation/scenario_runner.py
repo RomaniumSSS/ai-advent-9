@@ -98,6 +98,8 @@ def preflight(request_client, urls, mode, expected_identity, data, completed_res
 
 def run(args,data):
     urls={'public':args.public_url.rstrip('/'),'all':args.all_url.rstrip('/')}
+    active_scope=getattr(args,'only_scope',None)
+    if active_scope:urls={active_scope:urls[active_scope]}
     for url in urls.values():
         parsed=urlsplit(url)
         if parsed.scheme!='http' or parsed.hostname!='127.0.0.1' or parsed.port in (None,8050) or parsed.path not in ('','/') or parsed.query or parsed.fragment:
@@ -176,6 +178,7 @@ def run(args,data):
                 if pid==checkpoint['pid_before']:raise ValueError('server_not_restarted')
                 checkpoint.update(checked=True,pid_after=pid,checked_at=time.time());journal['status']='RUNNING';persist();event('restart_read_verified',pid_before=checkpoint['pid_before'],pid_after=pid)
             for scenario in data['scenarios']:
+                if active_scope and scenario['scope']!=active_scope:continue
                 sid=scenario['id']
                 scope=scenario['scope'];url=urls[scope]
                 if video_dir and ((scope=='public')!=recording):
@@ -214,6 +217,7 @@ def run(args,data):
                         page.locator('#save-memory').click()
                     if response.value.status!=200:raise ValueError('memory_failed')
                     expected=response.value.json()['task_state'];journal.setdefault('task_states',{})[sid]=expected;finish(key)
+                    if recording and getattr(args,'video_review_seconds',0):page.wait_for_timeout(int(args.video_review_seconds*500))
                     page.locator('#memory-editor').evaluate('el=>el.open=false')
                 memory(0,scenario['initial_state'])
                 for number,turn in enumerate(scenario['turns'],1):
@@ -221,6 +225,7 @@ def run(args,data):
                     key=sid+':ask:'+str(number)
                     if begin(key):
                         page.locator('#question').fill(turn['question'])
+                        if recording and getattr(args,'video_review_seconds',0):page.wait_for_timeout(int(args.video_review_seconds*500))
                         with page.expect_response(lambda r:r.url.endswith('/api/ask') and r.request.method=='POST',timeout=360000) as response:
                             page.locator('#send').click()
                         if response.value.status!=200:raise ValueError('ask_failed_no_retry')
@@ -238,6 +243,34 @@ def run(args,data):
                             **checks,'review_prompts':turn['review']})
                         finish(key)
                         page.wait_for_function('()=>!document.getElementById("send").disabled')
+                        if recording and getattr(args,'video_review_seconds',0):
+                            article=page.locator('[data-request-id="'+item['id']+'"]')
+                            article.scroll_into_view_if_needed()
+                            page.wait_for_timeout(int(args.video_review_seconds*1000))
+                            quotes=article.locator('.citation')
+                            if quotes.count():quotes.first.scroll_into_view_if_needed();page.wait_for_timeout(int(args.video_review_seconds*500))
+                    if turn.get('isolation_after'):
+                        side_key=sid+':isolation:'+str(number)
+                        if begin(side_key):
+                            page.locator('#chat-title').fill('Отдельный пустой чат')
+                            with page.expect_response(lambda r:r.url.endswith('/api/chats') and r.request.method=='POST') as response:
+                                page.locator('#create-chat').click()
+                            if response.value.status!=200:raise ValueError('isolation_create_failed')
+                            side=response.value.json();side_id=side['chat_id']
+                            page.wait_for_function("id=>document.querySelector('#chats button[aria-pressed=true]')?.dataset.chatId===id && document.getElementById('goal').value===''",arg=side_id)
+                            side_archive=page.request.get(url+'/api/chat/'+side_id).json()
+                            if side_archive['history'] or side_archive['chat']['task_state']['goal']:raise ValueError('isolation_inherited_data')
+                            page.locator('#memory-editor').evaluate('el=>el.open=true')
+                            page.locator('#goal').fill('Новая независимая задача без истории')
+                            with page.expect_response(lambda r:r.url.endswith('/api/task-state') and r.request.method=='POST') as response:
+                                page.locator('#save-memory').click()
+                            if response.value.status!=200:raise ValueError('isolation_memory_failed')
+                            if recording and getattr(args,'video_review_seconds',0):page.wait_for_timeout(int(args.video_review_seconds*1000))
+                            main=page.request.get(url+'/api/chat/'+chat_id).json()
+                            if main['chat']['task_state']!=journal['task_states'][sid]:raise ValueError('isolation_changed_main_memory')
+                            journal.setdefault('isolation_chats',{})[sid]=side_id;finish(side_key)
+                            page.locator('#chats button[data-chat-id="'+chat_id+'"]').click()
+                            page.wait_for_function("id=>document.querySelector('#chats button[aria-pressed=true]')?.dataset.chatId===id",arg=chat_id)
                     if turn.get('refresh_after'):
                         reload_key=sid+':refresh:'+str(number)
                         if begin(reload_key):
@@ -289,9 +322,14 @@ def main():
     parser.add_argument('--output',default=str(Path(__file__).resolve().parents[1]/'private'/'validation-run'))
     parser.add_argument('--approved-live',action='store_true',help='External user authorization must already exist; does not create authorization.')
     parser.add_argument('--resume',action='store_true')
+    parser.add_argument('--scenarios',type=Path,default=SCENARIOS,help='Scenario file; default historical 2x12')
+    parser.add_argument('--only-scope',choices=['public','all'],help='Sequential phase: preflight and execute only this scope')
+    parser.add_argument('--video-review-seconds',type=float,default=0,help='Optional pauses for public recorded question/memory/answer/source review')
     parser.add_argument('--public-video-dir',help='Optional private output for public-only fresh UI recording; never records all scope')
     args=parser.parse_args()
-    data=validate_scenarios(json.loads(SCENARIOS.read_text()))
+    if not 0<=args.video_review_seconds<=10:raise ValueError('invalid_video_review_duration')
+    if args.only_scope=='all' and args.public_video_dir:raise ValueError('public_video_scope_required')
+    data=validate_scenarios(json.loads(args.scenarios.read_text()))
     if args.mode=='plan':print(json.dumps(proposal(data),ensure_ascii=False,indent=2));return 0
     return run(args,data)
 

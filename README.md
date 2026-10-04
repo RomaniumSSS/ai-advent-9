@@ -1,6 +1,6 @@
 # ai-advent-9
 
-Актуальные артефакты: [Day25 — RAG-чат с памятью задачи](day25/README.md), [видео 1:39 без озвучки](day25/video/Day25-chat.mp4), [запуск и ограничения](day25/app/README.md). T5: A1 NOT PROVEN, A2–A6 PASS; [результат](day25/RESULT.md). Предыдущая сдача: [Day24](day24/README.md).
+Актуальные артефакты: [Day25 — RAG-чат с памятью задачи](day25/README.md), [новое видео2:58 без озвучки](day25/video/Day25-session15.mp4), [запуск и ограничения](day25/app/README.md). Новые2×15: A1 FAIL, A2–A6 structural PASS/human NP; [результат](day25/RESULT.md). Предыдущая сдача: [Day24](day24/README.md).
 
 Видео дня 8: [смотреть на Google Drive](https://drive.google.com/file/d/1pOyMp1717Ih83KvAF9KnrmES7CE0iBzH/view?usp=sharing).
 

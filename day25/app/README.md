@@ -34,4 +34,4 @@ Playwright MCP `browser_run_code_unsafe` может выполнить `browser_
 
 Run07 проверен на двух живых разговорах по12 сообщений:24 calls, $0.0142782304, unknown/retries0. Независимый A1 NOT PROVEN (all4/all5), A2–A6 PASS; human acceptance NOT PROVEN. [Результат](../RESULT.md), [проверки](../VERIFICATION.md), [public-видео](../video/README.md).
 
-Последний [ограниченный repair после run07](../validation/T5-FINAL-BOUNDED-REPAIR.md):46 app +15 validation PASS; participant attribution требует собственной точной member quote. Валидатор не ослаблен; новое поведение генератора live не проверено. Дополнительные paid runs остановлены по пользовательскому условию.
+Исторический [repair после run07](../validation/T5-FINAL-BOUNDED-REPAIR.md) уточнил member-bound цитаты без ослабления валидатора. Новые [2×15 UI сценария](../T5-SESSION15-MECHANICAL.md):30search/20calls/$0.0108725232, A1FAIL/14PASS/12FAIL/4NP. Root post-run repair учебных диапазонов и продолжений прошёл50app+21validation/10savedcontext replayPASS; новое поведение модели NOT PROVEN. Ручной чат использует тот же all ledger и оставшийся общий бюджет, без сброса cap/истории расходов.

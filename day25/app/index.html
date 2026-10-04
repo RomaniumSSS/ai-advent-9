@@ -2,20 +2,20 @@
 <html lang="ru">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Учебный чат · Day25</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
 <body><main>
-<header><span class="label">ЛИЧНЫЙ НАСТАВНИК <b>25 / RAG ЧАТ</b></span><div class="hero"><h1>Продолжай мысль.<br>Проверяй факты.</h1><p>Разговор по материалам курса.<br>Цель и ограничения — под твоим контролем.</p></div></header>
+<header><span class="label">ЛИЧНЫЙ НАСТАВНИК <b>25 / RAG ЧАТ</b></span><div class="hero"><h1>Учебный чат</h1><p>Задавай вопросы по материалам курса. Источники и память задачи — рядом с ответом.</p></div></header>
 <p id="fixture-banner" class="public-banner" hidden></p>
 <div class="chat-layout">
 <aside class="chat-sidebar"><div class="section-heading"><h2>Чаты</h2><span class="eyebrow">АРХИВ</span></div>
-<form id="new-chat"><label for="chat-title">Название нового чата</label><input id="chat-title" maxlength="200" placeholder="Например, разобраться в RAG"><label for="scope">Область корпуса</label><select id="scope"><option value="all">Весь мой корпус</option><option value="public">Публичное: условие дня 18</option></select><button id="create-chat">Создать чат +</button></form>
+<form id="new-chat"><label for="chat-title">Новый чат</label><input id="chat-title" maxlength="200" placeholder="Название, если нужно"><label for="scope" hidden>Область корпуса</label><select id="scope" hidden><option value="all">Весь мой корпус</option><option value="public">Публичное: условие дня 18</option></select><button id="create-chat">Создать чат</button></form>
 <div id="chats" aria-label="Сохранённые чаты"></div><p class="hint">Область выбирается при создании и сохраняется для всего чата.</p></aside>
-<div class="chat-main"><section id="conversation-panel">
+<div class="chat-main"><section class="question-panel"><form id="ask"><div class="section-heading"><label for="question">Что хочешь узнать?</label><span class="eyebrow">НОВЫЙ ВОПРОС</span></div><textarea id="question" required maxlength="9000" placeholder="Спроси о материалах курса или продолжи разговор…"></textarea><div class="row"><button id="send">Начать диалог →</button></div><p id="policy" class="muted"></p></form><p id="progress" role="status"></p><div id="pending-actions" hidden><button type="button" id="check-pending" class="secondary">Проверить сохранённый исход</button><button type="button" id="stop-waiting" class="secondary">Завершить ожидание</button></div></section>
+<section id="conversation-panel">
 <div class="section-heading"><h2 id="chat-heading">Выбери или создай чат</h2><span id="chat-scope" class="eyebrow"></span></div>
 <p id="task-summary" class="muted"></p>
 <details id="memory-editor"><summary>Память задачи <span id="memory-version"></span></summary>
 <form id="memory"><label for="goal">Цель</label><textarea id="goal" maxlength="4000" placeholder="Чего хочешь добиться в этом разговоре?"></textarea><label for="clarifications">Уточнения · одно на строку</label><textarea id="clarifications" placeholder="Например, объяснять на Python"></textarea><label for="constraints">Действующие ограничения · одно на строку</label><textarea id="constraints" placeholder="Например, коротко и без кода"></textarea>
 <div class="row"><button id="save-memory">Сохранить память</button><button id="clear-memory" type="button" class="secondary">Удалить все записи</button></div><p class="hint">Меняется только по твоему действию. Предложения ассистента не становятся решением автоматически.</p><p id="memory-status" role="status"></p></form></details>
-<div id="messages" aria-label="Реплики чата"><div class="empty-state"><span class="empty-arrow">↗</span><p>Начни с вопроса.</p><p class="muted">Ответы, источники и память<br>сохраняются в выбранном чате.</p></div></div>
+<div id="messages" aria-label="Реплики чата"><div class="empty-state"><p>Ответ появится здесь</p><p class="muted">Начни с вопроса. Диалог и источники сохранятся в этом чате.</p></div></div>
 </section>
-<section class="question-panel"><form id="ask"><div class="section-heading"><label for="question">Сообщение</label><span class="eyebrow">НОВЫЙ ХОД</span></div><textarea id="question" required maxlength="9000" placeholder="Задай вопрос или продолжи: «а это?», «подробнее»…"></textarea><div class="row"><button id="send" disabled>Выбери чат</button></div><p id="policy" class="muted"></p><p class="hint">Каждый новый ход ищет свежие источники. Последние реплики и действующая память помогают понять продолжение.</p></form><p id="progress" role="status"></p><div id="pending-actions" hidden><button type="button" id="check-pending" class="secondary">Проверить сохранённый исход</button><button type="button" id="stop-waiting" class="secondary">Завершить ожидание</button></div></section>
 </div></div><footer>Локальное приложение · Источники можно открыть и проверить</footer>
 </main></body></html>

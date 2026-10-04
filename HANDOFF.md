@@ -1,24 +1,22 @@
-# HANDOFF — Day25 после финального run07
+# HANDOFF — Day25 после новых2×15
 
-Обновлено 04.10.2026. Старый Day24-контекст сохранён в [истории](docs/handoffs/day24-history-before-day25-2026-10-04.md).
+Обновлено04.10.2026. [Исторический Day24](docs/handoffs/day24-history-before-day25-2026-10-04.md).
 
 ## Точная точка остановки
 
-[Day25 код/docs/video](day25/README.md) подготовлены; T1–T4 PASS, T5 **открыта**: run07 A1 NOT PROVEN, A2–A6 PASS. [Результат](day25/RESULT.md):24calls/$0.0142782304/unknown-retries0; независимый Astra22PASS/0FAIL/2NOT PROVEN (all4 retrieval miss, all5 attribution_not_cited). Human acceptance NOT PROVEN. Private raw/матрица — day25/private/live-run-07; старые run01–06 не изменены.
+Новые [два живых разговора по15](day25/T5-SESSION15-MECHANICAL.md) завершены через обычный UI:30search/20calls/$0.0108725232/unknown-retries0. Независимый gate14PASS/12FAIL/4NP,A1FAIL,A2–A6structuralPASS,humanNP; T5 открыта. [Видео2:58](day25/video/README.md) толькоpublic15IDs/all0/noextraasks, privacy/provenancePASS. Raw/private session15-live-01, старые run01–07 неизменны.
 
-Новое [public-видео1:39](day25/video/README.md) записано во время12 настоящих ask:2segments вокруг реального restart,0allIDs/extraasks; MP4 privacy/provenance gate PASS. Дополнительный playback GET-only/ledger unchanged. Сервера8053/8054 после run остановлены; Day24 не затронут. Первый selective commit Day25 — `36c8c9f`; private и несвязанные изменения в него не включены. Push/publication не выполнялись.
+Public8056 остановлен/authorization revoked, all8057 остановлен. Общий user cap.10: public$.0040298888; all cap$.0959701112/charged$.0068426344. Fresh «Мой чат» в **том же** `day25/private/session15-live-01/all` ledger, остаток послеавтоматики **$.0891274768**. Root остановил прежний preview PID81473 и запустил настоящий full web.py на8053 с тем же all data-dir/ledger; GET подтверждает enabled/all и новый «Мой чат». Ledger/cap не сбрасывать: последующие ручные вызовы уменьшают общий остаток.
 
-После run07 выполнен [последний bounded audit/repair](day25/validation/T5-FINAL-BOUNDED-REPAIR.md): полный frozen lexical scan724chunks/694discussion, нужного обсуждения размера чанков не выявлено (не доказательство полного semantic absence).2 read-only SSH audits, provider0. All5 prompt добавляет точные paired member quotes; validator unchanged,46+15 offline/independent PASS; новое live поведение NOT PROVEN. По пользовательскому stop condition дальнейшие paid runs остановлены.
+Executed runtimee1561e73… сохраняется в snapshot; root post-run repair исправил учебный dayrange→calendar и shortfollowups. Независимо50app+21validation/10savedcontext replayPASS, новыеmodelsemanticsNP. Никаких дополнительных платных повторов; liveFAILнеподменятьофлайнPASS.
 
 ## Следующий шаг
 
-1. Проверить Git/worktree/status и короткий текущий todo перед продолжением; checkout `/Users/ramanpazharytski/orca/workspaces/ai-advent-9/study`, ветка `RomaniumSSS/study`, много прежних user changes. Не включать несвязанные Day24/private raw в selective commit.
-2. Зафиксировать последний ограниченный repair отдельным selective commit и передать пользователю код/видео с явными ограничениями; не отмечать T5 PASS или human acceptance по агентской матрице.
-3. После передачи пользователю — остановиться. Дальнейшие paid runs остановлены по user stop condition; новый запрос потребует нового решения и лимита, run07 caps не переиспользовать. Сценарии являются regression, не новым holdout.
+Проверить Git/worktree/status перед продолжением. Передать код/docs/новое видео с явными ошибками; selective commit выполняется только по отдельному пользовательскому разрешению. Root ведёт ручной сервер на том же ledger. Не включать private raw, ключи и несвязанные Day24 изменения. Для дальнейшей оценки не считать текущий A1 или human acceptance пройденными.
 
 ## Решения и границы
 
 - Run01–05 — исторические FAIL, run06/run07 — A1 NOT PROVEN; raw и оценки не менять. [Run06](day25/T5-REGRESSION-06-MECHANICAL.md):$0.014535388; [run07](day25/T5-REGRESSION-07-MECHANICAL.md):$0.0142782304; по24calls, unknown/retries0. Public-видео подготовлено локально, не опубликовано.
 - Prompt-only исправления не устранили сравнение стабильно; поэтому ввели типизированный контракт. `insufficient_context` — отдельный неуспешный исход, чтобы не выдумывать вторую сторону. Старые сохранённые результаты читаются без перезаписи; public-only privacy и terminal/read guards проверены офлайн.
-- Последний offline repair после run06:45app+15validation PASS. Run07 уже проверил этот runtime, новые paid calls после него0. All4 всё ещё не нашёл нужное обсуждение; all5 заблокирован attribution_not_cited. Не ослаблять роли/цитаты ради закрытия приёмки и не запускать восьмой run без отдельного решения.
+- Последний offline repair после run06:45app+15validation PASS. Run07 проверил этот runtime; на той исторической границе новых paid calls было0. All4 всё ещё не нашёл нужное обсуждение; all5 заблокирован attribution_not_cited. Не ослаблять роли/цитаты ради закрытия приёмки и новые live сценарии выполняются только по отдельному решению и бюджету.
 - Роли команды ранее согласованы: executor Sol 6.1 low, независимый validator Astra. После каждого завершённого этапа — сверка со SPEC/планом. Никаких commit/push/deploy/публикаций без отдельного запроса.
