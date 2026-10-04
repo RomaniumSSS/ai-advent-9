@@ -115,6 +115,42 @@ class StructuredRuntimeTest(unittest.TestCase):
         stored['generation']['transmission']='unknown';save(service.path('current'),stored)
         hidden=service.get(chat,'current');self.assertEqual(hidden['status'],'unverified');self.assertNotIn('answer',hidden)
 
+    def test_final_member_quote_contract_saved_all5(self):
+        root=PRIVATE.parent/'live-run-07'
+        if not root.exists():self.skipTest('private run07 evidence unavailable')
+        old=json.loads((root/'rag-course-review-05.json').read_text());original=copy.deepcopy(old)
+        chunks=old['generation']['transmitted_chunks'];data=json.loads(old['raw_answer'])
+        negative=check_response(old['raw_answer'],chunks,old['question'],old['task_state'])
+        self.assertEqual(negative['errors'],['attribution_not_cited'])
+        contract=model_contract(old['question'],old['task_state'],chunks)
+        self.assertEqual(len(contract['participant_citation_examples']),2)
+        for pair in contract['participant_citation_examples']:
+            ref=dict(pair['attribution'],quote=pair['quote']['text'])
+            from structured_evidence import reference_errors
+            self.assertEqual(reference_errors(ref,chunks,True),[])
+            self.assertEqual(pair['source']['chunk_id'],pair['quote']['chunk_id'])
+        self.assertIn('participant B cannot cite participant A',contract['rules'])
+        from conversation import build_context,prepare_generation,MESSAGES_BYTES
+        context=build_context(old['question'],old['task_state'],[],'all');trace=copy.deepcopy(old['search']['trace'])
+        prepare_generation(old['question'],context,trace)
+        self.assertLessEqual(len(packed(trace['messages'])),MESSAGES_BYTES)
+        envelope=json.loads(trace['messages'][1]['content'])
+        self.assertEqual(envelope['evidence_contract']['participant_citation_examples'],contract['participant_citation_examples'])
+        public=json.loads((root/'learn-scheduler-08.json').read_text())
+        self.assertEqual(model_contract(public['question'],public['task_state'],public['generation']['transmitted_chunks'])['participant_citation_examples'],[])
+
+        service,chat=self.service(old,data)
+        self.assertEqual(service.ask(chat,'unchanged-all5',old['question'],'all')['status'],'unverified')
+        repaired=copy.deepcopy(data)
+        for pair in contract['participant_citation_examples']:repaired['quotes'].append(pair['quote'])
+        checked=check_response(json.dumps(repaired),chunks,old['question'],old['task_state'])
+        self.assertTrue(checked['valid']);self.assertIsNone(checked['semantic_match'])
+        service,chat=self.service(old,repaired)
+        self.assertEqual(service.ask(chat,'paired-all5',old['question'],'all')['status'],'verified')
+        wrong=copy.deepcopy(repaired);wrong['quotes'][-1]=wrong['quotes'][-2]
+        self.assertIn('attribution_not_cited',check_response(json.dumps(wrong),chunks,old['question'],old['task_state'])['errors'])
+        self.assertEqual(old,original)
+
     def test_run06_list_refusal_exact_first_prefix_and_citation_referent(self):
         from task_contract import refusal_text
         from conversation import build_context,generation_messages

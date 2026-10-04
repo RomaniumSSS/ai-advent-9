@@ -170,9 +170,18 @@ def model_contract(question,state,chunks):
         for part in chunk.get('message_parts',[]):
             ref={'chunk_id':chunk['chunk_id'],'message_id':part.get('message_id'),'day':chunk.get('day')}
             if not reference_errors(ref,chunks):refs.append(dict(ref,source=chunk.get('source')))
+    participant_examples=[]
+    for allowed in refs:
+        if allowed.get('source')!='discussion' or len(participant_examples)>=2:continue
+        ref={k:allowed[k] for k in ('chunk_id','message_id','day')}
+        errors,chunk,part=_resolve_reference(ref,chunks,False)
+        excerpt=part['text'][:90].strip() if not errors else ''
+        if not excerpt or reference_errors(dict(ref,quote=excerpt),chunks,True):continue
+        participant_examples.append({'attribution':ref,'source':{'source':chunk['source'],'chunk_id':chunk['chunk_id']},
+                                     'quote':{'chunk_id':chunk['chunk_id'],'text':excerpt}})
     required=comparison_required(question,state)
     contract={'schema':SCHEMA_VERSION,'comparison_required':required,
-            'allowed_attributions':refs,
+            'allowed_attributions':refs,'participant_citation_examples':participant_examples,
             'response_fields':{'answer':'text without free machine IDs','sources':[{'source':'snapshot source','chunk_id':'snapshot chunk_id'}],
                                'quotes':[{'chunk_id':'snapshot chunk_id','text':'exact message text'}],
                                'attributions':'optional array of {chunk_id,message_id,day}, linked to a cited quote',
@@ -186,6 +195,10 @@ def model_contract(question,state,chunks):
             'rules':'Do not write free message_id/msg_id/ID numbers in answer/aspect/analysis/reason/quotes; typed metadata is rendered from snapshots. '
                     'Do not invent missing evidence: use insufficient_row with zero or one cited side. '
                     'Every typed side quote must also appear in quotes and its chunk in sources. '
+                    'Each participant attribution needs a separate exact quote from that same message_id member, not merely the same chunk. '
+                    'A quote from participant B cannot cite participant A even when chunk_id is identical. '
+                    'Use participant_citation_examples as paired attribution/source/quote examples; copy only actually used pairs. '
+                    'Before returning, omit unused attributions or supply their own short member-bound quotes; never invent a quote. '
                     'Comparison evidence may come from different days; obey explicit current period/scope. '
                     'Keep answer concise; use at most 2 comparison aspects and short exact excerpts (prefer <=120 characters). '
                     'Do not duplicate typed sides in attributions; omit attributions unless specifically needed. '

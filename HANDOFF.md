@@ -6,13 +6,15 @@
 
 [Day25 код/docs/video](day25/README.md) подготовлены; T1–T4 PASS, T5 **открыта**: run07 A1 NOT PROVEN, A2–A6 PASS. [Результат](day25/RESULT.md):24calls/$0.0142782304/unknown-retries0; независимый Astra22PASS/0FAIL/2NOT PROVEN (all4 retrieval miss, all5 attribution_not_cited). Human acceptance NOT PROVEN. Private raw/матрица — day25/private/live-run-07; старые run01–06 не изменены.
 
-Новое [public-видео1:39](day25/video/README.md) записано во время12 настоящих ask:2segments вокруг реального restart,0allIDs/extraasks; MP4 privacy/provenance gate PASS. Дополнительный playback GET-only/ledger unchanged. Сервера8053/8054 после run остановлены; Day24 не затронут. User запросил selective repository commit авторизованных артефактов; это не означает разрешение на включение private или несвязанных изменений. Push/publication не разрешены автоматически.
+Новое [public-видео1:39](day25/video/README.md) записано во время12 настоящих ask:2segments вокруг реального restart,0allIDs/extraasks; MP4 privacy/provenance gate PASS. Дополнительный playback GET-only/ledger unchanged. Сервера8053/8054 после run остановлены; Day24 не затронут. Первый selective commit Day25 — `36c8c9f`; private и несвязанные изменения в него не включены. Push/publication не выполнялись.
+
+После run07 выполнен [последний bounded audit/repair](day25/validation/T5-FINAL-BOUNDED-REPAIR.md): полный frozen lexical scan724chunks/694discussion, нужного обсуждения размера чанков не выявлено (не доказательство полного semantic absence).2 read-only SSH audits, provider0. All5 prompt добавляет точные paired member quotes; validator unchanged,46+15 offline/independent PASS; новое live поведение NOT PROVEN. По пользовательскому stop condition дальнейшие paid runs остановлены.
 
 ## Следующий шаг
 
 1. Проверить Git/worktree/status и короткий текущий todo перед продолжением; checkout `/Users/ramanpazharytski/orca/workspaces/ai-advent-9/study`, ветка `RomaniumSSS/study`, много прежних user changes. Не включать несвязанные Day24/private raw в selective commit.
-2. Selective commit авторизованных Day25 артефактов и current-status docs запрошен. Передать пользователю код/видео с явными ограничениями; не отмечать T5 PASS или human acceptance по агентской матрице.
-3. После передачи пользователю — остановиться. Если потребуется ещё paid run, согласовать новый лимит и сделать новые dirs/ledgers/hashes/preflight; run07 caps не переиспользовать. Сценарии являются regression, не новым holdout.
+2. Зафиксировать последний ограниченный repair отдельным selective commit и передать пользователю код/видео с явными ограничениями; не отмечать T5 PASS или human acceptance по агентской матрице.
+3. После передачи пользователю — остановиться. Дальнейшие paid runs остановлены по user stop condition; новый запрос потребует нового решения и лимита, run07 caps не переиспользовать. Сценарии являются regression, не новым holdout.
 
 ## Решения и границы
 
