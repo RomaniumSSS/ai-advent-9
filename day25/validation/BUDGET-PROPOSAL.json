@@ -1,0 +1,43 @@
+{
+  "scenario_sha256": "2438f66008ce72ccb2f2e3c27b5e33ff86eacfbd5c049b04cf5a1a84ae650430",
+  "scopes": [
+    "public",
+    "all"
+  ],
+  "frozen_identity_sha256": "6c3672a133e01288a7c8b1b59d5f017183f7a14402a000c9b5290b4f7a25f6bb",
+  "scope_breakdown": {
+    "public": {
+      "user_messages": 12,
+      "maximum_provider_calls": 12,
+      "reserve_upper_estimate_usd": "0.05408256",
+      "proposed_scope_budget_usd": "0.06",
+      "documents": [
+        "assignment:18"
+      ]
+    },
+    "all": {
+      "user_messages": 12,
+      "maximum_provider_calls": 12,
+      "reserve_upper_estimate_usd": "0.05408256",
+      "proposed_scope_budget_usd": "0.06",
+      "documents": "entire approved frozen index-release-v1; RAG days21–24 and course discussions; raw results private"
+    }
+  },
+  "scenario_count": 2,
+  "user_messages": 24,
+  "maximum_new_searches": 24,
+  "maximum_provider_calls": 24,
+  "extra_video_provider_calls": 0,
+  "model_from_local_code": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra/fp8",
+  "retries": 0,
+  "messages_bytes_cap": 24000,
+  "max_output_tokens": 2048,
+  "prompt_rate_cap_per_million": "0.14000000",
+  "completion_rate_cap_per_million": "0.42000000",
+  "reserve_upper_estimate_per_call_usd": "0.00450688",
+  "reserve_upper_estimate_total_usd": "0.10816512",
+  "proposed_new_budget_usd": "0.12",
+  "approval_status": "NOT_GRANTED",
+  "basis": "Local service rate ceilings and byte reserve; not a fetched price or measured charge."
+}
