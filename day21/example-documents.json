@@ -1,0 +1,18 @@
+[
+  {
+    "document_id": "synthetic-example",
+    "source": "article",
+    "title": "Искусственный пример",
+    "day": null,
+    "text": "Пример: вопрос и ответ\n\nВопрос: что хранит индекс?\n\nОтвет: текст чанка, его вектор и метаданные.",
+    "members": [],
+    "sections": [
+      {
+        "section": "example",
+        "start_char": 0,
+        "end_char": 96,
+        "source_keys": []
+      }
+    ]
+  }
+]

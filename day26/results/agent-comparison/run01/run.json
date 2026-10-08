@@ -1,0 +1,2632 @@
+{
+  "started_at": "2026-10-08T11:50:50.798501+00:00",
+  "endpoint": "http://127.0.0.1:11434",
+  "server": {
+    "version": "0.33.3"
+  },
+  "machine": "arm64",
+  "fixture": "Синтетический каталог; реальные локальные model calls",
+  "models": [
+    {
+      "model": "qwen3.5:9b-q4_K_M",
+      "started_at": "2026-10-08T11:50:50.815654+00:00",
+      "details": {
+        "parent_model": "model.gguf",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "9.0B",
+        "quantization_level": "Q4_K_M"
+      },
+      "scenarios": [
+        {
+          "id": "lookup",
+          "steps": [
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге. Верни JSON с product_id, unit_price_eur и stock."
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:51:09.930628Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_hccff3sy",
+                      "function": {
+                        "index": 0,
+                        "name": "find_product",
+                        "arguments": {
+                          "query": "клавиатура"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 18951352875,
+                "load_duration": 5226747416,
+                "prompt_eval_count": 456,
+                "prompt_eval_cached_count": 0,
+                "prompt_eval_duration": 7948240000,
+                "eval_count": 27,
+                "eval_duration": 5764925000
+              },
+              "elapsed_seconds": 18.96234587498475
+            },
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге. Верни JSON с product_id, unit_price_eur и stock."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_hccff3sy",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:51:20.508137Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "```json\n{\n  \"product_id\": \"KB-204\",\n  \"unit_price_eur\": 37,\n  \"stock\": 4\n}\n```"
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 10557630417,
+                "load_duration": 1991208,
+                "prompt_eval_count": 535,
+                "prompt_eval_cached_count": 452,
+                "prompt_eval_duration": 1841689000,
+                "eval_count": 41,
+                "eval_duration": 8709303000
+              },
+              "elapsed_seconds": 10.558840124984272
+            }
+          ],
+          "tools": [
+            {
+              "name": "find_product",
+              "arguments": {
+                "query": "клавиатура"
+              },
+              "result": {
+                "products": [
+                  {
+                    "product_id": "KB-204",
+                    "name": "Клавиатура",
+                    "unit_price_eur": 37,
+                    "stock": 4
+                  }
+                ]
+              }
+            }
+          ],
+          "stop": "final",
+          "final": "```json\n{\n  \"product_id\": \"KB-204\",\n  \"unit_price_eur\": 37,\n  \"stock\": 4\n}\n```",
+          "judgement": {
+            "checks": {
+              "finished": true,
+              "final_fields": true,
+              "lookup": true,
+              "valid_calls": true
+            },
+            "pass": true,
+            "parsed_final": {
+              "product_id": "KB-204",
+              "unit_price_eur": 37,
+              "stock": 4
+            }
+          },
+          "elapsed_seconds": 29.52118599996902
+        },
+        {
+          "id": "dependent",
+          "steps": [
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге, затем запроси расчёт заказа на 3 штуки. Верни JSON с quantity и total_eur, включая доставку."
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:51:33.963299Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_fdcbehuf",
+                      "function": {
+                        "index": 0,
+                        "name": "find_product",
+                        "arguments": {
+                          "query": "клавиатура"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 13438096708,
+                "load_duration": 1057583,
+                "prompt_eval_count": 467,
+                "prompt_eval_cached_count": 0,
+                "prompt_eval_duration": 7724066000,
+                "eval_count": 27,
+                "eval_duration": 5708560000
+              },
+              "elapsed_seconds": 13.439173374907114
+            },
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге, затем запроси расчёт заказа на 3 штуки. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_fdcbehuf",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:51:45.441363Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_2mwsp8wb",
+                      "function": {
+                        "index": 0,
+                        "name": "quote_order",
+                        "arguments": {
+                          "product_id": "KB-204",
+                          "quantity": 3
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 11472073625,
+                "load_duration": 1104875,
+                "prompt_eval_count": 546,
+                "prompt_eval_cached_count": 463,
+                "prompt_eval_duration": 1931585000,
+                "eval_count": 44,
+                "eval_duration": 9533519000
+              },
+              "elapsed_seconds": 11.473327332991175
+            },
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге, затем запроси расчёт заказа на 3 штуки. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_fdcbehuf",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_2mwsp8wb",
+                        "function": {
+                          "index": 0,
+                          "name": "quote_order",
+                          "arguments": {
+                            "product_id": "KB-204",
+                            "quantity": 3
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "quote_order",
+                    "content": "{\"product_id\": \"KB-204\", \"quantity\": 3, \"subtotal_eur\": 111, \"shipping_eur\": 7, \"total_eur\": 118}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:51:52.488252Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "{\n  \"quantity\": 3,\n  \"total_eur\": 118\n}"
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 7041470417,
+                "load_duration": 1837875,
+                "prompt_eval_count": 648,
+                "prompt_eval_cached_count": 542,
+                "prompt_eval_duration": 2295242000,
+                "eval_count": 23,
+                "eval_duration": 4737961000
+              },
+              "elapsed_seconds": 7.042505374993198
+            }
+          ],
+          "tools": [
+            {
+              "name": "find_product",
+              "arguments": {
+                "query": "клавиатура"
+              },
+              "result": {
+                "products": [
+                  {
+                    "product_id": "KB-204",
+                    "name": "Клавиатура",
+                    "unit_price_eur": 37,
+                    "stock": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "quote_order",
+              "arguments": {
+                "product_id": "KB-204",
+                "quantity": 3
+              },
+              "result": {
+                "product_id": "KB-204",
+                "quantity": 3,
+                "subtotal_eur": 111,
+                "shipping_eur": 7,
+                "total_eur": 118
+              }
+            }
+          ],
+          "stop": "final",
+          "final": "{\n  \"quantity\": 3,\n  \"total_eur\": 118\n}",
+          "judgement": {
+            "checks": {
+              "finished": true,
+              "final_fields": true,
+              "lookup": true,
+              "valid_calls": true,
+              "quote": true
+            },
+            "pass": true,
+            "parsed_final": {
+              "quantity": 3,
+              "total_eur": 118
+            }
+          },
+          "elapsed_seconds": 31.955006082891487
+        },
+        {
+          "id": "recovery",
+          "steps": [
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру. Для проверки ошибки обязательно сначала запроси расчёт на 6 штук. Если инструмент сообщит недостаточный остаток, запроси расчёт на максимально доступное количество. Верни JSON с quantity и total_eur, включая доставку."
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:52:06.435755Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_x7526yy9",
+                      "function": {
+                        "index": 0,
+                        "name": "find_product",
+                        "arguments": {
+                          "query": "клавиатура"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 13930114875,
+                "load_duration": 1007167,
+                "prompt_eval_count": 484,
+                "prompt_eval_cached_count": 0,
+                "prompt_eval_duration": 8262502000,
+                "eval_count": 27,
+                "eval_duration": 5661607000
+              },
+              "elapsed_seconds": 13.93152695801109
+            },
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру. Для проверки ошибки обязательно сначала запроси расчёт на 6 штук. Если инструмент сообщит недостаточный остаток, запроси расчёт на максимально доступное количество. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_x7526yy9",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:52:18.074244Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_zybbmhik",
+                      "function": {
+                        "index": 0,
+                        "name": "quote_order",
+                        "arguments": {
+                          "product_id": "KB-204",
+                          "quantity": 6
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 11631803042,
+                "load_duration": 1346250,
+                "prompt_eval_count": 563,
+                "prompt_eval_cached_count": 480,
+                "prompt_eval_duration": 1846658000,
+                "eval_count": 44,
+                "eval_duration": 9778139000
+              },
+              "elapsed_seconds": 11.633268125005998
+            },
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру. Для проверки ошибки обязательно сначала запроси расчёт на 6 штук. Если инструмент сообщит недостаточный остаток, запроси расчёт на максимально доступное количество. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_x7526yy9",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_zybbmhik",
+                        "function": {
+                          "index": 0,
+                          "name": "quote_order",
+                          "arguments": {
+                            "product_id": "KB-204",
+                            "quantity": 6
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "quote_order",
+                    "content": "{\"error\": \"INSUFFICIENT_STOCK\", \"available\": 4}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:52:29.207255Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_unr9b3ai",
+                      "function": {
+                        "index": 0,
+                        "name": "quote_order",
+                        "arguments": {
+                          "product_id": "KB-204",
+                          "quantity": 4
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 11125062125,
+                "load_duration": 1586334,
+                "prompt_eval_count": 635,
+                "prompt_eval_cached_count": 559,
+                "prompt_eval_duration": 1850212000,
+                "eval_count": 44,
+                "eval_duration": 9265996000
+              },
+              "elapsed_seconds": 11.126557458075695
+            },
+            {
+              "request": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру. Для проверки ошибки обязательно сначала запроси расчёт на 6 штук. Если инструмент сообщит недостаточный остаток, запроси расчёт на максимально доступное количество. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_x7526yy9",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_zybbmhik",
+                        "function": {
+                          "index": 0,
+                          "name": "quote_order",
+                          "arguments": {
+                            "product_id": "KB-204",
+                            "quantity": 6
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "quote_order",
+                    "content": "{\"error\": \"INSUFFICIENT_STOCK\", \"available\": 4}"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_unr9b3ai",
+                        "function": {
+                          "index": 0,
+                          "name": "quote_order",
+                          "arguments": {
+                            "product_id": "KB-204",
+                            "quantity": 4
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "quote_order",
+                    "content": "{\"product_id\": \"KB-204\", \"quantity\": 4, \"subtotal_eur\": 148, \"shipping_eur\": 7, \"total_eur\": 155}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3.5:9b-q4_K_M",
+                "created_at": "2026-10-08T11:52:34.970754Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "{\"quantity\": 4, \"total_eur\": 155}"
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 5755786791,
+                "load_duration": 1275416,
+                "prompt_eval_count": 737,
+                "prompt_eval_cached_count": 631,
+                "prompt_eval_duration": 2242370000,
+                "eval_count": 17,
+                "eval_duration": 3505188000
+              },
+              "elapsed_seconds": 5.757210458046757
+            }
+          ],
+          "tools": [
+            {
+              "name": "find_product",
+              "arguments": {
+                "query": "клавиатура"
+              },
+              "result": {
+                "products": [
+                  {
+                    "product_id": "KB-204",
+                    "name": "Клавиатура",
+                    "unit_price_eur": 37,
+                    "stock": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "quote_order",
+              "arguments": {
+                "product_id": "KB-204",
+                "quantity": 6
+              },
+              "result": {
+                "error": "INSUFFICIENT_STOCK",
+                "available": 4
+              }
+            },
+            {
+              "name": "quote_order",
+              "arguments": {
+                "product_id": "KB-204",
+                "quantity": 4
+              },
+              "result": {
+                "product_id": "KB-204",
+                "quantity": 4,
+                "subtotal_eur": 148,
+                "shipping_eur": 7,
+                "total_eur": 155
+              }
+            }
+          ],
+          "stop": "final",
+          "final": "{\"quantity\": 4, \"total_eur\": 155}",
+          "judgement": {
+            "checks": {
+              "finished": true,
+              "final_fields": true,
+              "lookup": true,
+              "valid_calls": true,
+              "recover": true
+            },
+            "pass": true,
+            "parsed_final": {
+              "quantity": 4,
+              "total_eur": 155
+            }
+          },
+          "elapsed_seconds": 42.44856299913954
+        }
+      ],
+      "loaded": {
+        "time": "2026-10-08T11:52:34.972482+00:00",
+        "swap": "vm.swapusage: total = 6144.00M  used = 5069.56M  free = 1074.44M  (encrypted)",
+        "pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 23%",
+        "pressure_level": 2,
+        "loaded": {
+          "models": [
+            {
+              "name": "qwen3.5:9b-q4_K_M",
+              "model": "qwen3.5:9b-q4_K_M",
+              "size": 6308589730,
+              "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen35",
+                "families": [
+                  "qwen35"
+                ],
+                "parameter_size": "9.0B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-10-08T13:57:34.970883+02:00",
+              "size_vram": 6308589730,
+              "context_length": 8192
+            }
+          ]
+        }
+      },
+      "unload": {
+        "model": "qwen3.5:9b-q4_K_M",
+        "created_at": "2026-10-08T11:52:34.988447Z",
+        "response": "",
+        "done": true,
+        "done_reason": "unload"
+      },
+      "after_unload": {
+        "time": "2026-10-08T11:52:34.988742+00:00",
+        "swap": "vm.swapusage: total = 6144.00M  used = 5069.56M  free = 1074.44M  (encrypted)",
+        "pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 24%",
+        "pressure_level": 2,
+        "loaded": {
+          "models": []
+        }
+      }
+    },
+    {
+      "model": "qwen3:8b",
+      "started_at": "2026-10-08T11:52:35.027810+00:00",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "8.2B",
+        "quantization_level": "Q4_K_M"
+      },
+      "scenarios": [
+        {
+          "id": "lookup",
+          "steps": [
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге. Верни JSON с product_id, unit_price_eur и stock."
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:52:50.323303Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_7bojnhvl",
+                      "function": {
+                        "index": 0,
+                        "name": "find_product",
+                        "arguments": {
+                          "query": "клавиатура"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 15182374708,
+                "load_duration": 6418977208,
+                "prompt_eval_count": 324,
+                "prompt_eval_cached_count": 0,
+                "prompt_eval_duration": 3947029000,
+                "eval_count": 25,
+                "eval_duration": 4810387000
+              },
+              "elapsed_seconds": 15.183582750032656
+            },
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге. Верни JSON с product_id, unit_price_eur и stock."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_7bojnhvl",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:52:57.192706Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "{\"product_id\": \"KB-204\", \"unit_price_eur\": 37, \"stock\": 4}"
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 6859532792,
+                "load_duration": 1422250,
+                "prompt_eval_count": 402,
+                "prompt_eval_cached_count": 320,
+                "prompt_eval_duration": 1523875000,
+                "eval_count": 28,
+                "eval_duration": 5328861000
+              },
+              "elapsed_seconds": 6.860883625107817
+            }
+          ],
+          "tools": [
+            {
+              "name": "find_product",
+              "arguments": {
+                "query": "клавиатура"
+              },
+              "result": {
+                "products": [
+                  {
+                    "product_id": "KB-204",
+                    "name": "Клавиатура",
+                    "unit_price_eur": 37,
+                    "stock": 4
+                  }
+                ]
+              }
+            }
+          ],
+          "stop": "final",
+          "final": "{\"product_id\": \"KB-204\", \"unit_price_eur\": 37, \"stock\": 4}",
+          "judgement": {
+            "checks": {
+              "finished": true,
+              "final_fields": true,
+              "lookup": true,
+              "valid_calls": true
+            },
+            "pass": true,
+            "parsed_final": {
+              "product_id": "KB-204",
+              "unit_price_eur": 37,
+              "stock": 4
+            }
+          },
+          "elapsed_seconds": 22.044466375140473
+        },
+        {
+          "id": "dependent",
+          "steps": [
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге, затем запроси расчёт заказа на 3 штуки. Верни JSON с quantity и total_eur, включая доставку."
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:53:02.883159Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_5br49ot1",
+                      "function": {
+                        "index": 0,
+                        "name": "find_product",
+                        "arguments": {
+                          "query": "клавиатура"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 5670951625,
+                "load_duration": 1085917,
+                "prompt_eval_count": 341,
+                "prompt_eval_cached_count": 296,
+                "prompt_eval_duration": 979256000,
+                "eval_count": 25,
+                "eval_duration": 4685801000
+              },
+              "elapsed_seconds": 5.672134625026956
+            },
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге, затем запроси расчёт заказа на 3 штуки. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_5br49ot1",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:53:10.211059Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_qggm5k4o",
+                      "function": {
+                        "index": 0,
+                        "name": "quote_order",
+                        "arguments": {
+                          "product_id": "KB-204",
+                          "quantity": 3
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 7320236667,
+                "load_duration": 1160417,
+                "prompt_eval_count": 419,
+                "prompt_eval_cached_count": 337,
+                "prompt_eval_duration": 1401770000,
+                "eval_count": 31,
+                "eval_duration": 5912150000
+              },
+              "elapsed_seconds": 7.321546333958395
+            },
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру в каталоге, затем запроси расчёт заказа на 3 штуки. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_5br49ot1",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_qggm5k4o",
+                        "function": {
+                          "index": 0,
+                          "name": "quote_order",
+                          "arguments": {
+                            "product_id": "KB-204",
+                            "quantity": 3
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "quote_order",
+                    "content": "{\"product_id\": \"KB-204\", \"quantity\": 3, \"subtotal_eur\": 111, \"shipping_eur\": 7, \"total_eur\": 118}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:53:14.775473Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "{\"quantity\": 3, \"total_eur\": 118}"
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 4556544500,
+                "load_duration": 1230083,
+                "prompt_eval_count": 504,
+                "prompt_eval_cached_count": 415,
+                "prompt_eval_duration": 1449296000,
+                "eval_count": 17,
+                "eval_duration": 3100127000
+              },
+              "elapsed_seconds": 4.558951415936463
+            }
+          ],
+          "tools": [
+            {
+              "name": "find_product",
+              "arguments": {
+                "query": "клавиатура"
+              },
+              "result": {
+                "products": [
+                  {
+                    "product_id": "KB-204",
+                    "name": "Клавиатура",
+                    "unit_price_eur": 37,
+                    "stock": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "quote_order",
+              "arguments": {
+                "product_id": "KB-204",
+                "quantity": 3
+              },
+              "result": {
+                "product_id": "KB-204",
+                "quantity": 3,
+                "subtotal_eur": 111,
+                "shipping_eur": 7,
+                "total_eur": 118
+              }
+            }
+          ],
+          "stop": "final",
+          "final": "{\"quantity\": 3, \"total_eur\": 118}",
+          "judgement": {
+            "checks": {
+              "finished": true,
+              "final_fields": true,
+              "lookup": true,
+              "valid_calls": true,
+              "quote": true
+            },
+            "pass": true,
+            "parsed_final": {
+              "quantity": 3,
+              "total_eur": 118
+            }
+          },
+          "elapsed_seconds": 17.552632374921814
+        },
+        {
+          "id": "recovery",
+          "steps": [
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру. Для проверки ошибки обязательно сначала запроси расчёт на 6 штук. Если инструмент сообщит недостаточный остаток, запроси расчёт на максимально доступное количество. Верни JSON с quantity и total_eur, включая доставку."
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:53:20.774989Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_iktzbh6g",
+                      "function": {
+                        "index": 0,
+                        "name": "find_product",
+                        "arguments": {
+                          "query": "клавиатура"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 5962151083,
+                "load_duration": 1505125,
+                "prompt_eval_count": 369,
+                "prompt_eval_cached_count": 293,
+                "prompt_eval_duration": 1377790000,
+                "eval_count": 25,
+                "eval_duration": 4576550000
+              },
+              "elapsed_seconds": 5.963751957984641
+            },
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру. Для проверки ошибки обязательно сначала запроси расчёт на 6 штук. Если инструмент сообщит недостаточный остаток, запроси расчёт на максимально доступное количество. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_iktzbh6g",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:53:28.094153Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_pc3vzw24",
+                      "function": {
+                        "index": 0,
+                        "name": "quote_order",
+                        "arguments": {
+                          "product_id": "KB-204",
+                          "quantity": 6
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 7308192209,
+                "load_duration": 1454084,
+                "prompt_eval_count": 447,
+                "prompt_eval_cached_count": 365,
+                "prompt_eval_duration": 1400812000,
+                "eval_count": 31,
+                "eval_duration": 5898857000
+              },
+              "elapsed_seconds": 7.310977499932051
+            },
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру. Для проверки ошибки обязательно сначала запроси расчёт на 6 штук. Если инструмент сообщит недостаточный остаток, запроси расчёт на максимально доступное количество. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_iktzbh6g",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_pc3vzw24",
+                        "function": {
+                          "index": 0,
+                          "name": "quote_order",
+                          "arguments": {
+                            "product_id": "KB-204",
+                            "quantity": 6
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "quote_order",
+                    "content": "{\"error\": \"INSUFFICIENT_STOCK\", \"available\": 4}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:53:34.374425Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "",
+                  "tool_calls": [
+                    {
+                      "id": "call_kjia5ij1",
+                      "function": {
+                        "index": 0,
+                        "name": "quote_order",
+                        "arguments": {
+                          "product_id": "KB-204",
+                          "quantity": 4
+                        }
+                      }
+                    }
+                  ]
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 6260443208,
+                "load_duration": 2301000,
+                "prompt_eval_count": 502,
+                "prompt_eval_cached_count": 443,
+                "prompt_eval_duration": 998631000,
+                "eval_count": 28,
+                "eval_duration": 5251105000
+              },
+              "elapsed_seconds": 6.262347333016805
+            },
+            {
+              "request": {
+                "model": "qwen3:8b",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "Ты проверяешь учебный каталог через инструменты. Все сведения о товарах и расчётах получай из результатов инструментов. После ошибки используй её данные для исправления запроса. Не придумывай результаты. Финальный ответ должен быть только JSON с полями, указанными пользователем."
+                  },
+                  {
+                    "role": "user",
+                    "content": "Найди клавиатуру. Для проверки ошибки обязательно сначала запроси расчёт на 6 штук. Если инструмент сообщит недостаточный остаток, запроси расчёт на максимально доступное количество. Верни JSON с quantity и total_eur, включая доставку."
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_iktzbh6g",
+                        "function": {
+                          "index": 0,
+                          "name": "find_product",
+                          "arguments": {
+                            "query": "клавиатура"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "find_product",
+                    "content": "{\"products\": [{\"product_id\": \"KB-204\", \"name\": \"Клавиатура\", \"unit_price_eur\": 37, \"stock\": 4}]}"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_pc3vzw24",
+                        "function": {
+                          "index": 0,
+                          "name": "quote_order",
+                          "arguments": {
+                            "product_id": "KB-204",
+                            "quantity": 6
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "quote_order",
+                    "content": "{\"error\": \"INSUFFICIENT_STOCK\", \"available\": 4}"
+                  },
+                  {
+                    "role": "assistant",
+                    "content": "",
+                    "tool_calls": [
+                      {
+                        "id": "call_kjia5ij1",
+                        "function": {
+                          "index": 0,
+                          "name": "quote_order",
+                          "arguments": {
+                            "product_id": "KB-204",
+                            "quantity": 4
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "role": "tool",
+                    "tool_name": "quote_order",
+                    "content": "{\"product_id\": \"KB-204\", \"quantity\": 4, \"subtotal_eur\": 148, \"shipping_eur\": 7, \"total_eur\": 155}"
+                  }
+                ],
+                "tools": [
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "find_product",
+                      "description": "Найти товар в учебном каталоге по названию.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "query": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "query"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  {
+                    "type": "function",
+                    "function": {
+                      "name": "quote_order",
+                      "description": "Рассчитать стоимость заказа с доставкой по ID найденного товара; может вернуть ошибку недостаточного остатка.",
+                      "parameters": {
+                        "type": "object",
+                        "properties": {
+                          "product_id": {
+                            "type": "string"
+                          },
+                          "quantity": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [
+                          "product_id",
+                          "quantity"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  }
+                ],
+                "stream": false,
+                "think": false,
+                "keep_alive": "5m",
+                "options": {
+                  "num_ctx": 8192,
+                  "num_predict": 384,
+                  "temperature": 0.2,
+                  "seed": 42
+                }
+              },
+              "response": {
+                "model": "qwen3:8b",
+                "created_at": "2026-10-08T11:53:39.719499Z",
+                "message": {
+                  "role": "assistant",
+                  "content": "{\n  \"quantity\": 4,\n  \"total_eur\": 155\n}"
+                },
+                "done": true,
+                "done_reason": "stop",
+                "total_duration": 5336818584,
+                "load_duration": 1187000,
+                "prompt_eval_count": 587,
+                "prompt_eval_cached_count": 498,
+                "prompt_eval_duration": 1458773000,
+                "eval_count": 21,
+                "eval_duration": 3870899000
+              },
+              "elapsed_seconds": 5.338136874954216
+            }
+          ],
+          "tools": [
+            {
+              "name": "find_product",
+              "arguments": {
+                "query": "клавиатура"
+              },
+              "result": {
+                "products": [
+                  {
+                    "product_id": "KB-204",
+                    "name": "Клавиатура",
+                    "unit_price_eur": 37,
+                    "stock": 4
+                  }
+                ]
+              }
+            },
+            {
+              "name": "quote_order",
+              "arguments": {
+                "product_id": "KB-204",
+                "quantity": 6
+              },
+              "result": {
+                "error": "INSUFFICIENT_STOCK",
+                "available": 4
+              }
+            },
+            {
+              "name": "quote_order",
+              "arguments": {
+                "product_id": "KB-204",
+                "quantity": 4
+              },
+              "result": {
+                "product_id": "KB-204",
+                "quantity": 4,
+                "subtotal_eur": 148,
+                "shipping_eur": 7,
+                "total_eur": 155
+              }
+            }
+          ],
+          "stop": "final",
+          "final": "{\n  \"quantity\": 4,\n  \"total_eur\": 155\n}",
+          "judgement": {
+            "checks": {
+              "finished": true,
+              "final_fields": true,
+              "lookup": true,
+              "valid_calls": true,
+              "recover": true
+            },
+            "pass": true,
+            "parsed_final": {
+              "quantity": 4,
+              "total_eur": 155
+            }
+          },
+          "elapsed_seconds": 24.875213665887713
+        }
+      ],
+      "loaded": {
+        "time": "2026-10-08T11:53:39.721491+00:00",
+        "swap": "vm.swapusage: total = 6144.00M  used = 5069.56M  free = 1074.44M  (encrypted)",
+        "pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 29%",
+        "pressure_level": 1,
+        "loaded": {
+          "models": [
+            {
+              "name": "qwen3:8b",
+              "model": "qwen3:8b",
+              "size": 6628719984,
+              "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "qwen3",
+                "families": [
+                  "qwen3"
+                ],
+                "parameter_size": "8.2B",
+                "quantization_level": "Q4_K_M"
+              },
+              "expires_at": "2026-10-08T13:58:39.719612+02:00",
+              "size_vram": 6628719984,
+              "context_length": 8192
+            }
+          ]
+        }
+      },
+      "unload": {
+        "model": "qwen3:8b",
+        "created_at": "2026-10-08T11:53:39.736394Z",
+        "response": "",
+        "done": true,
+        "done_reason": "unload"
+      },
+      "after_unload": {
+        "time": "2026-10-08T11:53:39.736613+00:00",
+        "swap": "vm.swapusage: total = 6144.00M  used = 5069.56M  free = 1074.44M  (encrypted)",
+        "pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 29%",
+        "pressure_level": 1,
+        "loaded": {
+          "models": []
+        }
+      }
+    }
+  ],
+  "before": {
+    "time": "2026-10-08T11:50:50.802965+00:00",
+    "swap": "vm.swapusage: total = 5120.00M  used = 4718.69M  free = 401.31M  (encrypted)",
+    "pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 69%",
+    "pressure_level": 1,
+    "loaded": {
+      "models": []
+    }
+  },
+  "finished_at": "2026-10-08T11:53:39.767744+00:00",
+  "after": {
+    "time": "2026-10-08T11:53:39.767772+00:00",
+    "swap": "vm.swapusage: total = 6144.00M  used = 5069.56M  free = 1074.44M  (encrypted)",
+    "pressure": "The system has 17179869184 (1048576 pages with a page size of 16384).\nSystem-wide memory free percentage: 29%",
+    "pressure_level": 1,
+    "loaded": {
+      "models": []
+    }
+  }
+}

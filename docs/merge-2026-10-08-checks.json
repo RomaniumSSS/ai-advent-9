@@ -1,0 +1,409 @@
+{
+  "environment": "macOS arm64, Python 3.12.12; uv locked core plus requests==2.32.5 and tokenizers==0.22.2 for day-local tests",
+  "results": [
+    {
+      "command": "day11/test_memory.py",
+      "exit_code": 0,
+      "seconds": 4.15,
+      "status": "PASS"
+    },
+    {
+      "command": "day12/test_deploy.py",
+      "exit_code": 0,
+      "seconds": 1.49,
+      "recheck": "copy of unchanged day12, cwd=day12",
+      "status": "PASS"
+    },
+    {
+      "command": "day12/test_live_budget.py",
+      "exit_code": 0,
+      "seconds": 1.03,
+      "status": "PASS"
+    },
+    {
+      "command": "day12/test_mass_grade.py",
+      "exit_code": 0,
+      "seconds": 0.06,
+      "status": "PASS"
+    },
+    {
+      "command": "day12/test_mass_live.py",
+      "exit_code": 1,
+      "seconds": 0.65,
+      "status": "BLOCKED_MISSING_HISTORICAL_FIXTURE"
+    },
+    {
+      "command": "day12/test_memory.py",
+      "exit_code": 0,
+      "seconds": 0.95,
+      "status": "PASS"
+    },
+    {
+      "command": "day12/test_profile.py",
+      "exit_code": 0,
+      "seconds": 1.04,
+      "recheck": "copy of unchanged day12, cwd=day12",
+      "status": "PASS"
+    },
+    {
+      "command": "day12/test_resume_live.py",
+      "exit_code": 1,
+      "seconds": 0.09,
+      "status": "BLOCKED_MISSING_HISTORICAL_FIXTURE"
+    },
+    {
+      "command": "day12/test_runtime.py",
+      "exit_code": 0,
+      "seconds": 0.89,
+      "recheck": "copy of unchanged day12, cwd=day12",
+      "status": "PASS"
+    },
+    {
+      "command": "day12/test_verify_live.py",
+      "exit_code": 0,
+      "seconds": 0.09,
+      "status": "PASS"
+    },
+    {
+      "command": "day12/test_web.py",
+      "exit_code": 0,
+      "seconds": 0.95,
+      "status": "PASS"
+    },
+    {
+      "command": "day13/test_live_eval.py",
+      "exit_code": 0,
+      "seconds": 6.63,
+      "status": "PASS"
+    },
+    {
+      "command": "day13/test_live_workflow_eval.py",
+      "exit_code": 0,
+      "seconds": 0.59,
+      "status": "PASS"
+    },
+    {
+      "command": "day13/test_task_state.py",
+      "exit_code": 0,
+      "seconds": 1.06,
+      "status": "PASS"
+    },
+    {
+      "command": "day13/test_web.py",
+      "exit_code": 0,
+      "seconds": 1.23,
+      "status": "PASS"
+    },
+    {
+      "command": "day13/test_workflow_loop.py",
+      "exit_code": 0,
+      "seconds": 1.12,
+      "status": "PASS"
+    },
+    {
+      "command": "day14/test_invariants.py",
+      "exit_code": 0,
+      "seconds": 1.45,
+      "status": "PASS"
+    },
+    {
+      "command": "day14/test_task_state.py",
+      "exit_code": 0,
+      "seconds": 1.09,
+      "status": "PASS"
+    },
+    {
+      "command": "day14/test_web.py",
+      "exit_code": 0,
+      "seconds": 1.34,
+      "status": "PASS"
+    },
+    {
+      "command": "day14/test_workflow_loop.py",
+      "exit_code": 0,
+      "seconds": 1.19,
+      "status": "PASS"
+    },
+    {
+      "command": "day15/test_controlled_transitions.py",
+      "exit_code": 0,
+      "seconds": 1.07,
+      "status": "PASS"
+    },
+    {
+      "command": "day15/test_invariants.py",
+      "exit_code": 0,
+      "seconds": 1.5,
+      "status": "PASS"
+    },
+    {
+      "command": "day15/test_task_state.py",
+      "exit_code": 0,
+      "seconds": 1.12,
+      "status": "PASS"
+    },
+    {
+      "command": "day15/test_web.py",
+      "exit_code": 0,
+      "seconds": 1.43,
+      "status": "PASS"
+    },
+    {
+      "command": "day15/test_workflow_loop.py",
+      "exit_code": 0,
+      "seconds": 1.21,
+      "status": "PASS"
+    },
+    {
+      "command": "day16/test_controlled_transitions.py",
+      "exit_code": 0,
+      "seconds": 1.07,
+      "status": "PASS"
+    },
+    {
+      "command": "day16/test_invariants.py",
+      "exit_code": 0,
+      "seconds": 1.46,
+      "status": "PASS"
+    },
+    {
+      "command": "day16/test_mcp_client.py",
+      "exit_code": 0,
+      "seconds": 1.51,
+      "status": "PASS"
+    },
+    {
+      "command": "day16/test_mcp_protocol.py",
+      "exit_code": 0,
+      "seconds": 0.61,
+      "status": "PASS"
+    },
+    {
+      "command": "day16/test_mcp_web.py",
+      "exit_code": 0,
+      "seconds": 1.42,
+      "status": "PASS"
+    },
+    {
+      "command": "day16/test_task_state.py",
+      "exit_code": 0,
+      "seconds": 1.12,
+      "status": "PASS"
+    },
+    {
+      "command": "day16/test_web.py",
+      "exit_code": 0,
+      "seconds": 1.8,
+      "status": "PASS"
+    },
+    {
+      "command": "day16/test_workflow_loop.py",
+      "exit_code": 0,
+      "seconds": 1.18,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_controlled_transitions.py",
+      "exit_code": 0,
+      "seconds": 1.85,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_git_read_only.py",
+      "exit_code": 0,
+      "seconds": 1.0,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_invariants.py",
+      "exit_code": 0,
+      "seconds": 1.9,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_mcp_client.py",
+      "exit_code": 0,
+      "seconds": 0.59,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_mcp_protocol.py",
+      "exit_code": 0,
+      "seconds": 0.91,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_mcp_web.py",
+      "exit_code": 0,
+      "seconds": 1.51,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_task_state.py",
+      "exit_code": 0,
+      "seconds": 1.59,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_tool_calling.py",
+      "exit_code": 0,
+      "seconds": 3.24,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_web.py",
+      "exit_code": 0,
+      "seconds": 1.92,
+      "status": "PASS"
+    },
+    {
+      "command": "day17/test_workflow_loop.py",
+      "exit_code": 0,
+      "seconds": 1.66,
+      "status": "PASS"
+    },
+    {
+      "command": "-m unittest day18.test_architecture day18.test_offline -q",
+      "exit_code": 0,
+      "seconds": 6.59,
+      "status": "PASS"
+    },
+    {
+      "command": "-m unittest day19.test_offline day19.test_report_evidence -q",
+      "exit_code": 0,
+      "seconds": 46.27,
+      "status": "PASS"
+    },
+    {
+      "command": "-m unittest day20.test_mcp_server day20.test_offline -q",
+      "exit_code": 0,
+      "seconds": 6.21,
+      "status": "PASS"
+    },
+    {
+      "command": "day21/test_corpus.py",
+      "exit_code": 0,
+      "seconds": 0.07,
+      "recheck": "created ignored empty day21/private directory",
+      "status": "PASS"
+    },
+    {
+      "command": "day21/test_import.py",
+      "exit_code": 0,
+      "seconds": 0.06,
+      "status": "PASS"
+    },
+    {
+      "command": "day21/test_index_pipeline.py",
+      "exit_code": 0,
+      "seconds": 0.21,
+      "status": "PASS"
+    },
+    {
+      "command": "day21/test_inspect_index.py",
+      "exit_code": 0,
+      "seconds": 0.15,
+      "status": "PASS"
+    },
+    {
+      "command": "day22/test_rag.py",
+      "exit_code": 0,
+      "seconds": 0.16,
+      "status": "PASS"
+    },
+    {
+      "command": "day23/test_evaluate.py",
+      "exit_code": 0,
+      "seconds": 0.14,
+      "status": "PASS"
+    },
+    {
+      "command": "day23/test_prepare.py",
+      "exit_code": 0,
+      "seconds": 0.12,
+      "status": "PASS"
+    },
+    {
+      "command": "day23/test_report.py",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "status": "PASS"
+    },
+    {
+      "command": "day23/test_retrieval.py",
+      "exit_code": 0,
+      "seconds": 0.11,
+      "status": "PASS"
+    },
+    {
+      "command": "day23/test_scoring.py",
+      "exit_code": 0,
+      "seconds": 0.11,
+      "status": "PASS"
+    },
+    {
+      "command": "day24/test_day24.py",
+      "exit_code": 0,
+      "seconds": 0.13,
+      "status": "PASS"
+    },
+    {
+      "command": "day24/test_evaluate.py",
+      "exit_code": 0,
+      "seconds": 0.13,
+      "status": "PASS"
+    },
+    {
+      "command": "-m unittest discover -s day25/app -q",
+      "exit_code": 0,
+      "seconds": 4.76,
+      "status": "PASS"
+    },
+    {
+      "command": "-m unittest discover -s day25/validation -q",
+      "exit_code": 0,
+      "seconds": 0.21,
+      "status": "PASS"
+    },
+    {
+      "command": "day24/app/test_failures.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "day24/app/test_mentor.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "day24/app/test_public.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "day24/app/test_quality.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "mentor/test_failures.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "mentor/test_mentor.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "mentor/test_public.py",
+      "exit_code": 0,
+      "status": "PASS"
+    },
+    {
+      "command": "mentor/test_quality.py",
+      "exit_code": 0,
+      "status": "PASS"
+    }
+  ]
+}

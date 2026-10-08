@@ -1,0 +1,40 @@
+{
+  "time_utc": "2026-10-01T11:35:43.516012+00:00",
+  "model": "qwen3-embedding:0.6b",
+  "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+  "ollama_version": "0.17.7",
+  "input_characters": [
+    82,
+    56,
+    1100
+  ],
+  "private_corpus_used": false,
+  "runs": [
+    {
+      "label": "first",
+      "elapsed_seconds": 9.512,
+      "vectors": 3,
+      "dimensions": 1024,
+      "norms": [
+        1.0000001248887507,
+        1.0000001467376127,
+        1.0000001443960014
+      ],
+      "prompt_eval_count": 396,
+      "load_seconds": 1.059059947
+    },
+    {
+      "label": "warm",
+      "elapsed_seconds": 8.406,
+      "vectors": 3,
+      "dimensions": 1024,
+      "norms": [
+        1.0000001248887507,
+        1.0000001467376127,
+        1.0000001443960014
+      ],
+      "prompt_eval_count": 396,
+      "load_seconds": 0.108971157
+    }
+  ]
+}

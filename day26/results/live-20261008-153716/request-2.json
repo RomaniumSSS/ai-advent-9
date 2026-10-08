@@ -1,0 +1,613 @@
+{
+  "started_at": "2026-10-08T13:37:39.301821+00:00",
+  "endpoint": "http://127.0.0.1:11434",
+  "request": {
+    "model": "qwen3:8b",
+    "prompt": "Объясни разницу list и set в Python и покажи короткий пример удаления дубликатов. Ответ до 60 слов.",
+    "think": false,
+    "stream": true,
+    "keep_alive": "5m",
+    "options": {
+      "temperature": 0,
+      "num_ctx": 4096,
+      "num_predict": 600
+    }
+  },
+  "chunks": [
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:41.058704Z",
+      "response": "`",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:41.348664Z",
+      "response": "list",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:41.692572Z",
+      "response": "`",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:42.026717Z",
+      "response": " сохран",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:42.339207Z",
+      "response": "яет",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:42.697405Z",
+      "response": " поряд",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:42.96516Z",
+      "response": "ок",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:43.291607Z",
+      "response": " и",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:43.611226Z",
+      "response": " доп",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:43.993588Z",
+      "response": "ус",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:44.263602Z",
+      "response": "ка",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:44.609002Z",
+      "response": "ет",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:44.929019Z",
+      "response": " д",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:45.249861Z",
+      "response": "уб",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:45.572747Z",
+      "response": "лик",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:45.891481Z",
+      "response": "ат",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:46.163955Z",
+      "response": "ы",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:46.632957Z",
+      "response": ",",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:46.858764Z",
+      "response": " `",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:47.194869Z",
+      "response": "set",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:47.479924Z",
+      "response": "`",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:47.793607Z",
+      "response": " не",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:48.07951Z",
+      "response": " сохран",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:48.379139Z",
+      "response": "яет",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:48.716046Z",
+      "response": " поряд",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:49.050584Z",
+      "response": "ок",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:49.358189Z",
+      "response": " и",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:49.7741Z",
+      "response": " не",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:50.102045Z",
+      "response": " доп",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:50.401243Z",
+      "response": "ус",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:50.698502Z",
+      "response": "ка",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:50.977066Z",
+      "response": "ет",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:51.29802Z",
+      "response": " д",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:51.64775Z",
+      "response": "уб",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:51.945571Z",
+      "response": "лик",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:52.356938Z",
+      "response": "ат",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:52.681996Z",
+      "response": "ов",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:52.984165Z",
+      "response": ".",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:53.298391Z",
+      "response": " Пр",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:53.64322Z",
+      "response": "имер",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:53.925139Z",
+      "response": " удал",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:54.195526Z",
+      "response": "ения",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:54.528502Z",
+      "response": " д",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:54.847638Z",
+      "response": "уб",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:55.150414Z",
+      "response": "лик",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:55.497607Z",
+      "response": "ат",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:55.817621Z",
+      "response": "ов",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:56.180182Z",
+      "response": ":",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:56.49766Z",
+      "response": " `",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:56.818337Z",
+      "response": "list",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:57.132676Z",
+      "response": "(set",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:57.482634Z",
+      "response": "([",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:57.79855Z",
+      "response": "1",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:58.144859Z",
+      "response": ",",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:58.452858Z",
+      "response": " ",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:58.733666Z",
+      "response": "2",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:59.081933Z",
+      "response": ",",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:59.396097Z",
+      "response": " ",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:37:59.698008Z",
+      "response": "2",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:00.008977Z",
+      "response": ",",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:00.327495Z",
+      "response": " ",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:00.66248Z",
+      "response": "3",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:00.977863Z",
+      "response": "]))",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:01.267155Z",
+      "response": "`",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:01.584287Z",
+      "response": " →",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:01.947546Z",
+      "response": " `[",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:02.246587Z",
+      "response": "1",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:02.595631Z",
+      "response": ",",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:02.892108Z",
+      "response": " ",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:03.194085Z",
+      "response": "2",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:03.514763Z",
+      "response": ",",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:03.84798Z",
+      "response": " ",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:04.316801Z",
+      "response": "3",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:04.878842Z",
+      "response": "]",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:05.09202Z",
+      "response": "`.",
+      "done": false
+    },
+    {
+      "model": "qwen3:8b",
+      "created_at": "2026-10-08T13:38:05.442901Z",
+      "response": "",
+      "done": true,
+      "done_reason": "stop",
+      "context": [
+        151644,
+        872,
+        198,
+        73239,
+        33594,
+        127023,
+        22621,
+        38379,
+        131182,
+        3780,
+        1140,
+        7587,
+        738,
+        5805,
+        13027,
+        7587,
+        134227,
+        37557,
+        1802,
+        66869,
+        13039,
+        130366,
+        131616,
+        57391,
+        18492,
+        7796,
+        63469,
+        127737,
+        7972,
+        6715,
+        13,
+        128876,
+        46974,
+        56197,
+        220,
+        21,
+        15,
+        91107,
+        13,
+        608,
+        2152,
+        5854,
+        766,
+        151645,
+        198,
+        151644,
+        77091,
+        198,
+        151667,
+        271,
+        151668,
+        271,
+        63,
+        1607,
+        63,
+        92681,
+        135326,
+        142265,
+        14746,
+        7587,
+        142861,
+        43055,
+        13132,
+        8178,
+        7796,
+        63469,
+        127737,
+        7972,
+        4552,
+        11,
+        1565,
+        746,
+        63,
+        18658,
+        92681,
+        135326,
+        142265,
+        14746,
+        7587,
+        18658,
+        142861,
+        43055,
+        13132,
+        8178,
+        7796,
+        63469,
+        127737,
+        7972,
+        6715,
+        13,
+        79484,
+        80348,
+        57391,
+        18492,
+        7796,
+        63469,
+        127737,
+        7972,
+        6715,
+        25,
+        1565,
+        1607,
+        14171,
+        2561,
+        16,
+        11,
+        220,
+        17,
+        11,
+        220,
+        17,
+        11,
+        220,
+        18,
+        9365,
+        63,
+        11397,
+        77644,
+        16,
+        11,
+        220,
+        17,
+        11,
+        220,
+        18,
+        60,
+        28587
+      ],
+      "total_duration": 26138774333,
+      "load_duration": 12218125,
+      "prompt_eval_count": 52,
+      "prompt_eval_cached_count": 3,
+      "prompt_eval_duration": 1722148000,
+      "eval_count": 76,
+      "eval_duration": 24384100000,
+      "elapsed_seconds": 26.149417708045803
+    }
+  ],
+  "answer": "`list` сохраняет порядок и допускает дубликаты, `set` не сохраняет порядок и не допускает дубликатов. Пример удаления дубликатов: `list(set([1, 2, 2, 3]))` → `[1, 2, 3]`."
+}

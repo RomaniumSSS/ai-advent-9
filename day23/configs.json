@@ -1,0 +1,22 @@
+{
+  "A": {
+    "after": 5,
+    "before": 5,
+    "context_bytes": 18000,
+    "messages_bytes": 24000,
+    "metadata": false,
+    "mixed": false,
+    "rewrite": false,
+    "threshold": 0.0
+  },
+  "E": {
+    "after": 5,
+    "before": 20,
+    "context_bytes": 18000,
+    "messages_bytes": 24000,
+    "metadata": true,
+    "mixed": true,
+    "rewrite": false,
+    "threshold": 0.35
+  }
+}

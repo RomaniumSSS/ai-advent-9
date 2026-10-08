@@ -1,10 +1,18 @@
 # ai-advent-9
 
+Все задания собраны по порядку в `main`: `day01/`–`day26/`. Day25 и Day26 сданы; следующий — Day27.
+
+Последняя сдача: [Day26 — локальная LLM](day26/README.md), [живая запись 2:26](day26/video/Day26-live.mp4), [архив кода](day26/Day26-code.zip).
+Day25: [результат и ограничения](day25/RESULT.md), [проверки](day25/VERIFICATION.md), [запуск](day25/app/README.md), [видео до последних правок](day25/video/Day25-session15.mp4).
+
 Видео дня 8: [смотреть на Google Drive](https://drive.google.com/file/d/1pOyMp1717Ih83KvAF9KnrmES7CE0iBzH/view?usp=sharing).
 
 Задания AI Advent Challenge, 9 поток.
 
 ## Запуск
+
+Зависимости отдельных дней устанавливаются по их README и `requirements.txt`.
+Корневой `uv sync` устанавливает общие зависимости; Ollama и веса модели — отдельно.
 
 ```bash
 uv sync
@@ -35,6 +43,13 @@ uv run day01/ask.py "вопрос"
 | 17 | MCP-инструмент в обычном ходе агента | [`day17/README.md`](day17/README.md) |
 | 18 | агент по расписанию: RSS → MCP → сводка → Telegram | [`day18/README.md`](day18/README.md) |
 | 19 | агент сам вызывает три инструмента одного MCP-сервера и сохраняет отчёт | [`day19/README.md`](day19/README.md) |
+| 20 | агент с двумя MCP-серверами и Telegram | [`day20/README.md`](day20/README.md) |
+| 21 | индексация документов и сравнение разбиения | [`day21/README.md`](day21/README.md) |
+| 22 | первый RAG и сравнение ответов | [`day22/README.md`](day22/README.md) |
+| 23 | качество RAG: фильтрация и переранжирование | [`day23/README.md`](day23/README.md) |
+| 24 | ответы с источниками и цитатами | [`day24/README.md`](day24/README.md) |
+| 25 | RAG-чат с памятью задачи | [`day25/README.md`](day25/README.md) |
+| 26 | локальная LLM: Ollama, HTTP API и три запроса | [`day26/README.md`](day26/README.md) |
 
 ## День 19: цепочка MCP-инструментов
 
