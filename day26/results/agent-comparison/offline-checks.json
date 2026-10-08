@@ -1,0 +1,7 @@
+{
+  "time": "2026-10-08T11:49:11.868518+00:00",
+  "kind": "offline harness guards; no model calls",
+  "checks": 10,
+  "status": "PASS",
+  "description": "7 tool guards + 3 rejections of final answers without tool evidence"
+}
