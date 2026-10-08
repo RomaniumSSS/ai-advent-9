@@ -17,4 +17,5 @@
 без подключения LLM. [Полные результаты и границы](RESULT.md).
 
 Видео [загружено в Google Drive](https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view?usp=sharing).
-Коммит и push разрешены пользователем и выполняются; сдача ещё не подтверждена.
+[Код опубликован на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/day27-local-app/day27),
+удалённый commit проверен; сдача ещё не подтверждена.

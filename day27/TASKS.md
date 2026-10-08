@@ -49,4 +49,11 @@ T6: [новый записанный прогон](video/runs/record-1/results.j
 [декодирование и кадры](video/runs/record-1/video-checks.json).
 T7: [RESULT](RESULT.md), [RELEASE_NOTES](RELEASE_NOTES.md), проверка границ в RESULT.
 Первый ответ — общий план чата без подключения LLM; недостаток сохранён.
-Человеческая приёмка, commit/push/merge и сдача не отмечены выполненными.
+Человеческая приёмка, merge и пользовательская сдача не отмечены выполненными.
+
+- [x] **T8 — разрешённая публикация 08.10.2026.** Код и связанные правила проекта
+  закоммичены и отправлены в `origin/day27-local-app`; SHA подтверждён через
+  `git ls-remote` и GitHub API. [Подтверждение](results/github-publication.json).
+  Видео загружено в выбранную папку AI Advent на основном Drive; владелец и
+  доступ «Anyone with the link — Viewer» проверены. [Подтверждение](results/drive-upload.json).
+  Две ссылки готовы для сдачи; таблица не изменялась.

@@ -11,7 +11,9 @@
 [release notes](RELEASE_NOTES.md).
 [Видео на Google Drive](https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view?usp=sharing)
 загружено в общую папку AI Advent и доступно для просмотра по ссылке.
-Коммит и push разрешены пользователем; пользовательская сдача ещё не подтверждена.
+[Код на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/day27-local-app/day27)
+закоммичен и опубликован в `day27-local-app`; удалённая версия проверена.
+Пользовательская сдача ещё не подтверждена.
 
 ## Запуск
 

@@ -5,13 +5,15 @@
 кнопкой «Новый чат». Backend: Python standard library → локальная Ollama.
 RAG не подключён; сданные Day01–26 не изменены.
 
-Код и видео готовы в ветке `day27-local-app`. Видео загружено в Google Drive,
-коммит и push явно разрешены пользователем 08.10.2026 и выполняются.
+Код закоммичен и опубликован в ветке `day27-local-app`; удалённый SHA и наличие
+файлов Day27 проверены. Видео загружено в Google Drive и доступно по ссылке.
 Merge в main и пользовательская сдача не выполнены.
 
 ## Артефакты
 
 - [Приложение и запуск](README.md), [архив кода](Day27-code.zip).
+- [Код на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/day27-local-app/day27),
+  [подтверждение коммита и push](results/github-publication.json).
 - [Живая запись MP4, 42.88 с](video/Day27-live.mp4): три новых запроса через приложение,
   без проигрывания старых ответов, ускорения или подмены API.
 - [Видео на Google Drive](https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view?usp=sharing),

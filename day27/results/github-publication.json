@@ -1,0 +1,12 @@
+{
+  "verified_at": "2026-10-08T21:25:38.941149+00:00",
+  "repository": "RomaniumSSS/ai-advent-9",
+  "branch": "day27-local-app",
+  "code_commit": "88f7e7d57ff9240701d69a11ff90959aa4f08235",
+  "remote_commit": "88f7e7d57ff9240701d69a11ff90959aa4f08235",
+  "code_url": "https://github.com/RomaniumSSS/ai-advent-9/tree/day27-local-app/day27",
+  "video_url": "https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view?usp=sharing",
+  "evidence": "git push succeeded; git ls-remote and GitHub branch API matched code commit; contents/day27 API returned code and delivery files",
+  "main_merge": false,
+  "user_submission_confirmed": false
+}
