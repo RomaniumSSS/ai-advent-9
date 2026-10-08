@@ -14,11 +14,17 @@ from search import search
 from conversation import build_context, prepare_generation
 from task_contract import refusal_text, format_errors
 from structured_evidence import check_response
+from user_facts import check_user_response
 
 STATES = {'verified': 'Цитаты проверены; смысл не проверен', 'no_context': 'Недостаточный контекст', 'model_refusal': 'Модель сообщает нехватку фактов', 'insufficient_context':'Недостаточно подтверждённых сторон сравнения', 'unverified': 'Непроверенный ответ', 'error': 'Техническая ошибка', 'not_authorized': 'Генерация не разрешена', 'interrupted': 'Операция прервана', 'unknown': 'Исход платного вызова неизвестен'}
 
 def read(path, default=None):
     return json.loads(path.read_text()) if path.exists() else default
+
+def check_item_response(item,chunks):
+    if item.get('version')=='day25-chat-v4':
+        return check_user_response(item.get('raw_answer'),chunks,item['question'],item['task_state'],item.get('conversation',{}))
+    return check_response(item.get('raw_answer'),chunks,item['question'],item['task_state'])
 
 class Service:
     def __init__(self, directory, search_fn=search, generate_fn=None, key_fn=key_from_env, pricing_fn=refresh_pricing):
@@ -72,7 +78,7 @@ class Service:
             if changed['status'] in ('verified','insufficient_context'):
                 generation=changed.get('generation',{})
                 chunks=generation.get('transmitted_chunks',[])
-                checked=check_response(changed.get('raw_answer'),chunks,changed['question'],changed['task_state'])
+                checked=check_item_response(changed,chunks)
                 chunk_ids=[c['chunk_id'] for c in chunks]
                 if (stage!='validating' or generation.get('transmission')!='confirmed'
                     or chunk_ids!=generation.get('transmitted_chunk_ids')
@@ -158,7 +164,7 @@ class Service:
     def present(item):
         if not item:return item
         shown=copy.deepcopy(item)
-        if shown.get('version')!='day25-chat-v3':
+        if shown.get('version') not in ('day25-chat-v3','day25-chat-v4'):
             shown.pop('structured_evidence',None)
             return shown
         if shown.get('status') in ('verified','insufficient_context'):
@@ -166,7 +172,7 @@ class Service:
             chunks=generation.get('transmitted_chunks',[])
             chunk_ids=[c['chunk_id'] for c in chunks]
             confirmed=(generation.get('transmission')=='confirmed' and chunk_ids==generation.get('transmitted_chunk_ids') and chunk_ids==generation.get('attempted_chunk_ids'))
-            checked=check_response(shown.get('raw_answer'),chunks,shown['question'],shown['task_state'])
+            checked=check_item_response(shown,chunks)
             if confirmed and checked.get('structure_valid') and checked.get('outcome')==shown['status'] and checked['answer']==shown.get('answer'):
                 shown['structured_evidence']=checked['structured_evidence']
             else:
@@ -206,7 +212,7 @@ class Service:
                 if old.get('chat_id') != chat_id: raise ValueError('id_chat_changed')
                 if old['question']!=question or old['scope']!=scope: raise ValueError('id_payload_changed')
                 return old
-            item={'chat_id':chat_id,'task_state':copy.deepcopy(chat['task_state']),'task_state_version':chat['task_state']['version'],'id':ident,'question':question,'scope':scope,'status':'searching','stage':'searching','transitions':[{'from':None,'to':'searching','at':time.time()}],'created_at':time.time(),'version':'day25-chat-v3','semantic_match':None,'cost':0,'generation':{'started':False,'transmitted_chunk_ids':[]},'feedback':None,'saved':True,'timings':{}}
+            item={'chat_id':chat_id,'task_state':copy.deepcopy(chat['task_state']),'task_state_version':chat['task_state']['version'],'id':ident,'question':question,'scope':scope,'status':'searching','stage':'searching','transitions':[{'from':None,'to':'searching','at':time.time()}],'created_at':time.time(),'version':'day25-chat-v4','semantic_match':None,'cost':0,'generation':{'started':False,'transmitted_chunk_ids':[]},'feedback':None,'saved':True,'timings':{}}
             auth=read(self.directory/'authorization.json',{})
             history=self.history(chat_id)
             if auth.get('approved') is True:
@@ -323,7 +329,7 @@ class Service:
                 item['validation']={'valid':False,'errors':[reason],'semantic_match':None}
                 item['reason']='Ответ провайдера получен, но не прошёл проверку: '+reason
                 return
-            checked=check_response(content,transmitted,item['question'],item['task_state'])
+            checked=check_item_response(item,transmitted)
             contract_errors=format_errors(checked.get('answer'),item['task_state'])
             item['validation']=checked
             if checked.get('structure_valid'):
@@ -331,7 +337,7 @@ class Service:
             else:
                 # Без цитат отказ распознаётся только по точному контракту; прочее остаётся непроверенным.
                 data=checked.get('answer')
-                if not contract_errors and not any(e not in ('missing_sources','missing_quotes') for e in checked['errors']) and isinstance(data,dict) and {'answer','sources','quotes'}<=set(data)<= {'answer','sources','quotes','attributions','comparison'} and not data.get('attributions') and not data.get('comparison') and data['sources']==[] and data['quotes']==[] and bool(refusal_text(data)):
+                if not contract_errors and not any(e not in ('missing_sources','missing_quotes') for e in checked['errors']) and isinstance(data,dict) and {'answer','sources','quotes'}<=set(data)<= {'answer','sources','quotes','attributions','comparison','user_fact_refs'} and not data.get('attributions') and not data.get('comparison') and data['sources']==[] and data['quotes']==[] and bool(refusal_text(data)):
                     item.update(status='model_refusal',answer=data)
                 else: item['status']='unverified'
         except Exception:

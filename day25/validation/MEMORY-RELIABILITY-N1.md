@@ -1,0 +1,15 @@
+# N1 — единый режим поискового вопроса
+
+M1–M2/M4, B1: `conversation.analyze_question` выбирает один режим по порядку: текущий явный day/date/period/scope → явная ссылка на task state → самостоятельно названная тема → короткое продолжение → самостоятельный вопрос. Продолжение без действующей темы/пользовательского якоря становится `ambiguous`; запрос не получает выдуманную тему, envelope предлагает уточнение. Ассистентский текст не используется для поиска.
+
+Диагностика `query_analysis`: mode/reason, used_fields, task_state_version, anchor_request_id, clarification_needed. `used_fields` описывает только целиком включённые поля, без обрезанных дат/ограничений. Существующие search_rule/IDs/архивы совместимы; текущие поля дополнительно передаются в generation envelope. Смена версии/другой scope исключают старый якорь. Все ходы по-прежнему делают свежий search и передают фактически selected chunks, не историю вместо источников.
+
+Изменены `conversation.py`, добавлен `test_memory_query.py`.55 app +21 validation офлайн PASS (ResourceWarning aserror), diff-check PASS. Адресные проверки: единый порядок, public2/11/12/all14 формы, независимые PostgreSQL/Берлин/topic, day/date/scope override, неизвестный referent, byte budget, отмена constraints/смена версии, другой чат, фактический Service search→transmitted chunk→envelope. Private `memory-reliability/N1-REPLAY.json`:12 сохранённых вопросов/состояний теперь continuation с goal и без ложного calendar filter; это pure replay, новых retrieval/provider/SSH0.
+
+Новая выдача/ответ модели NOT PROVEN. Public15 контекст уже был доступен; этот этап не объявляет смысловой сбой генерации исправленным. Исторический A1FAIL сохраняется. N2 ещё не выполнен.
+
+Повторная сверка выявила same-version новую тему→followup, подмешивавшую старую цель. Исправлено: независимый пользовательский new_topic якорь используется без task state; явная ссылка на текущую задачу выбирает state и исключает независимый якорь. Диагностика state_policy отражает решение. Слова «только обсуждения» предотвращают наследование старого контекста, но не создают API/source filter: реальная область задаётся неизменным chat.scope, source words остаются поисковыми терминами; это явно отмечено scope_policy.
+
+Дополнительный explicit new-topic случай day22→followup при старой day18/SQLite цели: несовместимый явный day якоря и goal также выбирает anchor-only. Якорь с несовместимым calendar/relative-period фильтром используется без старого state. Явная ссылка на текущую цель восстанавливает state-only; адресные отрицательные/положительные проверки добавлены.
+
+Общее правило конфликтов фильтров: нормализованные signatures текущего пользовательского якоря и всех действующих state fields сравниваются для days/dates/range/recent/source query terms. Если оба имеют разные явные фильтры, state полностью исключается из поискового продолжения. Совместимые фильтры сохраняют state; отдельные day/date/source-term negatives и same-day positive проверены. Source terms не становятся реальным API/source filter.

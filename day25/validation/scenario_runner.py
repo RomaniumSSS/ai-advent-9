@@ -12,7 +12,7 @@ from urllib.parse import urlsplit
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'app'))
 from common import save, packed
 from answers import check_answer
-from structured_evidence import check_response
+from service import check_item_response
 from budget import proposal
 from privacy import private_output
 
@@ -21,8 +21,10 @@ TERMINAL={'verified','no_context','model_refusal','insufficient_context','unveri
 
 
 def validate_scenarios(data):
-    if data['proposed_scopes']!=['public','all']:raise ValueError('public_and_frozen_all_required')
+    existing_all=data.get('budget_policy',{}).get('kind')=='reuse_existing_all_ledger'
+    if data['proposed_scopes']!=(['all'] if existing_all else ['public','all']):raise ValueError('invalid_planned_scopes')
     if len(data['scenarios'])!=2:raise ValueError('two_scenarios_required')
+    if existing_all and any(s['scope']!='all' for s in data['scenarios']):raise ValueError('existing_ledger_all_only')
     ids=set()
     for scenario in data['scenarios']:
         if scenario['scope'] not in ('public','all'):raise ValueError('invalid_scope')
@@ -58,8 +60,9 @@ def mechanical_check(item, chat_id, prior_ids, expected_state, scope='public', e
         if item['generation'].get('started') and item.get('authorization',{}).get('identity_sha256')!=expected_identity:raise ValueError('authorization_identity_mismatch')
     if item['status'] in ('verified','insufficient_context'):
         generation=item['generation']
-        checked=(check_response(item.get('raw_answer'),generation.get('transmitted_chunks',[]),item['question'],item['task_state'])
-                 if item.get('version')=='day25-chat-v3' else check_answer(item.get('raw_answer'),generation.get('transmitted_chunks',[])))
+        checked=(check_item_response(item,generation.get('transmitted_chunks',[]))
+                 if item.get('version') in ('day25-chat-v3','day25-chat-v4')
+                 else check_answer(item.get('raw_answer'),generation.get('transmitted_chunks',[])))
         if generation.get('transmission')!='confirmed' or generation.get('transmitted_chunk_ids')!=[c['chunk_id'] for c in generation.get('transmitted_chunks',[])] or (not checked['valid'] if item['status']=='verified' else not checked.get('structure_valid') or checked.get('outcome')!='insufficient_context'):raise ValueError('invalid_verified_evidence')
         if checked['answer']!=item.get('answer'):raise ValueError('shown_answer_mismatch')
     if item['status']=='no_context' and (item.get('cost')!=0 or item.get('generation',{}).get('started')):raise ValueError('local_refusal_paid')
@@ -76,7 +79,7 @@ def local_pid(url):
     return int(values[0])
 
 
-def preflight(request_client, urls, mode, expected_identity, data, completed_results):
+def preflight(request_client, urls, mode, expected_identity, data, completed_results, scenario_id=None, global_profile=None):
     states={}
     for scope,url in urls.items():
         response=request_client.get(url+'/api/state')
@@ -89,7 +92,29 @@ def preflight(request_client, urls, mode, expected_identity, data, completed_res
             cloud=state.get('cloud',{})
             if cloud.get('identity_sha256')!=expected_identity:raise ValueError('preflight_frozen_identity_mismatch')
             if not cloud.get('enabled') or scope not in cloud.get('scopes',[]):raise ValueError('server_authorization_missing')
-            remaining=sum(len(s['turns']) for s in data['scenarios'] if s['scope']==scope)-sum(r['scope']==scope for r in completed_results)
+            if data.get('budget_policy',{}).get('kind')=='reuse_existing_all_ledger':
+                # AICODE-NOTE: reserve the next scenario on the shared ledger; each paid call retains its service reserve.
+                target=scenario_id or data['scenarios'][0]['id']
+                remaining=sum(len(s['turns']) for s in data['scenarios'] if s['id']==target and s['scope']==scope)-sum(r['scenario']==target for r in completed_results)
+                if global_profile is None:raise ValueError('existing_global_profile_required')
+                from global_session import balance, ledger_charge, no_listener
+                profile=json.loads(private_output(global_profile).read_text())
+                if profile.get('phase')!='MANUAL_READY' or profile.get('global_cap_usd')!='0.10':raise ValueError('existing_global_phase_or_cap_changed')
+                from hashlib import sha256
+                public_ledger=Path(profile['scopes']['public']['data_dir'])/'ledger.json'
+                if sha256(public_ledger.read_bytes()).hexdigest()!=profile.get('public_ledger_sha256'):raise ValueError('public_ledger_changed')
+                public_auth=json.loads((Path(profile['scopes']['public']['data_dir'])/'authorization.json').read_text())
+                if public_auth.get('approved'):raise ValueError('public_authorization_reenabled')
+                no_listener(profile['scopes']['public']['url'])
+                all_dir=Path(profile['scopes']['all']['data_dir'])
+                from decimal import Decimal
+                if abs(Decimal(str(cloud['charged_or_reserved']))-ledger_charge(all_dir))>Decimal('0.000000001'):raise ValueError('http_server_not_on_shared_ledger')
+                manual_id=profile.get('manual_chat_id')
+                if not manual_id or request_client.get(url+'/api/chat/'+manual_id).status!=200:raise ValueError('http_server_missing_shared_manual_chat')
+                if abs(float(profile['all_total_cap_usd'])-cloud['budget'])>1e-9:raise ValueError('all_ledger_cap_changed')
+                if float(balance(profile)['remaining_global_usd'])<float(proposal(data)['reserve_upper_estimate_per_call_usd'])*remaining:raise ValueError('insufficient_shared_global_budget')
+            else:
+                remaining=sum(len(s['turns']) for s in data['scenarios'] if s['scope']==scope)-sum(r['scope']==scope for r in completed_results)
             needed=float(proposal(data)['reserve_upper_estimate_per_call_usd'])*remaining
             if cloud['budget']-cloud['charged_or_reserved']<needed:raise ValueError('insufficient_scope_budget')
         states[scope]=state
@@ -167,7 +192,7 @@ def run(args,data):
                 persist();event('request_dispatched',request_id=body['id'],chat_id=body['chat_id'])
         page.on('request',capture_request)
         try:
-            preflight(context.request,urls,args.mode,args.identity_sha256,data,journal['results'])
+            preflight(context.request,urls,args.mode,args.identity_sha256,data,journal['results'],global_profile=args.global_profile)
             event('read_only_preflight_passed',scopes=list(urls),identity_sha256=args.identity_sha256)
             if journal.get('restart') and not journal['restart'].get('checked'):
                 checkpoint=journal['restart']
@@ -194,7 +219,7 @@ def run(args,data):
                     else:context=browser.new_context(**options)
                     page=context.new_page();page.on('request',capture_request)
                 page.goto(url,wait_until='networkidle')
-                preflight(context.request,{scope:url},args.mode,args.identity_sha256,data,journal['results'])
+                preflight(context.request,{scope:url},args.mode,args.identity_sha256,data,journal['results'],scenario_id=sid,global_profile=args.global_profile)
                 create_key=sid+':create'
                 if begin(create_key):
                     page.locator('#chat-title').fill(scenario['title']+' · '+out.name)
@@ -319,6 +344,7 @@ def main():
     parser.add_argument('--public-url',default='http://127.0.0.1:8054')
     parser.add_argument('--all-url',default='http://127.0.0.1:8053')
     parser.add_argument('--identity-sha256',help='Exact separately approved frozen index identity; required for live mode')
+    parser.add_argument('--global-profile',help='Existing global $0.10 profile for shared-ledger live runs')
     parser.add_argument('--output',default=str(Path(__file__).resolve().parents[1]/'private'/'validation-run'))
     parser.add_argument('--approved-live',action='store_true',help='External user authorization must already exist; does not create authorization.')
     parser.add_argument('--resume',action='store_true')

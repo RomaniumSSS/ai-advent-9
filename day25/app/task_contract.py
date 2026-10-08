@@ -61,8 +61,16 @@ def answer_requirements(question,state):
                          'обоснуй содержанием, не угадывай. Если доказательств нет для отдельного аспекта, явно '
                          'ограничь вывод этим аспектом, а не отказывайся от всего сравнения. Явное ограничение '
                          'периода или области обсуждений в текущем вопросе сохраняет приоритет.') if comparison else ''
+    # Требование 1-3 спеки: вопрос об исполнении цели при непустой state['goal'] получает отдельное
+    # требование конкретных действий пользователя, и флаг, по которому это можно утверждать отдельно от текста.
+    goal_execution_requested=bool(state.get('goal')) and bool(re.search(r'действи[ея]|шаг(?:и|ов|ам)?|план\b|с чего.*начать|что мне делать|что дальше',question,re.I))
+    goal_execution_guidance=(' Вопрос об исполнении цели: опиши конкретные действия пользователя для текущей '
+                             'task_state.goal, опираясь на зафиксированные clarifications и constraints; требования '
+                             'корпуса допустимы только как обоснование шага, не как сам ответ; не пересказывай условия '
+                             'задания вместо шагов пользователя.') if goal_execution_requested else ''
     return {'max_sentences':limit,'max_points':points,
             'comparison_requested':comparison, 'comparison_guidance':comparison_guidance,
+            'goal_execution_requested':goal_execution_requested,
             'selected_user_choices':[text for text in state.get('clarifications',[])
                                      if re.search(r'\b(?:выбрал|выбрала|выбрали|выбран|выбрана)\b',text,re.I)],
             'requested_tool_return':bool(re.search(r'ответ\w*\s+пользовател|возвращ\w*\s+результат|что.*возвращ',question,re.I)),
@@ -72,4 +80,4 @@ def answer_requirements(question,state):
                         'Разделяй сохраняемые входные данные, возвращаемый пользователю результат и итог проекта; '
                         'не называй готовый агент сохранёнными данными без прямого подтверждения источником. '
                         'Если указательное «это» допускает несколько ближайших значений, явно уточни значение или дай условные варианты; не выбирай старую тему молча.'
-                        + format_guidance)}
+                        + format_guidance + goal_execution_guidance)}
