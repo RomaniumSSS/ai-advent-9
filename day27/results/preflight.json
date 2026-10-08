@@ -1,0 +1,76 @@
+{
+  "recorded_at": "2026-10-08T20:49:35.777735+00:00",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.14.0",
+  "base_commit": "4659e24875902d3668e48ddea9f8d96a3dd36a5c",
+  "branch": "day27-local-app",
+  "app_health": {
+    "ready": true,
+    "model": "qwen3:8b",
+    "message": "Модель готова"
+  },
+  "ollama_version": {
+    "version": "0.33.3"
+  },
+  "ollama_tags": {
+    "models": [
+      {
+        "name": "qwen3.5:9b-q4_K_M",
+        "model": "qwen3.5:9b-q4_K_M",
+        "modified_at": "2026-10-08T13:50:34.267288021+02:00",
+        "size": 6550825550,
+        "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+        "details": {
+          "parent_model": "model.gguf",
+          "format": "gguf",
+          "family": "qwen35",
+          "families": [
+            "qwen35"
+          ],
+          "parameter_size": "9.0B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 262144,
+          "embedding_length": 4096
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking",
+          "vision"
+        ]
+      },
+      {
+        "name": "qwen3:8b",
+        "model": "qwen3:8b",
+        "modified_at": "2026-03-10T14:43:12.473204726+01:00",
+        "size": 5225388164,
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "8.2B",
+          "quantization_level": "Q4_K_M",
+          "context_length": 40960,
+          "embedding_length": 4096
+        },
+        "capabilities": [
+          "completion",
+          "tools",
+          "thinking"
+        ]
+      }
+    ]
+  },
+  "ollama_running": {
+    "models": []
+  },
+  "hardware": {
+    "cpu": "Apple M2",
+    "memory_bytes": 17179869184
+  }
+}

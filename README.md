@@ -2,6 +2,11 @@
 
 Все задания собраны по порядку в `main`: `day01/`–`day26/`. Day25 и Day26 сданы; следующий — Day27.
 
+В рабочей ветке `day27-local-app` подготовлен [Day27 — локальный веб-чат](day27/README.md):
+[результат](day27/RESULT.md), [живая запись 43 с](day27/video/Day27-live.mp4).
+[Видео на Google Drive](https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view?usp=sharing)
+уже загружено. Коммит и push разрешены пользователем; сдача ещё не подтверждена.
+
 Последняя сдача: [Day26 — локальная LLM](day26/README.md), [живая запись 2:26](day26/video/Day26-live.mp4), [архив кода](day26/Day26-code.zip).
 Day25: [результат и ограничения](day25/RESULT.md), [проверки](day25/VERIFICATION.md), [запуск](day25/app/README.md), [видео до последних правок](day25/video/Day25-session15.mp4).
 
@@ -50,6 +55,7 @@ uv run day01/ask.py "вопрос"
 | 24 | ответы с источниками и цитатами | [`day24/README.md`](day24/README.md) |
 | 25 | RAG-чат с памятью задачи | [`day25/README.md`](day25/README.md) |
 | 26 | локальная LLM: Ollama, HTTP API и три запроса | [`day26/README.md`](day26/README.md) |
+| 27 | локальная LLM в веб-чате: потоковый ответ, история и новый чат | [`day27/README.md`](day27/README.md) |
 
 ## День 19: цепочка MCP-инструментов
 

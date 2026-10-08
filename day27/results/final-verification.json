@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-08T20:56:20.362723+00:00",
+  "submitted_days_diff": "unchanged versus base HEAD",
+  "changed_tracked_files": [
+    "HANDOFF.md",
+    "README.md",
+    "todo.md"
+  ],
+  "app_source_hashes_after_recording": "match source-manifest.json",
+  "final_mp4_sha256": "a61f6e15d4d95977a2243e1d330c1fb0e6340db47df236b98a372f8f58be195f",
+  "code_review": "one P2 closed by independent reviewer; no other P1/P2 reported",
+  "publications": "none"
+}

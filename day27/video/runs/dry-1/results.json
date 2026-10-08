@@ -1,0 +1,99 @@
+{
+  "mode": "dry-run",
+  "started_at": "2026-10-08T20:50:15.854917+00:00",
+  "url": "http://127.0.0.1:8067",
+  "requests": [
+    {
+      "request_id": 1,
+      "started_at": "2026-10-08T20:50:16.439825+00:00",
+      "payload": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Наш учебный проект называется „Маяк“. Предложи три коротких шага создания локального чат-приложения. Ответь по-русски, до 60 слов."
+          }
+        ]
+      },
+      "status": "done",
+      "elapsed_seconds": 20.333512625074945,
+      "actual_output": "1. Создайте базу данных для хранения пользователей и чатов.  \n2. Реализуйте сервер для обработки сообщений и подключений.  \n3. Разработайте клиентское приложение с интерфейсом для отправки и получения сообщений.",
+      "visible_status": "Завершено · stop · 20,22 с · вход 62 токенов · ответ 63 токенов",
+      "metrics": {
+        "type": "done",
+        "done_reason": "stop",
+        "total_duration": 20223111250,
+        "load_duration": 6982881875,
+        "prompt_eval_count": 62,
+        "prompt_eval_duration": 784952000,
+        "eval_count": 63,
+        "eval_duration": 12444110000
+      },
+      "quality": "requires_human_review"
+    },
+    {
+      "request_id": 2,
+      "started_at": "2026-10-08T20:50:36.822249+00:00",
+      "payload": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Наш учебный проект называется „Маяк“. Предложи три коротких шага создания локального чат-приложения. Ответь по-русски, до 60 слов."
+          },
+          {
+            "role": "assistant",
+            "content": "1. Создайте базу данных для хранения пользователей и чатов.  \n2. Реализуйте сервер для обработки сообщений и подключений.  \n3. Разработайте клиентское приложение с интерфейсом для отправки и получения сообщений."
+          },
+          {
+            "role": "user",
+            "content": "Как называется наш учебный проект? Ответь только названием."
+          }
+        ]
+      },
+      "status": "done",
+      "elapsed_seconds": 2.39464166702237,
+      "actual_output": "Маяк",
+      "visible_status": "Завершено · stop · 2,33 с · вход 151 токенов · ответ 4 токенов",
+      "metrics": {
+        "type": "done",
+        "done_reason": "stop",
+        "total_duration": 2334157917,
+        "load_duration": 5568417,
+        "prompt_eval_count": 151,
+        "prompt_eval_duration": 1819038000,
+        "eval_count": 4,
+        "eval_duration": 502624000
+      },
+      "quality": "pass"
+    },
+    {
+      "request_id": 3,
+      "started_at": "2026-10-08T20:50:39.318053+00:00",
+      "payload": {
+        "messages": [
+          {
+            "role": "user",
+            "content": "Сколько будет 17 + 25? Ответь только числом."
+          }
+        ]
+      },
+      "status": "done",
+      "elapsed_seconds": 1.0967076249653473,
+      "actual_output": "42",
+      "visible_status": "Завершено · stop · 1,05 с · вход 35 токенов · ответ 3 токенов",
+      "metrics": {
+        "type": "done",
+        "done_reason": "stop",
+        "total_duration": 1045399625,
+        "load_duration": 930750,
+        "prompt_eval_count": 35,
+        "prompt_eval_duration": 637267000,
+        "eval_count": 3,
+        "eval_duration": 402015000
+      },
+      "quality": "pass"
+    }
+  ],
+  "page_errors": [],
+  "status": "completed",
+  "finished_at": "2026-10-08T20:50:40.461430+00:00"
+}

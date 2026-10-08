@@ -1,0 +1,14 @@
+test_interrupted_and_invalid_stream (__main__.Contracts.test_interrupted_and_invalid_stream) ... ok
+test_no_proxy_and_no_redirects (__main__.Contracts.test_no_proxy_and_no_redirects) ... ok
+test_payload_and_completed_stream (__main__.Contracts.test_payload_and_completed_stream) ... ok
+test_validation (__main__.Contracts.test_validation) ... ok
+test_chat_forwards_history_and_final_event (__main__.HttpContracts.test_chat_forwards_history_and_final_event) ... ok
+test_html_and_validation (__main__.HttpContracts.test_html_and_validation) ... ok
+test_provider_failure_is_stream_error_and_releases_lock (__main__.HttpContracts.test_provider_failure_is_stream_error_and_releases_lock) ... ok
+test_unavailable_model_and_payload_without_network (__main__.HttpContracts.test_unavailable_model_and_payload_without_network) ... ok
+test_unknown_path (__main__.HttpContracts.test_unknown_path) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.518s
+
+OK
