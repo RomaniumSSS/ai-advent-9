@@ -1,0 +1,50 @@
+[
+  {
+    "case": "Luna_pending_assignment_not_included",
+    "expected": 1,
+    "observed": 2,
+    "pass": false
+  },
+  {
+    "case": "Luna_old_assignment_excluded_after_accept",
+    "expected": false,
+    "observed": true,
+    "pass": false
+  },
+  {
+    "case": "Luna_emoji_day25_recognized",
+    "expected": "assignment_candidate",
+    "observed": "discussion",
+    "pass": false
+  },
+  {
+    "case": "Sol_forwarded_author_does_not_replace_outer",
+    "expected": [
+      "Outer",
+      "Outer"
+    ],
+    "observed": [
+      "Outer",
+      "Outer"
+    ],
+    "pass": true
+  },
+  {
+    "case": "Sol_forwarded_reply_not_thread_edge",
+    "expected": null,
+    "observed": null,
+    "pass": true
+  },
+  {
+    "case": "Sol_active_manifest_uses_accepted_reply",
+    "expected": 7001,
+    "observed": 7001,
+    "pass": true
+  },
+  {
+    "case": "Sol_previous_note_version_retained",
+    "expected": true,
+    "observed": true,
+    "pass": true
+  }
+]
