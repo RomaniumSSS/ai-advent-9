@@ -7,7 +7,9 @@ RAG не подключён; сданные Day01–26 не изменены.
 
 Код закоммичен и опубликован в ветке `day27-local-app`; удалённый SHA и наличие
 файлов Day27 проверены. Видео загружено в Google Drive и доступно по ссылке.
-Merge в main и пользовательская сдача не выполнены.
+Две ссылки по команде пользователя внесены в комментарий к `Лист1!AB132` (Day27)
+и проверены после перезагрузки таблицы. Merge в main не выполнен;
+пользовательская приёмка и результат проверки задания организаторами не подтверждены.
 
 ## Артефакты
 
@@ -19,6 +21,8 @@ Merge в main и пользовательская сдача не выполне
 - [Видео на Google Drive](https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view?usp=sharing),
   [подтверждение загрузки и доступа](results/drive-upload.json): основной аккаунт,
   папка AI Advent, доступ «Anyone with the link — Viewer» проверен в UI.
+- [Подтверждение двух ссылок в таблице](results/table-submission.json): доступ
+  Comment only, строка участника и заголовок Day27 проверены; комментарий сохранён в AB132.
 - [Журнал записанного прогона](video/runs/record-1/results.json),
   [исходный WebM](video/runs/record-1/live.webm), [проверки видео](video/runs/record-1/video-checks.json).
 - [Сухой прогон](video/runs/dry-1/results.json) и [оценка ответов](video/runs/dry-1/assessment.json)
