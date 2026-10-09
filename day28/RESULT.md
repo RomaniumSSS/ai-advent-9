@@ -117,5 +117,7 @@ browser errors 0, приватных discussion-текстов и ключей �
 «Видео проверяется» сохранено отдельно в manifest/journal.
 [Фактические роли](results/model-routing.json):
 Sol `gpt-6.1-sol` high реализовал код/исправления/документы; usage/cost не предоставлены.
-Код и видео проверены локально; публикация, commit/push/merge/upload и пользовательская
-сдача не заявлены.
+Код и видео проверены и [опубликованы на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day28).
+Day01–28 находятся в main, прежние задания побайтно сохранены.
+[Подтверждение](results/github-publication.json), [проверка объединения](results/integration-verification.json).
+Drive/таблица уточняются; пользовательская сдача не подтверждена.

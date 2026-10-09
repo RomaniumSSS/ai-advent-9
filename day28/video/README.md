@@ -51,7 +51,8 @@ browser errors 0. В начале читаются URL/подготовка, в 
 E02 остаётся PARTIAL по полноте. [Проверка и времена кадров](../results/video-verification.json).
 
 Итоговый MP4 совпадает по SHA с исходным MP4 record-02, без монтажа/ускорения.
-Сырой webm/mp4 и журналы сохранены в `video/runs/`; публикация и загрузка не выполнены.
+Сырой webm/mp4 и журналы сохранены в `video/runs/`. Финальный MP4 опубликован на GitHub;
+загрузка в Drive уточняется отдельно. [Публикация](../results/github-publication.json).
 Проверка выполнена агентом, не является пользовательской приёмкой.
 
 [Аудит record-01](../results/implementation-validation-record-01.md) сохранил три FAIL

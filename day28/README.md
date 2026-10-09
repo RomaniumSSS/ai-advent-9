@@ -110,6 +110,10 @@ Sol `gpt-6.1-sol` high; первое ревью: Luna `gpt-6-luna` medium;
 Usage/cost разработки не предоставлены; эффективность маршрутизации не измерена.
 
 Код и [живая запись 2:59](video/Day28-live.mp4) проверены локально:
-[сверка кадров/запросов](results/video-verification.json). Commit/push/merge, загрузка видео,
-публикация и пользовательская сдача не заявляются. [SPEC](SPEC.md), [TASKS](TASKS.md),
+[сверка кадров/запросов](results/video-verification.json). Код и видео [опубликованы на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day28);
+Day01–28 объединены в main. [Проверка публикации](results/github-publication.json).
+Drive/таблица уточняются; пользовательская сдача не заявляется. [SPEC](SPEC.md), [TASKS](TASKS.md),
 [release notes](RELEASE_NOTES.md), [финальная проверка SPEC](results/implementation-validation.md).
+
+Архив ZIP сохранён как проверенная локальная сборка до публикации; GitHub содержит
+актуальные исходники и последующие записи статуса.

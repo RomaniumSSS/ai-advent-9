@@ -1,8 +1,8 @@
 {
   "run_id": "dbf3969ef7ed49a282602fa06c92c184",
   "e2e_run_id": "344b65a15e89407582d013f5fe11d89c",
-  "status": "code_and_video_verified_local",
-  "message": "Локальный RAG: 6/6 корректных ответов/признаний нехватки данных; три пары ответов совпали.\nE2E: 23–53 с на запрос; сложное сравнение не раскрывает все детали.\nИсторическое сравнение на тех же messages: два из трёх ответов Qwen отклонены из-за изменённых цитат; три облачных ответа прошли проверку цитат.\nCloud-данные исторические: это сравнение генераторов, а не новый speed benchmark.\nНовый RAG использует выбранные моделью ссылки и точные оригиналы источников. Видео проверено локально; публикация не выполнена.",
+  "status": "code_and_video_verified_published_on_github",
+  "message": "Локальный RAG: 6/6 корректных ответов/признаний нехватки данных; три пары ответов совпали.\nE2E: 23–53 с на запрос; сложное сравнение не раскрывает все детали.\nИсторическое сравнение на тех же messages: два из трёх ответов Qwen отклонены из-за изменённых цитат; три облачных ответа прошли проверку цитат.\nCloud-данные исторические: это сравнение генераторов, а не новый speed benchmark.\nНовый RAG использует выбранные моделью ссылки и точные оригиналы источников. Видео проверено локально; код и видео опубликованы на GitHub.",
   "historical_comparison": [
     {
       "case_id": "Q03",
@@ -96,10 +96,17 @@
   "replay_run_id": "dbf3969ef7ed49a282602fa06c92c184",
   "code_checked": true,
   "video_status": "verified",
-  "published": false,
+  "published": true,
   "preparation": {
     "index_transferred": true,
     "vectors_recomputed": false
   },
-  "video_verification": "results/video-verification.json"
+  "video_verification": "results/video-verification.json",
+  "publication": {
+    "repository_url": "https://github.com/RomaniumSSS/ai-advent-9",
+    "code_url": "https://github.com/RomaniumSSS/ai-advent-9/tree/main/day28",
+    "verified_commit": "a5f27579ea425ca0435dcc4a516bcb0da4aaf744",
+    "drive": "awaiting clarification",
+    "table": "awaiting clarification"
+  }
 }
