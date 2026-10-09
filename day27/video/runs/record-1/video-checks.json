@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-10-08T20:52:36.361003+00:00",
+  "full_decode": "pass",
+  "frames": {
+    "start": 1.0,
+    "answer-1": 19.431256875069707,
+    "answer-2": 28.414662207974544,
+    "answer-3": 38.08704499995819,
+    "end": 42.38
+  },
+  "visual_inspection": "pass",
+  "reviewer": "root coding agent",
+  "human_acceptance": false,
+  "observations": "Start, all three completed answers and end read; full text fits, metrics match recorded results; no black or foreign frames in inspected samples."
+}

@@ -1,0 +1,15 @@
+{
+  "verified_at": "2026-10-08T21:22:28.037751+00:00",
+  "file_name": "Day27-live.mp4",
+  "file_id": "1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM",
+  "file_url": "https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view",
+  "folder_id": "1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY",
+  "folder_url": "https://drive.google.com/drive/folders/1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY",
+  "owner": "romanpozharitskiy@gmail.com",
+  "general_access": "Anyone with the link",
+  "permission": "Viewer",
+  "local_bytes": 911549,
+  "local_sha256": "a61f6e15d4d95977a2243e1d330c1fb0e6340db47df236b98a372f8f58be195f",
+  "evidence": "Drive UI: 1 upload complete, folder row data-id, Share dialog owner and Viewer access",
+  "cloud_byte_hash": "not measured"
+}

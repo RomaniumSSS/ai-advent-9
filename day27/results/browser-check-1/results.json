@@ -1,0 +1,15 @@
+{
+  "kind": "browser-fixtures",
+  "real_model_calls": 0,
+  "started_at": "2026-10-08T20:49:35.896769+00:00",
+  "checks": [
+    "completed history, reset, missing metrics, busy controls: PASS",
+    "partial EOF and HTTP errors excluded from history; recovery: PASS",
+    "last eight completed turns sent; earlier turns remain visible: PASS",
+    "desktop/tablet/mobile controls fit viewport: PASS"
+  ],
+  "status": "pass",
+  "page_errors": [],
+  "intercepted_requests": 18,
+  "finished_at": "2026-10-08T20:49:38.597112+00:00"
+}

@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Локальный чат · Day27</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body><main><header><div><div class="eyebrow">DAY 27 · НА ВАШЕМ КОМПЬЮТЕРЕ</div><h1>Локальный чат</h1><p>Контекст — последние 8 ходов разговора.</p></div><div class="controls"><span class="badge">Qwen3 · 8B</span><button id="new-chat" type="button">Новый чат</button></div></header>
+<div class="connection"><span id="connection-dot"></span><span id="connection">Проверяем модель…</span><span class="privacy">Без облачной модели</span></div>
+<section id="messages" aria-label="Переписка" aria-live="polite"><div id="empty"><div class="empty-icon">✦</div><h2>О чём поговорим?</h2><p>Ответы генерирует локальная модель.<br>«Новый чат» очищает контекст.</p></div></section>
+<form id="composer"><label for="prompt">Ваше сообщение</label><div class="compose-row"><textarea id="prompt" placeholder="Напишите вопрос…" rows="2" maxlength="12000" required></textarea><button id="send" type="submit">Отправить ↑</button></div><div class="footer"><span>Enter — отправить · Shift + Enter — новая строка</span><span id="status" role="status">Готов к вопросу</span></div></form>
+</main></body></html>

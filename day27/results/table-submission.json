@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-10-08T21:34:12.022954+00:00",
+  "spreadsheet_id": "1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE",
+  "spreadsheet_title": "AI Advent Challenge 9",
+  "sheet": "Лист1",
+  "gid": 0,
+  "cell": "AB132",
+  "header": "День 27 (06.10)",
+  "participant_row_verified": true,
+  "mode": "Comment only",
+  "action": "posted one new comment",
+  "text": "Видео: https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view?usp=sharing\nКод: https://github.com/RomaniumSSS/ai-advent-9/tree/day27-local-app/day27",
+  "url_count": 2,
+  "verified_after_full_reload": true,
+  "evidence": "Comments panel after page.reload: Comment location Лист1 AB132; both expected links; Saved to Drive",
+  "cell_value_changed": false,
+  "other_cells_changed": false
+}

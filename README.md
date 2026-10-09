@@ -1,9 +1,18 @@
 # ai-advent-9
 
-Все задания собраны по порядку в `main`: `day01/`–`day26/`. Day25 и Day26 сданы; следующий — Day27.
+Все реализации собраны по порядку в `main`: **`day01/`–`day28/`**.
+Day25 и Day26 сданы; публикация кода не означает пользовательскую сдачу новых дней.
 
-Последняя сдача: [Day26 — локальная LLM](day26/README.md), [живая запись 2:26](day26/video/Day26-live.mp4), [архив кода](day26/Day26-code.zip).
-Day25: [результат и ограничения](day25/RESULT.md), [проверки](day25/VERIFICATION.md), [запуск](day25/app/README.md), [видео до последних правок](day25/video/Day25-session15.mp4).
+Последняя реализация: [Day28 — локальная LLM + RAG](day28/README.md),
+[результаты и ограничения](day28/RESULT.md), [живая запись 2:59](day28/video/Day28-live.mp4),
+[архив кода](day28/Day28-code.zip). Прежний индекс, локальные embedding/generation,
+31 офлайн тест и шесть контрольных live-запросов; сложный ответ неполный.
+
+Day27: [приложение с локальной LLM](day27/README.md),
+[видео на Google Drive](https://drive.google.com/file/d/1xa1AKj_OgkX1O-xQU495QIgVuvs3UFLM/view?usp=sharing).
+Day26: [локальная LLM](day26/README.md), [живая запись 2:26](day26/video/Day26-live.mp4).
+Day25: [результат и ограничения](day25/RESULT.md), [проверки](day25/VERIFICATION.md),
+[запуск](day25/app/README.md), [видео до последних правок](day25/video/Day25-session15.mp4).
 
 Видео дня 8: [смотреть на Google Drive](https://drive.google.com/file/d/1pOyMp1717Ih83KvAF9KnrmES7CE0iBzH/view?usp=sharing).
 
@@ -50,6 +59,8 @@ uv run day01/ask.py "вопрос"
 | 24 | ответы с источниками и цитатами | [`day24/README.md`](day24/README.md) |
 | 25 | RAG-чат с памятью задачи | [`day25/README.md`](day25/README.md) |
 | 26 | локальная LLM: Ollama, HTTP API и три запроса | [`day26/README.md`](day26/README.md) |
+| 27 | локальная LLM в веб-чате: потоковый ответ, история и новый чат | [`day27/README.md`](day27/README.md) |
+| 28 | локальная LLM + RAG по прежнему индексу, источники и сравнение с облачными ответами | [`day28/README.md`](day28/README.md) |
 
 ## День 19: цепочка MCP-инструментов
 

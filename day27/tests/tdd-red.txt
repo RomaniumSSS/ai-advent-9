@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day27/day27/tests/test_app.py", line 14, in <module>
+    SPEC.loader.exec_module(app)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "<frozen importlib._bootstrap_external>", line 758, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 895, in get_code
+  File "<frozen importlib._bootstrap_external>", line 953, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day27/day27/app.py'
