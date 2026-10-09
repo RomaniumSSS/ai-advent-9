@@ -1,0 +1,10 @@
+..................F01 #1: done · request fe28d7ca916749febadcd10e618abf59 · 0.00s
+F01 #2: done · request f8c3793a1adb40bf9687e3f614107eef · 0.00s
+run 5ca9e64362634f628061272dd566d230 · /private/var/folders/g2/d42wvg5d3fzb07qklb2rcfy40000gn/T/tmppwyruszz/private/runs/new
+.F01 #1: done · request 495c7a385b604f32a9e5a2c044d9f6f0 · 0.00s
+run b72314685bec4010802ba0b26ccc292d · /private/var/folders/g2/d42wvg5d3fzb07qklb2rcfy40000gn/T/tmppwiiidx8/private/runs/new
+.......
+----------------------------------------------------------------------
+Ran 26 tests in 2.464s
+
+OK

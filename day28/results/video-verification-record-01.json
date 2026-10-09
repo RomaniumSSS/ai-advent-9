@@ -1,0 +1,106 @@
+{
+  "verified_at": "2026-10-09T12:05:16.702054+00:00",
+  "reviewer": "root coding agent",
+  "human_acceptance": false,
+  "record_run_id": "3ae230eb1f8741b79c3899ba0762256a",
+  "application_run_id": "688d3db5e77547678b99635a13c092a8",
+  "video": "video/Day28-live.mp4",
+  "sha256": "9ec715ef5ffeb718f6867df39e7ffe35a08bf85a63f5937565784af95c1df173",
+  "bytes": 4801985,
+  "duration_seconds": 175.12,
+  "codec": "h264",
+  "pix_fmt": "yuv420p",
+  "width": 1280,
+  "height": 1000,
+  "frame_rate": "25/1",
+  "audio": false,
+  "full_decode": "PASS",
+  "browser_errors": [],
+  "requests": [
+    {
+      "case_id": "E01",
+      "request_id": "99e73219c1af46228874773a3954c88b",
+      "status": "done",
+      "visible_answer_matches": true,
+      "source_originals_exact": true,
+      "scope_public": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "times": {
+        "embedding": 1.6830676660174504,
+        "generation": 33.265630707959644,
+        "retrieval": 0.0007602080004289746,
+        "total": 34.95760616695043
+      },
+      "metrics": {
+        "eval_count": 96,
+        "eval_duration": 23001252000,
+        "load_duration": 1818524042,
+        "prompt_eval_count": 528,
+        "prompt_eval_duration": 8437468000,
+        "total_duration": 33263896542
+      }
+    },
+    {
+      "case_id": "E02",
+      "request_id": "52e68966d7c94a98baaf25a25dcaa832",
+      "status": "done",
+      "visible_answer_matches": true,
+      "source_originals_exact": true,
+      "scope_public": true,
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "times": {
+        "embedding": 1.681352167041041,
+        "generation": 51.27753370802384,
+        "retrieval": 0.0010511669097468257,
+        "total": 52.96683237492107
+      },
+      "metrics": {
+        "eval_count": 128,
+        "eval_duration": 35317781000,
+        "load_duration": 1830108584,
+        "prompt_eval_count": 731,
+        "prompt_eval_duration": 14120309000,
+        "total_duration": 51276158167
+      }
+    },
+    {
+      "case_id": "E03",
+      "request_id": "2e5316029d1045619e2aba6d32088a16",
+      "status": "unknown",
+      "visible_answer_matches": true,
+      "source_originals_exact": true,
+      "scope_public": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "times": {
+        "embedding": 1.6876660420093685,
+        "generation": 17.007586917025037,
+        "retrieval": 0.0007643749704584479,
+        "total": 18.70455495803617
+      },
+      "metrics": {
+        "eval_count": 19,
+        "eval_duration": 4578530000,
+        "load_duration": 1824060333,
+        "prompt_eval_count": 535,
+        "prompt_eval_duration": 10596141000,
+        "total_duration": 17006187041
+      }
+    }
+  ],
+  "frames_read_from_actual_video": {
+    "start.png": 1,
+    "answer-1.png": 42,
+    "source-1.png": 50,
+    "answer-2.png": 114,
+    "source-2a.png": 121,
+    "source-2b.png": 126,
+    "answer-3.png": 154,
+    "context-3.png": 159,
+    "end.png": 173
+  },
+  "frame_review": "Readable start/three answers/all source fragments/end; no black or unrelated content. Private discussions/keys/Google windows not shown. Actual viewport recording, new requests, no replayed outputs, no acceleration/editing.",
+  "limitations": "E02 omits some requirement details; assessment by coding agent, not human acceptance. Six controls and three recorded queries are separate runs."
+}

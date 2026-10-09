@@ -1,0 +1,208 @@
+{
+  "run_id": "344b65a15e89407582d013f5fe11d89c",
+  "suite_id": "day28-public-e2e-v1",
+  "stage": "final E2E source-reference protocol",
+  "assessed_at": "2026-10-09T11:17:47.171911+00:00",
+  "assessor": "root coding agent reading raw model output and frozen original assignments",
+  "human_acceptance": false,
+  "valid_responses": 6,
+  "source_originals_exact": true,
+  "grounded_facts_pass": 6,
+  "results": [
+    {
+      "case_id": "E01",
+      "repeat": 1,
+      "request_id": "e533a626a7384f7cae3902bcbe68c827",
+      "status": "done",
+      "facts": "PASS",
+      "completeness": "PASS",
+      "source_originals_exact": true,
+      "source_selection": "PASS",
+      "reason": "Правильно перечислены MCP-инструмент, JSON/SQLite, расписание, агрегированный результат, агент24/7 и видео+код.",
+      "times": {
+        "embedding": 1.684542499948293,
+        "generation": 30.987420040997677,
+        "retrieval": 0.001142291002906859,
+        "total": 32.6915675830096
+      },
+      "metrics": {
+        "eval_count": 96,
+        "eval_duration": 19710096000,
+        "load_duration": 2098930333,
+        "prompt_eval_count": 528,
+        "prompt_eval_duration": 9163340000,
+        "total_duration": 30982263750
+      },
+      "observed_prompt_tokens": 528,
+      "citation_mode": "source_references_original_text"
+    },
+    {
+      "case_id": "E01",
+      "repeat": 2,
+      "request_id": "a82be43153c74f408ae536ede096369e",
+      "status": "done",
+      "facts": "PASS",
+      "completeness": "PASS",
+      "source_originals_exact": true,
+      "source_selection": "PASS",
+      "reason": "Правильно перечислены MCP-инструмент, JSON/SQLite, расписание, агрегированный результат, агент24/7 и видео+код.",
+      "times": {
+        "embedding": 1.7118322910973802,
+        "generation": 30.699762957985513,
+        "retrieval": 0.0006586250383406878,
+        "total": 32.4247287500184
+      },
+      "metrics": {
+        "eval_count": 96,
+        "eval_duration": 20144723000,
+        "load_duration": 1824490667,
+        "prompt_eval_count": 528,
+        "prompt_eval_duration": 8722323000,
+        "total_duration": 30698180875
+      },
+      "observed_prompt_tokens": 528,
+      "citation_mode": "source_references_original_text"
+    },
+    {
+      "case_id": "E02",
+      "repeat": 1,
+      "request_id": "ab00507b4c5744618441f45d892e165b",
+      "status": "done",
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "source_originals_exact": true,
+      "source_selection": "PASS",
+      "reason": "Правильно различены пайплайн инструментов и orchestration серверов/маршрутизация/выбор; не раскрыты все шаги пайплайна и проверки порядка.",
+      "times": {
+        "embedding": 1.6762252500047907,
+        "generation": 40.54829637496732,
+        "retrieval": 0.001073958002962172,
+        "total": 42.2320100000361
+      },
+      "metrics": {
+        "eval_count": 128,
+        "eval_duration": 26600980000,
+        "load_duration": 2083222000,
+        "prompt_eval_count": 731,
+        "prompt_eval_duration": 11853097000,
+        "total_duration": 40545681459
+      },
+      "observed_prompt_tokens": 731,
+      "citation_mode": "source_references_original_text"
+    },
+    {
+      "case_id": "E02",
+      "repeat": 2,
+      "request_id": "b92d74055aad48d89a0b91b5320f7695",
+      "status": "done",
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "source_originals_exact": true,
+      "source_selection": "PASS",
+      "reason": "Правильно различены пайплайн инструментов и orchestration серверов/маршрутизация/выбор; не раскрыты все шаги пайплайна и проверки порядка.",
+      "times": {
+        "embedding": 1.7006604169728234,
+        "generation": 50.78578512498643,
+        "retrieval": 0.0010502090444788337,
+        "total": 52.50052812497597
+      },
+      "metrics": {
+        "eval_count": 128,
+        "eval_duration": 35917547000,
+        "load_duration": 1840633875,
+        "prompt_eval_count": 731,
+        "prompt_eval_duration": 13015397000,
+        "total_duration": 50783293041
+      },
+      "observed_prompt_tokens": 731,
+      "citation_mode": "source_references_original_text"
+    },
+    {
+      "case_id": "E03",
+      "repeat": 1,
+      "request_id": "f3854b40ea374430afc456e1690284e5",
+      "status": "unknown",
+      "facts": "PASS",
+      "completeness": "PASS",
+      "source_originals_exact": true,
+      "source_selection": "PASS",
+      "reason": "В переданном задании18 нет бюджета; честный отказ без суммы и источников.",
+      "times": {
+        "embedding": 1.9867035419447348,
+        "generation": 21.495571917039342,
+        "retrieval": 0.000760040944442153,
+        "total": 23.505076749948785
+      },
+      "metrics": {
+        "eval_count": 19,
+        "eval_duration": 5595174000,
+        "load_duration": 1818138916,
+        "prompt_eval_count": 535,
+        "prompt_eval_duration": 14063691000,
+        "total_duration": 21484843291
+      },
+      "observed_prompt_tokens": 535,
+      "citation_mode": "source_references_original_text"
+    },
+    {
+      "case_id": "E03",
+      "repeat": 2,
+      "request_id": "49f95b1ab8b747d29d8d1d5385c29d45",
+      "status": "unknown",
+      "facts": "PASS",
+      "completeness": "PASS",
+      "source_originals_exact": true,
+      "source_selection": "PASS",
+      "reason": "В переданном задании18 нет бюджета; честный отказ без суммы и источников.",
+      "times": {
+        "embedding": 3.031491875066422,
+        "generation": 20.196672333055176,
+        "retrieval": 0.0011399160139262676,
+        "total": 23.255176207982004
+      },
+      "metrics": {
+        "eval_count": 19,
+        "eval_duration": 4210435000,
+        "load_duration": 3937481791,
+        "prompt_eval_count": 535,
+        "prompt_eval_duration": 12017118000,
+        "total_duration": 20193267916
+      },
+      "observed_prompt_tokens": 535,
+      "citation_mode": "source_references_original_text"
+    }
+  ],
+  "stability": [
+    {
+      "case_id": "E01",
+      "identical_answer_json": true,
+      "repeats": 2,
+      "semantic_comparison": "requires_human_review",
+      "statuses": [
+        "done",
+        "done"
+      ]
+    },
+    {
+      "case_id": "E02",
+      "identical_answer_json": true,
+      "repeats": 2,
+      "semantic_comparison": "requires_human_review",
+      "statuses": [
+        "done",
+        "done"
+      ]
+    },
+    {
+      "case_id": "E03",
+      "identical_answer_json": true,
+      "repeats": 2,
+      "semantic_comparison": "requires_human_review",
+      "statuses": [
+        "unknown",
+        "unknown"
+      ]
+    }
+  ],
+  "limitations": "3×2 сценария; совпадение ответов не гарантирует общую стабильность. E02 частично раскрывает детализацию требований. Источники/ссылки валидны, это не автоматическое доказательство всех утверждений. Семантика оценена агентом, не пользователем."
+}

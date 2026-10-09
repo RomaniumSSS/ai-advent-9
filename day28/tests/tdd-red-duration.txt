@@ -1,0 +1,14 @@
+............F
+======================================================================
+FAIL: test_timeout_has_duration (__main__.Contract.test_timeout_has_duration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_core.py", line 100, in test_timeout_has_duration
+    self.assertIsNotNone(r['times']['generation'])
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.015s
+
+FAILED (failures=1)

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-09",
+  "roles": [
+    {
+      "role": "requirements_and_plan",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high",
+      "usage": null,
+      "cost": null
+    },
+    {
+      "role": "implementation_tests_docs_fixes",
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "usage": null,
+      "cost": null
+    },
+    {
+      "role": "first_independent_review",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "medium",
+      "usage": null,
+      "cost": null
+    },
+    {
+      "role": "mandatory_second_independent_review",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "xhigh",
+      "usage": null,
+      "cost": null
+    }
+  ],
+  "usage_cost_note": "Не предоставлены; null означает неизвестное, а не нулевое значение.",
+  "application_models": {
+    "generator": "qwen3:8b",
+    "embedding": "qwen3-embedding:0.6b"
+  },
+  "routing_efficiency_measured": false,
+  "evidence": [
+    "../../AGENTS.md",
+    "../SPEC.md",
+    "../TASKS.md",
+    "review-luna.md",
+    "review-astra.md"
+  ],
+  "publication": false,
+  "human_acceptance": false
+}

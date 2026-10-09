@@ -1,0 +1,157 @@
+{
+  "run_id": "7eb926f55a764861a20a6ba2fcd7cc2f",
+  "stage": "E2E02, model-authored quote protocol",
+  "human_acceptance": false,
+  "assessor": "root coding agent reading actual model output and frozen public assignments",
+  "results": [
+    {
+      "case_id": "E01",
+      "repeat": 1,
+      "request_id": "1e9943dc0cfa47cd835a63007e48e8eb",
+      "status": "done",
+      "semantic_verdict": "PASS",
+      "reason": "Правильные требования Day18 с дословной цитатой.",
+      "error": null,
+      "times": {
+        "embedding": 1.6969580840086564,
+        "generation": 66.68318304198328,
+        "retrieval": 0.0011497919913381338,
+        "total": 68.39538120804355
+      },
+      "metrics": {
+        "eval_count": 245,
+        "eval_duration": 50203516000,
+        "load_duration": 1826983125,
+        "prompt_eval_count": 861,
+        "prompt_eval_duration": 14639455000,
+        "total_duration": 66678469500
+      }
+    },
+    {
+      "case_id": "E01",
+      "repeat": 2,
+      "request_id": "3925ac4e4f984d4eb9105cc47c6a9abb",
+      "status": "done",
+      "semantic_verdict": "PASS",
+      "reason": "Правильные требования Day18 с дословной цитатой.",
+      "error": null,
+      "times": {
+        "embedding": 1.678175250068307,
+        "generation": 67.60469908302184,
+        "retrieval": 0.0007972919847816229,
+        "total": 69.29197358293459
+      },
+      "metrics": {
+        "eval_count": 245,
+        "eval_duration": 51722044000,
+        "load_duration": 1836281542,
+        "prompt_eval_count": 861,
+        "prompt_eval_duration": 14032472000,
+        "total_duration": 67600543125
+      }
+    },
+    {
+      "case_id": "E02",
+      "repeat": 1,
+      "request_id": "704ab754ac3c44ecb87a7c7f0738e51a",
+      "status": "error",
+      "semantic_verdict": "NOT_ACCEPTED",
+      "reason": "Ответ различает инструменты/серверы, но неполон и отклонён: цитата Day20 содержит заменённое слово.",
+      "error": {
+        "message": "quote_not_exact",
+        "phase": "answer_validation",
+        "type": "ValueError"
+      },
+      "times": {
+        "embedding": 1.707036625011824,
+        "generation": 111.43191837496124,
+        "retrieval": 0.0010932920267805457,
+        "total": 113.1667363330489
+      },
+      "metrics": {
+        "eval_count": 424,
+        "eval_duration": 90402677000,
+        "load_duration": 1845252917,
+        "prompt_eval_count": 1121,
+        "prompt_eval_duration": 19159052000,
+        "total_duration": 111419455375
+      }
+    },
+    {
+      "case_id": "E02",
+      "repeat": 2,
+      "request_id": "8986bd979af748908b69371d7b5b2749",
+      "status": "error",
+      "semantic_verdict": "NOT_ACCEPTED",
+      "reason": "Ответ различает инструменты/серверы, но неполон и отклонён: цитата Day20 содержит заменённое слово.",
+      "error": {
+        "message": "quote_not_exact",
+        "phase": "answer_validation",
+        "type": "ValueError"
+      },
+      "times": {
+        "embedding": 1.699367875000462,
+        "generation": 110.44367970898747,
+        "retrieval": 0.001063500065356493,
+        "total": 112.15687716694083
+      },
+      "metrics": {
+        "eval_count": 424,
+        "eval_duration": 89595880000,
+        "load_duration": 1824044959,
+        "prompt_eval_count": 1121,
+        "prompt_eval_duration": 19003873000,
+        "total_duration": 110434168625
+      }
+    },
+    {
+      "case_id": "E03",
+      "repeat": 1,
+      "request_id": "ba778940a51446a48f101a65d2cc9a45",
+      "status": "unknown",
+      "semantic_verdict": "PASS",
+      "reason": "Правильное признание отсутствия бюджета без источников.",
+      "error": null,
+      "times": {
+        "embedding": 1.6801414580550045,
+        "generation": 23.43387458298821,
+        "retrieval": 0.0007894160225987434,
+        "total": 25.125042917090468
+      },
+      "metrics": {
+        "eval_count": 34,
+        "eval_duration": 6831112000,
+        "load_duration": 2090261834,
+        "prompt_eval_count": 868,
+        "prompt_eval_duration": 14489027000,
+        "total_duration": 23427986959
+      }
+    },
+    {
+      "case_id": "E03",
+      "repeat": 2,
+      "request_id": "0435b490a7724afaa001721aa98b5c27",
+      "status": "unknown",
+      "semantic_verdict": "PASS",
+      "reason": "Правильное признание отсутствия бюджета без источников.",
+      "error": null,
+      "times": {
+        "embedding": 1.7096520418999717,
+        "generation": 23.12587008299306,
+        "retrieval": 0.0007713750237599015,
+        "total": 24.85014920809772
+      },
+      "metrics": {
+        "eval_count": 34,
+        "eval_duration": 7098658000,
+        "load_duration": 1829100583,
+        "prompt_eval_count": 868,
+        "prompt_eval_duration": 14185660000,
+        "total_duration": 23122840250
+      }
+    }
+  ],
+  "valid_application_responses": 4,
+  "provider_completions": 6,
+  "note": "6/6 provider completions; 4/6 usable app responses. Code correctly rejects 2 invalid quotes. Exact original source copy by chosen references is the next bounded repair; rubric/questions unchanged."
+}

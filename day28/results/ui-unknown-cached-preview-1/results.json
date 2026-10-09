@@ -1,0 +1,56 @@
+{
+  "type": "cached_actual_response_ui_preview",
+  "new_model_calls": 0,
+  "new_live_pass": false,
+  "scope": "public",
+  "request_id": "af9cee2173b241248c8e3cb6c6eb66b0",
+  "run_id": "688d3db5e77547678b99635a13c092a8",
+  "source": "GET existing dry-run job",
+  "checks": [
+    "unknown badge honest",
+    "retrieval context separate",
+    "whole original assignment visible",
+    "GET only",
+    "no browser errors"
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "method": "GET",
+      "path": "/style.css"
+    },
+    {
+      "method": "GET",
+      "path": "/app.js"
+    },
+    {
+      "method": "GET",
+      "path": "/api/state"
+    },
+    {
+      "method": "GET",
+      "path": "/api/summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/requests/af9cee2173b241248c8e3cb6c6eb66b0",
+      "via": "APIRequestContext"
+    }
+  ],
+  "page_errors": [],
+  "status": "pass",
+  "js_sha256": "e66186d47535b46185cd90d5c7354ac7baf4b2a04436ae0e856aa6a6daf74ab4",
+  "visual_inspection": {
+    "performed_by": "gpt-6.1-sol high",
+    "result": "unknown labels honest; whole assignment18 visible under retrieval heading; cached preview explicitly labelled"
+  },
+  "unchanged_sha256": {
+    "day28/core.py": "61a79221fcde8178201d1f3dbadb4e06ce3736c7db34049a3b1934827c702100",
+    "day28/app.py": "0eb275fb8bd6d6facd9a755e04e6fe5efbd783dda3ba46be16c7a74bb3fb364e",
+    "day28/evaluate.py": "05ddeb6d8a86600536d1880e2bb543e4581ae3d2fa0c71cd029dfc6d136d5ef4",
+    "day28/video/run_demo.py": "2cdd9d5e674559db98770c2fe8abebd02b2a98b8d57a25de4ae8f5337ee880ce"
+  }
+}

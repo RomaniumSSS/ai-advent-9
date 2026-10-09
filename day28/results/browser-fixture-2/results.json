@@ -1,0 +1,36 @@
+{
+  "environment": "offline fixture; cached uv Playwright/Chromium; Mac",
+  "real_model": false,
+  "checks": [
+    {
+      "viewport": "desktop",
+      "width": 1280,
+      "height": 1000,
+      "status": "pass"
+    },
+    {
+      "viewport": "tablet",
+      "width": 768,
+      "height": 1024,
+      "status": "pass"
+    },
+    {
+      "viewport": "mobile",
+      "width": 375,
+      "height": 812,
+      "status": "pass"
+    },
+    {
+      "case": "incomplete_answer_visible",
+      "status": "pass"
+    }
+  ],
+  "page_errors": [],
+  "status": "pass",
+  "visual_inspection": {
+    "desktop": "readable; no overflow",
+    "mobile": "readable; no overflow",
+    "performed_by": "gpt-6.1-sol high",
+    "fixture_only": true
+  }
+}

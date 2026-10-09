@@ -1,0 +1,105 @@
+{
+  "run_id": "dbf3969ef7ed49a282602fa06c92c184",
+  "e2e_run_id": "344b65a15e89407582d013f5fe11d89c",
+  "status": "code_and_video_verified_local",
+  "message": "Локальный RAG: 6/6 корректных ответов/признаний нехватки данных; три пары ответов совпали.\nE2E: 23–53 с на запрос; сложное сравнение не раскрывает все детали.\nИсторическое сравнение на тех же messages: два из трёх ответов Qwen отклонены из-за изменённых цитат; три облачных ответа прошли проверку цитат.\nCloud-данные исторические: это сравнение генераторов, а не новый speed benchmark.\nНовый RAG использует выбранные моделью ссылки и точные оригиналы источников. Видео проверено локально; публикация не выполнена.",
+  "historical_comparison": [
+    {
+      "case_id": "Q03",
+      "local_model": "qwen3:8b",
+      "historical_cloud_model": "deepseek/deepseek-v4.1-flash",
+      "historical_cloud_provider": "DeepInfra",
+      "historical_at": "2026-10-03T18:39:10+00:00",
+      "same_messages": true,
+      "messages_sha256": "7ef844616caafb8e8c2a334dd04cd24e0aecf9be26a25ce779a678e9a3e6973e",
+      "local_status": "error",
+      "local_facts": "PASS",
+      "local_completeness": "PASS",
+      "local_citations_valid": false,
+      "cloud_citations_valid": true,
+      "local_generator_seconds": 119.79796799994074,
+      "historical_cloud_seconds": 4.35516750003444,
+      "local_metrics": {
+        "eval_count": 357,
+        "eval_duration": 93423548000,
+        "load_duration": 4693583,
+        "prompt_eval_count": 1347,
+        "prompt_eval_duration": 26307816000,
+        "total_duration": 119792740708
+      },
+      "error": {
+        "message": "quote_not_exact",
+        "phase": "answer_validation",
+        "type": "ValueError"
+      },
+      "reason": "Локальный ответ правильно различает Day16/17, но модель склеила дословную цитату; валидатор отверг ответ."
+    },
+    {
+      "case_id": "Q08",
+      "local_model": "qwen3:8b",
+      "historical_cloud_model": "deepseek/deepseek-v4.1-flash",
+      "historical_cloud_provider": "DeepInfra",
+      "historical_at": "2026-10-03T18:39:26+00:00",
+      "same_messages": true,
+      "messages_sha256": "9c9ac2b55682bfe0af9eb83d9deb31ab24dae3620d0e7c4716b2ff04bb6a429a",
+      "local_status": "error",
+      "local_facts": "PASS",
+      "local_completeness": "PARTIAL",
+      "local_citations_valid": false,
+      "cloud_citations_valid": true,
+      "local_generator_seconds": 123.3950831249822,
+      "historical_cloud_seconds": 8.02848629199434,
+      "local_metrics": {
+        "eval_count": 416,
+        "eval_duration": 101127676000,
+        "load_duration": 1797417,
+        "prompt_eval_count": 1354,
+        "prompt_eval_duration": 22141339000,
+        "total_duration": 123387828667
+      },
+      "error": {
+        "message": "source_not_in_selected_context",
+        "phase": "answer_validation",
+        "type": "ValueError"
+      },
+      "reason": "Локальный ответ правильно различает RAG/noRAG и ожидания/источники, но дословная цитата изменена; число 10 вопросов явно не указано."
+    },
+    {
+      "case_id": "Q07",
+      "local_model": "qwen3:8b",
+      "historical_cloud_model": "deepseek/deepseek-v4.1-flash",
+      "historical_cloud_provider": "DeepInfra",
+      "historical_at": "2026-10-03T18:39:24+00:00",
+      "same_messages": true,
+      "messages_sha256": "55d7397eb8bddfbdee712d0fed18d517a4c9c9bb34af32cab202bbac6054af5b",
+      "local_status": "done",
+      "local_facts": "PASS",
+      "local_completeness": "NOT_APPLICABLE_CONTEXT_MISSING",
+      "local_citations_valid": true,
+      "cloud_citations_valid": true,
+      "local_generator_seconds": 95.95790391601622,
+      "historical_cloud_seconds": 2.0658233339781873,
+      "local_metrics": {
+        "eval_count": 341,
+        "eval_duration": 82559711000,
+        "load_duration": 1596541,
+        "prompt_eval_count": 934,
+        "prompt_eval_duration": 13224938000,
+        "total_duration": 95954775208
+      },
+      "error": null,
+      "reason": "В старом retrieval нет официального задания21; обе модели честно сообщают нехватку сведений. Локальная цитата валидна, но косвенная и не подтверждает отсутствие всех сведений."
+    }
+  ],
+  "human_acceptance": false,
+  "cloud_generation_calls_new": 0,
+  "replay_run_id": "dbf3969ef7ed49a282602fa06c92c184",
+  "code_checked": true,
+  "video_status": "verified",
+  "published": false,
+  "preparation": {
+    "index_transferred": true,
+    "vectors_recomputed": false
+  },
+  "video_verification": "results/video-verification.json"
+}

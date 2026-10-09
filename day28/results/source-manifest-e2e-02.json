@@ -1,0 +1,13 @@
+{
+  "time": "2026-10-09T10:54:49.570566+00:00",
+  "phase": "formal_e2e_after_repairs",
+  "files": {
+    "core.py": "ace74365423c434a5f4d7ba003359bcaa46490c8b9dbfcc9b213e699922881cb",
+    "app.py": "be8da25a188df31c326930b68b75468869f49e9e42484cbdac7573a585fc2f56",
+    "evaluate.py": "05ddeb6d8a86600536d1880e2bb543e4581ae3d2fa0c71cd029dfc6d136d5ef4",
+    "static/app.js": "7df9c072dfd56b66fded0e4d43832cb3cf3c8538861a396cd1692294b7419d6a",
+    "static/index.html": "ce3fe7c0e80488f4312d0a1de6fda5be417db76400df204f70fa7cd512cae75f",
+    "static/style.css": "265a5f502670e428757a3b6fe52ddd45de65547fb2b24142c703f5b1435938b9",
+    "video/run_demo.py": "2b2eca59030e9dd7505f60ffa5574fec7f1b7f25f1861416d4a7d48c029be02b"
+  }
+}

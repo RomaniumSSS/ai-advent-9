@@ -1,0 +1,118 @@
+{
+  "verified_at": "2026-10-09T12:34:37.261209+00:00",
+  "reviewer": "root coding agent",
+  "human_acceptance": false,
+  "record_run_id": "727aaa505f2f42c3b6a87b7f2d4e9371",
+  "application_run_id": "688d3db5e77547678b99635a13c092a8",
+  "video": "video/Day28-live.mp4",
+  "sha256": "c627d0909670e3a4a58d0f3db58c773e2a920e669e68f5a83825e1b187f181b8",
+  "bytes": 4250922,
+  "duration_seconds": 178.64,
+  "codec": "h264",
+  "pix_fmt": "yuv420p",
+  "width": 1280,
+  "height": 1000,
+  "frame_rate": "25/1",
+  "audio": false,
+  "full_decode": "PASS",
+  "browser_errors": [],
+  "requests": [
+    {
+      "case_id": "E01",
+      "request_id": "60fbc9ae48cc4602a8a9011a3e3eb99a",
+      "status": "done",
+      "visible_answer_matches": true,
+      "source_originals_exact": true,
+      "scope_public": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "times": {
+        "embedding": 1.6478964999550954,
+        "generation": 39.147290832945146,
+        "retrieval": 0.000743833021260798,
+        "total": 40.80401945800986
+      },
+      "metrics": {
+        "eval_count": 96,
+        "eval_duration": 24652945000,
+        "load_duration": 6287456166,
+        "prompt_eval_count": 528,
+        "prompt_eval_duration": 8171360000,
+        "total_duration": 39136498375
+      }
+    },
+    {
+      "case_id": "E02",
+      "request_id": "55fbd6f373324e2796f7d1a7c3020514",
+      "status": "done",
+      "visible_answer_matches": true,
+      "source_originals_exact": true,
+      "scope_public": true,
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "times": {
+        "embedding": 1.7693238329375163,
+        "generation": 50.015266791917384,
+        "retrieval": 0.0011051249457523227,
+        "total": 51.800843207980506
+      },
+      "metrics": {
+        "eval_count": 128,
+        "eval_duration": 32183267000,
+        "load_duration": 5873008125,
+        "prompt_eval_count": 731,
+        "prompt_eval_duration": 11942620000,
+        "total_duration": 50008351041
+      }
+    },
+    {
+      "case_id": "E03",
+      "request_id": "c4e0390a480e423dbe76de7aa6c440d6",
+      "status": "unknown",
+      "visible_answer_matches": true,
+      "source_originals_exact": true,
+      "scope_public": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "times": {
+        "embedding": 1.6949478749884292,
+        "generation": 16.27139370806981,
+        "retrieval": 0.0007577920332551003,
+        "total": 17.974450291018
+      },
+      "metrics": {
+        "eval_count": 19,
+        "eval_duration": 4293729999,
+        "load_duration": 1827614292,
+        "prompt_eval_count": 535,
+        "prompt_eval_duration": 10142169000,
+        "total_duration": 16270529042
+      }
+    }
+  ],
+  "frames_read_from_actual_video": {
+    "start.png": 1,
+    "answer-1.png": 47.61,
+    "source-1.png": 55.61,
+    "answer-2.png": 118.18,
+    "source-2a.png": 125.18,
+    "source-2b.png": 130.18,
+    "answer-3.png": 157.64,
+    "context-3.png": 162.64,
+    "end.png": 176.64
+  },
+  "frame_review": "Read actual MP4 start, three answers, every original source fragment and end. Readable, no private discussions/keys/unrelated windows. URL/preparation are visible at start; independent E2E/replay IDs and code checked/video checking/not published are visible at end. No replayed responses, editing or acceleration.",
+  "scenario_metadata_visible": {
+    "address_and_preparation": true,
+    "separate_e2e_and_replay_run_ids": true,
+    "distinct_code_video_publication_statuses": true
+  },
+  "previous_record": {
+    "run_id": "3ae230eb1f8741b79c3899ba0762256a",
+    "preserved_mp4": "video/runs/record-01/live.mp4",
+    "verification": "results/video-verification-record-01.json",
+    "failed_scenario_audit": "results/implementation-validation-record-01.md",
+    "reason": "Old record remained genuine/readable but omitted visible scenario metadata. Preserved unchanged."
+  },
+  "limitations": "E02 omits requirement details. Agent assessment, not human acceptance; recorded queries are separate from six E2E controls."
+}

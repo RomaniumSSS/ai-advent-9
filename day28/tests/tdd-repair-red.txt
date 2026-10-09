@@ -1,0 +1,70 @@
+.......FFF..F.....F01 #1: done · request fcc39a30622d4bd380540928580d1af9 · 0.00s
+F01 #2: done · request a82bd7a98e454938955c64dd73923992 · 0.00s
+run 032073294174478ba35e82dc4277a0f5 · /private/var/folders/g2/d42wvg5d3fzb07qklb2rcfy40000gn/T/tmp0mamtnzc/private/runs/new
+.F01 #1: done · request 0175222a4ee34a03b7504953b859805a · 0.00s
+run 04768a5097b44e4093f5ea410029bb35 · /private/var/folders/g2/d42wvg5d3fzb07qklb2rcfy40000gn/T/tmp6gwu9usu/private/runs/new
+....F..
+======================================================================
+FAIL: test_missing_explicit_day_is_empty (test_core.Contract.test_missing_explicit_day_is_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_core.py", line 46, in test_missing_explicit_day_is_empty
+    self.assertEqual(selected,[])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+AssertionError: Lists differ: [{'chunk_id': 'a', 'document_id': 'assignm[142 chars]lse}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'chunk_id': 'a', 'document_id': 'assignment:18', 'source': 'assignment', 'day': 18, 'text': 'Нужно сделать поиск.', 'score': 0.8800000000000001, 'cosine': 1.0, 'exact_assignment': False}
+
++ []
+- [{'chunk_id': 'a',
+-   'cosine': 1.0,
+-   'day': 18,
+-   'document_id': 'assignment:18',
+-   'exact_assignment': False,
+-   'score': 0.8800000000000001,
+-   'source': 'assignment',
+-   'text': 'Нужно сделать поиск.'}]
+
+======================================================================
+FAIL: test_missing_reported_embedding_model_fails (test_core.Contract.test_missing_reported_embedding_model_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_core.py", line 124, in test_missing_reported_embedding_model_fails
+    with self.assertRaisesRegex(ValueError,'embedding_response'):o.embed('Вопрос')
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_mixed_cloud_capabilities_fail_closed (test_core.Contract.test_mixed_cloud_capabilities_fail_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_core.py", line 121, in test_mixed_cloud_capabilities_fail_closed
+    with self.assertRaisesRegex(ValueError,'remote_model'):o.verify()
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_public_explicit_days_exclude_neighbors (test_core.Contract.test_public_explicit_days_exclude_neighbors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_core.py", line 42, in test_public_explicit_days_exclude_neighbors
+    self.assertEqual({c['day'] for c in selected},{18,19})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the first set but not the second:
+14
+
+======================================================================
+FAIL: test_loader_closes_connection (test_index.IndexContract.test_loader_closes_connection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_index.py", line 52, in test_loader_closes_connection
+    with self.assertRaises(sqlite3.ProgrammingError):connection.execute('SELECT 1')
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ProgrammingError not raised
+
+----------------------------------------------------------------------
+Ran 26 tests in 2.463s
+
+FAILED (failures=5)

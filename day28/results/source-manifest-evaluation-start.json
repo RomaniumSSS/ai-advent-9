@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-09T10:35:01.780142+00:00",
+  "files": {
+    "day28/core.py": "3843ce2675042ff4a4fce25052be3eb32f9f625b39a7b6324b712bbb3e4158bd",
+    "day28/app.py": "be8da25a188df31c326930b68b75468869f49e9e42484cbdac7573a585fc2f56",
+    "day28/evaluate.py": "05ddeb6d8a86600536d1880e2bb543e4581ae3d2fa0c71cd029dfc6d136d5ef4",
+    "day28/static/app.js": "7df9c072dfd56b66fded0e4d43832cb3cf3c8538861a396cd1692294b7419d6a",
+    "day28/static/index.html": "ce3fe7c0e80488f4312d0a1de6fda5be417db76400df204f70fa7cd512cae75f",
+    "day28/static/style.css": "635b680cd42937d3c04d5dba9a27490e18a2de7a440502506e39809543f4b5da",
+    "day28/video/run_demo.py": "2b2eca59030e9dd7505f60ffa5574fec7f1b7f25f1861416d4a7d48c029be02b"
+  }
+}

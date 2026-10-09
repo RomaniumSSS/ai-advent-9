@@ -1,0 +1,13 @@
+{
+  "time": "2026-10-09T11:12:50.832898+00:00",
+  "phase": "final_source_reference_protocol",
+  "files": {
+    "core.py": "61a79221fcde8178201d1f3dbadb4e06ce3736c7db34049a3b1934827c702100",
+    "app.py": "0eb275fb8bd6d6facd9a755e04e6fe5efbd783dda3ba46be16c7a74bb3fb364e",
+    "evaluate.py": "05ddeb6d8a86600536d1880e2bb543e4581ae3d2fa0c71cd029dfc6d136d5ef4",
+    "static/app.js": "23612e5bf673e87860469f55db4fb08a56f90fdcd0258bc2ed5ca98c17e6cc3d",
+    "static/index.html": "ce3fe7c0e80488f4312d0a1de6fda5be417db76400df204f70fa7cd512cae75f",
+    "static/style.css": "5244dc03f561c50954e209177aebd8bc255d88b2403c64f056eacc5b191c8ffc",
+    "video/run_demo.py": "2cdd9d5e674559db98770c2fe8abebd02b2a98b8d57a25de4ae8f5337ee880ce"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "run_id": "dbf3969ef7ed49a282602fa06c92c184",
+  "assessor": "root coding agent reading local raw JSON/cloud receipts against the same frozen contexts",
+  "human_acceptance": false,
+  "cases": [
+    {
+      "case_id": "Q03",
+      "local_model": "qwen3:8b",
+      "historical_cloud_model": "deepseek/deepseek-v4.1-flash",
+      "historical_cloud_provider": "DeepInfra",
+      "historical_at": "2026-10-03T18:39:10+00:00",
+      "same_messages": true,
+      "messages_sha256": "7ef844616caafb8e8c2a334dd04cd24e0aecf9be26a25ce779a678e9a3e6973e",
+      "local_status": "error",
+      "local_facts": "PASS",
+      "local_completeness": "PASS",
+      "local_citations_valid": false,
+      "cloud_citations_valid": true,
+      "local_generator_seconds": 119.79796799994074,
+      "historical_cloud_seconds": 4.35516750003444,
+      "local_metrics": {
+        "eval_count": 357,
+        "eval_duration": 93423548000,
+        "load_duration": 4693583,
+        "prompt_eval_count": 1347,
+        "prompt_eval_duration": 26307816000,
+        "total_duration": 119792740708
+      },
+      "error": {
+        "message": "quote_not_exact",
+        "phase": "answer_validation",
+        "type": "ValueError"
+      },
+      "reason": "Локальный ответ правильно различает Day16/17, но модель склеила дословную цитату; валидатор отверг ответ."
+    },
+    {
+      "case_id": "Q08",
+      "local_model": "qwen3:8b",
+      "historical_cloud_model": "deepseek/deepseek-v4.1-flash",
+      "historical_cloud_provider": "DeepInfra",
+      "historical_at": "2026-10-03T18:39:26+00:00",
+      "same_messages": true,
+      "messages_sha256": "9c9ac2b55682bfe0af9eb83d9deb31ab24dae3620d0e7c4716b2ff04bb6a429a",
+      "local_status": "error",
+      "local_facts": "PASS",
+      "local_completeness": "PARTIAL",
+      "local_citations_valid": false,
+      "cloud_citations_valid": true,
+      "local_generator_seconds": 123.3950831249822,
+      "historical_cloud_seconds": 8.02848629199434,
+      "local_metrics": {
+        "eval_count": 416,
+        "eval_duration": 101127676000,
+        "load_duration": 1797417,
+        "prompt_eval_count": 1354,
+        "prompt_eval_duration": 22141339000,
+        "total_duration": 123387828667
+      },
+      "error": {
+        "message": "source_not_in_selected_context",
+        "phase": "answer_validation",
+        "type": "ValueError"
+      },
+      "reason": "Локальный ответ правильно различает RAG/noRAG и ожидания/источники. Источник повторён: первый отказ source_not_in_selected_context; обе цитаты также изменены. Число 10 вопросов явно не указано."
+    },
+    {
+      "case_id": "Q07",
+      "local_model": "qwen3:8b",
+      "historical_cloud_model": "deepseek/deepseek-v4.1-flash",
+      "historical_cloud_provider": "DeepInfra",
+      "historical_at": "2026-10-03T18:39:24+00:00",
+      "same_messages": true,
+      "messages_sha256": "55d7397eb8bddfbdee712d0fed18d517a4c9c9bb34af32cab202bbac6054af5b",
+      "local_status": "done",
+      "local_facts": "PASS",
+      "local_completeness": "NOT_APPLICABLE_CONTEXT_MISSING",
+      "local_citations_valid": true,
+      "cloud_citations_valid": true,
+      "local_generator_seconds": 95.95790391601622,
+      "historical_cloud_seconds": 2.0658233339781873,
+      "local_metrics": {
+        "eval_count": 341,
+        "eval_duration": 82559711000,
+        "load_duration": 1596541,
+        "prompt_eval_count": 934,
+        "prompt_eval_duration": 13224938000,
+        "total_duration": 95954775208
+      },
+      "error": null,
+      "reason": "В старом retrieval нет официального задания21; обе модели честно сообщают нехватку сведений. Локальная цитата валидна, но косвенная и не подтверждает отсутствие всех сведений."
+    }
+  ],
+  "schema": "legacy model-authored answer/sources/quotes in local replay; original messages untouched",
+  "note": "Cloud использовал исторический OpenRouter prompt-only JSON; локальный replay дополнительно ограничен JSON Schema. Модели, runtime/железо/даты отличаются. Нет fresh speedbenchmark или статистического сравнения качества. Q07 проверяет поведение при недостаточном старом retrieval, не качество новой поисковой обвязки."
+}

@@ -1,0 +1,53 @@
+EFEEE
+======================================================================
+ERROR: test_context_references_preserve_text (__main__.ReferenceContract.test_context_references_preserve_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_references.py", line 38, in test_context_references_preserve_text
+    self.assertEqual(record['source_ref'],'S1');self.assertEqual(record['text'],text)
+                     ~~~~~~^^^^^^^^^^^^^^
+KeyError: 'source_ref'
+
+======================================================================
+ERROR: test_only_model_selected_sources (__main__.ReferenceContract.test_only_model_selected_sources)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_references.py", line 32, in test_only_model_selected_sources
+    result=core.materialize_references({'answer':'Другой факт.','source_refs':['S2']},selected)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'core' has no attribute 'materialize_references'
+
+======================================================================
+ERROR: test_projection_exact_full_original_text (__main__.ReferenceContract.test_projection_exact_full_original_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_references.py", line 17, in test_projection_exact_full_original_text
+    result=core.materialize_references({'answer':'Пересказ.','source_refs':['S1']},selected)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'core' has no attribute 'materialize_references'
+
+======================================================================
+ERROR: test_unknown_and_invalid_refs (__main__.ReferenceContract.test_unknown_and_invalid_refs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_references.py", line 24, in test_unknown_and_invalid_refs
+    unknown=core.materialize_references({'answer':'Не знаю по переданному контексту.','source_refs':[]},selected)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'core' has no attribute 'materialize_references'
+
+======================================================================
+FAIL: test_engine_records_raw_and_projection (__main__.ReferenceContract.test_engine_records_raw_and_projection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/tests/test_references.py", line 47, in test_engine_records_raw_and_projection
+    self.assertEqual(result['status'],'done');self.assertEqual(formats,[core.SOURCE_SCHEMA])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'error' != 'done'
+- error
++ done
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+FAILED (failures=1, errors=4)

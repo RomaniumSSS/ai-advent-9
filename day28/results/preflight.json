@@ -1,0 +1,90 @@
+{
+  "time": "2026-10-09T10:27:45.164042+00:00",
+  "phase": "local_model_preflight",
+  "models": {
+    "qwen3-embedding:0.6b": {
+      "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d",
+      "size": 639150858,
+      "capabilities": [
+        "tools",
+        "thinking",
+        "embedding"
+      ],
+      "local": true
+    },
+    "qwen3:8b": {
+      "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+      "size": 5225388164,
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ],
+      "local": true
+    }
+  },
+  "ollama_version": {
+    "version": "0.33.3"
+  },
+  "embedding": {
+    "dimensions": 1024,
+    "norm": 0.9999996899008476,
+    "options": {
+      "num_ctx": 2048,
+      "num_thread": 1,
+      "num_batch": 128
+    },
+    "truncate": false,
+    "seconds": 1.7798971669981256,
+    "metrics": {
+      "total_duration": 1778743500,
+      "load_duration": 1626264791,
+      "prompt_eval_count": 35
+    }
+  },
+  "generator": {
+    "options": {
+      "num_ctx": 8192,
+      "num_predict": 1024,
+      "temperature": 0
+    },
+    "think": false,
+    "seconds": 7.494062875048257,
+    "pilot_response": "OK.",
+    "metrics": {
+      "total_duration": 7482626291,
+      "load_duration": 7077991125,
+      "prompt_eval_count": 20,
+      "eval_count": 3,
+      "done_reason": "stop"
+    }
+  },
+  "loaded_models_snapshot": {
+    "models": [
+      {
+        "name": "qwen3:8b",
+        "model": "qwen3:8b",
+        "size": 6177989590,
+        "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "8.2B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-09T12:32:45.152229+02:00",
+        "size_vram": 6177989590,
+        "context_length": 8192
+      }
+    ]
+  },
+  "hardware_memory_bytes": 17179869184,
+  "evaluation": false,
+  "cloud_calls": 0,
+  "model_calls": 2,
+  "note": "Одна проверка queryembedding и один короткий генераторный pilot до E2E; snapshot model memory не является peakRAM."
+}

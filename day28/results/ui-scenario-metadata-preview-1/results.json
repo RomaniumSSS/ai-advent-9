@@ -1,0 +1,104 @@
+{
+  "type": "GET-only cached actual response UI preview",
+  "request_id": "af9cee2173b241248c8e3cb6c6eb66b0",
+  "new_model_calls": 0,
+  "new_live_pass": false,
+  "checks": [
+    {
+      "viewport": "desktop",
+      "address": true,
+      "preparation": true,
+      "separate_run_ids": true,
+      "confirmed_statuses": true,
+      "overflow": false
+    },
+    {
+      "viewport": "desktop",
+      "missing_metadata_fallback": "neutral"
+    },
+    {
+      "viewport": "mobile",
+      "address": true,
+      "preparation": true,
+      "separate_run_ids": true,
+      "confirmed_statuses": true,
+      "overflow": false
+    },
+    {
+      "viewport": "mobile",
+      "missing_metadata_fallback": "neutral"
+    }
+  ],
+  "page_errors": [],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "method": "GET",
+      "path": "/style.css"
+    },
+    {
+      "method": "GET",
+      "path": "/app.js"
+    },
+    {
+      "method": "GET",
+      "path": "/api/state"
+    },
+    {
+      "method": "GET",
+      "path": "/api/summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/requests/af9cee2173b241248c8e3cb6c6eb66b0",
+      "via": "APIRequestContext"
+    },
+    {
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "method": "GET",
+      "path": "/style.css"
+    },
+    {
+      "method": "GET",
+      "path": "/app.js"
+    },
+    {
+      "method": "GET",
+      "path": "/api/state"
+    },
+    {
+      "method": "GET",
+      "path": "/api/summary"
+    },
+    {
+      "method": "GET",
+      "path": "/api/requests/af9cee2173b241248c8e3cb6c6eb66b0",
+      "via": "APIRequestContext"
+    }
+  ],
+  "status": "pass",
+  "files_sha256": {
+    "day28/static/index.html": "d5d1af0d9f6b5d5ffe9d2f4ffea6e285db019ce4400fa08c1930ef16626bd1b0",
+    "day28/static/app.js": "2155cc21d397b0ed66799ab2fdcd9484a95df6639f4bfe8f6e7cf6b39af77346",
+    "day28/static/style.css": "0253fd2d49343b4fcfe2bb246d3b77c6e0e3f2acd5512990af9db1d2d0e9d435",
+    "day28/results/public-summary.json": "413b548723db11239ca2dd7daad698f7e2c8465ccbaad1fa8ace69a638c17e25"
+  },
+  "unchanged_sha256": {
+    "day28/core.py": "61a79221fcde8178201d1f3dbadb4e06ce3736c7db34049a3b1934827c702100",
+    "day28/app.py": "0eb275fb8bd6d6facd9a755e04e6fe5efbd783dda3ba46be16c7a74bb3fb364e",
+    "day28/evaluate.py": "05ddeb6d8a86600536d1880e2bb543e4581ae3d2fa0c71cd029dfc6d136d5ef4",
+    "day28/video/run_demo.py": "2cdd9d5e674559db98770c2fe8abebd02b2a98b8d57a25de4ae8f5337ee880ce"
+  },
+  "visual_inspection": {
+    "performed_by": "gpt-6.1-sol high",
+    "desktop_summary": "both evaluation IDs and all three statuses readable in one viewport",
+    "desktop_full": "address/preparation/result/summary distinct and readable",
+    "mobile_summary": "IDs wrap, no horizontal overflow, statuses readable"
+  }
+}

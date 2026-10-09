@@ -1,0 +1,146 @@
+{
+  "assessed_at": "2026-10-09T10:41:05.248765+00:00",
+  "assessor": "root coding agent reading raw answers against frozen public sources",
+  "human_acceptance": false,
+  "run_id": "846809a680c34d59b0c41cdd87ec4ffc",
+  "suite_id": "day28-public-e2e-v1",
+  "evaluation": "E2E, before repair",
+  "results": [
+    {
+      "case_id": "E01",
+      "repeat": 1,
+      "request_id": "0a999aa10a6647bdb5fd5a724720117d",
+      "status": "unknown",
+      "semantic_verdict": "FAIL",
+      "reason": "Ложный отказ: требуемый assignment текст передан, но ответ без фактов и источников.",
+      "times": {
+        "embedding": 1.6469987920718268,
+        "generation": 32.90342304203659,
+        "retrieval": 0.006909208022989333,
+        "total": 34.59187095798552
+      },
+      "metrics": {
+        "eval_count": 25,
+        "eval_duration": 6150984000,
+        "load_duration": 5880224000,
+        "prompt_eval_count": 1000,
+        "prompt_eval_duration": 20829583000,
+        "total_duration": 32884375250
+      }
+    },
+    {
+      "case_id": "E01",
+      "repeat": 2,
+      "request_id": "9127ef22e8754a58a76e541f6ef44eef",
+      "status": "unknown",
+      "semantic_verdict": "FAIL",
+      "reason": "Ложный отказ: требуемый assignment текст передан, но ответ без фактов и источников.",
+      "times": {
+        "embedding": 1.8690204999875277,
+        "generation": 28.989803208969533,
+        "retrieval": 0.0058772909687832,
+        "total": 30.878199375001714
+      },
+      "metrics": {
+        "eval_count": 25,
+        "eval_duration": 5540385000,
+        "load_duration": 5870411333,
+        "prompt_eval_count": 1000,
+        "prompt_eval_duration": 17567569000,
+        "total_duration": 28987665875
+      }
+    },
+    {
+      "case_id": "E02",
+      "repeat": 1,
+      "request_id": "4e8b5f4baca648e49430a89010b1f445",
+      "status": "unknown",
+      "semantic_verdict": "FAIL",
+      "reason": "Ложный отказ: требуемый assignment текст передан, но ответ без фактов и источников.",
+      "times": {
+        "embedding": 1.7058962499722838,
+        "generation": 31.471086667035706,
+        "retrieval": 0.005896707996726036,
+        "total": 33.196000709082
+      },
+      "metrics": {
+        "eval_count": 25,
+        "eval_duration": 5747345000,
+        "load_duration": 1819623458,
+        "prompt_eval_count": 1260,
+        "prompt_eval_duration": 23891024000,
+        "total_duration": 31469347166
+      }
+    },
+    {
+      "case_id": "E02",
+      "repeat": 2,
+      "request_id": "04381a1c1ec44c45b17b6c5f511cbf04",
+      "status": "unknown",
+      "semantic_verdict": "FAIL",
+      "reason": "Ложный отказ: требуемый assignment текст передан, но ответ без фактов и источников.",
+      "times": {
+        "embedding": 1.8191825419198722,
+        "generation": 31.47646008396987,
+        "retrieval": 0.005737166968174279,
+        "total": 33.313929833006114
+      },
+      "metrics": {
+        "eval_count": 25,
+        "eval_duration": 5065838000,
+        "load_duration": 1822269000,
+        "prompt_eval_count": 1260,
+        "prompt_eval_duration": 24568896000,
+        "total_duration": 31467516500
+      }
+    },
+    {
+      "case_id": "E03",
+      "repeat": 1,
+      "request_id": "245d9aa899c145d18591bdf589f77e18",
+      "status": "unknown",
+      "semantic_verdict": "PASS",
+      "reason": "Бюджет в евро не указан в выбранном assignment; модель признала нехватку сведений без выдуманной суммы.",
+      "times": {
+        "embedding": 1.7116937080863863,
+        "generation": 17.418643999961205,
+        "retrieval": 0.005760374944657087,
+        "total": 19.152509124949574
+      },
+      "metrics": {
+        "eval_count": 21,
+        "eval_duration": 4076579000,
+        "load_duration": 1824692833,
+        "prompt_eval_count": 698,
+        "prompt_eval_duration": 11507841000,
+        "total_duration": 17416905542
+      }
+    },
+    {
+      "case_id": "E03",
+      "repeat": 2,
+      "request_id": "6f8e9e986dfc4c5ca5988367b7be5dfb",
+      "status": "unknown",
+      "semantic_verdict": "PASS",
+      "reason": "Бюджет в евро не указан в выбранном assignment; модель признала нехватку сведений без выдуманной суммы.",
+      "times": {
+        "embedding": 1.688996084034443,
+        "generation": 17.266235249931924,
+        "retrieval": 0.005535832955501974,
+        "total": 18.975888624903746
+      },
+      "metrics": {
+        "eval_count": 21,
+        "eval_duration": 4145251000,
+        "load_duration": 1833504875,
+        "prompt_eval_count": 698,
+        "prompt_eval_duration": 11279196000,
+        "total_duration": 17264862209
+      }
+    }
+  ],
+  "transport_success": 6,
+  "semantic_pass": 2,
+  "false_refusals": 4,
+  "limitations": "Оценка кодирующим агентом, не человеческая приёмка; 3×2 сценария, без статистических обобщений."
+}

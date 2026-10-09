@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Day28 · Локальный RAG</title><link rel="stylesheet" href="/style.css"></head>
+<body><main><header><span class="eyebrow">AI ADVENT · ДЕНЬ 28</span><h1>Ответы из локального архива</h1><p>Вопрос → поиск по прежнему индексу → локальная модель → проверенные цитаты.</p></header>
+<section class="card state"><div><b>Локально · public</b><p id="local-address">http://127.0.0.1:8068</p><p id="identity">Читаем состояние…</p><p id="preparation" class="muted">Происхождение индекса проверяется…</p></div><span class="badge">Только задания</span></section>
+<form class="card" id="form"><label for="question">Что хотите узнать о заданиях?</label><textarea id="question" maxlength="500" rows="3" required placeholder="Что требуется сделать в задании дня 18?"></textarea><div class="form-footer"><span>До 500 символов · один вопрос за раз</span><button id="send">Найти ответ</button></div></form>
+<section class="card" id="result" data-state="idle"><p id="status" aria-live="polite">Готово к новому вопросу</p><p id="request"></p><h2>Ответ</h2><div id="answer">Здесь появятся ответ и источники. Полнота и смысл требуют отдельной оценки.</div><div id="metrics"></div><div id="sources"></div></section>
+<section class="card"><h2>Оценка и сравнение</h2><div id="summary">Загружаем состояние оценки…</div><p class="muted">Исторические облачные ответы сравниваются по тем же messages. Это отдельный replay, не новый benchmark облачной скорости.</p></section>
+<footer>Loopback Ollama · без облачного fallback · не опубликовано</footer></main><script src="/app.js"></script></body></html>
