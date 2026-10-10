@@ -1,0 +1,16 @@
+{
+  "verified_at": "2026-10-10T11:10:23.774045+00:00",
+  "file_name": "Day28-live.mp4",
+  "file_id": "1lFO1qjeAPaiP_fJZbfWccZvht0yfb4uj",
+  "file_url": "https://drive.google.com/file/d/1lFO1qjeAPaiP_fJZbfWccZvht0yfb4uj/view?usp=sharing",
+  "folder_id": "1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY",
+  "folder_url": "https://drive.google.com/drive/folders/1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY",
+  "owner": "romanpozharitskiy@gmail.com",
+  "general_access": "Anyone with the link",
+  "permission": "Viewer",
+  "local_bytes": 4250922,
+  "local_sha256": "c627d0909670e3a4a58d0f3db58c773e2a920e669e68f5a83825e1b187f181b8",
+  "duration_seconds": 178.64,
+  "evidence": "Drive UI: exactly one Day28 file row with matching data-id, 1 upload complete; Share dialog owner verified, Restricted→Anyone with the link/Viewer, Access updated, Done clicked. Allowed-root upload copy SHA256 matched original.",
+  "cloud_byte_hash": "not measured"
+}

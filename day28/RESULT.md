@@ -120,4 +120,7 @@ Sol `gpt-6.1-sol` high реализовал код/исправления/док
 Код и видео проверены и [опубликованы на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day28).
 Day01–28 находятся в main, прежние задания побайтно сохранены.
 [Подтверждение](results/github-publication.json), [проверка объединения](results/integration-verification.json).
-Drive/таблица уточняются; пользовательская сдача не подтверждена.
+Видео в общей папке Drive, доступ Viewer по ссылке проверен. Две ссылки — видео и код —
+сохранены комментарием в `Лист1!AC132`, прочитаны после полной перезагрузки.
+[Drive](results/drive-upload.json), [таблица](results/table-submission.json).
+Пользовательская приёмка не подтверждена.

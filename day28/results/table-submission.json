@@ -1,0 +1,20 @@
+{
+  "verified_at": "2026-10-10T11:10:23.774045+00:00",
+  "spreadsheet_id": "1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE",
+  "spreadsheet_title": "AI Advent Challenge 9",
+  "sheet": "Лист1",
+  "gid": 0,
+  "cell": "AC132",
+  "header": "День 28 (07.10)",
+  "participant_row_verified": true,
+  "mode": "Comment only",
+  "action": "posted one new comment",
+  "text": "Видео: https://drive.google.com/file/d/1lFO1qjeAPaiP_fJZbfWccZvht0yfb4uj/view?usp=sharing\nКод: https://github.com/RomaniumSSS/ai-advent-9/tree/main/day28",
+  "url_count": 2,
+  "verified_after_full_reload": true,
+  "evidence": "After full reload: selected AC132, Comments panel own thread explicitly labelled Comment location Лист1 AC132; both exact expected links. Fresh A132 participant/header AC1 verified before posting. Saved to Drive before reload; one Post Comment action.",
+  "cell_value_changed": false,
+  "other_cells_changed_by_agent": false,
+  "user_submission_confirmed": false,
+  "recovery": "Initial stale tab displayed Wow! This doc has changed a lot and disabled comment controls. Native Reload synced current document; Insert comment enabled; no permissions bypass."
+}

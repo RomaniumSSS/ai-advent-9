@@ -4,7 +4,7 @@
 Day25 и Day26 сданы; публикация кода не означает пользовательскую сдачу новых дней.
 
 Последняя реализация: [Day28 — локальная LLM + RAG](day28/README.md),
-[результаты и ограничения](day28/RESULT.md), [живая запись 2:59](day28/video/Day28-live.mp4),
+[результаты и ограничения](day28/RESULT.md), [живая запись 2:59](https://drive.google.com/file/d/1lFO1qjeAPaiP_fJZbfWccZvht0yfb4uj/view?usp=sharing),
 [архив кода](day28/Day28-code.zip). Прежний индекс, локальные embedding/generation,
 31 офлайн тест и шесть контрольных live-запросов; сложный ответ неполный.
 

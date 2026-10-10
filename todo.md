@@ -12,7 +12,9 @@
   E02 неполный, две ошибки legacy replay сохранены. Далее — пользовательская проверка;
   [Код в GitHub main](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day28):
   Day01–28 объединены и порядок проверен, прежние дни сохранены без правок.
-  Drive/таблица уточняются отдельно; пользовательская сдача не заявлена.
+  [Видео в общей Drive-папке](https://drive.google.com/file/d/1lFO1qjeAPaiP_fJZbfWccZvht0yfb4uj/view?usp=sharing) доступно по ссылке (Viewer).
+  В `Лист1!AC132` сохранены ровно две ссылки; проверены после полной перезагрузки.
+  [Подтверждение](day28/results/table-submission.json); далее — пользовательская приёмка.
 
 - **Модели по ролям 08.10.2026:** предпочтение пользователя сохранено в
   [AGENTS.md](AGENTS.md) и подключено из CLAUDE и двух навыков: Opus/Astra —

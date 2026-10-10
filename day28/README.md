@@ -112,7 +112,9 @@ Usage/cost разработки не предоставлены; эффекти�
 Код и [живая запись 2:59](video/Day28-live.mp4) проверены локально:
 [сверка кадров/запросов](results/video-verification.json). Код и видео [опубликованы на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day28);
 Day01–28 объединены в main. [Проверка публикации](results/github-publication.json).
-Drive/таблица уточняются; пользовательская сдача не заявляется. [SPEC](SPEC.md), [TASKS](TASKS.md),
+[Видео в Drive](https://drive.google.com/file/d/1lFO1qjeAPaiP_fJZbfWccZvht0yfb4uj/view?usp=sharing) доступно всем по ссылке (Viewer).
+В `Лист1!AC132` сохранён комментарий с двумя ссылками — видео и код; проверен после reload.
+[Подтверждение таблицы](results/table-submission.json). Пользовательская приёмка не заявляется. [SPEC](SPEC.md), [TASKS](TASKS.md),
 [release notes](RELEASE_NOTES.md), [финальная проверка SPEC](results/implementation-validation.md).
 
 Архив ZIP сохранён как проверенная локальная сборка до публикации; GitHub содержит

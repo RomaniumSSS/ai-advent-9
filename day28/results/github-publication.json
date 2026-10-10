@@ -47,8 +47,12 @@
   },
   "new_real_model_calls": 0,
   "github_video_url": "https://github.com/RomaniumSSS/ai-advent-9/blob/main/day28/video/Day28-live.mp4",
-  "drive_upload": "awaiting clarification",
-  "table_submission": "awaiting clarification",
+  "drive_upload": "verified",
+  "table_submission": "verified after full reload, Лист1!AC132 comment",
   "user_submission_confirmed": false,
-  "evidence": "git push --atomic succeeded; git ls-remote and GitHub branch/contents APIs confirm same main/task SHA, all day01-day28 dirs and Day28 code/artifacts."
+  "evidence": "git push --atomic succeeded; git ls-remote and GitHub branch/contents APIs confirm same main/task SHA, all day01-day28 dirs and Day28 code/artifacts.",
+  "video_url": "https://drive.google.com/file/d/1lFO1qjeAPaiP_fJZbfWccZvht0yfb4uj/view?usp=sharing",
+  "delivery_verified_at": "2026-10-10T11:10:23.774045+00:00",
+  "drive_evidence": "drive-upload.json",
+  "table_evidence": "table-submission.json"
 }

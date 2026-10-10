@@ -34,7 +34,12 @@ Day28 опубликован по новой команде пользовате
 объединение `a5f2757`, обе ветки main/day28-local-rag проверены через GitHub API.
 [Публикация](day28/results/github-publication.json). В main теперь Day01–28,
 деревья Day01–26 и Day27 сохранены без правок. Новых модельных вызовов не было.
-Drive/таблица уточняются; пользовательская сдача не подтверждена.
+Видео загружено на основной Drive: `1lFO1qjeAPaiP_fJZbfWccZvht0yfb4uj`,
+в общей папке `1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY`; owner/Viewer по ссылке проверены.
+В `Лист1!AC132` добавлен один комментарий с ровно двумя ссылками; после полного reload
+прочитаны location и оба URL ([evidence](day28/results/table-submission.json)).
+Старую вкладку сначала пришлось синхронизировать native Reload по явному баннеру Google;
+после синхронизации comment controls стали доступны. Блокеров нет, далее — пользовательская приёмка.
 Новые платные сравнения не разрешены. Приватный снимок/receipts остаются в worktree Day28.
 
 Canonical main fast-forward выполнен с сохранением семи посторонних untracked файлов.

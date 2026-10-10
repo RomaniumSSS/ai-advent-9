@@ -1,0 +1,20 @@
+{
+  "time": "2026-10-10T11:10:23.774045+00:00",
+  "phase": "Drive upload and submission table verified; runtime unchanged, current publication metadata updated",
+  "previous_manifest": "source-manifest-publication.json",
+  "files": {
+    "core.py": "61a79221fcde8178201d1f3dbadb4e06ce3736c7db34049a3b1934827c702100",
+    "app.py": "0eb275fb8bd6d6facd9a755e04e6fe5efbd783dda3ba46be16c7a74bb3fb364e",
+    "evaluate.py": "05ddeb6d8a86600536d1880e2bb543e4581ae3d2fa0c71cd029dfc6d136d5ef4",
+    "static/app.js": "2155cc21d397b0ed66799ab2fdcd9484a95df6639f4bfe8f6e7cf6b39af77346",
+    "static/index.html": "d5d1af0d9f6b5d5ffe9d2f4ffea6e285db019ce4400fa08c1930ef16626bd1b0",
+    "static/style.css": "0253fd2d49343b4fcfe2bb246d3b77c6e0e3f2acd5512990af9db1d2d0e9d435",
+    "video/run_demo.py": "2cdd9d5e674559db98770c2fe8abebd02b2a98b8d57a25de4ae8f5337ee880ce",
+    "results/public-summary.json": "28a9350b22e08c8f995a1acd83dfebf93b7f9068bbd46b19cff62b4ed73efd69"
+  },
+  "changes": [
+    "results/public-summary.json publication.drive/table changed after real UI verification"
+  ],
+  "new_model_calls": 0,
+  "human_acceptance": false
+}
