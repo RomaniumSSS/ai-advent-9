@@ -1,0 +1,167 @@
+{
+  "schema": "initial-five-blind-semantic-summary-v1",
+  "status": "COMPLETED_BLIND",
+  "run_id": "405d5a5a7bac4e0da30aafccb6f600b7",
+  "human_acceptance": false,
+  "assessment_sha256": "14f22c64ecb2c13db6517dbcecfdc181becd9baec4248bae443c3876851cf8fa",
+  "details_sha256": "529cfe8e228a32b0bed8f2c3e58fbd7ddbd3bf68adc2ea9c0611dc9fc58ce5b9",
+  "input_packet_sha256": {
+    "H05": "ada6ec2a8d4acc93ac04c26b0b46350c4dcf05befb29449dd707554c539d9a3e",
+    "H12": "9e517c7d76f9f34e037a2ef27b4d7b5a2fe9e02a9bd4c82d0d2f476603c7a69a",
+    "H20": "a7844a00d69168c164bca601c668c5b31b69ed4e6c2d5f8e03d36fb8ba5b6326",
+    "H06": "3d358b30619175dbd7cdeae8c486a62195ddb31863d0964826db64bdb67c3872",
+    "H11": "8b1c64df81b57942d40424592fdb9d0a318e7008c9826f4d1ad644ed826692ad"
+  },
+  "counts": {
+    "observed_answer_slots": 5,
+    "missing_answer_slots": 5,
+    "paired_comparisons": 0,
+    "gold_groups": 12,
+    "covered_groups": 4,
+    "partial_groups": 2,
+    "missing_groups": 6,
+    "unverifiable_groups": 0,
+    "snapshot_available_groups": 12,
+    "transmitted_available_groups": 7,
+    "noncovered_groups_available_in_prompt": 3,
+    "noncovered_groups_absent_from_prompt": 5,
+    "supported_atomic_claims": 15,
+    "contradicted_atomic_claims": 0,
+    "unsupported_atomic_claims": 0,
+    "unverifiable_atomic_claims": 0,
+    "attribution_errors": 0,
+    "correct_unknown": 1,
+    "false_clarification": 2
+  },
+  "cases": [
+    {
+      "case_id": "H05",
+      "slot": "X",
+      "claim_counts": {
+        "supported": 11,
+        "contradicted": 0,
+        "unsupported": 0,
+        "unverifiable": 0
+      },
+      "attribution_errors": 0,
+      "citation_truth": "SUPPORTED_REFS",
+      "answerability": "ANSWERED",
+      "completeness": {
+        "covered": 3,
+        "partial": 0,
+        "missing": 0,
+        "unverifiable": 0,
+        "total": 3,
+        "numerator": 3,
+        "denominator": 3
+      },
+      "snapshot_available_groups": 3,
+      "transmitted_available_groups": 3,
+      "paired_comparison": "NOT_ASSESSABLE"
+    },
+    {
+      "case_id": "H12",
+      "slot": "X",
+      "claim_counts": {
+        "supported": 4,
+        "contradicted": 0,
+        "unsupported": 0,
+        "unverifiable": 0
+      },
+      "attribution_errors": 0,
+      "citation_truth": "SUPPORTED_REFS",
+      "answerability": "ANSWERED_INCOMPLETE",
+      "completeness": {
+        "covered": 1,
+        "partial": 1,
+        "missing": 1,
+        "unverifiable": 0,
+        "total": 3,
+        "numerator": 1,
+        "denominator": 3
+      },
+      "snapshot_available_groups": 3,
+      "transmitted_available_groups": 3,
+      "paired_comparison": "NOT_ASSESSABLE"
+    },
+    {
+      "case_id": "H20",
+      "slot": "X",
+      "claim_counts": {
+        "supported": 0,
+        "contradicted": 0,
+        "unsupported": 0,
+        "unverifiable": 0
+      },
+      "attribution_errors": 0,
+      "citation_truth": "NO_FACTUAL_CITATION_REQUIRED",
+      "answerability": "CORRECT_UNKNOWN",
+      "completeness": {
+        "covered": 0,
+        "partial": 1,
+        "missing": 0,
+        "unverifiable": 0,
+        "total": 1,
+        "numerator": 0,
+        "denominator": 1
+      },
+      "snapshot_available_groups": 1,
+      "transmitted_available_groups": 1,
+      "paired_comparison": "NOT_ASSESSABLE"
+    },
+    {
+      "case_id": "H06",
+      "slot": "X",
+      "claim_counts": {
+        "supported": 0,
+        "contradicted": 0,
+        "unsupported": 0,
+        "unverifiable": 0
+      },
+      "attribution_errors": 0,
+      "citation_truth": "NO_FACTUAL_CITATION_REQUIRED",
+      "answerability": "FALSE_CLARIFICATION",
+      "completeness": {
+        "covered": 0,
+        "partial": 0,
+        "missing": 2,
+        "unverifiable": 0,
+        "total": 2,
+        "numerator": 0,
+        "denominator": 2
+      },
+      "snapshot_available_groups": 2,
+      "transmitted_available_groups": 0,
+      "paired_comparison": "NOT_ASSESSABLE"
+    },
+    {
+      "case_id": "H11",
+      "slot": "X",
+      "claim_counts": {
+        "supported": 0,
+        "contradicted": 0,
+        "unsupported": 0,
+        "unverifiable": 0
+      },
+      "attribution_errors": 0,
+      "citation_truth": "NO_FACTUAL_CITATION_REQUIRED",
+      "answerability": "FALSE_CLARIFICATION",
+      "completeness": {
+        "covered": 0,
+        "partial": 0,
+        "missing": 3,
+        "unverifiable": 0,
+        "total": 3,
+        "numerator": 0,
+        "denominator": 3
+      },
+      "snapshot_available_groups": 3,
+      "transmitted_available_groups": 0,
+      "paired_comparison": "NOT_ASSESSABLE"
+    }
+  ],
+  "quality_comparison": "NOT_ASSESSABLE",
+  "hallucination_rate": "NOT_MEASURED",
+  "real_assessor_generation_calls": 0,
+  "real_assessor_embedding_calls": 0
+}

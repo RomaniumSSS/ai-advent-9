@@ -1,0 +1,117 @@
+{
+  "time_utc": "2026-10-10T21:28:39.172341+00:00",
+  "scope": "all",
+  "index_chunks": 724,
+  "index_documents": 663,
+  "actual_local_generations": 3,
+  "cases": [
+    {
+      "case_id": "FC-D01",
+      "conversation_id": "2c2e7854eaf44e4ea20e786244b92460",
+      "request_id": "adc6bb1a8a1c474bb5fd46571728829b",
+      "run_id": "58ef60790d934ce09ecd8ef4e82a9de3",
+      "status": "done",
+      "checks": {
+        "done": true,
+        "citations_valid": true,
+        "expected_source_selected": true,
+        "expected_source_cited": true,
+        "all_scope_724": true,
+        "one_local_generation": true,
+        "followup": true
+      },
+      "times": {
+        "embedding": 1.6518844589591026,
+        "generation": 49.31365245801862,
+        "retrieval": 0.1506327500101179,
+        "total": 51.12815683404915
+      },
+      "source_type_counts": {
+        "assignment": 0,
+        "discussion": 3,
+        "personal_note": 0
+      },
+      "receipt_sha256": "f7c3d6fbfa12190a0a8f974be7383087959a95fa4053e17fc8a91eb33bbbcef9",
+      "semantic_support": "PASS",
+      "expected_facts_present": 2,
+      "expected_facts_total": 3,
+      "completeness": "PARTIAL"
+    },
+    {
+      "case_id": "FC-F01",
+      "conversation_id": "2c2e7854eaf44e4ea20e786244b92460",
+      "request_id": "51e7fae56af340b5a059d24232c43a3d",
+      "run_id": "58ef60790d934ce09ecd8ef4e82a9de3",
+      "status": "done",
+      "checks": {
+        "done": true,
+        "citations_valid": true,
+        "expected_source_selected": true,
+        "expected_source_cited": true,
+        "all_scope_724": true,
+        "one_local_generation": true,
+        "followup": true
+      },
+      "times": {
+        "embedding": 1.8060417500091717,
+        "generation": 37.98058541701175,
+        "retrieval": 0.15942358307074755,
+        "total": 39.95419537497219
+      },
+      "source_type_counts": {
+        "assignment": 0,
+        "discussion": 3,
+        "personal_note": 0
+      },
+      "receipt_sha256": "9007c2818bf32731da695ca62f53ca8c1ab38fd04ea045ec6b77f509b1ed080c",
+      "semantic_support": "PASS",
+      "expected_facts_present": 1,
+      "expected_facts_total": 1,
+      "completeness": "PASS"
+    },
+    {
+      "case_id": "FC-P01",
+      "conversation_id": "3d39e835c39b4e7b9eacc49acb976ae8",
+      "request_id": "618f1d432ca94d129cb8f27b67c0dda6",
+      "run_id": "58ef60790d934ce09ecd8ef4e82a9de3",
+      "status": "done",
+      "checks": {
+        "done": true,
+        "citations_valid": true,
+        "expected_source_selected": true,
+        "expected_source_cited": true,
+        "all_scope_724": true,
+        "one_local_generation": true,
+        "followup": true
+      },
+      "times": {
+        "embedding": 1.7052777499193326,
+        "generation": 41.221229832968675,
+        "retrieval": 0.14708537503611296,
+        "total": 43.081252667005174
+      },
+      "source_type_counts": {
+        "assignment": 1,
+        "discussion": 0,
+        "personal_note": 1
+      },
+      "receipt_sha256": "f16892c3e651db22871195b24a259f90c6e884cb76f0577ace6e8101ab876fe3",
+      "semantic_support": "PASS",
+      "expected_facts_present": 2,
+      "expected_facts_total": 2,
+      "completeness": "PASS"
+    }
+  ],
+  "page_errors": [],
+  "mobile_no_overflow": true,
+  "human_acceptance": false,
+  "hallucination_rate": null,
+  "live_source_hashes": {
+    "full_chat_core.py": "2e75e0fbdfddac31b8f99dce80e9a1ed7065d79f43b5377b3fb5becb73b599db",
+    "full_chat.py": "d970f21c3f14f5b8a258c23f8eeb12ee475c0e16a07dc55382139576892b9878",
+    "full_chat_static/app.js": "57ab6d8010f181cda6a3df61733eb243bd6ad22dc64fa2965298ba466efca9f6",
+    "full_chat_static/index.html": "66f9ca194a045c23fc729312602796c94db482be8469faaae79d5aa1d72d0eb1",
+    "full_chat_static/style.css": "022f9a303efdb5f1f987e85fda8ab92d3d6c17daa2209d5247e8718e650f27cc"
+  },
+  "note": "Mechanical evidence and agent source support are separate; three selected cases are not a quality benchmark. Private questions, answers, snippets, payloads and receipts remain private."
+}

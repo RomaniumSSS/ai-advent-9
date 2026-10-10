@@ -1,0 +1,63 @@
+test_all_sources_participate_even_without_day (test_full_chat_contract.FullContracts.test_all_sources_participate_even_without_day) ... ok
+test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) ... 
+  test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) (question='А почему?') ... FAIL
+  test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) (question='А почему так?') ... FAIL
+  test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) (question='Что дальше?') ... FAIL
+  test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) (question='А что дальше?') ... FAIL
+test_followup_is_anchored_in_user_question (test_full_chat_contract.FullContracts.test_followup_is_anchored_in_user_question) ... ok
+test_history_budget_never_silently_overflows (test_full_chat_contract.FullContracts.test_history_budget_never_silently_overflows) ... ok
+test_offsets_do_not_assign_other_author (test_full_chat_contract.FullContracts.test_offsets_do_not_assign_other_author) ... ok
+test_self_contained_new_subject_overrides_pronoun (test_full_chat_contract.FullContracts.test_self_contained_new_subject_overrides_pronoun) ... ok
+
+======================================================================
+FAIL: test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) (question='А почему?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_contract.py", line 30, in test_common_elliptical_followups_keep_user_anchor
+    q=chat.resolve_query(question,turns);self.assertEqual(q['intent'],'followup');self.assertEqual(q['anchor'],turns[0]['question']);self.assertIn('SQLite',q['search_query'])
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) (question='А почему так?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_contract.py", line 30, in test_common_elliptical_followups_keep_user_anchor
+    q=chat.resolve_query(question,turns);self.assertEqual(q['intent'],'followup');self.assertEqual(q['anchor'],turns[0]['question']);self.assertIn('SQLite',q['search_query'])
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) (question='Что дальше?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_contract.py", line 30, in test_common_elliptical_followups_keep_user_anchor
+    q=chat.resolve_query(question,turns);self.assertEqual(q['intent'],'followup');self.assertEqual(q['anchor'],turns[0]['question']);self.assertIn('SQLite',q['search_query'])
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_common_elliptical_followups_keep_user_anchor (test_full_chat_contract.FullContracts.test_common_elliptical_followups_keep_user_anchor) (question='А что дальше?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_contract.py", line 30, in test_common_elliptical_followups_keep_user_anchor
+    q=chat.resolve_query(question,turns);self.assertEqual(q['intent'],'followup');self.assertEqual(q['anchor'],turns[0]['question']);self.assertIn('SQLite',q['search_query'])
+                                         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.005s
+
+FAILED (failures=4)

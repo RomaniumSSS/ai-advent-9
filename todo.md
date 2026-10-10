@@ -2,6 +2,19 @@
 
 ## Текущий статус
 
+- **Day29: проверен локально, публикация — 11.10.2026:** ветка day29-full-index-chat,
+  worktree /Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat.
+  [DELIVERY](day29/DELIVERY.md): оптимизация8069 + полный чат8070 по прежним724chunks.
+  142офлайнPASS; Luna→Sol→Astra проверки завершены. Исходные5random и known2+1
+  оценены отдельно: Bcritic completed0, выигрыш не доказан; H06final0/2false refusal.
+  [Новая живая запись4:57](day29/video/Day29-live-full-chat.mp4) —3новыхответа,
+  E02B2/5→F5/5, fullDay11подтверждён,2checks пропущены; decode/frames/privacyPASS.
+  [Proof](day29/quality-results/new-live-video-verification.json), finalAstra media audit в завершении.
+  Далее root: orderedmain/day29 commit/push→DriveAnyoneViewer→2URLcommentAD132/reload.
+  Пользователь разрешил публикацию, пользовательская приёмка не заявлена.
+  Drive1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY, primaryromanpozharitskiy@gmail.com;
+  Sheet1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE, Лист1!AD132.
+
 - **Day28 опубликован 09.10.2026:** ветка `day28-local-rag`, worktree
   `/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28`.
   [Результат](/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28/day28/RESULT.md):

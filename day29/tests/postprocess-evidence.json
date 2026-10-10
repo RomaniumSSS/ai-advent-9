@@ -1,0 +1,33 @@
+{
+  "purpose": "Bounded post-measurement fixes; no new inference; no change to core/metrics/options/prompt/source payload",
+  "measured_evaluate_sha256": "fbe696adf1e1bec9de0fc2cd472996cc99788cd79da3152663e4e1960f2c6a6c",
+  "postprocess_source_manifest": {
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "metrics.py": "a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d",
+    "evaluate.py": "fdd23fa66b9493c887320fac248c2af6bc78d66955c7a4c072afed7d08c6640a",
+    "profiles.json": "6ee4d3423fc3d5348425f6a12b699c712a11433108dfa143a94446eddfcce527",
+    "eval-suite.json": "350280a45be979912200f791eea95fdd7ab1d5194e423c03bd37c7a3528004a6"
+  },
+  "unchanged_sha256": {
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "metrics.py": "a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d",
+    "profiles.json": "6ee4d3423fc3d5348425f6a12b699c712a11433108dfa143a94446eddfcce527",
+    "eval-suite.json": "350280a45be979912200f791eea95fdd7ab1d5194e423c03bd37c7a3528004a6"
+  },
+  "diff": "tests/postprocess-source-diff.patch",
+  "command": "python3 -m unittest discover -s day29/tests -v",
+  "environment": "macOS 15.6.1, Python 3.14, stdlib; offline transport/isolated flock paths",
+  "tests": 45,
+  "status": "GREEN",
+  "red_commands": {
+    "tdd-postprocess-answer-red.txt": "python3 -m unittest discover -s day29/tests -p test_comparison.py -v",
+    "tdd-quant-stop-red.txt": "python3 -m unittest discover -s day29/tests -p test_quant.py -v",
+    "tdd-summary-run-red.txt": "python3 -m unittest discover -s day29/tests -p test_summary.py -v"
+  },
+  "actual_readonly_analysis": {
+    "command": "python3 day29/evaluate.py summary --run-id a2606d8f674a48d1b7e2ec8e1549a209 --semantic-assessment day29/results/warm-semantic-assessment.json",
+    "evidence": "tests/postprocess-actual-warm.json",
+    "model_calls": 0
+  },
+  "old_quantization_gap": "Actual Q8 run df5e7e0053954e88858734c3f0a2bbb3 has preserved failed warmup receipt but original controller did not save preparation/series metadata. This repair does not retroactively invent or add it."
+}

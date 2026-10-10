@@ -1,0 +1,67 @@
+{
+  "run_id": "9d22f02d7a5e4f5ba80058fb0798bd96",
+  "completed_pairs": 0,
+  "counters": {
+    "ambiguous_http_calls": 0,
+    "embedding_calls": 1,
+    "generation_calls": 2,
+    "http_errors": 0,
+    "http_seconds": 130.04474437388126,
+    "http_seconds_observed": 130.04474437388126,
+    "missing_generation_metrics": 0,
+    "missing_http_times": 0,
+    "output_tokens_observed": 463,
+    "output_tokens_total": 463,
+    "prompt_tokens_observed": 2027,
+    "prompt_tokens_total": 2027,
+    "service_calls": 8
+  },
+  "paid_provider_calls": 0,
+  "paused": false,
+  "protocol_sha256": "3f80b8b17974e09a5425c754334b5d39b75af71a8c28fab90708dee21280efe6",
+  "selection_sha256": "2892853b2ef071103a5234e54985fd8b7579285fa96eaee356294f0b2ba830c1",
+  "human_acceptance": false,
+  "case_ids": [
+    "H06"
+  ],
+  "cases": [
+    {
+      "A_latency": 24.191803624969907,
+      "B_latency": null,
+      "B_latency_observed_lower_bound": 130.28253462491557,
+      "B_status": "unavailable",
+      "added_execution_windows_observed_seconds": 106.10686774994247,
+      "added_observed_seconds": 106.10686774994247,
+      "added_stage_seconds": 106.09073099994566,
+      "case_id": "H06",
+      "group_sha256": "bdf82e4c2a62071800a59576b0be5fbe9c2960f5f44f9fc93e55f25a41ad3956",
+      "latency_measurement": "continuous_observed",
+      "missing_added_stage_times": 0,
+      "pair_execution_windows_observed_seconds": 130.30549291602802,
+      "pair_observed_seconds": 130.30549291602802,
+      "quality": "NOT_CHECKED",
+      "selected": true,
+      "split": "holdout",
+      "status": "complete",
+      "type": "multi_source"
+    }
+  ],
+  "known_case_retest": true,
+  "new_holdout": false,
+  "new_random_questions": 0,
+  "initial_run_id": "405d5a5a7bac4e0da30aafccb6f600b7",
+  "retrieval": {
+    "requested_day_anchor_count": 1,
+    "selected_after_budget_document_ids": [
+      "assignment:21",
+      "personal-note:understanding"
+    ],
+    "source_counts": {
+      "assignment": 1,
+      "discussion": 0,
+      "personal_note": 1
+    },
+    "answer_status": "unknown",
+    "generation_called": true
+  }
+}

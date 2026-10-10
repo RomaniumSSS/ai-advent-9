@@ -1,0 +1,39 @@
+{
+  "status": "COMPLETED_WITH_QUALITY_LIMITATIONS",
+  "initial_selected_case_ids": [
+    "H05",
+    "H12",
+    "H20",
+    "H06",
+    "H11"
+  ],
+  "known_retest_counts": [
+    2,
+    1
+  ],
+  "remaining_unrun": 19,
+  "homogeneous_final_five_run": false,
+  "run_ids": [
+    "405d5a5a7bac4e0da30aafccb6f600b7",
+    "5c2b89978dd64feeb73e99eede037f0d",
+    "9d22f02d7a5e4f5ba80058fb0798bd96"
+  ],
+  "calls": {
+    "generation_calls": 12,
+    "embedding_calls": 6,
+    "service_calls": 48,
+    "http_errors": 0,
+    "http_seconds": 772.5446993759833,
+    "prompt_tokens_total": 11989,
+    "output_tokens_total": 2714
+  },
+  "completed_B_pairs": 0,
+  "quality_improvement": "NOT_ASSESSABLE",
+  "hallucination_rate": "NOT_MEASURED",
+  "human_acceptance": false,
+  "full_core_sha256": "f1b62d97909f391462a0a6396ebb23e91e352d6a83cb5378514abc62314c9e12",
+  "html_sha256": "9c2ba93c772d4e6be05e916cead026acf799101078f5274444b6f05c36a4263e",
+  "final_semantic_sha256": "9bd8bac5e195aa0020929f59f4c374c33928670526cfe54d1851a9ce2446bfc1",
+  "fresh_offline_tests": 142,
+  "recorder_sha256": "947477a172d8744b3396e7aa79d0b4a6b178f4ab8a9db2d60458c9495bbd8dc8"
+}

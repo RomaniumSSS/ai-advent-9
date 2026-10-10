@@ -1,0 +1,42 @@
+{
+  "schema": "five-random-new-v2",
+  "prepared_at": "2026-10-10T22:12:02.614080+00:00",
+  "selection_method": "uniform sample of 5 eligible independent semantic groups, then uniform case within each; order follows frozen matrix",
+  "seed": 4766433321957233838,
+  "cases_file_sha256": "7586cf21e94f394a9bc2700728ebd73f6889bf2869f2b83bf9109d4e0266efa9",
+  "eligible_ids": [
+    "H01",
+    "H02",
+    "H03",
+    "H04",
+    "H05",
+    "H06",
+    "H07",
+    "H08",
+    "H09",
+    "H10",
+    "H11",
+    "H12",
+    "H18",
+    "H19",
+    "H20"
+  ],
+  "eligible_group_count": 9,
+  "excluded_policy": "pilot/known previous smoke intents, dependent conversation turns, clarification without model generation",
+  "selected_ids": [
+    "H05",
+    "H12",
+    "H20",
+    "H06",
+    "H11"
+  ],
+  "selected_count": 5,
+  "remaining_unselected_count": 19,
+  "full_holdout_executed": false,
+  "total_walltime_limit": null,
+  "human_acceptance": false,
+  "holdout_remaining_unselected_count": 15,
+  "supersedes": "selection-five-v1.json",
+  "correction": "Excluded clarification_required using the actual dataset enum. Same original seed; no model/embedding calls or answers existed before correction.",
+  "selection_sha256": "ed16227254d9be298d07b6ab0c09eb5e00f17e8338cd6f389f75f8846bcd9018"
+}

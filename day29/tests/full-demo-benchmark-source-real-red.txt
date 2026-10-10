@@ -1,0 +1,3 @@
+Actual saved canonical benchmark receipt validation expected failure: benchmark_required_sources_missing
+Before recorder SHA 38b6e7761b65fead5d9d606a674590f841588033f7745a75d5fdec4dccf7e24d
+Network/generation/embedding calls: 0

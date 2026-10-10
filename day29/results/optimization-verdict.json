@@ -1,0 +1,262 @@
+{
+  "verdict": {
+    "proven": true,
+    "reasons": [
+      "E02_completeness"
+    ],
+    "baseline_generation_median": 29.780854646058287,
+    "candidate_generation_median": 37.12661002099048,
+    "resource_comparable": true,
+    "allocation_bytes": {
+      "baseline": [
+        {
+          "context_length": 8192,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:36:59.558977+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 6528046202,
+          "size_vram": 6528046202
+        },
+        {
+          "context_length": 8192,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:25:53.802617+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 6177989590,
+          "size_vram": 6177989590
+        },
+        {
+          "context_length": 8192,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:35:57.410884+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 6528046202,
+          "size_vram": 6528046202
+        },
+        {
+          "context_length": 8192,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:36:48.819881+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 6528046202,
+          "size_vram": 6528046202
+        },
+        {
+          "context_length": 8192,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:25:17.829574+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 6177989590,
+          "size_vram": 6177989590
+        },
+        {
+          "context_length": 8192,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:26:01.161632+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 6177989590,
+          "size_vram": 6177989590
+        }
+      ],
+      "candidate": [
+        {
+          "context_length": 6144,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:34:03.777187+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 5873902550,
+          "size_vram": 5873902550
+        },
+        {
+          "context_length": 6144,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:28:15.568922+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 5873902550,
+          "size_vram": 5873902550
+        },
+        {
+          "context_length": 6144,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:32:23.128015+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 5873902550,
+          "size_vram": 5873902550
+        },
+        {
+          "context_length": 6144,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:29:55.414584+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 5873902550,
+          "size_vram": 5873902550
+        },
+        {
+          "context_length": 6144,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:30:06.095035+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 5873902550,
+          "size_vram": 5873902550
+        },
+        {
+          "context_length": 6144,
+          "details": {
+            "families": [
+              "qwen3"
+            ],
+            "family": "qwen3",
+            "format": "gguf",
+            "parameter_size": "8.2B",
+            "parent_model": "",
+            "quantization_level": "Q4_K_M"
+          },
+          "digest": "500a1f067a9f782620b40bee6f7b0c89e17ae61f686b92c24933e4ca4b2b8b41",
+          "expires_at": "2026-10-10T15:34:14.562598+02:00",
+          "model": "qwen3:8b",
+          "name": "qwen3:8b",
+          "size": 5873902550,
+          "size_vram": 5873902550
+        }
+      ]
+    }
+  },
+  "assessment": "warm-semantic-assessment.json",
+  "warm_run_id": "a2606d8f674a48d1b7e2ec8e1549a209",
+  "source_manifest_inference": {
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "eval-suite.json": "350280a45be979912200f791eea95fdd7ab1d5194e423c03bd37c7a3528004a6",
+    "evaluate.py": "fbe696adf1e1bec9de0fc2cd472996cc99788cd79da3152663e4e1960f2c6a6c",
+    "metrics.py": "a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d",
+    "profiles.json": "6ee4d3423fc3d5348425f6a12b699c712a11433108dfa143a94446eddfcce527"
+  },
+  "source_manifest_analysis": {
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "metrics.py": "a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d",
+    "evaluate.py": "fdd23fa66b9493c887320fac248c2af6bc78d66955c7a4c072afed7d08c6640a",
+    "profiles.json": "6ee4d3423fc3d5348425f6a12b699c712a11433108dfa143a94446eddfcce527",
+    "eval-suite.json": "350280a45be979912200f791eea95fdd7ab1d5194e423c03bd37c7a3528004a6"
+  },
+  "limits": "Only E02 completeness criterion is satisfied; speed does not improve, observedRSS change below10%."
+}

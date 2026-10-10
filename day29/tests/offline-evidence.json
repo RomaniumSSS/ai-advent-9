@@ -1,0 +1,27 @@
+{
+  "command": "python3 -m unittest discover -s day29/tests -v",
+  "environment": "macOS 15.6.1, Python 3.14, stdlib, mocked local transport and isolated flock paths; no inference",
+  "tests": 39,
+  "result": "GREEN",
+  "source_sha256": {
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "metrics.py": "a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d",
+    "evaluate.py": "fbe696adf1e1bec9de0fc2cd472996cc99788cd79da3152663e4e1960f2c6a6c",
+    "profiles.json": "6ee4d3423fc3d5348425f6a12b699c712a11433108dfa143a94446eddfcce527",
+    "eval-suite.json": "350280a45be979912200f791eea95fdd7ab1d5194e423c03bd37c7a3528004a6",
+    "app.py": "5548e4febe572bbaac0432d38ffd0e6026acdb955e0b27e7501ed63c69cf8ef9",
+    "static/app.js": "63b295be417c5f8115ecf0cd3cfc986f9baf957138591fe8cb0f9ab109e93cdd",
+    "static/style.css": "2dd1401084d05a1d7daf311d0fe7ee3ade6ef82e6b83eb2fba81c51cacdd4769",
+    "static/index.html": "a6d810200bc3a8a63ea0f3b76c0be6cd8b6ceb22b2f0aae80c9e36638bed0574"
+  },
+  "red_commands": {
+    "tdd-contract-red.txt": "python3 -m unittest discover -s day29/tests -v",
+    "tdd-warm-missing-red.txt": "python3 -m unittest discover -s day29/tests -p test_runtime.py -v",
+    "tdd-comparison-red.txt": "python3 -m unittest discover -s day29/tests -p test_comparison.py -v",
+    "tdd-freeze-red.txt": "python3 -m unittest discover -s day29/tests -p test_freeze.py -v",
+    "tdd-metrics-fairness-red.txt": "python3 -m unittest discover -s day29/tests -p test_metrics_fairness.py -v",
+    "tdd-llama-server-red.txt": "python3 -m unittest discover -s day29/tests -p test_metrics_fairness.py -v",
+    "tdd-warmup-proof-red.txt": "python3 -m unittest discover -s day29/tests -p test_runtime.py -v",
+    "tdd-comparison-gates-red.txt": "python3 -m unittest discover -s day29/tests -p test_comparison.py -v"
+  }
+}

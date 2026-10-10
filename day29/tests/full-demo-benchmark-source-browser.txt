@@ -1,0 +1,2 @@
+{"run_id": "df9afddaf3e74ea785aa89c9e7ea9b94", "mode": "dry-run"}
+{"status": "PASS", "fixture_only": true, "mock_engine_calls": 3, "real_generation_calls": 0, "real_embedding_calls": 0}

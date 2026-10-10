@@ -1,0 +1,21 @@
+test_baseline_and_candidate_group_identities (test_comparison.Comparison.test_baseline_and_candidate_group_identities) ... ok
+test_duplicate_ids_cannot_claim_win (test_comparison.Comparison.test_duplicate_ids_cannot_claim_win) ... ok
+test_e01_e02_cannot_be_unknown_or_missing_required_sources (test_comparison.Comparison.test_e01_e02_cannot_be_unknown_or_missing_required_sources) ... FAIL
+test_e03_receipts_override_false_manual_quality (test_comparison.Comparison.test_e03_receipts_override_false_manual_quality) ... ok
+test_fully_gpu_allocation_sizes_may_differ_for_rss (test_comparison.Comparison.test_fully_gpu_allocation_sizes_may_differ_for_rss) ... ok
+test_unfair_context_and_model_cannot_claim_win (test_comparison.Comparison.test_unfair_context_and_model_cannot_claim_win) ... ok
+test_valid_speed_win (test_comparison.Comparison.test_valid_speed_win) ... ok
+
+======================================================================
+FAIL: test_e01_e02_cannot_be_unknown_or_missing_required_sources (test_comparison.Comparison.test_e01_e02_cannot_be_unknown_or_missing_required_sources)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_comparison.py", line 52, in test_e01_e02_cannot_be_unknown_or_missing_required_sources
+    self.assertFalse(evaluate.optimization_verdict(series('baseline',10),c,Q)['proven'],(cid,broken))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false : ('E01', 'unknown')
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.026s
+
+FAILED (failures=1)

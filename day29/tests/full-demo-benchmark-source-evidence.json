@@ -1,0 +1,55 @@
+{
+  "before_recorder_sha256": "38b6e7761b65fead5d9d606a674590f841588033f7745a75d5fdec4dccf7e24d",
+  "after_recorder_sha256": "947477a172d8744b3396e7aa79d0b4a6b178f4ab8a9db2d60458c9495bbd8dc8",
+  "AST_outside_validate_benchmark_equal": true,
+  "frozen_full_core_sha256": "f1b62d97909f391462a0a6396ebb23e91e352d6a83cb5378514abc62314c9e12",
+  "frozen_quality_eval_sha256": "329a11f5442cd02ac2a87f3bdaeb438c89e2c10e4f011af381895f4d191cb89c",
+  "saved_benchmark_receipt_sha256": "ef16e7f1c347594a8175e4e05d051b54fae578988035e13c4f4f04b317e914cd",
+  "actual_benchmark_validate_benchmark": "PASS",
+  "benchmark_public_result_projection_equal": true,
+  "benchmark_materialize_references_exact_reproduction": true,
+  "benchmark_public_api_omits_payload": "Confirmed; receipt profile/digest/options gates unchanged",
+  "actual_H05_checkpoint_sha256": "08f50b881b61cc75bfd2e49d50d5e362b959f1ed1fbf747badc2d569095adcfc",
+  "actual_full_identity_and_wire_payload": "PASS",
+  "actual_full_materialize_exact_reproduction": true,
+  "actual_full_chat_view_projection_exact": true,
+  "actual_full_guard_prefix_identity_API_source_scope_original_text": "PASS",
+  "actual_full_final_scenario_day_gate": "NOT_APPLICABLE: H05 is not recorder scenario wording; no question/payload substituted",
+  "synthetic_full_scenario_and_qualification": "PASS in19 unit tests; actual whole scenario remains pending fresh root dry",
+  "readonly_states": [
+    {
+      "kind": "benchmark",
+      "run_id": "7b522fd22b7b474684a9cb31e0621eb5",
+      "readonly_state_validation": "PASS"
+    },
+    {
+      "kind": "full_chat",
+      "run_id": "3fa8bdb02cd146c2a752a8cc1a382c13",
+      "readonly_state_validation": "PASS"
+    }
+  ],
+  "generation_calls": 0,
+  "embedding_calls": 0,
+  "readonly_local_app_requests": 2,
+  "red_command": "python3 -m unittest discover -s day29/tests -p 'test_full_demo.py' -v",
+  "red_errors": 3,
+  "green_command": "python3 -m unittest discover -s day29/tests -p 'test_full_demo.py' -v",
+  "green_tests": 19,
+  "tests_sha256": "466ebfd9bc263fde4ea0b604f54b1cba6a7fa2d080e93318917cb3b76670961f",
+  "browser_helper_sha256": "35437bed8129e055a271c9632b042c31c59b9bd433bfdba185125727f0c0db07",
+  "logs": {
+    "full-demo-benchmark-source-real-red.txt": "a6ac2a6befce5fc20fc46f4bba6dc1da0085bf42622b52d98c2f07b1c5776843",
+    "full-demo-benchmark-source-red.txt": "402fd5a89dfe39c14d48117fa6bf9ce23adef82fa6bc5d9fd89fb9fbeb0d51f0",
+    "full-demo-benchmark-source-green.txt": "18f522e049b6fd0f66bd0ea47372eb08caf36949b043c6b1ad5dd0b0a4f5c6f7",
+    "full-demo-benchmark-source-browser.txt": "2ad257c3c98d5df7f54f0bfdc57333ec3ddf7e53dffac09058294e90c5e6c433"
+  },
+  "synthetic_browser": {
+    "status": "PASS",
+    "fixture_only": true,
+    "mock_engine_calls": 3,
+    "real_generation_calls": 0,
+    "real_embedding_calls": 0,
+    "results_sha256": "f1f48935767a01bc75f9b4ebd987802dc69e5906ec2bca90acf2fe64391e0acc",
+    "command": "uv run --offline --no-project --with playwright python day29/tests/full_demo_browser.py --output day29/private/full-chat/recorder-source-fixture-20261011"
+  }
+}

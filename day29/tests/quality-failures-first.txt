@@ -1,0 +1,109 @@
+test_busy_no_dispatch_and_wrong_digest_pauses (test_quality_eval_failures.DurableTests.test_busy_no_dispatch_and_wrong_digest_pauses) ... ERROR
+test_completed_critic_resume_before_repair_only_dispatches_remaining (test_quality_eval_failures.DurableTests.test_completed_critic_resume_before_repair_only_dispatches_remaining) ... ERROR
+test_completed_resume_no_regeneration_and_baseline_only_prefix (test_quality_eval_failures.DurableTests.test_completed_resume_no_regeneration_and_baseline_only_prefix) ... ERROR
+test_crash_after_critic_dispatch_never_replayed (test_quality_eval_failures.DurableTests.test_crash_after_critic_dispatch_never_replayed) ... ERROR
+test_immutability_inputs_protocol_code_and_audit (test_quality_eval_failures.DurableTests.test_immutability_inputs_protocol_code_and_audit) ... ERROR
+test_timeout_pause_requires_operator_idle_no_replay_dependency (test_quality_eval_failures.DurableTests.test_timeout_pause_requires_operator_idle_no_replay_dependency) ... ERROR
+test_budget_rejection_calls_zero_without_clipping (test_quality_eval_failures.ProtocolFailures.test_budget_rejection_calls_zero_without_clipping) ... ok
+test_insufficient_evidence_is_not_accept (test_quality_eval_failures.ProtocolFailures.test_insufficient_evidence_is_not_accept) ... ok
+test_invalid_json_length_refs_timeout_never_fallback_to_a (test_quality_eval_failures.ProtocolFailures.test_invalid_json_length_refs_timeout_never_fallback_to_a) ... ok
+test_no_sources_unknown_and_baseline_error (test_quality_eval_failures.ProtocolFailures.test_no_sources_unknown_and_baseline_error) ... ok
+test_one_repair_recheck_no_second_repair (test_quality_eval_failures.ProtocolFailures.test_one_repair_recheck_no_second_repair) ... ok
+test_invalid_refs_and_schema_rejected (test_quality_eval_protocol.ProtocolTests.test_invalid_refs_and_schema_rejected) ... ok
+test_shared_draft_false_accept_is_only_opinion (test_quality_eval_protocol.ProtocolTests.test_shared_draft_false_accept_is_only_opinion) ... ok
+test_stage_preserves_whole_context_and_checks_budget (test_quality_eval_protocol.ProtocolTests.test_stage_preserves_whole_context_and_checks_budget) ... ok
+
+======================================================================
+ERROR: test_busy_no_dispatch_and_wrong_digest_pauses (test_quality_eval_failures.DurableTests.test_busy_no_dispatch_and_wrong_digest_pauses)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_quality_eval_failures.py", line 95, in setUp
+    self.run=q.prepare(self.input,self.root/'runs');self.net=FakeNet()
+             ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 98, in prepare
+    root=private_dir(output_root)/uuid.uuid4().hex;private_dir(root)
+         ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 61, in private_dir
+    if any(item.is_symlink() for item in (path,*path.parents)):raise ValueError('symlink_private_root')
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: symlink_private_root
+
+======================================================================
+ERROR: test_completed_critic_resume_before_repair_only_dispatches_remaining (test_quality_eval_failures.DurableTests.test_completed_critic_resume_before_repair_only_dispatches_remaining)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_quality_eval_failures.py", line 95, in setUp
+    self.run=q.prepare(self.input,self.root/'runs');self.net=FakeNet()
+             ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 98, in prepare
+    root=private_dir(output_root)/uuid.uuid4().hex;private_dir(root)
+         ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 61, in private_dir
+    if any(item.is_symlink() for item in (path,*path.parents)):raise ValueError('symlink_private_root')
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: symlink_private_root
+
+======================================================================
+ERROR: test_completed_resume_no_regeneration_and_baseline_only_prefix (test_quality_eval_failures.DurableTests.test_completed_resume_no_regeneration_and_baseline_only_prefix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_quality_eval_failures.py", line 95, in setUp
+    self.run=q.prepare(self.input,self.root/'runs');self.net=FakeNet()
+             ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 98, in prepare
+    root=private_dir(output_root)/uuid.uuid4().hex;private_dir(root)
+         ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 61, in private_dir
+    if any(item.is_symlink() for item in (path,*path.parents)):raise ValueError('symlink_private_root')
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: symlink_private_root
+
+======================================================================
+ERROR: test_crash_after_critic_dispatch_never_replayed (test_quality_eval_failures.DurableTests.test_crash_after_critic_dispatch_never_replayed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_quality_eval_failures.py", line 95, in setUp
+    self.run=q.prepare(self.input,self.root/'runs');self.net=FakeNet()
+             ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 98, in prepare
+    root=private_dir(output_root)/uuid.uuid4().hex;private_dir(root)
+         ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 61, in private_dir
+    if any(item.is_symlink() for item in (path,*path.parents)):raise ValueError('symlink_private_root')
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: symlink_private_root
+
+======================================================================
+ERROR: test_immutability_inputs_protocol_code_and_audit (test_quality_eval_failures.DurableTests.test_immutability_inputs_protocol_code_and_audit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_quality_eval_failures.py", line 95, in setUp
+    self.run=q.prepare(self.input,self.root/'runs');self.net=FakeNet()
+             ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 98, in prepare
+    root=private_dir(output_root)/uuid.uuid4().hex;private_dir(root)
+         ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 61, in private_dir
+    if any(item.is_symlink() for item in (path,*path.parents)):raise ValueError('symlink_private_root')
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: symlink_private_root
+
+======================================================================
+ERROR: test_timeout_pause_requires_operator_idle_no_replay_dependency (test_quality_eval_failures.DurableTests.test_timeout_pause_requires_operator_idle_no_replay_dependency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_quality_eval_failures.py", line 95, in setUp
+    self.run=q.prepare(self.input,self.root/'runs');self.net=FakeNet()
+             ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 98, in prepare
+    root=private_dir(output_root)/uuid.uuid4().hex;private_dir(root)
+         ~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/quality_eval.py", line 61, in private_dir
+    if any(item.is_symlink() for item in (path,*path.parents)):raise ValueError('symlink_private_root')
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: symlink_private_root
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.013s
+
+FAILED (errors=6)

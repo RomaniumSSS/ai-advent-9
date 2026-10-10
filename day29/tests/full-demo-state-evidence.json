@@ -1,0 +1,37 @@
+{
+  "before_recorder_sha256": "73df411fd637b3efbf3e4211f6102be5ad729fbee8351216dd9c8c3c513841b6",
+  "after_recorder_sha256": "38b6e7761b65fead5d9d606a674590f841588033f7745a75d5fdec4dccf7e24d",
+  "AST_outside_validate_state_equal": true,
+  "frozen_full_core_sha256": "f1b62d97909f391462a0a6396ebb23e91e352d6a83cb5378514abc62314c9e12",
+  "frozen_quality_eval_sha256": "329a11f5442cd02ac2a87f3bdaeb438c89e2c10e4f011af381895f4d191cb89c",
+  "saved_real_state_validation": "PASS",
+  "saved_real_state_sha256": "ded5fe6f4b5008452260274213fc6a1d271d3453c0586ffc84fa4014ffc00c7d",
+  "actual_readonly_GET_state_validation": "PASS",
+  "actual_readonly_state_run_id": "7b522fd22b7b474684a9cb31e0621eb5",
+  "profile_ids": [
+    "baseline",
+    "temperature",
+    "max-output",
+    "context",
+    "prompt",
+    "candidate"
+  ],
+  "profile_projection_fields": [
+    "options",
+    "quantization",
+    "model"
+  ],
+  "receipt_validation_unchanged": true,
+  "generation_calls": 0,
+  "embedding_calls": 0,
+  "readonly_local_app_requests": 1,
+  "red_command": "python3 -m unittest discover -s day29/tests -p 'test_full_demo.py' -v",
+  "red_expected_behavior": "Actual public profile projection rejected; 3 test errors.",
+  "green_command": "python3 -m unittest discover -s day29/tests -p 'test_full_demo.py' -v",
+  "green_tests": 18,
+  "tests_sha256": "2796383e04e9c06242857d210efde06a01cb35502750e5fe1aa8704b0d1801b2",
+  "logs": {
+    "full-demo-state-red.txt": "210eee363dc2f04eb95c712a459e14da62a5c79ee11615fd7d51721ca45bb247",
+    "full-demo-state-green.txt": "9b4f05980b2ca0e4e6381967f989ced9981fedb3e9246f79a0cd56852c624b3b"
+  }
+}

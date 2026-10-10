@@ -1,0 +1,36 @@
+{
+  "rows": [
+    {
+      "case_id": "E01",
+      "prior_messages_sha256": "b927f1a883e1ab7c134712a85d570989476a9553fdf3337d45ef99e66d0b9f5d",
+      "fresh_baseline_messages_sha256": "b927f1a883e1ab7c134712a85d570989476a9553fdf3337d45ef99e66d0b9f5d",
+      "equal": true,
+      "ordered_documents": [
+        "assignment:18"
+      ]
+    },
+    {
+      "case_id": "E02",
+      "prior_messages_sha256": "35b78b2dddb461d7f1fea83ede051709426f2308e3276f790c683d48245cb1c4",
+      "fresh_baseline_messages_sha256": "35b78b2dddb461d7f1fea83ede051709426f2308e3276f790c683d48245cb1c4",
+      "equal": true,
+      "ordered_documents": [
+        "assignment:20",
+        "assignment:19"
+      ]
+    },
+    {
+      "case_id": "E03",
+      "prior_messages_sha256": "5c1921a20a74156aaea4e7680edd24aebd4c49a9c16b69578d5de7a5b7090f31",
+      "fresh_baseline_messages_sha256": "5c1921a20a74156aaea4e7680edd24aebd4c49a9c16b69578d5de7a5b7090f31",
+      "equal": true,
+      "ordered_documents": [
+        "assignment:18"
+      ]
+    }
+  ],
+  "all_messages_match_actual_day28": true,
+  "source": "baseline-reference.json",
+  "fresh_freeze_sha256": "c8b763f8ad2cb18950625ac79dadaee1864bbef3e6f6d36de49f93228a1aa6a2",
+  "limits": "Baseline messages parity, not new generation or quality assessment."
+}

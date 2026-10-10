@@ -1,0 +1,32 @@
+{
+  "time_utc": "2026-10-10T21:38:01.572141+00:00",
+  "run_id_changed": true,
+  "current_run_id": "817c9143e7c141fdb6301be516bcfc9d",
+  "pid": 24270,
+  "native_exec_session": 79828,
+  "scope": "all",
+  "chunks": 724,
+  "active_request_after_restart": null,
+  "conversations": [
+    {
+      "conversation_id": "2c2e7854eaf44e4ea20e786244b92460",
+      "turn_count": 2,
+      "exact_content_persisted": true,
+      "all_completed": true
+    },
+    {
+      "conversation_id": "3d39e835c39b4e7b9eacc49acb976ae8",
+      "turn_count": 1,
+      "exact_content_persisted": true,
+      "all_completed": true
+    }
+  ],
+  "receipt_count_after_restart": 3,
+  "source_hashes": {
+    "day29/full_chat_core.py": "6e887f0dd664d73d7eff0f267ed4dd505142efddfd51d20cbcc26957a5565bf1",
+    "day29/full_chat.py": "d970f21c3f14f5b8a258c23f8eeb12ee475c0e16a07dc55382139576892b9878"
+  },
+  "additional_generation_calls": 0,
+  "generation_replay": false,
+  "method": "GET original completed conversations after a real idle-process restart; exact object comparison"
+}

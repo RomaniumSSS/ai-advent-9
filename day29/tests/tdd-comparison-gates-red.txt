@@ -1,0 +1,38 @@
+test_baseline_and_candidate_group_identities (test_comparison.Comparison.test_baseline_and_candidate_group_identities) ... FAIL
+test_duplicate_ids_cannot_claim_win (test_comparison.Comparison.test_duplicate_ids_cannot_claim_win) ... ok
+test_e03_receipts_override_false_manual_quality (test_comparison.Comparison.test_e03_receipts_override_false_manual_quality) ... FAIL
+test_fully_gpu_allocation_sizes_may_differ_for_rss (test_comparison.Comparison.test_fully_gpu_allocation_sizes_may_differ_for_rss) ... FAIL
+test_unfair_context_and_model_cannot_claim_win (test_comparison.Comparison.test_unfair_context_and_model_cannot_claim_win) ... ok
+test_valid_speed_win (test_comparison.Comparison.test_valid_speed_win) ... ok
+
+======================================================================
+FAIL: test_baseline_and_candidate_group_identities (test_comparison.Comparison.test_baseline_and_candidate_group_identities)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_comparison.py", line 35, in test_baseline_and_candidate_group_identities
+    self.assertFalse(evaluate.optimization_verdict(b,series('candidate',8),Q)['proven'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_e03_receipts_override_false_manual_quality (test_comparison.Comparison.test_e03_receipts_override_false_manual_quality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_comparison.py", line 32, in test_e03_receipts_override_false_manual_quality
+    self.assertFalse(evaluate.optimization_verdict(series('baseline',10),c,Q)['proven'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_fully_gpu_allocation_sizes_may_differ_for_rss (test_comparison.Comparison.test_fully_gpu_allocation_sizes_may_differ_for_rss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_comparison.py", line 42, in test_fully_gpu_allocation_sizes_may_differ_for_rss
+    self.assertTrue(result['proven']);self.assertTrue(result['resource_comparable']);self.assertIn('observed_RSS_median_10_percent',result['reasons'])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.019s
+
+FAILED (failures=3)

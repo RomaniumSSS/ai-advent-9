@@ -1,0 +1,22 @@
+{
+  "run_id": "5c2b89978dd64feeb73e99eede037f0d",
+  "run_root": "day29/private/full-chat/quality-eval/runs/5c2b89978dd64feeb73e99eede037f0d",
+  "initial_run_id": "405d5a5a7bac4e0da30aafccb6f600b7",
+  "case_ids": [
+    "H06",
+    "H11"
+  ],
+  "full_core_sha256": "98e6725d1e9246d1f1335d81726db4b43dfb3e5b3ddfe2e17981c9ed8bcaccc6",
+  "versioning_only_code_hash_changed": true,
+  "phase": "prepared_not_dispatched",
+  "human_acceptance": false,
+  "cases_file_sha256": "3adc1d8ca40b352a52cc13069b9db711f4dbcc6e76fee8e4982472f3ec55c114",
+  "cases_gold_sha256": "1c37bfc038dcbb08c163f4782fc9fbade376ad4e8db29f5e073b2809eca61353",
+  "evidence_sha256": "b007159a6e5c8f0d00b5040cb1265576bb93997eedd584e21e99b6b5cd6cb520",
+  "all_source_cases_gold_profile_equal": true,
+  "new_random_questions": 0,
+  "dataset_hashes": {
+    "initial": "7586cf21e94f394a9bc2700728ebd73f6889bf2869f2b83bf9109d4e0266efa9",
+    "diagnostic": "3adc1d8ca40b352a52cc13069b9db711f4dbcc6e76fee8e4982472f3ec55c114"
+  }
+}

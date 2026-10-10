@@ -1,0 +1,25 @@
+test_distinct_runs_are_not_averaged_together (test_summary.Summary.test_distinct_runs_are_not_averaged_together) ... FAIL
+test_explicit_run_id_selects_one_series (test_summary.Summary.test_explicit_run_id_selects_one_series) ... ERROR
+
+======================================================================
+ERROR: test_explicit_run_id_selects_one_series (test_summary.Summary.test_explicit_run_id_selects_one_series)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_summary.py", line 13, in test_explicit_run_id_selects_one_series
+    s=evaluate.summarize([r for r in self.rows() if r['run_id']=='run-one']);self.assertEqual(len(s['groups']),1);self.assertEqual(s['groups'][0]['run_id'],'run-one')
+                                                                                                                                   ~~~~~~~~~~~~~~^^^^^^^^^^
+KeyError: 'run_id'
+
+======================================================================
+FAIL: test_distinct_runs_are_not_averaged_together (test_summary.Summary.test_distinct_runs_are_not_averaged_together)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_summary.py", line 9, in test_distinct_runs_are_not_averaged_together
+    s=evaluate.summarize(self.rows());self.assertEqual(len(s['groups']),2);self.assertEqual({g['run_id'] for g in s['groups']},{'run-one','run-two'});self.assertEqual(sorted(g['generation_seconds']['median'] for g in s['groups']),[10,100])
+                                      ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=1, errors=1)

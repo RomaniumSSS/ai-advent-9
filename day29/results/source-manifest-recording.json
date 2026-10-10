@@ -1,0 +1,19 @@
+{
+  "phase": "before_live_recording",
+  "created_at": "2026-10-10T14:01:28.228775+00:00",
+  "files": {
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "metrics.py": "a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d",
+    "evaluate.py": "fdd23fa66b9493c887320fac248c2af6bc78d66955c7a4c072afed7d08c6640a",
+    "app.py": "5548e4febe572bbaac0432d38ffd0e6026acdb955e0b27e7501ed63c69cf8ef9",
+    "profiles.json": "3eb91341400e24133d675e75d8f46f505664f5a7a7a308b2f744fe6114cf3d7a",
+    "eval-suite.json": "350280a45be979912200f791eea95fdd7ab1d5194e423c03bd37c7a3528004a6",
+    "static/app.js": "8cfd01fb846d5e4d8b5ccc850f5b1806f4aed4bf27c58b998c5d5c2e5413b0c8",
+    "static/index.html": "a6d810200bc3a8a63ea0f3b76c0be6cd8b6ceb22b2f0aae80c9e36638bed0574",
+    "static/style.css": "c6e5cab0ab79cd1eb9e18772641f4b667859aa27a766485d43748331f66e6d9a",
+    "video/run_demo.py": "c965b6fd9d3ed8c207d46e094aaae2493b3d675afce491533e1ee432e43c5d57",
+    "results/public-summary.json": "c1bfea8bd6709d5535f6b6cf1dd3876d565deba462b0984ec904a7537b79a893"
+  },
+  "profile_options_unchanged_since_formal_runs": true,
+  "selected_ui_flag_changed_after_evaluation": true
+}

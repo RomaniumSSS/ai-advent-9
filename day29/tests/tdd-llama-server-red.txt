@@ -1,0 +1,25 @@
+test_each_sample_requires_complete_roles (test_metrics_fairness.MemoryFairness.test_each_sample_requires_complete_roles) ... ok
+test_real_ollama0333_llama_server_descendant (test_metrics_fairness.MemoryFairness.test_real_ollama0333_llama_server_descendant) ... FAIL
+test_runner_change_not_same_process_set (test_metrics_fairness.MemoryFairness.test_runner_change_not_same_process_set) ... ok
+test_stable_complete_samples (test_metrics_fairness.MemoryFairness.test_stable_complete_samples) ... ok
+
+======================================================================
+FAIL: test_real_ollama0333_llama_server_descendant (test_metrics_fairness.MemoryFairness.test_real_ollama0333_llama_server_descendant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_metrics_fairness.py", line 18, in test_real_ollama0333_llama_server_descendant
+    self.assertEqual([(p['pid'],p['role']) for p in processes],[(12925,'daemon'),(2012,'runner')])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [(12925, 'daemon'), (2012, 'runner')]
+
+Second list contains 2 additional elements.
+First extra element 0:
+(12925, 'daemon')
+
+- []
++ [(12925, 'daemon'), (2012, 'runner')]
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=1)

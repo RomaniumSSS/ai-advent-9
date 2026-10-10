@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-10-10T22:13:16.076032+00:00",
+  "drive_folder_id": "1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY",
+  "drive_signed_in_account_verified": true,
+  "drive_has_day27_and_day28": true,
+  "spreadsheet_id": "1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE",
+  "sheet": "Лист1",
+  "header_cell": "AD1",
+  "header_text": "День 29 (08.10)",
+  "target_cell": "AD132",
+  "participant_cell": "A132",
+  "participant_row_matches_previous_submission": true,
+  "cell_value_empty_does_not_prove_no_comment": true,
+  "external_writes": 0,
+  "runner_selection_sha256": "1d0b34de7b50fdd4ec4d98be32ebf1dcb72e8cfd3994975046b54c13f2189adb"
+}

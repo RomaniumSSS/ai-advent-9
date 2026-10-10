@@ -1,0 +1,26 @@
+test_duplicate_ids_cannot_claim_win (test_comparison.Comparison.test_duplicate_ids_cannot_claim_win) ... FAIL
+test_unfair_context_and_model_cannot_claim_win (test_comparison.Comparison.test_unfair_context_and_model_cannot_claim_win) ... FAIL
+test_valid_speed_win (test_comparison.Comparison.test_valid_speed_win) ... ok
+
+======================================================================
+FAIL: test_duplicate_ids_cannot_claim_win (test_comparison.Comparison.test_duplicate_ids_cannot_claim_win)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_comparison.py", line 28, in test_duplicate_ids_cannot_claim_win
+    self.assertFalse(evaluate.optimization_verdict(b,c,Q)['proven'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_unfair_context_and_model_cannot_claim_win (test_comparison.Comparison.test_unfair_context_and_model_cannot_claim_win)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_comparison.py", line 25, in test_unfair_context_and_model_cannot_claim_win
+    self.assertFalse(evaluate.optimization_verdict(b,c,Q)['proven'],field)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false : context_sha256
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.005s
+
+FAILED (failures=2)

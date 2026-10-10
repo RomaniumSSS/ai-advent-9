@@ -1,0 +1,171 @@
+{
+  "stage": "pilot-selection",
+  "run_id": "762c71a34e9a491c845a317b94e4aa04",
+  "assessor": "root agent, not human acceptance",
+  "created_at": "2026-10-10T13:11:34.683744+00:00",
+  "rubric_source": "eval-suite.json",
+  "rows": [
+    {
+      "profile_id": "baseline",
+      "request_id": "c90f3f3c68d94683a153f45b2a6baeb7",
+      "receipt_sha256": "0e86007329ab1b8d4c96e31b3dcfb23a1bcfaf00d70cf607d18760e84e2e5cf3",
+      "model": "qwen3:8b",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1024,
+        "temperature": 0
+      },
+      "prompt_sha256": "35b78b2dddb461d7f1fea83ede051709426f2308e3276f790c683d48245cb1c4",
+      "context_sha256": "bbdf6779a27f4350fd1d66b68f169c4cb9bf44c83ddead546ef325f0977a9537",
+      "status": "done",
+      "generation_seconds": 48.153107541031204,
+      "ollama_load_seconds": 6.989620542,
+      "output_tokens": 128,
+      "answer": "Требования заданий дней 19 и 20 отличаются тем, что день 19 направлен на создание и проверку пайплайна из нескольких MCP-инструментов, а день 20 требует настройки MCP-серверов и реализации длинного флоу взаимодействия между ними. В первом случае акцент на цепочку обработки данных, во втором — на маршрутизацию запросов и выбор инструментов.",
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "coverage": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "assessment_note": "P явно описывает получение→обработка→сохранение, автоматическую цепочку/корректную передачу, серверы, выбор/маршрутизацию и проверки порядка. B/T/M/C дают общий контраст и опускают названные детали.",
+      "resources_comparable": false,
+      "resources_note": "Первый sampler не распознал native llama-server; RSS этой пилотной версии покрывает только daemon. После диагностики метрика будет исправлена до итоговой серии."
+    },
+    {
+      "profile_id": "temperature",
+      "request_id": "005008f5c403427fb60a571293683e73",
+      "receipt_sha256": "47dc6bfd12a604d1ea6c85716226d089b702b5af81ab8228c807234cb95c7c83",
+      "model": "qwen3:8b",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1024,
+        "temperature": 0.2
+      },
+      "prompt_sha256": "35b78b2dddb461d7f1fea83ede051709426f2308e3276f790c683d48245cb1c4",
+      "context_sha256": "bbdf6779a27f4350fd1d66b68f169c4cb9bf44c83ddead546ef325f0977a9537",
+      "status": "done",
+      "generation_seconds": 28.46415612497367,
+      "ollama_load_seconds": 0.00150475,
+      "output_tokens": 128,
+      "answer": "Требования заданий дней 19 и 20 отличаются тем, что день 19 направлен на создание и проверку пайплайна из нескольких MCP-инструментов, а день 20 требует настройки MCP-серверов и реализации длинного флоу взаимодействия между ними. В первом случае акцент на цепочку обработки данных, во втором — на маршрутизацию запросов и выбор инструментов.",
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "coverage": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "assessment_note": "P явно описывает получение→обработка→сохранение, автоматическую цепочку/корректную передачу, серверы, выбор/маршрутизацию и проверки порядка. B/T/M/C дают общий контраст и опускают названные детали.",
+      "resources_comparable": false,
+      "resources_note": "Первый sampler не распознал native llama-server; RSS этой пилотной версии покрывает только daemon. После диагностики метрика будет исправлена до итоговой серии."
+    },
+    {
+      "profile_id": "max-output",
+      "request_id": "bcc2ed8450084f18a4c59a5038b412f5",
+      "receipt_sha256": "4dbc1f57a7780eebd99b66608d57f3946db2dc197d04434ea2f464c68f33b6fa",
+      "model": "qwen3:8b",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 384,
+        "temperature": 0
+      },
+      "prompt_sha256": "35b78b2dddb461d7f1fea83ede051709426f2308e3276f790c683d48245cb1c4",
+      "context_sha256": "bbdf6779a27f4350fd1d66b68f169c4cb9bf44c83ddead546ef325f0977a9537",
+      "status": "done",
+      "generation_seconds": 27.688230250030756,
+      "ollama_load_seconds": 0.001166792,
+      "output_tokens": 128,
+      "answer": "Требования заданий дней 19 и 20 отличаются тем, что день 19 направлен на создание и проверку пайплайна из нескольких MCP-инструментов, а день 20 требует настройки MCP-серверов и реализации длинного флоу взаимодействия между ними. В первом случае акцент на цепочку обработки данных, во втором — на маршрутизацию запросов и выбор инструментов.",
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "coverage": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "assessment_note": "P явно описывает получение→обработка→сохранение, автоматическую цепочку/корректную передачу, серверы, выбор/маршрутизацию и проверки порядка. B/T/M/C дают общий контраст и опускают названные детали.",
+      "resources_comparable": false,
+      "resources_note": "Первый sampler не распознал native llama-server; RSS этой пилотной версии покрывает только daemon. После диагностики метрика будет исправлена до итоговой серии."
+    },
+    {
+      "profile_id": "context",
+      "request_id": "6f1e5f16fb614e0d925c4b3bea1838ca",
+      "receipt_sha256": "d43a3e274f76eb154734c604c4f717ac632d0e5550b639950e3ac186f24aaf2d",
+      "model": "qwen3:8b",
+      "options": {
+        "num_ctx": 6144,
+        "num_predict": 1024,
+        "temperature": 0
+      },
+      "prompt_sha256": "35b78b2dddb461d7f1fea83ede051709426f2308e3276f790c683d48245cb1c4",
+      "context_sha256": "bbdf6779a27f4350fd1d66b68f169c4cb9bf44c83ddead546ef325f0977a9537",
+      "status": "done",
+      "generation_seconds": 45.982564957928844,
+      "ollama_load_seconds": 5.48766675,
+      "output_tokens": 128,
+      "answer": "Требования заданий дней 19 и 20 отличаются тем, что день 19 направлен на создание и проверку пайплайна из нескольких MCP-инструментов, а день 20 требует настройки MCP-серверов и реализации длинного флоу взаимодействия между ними. В первом случае акцент на цепочку обработки данных, во втором — на маршрутизацию запросов и выбор инструментов.",
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "coverage": [
+        false,
+        false,
+        true,
+        true,
+        false
+      ],
+      "assessment_note": "P явно описывает получение→обработка→сохранение, автоматическую цепочку/корректную передачу, серверы, выбор/маршрутизацию и проверки порядка. B/T/M/C дают общий контраст и опускают названные детали.",
+      "resources_comparable": false,
+      "resources_note": "Первый sampler не распознал native llama-server; RSS этой пилотной версии покрывает только daemon. После диагностики метрика будет исправлена до итоговой серии."
+    },
+    {
+      "profile_id": "prompt",
+      "request_id": "fff61df98b6f43d8bd5b8b85e08c3345",
+      "receipt_sha256": "755613650fd15286d944aded0c26a7d0d806373f47bd01f1d0ebf4ddfdba925b",
+      "model": "qwen3:8b",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1024,
+        "temperature": 0
+      },
+      "prompt_sha256": "b932aaacdd2e11201b6f7d54a7f33b1abf647750b94d7c656ead159a7719c054",
+      "context_sha256": "bbdf6779a27f4350fd1d66b68f169c4cb9bf44c83ddead546ef325f0977a9537",
+      "status": "done",
+      "generation_seconds": 74.552602083073,
+      "ollama_load_seconds": 5.490076375,
+      "output_tokens": 257,
+      "answer": "Требования заданий дней 19 и 20 отличаются по целям и задачам. Для дня 19 требуется создать несколько MCP-инструментов и реализовать пайплайн, где первый инструмент получает данные, второй — обрабатывает, третий — сохраняет результат. Проверяется автоматическое выполнение цепочки и корректность передачи данных между инструментами. Результат — автоматический пайплайн из нескольких MCP-инструментов.\n\nДля дня 20 требуется зарегистрировать несколько MCP-серверов и сделать так, чтобы агент выбирал нужный инструмент, корректно маршрутизировал запросы и выполнял длинный флоу взаимодействия. Проверяется сценарий, в котором используются инструменты с разных серверов, и корректность выбора и порядка вызовов. Результат — длинный флоу взаимодействия с несколькими MCP-серверами и инструментами.",
+      "facts": "PASS",
+      "completeness": "PASS",
+      "coverage": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "assessment_note": "P явно описывает получение→обработка→сохранение, автоматическую цепочку/корректную передачу, серверы, выбор/маршрутизацию и проверки порядка. B/T/M/C дают общий контраст и опускают названные детали.",
+      "resources_comparable": false,
+      "resources_note": "Первый sampler не распознал native llama-server; RSS этой пилотной версии покрывает только daemon. После диагностики метрика будет исправлена до итоговой серии."
+    }
+  ],
+  "provisional_candidate": "candidate",
+  "decisions": {
+    "temperature": "Retain0:0.2 failed to improve completeness in diagnostic single case.",
+    "max_output": "Try384: pilot stopped normally at128 tokens; cap saves worst-case output, not observed speed proof.",
+    "context": "Try6144: full conservative bound fits; pilot includes reload and cannot prove speedup.",
+    "prompt": "Retain generic exhaustive requirements instruction: all fiveE02 rubric aspects covered."
+  },
+  "limitations": [
+    "Known development cases, not a holdout.",
+    "Pilots not normalized for warm/cold; latency is diagnostic only.",
+    "No optimization verdict until fresh repeated comparison and quality assessment."
+  ]
+}

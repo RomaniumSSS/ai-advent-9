@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "conversation_file_count": 4,
+  "all_saved_bytes_equal": true,
+  "generation_calls": 0,
+  "replayed_turns": 0,
+  "old_run_id": "e0433edbb9d24e9288d2c58f55dbb6eb",
+  "new_run_id": "3fa8bdb02cd146c2a752a8cc1a382c13",
+  "full_core_sha256": "f1b62d97909f391462a0a6396ebb23e91e352d6a83cb5378514abc62314c9e12",
+  "index": {
+    "chunk_count": 724,
+    "db_sha256": "9894d937c4bcbae653459a6fe758f231992571e436622a0cd33fcda7f707f11b",
+    "document_count": 663,
+    "generation": "5d5502c69976163325ad6c35",
+    "source_counts": {
+      "assignment": 24,
+      "discussion": 694,
+      "personal_note": 6
+    }
+  },
+  "options": {
+    "num_ctx": 8192,
+    "num_predict": 1024,
+    "temperature": 0
+  }
+}

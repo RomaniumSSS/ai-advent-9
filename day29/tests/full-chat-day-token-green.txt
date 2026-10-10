@@ -1,0 +1,12 @@
+test_complete_day_spellings_and_compact_multiple_days_keep_anchors (test_full_chat_day_anchor.DayAnchor.test_complete_day_spellings_and_compact_multiple_days_keep_anchors) ... ok
+test_day_anchor_and_explicit_note_preserve_mixed_scope (test_full_chat_day_anchor.DayAnchor.test_day_anchor_and_explicit_note_preserve_mixed_scope) ... ok
+test_exact_named_day_survives_low_semantics_without_assignment_keyword (test_full_chat_day_anchor.DayAnchor.test_exact_named_day_survives_low_semantics_without_assignment_keyword) ... ok
+test_full_day_token_number_boundary_does_not_force_unrelated_assignment (test_full_chat_day_anchor.DayAnchor.test_full_day_token_number_boundary_does_not_force_unrelated_assignment) ... ok
+test_pure_discussion_has_no_forced_assignment_or_source_filter (test_full_chat_day_anchor.DayAnchor.test_pure_discussion_has_no_forced_assignment_or_source_filter) ... ok
+test_whole_budget_guard_retains_anchor_before_large_optional_chunks (test_full_chat_day_anchor.DayAnchor.test_whole_budget_guard_retains_anchor_before_large_optional_chunks) ... ok
+test_without_explicit_day_ranking_is_unchanged_and_unknown_day_not_invented (test_full_chat_day_anchor.DayAnchor.test_without_explicit_day_ranking_is_unchanged_and_unknown_day_not_invented) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.036s
+
+OK

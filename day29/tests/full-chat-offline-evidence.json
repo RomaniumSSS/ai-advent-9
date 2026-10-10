@@ -1,0 +1,56 @@
+{
+  "scope": "Synthetic/offline full-chat implementation evidence; no original corpus questions/text/author values copied into public fixtures",
+  "worktree": "day29-full-chat",
+  "branch": "day29-full-index-chat",
+  "implementation_role": "gpt-6.1-sol high; usage/cost not reported",
+  "focused_tests": {
+    "command": "python3 -m unittest discover -s day29/tests -p 'test_full_chat*.py' -v",
+    "environment": "macOS, Python3.14, stdlib, synthetic fixtures/tempdirs/mock local provider/isolated flock",
+    "count": 28,
+    "status": "GREEN",
+    "log": "tests/full-chat-offline-green.txt"
+  },
+  "source_sha256": {
+    "full_chat_core.py": "6e887f0dd664d73d7eff0f267ed4dd505142efddfd51d20cbcc26957a5565bf1",
+    "full_chat.py": "d970f21c3f14f5b8a258c23f8eeb12ee475c0e16a07dc55382139576892b9878",
+    "full_chat_static/index.html": "66f9ca194a045c23fc729312602796c94db482be8469faaae79d5aa1d72d0eb1",
+    "full_chat_static/style.css": "022f9a303efdb5f1f987e85fda8ab92d3d6c17daa2209d5247e8718e650f27cc",
+    "full_chat_static/app.js": "3625298ddf5e3ecb7b9cc68f034d346899b5ea1c551cd41d8750318b1e05c87e",
+    "tests/full_chat_browser.py": "837059ed184e982d9897f00855e2e1b3a21e89fba79592bac4dfb777127d3355"
+  },
+  "preserved_benchmark_files": 46,
+  "preservation_status": "PASS",
+  "mismatches": [],
+  "browser": {
+    "command": "uv run --offline --no-project --with playwright python day29/tests/full_chat_browser.py",
+    "environment": "Python3.12, cached Chromium, ephemeral fixture server; model/corpus access absent",
+    "initial_full_status": "PASS",
+    "log": "tests/full-chat-tdd-bootstrap-green.txt",
+    "cases": [
+      "desktop1280x800",
+      "tablet768x1024",
+      "mobile375x812",
+      "reload",
+      "XSS text-only",
+      "pending error/unknown",
+      "pending reset/new",
+      "delayed send/reset",
+      "delayed poll/new"
+    ],
+    "final_targeted_bootstrap_command": "uv run --offline --no-project --with playwright python day29/tests/full_chat_browser.py --bootstrap-only --output-root day29/private/full-chat/browser-bootstrap-green",
+    "final_targeted_status": "PASS"
+  },
+  "red_commands": {
+    "full-chat-tdd-contract-red.txt": "python3 -m unittest discover -s day29/tests -p test_full_chat_contract.py -v",
+    "full-chat-tdd-topic-switch-red.txt": "python3 -m unittest discover -s day29/tests -p test_full_chat_contract.py -v",
+    "full-chat-tdd-http-red.txt": "python3 -m unittest discover -s day29/tests -p test_full_chat_http.py -v",
+    "full-chat-tdd-storage-red.txt": "python3 -m unittest discover -s day29/tests -p test_full_chat_store.py -v",
+    "full-chat-tdd-ellipses-red.txt": "python3 -m unittest discover -s day29/tests -p test_full_chat_contract.py -v",
+    "full-chat-tdd-ui-race-red.txt": "uv run --offline --no-project --with playwright python day29/tests/full_chat_browser.py --race-only --output-root day29/private/full-chat/browser-race-red",
+    "full-chat-tdd-bootstrap-red.txt": "uv run --offline --no-project --with playwright python day29/tests/full_chat_browser.py --bootstrap-only --output-root day29/private/full-chat/browser-bootstrap-red"
+  },
+  "review_fix_diff": "tests/full-chat-review-fixes.patch",
+  "real_model_calls_by_implementation_agent": 0,
+  "runtime_evidence_owner": "Root: loader/index/model checks, original45 compatibility, 3 actual corpus cases/source semantics, persistence and final service",
+  "limits": "Synthetic tests do not prove real-model factual completeness; actual first discussion answer PARTIAL. Astra/human acceptance have separate statuses."
+}

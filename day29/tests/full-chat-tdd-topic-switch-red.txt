@@ -1,0 +1,22 @@
+test_all_sources_participate_even_without_day (test_full_chat_contract.FullContracts.test_all_sources_participate_even_without_day) ... ok
+test_followup_is_anchored_in_user_question (test_full_chat_contract.FullContracts.test_followup_is_anchored_in_user_question) ... ok
+test_history_budget_never_silently_overflows (test_full_chat_contract.FullContracts.test_history_budget_never_silently_overflows) ... ok
+test_offsets_do_not_assign_other_author (test_full_chat_contract.FullContracts.test_offsets_do_not_assign_other_author) ... ok
+test_self_contained_new_subject_overrides_pronoun (test_full_chat_contract.FullContracts.test_self_contained_new_subject_overrides_pronoun) ... FAIL
+
+======================================================================
+FAIL: test_self_contained_new_subject_overrides_pronoun (test_full_chat_contract.FullContracts.test_self_contained_new_subject_overrides_pronoun)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_full_chat_contract.py", line 25, in test_self_contained_new_subject_overrides_pronoun
+    self.assertEqual(q['intent'],'new_topic');self.assertIsNone(q['anchor']);self.assertNotIn('SQLite',q['search_query'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'followup' != 'new_topic'
+- followup
++ new_topic
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.003s
+
+FAILED (failures=1)

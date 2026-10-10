@@ -1,0 +1,33 @@
+test_actual_options_and_original_sources (test_runtime.Runtime.test_actual_options_and_original_sources) ... ok
+test_arbitrary_warmup_id_not_proof (test_runtime.Runtime.test_arbitrary_warmup_id_not_proof) ... FAIL
+test_budget_reject_before_network_no_truncation (test_runtime.Runtime.test_budget_reject_before_network_no_truncation) ... ok
+test_context_order_text_map_and_question_mutation (test_runtime.Runtime.test_context_order_text_map_and_question_mutation) ... ok
+test_empty_context_has_no_chat (test_runtime.Runtime.test_empty_context_has_no_chat) ... ok
+test_independent_baseline_parity (test_runtime.Runtime.test_independent_baseline_parity) ... ok
+test_invalid_refs_unknown_and_length (test_runtime.Runtime.test_invalid_refs_unknown_and_length) ... ok
+test_lock_and_release_after_exception (test_runtime.Runtime.test_lock_and_release_after_exception) ... ok
+test_loopback_routes (test_runtime.Runtime.test_loopback_routes) ... ok
+test_metrics_null_and_units (test_runtime.Runtime.test_metrics_null_and_units) ... ok
+test_missing_warm_load_metric_not_comparable (test_runtime.Runtime.test_missing_warm_load_metric_not_comparable) ... ok
+test_multiple_process_rss_pid_changes (test_runtime.Runtime.test_multiple_process_rss_pid_changes) ... ok
+test_one_factor_profiles (test_runtime.Runtime.test_one_factor_profiles) ... ok
+test_public_filter_before_search (test_runtime.Runtime.test_public_filter_before_search) ... ok
+test_statistics_and_no_false_optimization (test_runtime.Runtime.test_statistics_and_no_false_optimization) ... ok
+test_warm_cold_truth_and_unique_ids (test_runtime.Runtime.test_warm_cold_truth_and_unique_ids) ... ok
+
+======================================================================
+FAIL: test_arbitrary_warmup_id_not_proof (test_runtime.Runtime.test_arbitrary_warmup_id_not_proof)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_runtime.py", line 63, in test_arbitrary_warmup_id_not_proof
+    self.assertEqual(r['status'],'error');self.assertFalse(r['comparable'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'done' != 'error'
+- done
++ error
+
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.019s
+
+FAILED (failures=1)

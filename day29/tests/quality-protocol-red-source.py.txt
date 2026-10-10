@@ -1,0 +1,27 @@
+"""Отдельный private эксперимент; default CLI только готовит, сеть не вызывает."""
+import copy
+import json
+import sys
+from pathlib import Path
+
+import core
+import full_chat_core as chat
+
+
+def critique_payload(receipt, answer, issues=None, stage='critic'):
+    body=json.loads(receipt['messages'][1]['content'])
+    body['draft']=answer
+    return {'messages':[{'role':'user','content':core.packed(body).decode()}]}
+
+
+def validate_critique(value, refs):
+    return value
+
+
+def execute_pair(engine, case, turns, client):
+    a=engine.ask(case['question'],turns,'synthetic')
+    return {'A':a,'B':{'status':'accepted','answer':a['answer']},'generation_calls':1}
+
+
+if __name__=='__main__':
+    print(json.dumps({'mode':'prepare_only','network_calls':0}))

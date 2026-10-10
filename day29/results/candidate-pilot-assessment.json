@@ -1,0 +1,25 @@
+{
+  "run_id": "c52b9b5542de4bfdba1633bb6e0d0bc5",
+  "request_id": "78b0a881a04043ef86c85059ee1a31a9",
+  "profile_sha256": "25e4beca64a0abf112da6c97b39388df8d70b861e84aed51c44d864e107f34b4",
+  "context_sha256": "bbdf6779a27f4350fd1d66b68f169c4cb9bf44c83ddead546ef325f0977a9537",
+  "status": "done",
+  "facts": "PASS",
+  "completeness": "PASS",
+  "supported_fact_coverage": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "answer": "Требования заданий дней 19 и 20 отличаются по целям и задачам. Для дня 19 требуется создать несколько MCP-инструментов (например, search, summarize, saveToFile) и реализовать пайплайн, где первый инструмент получает данные, второй — обрабатывает, третий — сохраняет результат. Проверяется автоматическое выполнение цепочки и корректность передачи данных между инструментами. Результат — автоматический пайплайн из нескольких MCP-инструментов. Для дня 20 требуется зарегистрировать несколько MCP-серверов и настроить агента так, чтобы он выбирал нужный инструмент, корректно маршрутизировал запросы и выполнял длинный флоу взаимодействия. Проверяется сценарий, в котором используются инструменты с разных серверов, и корректность выбора и порядка вызовов. Результат — длинный флов взаимодействия с несколькими MCP-серверами и инструментами. Формат заданий одинаковый — видео + код.",
+  "generation_seconds": 83.27367795794271,
+  "output_tokens": 281,
+  "decision": "Freeze candidate0/6144/384 +generic completeness/faithfulness template before formal evaluation.",
+  "limits": [
+    "Pilot includes load; speed/RSS gain not established.",
+    "Not independent holdout."
+  ],
+  "source_correction": "Original assignment19 says Создайте несколько MCP-инструментов. Prior root guess about Подключите was incorrect; P wording Создайте already matches source. Generic faithfulness rule is not claimed as repair of an observed verb error."
+}

@@ -1,0 +1,25 @@
+test_host_and_origin_are_rejected (test_full_chat_http.HTTP.test_host_and_origin_are_rejected) ... FAIL
+test_second_request_is_busy (test_full_chat_http.HTTP.test_second_request_is_busy) ... FAIL
+
+======================================================================
+FAIL: test_host_and_origin_are_rejected (test_full_chat_http.HTTP.test_host_and_origin_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_full_chat_http.py", line 27, in test_host_and_origin_are_rejected
+    self.assertEqual(self.call('/api/state',host='evil.example')[0],403);self.assertEqual(self.call('/api/state',origin='http://evil.example')[0],403)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 200 != 403
+
+======================================================================
+FAIL: test_second_request_is_busy (test_full_chat_http.HTTP.test_second_request_is_busy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_full_chat_http.py", line 30, in test_second_request_is_busy
+    with self.assertRaisesRegex(ValueError,'busy'):self.app.submit(cid,'second question')
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 1.024s
+
+FAILED (failures=2)

@@ -1,0 +1,229 @@
+{
+  "run_id": "2b8d61871bed4776aaba63f1cb94d556",
+  "app_run_id": "7b522fd22b7b474684a9cb31e0621eb5",
+  "video_file": "video/runs/record-01/live.mp4",
+  "sha256": "cc5c9dc4c2537dae73e1d9a49d438e963380cda12d8de28914c3654109a2cb34",
+  "bytes": 9364858,
+  "ffprobe": {
+    "format": {
+      "bit_rate": "249962",
+      "duration": "299.720000",
+      "filename": "day29/video/runs/record-01/live.mp4",
+      "format_long_name": "QuickTime / MOV",
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "nb_streams": 1,
+      "probe_score": 100,
+      "size": "9364858",
+      "start_time": "0.000000",
+      "tags": {
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf62.3.100",
+        "major_brand": "isom",
+        "minor_version": "512"
+      }
+    },
+    "streams": [
+      {
+        "avg_frame_rate": "25/1",
+        "bit_rate": "247543",
+        "bits_per_raw_sample": "8",
+        "chroma_location": "center",
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "codec_name": "h264",
+        "codec_tag": "0x31637661",
+        "codec_tag_string": "avc1",
+        "codec_type": "video",
+        "coded_height": 1000,
+        "coded_width": 1280,
+        "color_range": "tv",
+        "color_space": "bt470bg",
+        "display_aspect_ratio": "32:25",
+        "disposition": {
+          "attached_pic": 0,
+          "captions": 0,
+          "clean_effects": 0,
+          "comment": 0,
+          "default": 1,
+          "dependent": 0,
+          "descriptions": 0,
+          "dub": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "karaoke": 0,
+          "lyrics": 0,
+          "metadata": 0,
+          "multilayer": 0,
+          "non_diegetic": 0,
+          "original": 0,
+          "still_image": 0,
+          "timed_thumbnails": 0,
+          "visual_impaired": 0
+        },
+        "duration": "299.720000",
+        "duration_ts": 3836416,
+        "extradata_size": 52,
+        "field_order": "progressive",
+        "has_b_frames": 2,
+        "height": 1000,
+        "id": "0x1",
+        "index": 0,
+        "is_avc": "true",
+        "level": 32,
+        "nal_length_size": "4",
+        "nb_frames": "7493",
+        "pix_fmt": "yuv420p",
+        "profile": "High",
+        "r_frame_rate": "25/1",
+        "refs": 1,
+        "sample_aspect_ratio": "1:1",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "tags": {
+          "encoder": "Lavc62.11.100 libx264",
+          "handler_name": "VideoHandler",
+          "language": "eng",
+          "vendor_id": "[0][0][0][0]"
+        },
+        "time_base": "1/12800",
+        "width": 1280
+      }
+    ]
+  },
+  "full_decode": "PASS",
+  "fresh_request_ids": [
+    "61881b21b1704e3aad9c5c1f0e9d01b2",
+    "ac268cd8796c4296bf3e03ac9c27be55",
+    "2f2a9a6152874fce9d6cc8e1f5642a76",
+    "18213c4fbdf244f087615eb430efbdfe"
+  ],
+  "page_errors": [],
+  "pair_verification": {
+    "input_sha256": [
+      "4065b3d6cfd201c01ef73ab1dc232e83a7dbde550f15a817305c13720632c89c",
+      "4065b3d6cfd201c01ef73ab1dc232e83a7dbde550f15a817305c13720632c89c"
+    ],
+    "same_index": true,
+    "same_input_text_and_order": true,
+    "snapshot_sha256": [
+      "dbd5581b3363af62fb34d35b08e9292b8c733bf43e73cba021e2392c7bf8e687",
+      "dbd5581b3363af62fb34d35b08e9292b8c733bf43e73cba021e2392c7bf8e687"
+    ]
+  },
+  "keyframes": [
+    {
+      "name": "start",
+      "seconds": 0.8602758339839056,
+      "frame": "video/verification-record-01/start.png"
+    },
+    {
+      "name": "answer-1",
+      "seconds": 51.89238491700962,
+      "frame": "video/verification-record-01/answer-1.png"
+    },
+    {
+      "name": "answer-2",
+      "seconds": 158.26260304194875,
+      "frame": "video/verification-record-01/answer-2.png"
+    },
+    {
+      "name": "answer-3",
+      "seconds": 214.45094629190862,
+      "frame": "video/verification-record-01/answer-3.png"
+    },
+    {
+      "name": "answer-4",
+      "seconds": 245.27895370894112,
+      "frame": "video/verification-record-01/answer-4.png"
+    },
+    {
+      "name": "summary-2",
+      "seconds": 263.5830735840136,
+      "frame": "video/verification-record-01/summary-2.png"
+    },
+    {
+      "name": "summary-4",
+      "seconds": 272.0959718750091,
+      "frame": "video/verification-record-01/summary-4.png"
+    },
+    {
+      "name": "comparison-table",
+      "seconds": 289.0608402499929,
+      "frame": "video/verification-record-01/comparison-table.png"
+    }
+  ],
+  "visual_review": "PASS",
+  "created_at": "2026-10-10T14:13:02.608558+00:00",
+  "reviewed_at": "2026-10-10T14:31:18.390817+00:00",
+  "visual_review_notes": "Просмотрены восемь кадров, извлечённых из самого MP4: параметры, четыре ответа с IDs, исходные источники, выводы/ограничения и таблица с отдельными повторами. Текст читаем; полный decode PASS. Запись без ускорения и монтажа.",
+  "receipt_verification": [
+    {
+      "case_id": "E02",
+      "profile_id": "baseline",
+      "request_id": "61881b21b1704e3aad9c5c1f0e9d01b2",
+      "receipt_sha256": "9570928a2b2f7ee7c272bb063bf8199757a07964e7043df88635ef24339b9b4d",
+      "status": "done",
+      "generation_called": true,
+      "projection_and_visible_answer_match": true,
+      "runtime_network": "loopback_only",
+      "times": {
+        "embedding": 1.4322467499878258,
+        "generation": 44.81566204200499,
+        "retrieval": 0.0009384589502587914,
+        "total": 46.350284666987136
+      }
+    },
+    {
+      "case_id": "E02",
+      "profile_id": "candidate",
+      "request_id": "ac268cd8796c4296bf3e03ac9c27be55",
+      "receipt_sha256": "273b5eb8bcfa99c836ba840505440d55c67cc31e652af4e6ba41aaab2e4da578",
+      "status": "done",
+      "generation_called": true,
+      "projection_and_visible_answer_match": true,
+      "runtime_network": "loopback_only",
+      "times": {
+        "embedding": 1.9452228749869391,
+        "generation": 88.46964629204012,
+        "retrieval": 0.0010987080167979002,
+        "total": 90.53415662492625
+      }
+    },
+    {
+      "case_id": "E01",
+      "profile_id": "candidate",
+      "request_id": "2f2a9a6152874fce9d6cc8e1f5642a76",
+      "receipt_sha256": "cfd6b81554a5181474a8b94a425594685c96238d86acbfa5c6c818f9352b5135",
+      "status": "done",
+      "generation_called": true,
+      "projection_and_visible_answer_match": true,
+      "runtime_network": "loopback_only",
+      "times": {
+        "embedding": 1.423451832961291,
+        "generation": 39.007124207913876,
+        "retrieval": 0.0009776660008355975,
+        "total": 40.53336337499786
+      }
+    },
+    {
+      "case_id": "E03",
+      "profile_id": "candidate",
+      "request_id": "18213c4fbdf244f087615eb430efbdfe",
+      "receipt_sha256": "4ac474ab7fbf8c5046cae1bba6f14cfe2a2a1bb559cf38b5d2dc218090088575",
+      "status": "unknown",
+      "generation_called": true,
+      "projection_and_visible_answer_match": true,
+      "runtime_network": "loopback_only",
+      "times": {
+        "embedding": 1.4309909580042586,
+        "generation": 17.811352416989394,
+        "retrieval": 0.0006423329468816519,
+        "total": 19.33836979197804
+      }
+    }
+  ],
+  "semantic_review": "E02 baseline неполон; candidate покрывает все пять групп. E01 полный; E03 unknown без бюджета/источников. Независимое финальное ревью отдельно.",
+  "scenario_status": "PARTIAL",
+  "scenario_missing": "SCENARIO п.6: numeric swap before/after absent, descriptive limit only. Re-record required."
+}

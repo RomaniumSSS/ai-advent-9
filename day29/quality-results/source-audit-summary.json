@@ -1,0 +1,179 @@
+{
+  "schema": "quality-source-audit-summary-v1",
+  "reviewer_model_id": "gpt-6-astra",
+  "source_verdict": "APPROVED",
+  "runner_verdict": "NOT_EVALUATED",
+  "human_acceptance": false,
+  "matrix_sha256": "7586cf21e94f394a9bc2700728ebd73f6889bf2869f2b83bf9109d4e0266efa9",
+  "cases_gold_sha256": "1c37bfc038dcbb08c163f4782fc9fbade376ad4e8db29f5e073b2809eca61353",
+  "evidence_sha256": "b007159a6e5c8f0d00b5040cb1265576bb93997eedd584e21e99b6b5cd6cb520",
+  "db_sha256": "9894d937c4bcbae653459a6fe758f231992571e436622a0cd33fcda7f707f11b",
+  "document_sha256": {
+    "QUALITY_EVAL_SPEC.md": "62ea7145a6307e4eb9de47c488c14a9649197f4a2dda89145f1aa71b51a503e2",
+    "QUALITY_EVAL_PLAN.md": "2d0ffe7242248a52dacfc4ab6b641a99e302ddb807258c541acf2392f1f5f668",
+    "QUALITY_EVAL_TASKS.md": "80ab21be7a0e79b0ec5f9d48204abaca2f85586ae840dec646e093815e120ed8"
+  },
+  "private_audit_sha256": "de7247ad3b84e1761b75832df4ffbf72e1ed8803d721d8fff802b9c6448ecd52",
+  "counts": {
+    "cases": 24,
+    "pilot": 4,
+    "holdout": 20,
+    "semantic_groups": 14,
+    "holdout_groups": 10,
+    "source_chunks": 17,
+    "gold_groups": 50,
+    "source_spans": 50,
+    "source_spans_exact": 50,
+    "evidence_fields_exact": 306,
+    "source_mismatches": 0,
+    "current_authorized_selection": 5,
+    "eligible_standalone_holdout": 16,
+    "reviewer_generation_calls": 0,
+    "reviewer_embedding_calls": 0
+  },
+  "case_verdicts": [
+    {
+      "case_id": "P01",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "P02",
+      "gold_groups": 4,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "P03",
+      "gold_groups": 1,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "P04",
+      "gold_groups": 2,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H01",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H02",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H03",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H04",
+      "gold_groups": 2,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H05",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H06",
+      "gold_groups": 2,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H07",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H08",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H09",
+      "gold_groups": 1,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H10",
+      "gold_groups": 2,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H11",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H12",
+      "gold_groups": 3,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H13",
+      "gold_groups": 1,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H14",
+      "gold_groups": 2,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H15",
+      "gold_groups": 2,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H16",
+      "gold_groups": 1,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H17",
+      "gold_groups": 0,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H18",
+      "gold_groups": 1,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H19",
+      "gold_groups": 1,
+      "verdict": "PASS"
+    },
+    {
+      "case_id": "H20",
+      "gold_groups": 1,
+      "verdict": "PASS"
+    }
+  ],
+  "checks": {
+    "ORIGINAL_PROVENANCE": "PASS",
+    "EXACT_SPANS_HASHES": "PASS",
+    "ATTRIBUTION": "PASS",
+    "BOUNDED_UNKNOWNS": "PASS",
+    "REQUIRED_GROUPS_SUPPORTED": "PASS",
+    "MIXED_SOURCES": "PASS",
+    "SPLIT_GROUP_ISOLATION": "PASS",
+    "DEPENDENCY_ORDER": "PASS",
+    "OLD_INTENTS_EXCLUDED": "PASS",
+    "GROUP_RUBRIC_CLARIFIED": "PASS",
+    "MATRIX_BYTES_UNCHANGED": "PASS"
+  },
+  "limitations": {
+    "RUNNER_CONFORMANCE": "NOT_EVALUATED",
+    "RETRIEVAL_PERFORMANCE": "NOT_MEASURED",
+    "CRITIQUE_DURATION": "NOT_MEASURED",
+    "MODEL_QUALITY": "NOT_MEASURED",
+    "SELECTED_FIVE": "PARTIAL_HOLDOUT_ONLY",
+    "PERSONAL_NOTE_DOCUMENT_COUNT": 1,
+    "GOLD_SCORING_UNIT": "GROUP",
+    "ROOT_FREEZE": "PENDING_ROOT"
+  }
+}

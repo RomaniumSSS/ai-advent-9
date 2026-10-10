@@ -1,0 +1,60 @@
+{
+  "AST_outside_retrieve_all_equal": true,
+  "recorder_AST_outside_validate_full_equal": true,
+  "index_db_sha256": "9894d937c4bcbae653459a6fe758f231992571e436622a0cd33fcda7f707f11b",
+  "index_chunk_count": 724,
+  "before_full_core_sha256": "98e6725d1e9246d1f1335d81726db4b43dfb3e5b3ddfe2e17981c9ed8bcaccc6",
+  "after_full_core_sha256": "f1b62d97909f391462a0a6396ebb23e91e352d6a83cb5378514abc62314c9e12",
+  "after_recorder_sha256": "73df411fd637b3efbf3e4211f6102be5ad729fbee8351216dd9c8c3c513841b6",
+  "recomputed_initial3_saved_embedding_vectors": [
+    {
+      "case_id": "H05",
+      "ranking_equal_before_guard": true,
+      "old_recomputed_original_payload_equal": true,
+      "new_recomputed_original_payload_equal": true,
+      "selected_after_guard_equal": true,
+      "old_payload_sha256": "e7f40799fc5cb346a2358f7e2480ca86a1f3f3729da9a7cea8d781887da6ce77",
+      "new_payload_sha256": "e7f40799fc5cb346a2358f7e2480ca86a1f3f3729da9a7cea8d781887da6ce77"
+    },
+    {
+      "case_id": "H12",
+      "ranking_equal_before_guard": true,
+      "old_recomputed_original_payload_equal": true,
+      "new_recomputed_original_payload_equal": true,
+      "selected_after_guard_equal": true,
+      "old_payload_sha256": "ae49426de0d0452f83fd729e34dbc2021d2d0816e77ecb33b939b28a7abd9da4",
+      "new_payload_sha256": "ae49426de0d0452f83fd729e34dbc2021d2d0816e77ecb33b939b28a7abd9da4"
+    },
+    {
+      "case_id": "H20",
+      "ranking_equal_before_guard": true,
+      "old_recomputed_original_payload_equal": true,
+      "new_recomputed_original_payload_equal": true,
+      "selected_after_guard_equal": true,
+      "old_payload_sha256": "e7a62357377df38e168eef96bd2673d6c3f4f41c98016fe6b5e9f3fc6e98aaeb",
+      "new_payload_sha256": "e7a62357377df38e168eef96bd2673d6c3f4f41c98016fe6b5e9f3fc6e98aaeb"
+    }
+  ],
+  "generation_calls": 0,
+  "embedding_calls": 0,
+  "tests": {
+    "full_chat": 44,
+    "quality": 34,
+    "recorder": 16
+  },
+  "logs": {
+    "full-chat-day-anchor-red.txt": "fd7efe3c2db020ecfd96e8cd5a441375f854db218bc121a896148f7881103041",
+    "full-chat-day-token-red.txt": "b44c14aa9072d5fef91b266d9c2769323e65bcc42e7df05701b0bc022922080e",
+    "full-chat-day-anchor-green.txt": "94ae8c60a296ad57dbbc4656123892e8a600b10e17515bafb36ef77793e88260",
+    "quality-after-retrieval-green.txt": "113e56f57c8649ad1c40a6f50313b0a355c9423f95bd7317171a3c48baf127ae",
+    "full-demo-canonical-red.txt": "747544776da82602d3faa7a7b56986c5dc0141d69d72d622f0a8751029937624",
+    "full-demo-green.txt": "da93d2afdbc6bc40b6e524377989e74c2f5648214c9e3d5bf4582aa39770f063",
+    "full-chat-day-token-green.txt": "5d1e54242327eca9097840e330ec19dc872411cbcbb1374e1d21d286faa6dc58"
+  },
+  "note": "Final condition additionally includes assignment_intent inside otherwise discussion-only wording; initial3 unaffected: H05 requested assignment / H12+H20 no explicit day.",
+  "bounded_day_parser": "Local token boundaries and complete numeric spans, public core.py unchanged",
+  "day_anchor_tests_sha256": "f81ff10631790238e45ad37da2ad2650229030d0b32e6081d9aeeb209d0e6d20",
+  "targeted_parser_final_command": "python3 -m unittest discover -s day29/tests -p 'test_full_chat_day_anchor.py' -v",
+  "targeted_parser_final_tests": 7,
+  "parser_out_of_range_list_proven": true
+}

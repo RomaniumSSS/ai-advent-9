@@ -1,0 +1,8 @@
+test_invalid_refs_and_schema_rejected (test_quality_eval_protocol.ProtocolTests.test_invalid_refs_and_schema_rejected) ... ok
+test_shared_draft_false_accept_is_only_opinion (test_quality_eval_protocol.ProtocolTests.test_shared_draft_false_accept_is_only_opinion) ... ok
+test_stage_preserves_whole_context_and_checks_budget (test_quality_eval_protocol.ProtocolTests.test_stage_preserves_whole_context_and_checks_budget) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

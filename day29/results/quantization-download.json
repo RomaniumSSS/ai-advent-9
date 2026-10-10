@@ -1,0 +1,6 @@
+{
+  "status": "done",
+  "model": "qwen3:8b-q8_0",
+  "elapsed_seconds": 226.60732575005386,
+  "finished_at": "2026-10-10T12:58:36.056008+00:00"
+}

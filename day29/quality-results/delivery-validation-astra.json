@@ -1,0 +1,687 @@
+{
+  "schema": "day29.delivery-validation-astra.v1",
+  "reviewer_model_id": "gpt-6-astra",
+  "reviewer_role": "independent mandatory strong final reviewer",
+  "validated_at_utc": "2026-10-10T23:55:22.018355+00:00",
+  "verdict": "SPEC SATISFIED",
+  "verdict_scope": "Local code + authorized partial quality experiment + fresh runtime/media delivery; excluded claims and publication remain separate",
+  "review_status": "APPROVED",
+  "human_acceptance": false,
+  "formal_human_spec_approval_claimed": false,
+  "git_branch": "day29-full-index-chat",
+  "base_commit": "ca9058411363c1815793c80e2f3a778e52674ad3",
+  "spec_sha256": {
+    "SPEC.md": "bff9cd65b242295dbe564e763247f8b9307ee0e7037cddb428496af7006424af",
+    "FULL_CHAT_SPEC.md": "6b2405fd91e48b9988cbd34d36431cfbef3da8150e2adaff0a5d35210c0d64d8",
+    "QUALITY_EVAL_SPEC.md": "30893e5fbce0778ae18c4608dd64c90e5c39e41bbac3514c3d48c7195e6dc120",
+    "video/SCENARIO-full-chat.md": "09bbaaf74aaf48d128dab167bee57ef74ef78c0d104ec2b044735aaf2a3721b5"
+  },
+  "source_sha256": {
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "full_chat_core.py": "f1b62d97909f391462a0a6396ebb23e91e352d6a83cb5378514abc62314c9e12",
+    "quality_eval.py": "329a11f5442cd02ac2a87f3bdaeb438c89e2c10e4f011af381895f4d191cb89c",
+    "video/run_full_demo.py": "947477a172d8744b3396e7aa79d0b4a6b178f4ab8a9db2d60458c9495bbd8dc8",
+    "app.py": "5548e4febe572bbaac0432d38ffd0e6026acdb955e0b27e7501ed63c69cf8ef9",
+    "full_chat.py": "d970f21c3f14f5b8a258c23f8eeb12ee475c0e16a07dc55382139576892b9878"
+  },
+  "evidence_sha256": {
+    "results/implementation-validation.md": "c267ef1e86ad630388cec498477db51f785917a33611e28d02018076a53eeb90",
+    "full-chat-results/implementation-validation.md": "6b27ed1d0a830027733c05cc71ceddbcd64a253af82bffb938657d8123f8be9f",
+    "quality-results/implementation-validation.md": "7213d88ae086be255c5738a5a16bf39d60a4d5a40a4d4444cff27d2e5a898137",
+    "quality-results/new-live-dry-verification.json": "5c294b32878486c8c97da7a3b283ba609f9d8c2a738c321225f5282661bbf790",
+    "quality-results/new-live-video-verification.json": "1c3a054e0fee13b572d1cc031d66af985fe43499fe7ef0899ce777443f112faf",
+    "quality-results/quality-final-summary.json": "8549d30e6d9c89bfa386cc64c314bac498f1950e4b51ba61fbddec796f4c9087",
+    "quality-results/initial-five-semantic.json": "4c1d0fb93bb72b8d67a9afd58e422f7d549a1c5332220d1f3128bcfbe5cabe5f",
+    "quality-results/diagnostic-two-semantic.json": "218490ae8c75fa4651f9b2a5e55b702ec8a9511be459114065916328bd5556a4",
+    "quality-results/diagnostic-one-source-semantic.json": "9bd8bac5e195aa0020929f59f4c374c33928670526cfe54d1851a9ce2446bfc1",
+    "quality-results/initial-critic-semantic.json": "ccde16fddc0415c5fbc8cdd40a3b5761c6c184a394f5ccf2d1323193a3eea217",
+    "quality-results/five-run-summary.html": "9c2ba93c772d4e6be05e916cead026acf799101078f5274444b6f05c36a4263e",
+    "tests/final-delivery-offline-green.txt": "1ad6aaf3487eda2904877502bcfa5344d362b460a512f714790a43ecc0cb3082"
+  },
+  "matrix": [
+    {
+      "id": "P01",
+      "spec_item": "SPEC boundaries; AC1",
+      "observable_claim": "Standalone public baseline, exact Day28 profile/context/index, no submitted-day changes",
+      "evidence": "results/implementation-validation.md (43-row original audit); preservation99 check:98 exact + authorized README addition; Day01–28 git diff empty",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "P02",
+      "spec_item": "SPEC AC1",
+      "observable_claim": "Frozen E01/E02/E03 context, rubric, same B/F input and pre-inference budget",
+      "evidence": "Original source-bound audit + immutable inputs/measurement receipts; new dry/record same E02 context checked",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "P03",
+      "spec_item": "SPEC AC2",
+      "observable_claim": "Single-factor pilots and one candidate; same-model Q8 applicability attempt, actual payload metadata",
+      "evidence": "Original pilots and quantization assessments preserved; incomplete Q8 warmup technical stop recorded",
+      "status": "PASS",
+      "notes": "Q8 completed paired benchmark excluded by documented PLAN stop, not claimed"
+    },
+    {
+      "id": "P04",
+      "spec_item": "SPEC AC3–4",
+      "observable_claim": "12 scored warm+2 cold, rubric, unknown; distinct timing/RSS/swap/placement and null limitations",
+      "evidence": "Original raw receipts and43-row audit unchanged; historical video blocks display source-bound figures",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "P05",
+      "spec_item": "SPEC AC5",
+      "observable_claim": "Optimization only under fixed quality-preserving criterion; other costs disclosed",
+      "evidence": "Original E02 full5/5 vs2/5 in both warm repeats; faster/RSS10% not proven; new live results do not replace study",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "P06",
+      "spec_item": "SPEC AC6 and runtime boundaries",
+      "observable_claim": "Local loopback, shared locks; TDD/reviews/docs and old live package preserved",
+      "evidence": "Original audit and source hashes; new142 offline root log; additive reports/video; no runtime sibling import",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "F01",
+      "spec_item": "FULL_CHAT boundaries",
+      "observable_claim": "All724/663, fixed Q4/embedding/index/profile, own entrypoint; no cloud/reindex/retries",
+      "evidence": "full-chat-results/implementation-validation.md25-row audit; final coref1b62 and actual dry/record scope/index/options",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "F02",
+      "spec_item": "FULL_CHAT §1 + QUALITY diagnostic source annex",
+      "observable_claim": "All-corpus scoring, mixed sources, bounded exact-day reserve, no canned gold answers",
+      "evidence": "review-day-anchor-astra.md; AST scope and all724 saved-vector initial3 exact; 7 independent parser tests",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "F03",
+      "spec_item": "FULL_CHAT §2",
+      "observable_claim": "Independent durable conversations, follow-up/new topic/clarification, interrupted no replay",
+      "evidence": "Original persistence/browser evidence; review-resolver-astra.md; new live reload/reset/new own conversation",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "F04",
+      "spec_item": "FULL_CHAT §3",
+      "observable_claim": "Refs bind transmitted originals, exact member/offset attribution, semantic status distinct",
+      "evidence": "Original724 attribution audit; dry/record exact public source checks against readonly DB; full source panel visible",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "F05",
+      "spec_item": "FULL_CHAT §4",
+      "observable_claim": "Separated untrusted data/history, max3pairs/5sources; full budget, whole-source drops, explicit errors",
+      "evidence": "Original code/tests; unchanged AST outside bounded resolver/retrieval; final142 root tests; actual context traces",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "F06",
+      "spec_item": "FULL_CHAT §5 + failure paragraph",
+      "observable_claim": "Loopback/Host/Origin/size/XSS/locks/private persistence, safe stop/no private public export",
+      "evidence": "Original security/browser tests; current private modes checked; capture guards+frames; public HTML ID/count-only",
+      "status": "PASS",
+      "notes": "Two cached directories0755 found and corrected by root to0700; files0600"
+    },
+    {
+      "id": "F07",
+      "spec_item": "FULL_CHAT §6",
+      "observable_claim": "Bounded TDD, real source-backed D/P/follow-up E2E, independent review; human status distinct",
+      "evidence": "Original3 live source/persistence audit; subsequent independently reviewed fixes; current real3 dry +3 record",
+      "status": "PASS",
+      "notes": "Arbitrary-answer perfection and human acceptance not inferred"
+    },
+    {
+      "id": "Q01",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q01",
+      "observable_claim": "Точная версия и неизменный baseline",
+      "evidence": "Initial baseline/source freeze; approved metadata-only versioned diagnostics; immutable questions/gold/profiles and exact hash guards",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q02",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q02",
+      "observable_claim": "A выполняется один раз; B использует сохранённый A",
+      "evidence": "Runner._run/run_b; shared draft и completed resume tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q03",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q03",
+      "observable_claim": "Тот же model/digest, think=false, temperature=0; A8192/1024, B512/1024/512",
+      "evidence": "protocol/critique_payload; полное чтение constants и options; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q04",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q04",
+      "observable_claim": "Точные question/query/history/sources/refs A во всех B стадиях, без нового retrieval",
+      "evidence": "critique_payload копирует ровно четыре исходных поля; preservation tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q05",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q05",
+      "observable_claim": "Gold/чужие ответы/ожидаемые оценки не попадают в payload; инструкции источников — данные",
+      "evidence": "Статический data flow + SECRET/gold negative tests; system instructions; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q06",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q06",
+      "observable_claim": "Строгий JSON/schema, stop/model/context, refs и пустые refs только с baseline unknown guard",
+      "evidence": "validate_response/validate_critique; invalid JSON/duplicate keys/length/refs/unknown tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q07",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q07",
+      "observable_claim": "Accept завершает без repair; insufficient evidence не означает accept",
+      "evidence": "run_b; false accept opinion / insufficient evidence tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q08",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q08",
+      "observable_claim": "Не более одного repair и одного recheck, recheck без verdict/замечаний critic",
+      "evidence": "run_b и one_repair_recheck test; нет цикла repair; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q09",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q09",
+      "observable_claim": "Ошибка/неудача recheck сохраняет candidate как unverified, без fallback под видом исправления",
+      "evidence": "run_b/dispatch checkpoints; invalid/recheck tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q10",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q10",
+      "observable_claim": "Локальный unknown/clarification без generation — B not_applicable, A error — dependency_blocked",
+      "evidence": "run_b guards и no_sources/baseline_error tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q11",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q11",
+      "observable_claim": "Полный envelope/schema/template/output budget до dispatch; без clipping и повышения context",
+      "evidence": "check_payload_budget + CheckpointClient; oversized A/B tests, dispatch_count=0; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q12",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q12",
+      "observable_claim": "Только loopback, фиксированные model identities, отсутствие cloud/download/reindex",
+      "evidence": "core.Ollama transport/verify, strict live entrypoint; wrong digest test; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q13",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q13",
+      "observable_claim": "24 frozen cases, 4/20 split, gold originals, группы и исключение старых намерений",
+      "evidence": "Отдельный source audit APPROVED, matrix/source hashes; validate_matrix; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q14",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q14",
+      "observable_claim": "Текущий subset ровно5 новых standalone из5 групп; 15 holdout и4 pilot не добавляются",
+      "evidence": "Actual adapter hash/IDs checked; selected5 counters, missing dependency и mutation tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q15",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q15",
+      "observable_claim": "Диалоговые префиксы — только реальные предыдущие A той же цепочки, без B/gold",
+      "evidence": "prefix/validate_matrix; baseline-only prefix и dependency-blocked tests; actual5 без dependencies; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q16",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q16",
+      "observable_claim": "Coverage различает selected/unselected/pending/failed/unavailable и quality NOT_CHECKED",
+      "evidence": "summary/run_b; five-subset/timeout/missing metrics tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q17",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q17",
+      "observable_claim": "Каждый generation/embed/service dispatch учитывается, shared A один раз, missing usage nullable",
+      "evidence": "CheckpointClient/counters; exact counters и missing metrics tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q18",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q18",
+      "observable_claim": "A latency и B=A+все добавленные стадии, ошибки не изображаются ускорением",
+      "evidence": "A1 исправлен: continuous timing либо null headline + observed lower bound; собственный repro≥12s и cached-stage/no-double-count tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q19",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q19",
+      "observable_claim": "Глобальные Day28/29 locks и отдельный lock controller защищают вызовы/checkpoint",
+      "evidence": "core.generation_lock, dispatch/controller_lock; busy и two controllers tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q20",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q20",
+      "observable_claim": "Atomic private checkpoints до dispatch и после стадий; completed не повторяются",
+      "evidence": "save_private/CheckpointClient/dispatch; resume completed tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q21",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q21",
+      "observable_claim": "Crash/timeout ambiguous → interrupted_unknown, pause до operator idle, без replay",
+      "evidence": "reload_recover/confirm_idle; crash/timeout/incomplete provider tests; operator assertion не auto proof; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q22",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q22",
+      "observable_claim": "Общего deadline/call cap нет; transport timeout300 не означает остановку Ollama",
+      "evidence": "protocol/core.TIMEOUT; explicit idle confirmation и no global limits test; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q23",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q23",
+      "observable_claim": "Resume привязан к input/protocol/code/selection/payload hashes",
+      "evidence": "Runner.__init__/dispatch; mutation tests и фактические hashes; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q24",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q24",
+      "observable_claim": "Private0700/0600, atomic writes, CLI path boundary, symlink root rejected; public без private текстов",
+      "evidence": "private_dir/main/save_private; modes, symlink и stdout negative tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q25",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q25",
+      "observable_claim": "Неверная identity/неизвестное исполнение останавливает зависимые вызовы",
+      "evidence": "Runner._run/CheckpointClient; wrong digest и incomplete provider tests; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q26",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q26",
+      "observable_claim": "Независимый source audit gate отделён от human acceptance; prepare без network",
+      "evidence": "validate_audit/live gate; root audit hash и live_audit_required test; unchanged quality runner329a and current actual-run evidence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q27",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q27",
+      "observable_claim": "Пять actual A/B попыток и реальные полный receipts/stage metrics",
+      "evidence": "Initial checkpoint405d5a… has exactly5 selected cases:6gen/3embed/24service; all A and B statuses retained; no completed B falsely created",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q28",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q28",
+      "observable_claim": "Независимый blinded scoring actual answers: support/correctness/attribution/answerability, group completeness",
+      "evidence": "initial-five-semantic.json frozen blind source grading; diagnostic-two-semantic.json and independent diagnostic-one-source-semantic.json; originals/spans verified",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q29",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q29",
+      "observable_claim": "Actual retrieval coverage selected vs transmitted vs gold, без смешения search/budget/generation omissions",
+      "evidence": "Reviewer supplemented raw retrieval trace: initialH05/H12/H20 required groups pre→prompt3→3/3→3/1→1; initialH06/H11 no retrieval; retest2H06 0→0/H11 3→3; finalH06 1→1",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q30",
+      "spec_item": "QUALITY_EVAL_SPEC; prior inventory Q30",
+      "observable_claim": "Итоговые wins/ties/regressions/false acceptance, numerators/denominators, latency/coverage/все затраты",
+      "evidence": "quality-final-summary.json + three raw checkpoints; blind aggregates and initial-critic-semantic.json; HTML9c2ba9…; paired B0, quality-improvement NOT_ASSESSABLE",
+      "status": "PASS",
+      "notes": "Initial critic audit covers3/3 actual initial critics; later3 diagnostic critic semantics ungraded. No overall critic accuracy/rate claimed. Shared A counted once."
+    },
+    {
+      "id": "Q31",
+      "spec_item": "QUALITY diagnostic resolver annex",
+      "observable_claim": "Only known H06/H11 retest, same gold/profile; other initial3 payloads exact, old runs preserved",
+      "evidence": "review-resolver-astra.md; cases-v2 and diagnostic run5c2b89; independently frozen diagnostic-two grade",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q32",
+      "spec_item": "QUALITY diagnostic source annex",
+      "observable_claim": "Only known H06 further retest with baseline-only derived inputs; no remaining19 calls/tuning",
+      "evidence": "review-day-anchor-astra.md; v4 diff only baselinehash; run9d22f0 case count1; source grade0/2 false refusal preserved",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "Q33",
+      "spec_item": "QUALITY diagnostic canonical recorder annex",
+      "observable_claim": "Canonical assignment:NN for both apps; strict identity/source guards and qualified dry",
+      "evidence": "review-recorder-source-astra.md: actual raw/API/materializer exact,19 independent tests, final recorder947477…",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V01",
+      "spec_item": "SCENARIO opening and steps1–2",
+      "observable_claim": "New artifacts, real1280×1000 benchmark, parameters visible; two new B/F asks",
+      "evidence": "Dry9781ae… and record52c602…; distinct request IDs,26 frames each; decoded running/B/F images",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V02",
+      "spec_item": "SCENARIO step2",
+      "observable_claim": "Exact request/profile/question/answer/source binding; same B/F question/context",
+      "evidence": "Independent validate_benchmark on all4 dry/record answers, record IDs disjointdry; contexts equal; originals DB-exact",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V03",
+      "spec_item": "SCENARIO step3",
+      "observable_claim": "Historical warm/cold/Q8/RSS/swap metrics clearly historical, accurate limits",
+      "evidence": "Decoded historical-summary-6/table; original public summary and study evidence unchanged",
+      "status": "PASS",
+      "notes": "Q8 failed warmup, no2scored warm; RSS not full Metal peak; OS cache retained for cold"
+    },
+    {
+      "id": "V04",
+      "spec_item": "SCENARIO step4",
+      "observable_claim": "Real full scope724/663, fixed options, new own public Day11 query",
+      "evidence": "Actual full receipts/validator; hidden-private selected2 but cited assignment only; decoded UI scope/options",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V05",
+      "spec_item": "SCENARIO step4 semantic check",
+      "observable_claim": "Every visible claim supported; completeness separately assessed",
+      "evidence": "Reviewer original DB comparison for all3 dry answers; record answers identical; decoded actual answer/source panels",
+      "status": "PASS",
+      "notes": "B2/5,F5/5; full Day11 supported but omits2self-check requirements"
+    },
+    {
+      "id": "V06",
+      "spec_item": "SCENARIO step5",
+      "observable_claim": "Own durable reload/reset/new, foreign histories unaffected/hidden",
+      "evidence": "Record26-frame trace + decoded durable reload; capture reset empty; root original4conversationhashes unchanged; privacy guards",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V07",
+      "spec_item": "SCENARIO step6",
+      "observable_claim": "Source-backed saved quality HTML, no private questions/gold; same SHA dry/record",
+      "evidence": "five-run-summary.html9c2ba9…; both saved quality hashes exact, actual decoded HTML viewed; initial/known2/known1 separated",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V08",
+      "spec_item": "SCENARIO capture privacy",
+      "observable_claim": "Own CID/RID gate before DOM/POST; private cited evidence aborts; hidden private scope honest",
+      "evidence": "Recorder code/security tests and actual gate checks; error lists empty; sampled decoded frames public-only",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V09",
+      "spec_item": "SCENARIO qualified dry",
+      "observable_claim": "Successful same-script/action/quality dry required;3distinct fresh receipts/times/frame hashes",
+      "evidence": "Reviewer qualify(actualdry) PASS SHA1159cc…; record qualified_dry exact; no fixture/replay reused",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V10",
+      "spec_item": "SCENARIO freshness and failure",
+      "observable_claim": "3new asks per successful take; previous failed takes/costs preserved; no auto retry",
+      "evidence": "Firstfailure0asks; secondfailure1actualBdone; qualifieddry3 +record3;7new generation/embedding total for this recorder sequence",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V11",
+      "spec_item": "SCENARIO media encoding",
+      "observable_claim": "New H2641280×1000,25fps, no audio/speedup/edit; own browser closes",
+      "evidence": "Static recorder final947477… ffmpeg no temporal filter/-n; MP4 metadata1video stream,296.68s, matching raw recording flow",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V12",
+      "spec_item": "SCENARIO media verification",
+      "observable_claim": "Full decode, readable authentic recording frames, public copy hash bound",
+      "evidence": "root full_decode_exit0/errors0; reviewer independently hashed canonical MP4 and viewed8decoded frames incl running-state and real outputs",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V13",
+      "spec_item": "SCENARIO journals/privacy",
+      "observable_claim": "Ignored raw/runs/private files, source/time/frame provenance, safe public artifact",
+      "evidence": "26frame hashes independently checked; MP4/canonical identical; private0600/0700 audit and corrected2directories",
+      "status": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "V14",
+      "spec_item": "SPEC delivery status separation",
+      "observable_claim": "Local result honest; publish/human acceptance not manufactured",
+      "evidence": "Current reports preserve limitations and pending GitHub/Drive/Sheet; human_acceptance=false",
+      "status": "PASS",
+      "notes": ""
+    }
+  ],
+  "matrix_counts": {
+    "PASS": 60,
+    "FAIL": 0,
+    "NOT_PROVEN": 0
+  },
+  "excluded_or_future_claims": [
+    {
+      "item": "Human formal SPEC approval and human answer acceptance",
+      "reason": "User authorized autonomous implementation; no separate formal text approval/acceptance occurred. Accurate disclosure required and met.",
+      "status": "NOT PROVEN"
+    },
+    {
+      "item": "GitHub/main, Drive sharing, Sheet AD132 publication",
+      "reason": "Explicitly authorized later root step, pending at this local runtime/media review; not falsely counted complete.",
+      "status": "NOT PROVEN"
+    },
+    {
+      "item": "All20 holdout/4pilot and uniform final-version5 benchmark",
+      "reason": "User selected5 only; diagnostic2+1 known questions are separate versions; other19 not run.",
+      "status": "NOT PROVEN"
+    },
+    {
+      "item": "Q8 completed paired warm quality benchmark",
+      "reason": "Original PLAN technical-stop condition fired on failed warmup; attempt retained, scored warm not run.",
+      "status": "NOT PROVEN"
+    },
+    {
+      "item": "Production critic superiority, overall hallucination rate, arbitrary-answer perfection",
+      "reason": "Not acceptance requirements; completed B0 and small selected sample cannot establish these claims.",
+      "status": "NOT PROVEN"
+    },
+    {
+      "item": "Real repair/recheck success and later diagnostic critic correctness",
+      "reason": "Conditional real branches produced no repaired output; code paths tested synthetically. Only initial3 critic opinions independently source-graded.",
+      "status": "NOT PROVEN"
+    }
+  ],
+  "environment": {
+    "os": "macOS15.6.1",
+    "architecture": "arm64",
+    "hardware": "Apple M2/16GB",
+    "python": "3.14.0",
+    "runtime": "local loopback Ollama",
+    "reported_current_full_suite": {
+      "tests": 142,
+      "seconds": 4.989,
+      "owner": "root",
+      "log": "tests/final-delivery-offline-green.txt"
+    },
+    "reviewer_recent_targeted_tests": {
+      "recorder": 19,
+      "quality_unchanged": 34,
+      "retrieval_final_targeted": 7
+    },
+    "reviewer_actual_http_calls": 0,
+    "reviewer_actual_generation_calls": 0,
+    "reviewer_actual_embedding_calls": 0
+  },
+  "dry": {
+    "run_id": "9781ae36fbf1408b9b9afd135b32c360",
+    "results_sha256": "1159ccdbc77f2bc73bdc97149a7524407f9fba2bbfc2a537af4d7301a9edb8ab",
+    "requests": [
+      "b8d789d5a0aa41f4b96b32da706fbc6c",
+      "f30ce2d10a1b4c7b8e2181544ae2bb7b",
+      "0cc2dd1312e14ffbb07da4fda34c66db"
+    ],
+    "qualified": true
+  },
+  "record": {
+    "run_id": "52c60273cbbf43fe8c9e822a5ef75fa9",
+    "results_sha256": "fefcefbb6cbe26e514c1592cdb8480dc5ae0bb244dfa6dcc2aa2783f125e19c3",
+    "requests": [
+      "76a70c478c354448904941ecb00698ae",
+      "b32aa88919bc4396808d282c77a9021c",
+      "b6e1b625dfbf45db974e1eee8f75d351"
+    ],
+    "video_sha256": "4bfe503922a256adf22560c7f5c76cb2c8411dbe440c6d107501ebf34f9f3d10",
+    "bytes": 8715854,
+    "duration_seconds": 296.68,
+    "codec": "h264",
+    "width": 1280,
+    "height": 1000,
+    "fps": 25,
+    "capture_frames": 26,
+    "reviewer_decoded_frames_viewed": 8,
+    "full_decode_exit": 0,
+    "full_decode_executor": "root",
+    "page_errors": 0,
+    "privacy_gate_errors": 0,
+    "hidden_private_selected_count": 2,
+    "private_cited_sources": 0,
+    "visible_claim_support": "PASS",
+    "benchmark_completeness": {
+      "baseline": {
+        "covered": 2,
+        "total": 5
+      },
+      "candidate": {
+        "covered": 5,
+        "total": 5
+      }
+    },
+    "full_public_completeness": "PARTIAL_TWO_SELF_CHECK_REQUIREMENTS_OMITTED"
+  },
+  "quality": {
+    "initial5": {
+      "covered": 4,
+      "total": 12,
+      "partial": 2,
+      "missing": 6,
+      "macro_case": 0.26666666666666666,
+      "macro_intent_group": 0.26666666666666666,
+      "supported_claims": 15,
+      "false_clarification": 2
+    },
+    "known_retest2": {
+      "covered": 2,
+      "total": 5,
+      "partial": 1,
+      "missing": 2,
+      "macro_case": 0.3333333333333333,
+      "supported_claims": 5,
+      "context_limited_correct_unknown": 1
+    },
+    "known_retest1": {
+      "covered": 0,
+      "total": 2,
+      "partial": 0,
+      "missing": 2,
+      "macro_case": 0,
+      "false_refusal_given_context": 1
+    },
+    "completed_B_pairs": 0,
+    "paired_completeness_numerator": null,
+    "paired_completeness_denominator": null,
+    "paired_quality": "NOT_ASSESSABLE",
+    "generation_calls": 12,
+    "embedding_calls": 6,
+    "service_calls": 48,
+    "http_errors": 0,
+    "prompt_tokens": 11989,
+    "output_tokens": 2714,
+    "http_seconds": 772.5446993759833,
+    "initial_critic_issues": {
+      "supported": 2,
+      "mixed": 2,
+      "incorrect": 7,
+      "irrelevant": 1
+    },
+    "later_diagnostic_critics_semantically_ungraded": 3,
+    "overall_hallucination_rate": null
+  },
+  "preservation": {
+    "original_files": 99,
+    "unchanged": 98,
+    "authorized_README_addition": 1,
+    "day01_to_28_tracked_diff_empty": true,
+    "db_sha256": "9894d937c4bcbae653459a6fe758f231992571e436622a0cd33fcda7f707f11b",
+    "original_blind_grades_unchanged": true,
+    "private_mode_findings_corrected": 2
+  },
+  "failed_requirements": [],
+  "open_findings": [],
+  "publication_status": "PENDING"
+}

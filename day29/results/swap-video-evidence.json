@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-10-10T14:35:30.249863+00:00",
+  "unit": "GiB = 1024**3 bytes",
+  "scope": "System-wide swap; not model-exclusive memory",
+  "rows": [
+    {
+      "run_id": "a2606d8f674a48d1b7e2ec8e1549a209",
+      "profile_id": "baseline",
+      "case_id": "E02",
+      "repeat": 1,
+      "request_id": "ee9ef9e7b0f7412db5c0f34149b0a2f3",
+      "receipt_sha256": "4d630371a8b0f7313c1c332846b230bbfad74f65a9ac8c4b8f98fb875411e196",
+      "swap_before_bytes": 4914476482.56,
+      "swap_after_bytes": 4897699266.56,
+      "before_gib": 4.576962890625,
+      "after_gib": 4.561337890625
+    },
+    {
+      "run_id": "a2606d8f674a48d1b7e2ec8e1549a209",
+      "profile_id": "baseline",
+      "case_id": "E02",
+      "repeat": 2,
+      "request_id": "c2b6978b850c4654a0022b7e786ad87c",
+      "receipt_sha256": "911e38f6b4da805c40b2dcd6dcdbc9722033b639caba5a33a9da507b6eeca3b9",
+      "swap_before_bytes": 4880922050.56,
+      "swap_after_bytes": 4880922050.56,
+      "before_gib": 4.545712890625,
+      "after_gib": 4.545712890625
+    },
+    {
+      "run_id": "a2606d8f674a48d1b7e2ec8e1549a209",
+      "profile_id": "candidate",
+      "case_id": "E02",
+      "repeat": 2,
+      "request_id": "f5bba077f40a4a41a25ef05864d81309",
+      "receipt_sha256": "173f1b297701848c52b662138c303085c5e25e0e35b6b46e1914f2ebfdb23792",
+      "swap_before_bytes": 4889310658.56,
+      "swap_after_bytes": 4880922050.56,
+      "before_gib": 4.553525390625,
+      "after_gib": 4.545712890625
+    },
+    {
+      "run_id": "a2606d8f674a48d1b7e2ec8e1549a209",
+      "profile_id": "candidate",
+      "case_id": "E02",
+      "repeat": 1,
+      "request_id": "f18daad7059e4b3ea9960841bdee0385",
+      "receipt_sha256": "bf22069d8a728e695ad2cf10056f15509f992ed0ffd60f856c52ca28e8a4b81e",
+      "swap_before_bytes": 4897699266.56,
+      "swap_after_bytes": 4897699266.56,
+      "before_gib": 4.561337890625,
+      "after_gib": 4.561337890625
+    }
+  ]
+}

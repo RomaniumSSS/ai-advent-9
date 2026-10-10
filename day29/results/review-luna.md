@@ -1,0 +1,19 @@
+# Независимое ревью Day29 — Luna medium
+
+Проверено 2026-10-10 13:13 UTC. Worktree `day29-local-optimization`, база `ca9058411363c1815793c80e2f3a778e52674ad3`.
+
+SHA-256 просмотренных файлов на момент итоговой офлайн-проверки: `core.py` `ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d`, `evaluate.py` `138a1dd9ac2aaabaa953be7c206c2937e82f94526ca69ea8b0078fbf65b9d8df`, `metrics.py` `a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d`, `app.py` `5548e4febe572bbaac0432d38ffd0e6026acdb955e0b27e7501ed63c69cf8ef9`, `video/run_demo.py` `ab9a3de462d264b030638269222328df6b304ef5d6fb0276165ee9f26426266a`, `tests/test_comparison.py` `669227bc8e7a7459966aac5a454f30d6b26ddff09fb1774bf84b109695930268`, `tests/test_freeze.py` `1122b7940c166d5a686dc534051bc7901469a73784c8d7299d79148d9a313ee3`, `tests/test_metrics_fairness.py` `4438d10299caddb7442b0c99528b012c1dba21cac756cf40330071b2cb3d40c6`, `tests/test_runtime.py` `121405e83ef78eee6bfa8a3831899d1848e1465076356d9fb8ec50dfb030ff30`, `tests/test_http.py` `f73af064d1b5f9980ce4f87d06a19a690d02c1eb9cde4e61a50bae6ad1074acf`, `tests/test_contract.py` `1d9579efa0789fe46158cf53dacd4b164e8c30b60b06291a1d27cf9d36c680c7`. Core reviewed before implementation updates had SHA-256 `8495dbf84b13156decade25fe4aebfbf4e439a4d2d6ea068d88812b337a757cb`; final review covers the updated core above. Assigned review role/model: gpt-6-luna medium; usage/cost unavailable.
+
+**Overall: NEEDS CHANGES.** The earlier comparator fairness, freeze-manifest and per-sample RSS findings have been addressed in the current tree: receipts now bind comparable input/model/payload identity, freeze rejects unbound profile/source changes, and RSS samples require a stable complete process set. The remaining issue lets the optimization verdict contradict the explicit unknown-answer requirement for E03.
+
+## Finding
+
+🔴 **[BLOCKER]** [evaluate.py](/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/evaluate.py:123) — `optimization_verdict()` relies on caller-provided `quality['unknown_preserved']` but does not validate that the six receipts preserve the E03 unknown result. With otherwise valid baseline/candidate fixtures, changing both E03 statuses to `done` still returns `proven=true` when the quality booleans are true; this was reproduced offline. A contradictory receipt can therefore be presented as a proven optimization despite the SPEC requiring the absent budget to remain unknown. Require E03 to be `unknown` with no sources/quotes for both profiles, and validate the required completion status for E01/E02 before calculating a verdict.
+
+## Проверки
+
+После сигнала root о завершении pilots выполнена команда `python3 -m unittest discover -s day29/tests -v` на Python 3.14: **34 теста прошли** за 1.108 секунды. Это офлайн suite; сетевые обращения, inference, download и unload мной не запускались. Синтетическая RSS-проверка исходного дефекта была добавлена в ходе ревью; теперь соответствующий fairness test проходит. Отдельная синтетическая проверка E03 остаётся воспроизводимой на актуальном коде.
+
+Ранее два сравнения с несопоставимым контекстом/model и дублирующим request ID упали на ожидаемом RED во время авторского исправления; ранний lock test исполнялся при активном benchmark и не трактуется как дефект. На текущем дереве comparator tests и lock test проходят.
+
+В текущих code/security boundaries не обнаружил другого существенного дефекта: SQLite открыт read-only/immutable, индекс и model digests проверяются, retrieval ограничен public assignment, payload идёт на фиксированный Ollama loopback без proxy/redirect/retry, HTTP-сервер привязан к loopback с проверкой Host/Origin, а UI и recorder связывают показанный ответ с новым request ID. Живое качество модельных ответов, итоговая семантическая таблица и видео в этом ревью не оценивались; ревью не подтверждает завершение всего задания.

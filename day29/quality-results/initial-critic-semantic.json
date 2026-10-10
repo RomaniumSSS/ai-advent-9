@@ -1,0 +1,73 @@
+{
+  "schema": "initial-critic-source-assessment-v1",
+  "status": "COMPLETED_UNBLINDED_CRITIC_ONLY",
+  "run_id": "405d5a5a7bac4e0da30aafccb6f600b7",
+  "human_acceptance": false,
+  "prior_blind_assessment_sha256": "14f22c64ecb2c13db6517dbcecfdc181becd9baec4248bae443c3876851cf8fa",
+  "prior_blind_grade_unchanged": true,
+  "critic_count": 3,
+  "issue_count": 12,
+  "issue_status_counts": {
+    "SUPPORTED": 2,
+    "MIXED": 2,
+    "INCORRECT": 7,
+    "IRRELEVANT": 1
+  },
+  "duplicate_issue_count": 2,
+  "useful_unique_concerns": 2,
+  "verdict_counts": {
+    "FALSE_REPAIR_REJECTION": 1,
+    "UNWARRANTED_INSUFFICIENT_EVIDENCE": 2
+  },
+  "critic_accept_count": 0,
+  "false_accept_rate": null,
+  "paired_improvement": "NOT_ASSESSABLE",
+  "assessor_generation_calls": 0,
+  "assessor_embedding_calls": 0,
+  "assessment_sha256": "e1a4fd252ef9b51d7794d66dc790b1881711c24d003ad38d10de35d8becf8b65",
+  "details_sha256": "f621a507822a90db21286eb842ce037cf580b317c8774c83b60231d29a0727f4",
+  "cases": [
+    {
+      "case_id": "H05",
+      "critic_verdict": "repair",
+      "semantic_verdict_assessment": "FALSE_REPAIR_REJECTION",
+      "issue_status_counts": {
+        "SUPPORTED": 0,
+        "MIXED": 0,
+        "INCORRECT": 4,
+        "IRRELEVANT": 0
+      },
+      "duplicate_issue_count": 0,
+      "useful_unique_concerns": 0,
+      "repair_answer_exists": false
+    },
+    {
+      "case_id": "H12",
+      "critic_verdict": "insufficient_evidence",
+      "semantic_verdict_assessment": "UNWARRANTED_INSUFFICIENT_EVIDENCE",
+      "issue_status_counts": {
+        "SUPPORTED": 0,
+        "MIXED": 2,
+        "INCORRECT": 2,
+        "IRRELEVANT": 0
+      },
+      "duplicate_issue_count": 1,
+      "useful_unique_concerns": 1,
+      "repair_answer_exists": false
+    },
+    {
+      "case_id": "H20",
+      "critic_verdict": "insufficient_evidence",
+      "semantic_verdict_assessment": "UNWARRANTED_INSUFFICIENT_EVIDENCE",
+      "issue_status_counts": {
+        "SUPPORTED": 2,
+        "MIXED": 0,
+        "INCORRECT": 1,
+        "IRRELEVANT": 1
+      },
+      "duplicate_issue_count": 1,
+      "useful_unique_concerns": 1,
+      "repair_answer_exists": false
+    }
+  ]
+}

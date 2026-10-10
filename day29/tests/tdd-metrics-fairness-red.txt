@@ -1,0 +1,26 @@
+test_each_sample_requires_complete_roles (test_metrics_fairness.MemoryFairness.test_each_sample_requires_complete_roles) ... FAIL
+test_runner_change_not_same_process_set (test_metrics_fairness.MemoryFairness.test_runner_change_not_same_process_set) ... FAIL
+test_stable_complete_samples (test_metrics_fairness.MemoryFairness.test_stable_complete_samples) ... ok
+
+======================================================================
+FAIL: test_each_sample_requires_complete_roles (test_metrics_fairness.MemoryFairness.test_each_sample_requires_complete_roles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_metrics_fairness.py", line 11, in test_each_sample_requires_complete_roles
+    self.assertFalse(r['comparison_eligible']);self.assertEqual(r['incomplete_process_samples'],1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_runner_change_not_same_process_set (test_metrics_fairness.MemoryFairness.test_runner_change_not_same_process_set)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_metrics_fairness.py", line 14, in test_runner_change_not_same_process_set
+    self.assertFalse(r['comparison_eligible']);self.assertEqual(r['comparison_reason'],'process_set_changed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=2)

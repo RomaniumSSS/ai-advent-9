@@ -1,0 +1,49 @@
+{
+  "before_sha256": "6e887f0dd664d73d7eff0f267ed4dd505142efddfd51d20cbcc26957a5565bf1",
+  "after_sha256": "98e6725d1e9246d1f1335d81726db4b43dfb3e5b3ddfe2e17981c9ed8bcaccc6",
+  "AST_excluding_resolve_query_equal": true,
+  "initial_actual_run_id": "405d5a5a7bac4e0da30aafccb6f600b7",
+  "initial_three": [
+    {
+      "case_id": "H05",
+      "query_equal": true,
+      "messages_equal": true,
+      "payload_equal": true,
+      "payload_sha256": "e7f40799fc5cb346a2358f7e2480ca86a1f3f3729da9a7cea8d781887da6ce77"
+    },
+    {
+      "case_id": "H12",
+      "query_equal": true,
+      "messages_equal": true,
+      "payload_equal": true,
+      "payload_sha256": "ae49426de0d0452f83fd729e34dbc2021d2d0816e77ecb33b939b28a7abd9da4"
+    },
+    {
+      "case_id": "H20",
+      "query_equal": true,
+      "messages_equal": true,
+      "payload_equal": true,
+      "payload_sha256": "e7a62357377df38e168eef96bd2673d6c3f4f41c98016fe6b5e9f3fc6e98aaeb"
+    }
+  ],
+  "diagnostic_intents": {
+    "H06": "new_topic",
+    "H11": "new_topic"
+  },
+  "generation_calls": 0,
+  "embedding_calls": 0,
+  "tests_synthetic_only": true,
+  "full_chat_test_count": 37,
+  "quality_test_count": 34,
+  "triage": "plural author count alone not ambiguity; bounded distal demonstratives; collective/object anaphora; singular ambiguity retained",
+  "logs": {
+    "full-chat-local-antecedent-red.txt": "9d1a4ddb1ca236c4223b0809c0f307775db8637ca3d116f4983449b33f4560f2",
+    "full-chat-inflection-red.txt": "340bb7c3de4150d251331c354bd2e2d7abf39fb961004c82ea69e13bb18a586d",
+    "full-chat-inflection-green.txt": "40c9518f62a1066c2d5ca9c43dca3d0a6fae7f9a92b2efeed3d9acec8bde84cc",
+    "full-chat-plural-red.txt": "49054e46c1349e330d37fc71fabf4e7bc3e7b18de38a3e00118ab348e878525a",
+    "full-chat-deictic-bound-red.txt": "26696b8ddd3852067e88558916f0a742f662ca57262cea57c30859ef9363e5a6",
+    "full-chat-local-antecedent-green.txt": "3920f0034bb19352e87c84f8bffe01dcc1dbb9f3529f0c7554e24cbea6bb3eb8",
+    "quality-after-resolver-green.txt": "20775a37ab8684f7f9074caee25bee0842bdb6da7e40ba4f247b4bd40567f673"
+  },
+  "source_test_sha256": "b693450f02cb33c5d6867f72bccf53a7892d09829aa6a04b9e09b2cea93fb489"
+}

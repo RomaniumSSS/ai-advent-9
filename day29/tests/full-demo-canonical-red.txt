@@ -1,0 +1,33 @@
+test_canonical_full_assignment_document_id_metadata_shape (test_full_demo.DeliveryTests.test_canonical_full_assignment_document_id_metadata_shape) ... ERROR
+test_empty_three_records_cannot_qualify_as_live_dry (test_full_demo.DeliveryTests.test_empty_three_records_cannot_qualify_as_live_dry) ... ok
+test_exact_three_public_actions (test_full_demo.DeliveryTests.test_exact_three_public_actions) ... ok
+test_existing_private_history_hidden_without_mutating_backend (test_full_demo.DeliveryTests.test_existing_private_history_hidden_without_mutating_backend) ... ok
+test_gate_error_aborts_wait_without_timeout_or_retry (test_full_demo.DeliveryTests.test_gate_error_aborts_wait_without_timeout_or_retry) ... ok
+test_hidden_private_selected_allowed_cited_private_rejected (test_full_demo.DeliveryTests.test_hidden_private_selected_allowed_cited_private_rejected) ... ok
+test_optional_quality_html_must_be_public_path (test_full_demo.DeliveryTests.test_optional_quality_html_must_be_public_path) ... ok
+test_original_and_request_scope_are_checked (test_full_demo.DeliveryTests.test_original_and_request_scope_are_checked) ... ok
+test_private_terminal_answer_blocked_before_dom (test_full_demo.DeliveryTests.test_private_terminal_answer_blocked_before_dom) ... ok
+test_qualification_rejects_partial_error_duplicate_replay_and_frame_changes (test_full_demo.DeliveryTests.test_qualification_rejects_partial_error_duplicate_replay_and_frame_changes) ... ok
+test_quality_summary_hash_is_frozen_across_dry_record (test_full_demo.DeliveryTests.test_quality_summary_hash_is_frozen_across_dry_record) ... ok
+test_record_requires_matching_successful_dry (test_full_demo.DeliveryTests.test_record_requires_matching_successful_dry) ... ok
+test_state_wrong_scope_profile_index_and_model_rejected (test_full_demo.DeliveryTests.test_state_wrong_scope_profile_index_and_model_rejected) ... ok
+test_unowned_reset_rejected_before_forwarding (test_full_demo.DeliveryTests.test_unowned_reset_rejected_before_forwarding) ... ok
+test_wrong_benchmark_model_profile_options_index_rejected (test_full_demo.DeliveryTests.test_wrong_benchmark_model_profile_options_index_rejected) ... ok
+test_wrong_full_model_digest_options_index_rejected (test_full_demo.DeliveryTests.test_wrong_full_model_digest_options_index_rejected) ... ok
+
+======================================================================
+ERROR: test_canonical_full_assignment_document_id_metadata_shape (test_full_demo.DeliveryTests.test_canonical_full_assignment_document_id_metadata_shape)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_demo.py", line 72, in test_canonical_full_assignment_document_id_metadata_shape
+    self.assertEqual(demo.validate_full(turn,receipt,CID,QUESTION)['cited_public_count'],1)
+                     ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/video/run_full_demo.py", line 94, in validate_full
+    if not sources or any(s.get('source')!='assignment' or not re.fullmatch(r'assignment\d+',s.get('document_id','')) for s in sources):raise ValueError('full_private_cited_source')
+                                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: full_private_cited_source
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.038s
+
+FAILED (errors=1)

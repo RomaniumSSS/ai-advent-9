@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-10T15:00:56.028620+00:00",
+  "archive": "Day29-code.zip",
+  "sha256": "1e3955dd254259a9f4849da65da955f1c451010eb45084716a3e404a37d2ca52",
+  "bytes": 7958644,
+  "file_count": 97,
+  "crc": "PASS",
+  "source_bytes_match": "PASS",
+  "excluded": "private/index/models/cache/video binaries; original recording journals stay local",
+  "source_manifest": "results/source-manifest-final.json",
+  "implementation_audit": "results/implementation-validation.md",
+  "video_separate": "video/Day29-live.mp4",
+  "reviewer": "root coordinator"
+}

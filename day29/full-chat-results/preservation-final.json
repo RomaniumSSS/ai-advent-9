@@ -1,0 +1,11 @@
+{
+  "time_utc": "2026-10-10T21:53:18.422585+00:00",
+  "protected_files": 99,
+  "mismatches": [],
+  "db_sha256_unchanged": true,
+  "private_directories_0700": true,
+  "private_files_0600": true,
+  "metadata_permissions_corrected": 0,
+  "full_chat_technical_complete": true,
+  "human_acceptance": false
+}

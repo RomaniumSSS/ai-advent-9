@@ -1,0 +1,19 @@
+{
+  "run_id": "9d22f02d7a5e4f5ba80058fb0798bd96",
+  "phase": "prepared_not_dispatched",
+  "initial_run_id": "405d5a5a7bac4e0da30aafccb6f600b7",
+  "resolver_diagnostic_run_id": "5c2b89978dd64feeb73e99eede037f0d",
+  "case_ids": [
+    "H06"
+  ],
+  "new_random_questions": 0,
+  "known_case_retest": true,
+  "human_acceptance": false,
+  "dataset_sha256": "df49148c565d228c62ee5fb6bd28de98da53eeea8347d7be2dc32b193e1640bb",
+  "full_core_sha256": "f1b62d97909f391462a0a6396ebb23e91e352d6a83cb5378514abc62314c9e12",
+  "all_source_cases_gold_profile_equal": true,
+  "only_baseline_core_hash_changed": true,
+  "review_sha256": "bda9f3eee114eeb6bc02f62174f1261a87467e2fe2848d15309fbb220bc8a267",
+  "source_audit_sha256": "ed236067cce581790ceecde815475ae1ee5f641e1f3aa9628408d3bd27855b6d",
+  "unused_draft_dataset": "cases-v3-day-anchor-diagnostic.json"
+}

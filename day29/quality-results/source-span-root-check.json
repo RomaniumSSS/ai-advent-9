@@ -1,0 +1,8 @@
+{
+  "source_span_count": 50,
+  "exact_source_span_pass_count": 50,
+  "mismatches": [],
+  "cases_file_sha256": "7586cf21e94f394a9bc2700728ebd73f6889bf2869f2b83bf9109d4e0266efa9",
+  "db_sha256": "9894d937c4bcbae653459a6fe758f231992571e436622a0cd33fcda7f707f11b",
+  "actual_model_calls": 0
+}

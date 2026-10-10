@@ -1,0 +1,34 @@
+{
+  "status": "QUALIFIED",
+  "run_id": "9781ae36fbf1408b9b9afd135b32c360",
+  "mode": "real_dry",
+  "actual_new_asks": 3,
+  "model_generation_calls": 3,
+  "embedding_calls": 3,
+  "ui_matches_receipts": true,
+  "identity_profile_index_gates": "PASS",
+  "same_benchmark_context": true,
+  "all_visible_claim_support": "PASS_DIRECT_SOURCE_INSPECTION",
+  "benchmark_E02_completeness": {
+    "B": "2/5",
+    "F": "5/5"
+  },
+  "full_public_Day11_completeness": "PARTIAL_TWO_SELF_CHECKS_OMITTED",
+  "private_cited_sources": 0,
+  "hidden_private_selected_count": 2,
+  "privacy_errors": 0,
+  "page_errors": 0,
+  "readable_frames": [
+    "baseline-candidate-identity",
+    "live-baseline",
+    "live-candidate",
+    "live-full-public-question",
+    "historical-table",
+    "saved-five-new-questions"
+  ],
+  "frame_count": 26,
+  "dry_results_sha256": "1159ccdbc77f2bc73bdc97149a7524407f9fba2bbfc2a537af4d7301a9edb8ab",
+  "script_sha256": "947477a172d8744b3396e7aa79d0b4a6b178f4ab8a9db2d60458c9495bbd8dc8",
+  "quality_summary_sha256": "9c2ba93c772d4e6be05e916cead026acf799101078f5274444b6f05c36a4263e",
+  "human_acceptance": false
+}

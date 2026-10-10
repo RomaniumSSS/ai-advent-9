@@ -1,0 +1,88 @@
+{
+  "recording_run_id": "2b8d61871bed4776aaba63f1cb94d556",
+  "app_run_id": "7b522fd22b7b474684a9cb31e0621eb5",
+  "started_at": "2026-10-10T14:01:28.524752+00:00",
+  "finished_at": "2026-10-10T14:07:10.575801+00:00",
+  "url": "http://127.0.0.1:8069",
+  "requests": [
+    {
+      "case_id": "E02",
+      "profile_id": "baseline",
+      "request_id": "61881b21b1704e3aad9c5c1f0e9d01b2",
+      "receipt_sha256": "9570928a2b2f7ee7c272bb063bf8199757a07964e7043df88635ef24339b9b4d",
+      "status": "done",
+      "generation_called": true,
+      "projection_and_visible_answer_match": true,
+      "runtime_network": "loopback_only",
+      "times": {
+        "embedding": 1.4322467499878258,
+        "generation": 44.81566204200499,
+        "retrieval": 0.0009384589502587914,
+        "total": 46.350284666987136
+      }
+    },
+    {
+      "case_id": "E02",
+      "profile_id": "candidate",
+      "request_id": "ac268cd8796c4296bf3e03ac9c27be55",
+      "receipt_sha256": "273b5eb8bcfa99c836ba840505440d55c67cc31e652af4e6ba41aaab2e4da578",
+      "status": "done",
+      "generation_called": true,
+      "projection_and_visible_answer_match": true,
+      "runtime_network": "loopback_only",
+      "times": {
+        "embedding": 1.9452228749869391,
+        "generation": 88.46964629204012,
+        "retrieval": 0.0010987080167979002,
+        "total": 90.53415662492625
+      }
+    },
+    {
+      "case_id": "E01",
+      "profile_id": "candidate",
+      "request_id": "2f2a9a6152874fce9d6cc8e1f5642a76",
+      "receipt_sha256": "cfd6b81554a5181474a8b94a425594685c96238d86acbfa5c6c818f9352b5135",
+      "status": "done",
+      "generation_called": true,
+      "projection_and_visible_answer_match": true,
+      "runtime_network": "loopback_only",
+      "times": {
+        "embedding": 1.423451832961291,
+        "generation": 39.007124207913876,
+        "retrieval": 0.0009776660008355975,
+        "total": 40.53336337499786
+      }
+    },
+    {
+      "case_id": "E03",
+      "profile_id": "candidate",
+      "request_id": "18213c4fbdf244f087615eb430efbdfe",
+      "receipt_sha256": "4ac474ab7fbf8c5046cae1bba6f14cfe2a2a1bb559cf38b5d2dc218090088575",
+      "status": "unknown",
+      "generation_called": true,
+      "projection_and_visible_answer_match": true,
+      "runtime_network": "loopback_only",
+      "times": {
+        "embedding": 1.4309909580042586,
+        "generation": 17.811352416989394,
+        "retrieval": 0.0006423329468816519,
+        "total": 19.33836979197804
+      }
+    }
+  ],
+  "live_pair_verification": {
+    "input_sha256": [
+      "4065b3d6cfd201c01ef73ab1dc232e83a7dbde550f15a817305c13720632c89c",
+      "4065b3d6cfd201c01ef73ab1dc232e83a7dbde550f15a817305c13720632c89c"
+    ],
+    "same_index": true,
+    "same_input_text_and_order": true,
+    "snapshot_sha256": [
+      "dbd5581b3363af62fb34d35b08e9292b8c733bf43e73cba021e2392c7bf8e687",
+      "dbd5581b3363af62fb34d35b08e9292b8c733bf43e73cba021e2392c7bf8e687"
+    ]
+  },
+  "page_errors": [],
+  "video_file": "video/Day29-live.mp4",
+  "video_sha256": "cc5c9dc4c2537dae73e1d9a49d438e963380cda12d8de28914c3654109a2cb34"
+}

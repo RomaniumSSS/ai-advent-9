@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "record_run_id": "52c60273cbbf43fe8c9e822a5ef75fa9",
+  "qualified_dry_run_id": "9781ae36fbf1408b9b9afd135b32c360",
+  "public_video": "video/Day29-live-full-chat.mp4",
+  "video_sha256": "4bfe503922a256adf22560c7f5c76cb2c8411dbe440c6d107501ebf34f9f3d10",
+  "bytes": 8715854,
+  "duration_seconds": 296.68,
+  "codec": "h264",
+  "dimensions": [
+    1280,
+    1000
+  ],
+  "fps": "25/1",
+  "full_decode_exit": 0,
+  "full_decode_errors": 0,
+  "actual_new_asks": 3,
+  "actual_generation_calls": 3,
+  "actual_embedding_calls": 3,
+  "record_ids_disjoint_from_dry": true,
+  "frame_count": 26,
+  "viewed_decoded_frames": [
+    "baseline-candidate-identity",
+    "live-baseline",
+    "live-candidate",
+    "historical-summary-6",
+    "historical-table",
+    "live-full-public-question",
+    "full-public-source-1",
+    "durable-own-history-after-reload",
+    "saved-five-new-questions"
+  ],
+  "all_visible_claim_support": "PASS_DIRECT_SOURCE_INSPECTION",
+  "benchmark_completeness": {
+    "B": "2/5",
+    "F": "5/5"
+  },
+  "full_public_Day11_completeness": "PARTIAL_TWO_SELF_CHECKS_OMITTED",
+  "private_cited_sources": 0,
+  "foreign_history_visible": false,
+  "original_four_conversation_files_unchanged": true,
+  "script_sha256": "947477a172d8744b3396e7aa79d0b4a6b178f4ab8a9db2d60458c9495bbd8dc8",
+  "quality_html_sha256": "9c2ba93c772d4e6be05e916cead026acf799101078f5274444b6f05c36a4263e",
+  "record_receipt_sha256": "fefcefbb6cbe26e514c1592cdb8480dc5ae0bb244dfa6dcc2aa2783f125e19c3",
+  "human_acceptance": false,
+  "publication_status": "pending"
+}

@@ -1,0 +1,44 @@
+test_atomic_failed_reset_keeps_previous_conversation (test_full_chat_store.Store.test_atomic_failed_reset_keeps_previous_conversation) ... FAIL
+test_atomic_failed_submission_does_not_leave_ghost_turn (test_full_chat_store.Store.test_atomic_failed_submission_does_not_leave_ghost_turn) ... FAIL
+test_new_and_reset_have_no_followup_anchor (test_full_chat_store.Store.test_new_and_reset_have_no_followup_anchor) ... ok
+test_permissions_persistence_and_recovery_no_repeat (test_full_chat_store.Store.test_permissions_persistence_and_recovery_no_repeat) ... ok
+test_reset_discards_late_result_and_new_chat_is_separate (test_full_chat_store.Store.test_reset_discards_late_result_and_new_chat_is_separate) ... ok
+
+======================================================================
+FAIL: test_atomic_failed_reset_keeps_previous_conversation (test_full_chat_store.Store.test_atomic_failed_reset_keeps_previous_conversation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_store.py", line 19, in test_atomic_failed_reset_keeps_previous_conversation
+    self.assertEqual(self.store.get(cid),before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[55 chars]ch': 1, 'created_at': '2026-10-10T21:09:31.739[69 chars]: []} != {'con[55 chars]ch': 0, 'created_at': '2026-10-10T21:09:31.739[279 chars]0'}]}
+Diff is 694 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_atomic_failed_submission_does_not_leave_ghost_turn (test_full_chat_store.Store.test_atomic_failed_submission_does_not_leave_ghost_turn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_store.py", line 14, in test_atomic_failed_submission_does_not_leave_ghost_turn
+    self.assertEqual(self.store.get(cid),before)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'con[146 chars]1.743878+00:00', 'turns': [{'conversation_id':[188 chars]0'}]} != {'con[146 chars]1.743215+00:00', 'turns': []}
+  {'conversation_id': '31fa743492e4446e8a1233a2d909d047',
+   'created_at': '2026-10-10T21:09:31.743210+00:00',
+   'epoch': 0,
++  'turns': [],
+-  'turns': [{'conversation_id': '31fa743492e4446e8a1233a2d909d047',
+-             'question': 'synthetic question',
+-             'request_id': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+-             'started_at': '2026-10-10T21:09:31.743872+00:00',
+-             'status': 'running'}],
+-  'updated_at': '2026-10-10T21:09:31.743878+00:00'}
+?                                        ^^^
+
++  'updated_at': '2026-10-10T21:09:31.743215+00:00'}
+?                                        ^^^
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.017s
+
+FAILED (failures=2)

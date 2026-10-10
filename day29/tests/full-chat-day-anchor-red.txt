@@ -1,0 +1,58 @@
+test_day_anchor_and_explicit_note_preserve_mixed_scope (test_full_chat_day_anchor.DayAnchor.test_day_anchor_and_explicit_note_preserve_mixed_scope) ... FAIL
+test_exact_named_day_survives_low_semantics_without_assignment_keyword (test_full_chat_day_anchor.DayAnchor.test_exact_named_day_survives_low_semantics_without_assignment_keyword) ... FAIL
+test_pure_discussion_has_no_forced_assignment_or_source_filter (test_full_chat_day_anchor.DayAnchor.test_pure_discussion_has_no_forced_assignment_or_source_filter) ... ok
+test_whole_budget_guard_retains_anchor_before_large_optional_chunks (test_full_chat_day_anchor.DayAnchor.test_whole_budget_guard_retains_anchor_before_large_optional_chunks) ... FAIL
+test_without_explicit_day_ranking_is_unchanged_and_unknown_day_not_invented (test_full_chat_day_anchor.DayAnchor.test_without_explicit_day_ranking_is_unchanged_and_unknown_day_not_invented) ... FAIL
+
+======================================================================
+FAIL: test_day_anchor_and_explicit_note_preserve_mixed_scope (test_full_chat_day_anchor.DayAnchor.test_day_anchor_and_explicit_note_preserve_mixed_scope)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_day_anchor.py", line 24, in test_day_anchor_and_explicit_note_preserve_mixed_scope
+    self.assertEqual({c['source'] for c in selected},{'assignment','discussion','personal_note'})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'assignment'
+
+======================================================================
+FAIL: test_exact_named_day_survives_low_semantics_without_assignment_keyword (test_full_chat_day_anchor.DayAnchor.test_exact_named_day_survives_low_semantics_without_assignment_keyword)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_day_anchor.py", line 18, in test_exact_named_day_survives_low_semantics_without_assignment_keyword
+    self.assertIn('a13',[c['chunk_id'] for c in selected]);self.assertEqual(selected[0]['chunk_id'],'a13')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'a13' not found in ['note', 'd0', 'd1', 'd2', 'd3']
+
+======================================================================
+FAIL: test_whole_budget_guard_retains_anchor_before_large_optional_chunks (test_full_chat_day_anchor.DayAnchor.test_whole_budget_guard_retains_anchor_before_large_optional_chunks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_day_anchor.py", line 43, in test_whole_budget_guard_retains_anchor_before_large_optional_chunks
+    self.assertIn('a13',[c['chunk_id'] for c in kept]);self.assertTrue(trace['sources_removed'])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'a13' not found in ['note']
+
+======================================================================
+FAIL: test_without_explicit_day_ranking_is_unchanged_and_unknown_day_not_invented (test_full_chat_day_anchor.DayAnchor.test_without_explicit_day_ranking_is_unchanged_and_unknown_day_not_invented)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_day_anchor.py", line 34, in test_without_explicit_day_ranking_is_unchanged_and_unknown_day_not_invented
+    self.assertEqual([c['chunk_id'] for c in selected],['d0','d1','d2','d3','d4'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['note', 'd0', 'd1', 'd2', 'd3'] != ['d0', 'd1', 'd2', 'd3', 'd4']
+
+First differing element 0:
+'note'
+'d0'
+
+- ['note', 'd0', 'd1', 'd2', 'd3']
+?  --------
+
++ ['d0', 'd1', 'd2', 'd3', 'd4']
+?                        ++++++
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.011s
+
+FAILED (failures=4)

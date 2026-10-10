@@ -1,0 +1,130 @@
+test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) ... 
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=0, anchor='Сравни выдуманные детали A и B', question='Что из них применили?') ... FAIL
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=0, anchor='Сравни выдуманные детали A и B', question='Как пользоваться ими?') ... FAIL
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=0, anchor='Сравни выдуманные детали A и B', question='Что делают с ними?') ... FAIL
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=1, anchor='Сравни выдуманные детали A и B', question='Что из них применили?') ... FAIL
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=1, anchor='Сравни выдуманные детали A и B', question='Как пользоваться ими?') ... FAIL
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=1, anchor='Сравни выдуманные детали A и B', question='Что делают с ними?') ... FAIL
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=2, anchor='Сравни выдуманные детали A и B', question='Что из них применили?') ... FAIL
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=2, anchor='Сравни выдуманные детали A и B', question='Как пользоваться ими?') ... FAIL
+  test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=2, anchor='Сравни выдуманные детали A и B', question='Что делают с ними?') ... FAIL
+test_common_demonstrative_inflections_keep_history_or_clarify (test_full_chat_antecedents.LocalAntecedents.test_common_demonstrative_inflections_keep_history_or_clarify) ... ok
+test_demonstrative_local_reference_still_overrides_previous_topic (test_full_chat_antecedents.LocalAntecedents.test_demonstrative_local_reference_still_overrides_previous_topic) ... ok
+test_multi_author_followup_does_not_become_local_definition (test_full_chat_antecedents.LocalAntecedents.test_multi_author_followup_does_not_become_local_definition) ... ok
+test_named_definition_is_self_contained_despite_это_их (test_full_chat_antecedents.LocalAntecedents.test_named_definition_is_self_contained_despite_это_их) ... ok
+test_numbered_local_object_is_self_contained_not_previous_anchor (test_full_chat_antecedents.LocalAntecedents.test_numbered_local_object_is_self_contained_not_previous_anchor) ... ok
+test_singular_unspecified_participant_still_clarifies_multiple_authors (test_full_chat_antecedents.LocalAntecedents.test_singular_unspecified_participant_still_clarifies_multiple_authors) ... ok
+test_true_deictic_ellipsis_and_unrelated_number_keep_history (test_full_chat_antecedents.LocalAntecedents.test_true_deictic_ellipsis_and_unrelated_number_keep_history) ... ok
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=0, anchor='Сравни выдуманные детали A и B', question='Что из них применили?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=0, anchor='Сравни выдуманные детали A и B', question='Как пользоваться ими?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=0, anchor='Сравни выдуманные детали A и B', question='Что делают с ними?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=1, anchor='Сравни выдуманные детали A и B', question='Что из них применили?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=1, anchor='Сравни выдуманные детали A и B', question='Как пользоваться ими?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=1, anchor='Сравни выдуманные детали A и B', question='Что делают с ними?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=2, anchor='Сравни выдуманные детали A и B', question='Что из них применили?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=2, anchor='Сравни выдуманные детали A и B', question='Как пользоваться ими?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_collective_plural_and_object_reference_preserve_whole_topic (test_full_chat_antecedents.LocalAntecedents.test_collective_plural_and_object_reference_preserve_whole_topic) (authors=2, anchor='Сравни выдуманные детали A и B', question='Что делают с ними?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat/day29/tests/test_full_chat_antecedents.py", line 70, in test_collective_plural_and_object_reference_preserve_whole_topic
+    self.assertEqual(query['intent'],'followup');self.assertEqual(query['anchor'],anchor)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.006s
+
+FAILED (failures=9)

@@ -1,4 +1,104 @@
-# HANDOFF — единый репозиторий после Day26
+# HANDOFF — ai-advent-9
+
+## Текущая точка — 11.10.2026
+
+Publication разрешена: GitHub orderedmain/day29 + видеоDriveprimary сAnyoneViewer
++ дваотдельныхURL собственнымкомментариемЛист1!AD132. Useracceptancefalse.
+Activeworktree /Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat,
+branchday29-full-index-chat, baseca90584. Mainworktreeне трогали; его4untrackeddirsсохранить.
+Sourcefullcoref1b62d97…4c9e12 /quality329a11f5…cb89c /recorder947477a1…5bbd8dc8 frozen,
+142offlinePASS. Luna→Astra allcodefixesAPPROVED. Fullbackendnative59881run3fa8bdb0…382c13;
+originalpublic8069oldworktree+otherapps untouched.
+
+Initial5 run405d5a5a7bac4e0da30aafccb6f600b7: H05/H12/H20/H06/H11 seeded4766433321957233838;
+6gen/3embed,15supported claims,4/12full,2falseclarification. Knownresolver2 run5c2b8997…37f0d:
+4gen/2embed,H11 2/3+partial,H06unknownsourceomission. Knownanchor1run9d22f02d…8bd96:
+2gen/1embed,H06 0/2false_refusal despite1availablegroup; sourcegrade9bd8bac5…46bfc1.
+Oldmeasurements immutable; samequestions/gold/index, onlyversionedcodehash. Remaining19unrun.
+All3qualityruns12gen6embed48service0HTTPerrors/Bcompleted0; noimprovement/hallrate claim.
+Details QUAL_SPEC/TASKS +quality-results/README; corpus/cases/prompts/receiptsprivate0700/0600.
+
+RecordCOMPLETE full-record-20261011-014400/native46651exit0/run52c60273cbbf43fe8c9e822a5ef75fa9.
+Canonicalvideo day29/video/Day29-live-full-chat.mp4 SHA4bfe503922a256adf22560c7f5c76cb2c8411dbe440c6d107501ebf34f9f3d10
+8,715,854bytes/296.68s/H2641280×1000/25fps; full ffmpegdecode0errors,9decodedframesviewed
+plus t30runningnewRID; source supportPASS, E02B2/5→F5/5, fullDay11missing2selfchecks.
+Qualifiedreal dry013900/run9781ae36…2c360;3newasks each/disjointIDs/sameHTML9c2ba93c…4263e.
+Failedtakes0127000asks and0131001baselineGENpreserved: caughtAPIprofileprojection+canonicalIDs
+fixturemismatches beforefinalrecordercorrected. Original99files98unchanged/READMEauthorizedaddition.
+Original4conversationfileSHAs preservedafterdry/record;privatecache dirs700 fixed.
+
+Stop: finalAstraactualdeliverymatrix finishing (rootmedia proof sent; no substantive blockers).
+AfterAPPROVED: safeGitcandidatecheck→commit→mainff/push→verifyremote/order→Driveupload/publicViewer
+→AD1/A132readcheck→ownAD132comment2URL→reloadreadback→publicationproof/docscommit.
+Currentexternalwrites0. BrowserDrivefoldertab0primaryaccountverified, SheetAD132tab2selected.
+ExactdestIDs inDELIVERY/todo; rootownsallpublication. No branch/worktree deletion.
+
+## Контекст Full chat — 10.10.2026
+
+Развитие полного локального RAG отдельно: ветка day29-full-index-chat, worktree
+/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat, база ca90584.
+study сохранена (прежняя .DS_Store); исходный public Day29/8069 остаётся в старом worktree.
+Все 99 protected файлов и immutable index SHA подтверждены root и Astra.
+
+Sol написал additive full_chat_core.py/full_chat.py/full_chat_static, 28 focused PASS;
+прежние 45 offline также PASS. Luna late UI/ellipses findings исправлены RED/GREEN;
+самостоятельно выявленный bootstrap stale error исправлен captured-token + browser RED/GREEN.
+Astra независимо проверила код, все 724 attribution spans, real receipts и semantics.
+Три real UI cases — full-chat-results/live-summary.json; подробности private/full-chat/live/f16bc3e0fa2a4c518460cdb23b88a5a1.
+Support 3 PASS; D01 completeness PARTIAL2/3, F01/P01 PASS. Hallucination rate не измерен,
+human acceptance false. После resolver fix новые query/messages/payloads/source IDs точь-в-точь
+совпали с измеренными, source-phase AST/API не менялись; inference повторно не запускали.
+
+Actual idle restart загрузил final backend; 2 разговора/3 хода сохранились точно, replay нет.
+8070 PID24270, native79828, run817c9143e7c141fdb6301be516bcfc9d; старый8069 PID49018.
+Final actual UI/source panel proof — full-chat-results/final-browser.json; 3 viewport,
+original/parts/author/date exact, final JS served, own empty new/reset, pageerrors0.
+Private screenshots viewed; история/полные corpus тексты/receipts только private/full-chat.
+
+Full_chat README/TASKS/RESULT и финальный verdict завершены. User продолжает учебный
+диалог параллельно разработке. Актуальная публикация поручена 11.10, см. текущую точку.
+Runtime RAG только local, Q8 не грузить, corpus/index не пересчитывать.
+
+## Текущая точка Day29 — 10.10.2026
+
+Day29 выполняется в `/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29`,
+ветка `day29-local-optimization`, база `ca90584`. Пользователь разрешил начать
+реализацию и попросил объяснения после, поскольку сейчас не у компьютера.
+Отдельное человеческое подтверждение текста SPEC не получено и не заявляется.
+Требования/подробные этапы — [SPEC](day29/SPEC.md), [TASKS](day29/TASKS.md);
+значимые действия — [журнал](day29/actions.jsonl). Публикация поручена 11.10.2026.
+
+Точная текущая точка: локальная поставка завершена. 45 offline GREEN;
+независимый Astra аудит [43 PASS / SPEC SATISFIED](day29/results/implementation-validation.md),
+A1/A2 закрыты. Warm `a2606d8f674a48d1b7e2ec8e1549a209`: 12 scored, 4 warmups excluded;
+cold `bc205ff1d4d141749152dfa9978ac552`: два E02; Q8
+`df5e7e0053954e88858734c3f0a2bbb3`: failed warmup length/384, два warm не запускались.
+E02 2/5→5/5, E01/E03 без регрессии; цена — E02 2.30× медленнее, RSS -7.75% ниже10%.
+
+Финальный [MP4](day29/video/Day29-live.mp4): record-02
+`6f393fc7546547118052d26de2b60186`, 328.48 s, SHA5082b1f0…, четыре новых IDs,
+decode/9 кадров/receipts PASS. Численный swap/GPU показан. Первый дубль и его
+SCENARIO п.6 PARTIAL сохранены. [Code ZIP](day29/Day29-code.zip) проверен отдельно
+координатором; [proof](day29/results/archive-verification.json).
+App остаётся на `http://127.0.0.1:8069`, PID49018, exec session77774.
+Чужие Day27/28 процессы не остановлены. Запись/benchmarks закончены, lock свободен.
+Следующий шаг: новый прогон пяти вопросов и свежая запись, затем разрешённая
+публикация. Прежние дорогие измерения и исходные видео сохранять.
+
+Не потерять причины: pilot sampler не распознал native llama-server, поэтому
+pilot RSS daemon-only несопоставим; исправлен до formal warm. Pilot времена
+смешивают загрузку/кеш. Первый mobile fixture FAIL сохранён, responsive исправлен.
+Исходные frozen contexts сохранены; `inputs-repair-v1.json` — измеренная версия,
+`inputs-delivery-v1.json` — тот же input + новые hashes postprocessing/selected UI.
+Измеренный evaluate fbe696ad сохранён; текущий fdd23fa6 меняет only guards,
+run grouping и failed quant journal durability; core/metrics/LLM payload прежние.
+Не восстанавливать отсутствующий original Q8 preparation задним числом.
+Q8 скачана на SSD и выгружена из RAM; Q4 и исходную 9B не удалять.
+
+Фактические роли Astra high → Sol high → Luna medium → Astra xhigh;
+usage/cost не предоставлены. [EXPLAINED](day29/EXPLAINED.md) готов для чтения
+после реализации; пользователь сейчас не у компьютера, понимание не проверено.
+Публикация/merge/main/Drive/таблица разрешены поручением 11.10.2026 после проверок.
 
 Основная рабочая папка: `/Users/ramanpazharytski/Projects/ai-advent-9`, ветка `main`.
 Объединены линия Day11–20 (`4f927af`) и линия Day21–26 с финальными правками Day25

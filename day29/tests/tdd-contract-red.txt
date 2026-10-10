@@ -1,0 +1,31 @@
+test_mutated_snapshot_rejected (test_contract.Contracts.test_mutated_snapshot_rejected) ... FAIL
+test_options_forwarded (test_contract.Contracts.test_options_forwarded) ... FAIL
+
+======================================================================
+FAIL: test_mutated_snapshot_rejected (test_contract.Contracts.test_mutated_snapshot_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_contract.py", line 11, in test_mutated_snapshot_rejected
+    with self.assertRaisesRegex(ValueError,'snapshot'): core.validate_snapshot(snapshot)
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_options_forwarded (test_contract.Contracts.test_options_forwarded)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_contract.py", line 8, in test_options_forwarded
+    self.assertEqual(core.profile_payload(p,[{'role':'user','content':'x'}])['options'],p['options'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'num_ctx': 8192, 'num_predict': 1024, 'temperature': 0} != {'temperature': 0.2, 'num_ctx': 6144, 'num_predict': 384}
+- {'num_ctx': 8192, 'num_predict': 1024, 'temperature': 0}
+?             ^ ^^                 ^^^
+
++ {'num_ctx': 6144, 'num_predict': 384, 'temperature': 0.2}
+?             ^ ^^                 ^^                   ++
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)

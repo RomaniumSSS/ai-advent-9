@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "model_id": "gpt-6-astra",
+  "diagnostic_run_id": "9d22f02d7a5e4f5ba80058fb0798bd96",
+  "quality_class": "FALSE_REFUSAL_GIVEN_CONTEXT",
+  "known_retest": true,
+  "new_holdout": false,
+  "human_acceptance": false,
+  "arm_map_read": false,
+  "critic_read": false,
+  "current_core_read": false,
+  "previous_grade_files_read": false,
+  "prior_status_summaries_seen": true,
+  "provenance_check": {
+    "status": "PASS",
+    "original_chunks_checked": 3,
+    "gold_spans_checked": 2,
+    "transmitted_sources_checked": 2,
+    "attributed_parts_checked": 4,
+    "read_only": true,
+    "db_sha256": "9894d937c4bcbae653459a6fe758f231992571e436622a0cd33fcda7f707f11b"
+  },
+  "input_hashes": {
+    "manifest_sha256": "c422c2e4ebf1deb638bbe78ba456555754ce317576c788b56258972cc5cf99fa",
+    "H06_sha256": "b4bc558427a48afc4a1976baa62a1efdda28270f98d1289e1881f617a5e67a8e"
+  },
+  "private_assessment_sha256": "5e57a415be8d912d3cc7b48fad8457f6e5630eb94000bfb27d5941c81c0e81e4",
+  "aggregate": {
+    "gold_groups": 2,
+    "covered_groups": 0,
+    "partial_groups": 0,
+    "missing_groups": 2,
+    "unverifiable_groups": 0,
+    "snapshot_available_groups": 2,
+    "transmitted_available_groups": 1,
+    "supported_atomic_claims": 0,
+    "contradicted_atomic_claims": 0,
+    "unsupported_atomic_claims": 0,
+    "unverifiable_atomic_claims": 0,
+    "false_refusal_given_context": 1,
+    "false_clarification": 0,
+    "correct_unknown": 0,
+    "observed_answer_slots": 1,
+    "missing_answer_slots": 1,
+    "paired_comparisons": 0
+  },
+  "results": [
+    {
+      "case_id": "H06",
+      "slot": "X",
+      "quality_class": "FALSE_REFUSAL_GIVEN_CONTEXT",
+      "claim_counts": {
+        "supported": 0,
+        "contradicted": 0,
+        "unsupported": 0,
+        "unverifiable": 0
+      },
+      "completeness": {
+        "gold_groups": 2,
+        "covered_groups": 0,
+        "partial_groups": 0,
+        "missing_groups": 2,
+        "unverifiable_groups": 0,
+        "numerator": 0,
+        "denominator": 2
+      },
+      "answerability": "PARTIALLY_ANSWERABLE_FROM_TRANSMITTED_CONTEXT",
+      "corpus_answerability": "ANSWERABLE",
+      "false_refusal_given_context": true,
+      "false_clarification": false,
+      "correct_unknown": false,
+      "attribution_errors": 0,
+      "citation_truth": "NOT_APPLICABLE_NO_CITATIONS",
+      "snapshot_available_groups": 2,
+      "transmitted_available_groups": 1,
+      "paired_quality": "NOT_ASSESSABLE"
+    }
+  ],
+  "paired_quality": "NOT_ASSESSABLE",
+  "real_generation_calls": 0,
+  "embedding_calls": 0,
+  "usage": "unknown",
+  "cost": "unknown"
+}

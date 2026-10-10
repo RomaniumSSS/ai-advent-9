@@ -1,0 +1,44 @@
+test_baseline_and_candidate_group_identities (test_comparison.Comparison.test_baseline_and_candidate_group_identities) ... ok
+test_duplicate_ids_cannot_claim_win (test_comparison.Comparison.test_duplicate_ids_cannot_claim_win) ... ok
+test_e03_receipts_override_false_manual_quality (test_comparison.Comparison.test_e03_receipts_override_false_manual_quality) ... ok
+test_fully_gpu_allocation_sizes_may_differ_for_rss (test_comparison.Comparison.test_fully_gpu_allocation_sizes_may_differ_for_rss) ... ok
+test_unfair_context_and_model_cannot_claim_win (test_comparison.Comparison.test_unfair_context_and_model_cannot_claim_win) ... ok
+test_valid_speed_win (test_comparison.Comparison.test_valid_speed_win) ... ok
+test_mutated_snapshot_rejected (test_contract.Contracts.test_mutated_snapshot_rejected) ... ok
+test_options_forwarded (test_contract.Contracts.test_options_forwarded) ... ok
+test_bind_preserves_inputs_and_parent_without_inference (test_freeze.FrozenManifest.test_bind_preserves_inputs_and_parent_without_inference) ... ok
+test_changed_profiles_not_implicitly_accepted (test_freeze.FrozenManifest.test_changed_profiles_not_implicitly_accepted) ... ok
+test_changed_source_not_implicitly_accepted (test_freeze.FrozenManifest.test_changed_source_not_implicitly_accepted) ... ok
+test_current_manifest_valid (test_freeze.FrozenManifest.test_current_manifest_valid) ... ok
+test_host_origin_and_routes (test_http.HTTP.test_host_origin_and_routes) ... ok
+test_question_profile_and_request_id (test_http.HTTP.test_question_profile_and_request_id) ... ok
+test_embedding_identity_fail_and_readonly (test_index.Index.test_embedding_identity_fail_and_readonly) ... ok
+test_generation_and_sha_fail_closed (test_index.Index.test_generation_and_sha_fail_closed) ... ok
+test_vector_dimension_and_finite (test_index.Index.test_vector_dimension_and_finite) ... ok
+test_each_sample_requires_complete_roles (test_metrics_fairness.MemoryFairness.test_each_sample_requires_complete_roles) ... ok
+test_real_ollama0333_llama_server_descendant (test_metrics_fairness.MemoryFairness.test_real_ollama0333_llama_server_descendant) ... ok
+test_runner_change_not_same_process_set (test_metrics_fairness.MemoryFairness.test_runner_change_not_same_process_set) ... ok
+test_stable_complete_samples (test_metrics_fairness.MemoryFairness.test_stable_complete_samples) ... ok
+test_isolated_q8_exactly_one_warmup_two_answers (test_quant.Quantization.test_isolated_q8_exactly_one_warmup_two_answers) ... ok
+test_unconfirmed_unload_stops_before_generation (test_quant.Quantization.test_unconfirmed_unload_stops_before_generation) ... ok
+test_actual_options_and_original_sources (test_runtime.Runtime.test_actual_options_and_original_sources) ... ok
+test_arbitrary_warmup_id_not_proof (test_runtime.Runtime.test_arbitrary_warmup_id_not_proof) ... ok
+test_budget_reject_before_network_no_truncation (test_runtime.Runtime.test_budget_reject_before_network_no_truncation) ... ok
+test_context_order_text_map_and_question_mutation (test_runtime.Runtime.test_context_order_text_map_and_question_mutation) ... ok
+test_empty_context_has_no_chat (test_runtime.Runtime.test_empty_context_has_no_chat) ... ok
+test_independent_baseline_parity (test_runtime.Runtime.test_independent_baseline_parity) ... ok
+test_invalid_refs_unknown_and_length (test_runtime.Runtime.test_invalid_refs_unknown_and_length) ... ok
+test_lock_and_release_after_exception (test_runtime.Runtime.test_lock_and_release_after_exception) ... ok
+test_loopback_routes (test_runtime.Runtime.test_loopback_routes) ... ok
+test_metrics_null_and_units (test_runtime.Runtime.test_metrics_null_and_units) ... ok
+test_missing_warm_load_metric_not_comparable (test_runtime.Runtime.test_missing_warm_load_metric_not_comparable) ... ok
+test_multiple_process_rss_pid_changes (test_runtime.Runtime.test_multiple_process_rss_pid_changes) ... ok
+test_one_factor_profiles (test_runtime.Runtime.test_one_factor_profiles) ... ok
+test_public_filter_before_search (test_runtime.Runtime.test_public_filter_before_search) ... ok
+test_statistics_and_no_false_optimization (test_runtime.Runtime.test_statistics_and_no_false_optimization) ... ok
+test_warm_cold_truth_and_unique_ids (test_runtime.Runtime.test_warm_cold_truth_and_unique_ids) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 1.108s
+
+OK

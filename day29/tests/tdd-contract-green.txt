@@ -1,0 +1,7 @@
+test_mutated_snapshot_rejected (test_contract.Contracts.test_mutated_snapshot_rejected) ... ok
+test_options_forwarded (test_contract.Contracts.test_options_forwarded) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

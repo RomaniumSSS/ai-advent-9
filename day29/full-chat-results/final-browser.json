@@ -1,0 +1,38 @@
+{
+  "time_utc": "2026-10-10T21:40:38.946641+00:00",
+  "kind": "Actual final loopback UI, persisted real answers and original source panels; no fixture replies",
+  "checks": [
+    {
+      "check": "persisted_source_panel_original_and_parts_exact",
+      "pass": true,
+      "attribution_rows_exact": true
+    },
+    {
+      "check": "desktop_source_no_horizontal_overflow",
+      "pass": true,
+      "document_width": 1280
+    },
+    {
+      "check": "tablet_source_no_horizontal_overflow",
+      "pass": true,
+      "document_width": 768
+    },
+    {
+      "check": "mobile_source_no_horizontal_overflow",
+      "pass": true,
+      "document_width": 375
+    },
+    {
+      "check": "served_final_js_matches_source",
+      "pass": true
+    },
+    {
+      "check": "new_and_reset_own_empty_conversation",
+      "pass": true
+    }
+  ],
+  "page_errors": [],
+  "additional_model_calls": 0,
+  "ready_conversation_id": "0c6af03eaf0c4f099f1bdd9cf3269b6c",
+  "screenshots_private": true
+}

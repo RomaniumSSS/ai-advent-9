@@ -1,0 +1,39 @@
+{
+  "status": "recorder_prepared_not_real_recorded",
+  "unit_tests": 16,
+  "commands": [
+    "python3 -m unittest discover -s day29/tests -p 'test_full_demo.py' -v",
+    "uv run --offline --no-project --with playwright python day29/tests/full_demo_browser.py --output day29/private/full-chat/delivery-fixture-03"
+  ],
+  "synthetic_browser": "Prior draft PASS; final guard version rerun pending root after active quality run",
+  "viewport": [
+    1280,
+    1000
+  ],
+  "mock_engine_calls": 3,
+  "real_ollama_generation_calls": 0,
+  "real_ollama_embedding_calls": 0,
+  "local_http_get_only_existing_apps": true,
+  "existing_app_model_calls": 0,
+  "screenshots_inspected": [
+    "live-full-public-question.png"
+  ],
+  "limitations": [
+    "No real dry/record done by implementation agent",
+    "Actual claim support/privacy audit required",
+    "Optional root quality HTML navigation awaits root report"
+  ],
+  "hashes": {
+    "video/run_full_demo.py": "73df411fd637b3efbf3e4211f6102be5ad729fbee8351216dd9c8c3c513841b6",
+    "video/SCENARIO-full-chat.md": "5384cf2312a0570cda9ce81c809a1b0a2aa4eb15817e000a9dbd3f7252dad8a8",
+    "tests/test_full_demo.py": "dac2cd5185e4e3c554845b3dc6d8ed70db0c94cab8e9f1313506114d58455d4c",
+    "tests/full_demo_browser.py": "45f607953412dcfcb6705e79c5e0356db3f5f44edb1effd036e601e69d4a7e3e",
+    "tests/full-demo-green.txt": "da93d2afdbc6bc40b6e524377989e74c2f5648214c9e3d5bf4582aa39770f063",
+    "tests/full-demo-canonical-red.txt": "747544776da82602d3faa7a7b56986c5dc0141d69d72d622f0a8751029937624"
+  },
+  "review_fixes": {
+    "Luna_wrong_receipt_identity": "fixed/pinned model/digest/profile/options/index+actual full wire payload",
+    "Luna_empty_dry": "fixed/3 validated unique receipts+take timestamps+privacy+source+context+frame hashes"
+  },
+  "canonical_full_metadata": "assignment:NN exact expected day; legacy benchmark unchanged"
+}

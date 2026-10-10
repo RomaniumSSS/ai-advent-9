@@ -1,0 +1,218 @@
+"""Ограниченные локальные замеры; каждый вызов оставляет отдельный receipt без retries."""
+import argparse, copy, hashlib, json, math, statistics, sys, uuid
+from datetime import datetime, timezone
+from pathlib import Path
+from core import (HERE, Engine, Ollama, load_index, load_profiles, save_private, sha, generation_lock,
+                  loaded_entry, snapshot_messages, Q8_DIGEST, GENERATION, DB_SHA)
+from metrics import system_snapshot
+
+def read(path):return json.loads(Path(path).read_text())
+def manifest():
+    names=['core.py','metrics.py','evaluate.py','profiles.json','eval-suite.json']
+    return {n:hashlib.sha256((HERE/n).read_bytes()).hexdigest() for n in names}
+
+def frozen_inputs(path,profiles=None,check_manifest=True):
+    frozen=read(path)
+    if frozen['suite_sha256']!=sha(read(HERE/'eval-suite.json')):raise ValueError('suite_changed_after_freeze')
+    suite=read(HERE/'eval-suite.json')
+    if [(c['case_id'],c['snapshot']['question']) for c in frozen['contexts']]!=[(c['case_id'],c['question']) for c in suite['cases']]:raise ValueError('frozen_case_question_or_order_mismatch')
+    for case in frozen['contexts']:
+        from core import validate_snapshot
+        validate_snapshot(case['snapshot'])
+    if frozen['freeze_sha256']!=sha({k:v for k,v in frozen.items() if k!='freeze_sha256'}):raise ValueError('freeze_manifest_mismatch')
+    if check_manifest:
+        if frozen['profiles_sha256']!=sha(profiles or load_profiles()):raise ValueError('profiles_changed_after_freeze')
+        if frozen['source_manifest']!=manifest():raise ValueError('source_changed_after_freeze')
+    return frozen
+
+def bind_inputs(source,destination,profiles):
+    destination=Path(destination)
+    if destination.exists():raise ValueError('bind_output_exists_choose_new_path')
+    original=frozen_inputs(source,check_manifest=False)
+    bound=copy.deepcopy(original);bound.pop('freeze_sha256')
+    bound.update(parent_freeze_sha256=original['freeze_sha256'],parent_manifest=str(Path(source).resolve()),
+                 source_manifest=manifest(),profiles_sha256=sha(profiles),run_id=uuid.uuid4().hex,
+                 bound_at=datetime.now(timezone.utc).isoformat())
+    bound['freeze_sha256']=sha(bound);save_private(destination,bound);return bound
+
+def persist_run(output,run):
+    path=Path(output)/run['run_id']/(run['request_id']+'.json');save_private(path,run)
+    print(json.dumps({'receipt':str(path),'run_id':run['run_id'],'request_id':run['request_id'],'profile':run['profile_id'],
+                      'case_id':run.get('case_id'),'mode':run['mode'],'status':run['status'],'seconds':run['times']['generation'],
+                      'error':run.get('error')},ensure_ascii=False),flush=True)
+    return run
+
+def warmup(engine,snapshot,profile,pid,run_id,output):
+    r=persist_run(output,engine.generate(snapshot,profile,pid,run_id=run_id,mode='warmup',locked=True,case_id='E02'))
+    if r['status'] not in ('done','unknown'):raise ValueError('warmup_failed:'+r['request_id'])
+    if loaded_entry(engine.client,profile) is None:raise ValueError('warmup_model_not_loaded')
+    return {k:r[k] for k in ('request_id','status','mode','profile_sha256','model','digest','finished_at')}
+
+def run_series(engine,frozen,profiles,kind,output,profile_ids,case_id='E02',repeats=2):
+    run_id=uuid.uuid4().hex;contexts={c['case_id']:c['snapshot'] for c in frozen['contexts']};runs=[]
+    isolation=None
+    with generation_lock():
+        if kind=='quant':
+            p=profiles[profile_ids[0]];engine.client.verify(p)
+            before=engine.client.request('/api/ps')
+            unload=engine.client.request('/api/generate',{'model':'qwen3:8b','keep_alive':0})
+            after=engine.client.request('/api/ps')
+            absent=not any(m.get('name')=='qwen3:8b' or m.get('model')=='qwen3:8b' for m in after.get('models',[]))
+            isolation={'q4_unload_response':unload,'q4_absence_confirmed':absent,'placement_before':before,'placement_after':after,
+                       'lock_scope':'global_and_day28; external non-cooperating clients cannot be excluded automatically'}
+            if not absent:raise ValueError('quant_q4_unload_not_confirmed')
+        if kind=='pilot':
+            for pid in profile_ids:
+                p=profiles[pid]
+                # Не прогреваем rejected вариант: budget проверяется прежде любых chat.
+                try:snapshot_messages(contexts[case_id],p)
+                except ValueError:
+                    runs.append(persist_run(output,engine.generate(contexts[case_id],p,pid,run_id=run_id,mode='pilot',case_id=case_id,locked=True)))
+                    continue
+                r=persist_run(output,engine.generate(contexts[case_id],p,pid,run_id=run_id,mode='pilot',case_id=case_id,locked=True));runs.append(r)
+                if r['status']=='error':break
+        elif kind=='quant':
+            pid=profile_ids[0];p=profiles[pid];wid=warmup(engine,contexts['E02'],p,pid,run_id,output)
+            for repeat in range(1,repeats+1):
+                r=engine.generate(contexts['E02'],p,pid,run_id=run_id,mode='warm',case_id='E02',repeat=repeat,locked=True,warmup=wid)
+                r['quantization_isolation']=isolation;persist_run(output,r);runs.append(r)
+                if r['status'] not in ('done','unknown'):return run_id,runs
+        elif kind=='warm':
+            orders=[profile_ids,list(reversed(profile_ids))] if kind=='warm' else [profile_ids]*repeats
+            for repeat,order in enumerate(orders,1):
+                for pid in order:
+                    p=profiles[pid];wid=warmup(engine,contexts['E02'],p,pid,run_id,output)
+                    for cid in (['E01','E02','E03'] if kind=='warm' else ['E02']):
+                        r=persist_run(output,engine.generate(contexts[cid],p,pid,run_id=run_id,mode='warm',case_id=cid,repeat=repeat,locked=True,warmup=wid));runs.append(r)
+                        if r['status'] not in ('done','unknown'):return run_id,runs
+        elif kind=='cold':
+            for pid in profile_ids:
+                p=profiles[pid];engine.client.verify(p)
+                # Общий lock уже удерживается; только выбранный генератор, без daemon restart.
+                unload=engine.client.request('/api/generate',{'model':p['model'],'keep_alive':0})
+                absent=loaded_entry(engine.client,p) is None
+                r=engine.generate(contexts[case_id],p,pid,run_id=run_id,mode='cold',case_id=case_id,repeat=1,locked=True)
+                r['cold_unload']={'response':unload,'absence_confirmed':absent,'meaning':'Ollama model unloaded, OS file cache retained'}
+                runs.append(persist_run(output,r))
+                if r['status'] not in ('done','unknown'):break
+    return run_id,runs
+
+def distribution(values):
+    values=[v for v in values if type(v) in (int,float)]
+    return {'values':values,'median':statistics.median(values) if values else None,'min':min(values) if values else None,'max':max(values) if values else None,'count':len(values)}
+
+def summarize(runs):
+    groups={}
+    for r in runs:
+        key=(r['profile_id'],r['mode'],r.get('case_id'))
+        groups.setdefault(key,[]).append(r)
+    items=[]
+    for (pid,mode,cid),rs in groups.items():
+        good=[r for r in rs if r['status'] in ('done','unknown') and (mode!='warm' or r.get('comparable'))]
+        items.append({'profile_id':pid,'mode':mode,'case_id':cid,'request_ids':[r['request_id'] for r in rs],
+                      'errors':[r['request_id'] for r in rs if r not in good],
+                      'generation_seconds':distribution([r['times']['generation'] for r in good]),
+                      'observed_rss_bytes':distribution([r.get('resources',{}).get('observed_max_sum_rss_bytes') for r in good if r.get('resources') and r['resources'].get('comparison_eligible')])})
+    return {'historical':True,'generated_at':datetime.now(timezone.utc).isoformat(),'groups':items,
+            'optimization':'NOT_ASSESSED','semantic_assessment':'required separately; source validity is not factual completeness'}
+
+def placement_signature(placement):
+    if not isinstance(placement,dict):return None
+    size=placement.get('size');vram=placement.get('size_vram')
+    if type(size) not in (int,float) or type(vram) not in (int,float) or size<=0 or not math.isfinite(size) or not math.isfinite(vram) or not 0<=vram<=size:return None
+    fraction=vram/size
+    return ('gpu',1) if fraction>=.999 else ('cpu',0) if fraction==0 else ('mixed',round(fraction,3))
+
+def optimization_verdict(baseline,candidate,quality):
+    # Ручная семантическая таблица — обязательный независимый вход, не keyword judge.
+    if not quality.get('all_final_answers_assessed'):return {'proven':False,'reason':'semantic_assessment_incomplete'}
+    if not quality.get('no_regression') or not quality.get('no_fabrication') or not quality.get('unknown_preserved'):return {'proven':False,'reason':'quality_gate_failed'}
+    for rs in (baseline,candidate):
+        if len(rs)!=6 or any(r.get('mode')!='warm' or not r.get('comparable') or r['status'] not in ('done','unknown') for r in rs):return {'proven':False,'reason':'warm_series_incomplete_or_invalid'}
+        if sorted((r['case_id'],r['repeat']) for r in rs)!=[(c,n) for c in ('E01','E02','E03') for n in (1,2)]:return {'proven':False,'reason':'warm_cases_or_repeats_mismatch'}
+    canonical_baseline=load_profiles()['baseline']
+    if any(r.get('profile_id')!='baseline' or r.get('profile')!=canonical_baseline or r.get('profile_sha256')!=sha(canonical_baseline) for r in baseline):return {'proven':False,'reason':'baseline_not_fixed_original'}
+    if len({r.get('profile_id') for r in candidate})!=1 or candidate[0].get('profile_id') in (None,'baseline'):return {'proven':False,'reason':'candidate_group_identity_changed'}
+    all_runs=baseline+candidate
+    for r in all_runs:
+        if r['case_id']=='E03' and (r['status']!='unknown' or not isinstance(r.get('answer'),dict) or r['answer'].get('sources')!=[] or r['answer'].get('quotes')!=[]):return {'proven':False,'reason':'E03_unknown_receipt_gate_failed'}
+    if len({r.get('request_id') for r in all_runs})!=12 or any(not r.get('request_id') for r in all_runs):return {'proven':False,'reason':'duplicate_or_missing_request_ids'}
+    for rs in (baseline,candidate):
+        if len({r.get('profile_sha256') for r in rs})!=1:return {'proven':False,'reason':'profile_changed_within_series'}
+    if baseline[0]['profile_sha256']==candidate[0]['profile_sha256']:return {'proven':False,'reason':'candidate_equals_baseline'}
+    pairs={}
+    for r in baseline:pairs[(r['case_id'],r['repeat'])]=r
+    for r in candidate:
+        b=pairs[(r['case_id'],r['repeat'])]
+        for key in ('question','context_sha256','index','model','digest','scope','timing_scope'):
+            if not r.get(key) or r.get(key)!=b.get(key):return {'proven':False,'reason':'comparison_mismatch:'+key}
+        if r['model']!='qwen3:8b' or r['scope']!='public' or r['timing_scope']!='generator_replay':return {'proven':False,'reason':'primary_series_identity_mismatch'}
+        if r.get('index',{}).get('generation')!=GENERATION or r.get('index',{}).get('db_sha256')!=DB_SHA:return {'proven':False,'reason':'primary_index_mismatch'}
+        if r.get('messages',[None,None])[1:]!=b.get('messages',[None,None])[1:]:return {'proven':False,'reason':'user_context_messages_mismatch'}
+    for r in all_runs:
+        p=r.get('profile');messages=r.get('messages');payload=r.get('payload')
+        if not p or not messages or len(messages)!=2 or sha(p)!=r['profile_sha256'] or messages[0]!={'role':'system','content':p['system']} or sha(messages)!=r.get('prompt_sha256'):
+            return {'proven':False,'reason':'unrecorded_prompt_or_profile_change'}
+        from core import profile_payload,GEN_DIGEST
+        if p.get('model')!=r['model'] or p.get('digest')!=GEN_DIGEST or r.get('digest')!=GEN_DIGEST or payload!=profile_payload(p,messages):return {'proven':False,'reason':'payload_identity_mismatch'}
+        seconds=r.get('times',{}).get('generation')
+        if not r.get('citations_valid') or type(seconds) not in (int,float) or not math.isfinite(seconds) or seconds<=0:return {'proven':False,'reason':'invalid_sources_or_generation_time'}
+    for cid in ('E01','E02','E03'):
+        rows=[r for r in all_runs if r['case_id']==cid]
+        if len({r['context_sha256'] for r in rows})!=1 or len({r['question'] for r in rows})!=1:return {'proven':False,'reason':'case_changed_between_repeats'}
+    b=statistics.median(r['times']['generation'] for r in baseline);c=statistics.median(r['times']['generation'] for r in candidate)
+    reasons=[]
+    if quality.get('candidate_e02_complete_both') and quality.get('baseline_e02_incomplete'):reasons.append('E02_completeness')
+    if b>0 and c<=b*.9:reasons.append('warm_generation_median_10_percent')
+    comparable=all(r.get('resources') and r['resources'].get('comparison_eligible') for r in baseline+candidate)
+    placements={placement_signature(r.get('placement_after')) for r in baseline+candidate}
+    comparable=comparable and None not in placements
+    intervals={sha({k:(r.get('resources') or {}).get(k) for k in ('sample_interval_seconds','observed_roles','process_counts')}) for r in baseline+candidate}
+    if comparable and len(placements)==1 and len(intervals)==1:
+        br=statistics.median(r['resources']['observed_max_sum_rss_bytes'] for r in baseline);cr=statistics.median(r['resources']['observed_max_sum_rss_bytes'] for r in candidate)
+        if br>0 and cr<=br*.9:reasons.append('observed_RSS_median_10_percent')
+    return {'proven':bool(reasons),'reasons':reasons,'baseline_generation_median':b,'candidate_generation_median':c,'resource_comparable':comparable and len(placements)==1 and len(intervals)==1,
+            'allocation_bytes':{'baseline':[r.get('placement_after') for r in baseline],'candidate':[r.get('placement_after') for r in candidate]}}
+
+def main(argv=None):
+    parser=argparse.ArgumentParser(description='Day29 local fixed-suite experiment')
+    parser.add_argument('command',choices=['preflight','freeze','bind','pilot','warm','cold','quant','summary'])
+    parser.add_argument('--index-root',type=Path,required=True)
+    parser.add_argument('--contexts',type=Path,default=HERE/'private'/'frozen-contexts.json')
+    parser.add_argument('--bound-contexts',type=Path,help='Новый immutable manifest при bind; contexts сохраняются')
+    parser.add_argument('--profiles',type=Path,default=HERE/'profiles.json')
+    parser.add_argument('--profile-ids',nargs='+');parser.add_argument('--output',type=Path,default=HERE/'private'/'runs')
+    parser.add_argument('--case',default='E02',choices=['E01','E02','E03']);args=parser.parse_args(argv)
+    profiles=load_profiles(args.profiles)
+    if args.command=='summary':
+        runs=[r for p in args.output.glob('*/*.json') if (r:=read(p)).get('request_id')]
+        print(json.dumps(summarize(runs),ensure_ascii=False,indent=2));return 0
+    identity,chunks=load_index(args.index_root);engine=Engine(chunks,identity)
+    if args.command=='bind':
+        if args.bound_contexts is None:parser.error('bind requires --bound-contexts new-file')
+        bound=bind_inputs(args.contexts,args.bound_contexts,profiles)
+        print(json.dumps({'contexts':str(args.bound_contexts),'parent_freeze_sha256':bound['parent_freeze_sha256'],'freeze_sha256':bound['freeze_sha256']},ensure_ascii=False));return 0
+    if args.command=='preflight':
+        with generation_lock():
+            data={'timestamp':datetime.now(timezone.utc).isoformat(),'identity':identity,'models':engine.client.verify(),
+                  'version':engine.client.request('/api/version'),'placement':engine.client.request('/api/ps'),'system':system_snapshot(),'source_manifest':manifest()}
+        save_private(args.output/'preflight.json',data);print(json.dumps({'preflight':str(args.output/'preflight.json')},ensure_ascii=False));return 0
+    if args.command=='freeze':
+        if args.contexts.exists():raise ValueError('freeze_output_exists_choose_new_path')
+        suite=read(HERE/'eval-suite.json');contexts=[{'case_id':c['case_id'],'snapshot':engine.freeze(c['question'])} for c in suite['cases']]
+        data={'suite_sha256':sha(suite),'profiles_sha256':sha(profiles),'source_manifest':manifest(),'contexts':contexts,
+              'run_id':uuid.uuid4().hex,'frozen_at':datetime.now(timezone.utc).isoformat()}
+        data['freeze_sha256']=sha(data);save_private(args.contexts,data)
+        print(json.dumps({'contexts':str(args.contexts),'freeze_sha256':data['freeze_sha256']},ensure_ascii=False));return 0
+    frozen=frozen_inputs(args.contexts,profiles)
+    if args.command=='quant':
+        if not args.profile_ids or len(args.profile_ids)!=1:parser.error('quant requires one selected profile')
+        pid=args.profile_ids[0];p=copy.deepcopy(profiles[pid]);p.update(model='qwen3:8b-q8_0',digest=Q8_DIGEST,quantization='Q8_0')
+        profiles={pid+'-q8':p};pids=list(profiles)
+    else:pids=args.profile_ids or (['baseline','temperature','max-output','context','prompt'] if args.command=='pilot' else ['baseline','candidate'])
+    run_id,runs=run_series(engine,frozen,profiles,args.command,args.output,pids,args.case)
+    save_private(args.output/run_id/'series.json',{'run_id':run_id,'kind':args.command,'freeze_sha256':frozen['freeze_sha256'],'profiles_sha256':sha({p:profiles[p] for p in pids}),'source_manifest':manifest(),'request_ids':[r['request_id'] for r in runs],'quantization_isolation':runs[0].get('quantization_isolation') if runs else None})
+    # Свежая проверка identity после серии; несовпадение не маскируется.
+    load_index(args.index_root)
+    return 1 if any(r['status']=='error' for r in runs) else 0
+if __name__=='__main__':raise SystemExit(main())

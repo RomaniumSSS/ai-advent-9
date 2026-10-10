@@ -1,0 +1,17 @@
+test_failed_first_warmup_saves_preparation_and_failed_series (test_quant.Quantization.test_failed_first_warmup_saves_preparation_and_failed_series) ... FAIL
+test_isolated_q8_exactly_one_warmup_two_answers (test_quant.Quantization.test_isolated_q8_exactly_one_warmup_two_answers) ... ok
+test_unconfirmed_unload_stops_before_generation (test_quant.Quantization.test_unconfirmed_unload_stops_before_generation) ... ok
+
+======================================================================
+FAIL: test_failed_first_warmup_saves_preparation_and_failed_series (test_quant.Quantization.test_failed_first_warmup_saves_preparation_and_failed_series)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_quant.py", line 42, in test_failed_first_warmup_saves_preparation_and_failed_series
+    run=next(output.iterdir());self.assertTrue((run/'quant-preparation.json').exists());self.assertTrue((run/'series.json').exists())
+                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.007s
+
+FAILED (failures=1)

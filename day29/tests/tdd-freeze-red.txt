@@ -1,0 +1,26 @@
+test_changed_profiles_not_implicitly_accepted (test_freeze.FrozenManifest.test_changed_profiles_not_implicitly_accepted) ... FAIL
+test_changed_source_not_implicitly_accepted (test_freeze.FrozenManifest.test_changed_source_not_implicitly_accepted) ... FAIL
+test_current_manifest_valid (test_freeze.FrozenManifest.test_current_manifest_valid) ... ok
+
+======================================================================
+FAIL: test_changed_profiles_not_implicitly_accepted (test_freeze.FrozenManifest.test_changed_profiles_not_implicitly_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_freeze.py", line 19, in test_changed_profiles_not_implicitly_accepted
+    with self.assertRaisesRegex(ValueError,'profile'):evaluate.frozen_inputs(self.write(d))
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_changed_source_not_implicitly_accepted (test_freeze.FrozenManifest.test_changed_source_not_implicitly_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_freeze.py", line 16, in test_changed_source_not_implicitly_accepted
+    with self.assertRaisesRegex(ValueError,'source'):evaluate.frozen_inputs(self.write(d))
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.006s
+
+FAILED (failures=2)

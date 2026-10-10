@@ -1,0 +1,57 @@
+test_all_sources_participate_even_without_day (test_full_chat_contract.FullContracts.test_all_sources_participate_even_without_day) ... FAIL
+test_followup_is_anchored_in_user_question (test_full_chat_contract.FullContracts.test_followup_is_anchored_in_user_question) ... FAIL
+test_history_budget_never_silently_overflows (test_full_chat_contract.FullContracts.test_history_budget_never_silently_overflows) ... FAIL
+test_offsets_do_not_assign_other_author (test_full_chat_contract.FullContracts.test_offsets_do_not_assign_other_author) ... FAIL
+
+======================================================================
+FAIL: test_all_sources_participate_even_without_day (test_full_chat_contract.FullContracts.test_all_sources_participate_even_without_day)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_full_chat_contract.py", line 12, in test_all_sources_participate_even_without_day
+    self.assertEqual({c['chunk_id'] for c in selected},{'a','d','n'});self.assertEqual(trace['eligible_count'],3)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+'d'
+'n'
+
+======================================================================
+FAIL: test_followup_is_anchored_in_user_question (test_full_chat_contract.FullContracts.test_followup_is_anchored_in_user_question)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_full_chat_contract.py", line 21, in test_followup_is_anchored_in_user_question
+    self.assertEqual(q['intent'],'followup');self.assertIn('SQLite',q['search_query']);self.assertEqual(q['anchor'],'Что обсуждали о SQLite?')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'new_topic' != 'followup'
+- new_topic
++ followup
+
+
+======================================================================
+FAIL: test_history_budget_never_silently_overflows (test_full_chat_contract.FullContracts.test_history_budget_never_silently_overflows)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_full_chat_contract.py", line 25, in test_history_budget_never_silently_overflows
+    self.assertLessEqual(len(history),3);self.assertTrue(trace['history_removed']);self.assertEqual(selected[0]['chunk_id'],'d')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+AssertionError: 6 not less than or equal to 3
+
+======================================================================
+FAIL: test_offsets_do_not_assign_other_author (test_full_chat_contract.FullContracts.test_offsets_do_not_assign_other_author)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29/day29/tests/test_full_chat_contract.py", line 17, in test_offsets_do_not_assign_other_author
+    self.assertEqual([p['author'] for p in parts if p['text'] in ('AAA','BBB')],['Автор A','Автор B'])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['Автор A', 'Автор B']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'Автор A'
+
+- []
++ ['Автор A', 'Автор B']
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.004s
+
+FAILED (failures=4)

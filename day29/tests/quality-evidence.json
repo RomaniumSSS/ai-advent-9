@@ -1,0 +1,104 @@
+{
+  "status": "offline_preparation_only",
+  "implementation_role": "Sol gpt-6.1-sol high",
+  "real_network_calls": 0,
+  "real_generation_calls": 0,
+  "real_embedding_calls": 0,
+  "human_acceptance": false,
+  "tests": {
+    "command": "python3 -m unittest discover -s day29/tests -p 'test_quality_eval*.py' -v",
+    "passed": 34,
+    "environment": "3.14.0 (v3.14.0:ebf955df7a8, Oct  7 2025, 08:20:14) [Clang 16.0.0 (clang-1600.0.26.6)]"
+  },
+  "mock": {
+    "mode": "mock",
+    "run_id": "306b9e62940c4bde8455c0c2d41d1bfd",
+    "cases": 24,
+    "completed_pairs": 23,
+    "not_applicable": 1,
+    "counters": {
+      "generation_calls": 46,
+      "embedding_calls": 23,
+      "service_calls": 184,
+      "http_seconds": 0.000811777776107192,
+      "prompt_tokens_observed": 4600,
+      "output_tokens_observed": 368,
+      "prompt_tokens_total": 4600,
+      "output_tokens_total": 368,
+      "missing_generation_metrics": 0,
+      "ambiguous_http_calls": 0,
+      "http_errors": 0
+    },
+    "real_network_calls": 0
+  },
+  "prepare": {
+    "run_id": "47eed38c99c941ffa367686db1e326c8",
+    "mode": "prepare_only",
+    "network_calls": 0
+  },
+  "runtime_hashes": {
+    "quality_eval.py": "329a11f5442cd02ac2a87f3bdaeb438c89e2c10e4f011af381895f4d191cb89c",
+    "full_chat_core.py": "6e887f0dd664d73d7eff0f267ed4dd505142efddfd51d20cbcc26957a5565bf1",
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "metrics.py": "a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d"
+  },
+  "new_files": {
+    "tests/test_quality_eval_failures.py": "af6dc8074691225f3bc1b3a7e25413a740e12f05ab383dedaa74dc1318d13132",
+    "tests/test_quality_eval_protocol.py": "751818837581c578fcbac4effcf26ce26eaf52a6b68531cc1225a7d6fc5163ce"
+  },
+  "logs": {
+    "quality-protocol-red.txt": "6958d8f62368158d3ecc961eb6d58890214488cfeb00123ea51555eb75e21b0e",
+    "quality-protocol-green.txt": "a17aea6e2bf8cc9b7069ade3d4fdb74ddbbf67512415038a74ff6ac48e9691ea",
+    "quality-metrics-red.txt": "ff2b1bdcf10ff8168880a44acc51439894e785ae0a6b4d8b90ded6cf519d9eed",
+    "quality-controller-red.txt": "e71b61cad9dcb50adc5bf2e8ecba4b416f0ec58901a958654a9e95ce7f9472cf",
+    "quality-offline-green.txt": "bbfe8a75235d3cec6e1621ad5c5e77dcfcce2fd08d40bcbe3df4dae58cd26e62",
+    "quality-mock-green.txt": "84ce939efa0bd6a30d4b8d06b4e3506e5ba45a638ae4cdd64be3ab0543eb1686",
+    "quality-prepare-green.txt": "5951ea58055117fdb82ab864cfddaf172708f13641bac4c97aaedb5dccda61f9",
+    "quality-subset-red.txt": "48be02d28a7121a6266b076ceb938a09924f32e6c8daa5e23f6819fe30a69752",
+    "quality-uncited-red.txt": "6e35e8058ad7edad9829f1966b96df178858aed9822d58e4b78decb4f4e2555b",
+    "quality-resume-latency-red.txt": "bdb3f7005210651b2266daae549ac28af79fa0af7a21d8ba3d1f98efd5f409ac"
+  },
+  "red_sources": {
+    "quality-controller-red-source.py.txt": "54b904b741fe3ca663fced490d36fe4da5e62cdf8481897464be81a05800e359",
+    "quality-metrics-red-source.py.txt": "031b753cda37865aeec6c6bbea2389e6aec13ad3009645613779c403bdb03b89",
+    "quality-protocol-red-source.py.txt": "09281644f01fa7b3a9ecc6f27da97921cb044eec9d996e098863cf28964c42e2",
+    "quality-resume-latency-red-source.py.txt": "903bdd2e3074e8ff533c8773eaa4c17bdb2f136287700fd03f933754b9700ca2",
+    "quality-subset-red-source.py.txt": "6538984ab9fbad946b5d1079a8526786f46dddab8a559770760c91c72061ad59",
+    "quality-uncited-red-source.py.txt": "f8d205afd109620072876437ae2ff0e89936e711af196ad5573e293486c2331c"
+  },
+  "future_time_estimate": {
+    "generation_calls_min": 46,
+    "generation_calls_max_fixed_protocol": 92,
+    "conditional_minutes": [
+      31,
+      79
+    ],
+    "new_stage_times_measured": false,
+    "walltime_cap": null,
+    "call_cap": null
+  },
+  "limitations": [
+    "No real Qwen quality or stage timings",
+    "Independent source audit and reviews owned by root",
+    "Critic opinions not source-backed gold assessment"
+  ],
+  "subset": {
+    "frozen_ids": true,
+    "reject_missing_dependency": true,
+    "resume_selection_hash_checked": true,
+    "selected5_pending_unselected15_tested": true,
+    "real_new_calls": 0
+  },
+  "review_fix": {
+    "finding": "Luna uncited factual repair accepted",
+    "guard": "core.validate_answer same baseline unknown rule",
+    "recheck_not_dispatched_after_invalid_repair": true
+  },
+  "resume_latency_fix": {
+    "known_stage_durations_retained": true,
+    "no_double_count": true,
+    "resumed_headline_latency_null": true,
+    "observed_lower_bound_separate": true,
+    "missing_orchestration_not_guessed": true
+  }
+}

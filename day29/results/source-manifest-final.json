@@ -1,0 +1,29 @@
+{
+  "phase": "final_local_delivery",
+  "at": "2026-10-10T15:00:55.489878+00:00",
+  "files": {
+    "core.py": "ffd03a0c5bc659e50783416c469c72d8f79f7d02a7d9a1309208c74875b2e24d",
+    "metrics.py": "a4314a70bbde27b3b1abd608439ec6895b4d4623a226727a87e68b6bff65ce3d",
+    "evaluate.py": "fdd23fa66b9493c887320fac248c2af6bc78d66955c7a4c072afed7d08c6640a",
+    "app.py": "5548e4febe572bbaac0432d38ffd0e6026acdb955e0b27e7501ed63c69cf8ef9",
+    "profiles.json": "3eb91341400e24133d675e75d8f46f505664f5a7a7a308b2f744fe6114cf3d7a",
+    "eval-suite.json": "350280a45be979912200f791eea95fdd7ab1d5194e423c03bd37c7a3528004a6",
+    "static/app.js": "8cfd01fb846d5e4d8b5ccc850f5b1806f4aed4bf27c58b998c5d5c2e5413b0c8",
+    "static/index.html": "ebbfa4d5336766ce38ac0ead7ed5f494e8ca0512f9640b2463a176a4a524c8d8",
+    "static/style.css": "c6e5cab0ab79cd1eb9e18772641f4b667859aa27a766485d43748331f66e6d9a",
+    "video/run_demo.py": "c965b6fd9d3ed8c207d46e094aaae2493b3d675afce491533e1ee432e43c5d57",
+    "results/public-summary.json": "786b9431a4ad27ba70c018f2bda079c016a218472105a8e67d6f655a6cced60d",
+    "results/measurement-receipts.json": "0c3cdd93275286f2b8ada11327fa069af486a63916431a255f966b3240996a17",
+    "results/video-verification.json": "21565b4feb2428842db1e46f0bb0f066967d26db586868a5dba9f6f7872943e7",
+    "README.md": "ad475d818654dc7f691e132d5260ace77f208a7ec5a22fc818199e65bad59e8b",
+    "RESULT.md": "40147b77fad38f6aeefaeef75f03ff2fd6e5d384f3eae898cbbbfad547bcd081",
+    "RELEASE_NOTES.md": "2ecbc0f20843550264982859021592a4823f020e176a0a92a9a009f63916e8a2",
+    "video/README.md": "cfe0088b8acd3787f7c930871baf157c68f695e182675e16fc950cdcf8126c06",
+    "TASKS.md": "8abb27d30d3f0474ba85f45563c92f4926da23ace85ebc1b583c476f31039ae6",
+    "results/implementation-validation.md": "c267ef1e86ad630388cec498477db51f785917a33611e28d02018076a53eeb90",
+    "results/review-astra.md": "13721da99c97c0f5659fd78287a410a190e0e7dce9925c53cd5d950a3f4eddea"
+  },
+  "audit_manifest": "results/source-manifest-delivery.json",
+  "audited_summary_snapshot": "results/public-summary-audited.json",
+  "changes_after_audit": "Only tracker completion and summary delivery.code caption; runtime/core/sampler/profiles/UI behavior unchanged. ZIP is separately verified by coordinator."
+}

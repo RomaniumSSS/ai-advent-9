@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-10-10T14:43:01.390889+00:00",
+  "index_generation": "5d5502c69976163325ad6c35",
+  "db_sha256": "9894d937c4bcbae653459a6fe758f231992571e436622a0cd33fcda7f707f11b",
+  "db_bytes": 12435456,
+  "mode": "0444",
+  "unchanged": true,
+  "check": "Bytes match original pin after all measurements; no index rebuild."
+}

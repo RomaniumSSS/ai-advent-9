@@ -1,0 +1,55 @@
+{
+  "run_id": "df5e7e0053954e88858734c3f0a2bbb3",
+  "request_id": "992e92d31af54169b02d05522efeb430",
+  "status": "failed_warmup_stopped",
+  "model": "qwen3:8b-q8_0",
+  "digest": "e56358ca25dd14db6853a9f68a92d717aaa6f0a94250a72d1a0f3d86a9f30130",
+  "same_profile_except_model_quantization": {
+    "options": {
+      "num_ctx": 6144,
+      "num_predict": 384,
+      "temperature": 0
+    },
+    "prompt_sha256": "c592c33e527e5718c1a1ac87b3ba5d874bbc2eb9118738a1e9499d1799957928",
+    "context_sha256": "bbdf6779a27f4350fd1d66b68f169c4cb9bf44c83ddead546ef325f0977a9537"
+  },
+  "done_reason": "length",
+  "output_tokens": 384,
+  "max_output": 384,
+  "generation_seconds": 140.81249679101165,
+  "load_seconds": 11.059095959,
+  "observed_max_sum_rss_bytes": 9203073024,
+  "resources_comparable": false,
+  "system_swap_before_bytes": 4855756226.56,
+  "system_swap_after_bytes": 6647846010.88,
+  "placement": {
+    "context_length": 6144,
+    "details": {
+      "families": [
+        "qwen3"
+      ],
+      "family": "qwen3",
+      "format": "gguf",
+      "parameter_size": "8.2B",
+      "parent_model": "",
+      "quantization_level": "Q8_0"
+    },
+    "digest": "e56358ca25dd14db6853a9f68a92d717aaa6f0a94250a72d1a0f3d86a9f30130",
+    "expires_at": "2026-10-10T15:44:50.134505+02:00",
+    "model": "qwen3:8b-q8_0",
+    "name": "qwen3:8b-q8_0",
+    "size": 9188440800,
+    "size_vram": 9188440800
+  },
+  "quality": "NOT_ASSESSED: incomplete JSON; not a completed answer",
+  "planned_scored_warm_requests": 2,
+  "actual_scored_warm_requests": 0,
+  "reason": "Generation completed with length at384tokens, incomplete JSON. Stop on technical error as planned; no hidden retries.",
+  "action": "Retain successful Q4candidate profile; unload owned Q8trial from RAM, keep files for optional separate future budget experiment.",
+  "receipt_sha256": "a6a0a97e1fef68972f6ad7a922479218dce1a7c482911f9edcd905706d21c995",
+  "limits": [
+    "Not a warm-latency or full-quality Q4/Q8 benchmark.",
+    "System swap is machine-wide; increase cannot be attributed exclusively to model.",
+    "Observed RSS is not full Metal/unified peak."
+  ]
+}

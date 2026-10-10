@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-10T22:52:11.778975+00:00",
+  "old_app_run_id": "817c9143e7c141fdb6301be516bcfc9d",
+  "new_app_run_id": "e0433edbb9d24e9288d2c58f55dbb6eb",
+  "persisted_conversations": 4,
+  "conversation_files_exactly_equal": true,
+  "generation_replays": 0,
+  "scope": "all",
+  "index": {
+    "chunk_count": 724,
+    "db_sha256": "9894d937c4bcbae653459a6fe758f231992571e436622a0cd33fcda7f707f11b",
+    "document_count": 663,
+    "generation": "5d5502c69976163325ad6c35",
+    "source_counts": {
+      "assignment": 24,
+      "discussion": 694,
+      "personal_note": 6
+    }
+  },
+  "full_core_sha256": "98e6725d1e9246d1f1335d81726db4b43dfb3e5b3ddfe2e17981c9ed8bcaccc6",
+  "native_session_id": 50589
+}

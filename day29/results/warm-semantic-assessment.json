@@ -1,0 +1,484 @@
+{
+  "run_id": "a2606d8f674a48d1b7e2ec8e1549a209",
+  "assessed_at": "2026-10-10T13:36:48.516427+00:00",
+  "assessor": "Root agent; semantic interpretation of preserved answers and original selected sources, not keyword grading or human acceptance",
+  "suite_sha256": "4908cc9608b8ccb8d2d4b5dfb2ad168dc363e82a3cec345cf7d3dc69fe489f38",
+  "rows": [
+    {
+      "profile_id": "baseline",
+      "case_id": "E01",
+      "repeat": 1,
+      "request_id": "12a8dd59204947189cae57fcc8e06cce",
+      "receipt_sha256": "a60f837c4f17f2efd7001f5fc41b562b937c8bf9be330c300691e8f3270f87a1",
+      "status": "done",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [
+        {
+          "requirement": "MCP-инструмент с отложенным или периодическим выполнением",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "сохранение данных в JSON или SQLite",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "выполнение по расписанию",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "агрегированный результат",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "агент 24/7 с периодическими сводками",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Видео + Код",
+          "coverage": "PASS"
+        }
+      ],
+      "assessment_evidence": "Все шесть требований источника раскрыты, включая расписание/хранение/агрегацию/24×7/сводки/видео+код.",
+      "answer": "В задании дня 18 требуется создать MCP-инструмент с отложенным или периодическим выполнением. Инструмент должен сохранять данные (JSON / SQLite), выполняться по расписанию и возвращать агрегированный результат. Результатом должно стать видео и код агента, который работает 24/7 и периодически выдаёт сводку.",
+      "generation_seconds": 24.50731254206039,
+      "input_tokens": 528,
+      "output_tokens": 96,
+      "observed_max_sum_rss_bytes": 6325567488
+    },
+    {
+      "profile_id": "baseline",
+      "case_id": "E01",
+      "repeat": 2,
+      "request_id": "e47f51ad238b45f6aedd5f02a2465733",
+      "receipt_sha256": "fbef35408dd8de25c9012bca42d5e3acb3295061c77cdb464105beb02ac9b4b2",
+      "status": "done",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [
+        {
+          "requirement": "MCP-инструмент с отложенным или периодическим выполнением",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "сохранение данных в JSON или SQLite",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "выполнение по расписанию",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "агрегированный результат",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "агент 24/7 с периодическими сводками",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Видео + Код",
+          "coverage": "PASS"
+        }
+      ],
+      "assessment_evidence": "Все шесть требований источника раскрыты, включая расписание/хранение/агрегацию/24×7/сводки/видео+код.",
+      "answer": "В задании дня 18 требуется создать MCP-инструмент с отложенным или периодическим выполнением. Инструмент должен сохранять данные (JSON / SQLite), выполняться по расписанию и возвращать агрегированный результат. Результатом должно стать видео и код агента, который работает 24/7 и периодически выдаёт сводку.",
+      "generation_seconds": 35.054396750056185,
+      "input_tokens": 528,
+      "output_tokens": 96,
+      "observed_max_sum_rss_bytes": 6599835648
+    },
+    {
+      "profile_id": "baseline",
+      "case_id": "E02",
+      "repeat": 1,
+      "request_id": "ee9ef9e7b0f7412db5c0f34149b0a2f3",
+      "receipt_sha256": "4d630371a8b0f7313c1c332846b230bbfad74f65a9ac8c4b8f98fb875411e196",
+      "status": "done",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "rubric": [
+        {
+          "requirement": "Day19: несколько MCP-инструментов, получение → обработка → сохранение",
+          "coverage": "PARTIAL"
+        },
+        {
+          "requirement": "Day19: автоматическая цепочка и корректная передача данных",
+          "coverage": "PARTIAL"
+        },
+        {
+          "requirement": "Day20: несколько MCP-серверов",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: выбор нужного инструмента и маршрутизация агентом",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: длинный флоу с инструментами разных серверов, проверка выбора и порядка",
+          "coverage": "PARTIAL"
+        }
+      ],
+      "assessment_evidence": "Baseline перечисляет общий контраст пайплайна/серверов, маршрутизацию и выбор, но не раскрывает роли получить→обработать→сохранить, автоматичность/корректную передачу данных и проверку порядка.",
+      "answer": "Требования заданий дней 19 и 20 отличаются тем, что день 19 направлен на создание и проверку пайплайна из нескольких MCP-инструментов, а день 20 требует настройки MCP-серверов и реализации длинного флоу взаимодействия между ними. В первом случае акцент на цепочку обработки данных, во втором — на маршрутизацию запросов и выбор инструментов.",
+      "generation_seconds": 35.83254575007595,
+      "input_tokens": 731,
+      "output_tokens": 128,
+      "observed_max_sum_rss_bytes": 6328647680
+    },
+    {
+      "profile_id": "baseline",
+      "case_id": "E02",
+      "repeat": 2,
+      "request_id": "c2b6978b850c4654a0022b7e786ad87c",
+      "receipt_sha256": "911e38f6b4da805c40b2dcd6dcdbc9722033b639caba5a33a9da507b6eeca3b9",
+      "status": "done",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PARTIAL",
+      "rubric": [
+        {
+          "requirement": "Day19: несколько MCP-инструментов, получение → обработка → сохранение",
+          "coverage": "PARTIAL"
+        },
+        {
+          "requirement": "Day19: автоматическая цепочка и корректная передача данных",
+          "coverage": "PARTIAL"
+        },
+        {
+          "requirement": "Day20: несколько MCP-серверов",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: выбор нужного инструмента и маршрутизация агентом",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: длинный флоу с инструментами разных серверов, проверка выбора и порядка",
+          "coverage": "PARTIAL"
+        }
+      ],
+      "assessment_evidence": "Baseline перечисляет общий контраст пайплайна/серверов, маршрутизацию и выбор, но не раскрывает роли получить→обработать→сохранить, автоматичность/корректную передачу данных и проверку порядка.",
+      "answer": "Требования заданий дней 19 и 20 отличаются тем, что день 19 направлен на создание и проверку пайплайна из нескольких MCP-инструментов, а день 20 требует настройки MCP-серверов и реализации длинного флоу взаимодействия между ними. В первом случае акцент на цепочку обработки данных, во втором — на маршрутизацию запросов и выбор инструментов.",
+      "generation_seconds": 51.1934536669869,
+      "input_tokens": 731,
+      "output_tokens": 128,
+      "observed_max_sum_rss_bytes": 6579847168
+    },
+    {
+      "profile_id": "baseline",
+      "case_id": "E03",
+      "repeat": 1,
+      "request_id": "29b2a98b01554e8fb71a27780f57b26f",
+      "receipt_sha256": "4bed060aea502c8258fc9b96afad5454ccbcbfbe8e81b6ff424a9aab3f16e97e",
+      "status": "unknown",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [],
+      "assessment_evidence": "Искомый бюджет отсутствует в assignment18; ответ признаёт нехватку данных, сумма и источники не выдуманы.",
+      "answer": "Не знаю по переданному контексту",
+      "generation_seconds": 7.2453829580917954,
+      "input_tokens": 535,
+      "output_tokens": 19,
+      "observed_max_sum_rss_bytes": 6322176000
+    },
+    {
+      "profile_id": "baseline",
+      "case_id": "E03",
+      "repeat": 2,
+      "request_id": "8ec1eb1ccf9a42ffa14d337eba31c2fc",
+      "receipt_sha256": "1ac0bb6356b65c5ace781a23cc02496cac4332a23313e48baaf8e0931da89bb1",
+      "status": "unknown",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [],
+      "assessment_evidence": "Искомый бюджет отсутствует в assignment18; ответ признаёт нехватку данных, сумма и источники не выдуманы.",
+      "answer": "Не знаю по переданному контексту",
+      "generation_seconds": 10.493319333996624,
+      "input_tokens": 535,
+      "output_tokens": 19,
+      "observed_max_sum_rss_bytes": 6468632576
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E01",
+      "repeat": 1,
+      "request_id": "034c632a9fbc40debb6ba4a264ef2d1a",
+      "receipt_sha256": "0c4b577fc033d3f3b63a0f20e29dd69fbb29066cc7f6de5fabec6f74fefc960d",
+      "status": "done",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [
+        {
+          "requirement": "MCP-инструмент с отложенным или периодическим выполнением",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "сохранение данных в JSON или SQLite",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "выполнение по расписанию",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "агрегированный результат",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "агент 24/7 с периодическими сводками",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Видео + Код",
+          "coverage": "PASS"
+        }
+      ],
+      "assessment_evidence": "Все шесть требований источника раскрыты, включая расписание/хранение/агрегацию/24×7/сводки/видео+код.",
+      "answer": "В задании дня 18 требуется создать MCP-инструмент с отложенным или периодическим выполнением. Инструмент должен сохранять данные (в формате JSON или SQLite), выполняться по расписанию и возвращать агрегированный результат. Результатом задания должно стать видео и код агента, который работает 24/7 и периодически выдаёт сводку.",
+      "generation_seconds": 37.09460125002079,
+      "input_tokens": 641,
+      "output_tokens": 103,
+      "observed_max_sum_rss_bytes": 6056902656
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E01",
+      "repeat": 2,
+      "request_id": "ed082a4eb06f4460b6fe777a6320ca2e",
+      "receipt_sha256": "29d5d7047fb0a257b4146e3633d47360983953ef979171d35978f2e966fd25c7",
+      "status": "done",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [
+        {
+          "requirement": "MCP-инструмент с отложенным или периодическим выполнением",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "сохранение данных в JSON или SQLite",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "выполнение по расписанию",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "агрегированный результат",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "агент 24/7 с периодическими сводками",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Видео + Код",
+          "coverage": "PASS"
+        }
+      ],
+      "assessment_evidence": "Все шесть требований источника раскрыты, включая расписание/хранение/агрегацию/24×7/сводки/видео+код.",
+      "answer": "В задании дня 18 требуется создать MCP-инструмент с отложенным или периодическим выполнением. Инструмент должен сохранять данные (в формате JSON или SQLite), выполняться по расписанию и возвращать агрегированный результат. Результатом задания должно стать видео и код агента, который работает 24/7 и периодически выдаёт сводку.",
+      "generation_seconds": 37.15861879196018,
+      "input_tokens": 641,
+      "output_tokens": 103,
+      "observed_max_sum_rss_bytes": 5902336000
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E02",
+      "repeat": 1,
+      "request_id": "f18daad7059e4b3ea9960841bdee0385",
+      "receipt_sha256": "bf22069d8a728e695ad2cf10056f15509f992ed0ffd60f856c52ca28e8a4b81e",
+      "status": "done",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [
+        {
+          "requirement": "Day19: несколько MCP-инструментов, получение → обработка → сохранение",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day19: автоматическая цепочка и корректная передача данных",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: несколько MCP-серверов",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: выбор нужного инструмента и маршрутизация агентом",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: длинный флоу с инструментами разных серверов, проверка выбора и порядка",
+          "coverage": "PASS"
+        }
+      ],
+      "assessment_evidence": "Все пять групп требований явно раскрыты; примеры инструментов и видео+код есть в источниках.",
+      "answer": "Требования заданий дней 19 и 20 отличаются по целям и задачам. Для дня 19 требуется создать несколько MCP-инструментов (например, search, summarize, saveToFile) и реализовать пайплайн, где первый инструмент получает данные, второй — обрабатывает, третий — сохраняет результат. Проверяется автоматическое выполнение цепочки и корректность передачи данных между инструментами. Результат — автоматический пайплайн из нескольких MCP-инструментов. Для дня 20 требуется зарегистрировать несколько MCP-серверов и настроить агента так, чтобы он выбирал нужный инструмент, корректно маршрутизировал запросы и выполнял длинный флоу взаимодействия. Проверяется сценарий, в котором используются инструменты с разных серверов, и корректность выбора и порядка вызовов. Результат — длинный флов взаимодействия с несколькими MCP-серверами и инструментами. Формат заданий одинаковый — видео + код.",
+      "generation_seconds": 99.6622637079563,
+      "input_tokens": 844,
+      "output_tokens": 281,
+      "observed_max_sum_rss_bytes": 6062882816
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E02",
+      "repeat": 2,
+      "request_id": "f5bba077f40a4a41a25ef05864d81309",
+      "receipt_sha256": "173f1b297701848c52b662138c303085c5e25e0e35b6b46e1914f2ebfdb23792",
+      "status": "done",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [
+        {
+          "requirement": "Day19: несколько MCP-инструментов, получение → обработка → сохранение",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day19: автоматическая цепочка и корректная передача данных",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: несколько MCP-серверов",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: выбор нужного инструмента и маршрутизация агентом",
+          "coverage": "PASS"
+        },
+        {
+          "requirement": "Day20: длинный флоу с инструментами разных серверов, проверка выбора и порядка",
+          "coverage": "PASS"
+        }
+      ],
+      "assessment_evidence": "Все пять групп требований явно раскрыты; примеры инструментов и видео+код есть в источниках.",
+      "answer": "Требования заданий дней 19 и 20 отличаются по целям и задачам. Для дня 19 требуется создать несколько MCP-инструментов (например, search, summarize, saveToFile) и реализовать пайплайн, где первый инструмент получает данные, второй — обрабатывает, третий — сохраняет результат. Проверяется автоматическое выполнение цепочки и корректность передачи данных между инструментами. Результат — автоматический пайплайн из нескольких MCP-инструментов. Для дня 20 требуется зарегистрировать несколько MCP-серверов и настроить агента так, чтобы он выбирал нужный инструмент, корректно маршрутизировал запросы и выполнял длинный флоу взаимодействия. Проверяется сценарий, в котором используются инструменты с разных серверов, и корректность выбора и порядка вызовов. Результат — длинный флов взаимодействия с несколькими MCP-серверами и инструментами. Формат заданий одинаковый — видео + код.",
+      "generation_seconds": 100.45451475004666,
+      "input_tokens": 844,
+      "output_tokens": 281,
+      "observed_max_sum_rss_bytes": 5902630912
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E03",
+      "repeat": 1,
+      "request_id": "7e265e490b694b5d9e41f206f1415682",
+      "receipt_sha256": "7f4dc29549360761db2958b8e7b22185dd4e2f92fce59e4b96904ae04dcc4ea8",
+      "status": "unknown",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [],
+      "assessment_evidence": "Искомый бюджет отсутствует в assignment18; ответ признаёт нехватку данных, сумма и источники не выдуманы.",
+      "answer": "Не знаю по переданному контексту",
+      "generation_seconds": 10.480059750028886,
+      "input_tokens": 648,
+      "output_tokens": 19,
+      "observed_max_sum_rss_bytes": 5903368192
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E03",
+      "repeat": 2,
+      "request_id": "253ca2c27869483d99161f1454c68136",
+      "receipt_sha256": "b1934c2329aaef76cbc1a5542a4f958de7ed5e7b2d64521e5cbed5d708231643",
+      "status": "unknown",
+      "citations_valid": true,
+      "facts": "PASS",
+      "completeness": "PASS",
+      "rubric": [],
+      "assessment_evidence": "Искомый бюджет отсутствует в assignment18; ответ признаёт нехватку данных, сумма и источники не выдуманы.",
+      "answer": "Не знаю по переданному контексту",
+      "generation_seconds": 10.596469042007811,
+      "input_tokens": 648,
+      "output_tokens": 19,
+      "observed_max_sum_rss_bytes": 5895159808
+    }
+  ],
+  "pairs": [
+    {
+      "profile_id": "baseline",
+      "case_id": "E01",
+      "request_ids": [
+        "12a8dd59204947189cae57fcc8e06cce",
+        "e47f51ad238b45f6aedd5f02a2465733"
+      ],
+      "answer_identical": true,
+      "answer_sha256": "8f0eb670a27e2b7ac835ffc94724fe23ae4845380128e2afd06dd8ec80d00771"
+    },
+    {
+      "profile_id": "baseline",
+      "case_id": "E02",
+      "request_ids": [
+        "ee9ef9e7b0f7412db5c0f34149b0a2f3",
+        "c2b6978b850c4654a0022b7e786ad87c"
+      ],
+      "answer_identical": true,
+      "answer_sha256": "3e89f0e94bfe0b99bba896ead5197d0e3776d5cb90cb3ed386f951fbc36c9fd3"
+    },
+    {
+      "profile_id": "baseline",
+      "case_id": "E03",
+      "request_ids": [
+        "29b2a98b01554e8fb71a27780f57b26f",
+        "8ec1eb1ccf9a42ffa14d337eba31c2fc"
+      ],
+      "answer_identical": true,
+      "answer_sha256": "aead70b8da9c21f98127f4477b352f3f4a5b51b5c6401fe67e25016f9b64592b"
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E01",
+      "request_ids": [
+        "034c632a9fbc40debb6ba4a264ef2d1a",
+        "ed082a4eb06f4460b6fe777a6320ca2e"
+      ],
+      "answer_identical": true,
+      "answer_sha256": "0dd3c98e32873b9aa197b7b70d287a204c621b349567b90b52bd5dc21cb6c12f"
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E02",
+      "request_ids": [
+        "f18daad7059e4b3ea9960841bdee0385",
+        "f5bba077f40a4a41a25ef05864d81309"
+      ],
+      "answer_identical": true,
+      "answer_sha256": "cfc8867ec03b631ba5512968aa9d744d859a2860695c40fada5e1f37006eadef"
+    },
+    {
+      "profile_id": "candidate",
+      "case_id": "E03",
+      "request_ids": [
+        "7e265e490b694b5d9e41f206f1415682",
+        "253ca2c27869483d99161f1454c68136"
+      ],
+      "answer_identical": true,
+      "answer_sha256": "aead70b8da9c21f98127f4477b352f3f4a5b51b5c6401fe67e25016f9b64592b"
+    }
+  ],
+  "quality_gate": {
+    "all_final_answers_assessed": true,
+    "no_regression": true,
+    "no_fabrication": true,
+    "unknown_preserved": true,
+    "candidate_e02_complete_both": true,
+    "baseline_e02_incomplete": true
+  },
+  "limitations": [
+    "Three known development cases; two warm repeats per profile/case; no independent holdout.",
+    "Source validator checks structure/exact original texts; semantic assessment remains separate.",
+    "Baseline latency/RSS vary materially within small sample; reported medians are descriptive, not significance claims.",
+    "Observed RSS includes daemon+runner pages, may double-count shared memory, does not cover all Metal/unified physical memory."
+  ]
+}
