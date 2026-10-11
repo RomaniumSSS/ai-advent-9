@@ -5,7 +5,7 @@ Day25 и Day26 сданы; публикация кода не означает �
 
 Day29: [оптимизация Qwen3 8B и полный локальный чат](day29/README.md),
 [единая инструкция и результаты](day29/DELIVERY.md),
-[новая живая запись 4:57](day29/video/Day29-live-full-chat.mp4).
+[новая живая запись 4:57](https://drive.google.com/file/d/1qIRVmVwnBzPzozciiwdNXQ8-k5DU4S6H/view?usp=sharing).
 142 офлайн теста, пять новых случайных вопросов и отдельные известные повторы;
 [независимый финальный аудит](day29/quality-results/delivery-validation-astra.md).
 Полнота benchmark E02 улучшена; выигрыш от critic→repair не доказан.

@@ -92,6 +92,8 @@ Drive Anyone with link/Viewer и отдельные video/code URLs в Лист1
 - [x] D4: новый real3-request dry, source-backed visible claims и readable/privacy frames.
 - [x] D5: новый отдельный real3-request record, MP4 ffprobe/decode/frames/receipts checks.
 - [x] D6: final independent Astra delivery validation against actual artifacts/state.
-- [ ] D7: commit/mainff/push, remoteSHA/tree order/day01–28 preservation.
-- [ ] D8: Drive owner/folder/Anyonewithlink Viewer/public read verification.
-- [ ] D9: own two-URL comment AD132, AD1/A132 correct, complete reload readback.
+- [x] D7: commit/mainff/push, remoteSHA/tree order/day01–28 preservation.
+- [x] D8: Drive owner/folder/Anyonewithlink Viewer/public read verification.
+- [x] D9: own two-URL comment AD132, AD1/A132 correct, complete reload readback.
+
+Publication proof: [GitHub/Drive/Sheet](quality-results/publication.json). Human acceptance false.

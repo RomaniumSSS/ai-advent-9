@@ -2,18 +2,14 @@
 
 ## Текущий статус
 
-- **Day29: проверен локально, публикация — 11.10.2026:** ветка day29-full-index-chat,
-  worktree /Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day29-full-chat.
-  [DELIVERY](day29/DELIVERY.md): оптимизация8069 + полный чат8070 по прежним724chunks.
-  142офлайнPASS; Luna→Sol→Astra проверки завершены. Исходные5random и known2+1
-  оценены отдельно: Bcritic completed0, выигрыш не доказан; H06final0/2false refusal.
-  [Новая живая запись4:57](day29/video/Day29-live-full-chat.mp4) —3новыхответа,
-  E02B2/5→F5/5, fullDay11подтверждён,2checks пропущены; decode/frames/privacyPASS.
-  [Proof](day29/quality-results/new-live-video-verification.json), finalAstra media audit в завершении.
-  Далее root: orderedmain/day29 commit/push→DriveAnyoneViewer→2URLcommentAD132/reload.
-  Пользователь разрешил публикацию, пользовательская приёмка не заявлена.
-  Drive1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY, primaryromanpozharitskiy@gmail.com;
-  Sheet1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE, Лист1!AD132.
+- **Day29 опубликован 11.10.2026:** [код main/day29](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day29),
+  [новая живая запись4:57](https://drive.google.com/file/d/1qIRVmVwnBzPzozciiwdNXQ8-k5DU4S6H/view?usp=sharing), Anyonewithlink/Viewer, anonymousHTTP200.
+  [DELIVERY](day29/DELIVERY.md), [publication proof](day29/quality-results/publication.json):
+  двеотдельныеURL в собственномкомментарии Лист1!AD132, полнаяreload/SavedtoDrivePASS.
+  Main содержитday01–29, прежниеday01–28не изменены.142офлайнPASS иAstra60applicablePASS.
+  Initial5+known2+1 оценены отдельно; Bcriticcompleted0, выигрыш не доказан.
+  Новоеvideo3реальныхответа, E02B2/5→F5/5, полныйDay11пропустил2selfchecks.
+  Далее — пользовательская приёмка; новые прогоны/очистка не запланированы.
 
 - **Day28 опубликован 09.10.2026:** ветка `day28-local-rag`, worktree
   `/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day28`.

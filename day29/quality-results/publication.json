@@ -1,0 +1,41 @@
+{
+  "status": "PUBLISHED_AND_READ_BACK",
+  "verified_at_utc": "2026-10-11T00:10:35.219582+00:00",
+  "human_acceptance": false,
+  "github": {
+    "code_url": "https://github.com/RomaniumSSS/ai-advent-9/tree/main/day29",
+    "code_commit_sha": "ffc3df8658d98a9818f57468a7ec53fa0f9c9cf1",
+    "remote_sha_verified": true,
+    "full_core_sha256": "f1b62d97909f391462a0a6396ebb23e91e352d6a83cb5378514abc62314c9e12",
+    "remote_file_content_verified": true,
+    "day01_29_in_order": true,
+    "day01_28_unchanged": true
+  },
+  "drive": {
+    "file_id": "1qIRVmVwnBzPzozciiwdNXQ8-k5DU4S6H",
+    "video_url": "https://drive.google.com/file/d/1qIRVmVwnBzPzozciiwdNXQ8-k5DU4S6H/view?usp=sharing",
+    "folder_id": "1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY",
+    "owner_email": "romanpozharitskiy@gmail.com",
+    "filename": "Day29-live-full-chat.mp4",
+    "bytes": 8715854,
+    "source_sha256": "4bfe503922a256adf22560c7f5c76cb2c8411dbe440c6d107501ebf34f9f3d10",
+    "general_access": "Anyone with the link",
+    "role": "Viewer",
+    "save_complete": true,
+    "anonymous_preview_status": 200,
+    "anonymous_access_required": false
+  },
+  "sheet": {
+    "url": "https://docs.google.com/spreadsheets/d/1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE/edit?gid=0#gid=0",
+    "worksheet": "Лист1",
+    "cell": "AD132",
+    "day_header_verified": "День 29 (08.10)",
+    "row_owner_verified": true,
+    "format": "own comment with two separate URLs",
+    "comment_body": "Видео: https://drive.google.com/file/d/1qIRVmVwnBzPzozciiwdNXQ8-k5DU4S6H/view?usp=sharing\nКод: https://github.com/RomaniumSSS/ai-advent-9/tree/main/day29",
+    "after_full_reload_readback": true,
+    "range_comment_anchor_verified": "AD132",
+    "save_status": "Saved to Drive",
+    "duplicate_post_attempts": 0
+  }
+}

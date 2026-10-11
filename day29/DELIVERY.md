@@ -111,8 +111,13 @@ not_applicable. Поэтому улучшение B **не поддаётся о
 - **Final delivery audit — APPROVED:** [Astra validation](quality-results/delivery-validation-astra.md),
   60 applicable PASS,0 FAIL,0 NOT PROVEN;142offlinePASS. Качество имеет ограничения выше;
   human acceptance и внешняя публикация отдельно от локального SPEC verdict.
-- **Публикация — PENDING:** GitHub/Drive/таблица новой поставки обновляются root
-  после retest, оценки, dry и frame/decode/privacy checks. Будущих URL здесь нет.
+- **Публикация проверена:** [код GitHub main/day29](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day29),
+  [новое видео Drive](https://drive.google.com/file/d/1qIRVmVwnBzPzozciiwdNXQ8-k5DU4S6H/view?usp=sharing) — primary account, указанная папка,
+  Anyone with the link/Viewer. Анонимный previewHTTP200 без запроса доступа.
+  Собственный комментарий **Лист1!AD132** содержит отдельные video/code URLs;
+  заголовок/участник и запись проверены после полной перезагрузки, Saved to Drive.
+  [Publication proof](quality-results/publication.json); пользовательская приёмка не заявлена.
+
 
 Первоначальные неудачи и расходы сохраняются. Положительный результат B,
 полнота всех 24 вопросов или человеческая приёмка не заявляются.

@@ -27,11 +27,15 @@ Failedtakes0127000asks and0131001baselineGENpreserved: caughtAPIprofileprojectio
 fixturemismatches beforefinalrecordercorrected. Original99files98unchanged/READMEauthorizedaddition.
 Original4conversationfileSHAs preservedafterdry/record;privatecache dirs700 fixed.
 
-Stop: finalAstraactualdeliverymatrix finishing (rootmedia proof sent; no substantive blockers).
-AfterAPPROVED: safeGitcandidatecheck→commit→mainff/push→verifyremote/order→Driveupload/publicViewer
-→AD1/A132readcheck→ownAD132comment2URL→reloadreadback→publicationproof/docscommit.
-Currentexternalwrites0. BrowserDrivefoldertab0primaryaccountverified, SheetAD132tab2selected.
-ExactdestIDs inDELIVERY/todo; rootownsallpublication. No branch/worktree deletion.
+Stop: публикация Day29 ЗАВЕРШЕНА, пользовательская приёмка pending.
+Astrafinal60applicablePASS/SPEC SATISFIED report4e174837…76ab7; root142offlinePASS.
+Codecommitffc3df8658d98a9818f57468a7ec53fa0f9c9cf1→mainff/push, remoteSHA+sourcef1
+APIverified; main01–29order/olderdaysunchanged. Main4preexistinguntrackeddirs preserved.
+Drivefile1qIRVmVwnBzPzozciiwdNXQ8-k5DU4S6H inauthorizedfolder/primaryowner,
+AnyoneViewer saved; anonymouspreview200/noaccessrequest. Лист1!AD132 owncomment2URLs
+afterFULLreloadreadback+rangeAD132/SavedtoDrive. [Publication proof](day29/quality-results/publication.json).
+Publicationproof входит в финальный docs commit; code/model/video не менялись.
+No branch/worktree deletion; servers stayavailable. Do notresume modeltests automatically.
 
 ## Контекст Full chat — 10.10.2026
 
