@@ -4,7 +4,7 @@ from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
 import core
-from full_chat_core import ChatEngine,ConversationStore,PROFILE,chat_view,identifier,load_full_index,now
+from full_chat_core import EvidenceChatEngine,ConversationStore,EVIDENCE_PROFILE as PROFILE,chat_view,identifier,load_full_index,now
 HERE=Path(__file__).resolve().parent
 
 class Application:
@@ -95,7 +95,7 @@ def main(argv=None):
     if args.port!=8070:parser.error('порт фиксирован: 8070')
     root=(HERE/'private'/'full-chat').resolve()
     if not root.is_relative_to((HERE/'private').resolve()):parser.error('private storage outside private root')
-    identity,chunks=load_full_index(args.index_root);app=Application(ChatEngine(chunks,identity),ConversationStore(root),args.port)
+    identity,chunks=load_full_index(args.index_root);app=Application(EvidenceChatEngine(chunks,identity),ConversationStore(root),args.port)
     server=ThreadingHTTPServer(('127.0.0.1',args.port),handler_for(app));print('http://127.0.0.1:8070 · all · private local history',flush=True)
     try:server.serve_forever()
     except KeyboardInterrupt:pass

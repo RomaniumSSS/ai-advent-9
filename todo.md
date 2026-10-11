@@ -2,6 +2,29 @@
 
 ## Текущий статус
 
+- **Day29: улучшение сохранено; тесты остановлены пользователем.**
+  Freeze core `5acc34c7`: 264 offline PASS, Luna→Astra CODE approved,
+  пять целевых реальных запросов — **5/5 PASS**. Новый набор остановлен на14/33;
+  полного результата этой версии нет. Цитаты могут быть длинными; смысл/полнота
+  автоматически не проверяются. [Прогресс](day29/ARCHIVE_QUALITY_TASKS.md),
+  [итог остановки](day29/private/full-chat/quality-rework-20261011/wrapup-user-stop.json).
+  Фиксация текущей ветки разрешена; точный результат — private `commit-push.json`.
+  Runtime/индекс/историю и старые результаты сохраняем, тесты не возобновляем.
+
+- **Day30: не начат; ожидает CLEAR пользователя.** После очистки контекста
+  проверить root/ветку и [HANDOFF](HANDOFF.md), затем определить отдельную
+  рабочую папку/ветку, scope/deployment и план TDD + SDD. Сейчас не начинать.
+
+- **Day29: проверены обсуждения, 11.10.2026.** 10 новых разговоров / 15 реальных
+  запросов к текущему `/8070`, без вопросов по условиям заданий. После Luna → Astra:
+  2 ответа PASS, 13 FAIL; полностью пройден 1 сценарий из 10. Девять лишних
+  уточнений остановили поиск/генерацию; найдены потери контекста и искажение смысла.
+  [Частный отчёт](day29/private/full-chat/scenario-eval-20261011/report.html),
+  [итоговая сверка](day29/private/full-chat/scenario-eval-20261011/grading-astra-final.md),
+  [runtime audit](day29/private/full-chat/scenario-eval-20261011/runtime-audit.json).
+  Ветка `day29-archive-scenarios`; код, индекс и прежние разговоры сохранены.
+  Это сохранённая исходная оценка; последующим запросом пользователь поручил переработку.
+
 - **Day29 опубликован 11.10.2026:** [код main/day29](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day29),
   [новая живая запись4:57](https://drive.google.com/file/d/1qIRVmVwnBzPzozciiwdNXQ8-k5DU4S6H/view?usp=sharing), Anyonewithlink/Viewer, anonymousHTTP200.
   [DELIVERY](day29/DELIVERY.md), [publication proof](day29/quality-results/publication.json):
