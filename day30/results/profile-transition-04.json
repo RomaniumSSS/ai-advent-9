@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-11T22:40:17.652742+00:00",
+  "both_services_idle": true,
+  "shared_inference_lock_held_during_unload": true,
+  "loaded_before": [],
+  "loaded_after": [],
+  "unload_done_reason": null,
+  "content_inference_calls": 0,
+  "model_weight_files_preserved": true,
+  "old_state_files": 8
+}

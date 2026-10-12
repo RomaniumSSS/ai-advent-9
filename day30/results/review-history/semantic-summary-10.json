@@ -1,0 +1,106 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-10.json",
+  "profile": "profile10",
+  "protocol_version": "protocol06",
+  "model": "qwen3.5:9b-q4_K_M",
+  "run": "smoke-10",
+  "gate": "FAIL",
+  "requests_planned_max": 3,
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "runtime_pass": 0,
+  "runtime_fail": 1,
+  "semantic_pass": 0,
+  "semantic_fail_delivered_answers": 0,
+  "semantic_not_proven_no_delivered_answer": 1,
+  "generation_attempts": 2,
+  "generation_completed": 2,
+  "elapsed_seconds": 689.838,
+  "runtime_error": {
+    "code": "invalid_model_response",
+    "validation_code": "incomplete_model_response",
+    "phase": "synthesis",
+    "done_reason": "length",
+    "final_content_bytes": 0
+  },
+  "selection_metrics": {
+    "elapsed_seconds": 77.085,
+    "eval_count": 161,
+    "eval_duration": 48443878000,
+    "load_duration": 6202466375,
+    "prompt_eval_count": 976,
+    "prompt_eval_duration": 22416056000,
+    "tokens_per_second": 3.32,
+    "total_duration": 77081876791
+  },
+  "synthesis_metrics": {
+    "elapsed_seconds": 610.521,
+    "eval_count": 1920,
+    "eval_duration": 588055233000,
+    "load_duration": 4239167,
+    "prompt_eval_count": 1093,
+    "prompt_eval_duration": 22414958000,
+    "tokens_per_second": 3.26,
+    "total_duration": 610516817833
+  },
+  "generation_parameters": {
+    "selection": {
+      "deadline_seconds": 300,
+      "format_mode": "native",
+      "model": "qwen3.5:9b-q4_K_M",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1024,
+        "temperature": 0
+      },
+      "think": false
+    },
+    "synthesis": {
+      "deadline_seconds": 900,
+      "format_mode": "prompt_schema",
+      "model": "qwen3.5:9b-q4_K_M",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1920,
+        "temperature": 0.7,
+        "top_p": 0.8
+      },
+      "think": true
+    }
+  },
+  "provider_deadlines": {
+    "embedding": 300,
+    "selection": 300,
+    "synthesis": 900
+  },
+  "budgets": {
+    "selection_upper_bound": 6884,
+    "synthesis_upper_bound": 6240,
+    "synthesis_separate_schema_tokens": 0,
+    "output_selection": 1024,
+    "output_synthesis": 1920,
+    "template_reserve": 512
+  },
+  "privacy": "sanitized selection final; synthesis role and opaque empty-final metadata only; dedicated reasoning omitted",
+  "code_verdict": "APPROVED",
+  "inherited_pruning_p2": "FIXED; current reconstruction matches actual final snapshot; earlier09 failure preserved",
+  "delivered_answer_semantics": "NOT PROVEN",
+  "private_evidence": "private/semantic-review-10.md",
+  "historical_failures_preserved": true,
+  "stop": "first runtime failure; two remaining cases not run; no retry",
+  "restart": {
+    "old_state_files_unchanged": 21,
+    "automatic_replay": false,
+    "CA_verified": true
+  },
+  "limits": [
+    "known case, not blind holdout",
+    "no final answer to audit",
+    "dedicated reasoning token count unknown; hidden reasoning not inspected",
+    "actual compute-stop latency not measured",
+    "no future profile approved by this audit",
+    "human acceptance pending",
+    "second physical device NOT PROVEN"
+  ]
+}

@@ -1,0 +1,17 @@
+test_actual_native_wire_limits_budget_trace_and_followup_not_inherited (test_profile11.Profile11Tests) ... ok
+test_ascii_single_quoted_command_is_not_request (test_profile11.Profile11Tests) ... ok
+test_background_context_not_second_proof_or_point_unknown_retained (test_profile11.Profile11Tests) ... ok
+test_excess_provider_outputs_fail_at_actual_stage_without_truncation_or_retry (test_profile11.Profile11Tests) ... ok
+test_explicit_current_question_detector_conservative_forms_and_guards (test_profile11.Profile11Tests) ... ok
+test_nested_quoted_command_is_not_request (test_profile11.Profile11Tests) ... ok
+test_ordinary_eight_proofs_four_points_and_single_multiple_aspects (test_profile11.Profile11Tests) ... ok
+test_quote_escapes_mixed_nesting_and_intraword_apostrophe (test_profile11.Profile11Tests) ... ok
+test_sentence_boundary_keeps_newlines_and_excludes_quoted_commands (test_profile11.Profile11Tests) ... ok
+test_single_oneof_rebuilt_before_each_native_budget_and_earliest_fit (test_profile11.Profile11Tests) ... ok
+test_single_selection_schema_exact_union_and_backend_rejects_excess (test_profile11.Profile11Tests) ... ok
+test_unexpected_synthesis_thinking_rejected_and_private_snapshot_sanitized (test_profile11.Profile11Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.056s
+
+OK

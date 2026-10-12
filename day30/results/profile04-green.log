@@ -1,0 +1,11 @@
+test_observed_context_overflow_rejected_without_retry (test_profile04.Profile04Tests) ... ok
+test_old_model_response_rejected_before_second_call_without_retry (test_profile04.Profile04Tests) ... ok
+test_pinned_generator_identity (test_profile04.Profile04Tests) ... ok
+test_qwen35_is_unsupported_and_real_factory_keeps_byte_bound_before_both_calls (test_profile04.Profile04Tests) ... ok
+test_verify_accepts_frozen_9b_and_rejects_old_digest (test_profile04.Profile04Tests) ... ok
+test_wire_model_identity_and_options_without_package_default_overrides (test_profile04.Profile04Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.525s
+
+OK

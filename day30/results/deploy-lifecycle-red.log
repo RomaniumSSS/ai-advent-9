@@ -1,0 +1,80 @@
+test_exit_timeout_prevents_bootstrap (test_deploy_lifecycle.LifecycleTests.test_exit_timeout_prevents_bootstrap) ... ERROR
+test_invalid_bootstrap_not_retried (test_deploy_lifecycle.LifecycleTests.test_invalid_bootstrap_not_retried) ... FAIL
+test_restart_waits_for_both_job_and_prior_pid (test_deploy_lifecycle.LifecycleTests.test_restart_waits_for_both_job_and_prior_pid) ... ERROR
+test_start_performs_one_bootstrap_without_hidden_retry (test_deploy_lifecycle.LifecycleTests.test_start_performs_one_bootstrap_without_hidden_retry) ... ok
+test_stop_waits_for_exit_without_bootstrap (test_deploy_lifecycle.LifecycleTests.test_stop_waits_for_exit_without_bootstrap) ... FAIL
+
+======================================================================
+ERROR: test_exit_timeout_prevents_bootstrap (test_deploy_lifecycle.LifecycleTests.test_exit_timeout_prevents_bootstrap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_deploy_lifecycle.py", line 53, in test_exit_timeout_prevents_bootstrap
+    with self.assertRaises(TimeoutError):self.invoke('restart')
+                                         ~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_deploy_lifecycle.py", line 44, in invoke
+    deploy.main()
+    ~~~~~~~~~~~^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/deploy.py", line 44, in main
+    subprocess.run(['launchctl','bootstrap',domain,str(path)],check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_deploy_lifecycle.py", line 35, in run_command
+    if self.registered or self.alive or self.invalid_bootstrap:raise subprocess.CalledProcessError(5,cmd)
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+subprocess.CalledProcessError: Command '['launchctl', 'bootstrap', 'gui/501', '/private/var/folders/g2/d42wvg5d3fzb07qklb2rcfy40000gn/T/tmp653aacmc/org.ai-advent.day30.plist']' returned non-zero exit status 5.
+
+======================================================================
+ERROR: test_restart_waits_for_both_job_and_prior_pid (test_deploy_lifecycle.LifecycleTests.test_restart_waits_for_both_job_and_prior_pid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_deploy_lifecycle.py", line 46, in test_restart_waits_for_both_job_and_prior_pid
+    self.invoke('restart')
+    ~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_deploy_lifecycle.py", line 44, in invoke
+    deploy.main()
+    ~~~~~~~~~~~^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/deploy.py", line 44, in main
+    subprocess.run(['launchctl','bootstrap',domain,str(path)],check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1175, in __call__
+    return self._mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1179, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/mock.py", line 1240, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_deploy_lifecycle.py", line 35, in run_command
+    if self.registered or self.alive or self.invalid_bootstrap:raise subprocess.CalledProcessError(5,cmd)
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+subprocess.CalledProcessError: Command '['launchctl', 'bootstrap', 'gui/501', '/private/var/folders/g2/d42wvg5d3fzb07qklb2rcfy40000gn/T/tmpoy_nok_b/org.ai-advent.day30.plist']' returned non-zero exit status 5.
+
+======================================================================
+FAIL: test_invalid_bootstrap_not_retried (test_deploy_lifecycle.LifecycleTests.test_invalid_bootstrap_not_retried)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_deploy_lifecycle.py", line 58, in test_invalid_bootstrap_not_retried
+    self.assertEqual(self.events.count('bootstrap'),1);self.assertGreaterEqual(self.state_checks,3)
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 3
+
+======================================================================
+FAIL: test_stop_waits_for_exit_without_bootstrap (test_deploy_lifecycle.LifecycleTests.test_stop_waits_for_exit_without_bootstrap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_deploy_lifecycle.py", line 50, in test_stop_waits_for_exit_without_bootstrap
+    self.invoke('stop');self.assertGreaterEqual(self.state_checks,3);self.assertEqual(self.events,['bootout'])
+                        ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 not greater than or equal to 3
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.010s
+
+FAILED (failures=2, errors=2)

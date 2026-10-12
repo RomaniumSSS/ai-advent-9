@@ -1,0 +1,85 @@
+test_actual_wire_stage_caps_trace_and_options_do_not_leak (test_profile09.Profile09Tests) ... ERROR
+test_client_accepts_completion_before1230_not_old920 (test_profile09.Profile09Tests) ... ERROR
+test_coupled_worker_join_plist_and_legacy_plist_preservation (test_profile09.Profile09Tests) ... FAIL
+test_default_routes_300_and_short_timeout_patch_still_applies_to_synthesis (test_profile09.Profile09Tests) ... ERROR
+test_output1408_fits_saved_bound_and_observed_cap_is_strict (test_profile09.Profile09Tests) ... FAIL
+test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return (test_profile09.Profile09Tests) ... test_video_terminal_wait_uses1230_seconds (test_profile09.Profile09Tests) ... ERROR
+
+======================================================================
+ERROR: test_actual_wire_stage_caps_trace_and_options_do_not_leak (test_profile09.Profile09Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 32, in test_actual_wire_stage_caps_trace_and_options_do_not_leak
+    result=service.Engine([chunk()],Wire()).answer('Какие условия дня 30?',[])
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 279, in answer
+    raise error(code,validation,copy.deepcopy(result)) from None
+service.InferenceFailure: invalid_model_shape
+
+======================================================================
+ERROR: test_client_accepts_completion_before1230_not_old920 (test_profile09.Profile09Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 78, in test_client_accepts_completion_before1230_not_old920
+    with patch.object(sys,'argv',args),patch('client.load_env',return_value={'DAY30_TOKEN':'fixture'}),patch('client.request',side_effect=[accepted,done]) as request,patch('client.time.monotonic',side_effect=[0,1229]),patch('client.time.sleep'),contextlib.redirect_stdout(io.StringIO()):client.main()
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/client.py", line 29, in main
+    if time.monotonic()-start>920:raise TimeoutError('request_polling_timeout')
+TimeoutError: request_polling_timeout
+
+======================================================================
+ERROR: test_default_routes_300_and_short_timeout_patch_still_applies_to_synthesis (test_profile09.Profile09Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 46, in test_default_routes_300_and_short_timeout_patch_still_applies_to_synthesis
+    provider.chat([],{},deadline_seconds=600)
+TypeError: chat() got an unexpected keyword argument 'deadline_seconds'
+
+======================================================================
+ERROR: test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return (test_profile09.Profile09Tests) (phase='headers')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 64, in test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return
+    with self.assertRaises(local.ProviderTimeout) as caught:provider.chat([],{},think=True,native_format=False,deadline_seconds=600)
+TypeError: chat() got an unexpected keyword argument 'deadline_seconds'
+
+======================================================================
+ERROR: test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return (test_profile09.Profile09Tests) (phase='body')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 64, in test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return
+    with self.assertRaises(local.ProviderTimeout) as caught:provider.chat([],{},think=True,native_format=False,deadline_seconds=600)
+TypeError: chat() got an unexpected keyword argument 'deadline_seconds'
+
+======================================================================
+ERROR: test_video_terminal_wait_uses1230_seconds (test_profile09.Profile09Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 84, in test_video_terminal_wait_uses1230_seconds
+    asyncio.run(module.wait_for_terminal_turn(page))
+AttributeError: module 'day30_video_test' has no attribute 'wait_for_terminal_turn'
+
+======================================================================
+FAIL: test_coupled_worker_join_plist_and_legacy_plist_preservation (test_profile09.Profile09Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 69, in test_coupled_worker_join_plist_and_legacy_plist_preservation
+    worker.join.assert_called_once_with(1210)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 919, in assert_called_once_with
+    return self.assert_called_with(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 907, in assert_called_with
+    raise AssertionError(_error_message()) from cause
+AssertionError: expected call not found.
+Expected: join(1210)
+Actual: join(915)
+
+======================================================================
+FAIL: test_output1408_fits_saved_bound_and_observed_cap_is_strict (test_profile09.Profile09Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 54, in test_output1408_fits_saved_bound_and_observed_cap_is_strict
+    self.assertEqual(budget['input_upper_bound'],6738);self.assertEqual(budget['output_reserved'],1408)
+AssertionError: 1024 != 1408
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.051s
+
+FAILED (failures=2, errors=6)

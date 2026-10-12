@@ -1,0 +1,23 @@
+test_engine_sends_last_rebuilt_snapshot_once_per_stage (test_profile10.Profile10Tests) ... FAIL
+
+======================================================================
+FAIL: test_engine_sends_last_rebuilt_snapshot_once_per_stage (test_profile10.Profile10Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 87, in test_engine_sends_last_rebuilt_snapshot_once_per_stage
+    self.assertEqual([len(ids) for ids in seen],[5,4,3]);self.assertEqual(result['metrics']['generation_calls'],2)
+AssertionError: Lists differ: [5, 4, 3, 3] != [5, 4, 3]
+
+First list contains 1 additional elements.
+First extra element 3:
+3
+
+- [5, 4, 3, 3]
+?        ---
+
++ [5, 4, 3]
+
+----------------------------------------------------------------------
+Ran 1 test in 0.019s
+
+FAILED (failures=1)

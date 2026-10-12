@@ -1,0 +1,11 @@
+test_budget_and_observed_count_use_passed_context_and_output (test_profile07.Profile07Tests) ... ok
+test_completed_invalid_selection_and_synthesis_keep_only_called_parameters (test_profile07.Profile07Tests) ... ok
+test_engine_actual_wire_stage_options_and_trace_budget_match (test_profile07.Profile07Tests) ... ok
+test_explicit_options_and_default_payload_are_independent_copies (test_profile07.Profile07Tests) ... ok
+test_sent_transport_parse_error_records_selection_options_not_synthesis (test_profile07.Profile07Tests) ... ok
+test_unknown_presend_error_no_false_sent_parameters_and_no_shared_default_mutation (test_profile07.Profile07Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.540s
+
+OK

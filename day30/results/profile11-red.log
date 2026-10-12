@@ -1,0 +1,52 @@
+test_actual_native_wire_limits_budget_trace_and_followup_not_inherited (test_profile11.Profile11Tests) ... ERROR
+test_background_context_not_second_proof_or_point_unknown_retained (test_profile11.Profile11Tests) ... ERROR
+test_explicit_current_question_detector_conservative_forms_and_guards (test_profile11.Profile11Tests) ... ERROR
+test_single_oneof_rebuilt_before_each_native_budget_and_earliest_fit (test_profile11.Profile11Tests) ... ERROR
+test_single_selection_schema_exact_union_and_backend_rejects_excess (test_profile11.Profile11Tests) ... ERROR
+
+======================================================================
+ERROR: test_actual_native_wire_limits_budget_trace_and_followup_not_inherited (test_profile11.Profile11Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile11.py", line 62, in test_actual_native_wire_limits_budget_trace_and_followup_not_inherited
+    self.assertEqual(first['trace']['answer_limits'],ONE);self.assertEqual(first['metrics']['generation_calls'],2)
+KeyError: 'answer_limits'
+
+======================================================================
+ERROR: test_background_context_not_second_proof_or_point_unknown_retained (test_profile11.Profile11Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile11.py", line 41, in test_background_context_not_second_proof_or_point_unknown_retained
+    chosen,cov=protocol.validate_selection(raw,ASPECTS,[prior,proof],{'S1.U1'},answer_limits=ONE)
+TypeError: validate_selection() got an unexpected keyword argument 'answer_limits'
+
+======================================================================
+ERROR: test_explicit_current_question_detector_conservative_forms_and_guards (test_profile11.Profile11Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile11.py", line 20, in test_explicit_current_question_detector_conservative_forms_and_guards
+    self.assertEqual(protocol.answer_limits(q),ONE)
+AttributeError: module 'protocol' has no attribute 'answer_limits'
+
+======================================================================
+ERROR: test_single_oneof_rebuilt_before_each_native_budget_and_earliest_fit (test_profile11.Profile11Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile11.py", line 79, in test_single_oneof_rebuilt_before_each_native_budget_and_earliest_fit
+    context=builder(original[:3],[])
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile11.py", line 78, in <lambda>
+    builder=lambda us,hs:service.selection_context(ASPECTS,us,allowed,{'intent':'new_topic'},[],ONE)
+TypeError: selection_context() takes 5 positional arguments but 6 were given
+
+======================================================================
+ERROR: test_single_selection_schema_exact_union_and_backend_rejects_excess (test_profile11.Profile11Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile11.py", line 28, in test_single_selection_schema_exact_union_and_backend_rejects_excess
+    schema=evidence.response_schema(ASPECTS,[UNIT,other],answer_limits=ONE)
+TypeError: response_schema() got an unexpected keyword argument 'answer_limits'
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.030s
+
+FAILED (errors=5)

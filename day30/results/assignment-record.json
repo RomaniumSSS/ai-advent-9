@@ -1,0 +1,242 @@
+{
+  "mode": "record",
+  "probes": [
+    {
+      "error_code": "unauthorized",
+      "http_status": 401,
+      "name": "auth_required"
+    },
+    {
+      "error_code": "invalid_request",
+      "http_status": 400,
+      "name": "max_length_501"
+    },
+    {
+      "error_code": "busy",
+      "http_status": 409,
+      "name": "busy_while_first_runs"
+    }
+  ],
+  "quality": "Semantic correctness is not proven; existing profile12 private semantic FAIL is retained.",
+  "scope": "assignment",
+  "state": {
+    "active": false,
+    "model": "qwen3:8b-q8_0",
+    "num_ctx": 8192,
+    "rate_limit": "6 / 60 s",
+    "scope": "assignment"
+  },
+  "steps": [
+    {
+      "accepted_at": 1791820678.271575,
+      "accepted_http_status": 202,
+      "conversation_id": "e172e98204ce4d5d92f06cecb4748d69",
+      "elapsed_seconds": 134.005,
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 2.457,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.025,
+        "selection": {
+          "elapsed_seconds": 58.202,
+          "eval_count": 39,
+          "eval_duration": 14451392000,
+          "load_duration": 14496570083,
+          "prompt_eval_count": 1648,
+          "prompt_eval_duration": 29170456000,
+          "tokens_per_second": 2.7,
+          "total_duration": 58187350333
+        },
+        "source_count": 1,
+        "synthesis": {
+          "elapsed_seconds": 72.625,
+          "eval_count": 150,
+          "eval_duration": 56843024000,
+          "load_duration": 28921291,
+          "prompt_eval_count": 769,
+          "prompt_eval_duration": 15525576000,
+          "tokens_per_second": 2.64,
+          "total_duration": 72596607958
+        },
+        "total_seconds": 133.369
+      },
+      "observed_limits": {
+        "selection": {
+          "eval_count": 39,
+          "input_upper_bound": 2806,
+          "num_ctx": 8192,
+          "options": {
+            "num_ctx": 8192,
+            "num_predict": 1024,
+            "temperature": 0
+          },
+          "output_reserved": 1024,
+          "prompt_eval_count": 1648,
+          "template_reserve": 512
+        },
+        "synthesis": {
+          "eval_count": 150,
+          "input_upper_bound": 1550,
+          "num_ctx": 8192,
+          "options": {
+            "num_ctx": 8192,
+            "num_predict": 1024,
+            "temperature": 0.7,
+            "top_p": 0.8
+          },
+          "output_reserved": 1024,
+          "prompt_eval_count": 769,
+          "template_reserve": 512
+        }
+      },
+      "original_opened": true,
+      "question_number": 1,
+      "request_id": "8f4e27d3b0954f85925e3dacd8f41583",
+      "status": "done",
+      "visible_chat_turns": 1
+    },
+    {
+      "accepted_at": 1791820834.793421,
+      "accepted_http_status": 202,
+      "conversation_id": "e172e98204ce4d5d92f06cecb4748d69",
+      "elapsed_seconds": 114.577,
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 2.263,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.045,
+        "selection": {
+          "elapsed_seconds": 40.333,
+          "eval_count": 39,
+          "eval_duration": 15212107000,
+          "load_duration": 4830541,
+          "prompt_eval_count": 1642,
+          "prompt_eval_duration": 22060248000,
+          "tokens_per_second": 2.56,
+          "total_duration": 38382215000
+        },
+        "source_count": 1,
+        "synthesis": {
+          "elapsed_seconds": 70.948,
+          "eval_count": 156,
+          "eval_duration": 64021073000,
+          "load_duration": 246217375,
+          "prompt_eval_count": 794,
+          "prompt_eval_duration": 5155233000,
+          "tokens_per_second": 2.44,
+          "total_duration": 70544856375
+        },
+        "total_seconds": 113.914
+      },
+      "observed_limits": {
+        "selection": {
+          "eval_count": 39,
+          "input_upper_bound": 2800,
+          "num_ctx": 8192,
+          "options": {
+            "num_ctx": 8192,
+            "num_predict": 1024,
+            "temperature": 0
+          },
+          "output_reserved": 1024,
+          "prompt_eval_count": 1642,
+          "template_reserve": 512
+        },
+        "synthesis": {
+          "eval_count": 156,
+          "input_upper_bound": 1569,
+          "num_ctx": 8192,
+          "options": {
+            "num_ctx": 8192,
+            "num_predict": 1024,
+            "temperature": 0.7,
+            "top_p": 0.8
+          },
+          "output_reserved": 1024,
+          "prompt_eval_count": 794,
+          "template_reserve": 512
+        }
+      },
+      "original_opened": true,
+      "question_number": 2,
+      "request_id": "d09379cbb2c94207bea347ee7b61a6b4",
+      "status": "done",
+      "visible_chat_turns": 2
+    },
+    {
+      "accepted_at": 1791820971.880598,
+      "accepted_http_status": 202,
+      "conversation_id": "f018ffa270c847efb7b606eeeb014a86",
+      "elapsed_seconds": 190.963,
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 0.162,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.038,
+        "selection": {
+          "elapsed_seconds": 34.296,
+          "eval_count": 39,
+          "eval_duration": 14153068000,
+          "load_duration": 4462834,
+          "prompt_eval_count": 1357,
+          "prompt_eval_duration": 19772455000,
+          "tokens_per_second": 2.76,
+          "total_duration": 34279117917
+        },
+        "source_count": 1,
+        "synthesis": {
+          "elapsed_seconds": 155.479,
+          "eval_count": 446,
+          "eval_duration": 147767834000,
+          "load_duration": 39254625,
+          "prompt_eval_count": 981,
+          "prompt_eval_duration": 7505755000,
+          "tokens_per_second": 3.02,
+          "total_duration": 155441731917
+        },
+        "total_seconds": 190.046
+      },
+      "observed_limits": {
+        "selection": {
+          "eval_count": 39,
+          "input_upper_bound": 2139,
+          "num_ctx": 8192,
+          "options": {
+            "num_ctx": 8192,
+            "num_predict": 1024,
+            "temperature": 0
+          },
+          "output_reserved": 1024,
+          "prompt_eval_count": 1357,
+          "template_reserve": 512
+        },
+        "synthesis": {
+          "eval_count": 446,
+          "input_upper_bound": 1781,
+          "num_ctx": 8192,
+          "options": {
+            "num_ctx": 8192,
+            "num_predict": 1024,
+            "temperature": 0.7,
+            "top_p": 0.8
+          },
+          "output_reserved": 1024,
+          "prompt_eval_count": 981,
+          "template_reserve": 512
+        }
+      },
+      "original_opened": true,
+      "question_number": 3,
+      "request_id": "90effc7bb550470f9bff52a2874c9c47",
+      "status": "done",
+      "visible_chat_turns": 1
+    }
+  ],
+  "success": true
+}

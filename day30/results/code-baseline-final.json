@@ -1,0 +1,27 @@
+{
+  "base": "b3e607e",
+  "phase": "post-Luna and deploy lifecycle fixes, before fresh Astra",
+  "runtime": "/usr/bin/python3(3.9.6)",
+  "files": {
+    "SPEC.md": "cf6387f952e12f2660da4927e391cb653256578830a1f1cccd24e9d38119a2cf",
+    "archive.py": "e99fb8eef5468d40b7891bbcdecfd3abd23838858cd5299af2ba6f83ed803b2e",
+    "client.py": "573033dc17ce34a85ed982523cf7abf2eb8ea0bf83a1b34505977a6a6caf72af",
+    "deploy.py": "69cbef97e09cb44cf82ded6ef3155db2bc2084fd488b522a7063eea5a5a106df",
+    "evidence.py": "b01d4419257b71620fb5d66b3b7cead33fa72d3544802418b6819072634e32b9",
+    "local.py": "8dae8421b402c7c725a4a6412f542110741a2d25402f17c5334435128f0c2363",
+    "retrieval.py": "8106a2839ed84fe357228929417ed3c7fe44f2b1ed6d15a8d44ecf2404f9e5f3",
+    "server.py": "442549ed82999a0b0c768e48792f96540b7ab8dce5f73e9d82653fb3b13c05fa",
+    "service.py": "a18e4cd743b2affe4bffaf534fe624aa5943bbb4993956a4580437967b4975c9",
+    "static/app.js": "820984354326e78a545c49b4e6fced76f501570823b0339031cec8354164b966",
+    "static/index.html": "f78345ac2305ba4f3d86db9b1d98939fd8024dfe8fe1d384c8eaabd10bc60dff",
+    "static/style.css": "0b96e2a46743a46d2c852d42af5e01bef86a6da04a952a5c3bfd0a6344ebd896",
+    "tests/browser_offline.py": "3df0c7e793b70c5288d1ef49efeed7ce473adf3780d161f705c1eae1e82e6697",
+    "tests/test_connections.py": "9b720846ebf02a06783be0b60e938b181c5d3a1851fcacf1e21e96d732271f84",
+    "tests/test_deploy_lifecycle.py": "af9290bd9eecb75828f8dc59f845631de3894699e167dbbedbf053c67a1cfd02",
+    "tests/test_extended.py": "7aaf54ad76b4f357f3af8a7d8136380adcee1908ee1d0456c4f37d88ee01cda3",
+    "tests/test_service.py": "938b79c96f840b694554472d9244719793b46ac7aba7f286adf533ae27945c67",
+    "tests/test_tls.py": "238b6b457de6092ed222617cf3f35b6b4ea71c0fca336c9a12b6d542e8be3df6",
+    "tokenizer.py": "16041b068d23b2f08a937591f3a7cd4074a0a0d7a3da64c4d37bfaaf14795832",
+    "video/run_demo.py": "c5d095dad183f9de5cb09174ae970a82250c2987ad88c96217d0ab2db8968227"
+  }
+}

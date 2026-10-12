@@ -1,0 +1,102 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-11-fixed.json",
+  "profile": "profile11",
+  "protocol_version": "protocol06",
+  "model": "qwen3.5:9b-q4_K_M",
+  "run": "smoke-11",
+  "gate": "FAIL",
+  "requests_planned_max": 3,
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "runtime_pass": 1,
+  "runtime_fail": 0,
+  "semantic_pass": 0,
+  "semantic_fail_delivered_answers": 1,
+  "semantic_not_proven_no_delivered_answer": 0,
+  "generation_attempts": 2,
+  "generation_completed": 2,
+  "elapsed_seconds": 122.387,
+  "semantic_failure_categories": [
+    "unsupported implementation intent and fixed timing",
+    "conclusion propagates unsupported timing",
+    "source condition insufficiently preserved in summary"
+  ],
+  "selection_metrics": {
+    "elapsed_seconds": 46.022,
+    "eval_count": 65,
+    "eval_duration": 19233681000,
+    "load_duration": 5941126542,
+    "prompt_eval_count": 907,
+    "prompt_eval_duration": 20824523000,
+    "tokens_per_second": 3.38,
+    "total_duration": 46019122959
+  },
+  "synthesis_metrics": {
+    "elapsed_seconds": 74.127,
+    "eval_count": 184,
+    "eval_duration": 55118883000,
+    "load_duration": 6593041,
+    "prompt_eval_count": 753,
+    "prompt_eval_duration": 18947481000,
+    "tokens_per_second": 3.34,
+    "total_duration": 74125527291
+  },
+  "generation_parameters": {
+    "selection": {
+      "deadline_seconds": 300,
+      "format_mode": "native",
+      "model": "qwen3.5:9b-q4_K_M",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1024,
+        "temperature": 0
+      },
+      "think": false
+    },
+    "synthesis": {
+      "deadline_seconds": 300,
+      "format_mode": "native",
+      "model": "qwen3.5:9b-q4_K_M",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1024,
+        "temperature": 0.7,
+        "top_p": 0.8
+      },
+      "think": false
+    }
+  },
+  "answer_limits": {
+    "max_points": 1,
+    "max_proof_units": 1
+  },
+  "source_count": 1,
+  "immutable_source_span_metadata": "PASS exact read-only DB match",
+  "budgets": {
+    "selection_upper_bound": 6807,
+    "synthesis_upper_bound": 5720,
+    "selection_native_schema": 1182,
+    "synthesis_native_schema": 880,
+    "output_each": 1024,
+    "template_reserve": 512
+  },
+  "privacy": "safe final only; no reasoning field; private details restricted",
+  "code_verdict": "APPROVED",
+  "delivered_answer_semantics": "FAIL",
+  "private_evidence": "private/semantic-review-11.md",
+  "historical_failures_preserved": true,
+  "stop": "first semantic failure; remaining two not run and not graded; no retry",
+  "restart": {
+    "old_state_files_unchanged": 23,
+    "automatic_replay": false,
+    "CA_verified": true
+  },
+  "limits": [
+    "known case, not blind holdout",
+    "structural supported status is not semantic proof",
+    "no future profile or repair approved by this audit",
+    "human acceptance pending",
+    "second physical device NOT PROVEN"
+  ]
+}

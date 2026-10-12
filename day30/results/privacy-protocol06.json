@@ -1,0 +1,9 @@
+{
+  "stage": "protocol06_before_live",
+  "public_text_candidates": 116,
+  "private_fragments_checked": 967,
+  "exact_credential_hits": [],
+  "exact_private_text_hits": [],
+  "result": "PASS",
+  "limits": "Exact-text screening; final manual review/video privacy still required; not semantic disclosure proof"
+}

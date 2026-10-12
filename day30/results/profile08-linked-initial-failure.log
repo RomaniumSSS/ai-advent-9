@@ -1,0 +1,12 @@
+======================================================================
+ERROR: test_duplicate_same_id_rejected_without_synthesis_even_different_aspects (test_selection03.Selection03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_selection03.py", line 53, in test_duplicate_same_id_rejected_without_synthesis_even_different_aspects
+    self.assertEqual(len(failure['trace']['selection_raw_response']['message']['content'])>0,True)
+KeyError: 'content'
+
+----------------------------------------------------------------------
+Ran 87 tests in 9.851s
+
+FAILED (errors=1)

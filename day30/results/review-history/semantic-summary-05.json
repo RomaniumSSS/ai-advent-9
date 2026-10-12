@@ -1,0 +1,54 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-05.json",
+  "protocol_version": "repair03",
+  "model": "qwen3.5:9b-q4_K_M",
+  "run": "smoke-05",
+  "gate": "FAIL",
+  "requests_planned_max": 3,
+  "requests_executed": 1,
+  "runtime_pass": 0,
+  "runtime_fail": 1,
+  "semantic_pass": 0,
+  "semantic_fail_delivered_answers": 0,
+  "semantic_not_proven_no_delivered_answer": 1,
+  "remaining_requests_not_run": 2,
+  "runtime_error": {
+    "phase": "synthesis",
+    "validation_code": "invalid_point_anchor",
+    "additional_contract_violation": "both partial aspects absent from mandatory missing_aspect_ids",
+    "generation_attempts": 2,
+    "generation_completed": 2,
+    "elapsed_seconds": 200.086
+  },
+  "independent_validation_replay": "same invalid_point_anchor without model call or candidate modification",
+  "independent_original_checks": {
+    "units_checked": 2,
+    "exact_spans": 2,
+    "matching_metadata": 2,
+    "anchors_checked": 2,
+    "anchors_exact": 1,
+    "anchors_invalid": 1
+  },
+  "budgets": {
+    "method": "conservative_utf8_byte_bound_with_reserves",
+    "selection_upper_bound": 6158,
+    "synthesis_upper_bound": 6522,
+    "output_reserved_each": 1024,
+    "observed_prompt_count_each": 1082
+  },
+  "code_verdict": "APPROVED",
+  "delivered_answer_semantics": "NOT PROVEN",
+  "rejected_raw_candidate_semantic_issues": "diagnosed privately, not counted as delivered answer",
+  "ordering_hypothesis": "all four required raw output orders observed; serialization defect corrected; semantic advantage NOT PROVEN",
+  "public_dry_record": "NOT RUN",
+  "private_evidence": "private/semantic-review.md",
+  "historical_failures_preserved": true,
+  "limits": [
+    "exact anchors/refs do not prove semantics",
+    "different budget/pruning and inherited package defaults, not pure model benchmark",
+    "known first case, transfer not executed",
+    "second physical device NOT PROVEN",
+    "human acceptance pending"
+  ]
+}

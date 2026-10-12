@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-12T14:26:32.524132+00:00",
+  "tls": "CA_and_hostname_verified",
+  "endpoints": {
+    "main": {
+      "state": {
+        "active": false,
+        "model": "qwen3:8b-q8_0",
+        "num_ctx": 8192,
+        "rate_limit": "6 / 60 s",
+        "scope": "all"
+      },
+      "checks": [
+        {
+          "name": "no_auth",
+          "http_status": 401,
+          "error_code": "unauthorized"
+        },
+        {
+          "name": "invalid_token",
+          "http_status": 401,
+          "error_code": "unauthorized"
+        },
+        {
+          "name": "overlong_question",
+          "http_status": 400,
+          "error_code": "invalid_request"
+        },
+        {
+          "name": "forbidden_host",
+          "http_status": 403,
+          "error_code": "forbidden_host"
+        },
+        {
+          "name": "forbidden_origin",
+          "http_status": 403,
+          "error_code": "forbidden_origin"
+        }
+      ]
+    },
+    "assignment": {
+      "state": {
+        "active": false,
+        "model": "qwen3:8b-q8_0",
+        "num_ctx": 8192,
+        "rate_limit": "6 / 60 s",
+        "scope": "assignment"
+      },
+      "checks": [
+        {
+          "name": "no_auth",
+          "http_status": 401,
+          "error_code": "unauthorized"
+        },
+        {
+          "name": "invalid_token",
+          "http_status": 401,
+          "error_code": "unauthorized"
+        },
+        {
+          "name": "overlong_question",
+          "http_status": 400,
+          "error_code": "invalid_request"
+        },
+        {
+          "name": "forbidden_host",
+          "http_status": 403,
+          "error_code": "forbidden_host"
+        },
+        {
+          "name": "forbidden_origin",
+          "http_status": 403,
+          "error_code": "forbidden_origin"
+        }
+      ]
+    }
+  },
+  "offline": {
+    "environment": "/usr/bin/python3 3.9.6",
+    "command": "python3 -m unittest discover -s day30/tests -q",
+    "tests": 151,
+    "seconds": 30.887,
+    "result": "OK",
+    "provider": "mock/loopback, no Ollama inference"
+  },
+  "baseline12_changes": [
+    "PLAN.md",
+    "SPEC.md",
+    "video/SCENARIO.md",
+    "video/run_demo.py"
+  ],
+  "ollama_model": {
+    "name": "qwen3:8b-q8_0",
+    "digest": "e56358ca25dd14db6853a9f68a92d717aaa6f0a94250a72d1a0f3d86a9f30130",
+    "backend": "127.0.0.1:11434"
+  }
+}

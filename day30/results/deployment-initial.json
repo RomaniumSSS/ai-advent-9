@@ -1,0 +1,42 @@
+{
+  "org.ai-advent.day30": {
+    "unauthorized": 401,
+    "bad_origin": 403,
+    "bad_host": 403,
+    "static": 200,
+    "tls_stalled_second_client_seconds": 0.018,
+    "supervisor_state": "running",
+    "pid": 30928,
+    "state": {
+      "active": false,
+      "model": "qwen3:8b",
+      "num_ctx": 8192,
+      "rate_limit": "6 / 60 s",
+      "scope": "all"
+    },
+    "base_url": "https://192.168.0.100:8080",
+    "ca_verified": true,
+    "second_physical_device": "NOT PROVEN",
+    "runtime": "/usr/bin/python3 Python3.9.6"
+  },
+  "org.ai-advent.day30.demo": {
+    "unauthorized": 401,
+    "bad_origin": 403,
+    "bad_host": 403,
+    "static": 200,
+    "tls_stalled_second_client_seconds": 0.024,
+    "supervisor_state": "running",
+    "pid": 31787,
+    "state": {
+      "active": false,
+      "model": "qwen3:8b",
+      "num_ctx": 8192,
+      "rate_limit": "6 / 60 s",
+      "scope": "assignment"
+    },
+    "base_url": "https://192.168.0.100:8081",
+    "ca_verified": true,
+    "second_physical_device": "NOT PROVEN",
+    "runtime": "/usr/bin/python3 Python3.9.6"
+  }
+}

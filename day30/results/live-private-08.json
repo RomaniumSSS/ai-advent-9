@@ -1,0 +1,54 @@
+{
+  "started_at": "2026-10-12T00:36:11.179107+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "profile": "profile08",
+  "protocol_version": "protocol06",
+  "known_cases_not_blind_holdout": true,
+  "requests_planned_max": 3,
+  "automatic_retry": false,
+  "submission_control": "one explicit root command per case after independent semantic verdict",
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "db4095f2111f459ba60fd55a5d158155",
+      "conversation_id": "e2ab585a47c7467da7651fb686a6ffe2",
+      "status": "error",
+      "answer_status": null,
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.411,
+        "generation_calls": 2,
+        "generation_completed_calls": 1,
+        "retrieval_seconds": 0.518,
+        "selection": {
+          "elapsed_seconds": 78.3,
+          "eval_count": 161,
+          "eval_duration": 48456244000,
+          "load_duration": 6942891291,
+          "prompt_eval_count": 976,
+          "prompt_eval_duration": 22884174000,
+          "tokens_per_second": 3.32,
+          "total_duration": 78298479791
+        },
+        "synthesis": {
+          "elapsed_seconds": 300.003,
+          "status": "failed"
+        },
+        "total_seconds": 380.269
+      },
+      "elapsed_seconds": 380.747,
+      "sources": 0,
+      "error_code": "inference_timeout",
+      "private_response_sha256": "759871b18c0aefb76f04c27ab82bd53e59499f70277bb2bcfed78a34282c7352"
+    }
+  ],
+  "updated_at": "2026-10-12T00:42:31.926965+00:00",
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "result": "FAILED_RUNTIME_GATE"
+}

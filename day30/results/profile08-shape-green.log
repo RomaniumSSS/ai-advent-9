@@ -1,0 +1,19 @@
+test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_error_response_data_unknown_shape_opaque_before_snapshot (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_safely_shaped_invalid_reference_keeps_exact_final_diagnostics (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_actual_engine_wire_synthesis_omits_format_and_embeds_ordered_schema_once (test_profile08.Profile08Tests) ... ok
+test_actual_parsed_provider_error_sanitizes_response_data_and_hashes_body (test_profile08.Profile08Tests) ... ok
+test_bad_final_empty_length_duplicate_and_think_tags_remain_fail_no_retry (test_profile08.Profile08Tests) ... ok
+test_budget_counts_actual_embedded_schema_once_and_keeps_reserves (test_profile08.Profile08Tests) ... ok
+test_malformed_outer_transport_only_hash_count_stage_no_prefix (test_profile08.Profile08Tests) ... ok
+test_parseable_bad_final_with_reasoning_field_is_opaque_in_snapshot (test_profile08.Profile08Tests) ... ok
+test_partial_timeout_hash_count_synchronous_cancellation_no_reasoning (test_profile08.Profile08Tests) ... ok
+test_response_data_and_legacy_text_error_paths_sanitize_before_snapshot (test_profile08.Profile08Tests) ... ok
+test_success_and_schema_error_private_files_logs_and_api_never_contain_reasoning (test_profile08.Profile08Tests) ... ok
+test_think_true_accepts_final_but_false_phase_still_rejects_without_leaking (test_profile08.Profile08Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.770s
+
+OK

@@ -1,0 +1,21 @@
+test_service (unittest.loader._FailedTest.test_service) ... ERROR
+
+======================================================================
+ERROR: test_service (unittest.loader._FailedTest.test_service)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_service
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 426, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/unittest/loader.py", line 367, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 13, in <module>
+    import service
+ModuleNotFoundError: No module named 'service'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

@@ -1,0 +1,82 @@
+{
+  "started_at": "2026-10-11T22:02:15.028018+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "known_cases_not_blind_holdout": true,
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "3c74d8356f924e88a64a42f4a3fe043f",
+      "conversation_id": "ecb1296a43a841a7a503a4a8523e543e",
+      "status": "done",
+      "answer_status": "partial",
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.174,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.53,
+        "selection": {
+          "elapsed_seconds": 56.748,
+          "eval_count": 94,
+          "eval_duration": 21569801000,
+          "load_duration": 7203483791,
+          "prompt_eval_count": 1923,
+          "prompt_eval_duration": 27960844000,
+          "tokens_per_second": 4.36,
+          "total_duration": 56746288375
+        },
+        "source_count": 2,
+        "synthesis": {
+          "elapsed_seconds": 42.03,
+          "eval_count": 117,
+          "eval_duration": 25093543000,
+          "load_duration": 4133083,
+          "prompt_eval_count": 1065,
+          "prompt_eval_duration": 16836254000,
+          "tokens_per_second": 4.66,
+          "total_duration": 42028695250
+        },
+        "total_seconds": 100.575
+      },
+      "elapsed_seconds": 101.139,
+      "sources": 2,
+      "error_code": null,
+      "private_response_sha256": "1d8cd5307627df740e0d5b2e81faddb14d6be50ae6fa5abfb6a1efb0a79c5c44"
+    },
+    {
+      "case": "G01T2",
+      "request_id": "edd07239a75345e6bfb74101f3f7c123",
+      "conversation_id": "ecb1296a43a841a7a503a4a8523e543e",
+      "status": "error",
+      "answer_status": null,
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.981,
+        "generation_calls": 1,
+        "generation_completed_calls": 1,
+        "retrieval_seconds": 0.648,
+        "selection": {
+          "elapsed_seconds": 90.95,
+          "eval_count": 266,
+          "eval_duration": 59713566000,
+          "load_duration": 3187959,
+          "prompt_eval_count": 2000,
+          "prompt_eval_duration": 31171823000,
+          "tokens_per_second": 4.45,
+          "total_duration": 90947388667
+        },
+        "total_seconds": 93.627
+      },
+      "elapsed_seconds": 94.255,
+      "sources": 0,
+      "error_code": "invalid_model_response",
+      "private_response_sha256": "9f397da91b6b043bc496882aeadee5da87a8d8029f7dc3b8f1a26393dc566aa0"
+    }
+  ]
+}

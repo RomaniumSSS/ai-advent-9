@@ -1,0 +1,100 @@
+{
+  "started_at": "2026-10-11T23:38:17.845886+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "known_cases_not_blind_holdout": true,
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "5b15fc6392ea4af2b8857f3bf8f8eed6",
+      "conversation_id": "ec01d0b8f07d4ca99c7f40b1b1dea7b6",
+      "status": "done",
+      "answer_status": "partial",
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.686,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.737,
+        "selection": {
+          "elapsed_seconds": 83.248,
+          "eval_count": 161,
+          "eval_duration": 48565511000,
+          "load_duration": 9291768041,
+          "prompt_eval_count": 976,
+          "prompt_eval_duration": 25354888000,
+          "tokens_per_second": 3.32,
+          "total_duration": 83239436375
+        },
+        "source_count": 3,
+        "synthesis": {
+          "elapsed_seconds": 136.941,
+          "eval_count": 370,
+          "eval_duration": 112135569000,
+          "load_duration": 9431333,
+          "prompt_eval_count": 970,
+          "prompt_eval_duration": 24662707000,
+          "tokens_per_second": 3.3,
+          "total_duration": 136932080583
+        },
+        "total_seconds": 222.658
+      },
+      "elapsed_seconds": 223.525,
+      "sources": 3,
+      "error_code": null,
+      "private_response_sha256": "b0bfe301ba0b2da228fea8a46783b56fec53b90c671ebce5f2a4b1736a8e3a74"
+    },
+    {
+      "case": "G01T2",
+      "request_id": "1ccc8a6b0250428fb54441bda5feddae",
+      "conversation_id": "ec01d0b8f07d4ca99c7f40b1b1dea7b6",
+      "status": "done",
+      "answer_status": "partial",
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 2.221,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.669,
+        "selection": {
+          "elapsed_seconds": 64.548,
+          "eval_count": 131,
+          "eval_duration": 39638482000,
+          "load_duration": 3236791,
+          "prompt_eval_count": 1016,
+          "prompt_eval_duration": 24813796000,
+          "tokens_per_second": 3.3,
+          "total_duration": 64545536250
+        },
+        "source_count": 1,
+        "synthesis": {
+          "elapsed_seconds": 67.754,
+          "eval_count": 183,
+          "eval_duration": 55516815000,
+          "load_duration": 2536125,
+          "prompt_eval_count": 926,
+          "prompt_eval_duration": 12040538000,
+          "tokens_per_second": 3.3,
+          "total_duration": 67750858958
+        },
+        "total_seconds": 135.224
+      },
+      "sources": 1,
+      "error_code": null,
+      "private_response_sha256": "0f99b6746b42c96ce7e4cd2798d8c3b2faaf7e84bc8575b14ff0a07ba66389d8",
+      "execution_note": "already accepted before first semantic FAIL; driver stopped before third"
+    }
+  ],
+  "result": "FAILED_FIRST_REQUEST_SEMANTIC_GATE",
+  "requests_planned_max": 3,
+  "requests_executed": 2,
+  "remaining_requests_not_run": 1,
+  "automatic_retry": false,
+  "finished_at": "2026-10-11T23:46:02.614657+00:00",
+  "second_semantic_audit": "pending"
+}

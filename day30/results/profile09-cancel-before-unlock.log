@@ -1,0 +1,6 @@
+test_timeout_closes_transport_before_application_releases_lock (test_profile09.Profile09Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.527s
+
+OK

@@ -1,0 +1,36 @@
+test_current_capacity_and_lifecycle_bounds (test_profile10.Profile10Tests) ... ok
+test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three (test_profile10.Profile10Tests) ... test_engine_sends_last_rebuilt_snapshot_once_per_stage (test_profile10.Profile10Tests) ... ok
+
+======================================================================
+FAIL: test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three (test_profile10.Profile10Tests) (phase='selection')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 65, in test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three
+    messages,kept,history,budget,context=service.fit_prompt(system,'synthetic question',['h'*9000],original,None,
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 114, in fit_prompt
+    b=budget_for(messages,current_schema if phase=='selection' else None,tokenizer,options=options,deadline_seconds=deadline_seconds)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1093, in __call__
+    return self._mock_call(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1097, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1158, in _execute_mock_call
+    result = effect(*args, **kwargs)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 55, in inspect
+    self.assertEqual(body['dialogue_focus']['evidence_ids'],['S5.U1'] if len(ids)==5 else [])
+AssertionError: Lists differ: ['S1.U1', 'S2.U1', 'S3.U1', 'S4.U1', 'S5.U1'] != ['S5.U1']
+
+First differing element 0:
+'S1.U1'
+'S5.U1'
+
+First list contains 4 additional elements.
+First extra element 1:
+'S2.U1'
+
+- ['S1.U1', 'S2.U1', 'S3.U1', 'S4.U1', 'S5.U1']
++ ['S5.U1']
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.024s
+
+FAILED (failures=1)

@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-11T22:43:30.810982+00:00",
+  "model": "qwen3.5:9b-q4_K_M",
+  "digest": "56671c2ab9385f9cfcb404638e32cd62d88e3501d44822208363c010179a3c90",
+  "size_bytes": 6550825550,
+  "details": {
+    "parent_model": "model.gguf",
+    "format": "gguf",
+    "family": "qwen35",
+    "families": [
+      "qwen35"
+    ],
+    "parameter_size": "9.0B",
+    "quantization_level": "Q4_K_M"
+  },
+  "requires_ollama": "0.30.0",
+  "actual_ollama": "0.33.3",
+  "context": {
+    "metadata_limit": 262144,
+    "explicit_options": {
+      "num_ctx": 8192,
+      "num_predict": 1024,
+      "temperature": 0
+    },
+    "think": false,
+    "template_reserve": 512
+  },
+  "tokenizer": {
+    "model": "gpt2",
+    "pre": "qwen35",
+    "tokens": 248320,
+    "merges": 247587,
+    "runtime_budget_method": "conservative_utf8_byte_bound_with_reserves"
+  },
+  "package_defaults": "presence_penalty               1.5\ntemperature                    1\ntop_k                          20\ntop_p                          0.95",
+  "embedding": {
+    "model": "qwen3-embedding:0.6b",
+    "digest": "ac6da0dfba84a81fdbfbaf330198c33cd77c4cdfc53e8bc50eb581914a15621d"
+  },
+  "official_renderer": "https://github.com/ollama/ollama/blob/v0.33.3/model/renderers/qwen35.go",
+  "comparison_limit": "Deployment profile changes model package/defaults and prompt pruning; not a pure model benchmark.",
+  "content_inference_calls": 0
+}

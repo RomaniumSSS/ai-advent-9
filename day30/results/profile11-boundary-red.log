@@ -1,0 +1,20 @@
+test_sentence_boundary_keeps_newlines_and_excludes_quoted_commands (test_profile11.Profile11Tests) ... FAIL
+
+======================================================================
+FAIL: test_sentence_boundary_keeps_newlines_and_excludes_quoted_commands (test_profile11.Profile11Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile11.py", line 29, in test_sentence_boundary_keeps_newlines_and_excludes_quoted_commands
+    self.assertEqual(protocol.answer_limits(question),ONE)
+AssertionError: {'max_proof_units': 8, 'max_points': 4} != {'max_proof_units': 1, 'max_points': 1}
+- {'max_points': 4, 'max_proof_units': 8}
+?                ^                     ^
+
++ {'max_points': 1, 'max_proof_units': 1}
+?                ^                     ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)

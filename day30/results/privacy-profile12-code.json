@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-12T02:40:31.030038+00:00",
+  "stage": "profile12-code",
+  "public_file_candidates": 233,
+  "public_text_candidates": 230,
+  "private_fragments_checked": 967,
+  "exact_credential_hits": [],
+  "private_key_hits": [],
+  "exact_private_text_hits": [],
+  "private_roots_gitignored": true,
+  "result": "PASS",
+  "limits": "Exact screening only; independent scope checks and manual video review required; no semantic disclosure guarantee"
+}

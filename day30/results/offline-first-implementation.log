@@ -1,0 +1,160 @@
+test_bad_ids_no_synthesis (test_service.CoreTests.test_bad_ids_no_synthesis) ... ok
+test_bad_refs (test_service.CoreTests.test_bad_refs) ... ERROR
+test_current_question_never_truncated (test_service.CoreTests.test_current_question_never_truncated) ... ok
+test_demo_before_retrieval_and_prompt (test_service.CoreTests.test_demo_before_retrieval_and_prompt) ... ERROR
+test_history_budget_drops_questions_before_whole_sources (test_service.CoreTests.test_history_budget_drops_questions_before_whole_sources) ... ok
+test_invalid_json_length_timeout_no_retry (test_service.CoreTests.test_invalid_json_length_timeout_no_retry) ... ok
+test_lock_release_after_error (test_service.CoreTests.test_lock_release_after_error) ... ERROR
+test_new_topic_does_not_use_prior_assistant_fact (test_service.CoreTests.test_new_topic_does_not_use_prior_assistant_fact) ... ERROR
+test_private_modes_restart_and_scope (test_service.CoreTests.test_private_modes_restart_and_scope) ... ok
+test_question_limits (test_service.CoreTests.test_question_limits) ... ok
+test_shared_lock_busy (test_service.CoreTests.test_shared_lock_busy) ... ERROR
+test_two_calls_and_original_metadata (test_service.CoreTests.test_two_calls_and_original_metadata) ... ERROR
+test_unknown_no_synthesis (test_service.CoreTests.test_unknown_no_synthesis) ... ok
+test_async_receipt_history (test_service.HttpTests.test_async_receipt_history) ... FAIL
+test_auth_private_and_static (test_service.HttpTests.test_auth_private_and_static) ... ok
+test_body_question_scope_no_bypass (test_service.HttpTests.test_body_question_scope_no_bypass) ... ok
+test_busy_no_queue (test_service.HttpTests.test_busy_no_queue) ... FAIL
+test_demo_store_isolation (test_service.HttpTests.test_demo_store_isolation) ... ERROR
+test_failure_sanitized_and_unlock (test_service.HttpTests.test_failure_sanitized_and_unlock) ... ERROR
+test_headers_safe_dom (test_service.HttpTests.test_headers_safe_dom) ... ok
+test_host_origin (test_service.HttpTests.test_host_origin) ... FAIL
+test_invalid_json_and_content_type (test_service.HttpTests.test_invalid_json_and_content_type) ... ok
+test_rate_six_accepted (test_service.HttpTests.test_rate_six_accepted) ... FAIL
+
+======================================================================
+ERROR: test_bad_refs (test_service.CoreTests.test_bad_refs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 60, in test_bad_refs
+    with self.assertRaises(ValueError):engine.answer('Какие условия дня 30?',[])
+                                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 196, in answer
+    enter('synthesis');start=time.monotonic();response=self.client.chat(messages,schema)
+                                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 30, in chat
+    ids=schema['properties']['evidence']['items']['properties']['evidence_id']['enum']
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'evidence'
+
+======================================================================
+ERROR: test_demo_before_retrieval_and_prompt (test_service.CoreTests.test_demo_before_retrieval_and_prompt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 76, in test_demo_before_retrieval_and_prompt
+    result=engine.answer('Какие условия дня 30?',[],scope='assignment')
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 196, in answer
+    enter('synthesis');start=time.monotonic();response=self.client.chat(messages,schema)
+                                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 30, in chat
+    ids=schema['properties']['evidence']['items']['properties']['evidence_id']['enum']
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'evidence'
+
+======================================================================
+ERROR: test_lock_release_after_error (test_service.CoreTests.test_lock_release_after_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 99, in test_lock_release_after_error
+    with service.generation_lock():raise RuntimeError()
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: 'generator' object does not support the context manager protocol (missed __exit__ method)
+
+======================================================================
+ERROR: test_new_topic_does_not_use_prior_assistant_fact (test_service.CoreTests.test_new_topic_does_not_use_prior_assistant_fact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 86, in test_new_topic_does_not_use_prior_assistant_fact
+    engine,model=self.engine();engine.answer('Какие условия дня 30?',[{'question':'Старый вопрос','status':'done','query':{'intent':'new_topic'},'answer':{'summary':'PRIVATE_ASSISTANT_SENTINEL'}}])
+                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 196, in answer
+    enter('synthesis');start=time.monotonic();response=self.client.chat(messages,schema)
+                                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 30, in chat
+    ids=schema['properties']['evidence']['items']['properties']['evidence_id']['enum']
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'evidence'
+
+======================================================================
+ERROR: test_shared_lock_busy (test_service.CoreTests.test_shared_lock_busy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 102, in test_shared_lock_busy
+    with service.generation_lock():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: 'generator' object does not support the context manager protocol (missed __exit__ method)
+
+======================================================================
+ERROR: test_two_calls_and_original_metadata (test_service.CoreTests.test_two_calls_and_original_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 47, in test_two_calls_and_original_metadata
+    engine,model=self.engine(); result=engine.answer('Какие условия задания дня 30?',[])
+                                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 196, in answer
+    enter('synthesis');start=time.monotonic();response=self.client.chat(messages,schema)
+                                                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 30, in chat
+    ids=schema['properties']['evidence']['items']['properties']['evidence_id']['enum']
+        ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'evidence'
+
+======================================================================
+ERROR: test_demo_store_isolation (test_service.HttpTests.test_demo_store_isolation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 164, in test_demo_store_isolation
+    _,_,v=self.request(path='/api/demo/chat');result=self.await_done(v['request_id'],'/api/demo/requests/');self.assertEqual(result['scope'],'assignment')
+                                                                     ~^^^^^^^^^^^^^^
+KeyError: 'request_id'
+
+======================================================================
+ERROR: test_failure_sanitized_and_unlock (test_service.HttpTests.test_failure_sanitized_and_unlock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 161, in test_failure_sanitized_and_unlock
+    _,_,v=self.request(body={'question':'failure'});result=self.await_done(v['request_id']);self.assertEqual(result['status'],'error')
+                                                                           ~^^^^^^^^^^^^^^
+KeyError: 'request_id'
+
+======================================================================
+FAIL: test_async_receipt_history (test_service.HttpTests.test_async_receipt_history)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 150, in test_async_receipt_history
+    code,_,value=self.request();self.assertEqual(code,202);result=self.await_done(value['request_id'])
+                                ~~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: 500 != 202
+
+======================================================================
+FAIL: test_busy_no_queue (test_service.HttpTests.test_busy_no_queue)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 154, in test_busy_no_queue
+    code,_,value=self.request(body={'question':'slow'});self.assertEqual(code,202)
+                                                        ~~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: 500 != 202
+
+======================================================================
+FAIL: test_host_origin (test_service.HttpTests.test_host_origin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 138, in test_host_origin
+    self.assertEqual(self.request(headers={'Origin':f'https://127.0.0.1:{self.port}'})[0],202)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 500 != 202
+
+======================================================================
+FAIL: test_rate_six_accepted (test_service.HttpTests.test_rate_six_accepted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 158, in test_rate_six_accepted
+    code,_,value=self.request();self.assertEqual(code,202);self.await_done(value['request_id'])
+                                ~~~~~~~~~~~~~~~~^^^^^^^^^^
+AssertionError: 500 != 202
+
+----------------------------------------------------------------------
+Ran 23 tests in 5.103s
+
+FAILED (failures=4, errors=8)

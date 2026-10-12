@@ -1,0 +1,15 @@
+test_observed_context_overflow_rejected_without_retry (test_profile04.Profile04Tests) ... ok
+test_old_model_response_rejected_before_second_call_without_retry (test_profile04.Profile04Tests) ... ok
+test_pinned_generator_identity (test_profile04.Profile04Tests) ... ok
+test_qwen35_is_unsupported_and_real_factory_keeps_byte_bound_before_both_calls (test_profile04.Profile04Tests) ... ok
+test_verify_accepts_frozen_9b_and_rejects_old_digest (test_profile04.Profile04Tests) ... ok
+test_wire_model_identity_and_options_without_package_default_overrides (test_profile04.Profile04Tests) ... ok
+test_multi_iteration_pruning_counts_all_history_and_rebuilds_final_mapping (test_protocol03.EnginePruningTests) ... ok
+test_pruning_rebuilds_mapping_and_downgrades_coverage (test_protocol03.Protocol03Tests) ... ok
+test_successful_chat_payload_and_close_no_redirect (test_review_regressions.WireContracts) ... ok
+test_provider_model_done_and_count (test_extended.ExtendedCore) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.047s
+
+OK

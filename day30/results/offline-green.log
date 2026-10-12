@@ -1,0 +1,76 @@
+test_capacity_rejects_immediately_and_recovers (test_connections.ConnectionTests.test_capacity_rejects_immediately_and_recovers) ... {"service": "day30", "status": "connection_error"}
+ok
+test_completed_and_malformed_connections_release_capacity (test_connections.ConnectionTests.test_completed_and_malformed_connections_release_capacity) ... ok
+test_fragmented_body_absolute_deadline_before_inference (test_connections.ConnectionTests.test_fragmented_body_absolute_deadline_before_inference) ... {"service": "day30", "status": "connection_error"}
+ok
+test_fragmented_headers_absolute_deadline_and_release (test_connections.ConnectionTests.test_fragmented_headers_absolute_deadline_and_release) ... {"service": "day30", "status": "connection_error"}
+ok
+test_background_context_not_a_proof (test_extended.ExtendedCore.test_background_context_not_a_proof) ... ok
+test_deploy_prepare_contains_no_token_and_correct_process (test_extended.ExtendedCore.test_deploy_prepare_contains_no_token_and_correct_process) ... ok
+test_followup_uses_user_questions_and_fresh_embedding (test_extended.ExtendedCore.test_followup_uses_user_questions_and_fresh_embedding) ... ok
+test_generation_payload_same_model_options_thinking (test_extended.ExtendedCore.test_generation_payload_same_model_options_thinking) ... ok
+test_injection_treated_as_original_data (test_extended.ExtendedCore.test_injection_treated_as_original_data) ... ok
+test_insecure_env_rejected (test_extended.ExtendedCore.test_insecure_env_rejected) ... ok
+test_ollama_fixed_and_no_proxy_redirect (test_extended.ExtendedCore.test_ollama_fixed_and_no_proxy_redirect) ... ok
+test_partial_not_upgraded (test_extended.ExtendedCore.test_partial_not_upgraded) ... ok
+test_provider_model_done_and_count (test_extended.ExtendedCore.test_provider_model_done_and_count) ... ok
+test_schema_reserve_included (test_extended.ExtendedCore.test_schema_reserve_included) ... ok
+test_selection_duplicate_and_missing_aspect_rejected (test_extended.ExtendedCore.test_selection_duplicate_and_missing_aspect_rejected) ... ok
+test_synthesis_excludes_removed_units_and_refs (test_extended.ExtendedCore.test_synthesis_excludes_removed_units_and_refs) ... ok
+test_synthesis_timeout_has_exactly_two_calls (test_extended.ExtendedCore.test_synthesis_timeout_has_exactly_two_calls) ... ok
+test_valid_partial_retains_unknown (test_extended.ExtendedCore.test_valid_partial_retains_unknown) ... ok
+test_fixed_assignment_cannot_request_all (test_extended.ExtendedHttp.test_fixed_assignment_cannot_request_all) ... {"request_id": "9726a31b333e4b4cb9e9cf41050af08e", "status": "done", "metrics": {}}
+ok
+test_invalid_requests_do_not_consume_rate (test_extended.ExtendedHttp.test_invalid_requests_do_not_consume_rate) ... {"request_id": "1c774582e712489ebf8e86391a0503c5", "status": "done", "metrics": {}}
+ok
+test_rate_window_expires (test_extended.ExtendedHttp.test_rate_window_expires) ... {"request_id": "26c899b0755f47099f5328567ff1a3a3", "status": "done", "metrics": {}}
+ok
+test_history_api_and_unknown_id_protected (test_extended.ExtendedHttp.test_history_api_and_unknown_id_protected) ... {"request_id": "531aa54f9c1c480190fa3d92006944dd", "status": "done", "metrics": {}}
+ok
+test_shared_flock_busy_before_accept (test_extended.ExtendedHttp.test_shared_flock_busy_before_accept) ... {"request_id": "8528cad071b049b794f277202e8d791b", "status": "done", "metrics": {}}
+ok
+test_trace_not_returned_by_api (test_extended.ExtendedHttp.test_trace_not_returned_by_api) ... {"request_id": "91808cb826d64876b0a66023cd2db5ac", "status": "done", "metrics": {}}
+ok
+test_query_credentials_refused (test_extended.ExtendedHttp.test_query_credentials_refused) ... ok
+test_bad_ids_no_synthesis (test_service.CoreTests.test_bad_ids_no_synthesis) ... ok
+test_bad_refs (test_service.CoreTests.test_bad_refs) ... ok
+test_current_question_never_truncated (test_service.CoreTests.test_current_question_never_truncated) ... ok
+test_demo_before_retrieval_and_prompt (test_service.CoreTests.test_demo_before_retrieval_and_prompt) ... ok
+test_history_budget_drops_questions_before_whole_sources (test_service.CoreTests.test_history_budget_drops_questions_before_whole_sources) ... ok
+test_invalid_json_length_timeout_no_retry (test_service.CoreTests.test_invalid_json_length_timeout_no_retry) ... ok
+test_lock_release_after_error (test_service.CoreTests.test_lock_release_after_error) ... ok
+test_new_topic_does_not_use_prior_assistant_fact (test_service.CoreTests.test_new_topic_does_not_use_prior_assistant_fact) ... ok
+test_private_modes_restart_and_scope (test_service.CoreTests.test_private_modes_restart_and_scope) ... ok
+test_question_limits (test_service.CoreTests.test_question_limits) ... ok
+test_shared_lock_busy (test_service.CoreTests.test_shared_lock_busy) ... ok
+test_two_calls_and_original_metadata (test_service.CoreTests.test_two_calls_and_original_metadata) ... ok
+test_unknown_no_synthesis (test_service.CoreTests.test_unknown_no_synthesis) ... ok
+test_async_receipt_history (test_service.HttpTests.test_async_receipt_history) ... {"request_id": "c65d1262aaa34d7787deceb2a051fb04", "status": "done", "metrics": {}}
+ok
+test_auth_private_and_static (test_service.HttpTests.test_auth_private_and_static) ... ok
+test_body_question_scope_no_bypass (test_service.HttpTests.test_body_question_scope_no_bypass) ... ok
+test_busy_no_queue (test_service.HttpTests.test_busy_no_queue) ... {"request_id": "5894d7e8ffe04cc8a1d14b88c84fad6c", "status": "done", "metrics": {}}
+ok
+test_demo_store_isolation (test_service.HttpTests.test_demo_store_isolation) ... {"request_id": "2c5fa13eb1d84e2b853dca3ea183881b", "status": "done", "metrics": {}}
+ok
+test_failure_sanitized_and_unlock (test_service.HttpTests.test_failure_sanitized_and_unlock) ... {"request_id": "c57bf63ef08d446386bd918a901f35e3", "status": "error", "metrics": {}}
+{"request_id": "d61f6b384f49412eb57952af5535ae10", "status": "done", "metrics": {}}
+ok
+test_headers_safe_dom (test_service.HttpTests.test_headers_safe_dom) ... ok
+test_host_origin (test_service.HttpTests.test_host_origin) ... {"request_id": "918217f523a945c99dd7365885246a1f", "status": "done", "metrics": {}}
+ok
+test_invalid_json_and_content_type (test_service.HttpTests.test_invalid_json_and_content_type) ... ok
+test_rate_six_accepted (test_service.HttpTests.test_rate_six_accepted) ... {"request_id": "d617bd62f9da4fea910529171df56e33", "status": "done", "metrics": {}}
+{"request_id": "a1915ee45ac24372a439749e04740290", "status": "done", "metrics": {}}
+{"request_id": "c97796cdcedf48e6bccc31740331123d", "status": "done", "metrics": {}}
+{"request_id": "694f9edeb75b43319affd84bf9adc905", "status": "done", "metrics": {}}
+{"request_id": "1bb86e265b974d6096ec02dc32095df8", "status": "done", "metrics": {}}
+{"request_id": "26cfa8d6288f4a959fbfbebb7ffb7b53", "status": "done", "metrics": {}}
+ok
+test_stalled_tcp_does_not_block_authenticated_tls (test_tls.TlsTests.test_stalled_tcp_does_not_block_authenticated_tls) ... {"service": "day30", "status": "connection_error"}
+ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 14.007s
+
+OK

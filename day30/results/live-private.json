@@ -1,0 +1,67 @@
+{
+  "started_at": "2026-10-11T21:38:16.769526+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "known_cases_not_blind_holdout": true,
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "48e08e2471da43b5a6b41dbd0bac065a",
+      "conversation_id": "75b4befafe6f400aa8d2b200d360d320",
+      "status": "done",
+      "answer_status": "partial",
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_seconds": 2.332,
+        "generation_calls": 2,
+        "retrieval_seconds": 0.528,
+        "selection": {
+          "elapsed_seconds": 58.968,
+          "eval_count": 94,
+          "eval_duration": 21372562000,
+          "load_duration": 7540869875,
+          "prompt_eval_count": 1923,
+          "prompt_eval_duration": 30025869000,
+          "tokens_per_second": 4.4,
+          "total_duration": 58957725667
+        },
+        "source_count": 2,
+        "synthesis": {
+          "elapsed_seconds": 38.438,
+          "eval_count": 105,
+          "eval_duration": 22567163000,
+          "load_duration": 8790541,
+          "prompt_eval_count": 962,
+          "prompt_eval_duration": 15807170000,
+          "tokens_per_second": 4.65,
+          "total_duration": 38435292125
+        },
+        "total_seconds": 100.354
+      },
+      "elapsed_seconds": 101.068,
+      "sources": 2,
+      "error_code": null,
+      "private_response_sha256": "1a85e00d269654969c222e15d8ed938f393bdf7b202af802b54ea7b798fde68f"
+    },
+    {
+      "case": "G01T2",
+      "request_id": "4dc67482d5624025818f2200fa6526b4",
+      "conversation_id": "75b4befafe6f400aa8d2b200d360d320",
+      "status": "error",
+      "answer_status": null,
+      "metrics": {},
+      "sources": 0,
+      "error_code": "invalid_model_response",
+      "private_response_sha256": "fcc2dbfa29c30bc3f79c35ae8a89fe27de619a835667ed500cadf888f9da0461",
+      "provider_attempts": "NOT KNOWN: old error handler discarded partial trace",
+      "client_elapsed_seconds": null,
+      "server_wall_seconds": 123.826
+    }
+  ],
+  "result": "FAILED_INITIAL_PAIR",
+  "semantic_result": "G01T1 FAIL; G01T2 NOT PROVEN (runtime error)",
+  "diagnostic_note": "Private runner aggregate encountered null answer; repaired from saved receipt without provider rerun"
+}

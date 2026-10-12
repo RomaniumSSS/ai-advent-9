@@ -1,0 +1,9 @@
+test_actual_wire_sorted_provider_order_budget_identity_and_raw_final (test_profile12.Profile12Tests) ... ok
+test_lossless_stage_specific_aliases_and_strict_unknown_mixed_missing (test_profile12.Profile12Tests) ... ok
+test_normalized_invalid_refs_quantity_and_no_canonical_fallback (test_profile12.Profile12Tests) ... ok
+test_safe_wire_raw_is_exact_unknown_reasoning_shapes_opaque (test_profile12.Profile12Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.033s
+
+OK

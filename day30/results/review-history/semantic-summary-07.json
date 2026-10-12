@@ -1,0 +1,71 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-07.json",
+  "profile": "profile07",
+  "protocol_version": "protocol06",
+  "model": "qwen3.5:9b-q4_K_M",
+  "run": "smoke-07",
+  "gate": "FAIL",
+  "requests_planned_max": 3,
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "runtime_pass": 1,
+  "runtime_fail": 0,
+  "semantic_pass": 0,
+  "semantic_fail_delivered_answers": 1,
+  "failure_categories": [
+    "unsupported timing/result prerequisite and loss of concrete source concern",
+    "source alternatives recast as a different action relationship",
+    "conclusion overstates discussion as experienced implementation difficulty"
+  ],
+  "generation_attempts": 2,
+  "generation_completed": 2,
+  "elapsed_seconds": 220.125,
+  "independent_original_checks": {
+    "units_checked": 3,
+    "exact_spans": 3,
+    "matching_metadata": 3
+  },
+  "generation_parameters": {
+    "selection": {
+      "num_ctx": 8192,
+      "num_predict": 1024,
+      "temperature": 0
+    },
+    "synthesis": {
+      "num_ctx": 8192,
+      "num_predict": 1024,
+      "temperature": 0.7,
+      "top_p": 0.8
+    },
+    "think": false
+  },
+  "budgets": {
+    "selection_upper_bound": 6884,
+    "synthesis_upper_bound": 6578,
+    "output_reserved_each": 1024,
+    "observed_prompt_counts": [
+      976,
+      970
+    ]
+  },
+  "input_comparison": "both prompts and schemas equal corresponding protocol06 first-case inputs; old output not regraded",
+  "deterministic_missing": "both effective partial aspects correctly retained",
+  "code_verdict": "APPROVED",
+  "delivered_answer_semantics": "FAIL",
+  "private_evidence": "private/semantic-review-07.md",
+  "historical_failures_preserved": true,
+  "stop": "semantic FAIL sent before next explicit submit; two remaining cases not run",
+  "restart": {
+    "old_state_files_unchanged": 15,
+    "automatic_replay": false,
+    "CA_verified": true
+  },
+  "limits": [
+    "known case, not blind holdout",
+    "single stochastic sample does not prove causal profile benefit or general capability",
+    "exact provenance does not establish semantic support",
+    "human acceptance pending",
+    "second physical device NOT PROVEN"
+  ]
+}

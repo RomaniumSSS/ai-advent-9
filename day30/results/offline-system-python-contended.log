@@ -1,0 +1,209 @@
+test_capacity_rejects_immediately_and_recovers (test_connections.ConnectionTests) ... ok
+test_completed_and_malformed_connections_release_capacity (test_connections.ConnectionTests) ... ok
+test_fragmented_body_absolute_deadline_before_inference (test_connections.ConnectionTests) ... {"service": "day30", "status": "connection_error"}
+ok
+test_fragmented_headers_absolute_deadline_and_release (test_connections.ConnectionTests) ... {"service": "day30", "status": "connection_error"}
+ok
+test_exit_timeout_prevents_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_invalid_bootstrap_not_retried (test_deploy_lifecycle.LifecycleTests) ... ok
+test_pid_exit_alone_does_not_allow_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_restart_waits_for_both_job_and_prior_pid (test_deploy_lifecycle.LifecycleTests) ... ok
+test_start_performs_one_bootstrap_without_hidden_retry (test_deploy_lifecycle.LifecycleTests) ... ok
+test_stop_waits_for_exit_without_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_unknown_launchd_error_is_not_assumed_unregistered (test_deploy_lifecycle.LifecycleTests) ... ok
+test_background_context_not_a_proof (test_extended.ExtendedCore) ... ok
+test_deploy_prepare_contains_no_token_and_correct_process (test_extended.ExtendedCore) ... ok
+test_followup_uses_user_questions_and_fresh_embedding (test_extended.ExtendedCore) ... ok
+test_generation_payload_same_model_options_thinking (test_extended.ExtendedCore) ... ok
+test_injection_treated_as_original_data (test_extended.ExtendedCore) ... ok
+test_insecure_env_rejected (test_extended.ExtendedCore) ... ok
+test_ollama_fixed_and_no_proxy_redirect (test_extended.ExtendedCore) ... ok
+test_partial_not_upgraded (test_extended.ExtendedCore) ... ok
+test_provider_model_done_and_count (test_extended.ExtendedCore) ... ok
+test_schema_reserve_included (test_extended.ExtendedCore) ... ok
+test_selection_duplicate_and_missing_aspect_rejected (test_extended.ExtendedCore) ... ok
+test_synthesis_excludes_removed_units_and_refs (test_extended.ExtendedCore) ... ok
+test_synthesis_timeout_has_exactly_two_calls (test_extended.ExtendedCore) ... ok
+test_valid_partial_retains_unknown (test_extended.ExtendedCore) ... ok
+test_fixed_assignment_cannot_request_all (test_extended.ExtendedHttp) ... ERROR
+test_invalid_requests_do_not_consume_rate (test_extended.ExtendedHttp) ... FAIL
+test_rate_window_expires (test_extended.ExtendedHttp) ... FAIL
+test_history_api_and_unknown_id_protected (test_extended.ExtendedHttp) ... ERROR
+test_shared_flock_busy_before_accept (test_extended.ExtendedHttp) ... ERROR
+test_trace_not_returned_by_api (test_extended.ExtendedHttp) ... ERROR
+test_query_credentials_refused (test_extended.ExtendedHttp) ... ok
+test_bad_ids_no_synthesis (test_service.CoreTests) ... ok
+test_bad_refs (test_service.CoreTests) ... ok
+test_current_question_never_truncated (test_service.CoreTests) ... ok
+test_demo_before_retrieval_and_prompt (test_service.CoreTests) ... ok
+test_history_budget_drops_questions_before_whole_sources (test_service.CoreTests) ... ok
+test_invalid_json_length_timeout_no_retry (test_service.CoreTests) ... ok
+test_lock_release_after_error (test_service.CoreTests) ... ERROR
+test_new_topic_does_not_use_prior_assistant_fact (test_service.CoreTests) ... ok
+test_private_modes_restart_and_scope (test_service.CoreTests) ... ok
+test_question_limits (test_service.CoreTests) ... ok
+test_shared_lock_busy (test_service.CoreTests) ... ERROR
+test_two_calls_and_original_metadata (test_service.CoreTests) ... ok
+test_unknown_no_synthesis (test_service.CoreTests) ... ok
+test_async_receipt_history (test_service.HttpTests) ... FAIL
+test_auth_private_and_static (test_service.HttpTests) ... ok
+test_body_question_scope_no_bypass (test_service.HttpTests) ... ok
+test_busy_no_queue (test_service.HttpTests) ... FAIL
+test_demo_store_isolation (test_service.HttpTests) ... ERROR
+test_failure_sanitized_and_unlock (test_service.HttpTests) ... ERROR
+test_headers_safe_dom (test_service.HttpTests) ... ok
+test_host_origin (test_service.HttpTests) ... FAIL
+test_invalid_json_and_content_type (test_service.HttpTests) ... ok
+test_rate_six_accepted (test_service.HttpTests) ... FAIL
+test_stalled_tcp_does_not_block_authenticated_tls (test_tls.TlsTests) ... {"service": "day30", "status": "connection_error"}
+ok
+
+======================================================================
+ERROR: test_fixed_assignment_cannot_request_all (test_extended.ExtendedHttp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_extended.py", line 107, in test_fixed_assignment_cannot_request_all
+    _,_,v=self.request();self.assertEqual(v['scope'],'assignment');self.await_done(v['request_id'])
+KeyError: 'scope'
+
+======================================================================
+ERROR: test_history_api_and_unknown_id_protected (test_extended.ExtendedHttp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_extended.py", line 115, in test_history_api_and_unknown_id_protected
+    _,_,v=self.request();self.await_done(v['request_id'])
+KeyError: 'request_id'
+
+======================================================================
+ERROR: test_shared_flock_busy_before_accept (test_extended.ExtendedHttp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 122, in generation_lock
+    try:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
+BlockingIOError: [Errno 35] Resource temporarily unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_extended.py", line 119, in test_shared_flock_busy_before_accept
+    with service.generation_lock():self.assertEqual(self.request()[0],409)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 123, in generation_lock
+    except BlockingIOError:raise ValueError('local_generation_busy')
+ValueError: local_generation_busy
+
+======================================================================
+ERROR: test_trace_not_returned_by_api (test_extended.ExtendedHttp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_extended.py", line 122, in test_trace_not_returned_by_api
+    _,_,v=self.request();self.await_done(v['request_id']);self.app.store.finish(v['request_id'],{'status':'done','trace':{'secret':'PRIVATE_SENTINEL'}})
+KeyError: 'request_id'
+
+======================================================================
+ERROR: test_lock_release_after_error (test_service.CoreTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 122, in generation_lock
+    try:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
+BlockingIOError: [Errno 35] Resource temporarily unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 99, in test_lock_release_after_error
+    with service.generation_lock():raise RuntimeError()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 123, in generation_lock
+    except BlockingIOError:raise ValueError('local_generation_busy')
+ValueError: local_generation_busy
+
+======================================================================
+ERROR: test_shared_lock_busy (test_service.CoreTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 122, in generation_lock
+    try:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
+BlockingIOError: [Errno 35] Resource temporarily unavailable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 102, in test_shared_lock_busy
+    with service.generation_lock():
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/contextlib.py", line 117, in __enter__
+    return next(self.gen)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 123, in generation_lock
+    except BlockingIOError:raise ValueError('local_generation_busy')
+ValueError: local_generation_busy
+
+======================================================================
+ERROR: test_demo_store_isolation (test_service.HttpTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 164, in test_demo_store_isolation
+    _,_,v=self.request(path='/api/demo/chat');result=self.await_done(v['request_id'],'/api/demo/requests/');self.assertEqual(result['scope'],'assignment')
+KeyError: 'request_id'
+
+======================================================================
+ERROR: test_failure_sanitized_and_unlock (test_service.HttpTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 161, in test_failure_sanitized_and_unlock
+    _,_,v=self.request(body={'question':'failure'});result=self.await_done(v['request_id']);self.assertEqual(result['status'],'error')
+KeyError: 'request_id'
+
+======================================================================
+FAIL: test_invalid_requests_do_not_consume_rate (test_extended.ExtendedHttp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_extended.py", line 111, in test_invalid_requests_do_not_consume_rate
+    self.assertEqual(len(self.app.accepted),0);self.assertEqual(self.request()[0],202)
+AssertionError: 409 != 202
+
+======================================================================
+FAIL: test_rate_window_expires (test_extended.ExtendedHttp)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_extended.py", line 113, in test_rate_window_expires
+    self.app.accepted.extend([time.monotonic()-61]*6);self.assertEqual(self.request()[0],202)
+AssertionError: 409 != 202
+
+======================================================================
+FAIL: test_async_receipt_history (test_service.HttpTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 150, in test_async_receipt_history
+    code,_,value=self.request();self.assertEqual(code,202);result=self.await_done(value['request_id'])
+AssertionError: 409 != 202
+
+======================================================================
+FAIL: test_busy_no_queue (test_service.HttpTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 154, in test_busy_no_queue
+    code,_,value=self.request(body={'question':'slow'});self.assertEqual(code,202)
+AssertionError: 409 != 202
+
+======================================================================
+FAIL: test_host_origin (test_service.HttpTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 138, in test_host_origin
+    self.assertEqual(self.request(headers={'Origin':f'https://127.0.0.1:{self.port}'})[0],202)
+AssertionError: 409 != 202
+
+======================================================================
+FAIL: test_rate_six_accepted (test_service.HttpTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_service.py", line 158, in test_rate_six_accepted
+    code,_,value=self.request();self.assertEqual(code,202);self.await_done(value['request_id'])
+AssertionError: 409 != 202
+
+----------------------------------------------------------------------
+Ran 56 tests in 13.519s
+
+FAILED (failures=6, errors=8)

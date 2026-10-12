@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "provider": "mock",
+  "layouts": [
+    "desktop1280x800",
+    "tablet768x1024",
+    "mobile375x812"
+  ],
+  "checks": [
+    "login token cleared",
+    "assignment label",
+    "actual mock HTTP receipt",
+    "safe textContent hostile source",
+    "no horizontal overflow",
+    "new conversation",
+    "no browser errors"
+  ]
+}

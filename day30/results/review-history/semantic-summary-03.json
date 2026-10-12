@@ -1,0 +1,44 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-03.json",
+  "protocol_version": "repair03",
+  "model": "qwen3:8b",
+  "run": "smoke-03",
+  "gate": "FAIL",
+  "requests_planned_max": 3,
+  "requests_executed": 1,
+  "runtime_pass": 0,
+  "runtime_fail": 1,
+  "semantic_pass": 0,
+  "semantic_fail_delivered_answers": 0,
+  "semantic_not_proven_no_delivered_answer": 1,
+  "remaining_requests_not_run": 2,
+  "runtime_error": {
+    "phase": "synthesis",
+    "validation_code": "invalid_missing_aspects",
+    "cause": "partial aspect omitted from mandatory missing_aspect_ids",
+    "generation_attempts": 2,
+    "generation_completed": 2,
+    "elapsed_seconds": 186.033
+  },
+  "independent_validation_replay": "same invalid_missing_aspects without model call",
+  "independent_original_checks": {
+    "units_checked": 4,
+    "exact_spans": 4,
+    "matching_metadata": 4,
+    "anchor_exact": true,
+    "anchor_characters": 89
+  },
+  "code_verdict": "APPROVED",
+  "delivered_answer_semantics": "NOT PROVEN",
+  "public_dry_record": "NOT RUN",
+  "private_evidence": "private/semantic-review.md",
+  "historical_failures_preserved": true,
+  "limits": [
+    "no automatic semantic claim from anchors/refs",
+    "known first case, not blind holdout",
+    "independent transfer not executed",
+    "second physical device NOT PROVEN",
+    "human acceptance pending"
+  ]
+}

@@ -1,0 +1,38 @@
+test_canonical_packed_and_prompt_body_remain_sorted (test_ordering05.Ordering05Tests) ... ok
+test_failed_selection_does_not_claim_synthesis_order (test_ordering05.Ordering05Tests) ... ok
+test_failure_before_known_send_does_not_claim_wire_schema_order (test_ordering05.Ordering05Tests) ... ok
+test_real_wire_preserves_all_four_schema_orders_and_payload_semantics (test_ordering05.Ordering05Tests) ... ok
+test_trace_order_arrays_survive_canonical_private_save_and_match_actual_wire (test_ordering05.Ordering05Tests) ... ok
+test_observed_context_overflow_rejected_without_retry (test_profile04.Profile04Tests) ... ok
+test_old_model_response_rejected_before_second_call_without_retry (test_profile04.Profile04Tests) ... ok
+test_pinned_generator_identity (test_profile04.Profile04Tests) ... ok
+test_qwen35_is_unsupported_and_real_factory_keeps_byte_bound_before_both_calls (test_profile04.Profile04Tests) ... ok
+test_verify_accepts_frozen_9b_and_rejects_old_digest (test_profile04.Profile04Tests) ... ok
+test_wire_model_identity_and_options_without_package_default_overrides (test_profile04.Profile04Tests) ... ok
+test_application_persists_private_trace_and_sanitizes_public_and_logs (test_review_regressions.DiagnosticsTests) ... ok
+test_selection_and_synthesis_failures_keep_raw_phase_and_counts (test_review_regressions.DiagnosticsTests) ... ok
+test_timeout_keeps_attempted_and_completed_counts (test_review_regressions.DiagnosticsTests) ... ok
+test_actual_engine_answer_has_focus_in_second_turn (test_review_regressions.FocusTests) ... ok
+test_day30_shape_does_not_fall_back_to_whole_chunk (test_review_regressions.FocusTests) ... ok
+test_legacy_fallback_only_legacy_refs (test_review_regressions.FocusTests) ... ok
+test_renumbered_span_matches_but_neighbor_and_changed_metadata_do_not (test_review_regressions.FocusTests) ... ok
+test_partial_headers_and_body_use_absolute_deadline_and_close_socket (test_review_regressions.ProviderDeadlineTests) ... ok
+test_redirect_error_body_and_invalid_provider_json_observable_no_retry (test_review_regressions.WireContracts) ... ok
+test_successful_chat_payload_and_close_no_redirect (test_review_regressions.WireContracts) ... ok
+test_synthesis_schema_rejects_bad_status_duplicates_and_extra_fields (test_review_regressions.WireContracts) ... ok
+test_transport_partial_snapshot_is_private_inference_error (test_review_regressions.WireContracts) ... ok
+test_multi_iteration_pruning_counts_all_history_and_rebuilds_final_mapping (test_protocol03.EnginePruningTests) ... ok
+test_duplicate_json_keys_every_level_and_escaped_key (test_protocol03.Protocol03Tests) ... ok
+test_full_can_be_conservatively_missing_partial_cannot_be_hidden (test_protocol03.Protocol03Tests) ... ok
+test_invalid_anchor_mapping_background_or_missing_or_conclusion (test_protocol03.Protocol03Tests) ... ok
+test_no_point_output_truncation_and_summary_limit (test_protocol03.Protocol03Tests) ... ok
+test_pruning_rebuilds_mapping_and_downgrades_coverage (test_protocol03.Protocol03Tests) ... ok
+test_renderer_preserves_known_proposal_and_names_missing_result (test_protocol03.Protocol03Tests) ... ok
+test_selection_object_one_id_many_aspects_and_consistency (test_protocol03.Protocol03Tests) ... ok
+test_split_proposal_and_explicit_completion_grammar (test_protocol03.Protocol03Tests) ... ok
+test_unknown_points_exact_local_contract (test_protocol03.Protocol03Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 6.173s
+
+OK

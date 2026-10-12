@@ -1,0 +1,135 @@
+test_duplicate_json_keys_every_level_and_escaped_key (test_protocol03.Protocol03Tests) ... test_full_can_be_conservatively_missing_partial_cannot_be_hidden (test_protocol03.Protocol03Tests) ... ERROR
+test_invalid_anchor_mapping_background_or_missing_or_conclusion (test_protocol03.Protocol03Tests) ... ERROR
+test_no_point_output_truncation_and_summary_limit (test_protocol03.Protocol03Tests) ... ERROR
+test_pruning_rebuilds_mapping_and_downgrades_coverage (test_protocol03.Protocol03Tests) ... ERROR
+test_renderer_preserves_known_proposal_and_names_missing_result (test_protocol03.Protocol03Tests) ... ERROR
+test_selection_object_one_id_many_aspects_and_consistency (test_protocol03.Protocol03Tests) ... ERROR
+test_split_proposal_and_explicit_completion_grammar (test_protocol03.Protocol03Tests) ... FAIL
+test_unknown_points_exact_local_contract (test_protocol03.Protocol03Tests) ... ERROR
+
+======================================================================
+ERROR: test_full_can_be_conservatively_missing_partial_cannot_be_hidden (test_protocol03.Protocol03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 50, in test_full_can_be_conservatively_missing_partial_cannot_be_hidden
+    with self.assertRaisesRegex(ValueError,'invalid_missing_aspects'):service.materialize_synthesis(raw,ASPECTS,[UNIT],coverage)
+AttributeError: module 'service' has no attribute 'materialize_synthesis'
+
+======================================================================
+ERROR: test_invalid_anchor_mapping_background_or_missing_or_conclusion (test_protocol03.Protocol03Tests) (field='anchor')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 56, in test_invalid_anchor_mapping_background_or_missing_or_conclusion
+    with self.subTest(field=field),self.assertRaisesRegex(ValueError,code):service.materialize_synthesis(raw,ASPECTS,[UNIT],metadata())
+AttributeError: module 'service' has no attribute 'materialize_synthesis'
+
+======================================================================
+ERROR: test_invalid_anchor_mapping_background_or_missing_or_conclusion (test_protocol03.Protocol03Tests) (field='evidence_id')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 56, in test_invalid_anchor_mapping_background_or_missing_or_conclusion
+    with self.subTest(field=field),self.assertRaisesRegex(ValueError,code):service.materialize_synthesis(raw,ASPECTS,[UNIT],metadata())
+AttributeError: module 'service' has no attribute 'materialize_synthesis'
+
+======================================================================
+ERROR: test_invalid_anchor_mapping_background_or_missing_or_conclusion (test_protocol03.Protocol03Tests) (field='aspect_ids')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 56, in test_invalid_anchor_mapping_background_or_missing_or_conclusion
+    with self.subTest(field=field),self.assertRaisesRegex(ValueError,code):service.materialize_synthesis(raw,ASPECTS,[UNIT],metadata())
+AttributeError: module 'service' has no attribute 'materialize_synthesis'
+
+======================================================================
+ERROR: test_invalid_anchor_mapping_background_or_missing_or_conclusion (test_protocol03.Protocol03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 58, in test_invalid_anchor_mapping_background_or_missing_or_conclusion
+    with self.assertRaisesRegex(ValueError,'invalid_missing_aspects'):service.materialize_synthesis(raw,ASPECTS,[UNIT],metadata())
+AttributeError: module 'service' has no attribute 'materialize_synthesis'
+
+======================================================================
+ERROR: test_no_point_output_truncation_and_summary_limit (test_protocol03.Protocol03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 71, in test_no_point_output_truncation_and_summary_limit
+    with self.assertRaisesRegex(ValueError,'invalid_synthesis_points'):service.materialize_synthesis(raw,ASPECTS,[UNIT],metadata())
+AttributeError: module 'service' has no attribute 'materialize_synthesis'
+
+======================================================================
+ERROR: test_pruning_rebuilds_mapping_and_downgrades_coverage (test_protocol03.Protocol03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 80, in test_pruning_rebuilds_mapping_and_downgrades_coverage
+    kept=service.retain_coverage(cov,[UNIT])
+AttributeError: module 'service' has no attribute 'retain_coverage'
+
+======================================================================
+ERROR: test_renderer_preserves_known_proposal_and_names_missing_result (test_protocol03.Protocol03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 43, in test_renderer_preserves_known_proposal_and_names_missing_result
+    raw=synthesis();answer=service.materialize_synthesis(raw,ASPECTS,[UNIT],metadata())
+AttributeError: module 'service' has no attribute 'materialize_synthesis'
+
+======================================================================
+ERROR: test_selection_object_one_id_many_aspects_and_consistency (test_protocol03.Protocol03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 35, in test_selection_object_one_id_many_aspects_and_consistency
+    selected,coverage=service.validate_selection({'evidence':{'S1.U1':['Q1','Q2']},'coverage':{'Q1':'full','Q2':'partial'}},ASPECTS,[UNIT],{'S1.U1'})
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 120, in validate_selection
+    raise ValueError('invalid_selection_schema')
+ValueError: invalid_selection_schema
+
+======================================================================
+ERROR: test_unknown_points_exact_local_contract (test_protocol03.Protocol03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 65, in test_unknown_points_exact_local_contract
+    answer=service.materialize_synthesis(raw,ASPECTS,[UNIT],metadata());self.assertEqual(answer['status'],'unknown')
+AttributeError: module 'service' has no attribute 'materialize_synthesis'
+
+======================================================================
+FAIL: test_duplicate_json_keys_every_level_and_escaped_key (test_protocol03.Protocol03Tests) (raw='{"evidence":{},"evidence":{},"coverage":{}}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 33, in test_duplicate_json_keys_every_level_and_escaped_key
+    with self.subTest(raw=raw),self.assertRaisesRegex(ValueError,'duplicate_json_key'):service.parse_response(response)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_duplicate_json_keys_every_level_and_escaped_key (test_protocol03.Protocol03Tests) (raw='{"evidence":{"S1.U1":["Q1"],"S1.U1":["Q2"]},"coverage":{}}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 33, in test_duplicate_json_keys_every_level_and_escaped_key
+    with self.subTest(raw=raw),self.assertRaisesRegex(ValueError,'duplicate_json_key'):service.parse_response(response)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_duplicate_json_keys_every_level_and_escaped_key (test_protocol03.Protocol03Tests) (raw='{"points":[],"conclusion":{"text":"x","text":"y"}}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 33, in test_duplicate_json_keys_every_level_and_escaped_key
+    with self.subTest(raw=raw),self.assertRaisesRegex(ValueError,'duplicate_json_key'):service.parse_response(response)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_duplicate_json_keys_every_level_and_escaped_key (test_protocol03.Protocol03Tests) (raw='{"a":1,"\\u0061":2}')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 33, in test_duplicate_json_keys_every_level_and_escaped_key
+    with self.subTest(raw=raw),self.assertRaisesRegex(ValueError,'duplicate_json_key'):service.parse_response(response)
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_split_proposal_and_explicit_completion_grammar (test_protocol03.Protocol03Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol03.py", line 27, in test_split_proposal_and_explicit_completion_grammar
+    self.assertEqual(len(result),2);self.assertTrue(result[1]['text'].startswith(connector))
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+FAILED (failures=5, errors=10)

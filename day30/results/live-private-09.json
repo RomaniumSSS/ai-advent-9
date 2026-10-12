@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-12T01:12:46.167265+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "profile": "profile09",
+  "protocol_version": "protocol06",
+  "known_cases_not_blind_holdout": true,
+  "requests_planned_max": 3,
+  "automatic_retry": false,
+  "submission_control": "one explicit root command per case after independent semantic verdict",
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "73e45dd3696d43b2ae69e755dae6803e",
+      "conversation_id": "da6943f991b6472e9a926486764dc15e",
+      "status": "error",
+      "answer_status": null,
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.667,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.523,
+        "selection": {
+          "elapsed_seconds": 75.177,
+          "eval_count": 161,
+          "eval_duration": 48360216000,
+          "load_duration": 6188163084,
+          "prompt_eval_count": 976,
+          "prompt_eval_duration": 20603166000,
+          "tokens_per_second": 3.33,
+          "total_duration": 75174168584
+        },
+        "synthesis": {
+          "elapsed_seconds": 455.07,
+          "eval_count": 1408,
+          "eval_duration": 427689225000,
+          "load_duration": 4290333,
+          "prompt_eval_count": 1093,
+          "prompt_eval_duration": 27295999000,
+          "tokens_per_second": 3.29,
+          "total_duration": 455067015708
+        },
+        "total_seconds": 532.472
+      },
+      "elapsed_seconds": 533.312,
+      "sources": 0,
+      "error_code": "invalid_model_response",
+      "private_response_sha256": "98082d2dea6e8e437471f8a22a6e0df462d9016795ec9f8fc69dadbb85b8006d"
+    }
+  ],
+  "updated_at": "2026-10-12T01:21:39.475782+00:00",
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "result": "FAILED_RUNTIME_GATE"
+}

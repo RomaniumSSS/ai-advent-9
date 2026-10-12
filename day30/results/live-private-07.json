@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-10-11T23:55:04.006733+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "profile": "profile07",
+  "protocol_version": "protocol06",
+  "known_cases_not_blind_holdout": true,
+  "requests_planned_max": 3,
+  "automatic_retry": false,
+  "submission_control": "one explicit root command per case after independent semantic verdict",
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "6537bf0ae3f44f648e698f01b3fcd714",
+      "conversation_id": "9d9a487fe96f48088207badae1693a2d",
+      "status": "done",
+      "answer_status": "partial",
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.674,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.522,
+        "selection": {
+          "elapsed_seconds": 76.742,
+          "eval_count": 161,
+          "eval_duration": 48583772000,
+          "load_duration": 4929145083,
+          "prompt_eval_count": 976,
+          "prompt_eval_duration": 23210033000,
+          "tokens_per_second": 3.31,
+          "total_duration": 76740655375
+        },
+        "source_count": 3,
+        "synthesis": {
+          "elapsed_seconds": 141.154,
+          "eval_count": 385,
+          "eval_duration": 116785162000,
+          "load_duration": 4363791,
+          "prompt_eval_count": 970,
+          "prompt_eval_duration": 24315495000,
+          "tokens_per_second": 3.3,
+          "total_duration": 141152764625
+        },
+        "total_seconds": 220.125
+      },
+      "elapsed_seconds": 220.761,
+      "sources": 3,
+      "error_code": null,
+      "private_response_sha256": "ed4aa37b1bed4f9b6a16f3b013ff5c243ec00912df756a7ec46b2d6f6cb5e495"
+    }
+  ],
+  "updated_at": "2026-10-11T23:58:44.766653+00:00",
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "result": "FAILED_FIRST_REQUEST_SEMANTIC_GATE",
+  "finished_at": "2026-10-12T00:06:12.454553+00:00"
+}

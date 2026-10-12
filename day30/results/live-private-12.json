@@ -1,0 +1,61 @@
+{
+  "started_at": "2026-10-12T02:44:24.470489+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "profile": "profile12",
+  "protocol_version": "protocol06",
+  "known_cases_not_blind_holdout": true,
+  "requests_planned_max": 3,
+  "automatic_retry": false,
+  "submission_control": "one explicit root command per case after independent semantic verdict",
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "eec2af7ce9b5408a8cedf00a0f093499",
+      "conversation_id": "46d37e86224f4b90a42e196db06a4bd7",
+      "status": "done",
+      "answer_status": "partial",
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.676,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.519,
+        "selection": {
+          "elapsed_seconds": 60.764,
+          "eval_count": 51,
+          "eval_duration": 17489750000,
+          "load_duration": 14164446666,
+          "prompt_eval_count": 1423,
+          "prompt_eval_duration": 29071501000,
+          "tokens_per_second": 2.92,
+          "total_duration": 60756609291
+        },
+        "source_count": 1,
+        "synthesis": {
+          "elapsed_seconds": 100.587,
+          "eval_count": 239,
+          "eval_duration": 82227756000,
+          "load_duration": 11979167,
+          "prompt_eval_count": 880,
+          "prompt_eval_duration": 18245769000,
+          "tokens_per_second": 2.91,
+          "total_duration": 100579892708
+        },
+        "total_seconds": 163.639
+      },
+      "elapsed_seconds": 163.945,
+      "sources": 1,
+      "error_code": null,
+      "private_response_sha256": "91655231873986ee2c5278cf1a22a5fe2e558a5c4b49ece610cb0e04589d73ab"
+    }
+  ],
+  "updated_at": "2026-10-12T02:47:08.416782+00:00",
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "result": "LATEST_RUNTIME_COMPLETE_SEMANTIC_PENDING"
+}

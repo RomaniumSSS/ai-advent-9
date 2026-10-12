@@ -1,0 +1,13 @@
+# Day30 — independent Astra review, profile04
+
+**CODE: APPROVED, baseline04. Live gate04: FAIL.** Первый запрос корректно отклонён валидатором; кодовый дефект, объясняющий этот отказ, не установлен. Ответ не доставлен, его семантика NOT PROVEN. Historical FAIL01–03 сохранены.
+
+Baseline: `results/code-baseline-04.json`, 28 файлов, base b3e607e. Frozen SPEC: `results/review-history/SPEC-profile04.md`, SHA `0b6f7b922c6c55e55732743cc24b10fedce6f065e3442ced34efddbe73800f93`. Reviewer дважды сверил 28 hashes без расхождений. Обратная замена MODEL/digest в local.py восстанавливает точный hash baseline03. Protocol/service/evidence/tokenizer/server/deploy и логика UI неизменны. Badge, README и SCENARIO отражают новую модель, ByteBound и унаследованные defaults.
+
+Reviewer запустил `PYTHONPATH=day30:day30/tests /usr/bin/python3 -m unittest test_profile04 -v`: **6 PASS за 0.525s**, CLT3.9.6, exit0. Это mock/ephemeral HTTP проверки без inference и общего flock. Прочитаны Sol 6 targeted PASS и 10 linked PASS. Прежние 81 quiet PASS и reviewer 13 protocol PASS относятся к baseline03 и переиспользованы для неизменённых компонентов; новый полный suite не заявляется.
+
+Независимые read-only tags/show/version/ps подтвердили generator/embedding digests, 9.0B Q4_K_M, requires0.30.0 при Ollama0.33.3, pre=qwen35/gpt2, все 256 byte symbols и отсутствие resident models перед переходом. Qwen2Tokenizer отвергает qwen35; существующий ByteBound явно отмечен в trace. Неверная модель/digest и observed overflow отклоняются без retry. Прочитан официальный [qwen35 renderer v0.33.3](https://github.com/ollama/ollama/blob/v0.33.3/model/renderers/qwen35.go): для двух текстовых system/user сообщений без tools/images служебная обёртка укладывается в reserve512. Это основание оценки бюджета, не измерение качества.
+
+`restart-04.json` подтверждает CA/hostname/API, сохранность восьми старых state files и отсутствие autoreplay. Live04: ByteBound input 6158/6522 плюс output1024; actual prompt_eval_count 1082 в обоих вызовах. После pruning оба аспекта partial, модель вернула missing_aspect_ids=[]. Независимый offline replay сохранённого ответа дал тот же `invalid_missing_aspects`. Оба original spans, metadata и anchors совпали с immutable DB. Смысловые ошибки отклонённого raw candidate разобраны только в private отчёте.
+
+Выполнен один из максимум трёх запросов; два остальных не выполнялись. Public dry/record/publication не готовы. Наблюдаемый порядок полей ещё не доказывает причинного влияния на качество; будущий repair05 этим review не одобрен. Второе устройство NOT PROVEN, человеческая приёмка pending. Usage/cost не предоставлены.

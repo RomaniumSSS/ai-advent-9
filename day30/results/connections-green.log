@@ -1,0 +1,11 @@
+test_capacity_rejects_immediately_and_recovers (test_connections.ConnectionTests.test_capacity_rejects_immediately_and_recovers) ... ok
+test_completed_and_malformed_connections_release_capacity (test_connections.ConnectionTests.test_completed_and_malformed_connections_release_capacity) ... ok
+test_fragmented_body_absolute_deadline_before_inference (test_connections.ConnectionTests.test_fragmented_body_absolute_deadline_before_inference) ... {"service": "day30", "status": "connection_error"}
+ok
+test_fragmented_headers_absolute_deadline_and_release (test_connections.ConnectionTests.test_fragmented_headers_absolute_deadline_and_release) ... {"service": "day30", "status": "connection_error"}
+ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 3.650s
+
+OK

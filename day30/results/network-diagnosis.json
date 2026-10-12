@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-10-11T21:34:17.183724+00:00",
+  "scope": "bounded read-only diagnosis; temporary own listeners only; no model inference",
+  "verdict": "runtime_specific_LAN_accept_filtering",
+  "demonstrated": {
+    "loopback_http_tls_framework_python314": "PASS",
+    "LAN_http_tls_framework_python314": "FAIL before handler; TCP connects, accept not ready",
+    "LAN_raw_python314_python313_python312_node": "FAIL before accept",
+    "LAN_apple_netcat": "PASS",
+    "loopback_and_LAN_http_tls_system_python396": "PASS",
+    "temporary_launchd_LAN_TLS_system_python396": "HTTP 200 with certificate verification",
+    "temporary_launchd_LAN_TLS_framework_python314": "timeout before handler",
+    "temporary_launchagents_cleaned_up": true
+  },
+  "system_observations": {
+    "macos_application_firewall": "enabled",
+    "block_all": false,
+    "stealth": true,
+    "system_python_in_firewall_allow_list": true,
+    "framework_python314_in_firewall_allow_list": false,
+    "firewall_log": "prompt pending; Not prompting user until existing response received",
+    "note": "Node listed allowed but also fails; exact ALF runtime identity resolution is not proven."
+  },
+  "cause_assessment": {
+    "proven": "failure precedes accept/HTTP/TLS and reproduces outside Day30, foreground and launchd; depends on executable",
+    "strong_hypothesis": "macOS application firewall incoming decision/identity filtering; pending prompt observed",
+    "not_proven": "exact internal filter decision for each executable; no OS settings modified"
+  },
+  "recommended_fix": "Use existing /usr/bin/python3 (3.9.6) for Day30 launchd after targeted offline suite and actual HTTPS API verification; no firewall/OS permission changes. Keep certificate, LAN bind, auth and application code.",
+  "private_evidence": "day30/private/network-diagnosis/",
+  "sources": [
+    "https://support.apple.com/en-euro/guide/mac-help/mh34041/mac",
+    "https://developer.apple.com/documentation/technotes/tn3179-understanding-local-network-privacy"
+  ],
+  "limitations": [
+    "Diagnostic listeners only; actual Day30 system-Python deployment still pending root execution.",
+    "Second physical device not tested.",
+    "No inference performed."
+  ],
+  "untouched": [
+    "Day30 actual PID20506",
+    "Ollama",
+    "Day29",
+    "global settings",
+    "firewall policy"
+  ]
+}

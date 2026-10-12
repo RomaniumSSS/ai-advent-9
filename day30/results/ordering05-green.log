@@ -1,0 +1,10 @@
+test_canonical_packed_and_prompt_body_remain_sorted (test_ordering05.Ordering05Tests) ... ok
+test_failed_selection_does_not_claim_synthesis_order (test_ordering05.Ordering05Tests) ... ok
+test_failure_before_known_send_does_not_claim_wire_schema_order (test_ordering05.Ordering05Tests) ... ok
+test_real_wire_preserves_all_four_schema_orders_and_payload_semantics (test_ordering05.Ordering05Tests) ... ok
+test_trace_order_arrays_survive_canonical_private_save_and_match_actual_wire (test_ordering05.Ordering05Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.043s
+
+OK

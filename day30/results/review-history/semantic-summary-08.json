@@ -1,0 +1,87 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-08-fixed.json",
+  "profile": "profile08",
+  "protocol_version": "protocol06",
+  "model": "qwen3.5:9b-q4_K_M",
+  "run": "smoke-08",
+  "gate": "FAIL",
+  "requests_planned_max": 3,
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "runtime_pass": 0,
+  "runtime_fail": 1,
+  "semantic_pass": 0,
+  "semantic_fail_delivered_answers": 0,
+  "semantic_not_proven_no_delivered_answer": 1,
+  "generation_attempts": 2,
+  "generation_completed": 1,
+  "elapsed_seconds": 380.269,
+  "runtime_error": {
+    "code": "inference_timeout",
+    "validation_code": "provider_deadline",
+    "phase": "synthesis",
+    "elapsed_seconds": 300.003,
+    "transport_stage": "headers",
+    "response_bytes": 0,
+    "response_completed": false
+  },
+  "selection_metrics": {
+    "elapsed_seconds": 78.3,
+    "eval_count": 161,
+    "prompt_eval_count": 976
+  },
+  "synthesis_metrics_unavailable": [
+    "eval_count",
+    "prompt_eval_count",
+    "reasoning_tokens",
+    "completed_final"
+  ],
+  "generation_parameters": {
+    "selection": {
+      "think": false,
+      "format_mode": "native",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1024,
+        "temperature": 0
+      }
+    },
+    "synthesis": {
+      "think": true,
+      "format_mode": "prompt_schema",
+      "options": {
+        "num_ctx": 8192,
+        "num_predict": 1024,
+        "temperature": 0.7,
+        "top_p": 0.8
+      }
+    }
+  },
+  "budgets": {
+    "selection_upper_bound": 6884,
+    "synthesis_upper_bound": 6738,
+    "synthesis_separate_schema_tokens": 0,
+    "output_reserved_each": 1024,
+    "template_reserve": 512
+  },
+  "privacy": "selection sanitized final; synthesis opaque stage/count/hash only; no reasoning persisted in observed receipt",
+  "code_verdict": "APPROVED",
+  "delivered_answer_semantics": "NOT PROVEN",
+  "private_evidence": "private/semantic-review-08.md",
+  "historical_failures_preserved": true,
+  "stop": "first runtime failure; two remaining cases not run; no retry",
+  "restart": {
+    "old_state_files_unchanged": 17,
+    "automatic_replay": false,
+    "CA_verified": true
+  },
+  "limits": [
+    "no synthesis body received does not prove no internal token generation",
+    "actual compute-stop latency not measured",
+    "known case, not blind holdout",
+    "next profile not approved by this audit",
+    "human acceptance pending",
+    "second physical device NOT PROVEN"
+  ]
+}

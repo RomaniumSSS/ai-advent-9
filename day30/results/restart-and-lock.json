@@ -1,0 +1,34 @@
+{
+  "existing_three_state_files_unchanged": true,
+  "previous_state_count": 3,
+  "provider_replay": false,
+  "services": {
+    "org.ai-advent.day30": {
+      "pid": 56238,
+      "state": {
+        "active": false,
+        "model": "qwen3:8b",
+        "num_ctx": 8192,
+        "rate_limit": "6 / 60 s",
+        "scope": "all"
+      },
+      "CA_verified": true,
+      "runtime": "/usr/bin/python3"
+    },
+    "org.ai-advent.day30.demo": {
+      "pid": 56266,
+      "state": {
+        "active": false,
+        "model": "qwen3:8b",
+        "num_ctx": 8192,
+        "rate_limit": "6 / 60 s",
+        "scope": "assignment"
+      },
+      "CA_verified": true,
+      "runtime": "/usr/bin/python3"
+    }
+  },
+  "external_lock_HTTP_status": 409,
+  "external_lock_error": "busy",
+  "new_state_files_after_rejected_busy": true
+}

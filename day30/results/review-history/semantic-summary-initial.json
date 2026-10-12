@@ -1,0 +1,23 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-final.json",
+  "phase": "initial_review_before_fixes",
+  "independent_original_database_read": true,
+  "automatic_reference_validity_is_not_semantic_proof": true,
+  "private_cases": {
+    "completed_answers": 1,
+    "semantic_pass": 0,
+    "semantic_fail": 1,
+    "runtime_errors": 1,
+    "semantic_not_proven_due_to_no_answer": 1
+  },
+  "public_cases": "pending",
+  "private_evidence": "private/semantic-review.md",
+  "verdict": "FAIL",
+  "limitations": [
+    "known cases, not blind holdout",
+    "no second physical device",
+    "human acceptance pending",
+    "initial failures must be retained after repair"
+  ]
+}

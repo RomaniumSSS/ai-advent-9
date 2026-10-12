@@ -1,0 +1,25 @@
+{"service": "day30", "status": "connection_error"}
+{"service": "day30", "status": "connection_error"}
+{"request_id": "0631d49f279245758ed5d7fa6dd21507", "status": "done", "metrics": {}}
+{"request_id": "04f1009e7d5847b3b8c677b0695d4942", "status": "done", "metrics": {}}
+{"request_id": "3f302ff9c3164172ba28893fa4d0c37f", "status": "done", "metrics": {}}
+{"request_id": "8c22d9f1ed37485dbd7d4f02cd162a61", "status": "done", "metrics": {}}
+{"request_id": "9860148423af401b88f316f623797fd6", "status": "done", "metrics": {}}
+{"request_id": "8fa6d0be64014402a3c9114f776872ed", "status": "done", "metrics": {}}
+{"request_id": "a92d744babd74836a9f5042f197f62e7", "status": "done", "metrics": {}}
+{"request_id": "132faa882f854f9a8b5e495a2fbcf9ba", "status": "done", "metrics": {}}
+{"request_id": "265e703b383548769043654f8e242cf0", "status": "done", "metrics": {}}
+{"request_id": "4548b3d8c4054be1b75e0d3cc8d9c263", "status": "error", "metrics": {}}
+{"request_id": "ed39b2faa63d435196cce06178a95ac3", "status": "done", "metrics": {}}
+{"request_id": "b280062ecd4749e8a0937cfc8b30f0b3", "status": "done", "metrics": {}}
+{"request_id": "604f89841dab48cf9692bcb93cd920b1", "status": "done", "metrics": {}}
+{"request_id": "8c084a1a921944a2a060c56d5efbc969", "status": "done", "metrics": {}}
+{"request_id": "a699ecf38eec459e921232dbbbf2aa25", "status": "done", "metrics": {}}
+{"request_id": "c60108ed62fc4acbbacba2a65e7ff400", "status": "done", "metrics": {}}
+{"request_id": "c392a0e0473547fab02bc02bd88a2ceb", "status": "done", "metrics": {}}
+{"request_id": "9da7faa3414145d0846cecdebc47da24", "status": "done", "metrics": {}}
+{"service": "day30", "status": "connection_error"}
+----------------------------------------------------------------------
+Ran 117 tests in 24.265s
+
+OK

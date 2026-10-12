@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-12T01:37:23.283981+00:00",
+  "result": "PASS",
+  "method": "controlled sequential launchd bootout/bootstrap; CA-verified LAN HTTPS; no content POST",
+  "old_state_files": 21,
+  "unchanged_old_hashes": 21,
+  "new_state_files": [],
+  "automatic_inference_replay": false,
+  "jobs": [
+    {
+      "service": "main",
+      "label": "org.ai-advent.day30",
+      "previous_pid": 49084,
+      "base_url": "https://192.168.0.100:8080",
+      "scope": "all",
+      "new_pid": 74675,
+      "CA_and_hostname_verified": true,
+      "active_after_restart": false,
+      "model": "qwen3.5:9b-q4_K_M",
+      "num_ctx": 8192
+    },
+    {
+      "service": "demo",
+      "label": "org.ai-advent.day30.demo",
+      "previous_pid": 49140,
+      "base_url": "https://192.168.0.100:8081",
+      "scope": "assignment",
+      "new_pid": 74722,
+      "CA_and_hostname_verified": true,
+      "active_after_restart": false,
+      "model": "qwen3.5:9b-q4_K_M",
+      "num_ctx": 8192
+    }
+  ],
+  "scope_limits": [
+    "same physical Mac using LAN IP, second physical device NOT PROVEN"
+  ],
+  "private_hash_snapshot": "private/restart-10-before.json"
+}

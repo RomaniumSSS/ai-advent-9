@@ -1,0 +1,84 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-06.json",
+  "protocol_version": "protocol06",
+  "model": "qwen3.5:9b-q4_K_M",
+  "run": "smoke-06",
+  "gate": "FAIL",
+  "checkpoint": "final two delivered responses independently audited",
+  "requests_planned_max": 3,
+  "requests_completed_audited": 2,
+  "requests_additional_already_accepted": 0,
+  "runtime_pass_audited": 2,
+  "runtime_fail_audited": 0,
+  "semantic_pass": 0,
+  "semantic_fail_delivered_answers": 2,
+  "semantic_not_proven_no_delivered_answer": 0,
+  "first_request_metrics": {
+    "generation_attempts": 2,
+    "generation_completed": 2,
+    "elapsed_seconds": 222.658
+  },
+  "independent_original_checks": {
+    "unit_occurrences_checked": 6,
+    "exact_span_occurrences": 6,
+    "matching_metadata_occurrences": 6,
+    "unique_original_units": 3,
+    "delivered_source_occurrences": 4
+  },
+  "deterministic_missing": "both effective partial aspects correctly retained despite model doubtful=[]",
+  "budgets": {
+    "method": "conservative_utf8_byte_bound_with_reserves",
+    "selection_upper_bound": 6884,
+    "synthesis_upper_bound": 6578,
+    "output_reserved_each": 1024,
+    "observed_prompt_counts": [
+      976,
+      970
+    ]
+  },
+  "order": "new protocol06 raw order and trace agree",
+  "code_verdict": "APPROVED",
+  "delivered_answer_semantics": "FAIL",
+  "private_evidence": "private/semantic-review-06.md",
+  "historical_failures_preserved": true,
+  "dependent_public_steps": "STOP after first semantic FAIL",
+  "limits": [
+    "known pair, not blind holdout",
+    "transfer not run; semantics NOT PROVEN",
+    "exact provenance does not establish semantic support",
+    "human acceptance pending",
+    "second physical device NOT PROVEN"
+  ],
+  "requests_executed": 2,
+  "remaining_requests_not_run": 1,
+  "failure_categories": [
+    "desired future property misrepresented as observed fact",
+    "point text combines claims from other units under a single unsupported citation",
+    "conclusion invents sequence between separate proposals"
+  ],
+  "stop": {
+    "driver_stopped_before_third": true,
+    "second_already_accepted_before_first_semantic_verdict": true,
+    "automatic_retry": false
+  },
+  "second_request_metrics": {
+    "generation_attempts": 2,
+    "generation_completed": 2,
+    "elapsed_seconds": 135.224
+  },
+  "second_budgets": {
+    "selection_upper_bound": 6978,
+    "synthesis_upper_bound": 6458,
+    "output_reserved_each": 1024,
+    "observed_prompt_counts": [
+      1016,
+      926
+    ]
+  },
+  "restart": {
+    "old_state_files_unchanged": 12,
+    "automatic_replay": false,
+    "CA_verified": true
+  }
+}

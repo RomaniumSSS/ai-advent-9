@@ -1,0 +1,107 @@
+test_actual_engine_wire_synthesis_omits_format_and_embeds_ordered_schema_once (test_profile08.Profile08Tests) ... ERROR
+test_bad_final_empty_length_duplicate_and_think_tags_remain_fail_no_retry (test_profile08.Profile08Tests) ... ERROR
+test_budget_counts_actual_embedded_schema_once_and_keeps_reserves (test_profile08.Profile08Tests) ... FAIL
+test_malformed_outer_transport_only_hash_count_stage_no_prefix (test_profile08.Profile08Tests) ... FAIL
+test_partial_timeout_hash_count_synchronous_cancellation_no_reasoning (test_profile08.Profile08Tests) ... FAIL
+test_response_data_and_legacy_text_error_paths_sanitize_before_snapshot (test_profile08.Profile08Tests) ... FAIL
+test_success_and_schema_error_private_files_logs_and_api_never_contain_reasoning (test_profile08.Profile08Tests) ... ok
+test_think_true_accepts_final_but_false_phase_still_rejects_without_leaking (test_profile08.Profile08Tests) ... ERROR
+
+======================================================================
+ERROR: test_actual_engine_wire_synthesis_omits_format_and_embeds_ordered_schema_once (test_profile08.Profile08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 57, in test_actual_engine_wire_synthesis_omits_format_and_embeds_ordered_schema_once
+    result=service.Engine([chunk()],Wire()).answer('Какие условия дня 30?',[]);selection,synthesis=captured
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 270, in answer
+    raise error(code,validation,copy.deepcopy(result)) from None
+service.InferenceFailure: invalid_model_shape
+
+======================================================================
+ERROR: test_bad_final_empty_length_duplicate_and_think_tags_remain_fail_no_retry (test_profile08.Profile08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 119, in test_bad_final_empty_length_duplicate_and_think_tags_remain_fail_no_retry
+    result=caught.exception.partial_result;self.assertEqual(result['trace']['validation_code'],code)
+AttributeError: '_AssertRaisesContext' object has no attribute 'exception'
+
+======================================================================
+ERROR: test_think_true_accepts_final_but_false_phase_still_rejects_without_leaking (test_profile08.Profile08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 85, in test_think_true_accepts_final_but_false_phase_still_rejects_without_leaking
+    self.assertEqual(service.parse_response(valid,think=True),{})
+TypeError: parse_response() got an unexpected keyword argument 'think'
+
+======================================================================
+FAIL: test_bad_final_empty_length_duplicate_and_think_tags_remain_fail_no_retry (test_profile08.Profile08Tests) (code='invalid_model_json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 118, in test_bad_final_empty_length_duplicate_and_think_tags_remain_fail_no_retry
+    service.Engine([chunk()],model).answer('Какие условия дня 30?',[])
+AssertionError: InferenceFailure not raised
+
+======================================================================
+FAIL: test_budget_counts_actual_embedded_schema_once_and_keeps_reserves (test_profile08.Profile08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 77, in test_budget_counts_actual_embedded_schema_once_and_keeps_reserves
+    self.assertEqual(b,expected);self.assertEqual(b['template_reserve'],512);self.assertEqual(b['output_reserved'],1024)
+AssertionError: {'met[68 chars]nd': 4829, 'serialized_messages_tokens': 3432,[250 chars]0.8}} != {'met[68 chars]nd': 3948, 'serialized_messages_tokens': 3432,[248 chars]0.8}}
+  {'bounded_messages_tokens': 3432,
+   'content_tokens': 3305,
+-  'input_upper_bound': 4829,
+?                         --
+
++  'input_upper_bound': 3948,
+?                       ++
+
+   'messages_bytes': 3432,
+   'method': 'conservative_utf8_byte_bound_with_reserves',
+   'num_ctx': 8192,
+   'options': {'num_ctx': 8192,
+               'num_predict': 1024,
+               'temperature': 0.7,
+               'top_p': 0.8},
+   'output_reserved': 1024,
+-  'schema_tokens': 885,
+?                   ^^^
+
++  'schema_tokens': 4,
+?                   ^
+
+   'serialized_messages_tokens': 3432,
+   'template_reserve': 512}
+
+======================================================================
+FAIL: test_malformed_outer_transport_only_hash_count_stage_no_prefix (test_profile08.Profile08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 131, in test_malformed_outer_transport_only_hash_count_stage_no_prefix
+    raw=caught.exception.partial_result['trace']['selection_raw_response'];self.no_reason(raw)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 48, in no_reason
+    self.assertTrue(REASON not in json.dumps(value,ensure_ascii=False),'reasoning leaked')
+AssertionError: False is not true : reasoning leaked
+
+======================================================================
+FAIL: test_partial_timeout_hash_count_synchronous_cancellation_no_reasoning (test_profile08.Profile08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 139, in test_partial_timeout_hash_count_synchronous_cancellation_no_reasoning
+    error=caught.exception;self.assertFalse(hasattr(error,'response_text'))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_response_data_and_legacy_text_error_paths_sanitize_before_snapshot (test_profile08.Profile08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 151, in test_response_data_and_legacy_text_error_paths_sanitize_before_snapshot
+    result=caught.exception.partial_result;self.no_reason(result)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 48, in no_reason
+    self.assertTrue(REASON not in json.dumps(value,ensure_ascii=False),'reasoning leaked')
+AssertionError: False is not true : reasoning leaked
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.578s
+
+FAILED (failures=5, errors=3)

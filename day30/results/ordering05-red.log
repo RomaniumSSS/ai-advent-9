@@ -1,0 +1,34 @@
+test_canonical_packed_and_prompt_body_remain_sorted (test_ordering05.Ordering05Tests) ... ok
+test_failed_selection_does_not_claim_synthesis_order (test_ordering05.Ordering05Tests) ... FAIL
+test_real_wire_preserves_all_four_schema_orders_and_payload_semantics (test_ordering05.Ordering05Tests) ... FAIL
+test_trace_order_arrays_survive_canonical_private_save_and_match_actual_wire (test_ordering05.Ordering05Tests) ... FAIL
+
+======================================================================
+FAIL: test_failed_selection_does_not_claim_synthesis_order (test_ordering05.Ordering05Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_ordering05.py", line 54, in test_failed_selection_does_not_claim_synthesis_order
+    self.assertEqual(recorded.get('selection_root'),EXPECTED['selection_root'])
+AssertionError: None != ['evidence', 'coverage']
+
+======================================================================
+FAIL: test_real_wire_preserves_all_four_schema_orders_and_payload_semantics (test_ordering05.Ordering05Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_ordering05.py", line 36, in test_real_wire_preserves_all_four_schema_orders_and_payload_semantics
+    self.assertEqual(orders(*captured),EXPECTED)
+AssertionError: {'selection_root': ['coverage', 'evidence'], 'synthesis_root':[139 chars]xt']} != {'selection_root': ['evidence', 'coverage'], 'synthesis_root':[139 chars]fs']}
+Diff is 716 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_trace_order_arrays_survive_canonical_private_save_and_match_actual_wire (test_ordering05.Ordering05Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_ordering05.py", line 45, in test_trace_order_arrays_survive_canonical_private_save_and_match_actual_wire
+    self.assertEqual(result['trace'].get('schema_property_order'),orders(*captured))
+AssertionError: None != {'selection_root': ['coverage', 'evidence[160 chars]xt']}
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.042s
+
+FAILED (failures=3)

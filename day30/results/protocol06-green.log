@@ -1,0 +1,15 @@
+test_code_missing_cannot_drop_partial_none_or_uncovered_full (test_protocol06.Protocol06Tests) ... ok
+test_doubtful_only_effective_full_and_never_upgrade (test_protocol06.Protocol06Tests) ... ok
+test_empty_points_local_unknown_without_model_missing (test_protocol06.Protocol06Tests) ... ok
+test_engine_trace_projection_and_budget_actual_sent_body (test_protocol06.Protocol06Tests) ... ok
+test_fit_uses_projected_bytes_and_prunes_only_whole_units (test_protocol06.Protocol06Tests) ... ok
+test_model_cannot_supply_quote_anchor_ids_or_offsets (test_protocol06.Protocol06Tests) ... ok
+test_point_derives_full_private_quote_original_span_and_metadata (test_protocol06.Protocol06Tests) ... ok
+test_point_unknown_background_cross_aspect_and_removed_ids_rejected (test_protocol06.Protocol06Tests) ... ok
+test_projection_full_text_exact_metadata_and_stage_local_context (test_protocol06.Protocol06Tests) ... ok
+test_schema_only_retained_proof_and_full_doubts_no_empty_enum (test_protocol06.Protocol06Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.017s
+
+OK

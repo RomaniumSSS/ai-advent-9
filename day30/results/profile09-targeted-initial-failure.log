@@ -1,0 +1,35 @@
+test_actual_wire_stage_caps_trace_and_options_do_not_leak (test_profile09.Profile09Tests) ... ok
+test_client_accepts_completion_before1230_not_old920 (test_profile09.Profile09Tests) ... ok
+test_coupled_worker_join_plist_and_legacy_plist_preservation (test_profile09.Profile09Tests) ... ok
+test_default_routes_300_and_short_timeout_patch_still_applies_to_synthesis (test_profile09.Profile09Tests) ... ok
+test_output1408_fits_saved_bound_and_observed_cap_is_strict (test_profile09.Profile09Tests) ... ok
+test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return (test_profile09.Profile09Tests) ... test_video_terminal_wait_uses1230_seconds (test_profile09.Profile09Tests) ... ok
+
+======================================================================
+ERROR: test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return (test_profile09.Profile09Tests) (phase='headers')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 64, in test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return
+    with self.assertRaises(local.ProviderTimeout) as caught:provider.chat([],{},think=True,native_format=False,deadline_seconds=600)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 240, in chat
+    return self.request('/api/chat',payload,**({'deadline_seconds':deadline_seconds} if deadline_seconds is not None else {}))
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 194, in request
+    if response.status!=200:raise ValueError('ollama_response_error')
+ValueError: ollama_response_error
+
+======================================================================
+ERROR: test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return (test_profile09.Profile09Tests) (phase='body')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile09.py", line 64, in test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return
+    with self.assertRaises(local.ProviderTimeout) as caught:provider.chat([],{},think=True,native_format=False,deadline_seconds=600)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 240, in chat
+    return self.request('/api/chat',payload,**({'deadline_seconds':deadline_seconds} if deadline_seconds is not None else {}))
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 194, in request
+    if response.status!=200:raise ValueError('ollama_response_error')
+ValueError: ollama_response_error
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.557s
+
+FAILED (errors=2)

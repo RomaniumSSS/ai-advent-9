@@ -1,0 +1,8 @@
+test_duplicate_same_id_rejected_without_synthesis_even_different_aspects (test_selection03.Selection03Tests) ... ok
+test_one_evidence_id_supports_two_requested_aspects_in_two_calls (test_selection03.Selection03Tests) ... ok
+test_provider_schema_has_array_uniqueness_constraint (test_selection03.Selection03Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.019s
+
+OK

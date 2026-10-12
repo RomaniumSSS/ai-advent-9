@@ -1,0 +1,176 @@
+test_code_missing_cannot_drop_partial_none_or_uncovered_full (test_protocol06.Protocol06Tests) ... ERROR
+test_doubtful_only_effective_full_and_never_upgrade (test_protocol06.Protocol06Tests) ... ERROR
+test_empty_points_local_unknown_without_model_missing (test_protocol06.Protocol06Tests) ... ERROR
+test_engine_trace_projection_and_budget_actual_sent_body (test_protocol06.Protocol06Tests) ... FAIL
+test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) ... test_partition_exact_unicode_whitespace_and_long_token (test_protocol06.Protocol06Tests) ... ERROR
+test_projection_full_text_exact_metadata_and_stage_local_context (test_protocol06.Protocol06Tests) ... ERROR
+test_schema_anchors_only_sent_proof_full_doubts_no_empty_enum (test_protocol06.Protocol06Tests) ... ERROR
+test_valid_contiguous_ids_derive_private_quote_and_global_span (test_protocol06.Protocol06Tests) ... ERROR
+
+======================================================================
+ERROR: test_code_missing_cannot_drop_partial_none_or_uncovered_full (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 61, in test_code_missing_cannot_drop_partial_none_or_uncovered_full
+    answer=protocol.materialize_synthesis(output(),ASPECTS,[UNIT],cov,diagnostic)
+TypeError: materialize_synthesis() takes 4 positional arguments but 5 were given
+
+======================================================================
+ERROR: test_doubtful_only_effective_full_and_never_upgrade (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 69, in test_doubtful_only_effective_full_and_never_upgrade
+    answer=protocol.materialize_synthesis(raw,ASPECTS,[UNIT],metadata(),diagnostic)
+TypeError: materialize_synthesis() takes 4 positional arguments but 5 were given
+
+======================================================================
+ERROR: test_empty_points_local_unknown_without_model_missing (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 86, in test_empty_points_local_unknown_without_model_missing
+    diagnostic={};answer=protocol.materialize_synthesis(raw,ASPECTS,[UNIT],metadata(),diagnostic)
+TypeError: materialize_synthesis() takes 4 positional arguments but 5 were given
+
+======================================================================
+ERROR: test_partition_exact_unicode_whitespace_and_long_token (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 21, in test_partition_exact_unicode_whitespace_and_long_token
+    unit={**UNIT,'text':text};anchors=protocol.anchor_manifest([unit])[0]['anchors']
+AttributeError: module 'protocol' has no attribute 'anchor_manifest'
+
+======================================================================
+ERROR: test_projection_full_text_exact_metadata_and_stage_local_context (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 35, in test_projection_full_text_exact_metadata_and_stage_local_context
+    selection=protocol.model_projection([unit,other],'selection')
+AttributeError: module 'protocol' has no attribute 'model_projection'
+
+======================================================================
+ERROR: test_schema_anchors_only_sent_proof_full_doubts_no_empty_enum (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 80, in test_schema_anchors_only_sent_proof_full_doubts_no_empty_enum
+    self.assertEqual(point['anchor_ids']['items']['enum'],['S1.U1.A1']);self.assertEqual(props['doubtful_aspect_ids']['items']['enum'],['Q1'])
+KeyError: 'anchor_ids'
+
+======================================================================
+ERROR: test_valid_contiguous_ids_derive_private_quote_and_global_span (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 47, in test_valid_contiguous_ids_derive_private_quote_and_global_span
+    answer=protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata(),diagnostic)
+TypeError: materialize_synthesis() takes 4 positional arguments but 5 were given
+
+======================================================================
+FAIL: test_engine_trace_projection_and_budget_actual_sent_body (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 93, in test_engine_trace_projection_and_budget_actual_sent_body
+    self.assertEqual(trace['protocol_version'],'protocol06')
+AssertionError: 'repair03' != 'protocol06'
+- repair03
++ protocol06
+
+
+======================================================================
+FAIL: test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) (ids=[])
+----------------------------------------------------------------------
+ValueError: invalid_synthesis_points
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 57, in test_invalid_anchor_ids_no_ignore_or_cross_unit
+    protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata())
+AssertionError: "invalid_point_anchor_ids" does not match "invalid_synthesis_points"
+
+======================================================================
+FAIL: test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) (ids=['invented'])
+----------------------------------------------------------------------
+ValueError: invalid_synthesis_points
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 57, in test_invalid_anchor_ids_no_ignore_or_cross_unit
+    protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata())
+AssertionError: "invalid_point_anchor_ids" does not match "invalid_synthesis_points"
+
+======================================================================
+FAIL: test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) (ids=['S2.U1.A1'])
+----------------------------------------------------------------------
+ValueError: invalid_synthesis_points
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 57, in test_invalid_anchor_ids_no_ignore_or_cross_unit
+    protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata())
+AssertionError: "invalid_point_anchor_ids" does not match "invalid_synthesis_points"
+
+======================================================================
+FAIL: test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) (ids=['S1.U1.A1', 'S1.U1.A1'])
+----------------------------------------------------------------------
+ValueError: invalid_synthesis_points
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 57, in test_invalid_anchor_ids_no_ignore_or_cross_unit
+    protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata())
+AssertionError: "invalid_point_anchor_ids" does not match "invalid_synthesis_points"
+
+======================================================================
+FAIL: test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) (ids=['S1.U1.A2', 'S1.U1.A1'])
+----------------------------------------------------------------------
+ValueError: invalid_synthesis_points
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 57, in test_invalid_anchor_ids_no_ignore_or_cross_unit
+    protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata())
+AssertionError: "invalid_point_anchor_ids" does not match "invalid_synthesis_points"
+
+======================================================================
+FAIL: test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) (ids=['S1.U1.A1', 'S1.U1.A3'])
+----------------------------------------------------------------------
+ValueError: invalid_synthesis_points
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 57, in test_invalid_anchor_ids_no_ignore_or_cross_unit
+    protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata())
+AssertionError: "invalid_point_anchor_ids" does not match "invalid_synthesis_points"
+
+======================================================================
+FAIL: test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) (ids=['S1.U1.A0'])
+----------------------------------------------------------------------
+ValueError: invalid_synthesis_points
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 57, in test_invalid_anchor_ids_no_ignore_or_cross_unit
+    protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata())
+AssertionError: "invalid_point_anchor_ids" does not match "invalid_synthesis_points"
+
+======================================================================
+FAIL: test_invalid_anchor_ids_no_ignore_or_cross_unit (test_protocol06.Protocol06Tests) (ids='S1.U1.A1')
+----------------------------------------------------------------------
+ValueError: invalid_synthesis_points
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 57, in test_invalid_anchor_ids_no_ignore_or_cross_unit
+    protocol.materialize_synthesis(raw,ASPECTS,[unit],metadata())
+AssertionError: "invalid_point_anchor_ids" does not match "invalid_synthesis_points"
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.016s
+
+FAILED (failures=9, errors=7)

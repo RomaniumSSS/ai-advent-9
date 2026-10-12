@@ -1,0 +1,20 @@
+test_actual_wire_sorted_provider_order_budget_identity_and_raw_final (test_profile12.Profile12Tests) ... ok
+test_duplicate_alias_keys_all_levels_before_normalization (test_profile12.Profile12Tests) ... ok
+test_lossless_stage_specific_aliases_and_strict_unknown_mixed_missing (test_profile12.Profile12Tests) ... ok
+test_normalized_invalid_refs_quantity_and_no_canonical_fallback (test_profile12.Profile12Tests) ... ok
+test_previous_model_response_rejected_without_retry (test_profile12.Profile12Tests) ... ok
+test_safe_wire_raw_is_exact_unknown_reasoning_shapes_opaque (test_profile12.Profile12Tests) ... ok
+test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_error_response_data_unknown_shape_opaque_before_snapshot (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_safely_shaped_invalid_reference_keeps_exact_final_diagnostics (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_canonical_packed_and_prompt_body_remain_sorted (test_ordering05.Ordering05Tests) ... ok
+test_failed_selection_does_not_claim_synthesis_order (test_ordering05.Ordering05Tests) ... ok
+test_failure_before_known_send_does_not_claim_wire_schema_order (test_ordering05.Ordering05Tests) ... ok
+test_real_wire_preserves_all_four_schema_orders_and_payload_semantics (test_ordering05.Ordering05Tests) ... ok
+test_trace_order_arrays_survive_canonical_private_save_and_match_actual_wire (test_ordering05.Ordering05Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 3.221s
+
+OK

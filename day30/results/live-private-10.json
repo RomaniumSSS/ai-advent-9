@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-10-12T01:37:24.627911+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "profile": "profile10",
+  "protocol_version": "protocol06",
+  "known_cases_not_blind_holdout": true,
+  "requests_planned_max": 3,
+  "automatic_retry": false,
+  "submission_control": "one explicit root command per case after independent semantic verdict",
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "9737cc94b4994e049b9fe531d05ad46c",
+      "conversation_id": "77d7f602ec6f4bc1bb7f53a0bd397064",
+      "status": "error",
+      "answer_status": null,
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.678,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.521,
+        "selection": {
+          "elapsed_seconds": 77.085,
+          "eval_count": 161,
+          "eval_duration": 48443878000,
+          "load_duration": 6202466375,
+          "prompt_eval_count": 976,
+          "prompt_eval_duration": 22416056000,
+          "tokens_per_second": 3.32,
+          "total_duration": 77081876791
+        },
+        "synthesis": {
+          "elapsed_seconds": 610.521,
+          "eval_count": 1920,
+          "eval_duration": 588055233000,
+          "load_duration": 4239167,
+          "prompt_eval_count": 1093,
+          "prompt_eval_duration": 22414958000,
+          "tokens_per_second": 3.26,
+          "total_duration": 610516817833
+        },
+        "total_seconds": 689.838
+      },
+      "elapsed_seconds": 690.504,
+      "sources": 0,
+      "error_code": "invalid_model_response",
+      "private_response_sha256": "9c2e21560cee18d57c64ce0879fe7a771e56cac0a7e0993ad2d624d90c07acd7"
+    }
+  ],
+  "updated_at": "2026-10-12T01:48:55.128966+00:00",
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "result": "FAILED_RUNTIME_GATE"
+}

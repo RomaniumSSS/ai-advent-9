@@ -1,0 +1,16 @@
+test_parseable_bad_final_with_reasoning_field_is_opaque_in_snapshot (test_profile08.Profile08Tests) ... FAIL
+
+======================================================================
+FAIL: test_parseable_bad_final_with_reasoning_field_is_opaque_in_snapshot (test_profile08.Profile08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 183, in test_parseable_bad_final_with_reasoning_field_is_opaque_in_snapshot
+    self.assertEqual(result['trace']['validation_code'],'invalid_synthesis_points');self.no_reason(result)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile08.py", line 48, in no_reason
+    self.assertTrue(REASON not in json.dumps(value,ensure_ascii=False),'reasoning leaked')
+AssertionError: False is not true : reasoning leaked
+
+----------------------------------------------------------------------
+Ran 1 test in 0.016s
+
+FAILED (failures=1)

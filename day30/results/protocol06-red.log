@@ -1,0 +1,117 @@
+test_code_missing_cannot_drop_partial_none_or_uncovered_full (test_protocol06.Protocol06Tests) ... ERROR
+test_doubtful_only_effective_full_and_never_upgrade (test_protocol06.Protocol06Tests) ... ERROR
+test_empty_points_local_unknown_without_model_missing (test_protocol06.Protocol06Tests) ... ERROR
+test_engine_trace_projection_and_budget_actual_sent_body (test_protocol06.Protocol06Tests) ... ERROR
+test_fit_uses_projected_bytes_and_prunes_only_whole_units (test_protocol06.Protocol06Tests) ... ERROR
+test_model_cannot_supply_quote_anchor_ids_or_offsets (test_protocol06.Protocol06Tests) ... ERROR
+test_point_derives_full_private_quote_original_span_and_metadata (test_protocol06.Protocol06Tests) ... ERROR
+test_point_unknown_background_cross_aspect_and_removed_ids_rejected (test_protocol06.Protocol06Tests) ... ERROR
+test_projection_full_text_exact_metadata_and_stage_local_context (test_protocol06.Protocol06Tests) ... ERROR
+test_schema_only_retained_proof_and_full_doubts_no_empty_enum (test_protocol06.Protocol06Tests) ... ERROR
+
+======================================================================
+ERROR: test_code_missing_cannot_drop_partial_none_or_uncovered_full (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 56, in test_code_missing_cannot_drop_partial_none_or_uncovered_full
+    answer=protocol.materialize_synthesis(output(),ASPECTS,[UNIT],cov,diagnostic)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 99, in materialize_synthesis
+    manifests={m['evidence_id']:m['anchors'] for m in anchor_manifest(units)}
+NameError: name 'anchor_manifest' is not defined
+
+======================================================================
+ERROR: test_doubtful_only_effective_full_and_never_upgrade (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 64, in test_doubtful_only_effective_full_and_never_upgrade
+    answer=protocol.materialize_synthesis(raw,ASPECTS,[UNIT],metadata(),diagnostic)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 99, in materialize_synthesis
+    manifests={m['evidence_id']:m['anchors'] for m in anchor_manifest(units)}
+NameError: name 'anchor_manifest' is not defined
+
+======================================================================
+ERROR: test_empty_points_local_unknown_without_model_missing (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 82, in test_empty_points_local_unknown_without_model_missing
+    diagnostic={};answer=protocol.materialize_synthesis(raw,ASPECTS,[UNIT],metadata(),diagnostic)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 99, in materialize_synthesis
+    manifests={m['evidence_id']:m['anchors'] for m in anchor_manifest(units)}
+NameError: name 'anchor_manifest' is not defined
+
+======================================================================
+ERROR: test_engine_trace_projection_and_budget_actual_sent_body (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 99, in test_engine_trace_projection_and_budget_actual_sent_body
+    result=service.Engine([chunk()],Fake()).answer('Какие условия дня 30?',[]);trace=result['trace']
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 255, in answer
+    raise error(code,validation,copy.deepcopy(result)) from None
+service.InferenceFailure: provider_or_internal_failure
+
+======================================================================
+ERROR: test_fit_uses_projected_bytes_and_prunes_only_whole_units (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 92, in test_fit_uses_projected_bytes_and_prunes_only_whole_units
+    messages,kept,_,budget=service.fit_prompt('synthetic system','current question',[],before,
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 84, in fit_prompt
+    body['sources' if phase=='selection' else 'originals']=model_projection(units,phase)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 59, in model_projection
+    manifests={m['evidence_id']:m['anchors'] for m in anchor_manifest(units)} if phase=='synthesis' else {}
+NameError: name 'anchor_manifest' is not defined
+
+======================================================================
+ERROR: test_model_cannot_supply_quote_anchor_ids_or_offsets (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 52, in test_model_cannot_supply_quote_anchor_ids_or_offsets
+    with self.assertRaisesRegex(ValueError,'invalid_synthesis_points'):protocol.materialize_synthesis(raw,ASPECTS,[UNIT],metadata())
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 99, in materialize_synthesis
+    manifests={m['evidence_id']:m['anchors'] for m in anchor_manifest(units)}
+NameError: name 'anchor_manifest' is not defined
+
+======================================================================
+ERROR: test_point_derives_full_private_quote_original_span_and_metadata (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 33, in test_point_derives_full_private_quote_original_span_and_metadata
+    before=copy.deepcopy(unit);diagnostic={};answer=protocol.materialize_synthesis(output(),ASPECTS,[unit],metadata(),diagnostic)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 99, in materialize_synthesis
+    manifests={m['evidence_id']:m['anchors'] for m in anchor_manifest(units)}
+NameError: name 'anchor_manifest' is not defined
+
+======================================================================
+ERROR: test_point_unknown_background_cross_aspect_and_removed_ids_rejected (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 44, in test_point_unknown_background_cross_aspect_and_removed_ids_rejected
+    with self.assertRaisesRegex(ValueError,'invalid_point_reference'):protocol.materialize_synthesis(raw,ASPECTS,[UNIT],metadata())
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 99, in materialize_synthesis
+    manifests={m['evidence_id']:m['anchors'] for m in anchor_manifest(units)}
+NameError: name 'anchor_manifest' is not defined
+
+======================================================================
+ERROR: test_projection_full_text_exact_metadata_and_stage_local_context (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 24, in test_projection_full_text_exact_metadata_and_stage_local_context
+    projected=protocol.model_projection([unit,other],phase)[0]
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 59, in model_projection
+    manifests={m['evidence_id']:m['anchors'] for m in anchor_manifest(units)} if phase=='synthesis' else {}
+NameError: name 'anchor_manifest' is not defined
+
+======================================================================
+ERROR: test_schema_only_retained_proof_and_full_doubts_no_empty_enum (test_protocol06.Protocol06Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_protocol06.py", line 73, in test_schema_only_retained_proof_and_full_doubts_no_empty_enum
+    schema=protocol.synthesis_schema(ASPECTS,[UNIT,background],metadata());props=schema['properties']
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/protocol.py", line 87, in synthesis_schema
+    point['anchor_ids']['items']['enum']=[a['anchor_id'] for m in anchor_manifest(units)
+NameError: name 'anchor_manifest' is not defined
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.018s
+
+FAILED (errors=10)

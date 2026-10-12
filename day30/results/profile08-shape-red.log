@@ -1,0 +1,107 @@
+test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) ... test_error_response_data_unknown_shape_opaque_before_snapshot (test_privacy_shape08.PrivacyShape08Tests) ... FAIL
+test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque (test_privacy_shape08.PrivacyShape08Tests) ... test_safely_shaped_invalid_reference_keeps_exact_final_diagnostics (test_privacy_shape08.PrivacyShape08Tests) ... ok
+
+======================================================================
+FAIL: test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) (variant='analysis_only')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 46, in test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) (variant='extra_analysis')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 46, in test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) (variant='point_extra')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 46, in test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) (variant='point_wrong_text')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 46, in test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) (variant='conclusion_extra')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 46, in test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) (variant='nested_doubts')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 46, in test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_error_response_data_unknown_shape_opaque_before_snapshot (test_privacy_shape08.PrivacyShape08Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 85, in test_error_response_data_unknown_shape_opaque_before_snapshot
+    receipt=self.run_app(Error());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque (test_privacy_shape08.PrivacyShape08Tests) (variant='root_extra')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 64, in test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque (test_privacy_shape08.PrivacyShape08Tests) (variant='nested_evidence')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 64, in test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+======================================================================
+FAIL: test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque (test_privacy_shape08.PrivacyShape08Tests) (variant='nested_coverage')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 64, in test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque
+    receipt=self.run_app(Bad());self.assertEqual(receipt['status'],'error')
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_privacy_shape08.py", line 24, in run_app
+    self.assertTrue(REASON not in json.dumps(receipt),'reasoning leaked into receipt')
+AssertionError: False is not true : reasoning leaked into receipt
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.146s
+
+FAILED (failures=10)

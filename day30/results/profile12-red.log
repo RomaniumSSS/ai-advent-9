@@ -1,0 +1,44 @@
+test_actual_wire_sorted_provider_order_budget_identity_and_raw_final (test_profile12.Profile12Tests) ... FAIL
+test_lossless_stage_specific_aliases_and_strict_unknown_mixed_missing (test_profile12.Profile12Tests) ... ERROR
+test_normalized_invalid_refs_quantity_and_no_canonical_fallback (test_profile12.Profile12Tests) ... FAIL
+test_safe_wire_raw_is_exact_unknown_reasoning_shapes_opaque (test_profile12.Profile12Tests) ... ERROR
+
+======================================================================
+ERROR: test_lossless_stage_specific_aliases_and_strict_unknown_mixed_missing (test_profile12.Profile12Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile12.py", line 19, in test_lossless_stage_specific_aliases_and_strict_unknown_mixed_missing
+    wire=protocol.wire_value('synthesis',canonical)
+AttributeError: module 'protocol' has no attribute 'wire_value'
+
+======================================================================
+ERROR: test_safe_wire_raw_is_exact_unknown_reasoning_shapes_opaque (test_profile12.Profile12Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile12.py", line 55, in test_safe_wire_raw_is_exact_unknown_reasoning_shapes_opaque
+    wire=protocol.wire_value('synthesis',synthesis());wire['a_points'][0]['evidence_id']='invalid-reference'
+AttributeError: module 'protocol' has no attribute 'wire_value'
+
+======================================================================
+FAIL: test_actual_wire_sorted_provider_order_budget_identity_and_raw_final (test_profile12.Profile12Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile12.py", line 38, in test_actual_wire_sorted_provider_order_budget_identity_and_raw_final
+    self.assertEqual(local.MODEL,MODEL);self.assertEqual(local.GEN_DIGEST,DIGEST)
+AssertionError: 'qwen3.5:9b-q4_K_M' != 'qwen3:8b-q8_0'
+- qwen3.5:9b-q4_K_M
++ qwen3:8b-q8_0
+
+
+======================================================================
+FAIL: test_normalized_invalid_refs_quantity_and_no_canonical_fallback (test_profile12.Profile12Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile12.py", line 70, in test_normalized_invalid_refs_quantity_and_no_canonical_fallback
+    with self.assertRaises(service.InferenceFailure) as caught:service.Engine([chunk()],Bad('refs' if bad=='refs' else None)).answer('Какие условия дня 30?',[])
+AssertionError: InferenceFailure not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.035s
+
+FAILED (failures=2, errors=2)

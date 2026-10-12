@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "model": "qwen3:8b-q8_0",
+  "digest": "e56358ca25dd14db6853a9f68a92d717aaa6f0a94250a72d1a0f3d86a9f30130",
+  "metadata_sha256": "edd81f9c3f72975af272cebbea20670701374ed0926c0041e66639aaafbdf8b1",
+  "pre": "qwen2",
+  "token_count": 151936,
+  "merge_count": 151387,
+  "synthetic_sample_counts": [
+    9,
+    2,
+    2,
+    3
+  ],
+  "budget_methods": {
+    "selection": "local_qwen2_bpe_with_reserves",
+    "synthesis": "local_qwen2_bpe_with_reserves"
+  },
+  "unit_character_span_preserved": true,
+  "generation_calls_fake": 2,
+  "inference": false
+}

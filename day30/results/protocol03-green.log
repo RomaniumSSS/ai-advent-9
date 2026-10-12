@@ -1,0 +1,15 @@
+test_multi_iteration_pruning_counts_all_history_and_rebuilds_final_mapping (test_protocol03.EnginePruningTests) ... ok
+test_duplicate_json_keys_every_level_and_escaped_key (test_protocol03.Protocol03Tests) ... ok
+test_full_can_be_conservatively_missing_partial_cannot_be_hidden (test_protocol03.Protocol03Tests) ... ok
+test_invalid_anchor_mapping_background_or_missing_or_conclusion (test_protocol03.Protocol03Tests) ... ok
+test_no_point_output_truncation_and_summary_limit (test_protocol03.Protocol03Tests) ... ok
+test_pruning_rebuilds_mapping_and_downgrades_coverage (test_protocol03.Protocol03Tests) ... ok
+test_renderer_preserves_known_proposal_and_names_missing_result (test_protocol03.Protocol03Tests) ... ok
+test_selection_object_one_id_many_aspects_and_consistency (test_protocol03.Protocol03Tests) ... ok
+test_split_proposal_and_explicit_completion_grammar (test_protocol03.Protocol03Tests) ... ok
+test_unknown_points_exact_local_contract (test_protocol03.Protocol03Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.020s
+
+OK

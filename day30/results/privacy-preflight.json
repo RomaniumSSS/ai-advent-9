@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-11T22:32:24.087969+00:00",
+  "public_candidate_files": 75,
+  "private_fragments_checked": 971,
+  "exact_private_text_hits": [],
+  "credential_scan": "PASS in separate preflight",
+  "private_gitignored": true,
+  "limitation": "Exact-text check supplements manual privacy review; does not prove absence of all semantic disclosure."
+}

@@ -1,0 +1,38 @@
+test_capacity_rejects_immediately_and_recovers (test_connections.ConnectionTests.test_capacity_rejects_immediately_and_recovers) ... FAIL
+{"service": "day30", "status": "connection_error"}
+{"service": "day30", "status": "connection_error"}
+test_completed_and_malformed_connections_release_capacity (test_connections.ConnectionTests.test_completed_and_malformed_connections_release_capacity) ... ok
+test_fragmented_body_absolute_deadline_before_inference (test_connections.ConnectionTests.test_fragmented_body_absolute_deadline_before_inference) ... FAIL
+test_fragmented_headers_absolute_deadline_and_release (test_connections.ConnectionTests.test_fragmented_headers_absolute_deadline_and_release) ... FAIL
+
+======================================================================
+FAIL: test_capacity_rejects_immediately_and_recovers (test_connections.ConnectionTests.test_capacity_rejects_immediately_and_recovers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_connections.py", line 61, in test_capacity_rejects_immediately_and_recovers
+    self.assertTrue(closed,'capacity overflow connection was retained')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : capacity overflow connection was retained
+
+======================================================================
+FAIL: test_fragmented_body_absolute_deadline_before_inference (test_connections.ConnectionTests.test_fragmented_body_absolute_deadline_before_inference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_connections.py", line 52, in test_fragmented_body_absolute_deadline_before_inference
+    self.assertTrue(closed,'fragmented body survived absolute deadline');self.assertLess(elapsed,.9)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : fragmented body survived absolute deadline
+
+======================================================================
+FAIL: test_fragmented_headers_absolute_deadline_and_release (test_connections.ConnectionTests.test_fragmented_headers_absolute_deadline_and_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_connections.py", line 47, in test_fragmented_headers_absolute_deadline_and_release
+    self.assertTrue(closed,'fragmented headers survived absolute deadline')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : fragmented headers survived absolute deadline
+
+----------------------------------------------------------------------
+Ran 4 tests in 4.171s
+
+FAILED (failures=3)

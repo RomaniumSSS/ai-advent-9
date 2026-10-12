@@ -1,0 +1,12 @@
+test_exit_timeout_prevents_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_invalid_bootstrap_not_retried (test_deploy_lifecycle.LifecycleTests) ... ok
+test_pid_exit_alone_does_not_allow_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_restart_waits_for_both_job_and_prior_pid (test_deploy_lifecycle.LifecycleTests) ... ok
+test_start_performs_one_bootstrap_without_hidden_retry (test_deploy_lifecycle.LifecycleTests) ... ok
+test_stop_waits_for_exit_without_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_unknown_launchd_error_is_not_assumed_unregistered (test_deploy_lifecycle.LifecycleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.020s
+
+OK

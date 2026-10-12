@@ -1,0 +1,108 @@
+test_capacity_rejects_immediately_and_recovers (test_connections.ConnectionTests) ... {"service": "day30", "status": "connection_error"}
+ok
+test_completed_and_malformed_connections_release_capacity (test_connections.ConnectionTests) ... ok
+test_fragmented_body_absolute_deadline_before_inference (test_connections.ConnectionTests) ... {"service": "day30", "status": "connection_error"}
+ok
+test_fragmented_headers_absolute_deadline_and_release (test_connections.ConnectionTests) ... {"service": "day30", "status": "connection_error"}
+ok
+test_exit_timeout_prevents_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_invalid_bootstrap_not_retried (test_deploy_lifecycle.LifecycleTests) ... ok
+test_pid_exit_alone_does_not_allow_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_restart_waits_for_both_job_and_prior_pid (test_deploy_lifecycle.LifecycleTests) ... ok
+test_start_performs_one_bootstrap_without_hidden_retry (test_deploy_lifecycle.LifecycleTests) ... ok
+test_stop_waits_for_exit_without_bootstrap (test_deploy_lifecycle.LifecycleTests) ... ok
+test_unknown_launchd_error_is_not_assumed_unregistered (test_deploy_lifecycle.LifecycleTests) ... ok
+test_background_context_not_a_proof (test_extended.ExtendedCore) ... ok
+test_deploy_prepare_contains_no_token_and_correct_process (test_extended.ExtendedCore) ... ok
+test_followup_uses_user_questions_and_fresh_embedding (test_extended.ExtendedCore) ... ok
+test_generation_payload_same_model_options_thinking (test_extended.ExtendedCore) ... ok
+test_injection_treated_as_original_data (test_extended.ExtendedCore) ... ok
+test_insecure_env_rejected (test_extended.ExtendedCore) ... ok
+test_ollama_fixed_and_no_proxy_redirect (test_extended.ExtendedCore) ... ok
+test_partial_not_upgraded (test_extended.ExtendedCore) ... ok
+test_provider_model_done_and_count (test_extended.ExtendedCore) ... ok
+test_schema_reserve_included (test_extended.ExtendedCore) ... ok
+test_selection_duplicate_and_missing_aspect_rejected (test_extended.ExtendedCore) ... ok
+test_synthesis_excludes_removed_units_and_refs (test_extended.ExtendedCore) ... ok
+test_synthesis_timeout_has_exactly_two_calls (test_extended.ExtendedCore) ... ok
+test_valid_partial_retains_unknown (test_extended.ExtendedCore) ... ok
+test_fixed_assignment_cannot_request_all (test_extended.ExtendedHttp) ... {"request_id": "057711b6f6054dfd80cf83d869719b22", "status": "done", "metrics": {}}
+ok
+test_invalid_requests_do_not_consume_rate (test_extended.ExtendedHttp) ... {"request_id": "d9795604e9164accbeab5a9773ea1caa", "status": "done", "metrics": {}}
+ok
+test_rate_window_expires (test_extended.ExtendedHttp) ... {"request_id": "30be2c09dc504ea9a64a7e2e8fc7ef35", "status": "done", "metrics": {}}
+ok
+test_history_api_and_unknown_id_protected (test_extended.ExtendedHttp) ... {"request_id": "13b9881bf4e344ccbfbdcec4a677f673", "status": "done", "metrics": {}}
+ok
+test_shared_flock_busy_before_accept (test_extended.ExtendedHttp) ... {"request_id": "66870db2822d45ba85d9fae8879c2eec", "status": "done", "metrics": {}}
+ok
+test_trace_not_returned_by_api (test_extended.ExtendedHttp) ... {"request_id": "b3b1831c8ab44efb959efc4a46fd616a", "status": "done", "metrics": {}}
+ok
+test_query_credentials_refused (test_extended.ExtendedHttp) ... ok
+test_multi_iteration_pruning_counts_all_history_and_rebuilds_final_mapping (test_protocol03.EnginePruningTests) ... ok
+test_duplicate_json_keys_every_level_and_escaped_key (test_protocol03.Protocol03Tests) ... ok
+test_full_can_be_conservatively_missing_partial_cannot_be_hidden (test_protocol03.Protocol03Tests) ... ok
+test_invalid_anchor_mapping_background_or_missing_or_conclusion (test_protocol03.Protocol03Tests) ... ok
+test_no_point_output_truncation_and_summary_limit (test_protocol03.Protocol03Tests) ... ok
+test_pruning_rebuilds_mapping_and_downgrades_coverage (test_protocol03.Protocol03Tests) ... ok
+test_renderer_preserves_known_proposal_and_names_missing_result (test_protocol03.Protocol03Tests) ... ok
+test_selection_object_one_id_many_aspects_and_consistency (test_protocol03.Protocol03Tests) ... ok
+test_split_proposal_and_explicit_completion_grammar (test_protocol03.Protocol03Tests) ... ok
+test_unknown_points_exact_local_contract (test_protocol03.Protocol03Tests) ... ok
+test_application_persists_private_trace_and_sanitizes_public_and_logs (test_review_regressions.DiagnosticsTests) ... ok
+test_selection_and_synthesis_failures_keep_raw_phase_and_counts (test_review_regressions.DiagnosticsTests) ... ok
+test_timeout_keeps_attempted_and_completed_counts (test_review_regressions.DiagnosticsTests) ... ok
+test_actual_engine_answer_has_focus_in_second_turn (test_review_regressions.FocusTests) ... ok
+test_day30_shape_does_not_fall_back_to_whole_chunk (test_review_regressions.FocusTests) ... ok
+test_legacy_fallback_only_legacy_refs (test_review_regressions.FocusTests) ... ok
+test_renumbered_span_matches_but_neighbor_and_changed_metadata_do_not (test_review_regressions.FocusTests) ... ok
+test_partial_headers_and_body_use_absolute_deadline_and_close_socket (test_review_regressions.ProviderDeadlineTests) ... ok
+test_redirect_error_body_and_invalid_provider_json_observable_no_retry (test_review_regressions.WireContracts) ... ok
+test_successful_chat_payload_and_close_no_redirect (test_review_regressions.WireContracts) ... ok
+test_synthesis_schema_rejects_bad_status_duplicates_and_extra_fields (test_review_regressions.WireContracts) ... ok
+test_transport_partial_snapshot_is_private_inference_error (test_review_regressions.WireContracts) ... ok
+test_duplicate_same_id_rejected_without_synthesis_even_different_aspects (test_selection03.Selection03Tests) ... ok
+test_one_evidence_id_supports_two_requested_aspects_in_two_calls (test_selection03.Selection03Tests) ... ok
+test_provider_schema_has_keyed_mapping_constraint (test_selection03.Selection03Tests) ... ok
+test_bad_ids_no_synthesis (test_service.CoreTests) ... ok
+test_bad_refs (test_service.CoreTests) ... ok
+test_current_question_never_truncated (test_service.CoreTests) ... ok
+test_demo_before_retrieval_and_prompt (test_service.CoreTests) ... ok
+test_history_budget_drops_questions_before_whole_sources (test_service.CoreTests) ... ok
+test_invalid_json_length_timeout_no_retry (test_service.CoreTests) ... ok
+test_lock_release_after_error (test_service.CoreTests) ... ok
+test_new_topic_does_not_use_prior_assistant_fact (test_service.CoreTests) ... ok
+test_private_modes_restart_and_scope (test_service.CoreTests) ... ok
+test_question_limits (test_service.CoreTests) ... ok
+test_shared_lock_busy (test_service.CoreTests) ... ok
+test_two_calls_and_original_metadata (test_service.CoreTests) ... ok
+test_unknown_no_synthesis (test_service.CoreTests) ... ok
+test_async_receipt_history (test_service.HttpTests) ... {"request_id": "e5b2dccef8a64734be46ada1216eefe4", "status": "done", "metrics": {}}
+ok
+test_auth_private_and_static (test_service.HttpTests) ... ok
+test_body_question_scope_no_bypass (test_service.HttpTests) ... ok
+test_busy_no_queue (test_service.HttpTests) ... {"request_id": "af5ae55ccc80489f9ed0f86816b815cd", "status": "done", "metrics": {}}
+ok
+test_demo_store_isolation (test_service.HttpTests) ... {"request_id": "cf6cfccb5afb439ca664656f8a23c704", "status": "done", "metrics": {}}
+ok
+test_failure_sanitized_and_unlock (test_service.HttpTests) ... {"request_id": "fa4269e138504e249e55912152063dd9", "status": "error", "metrics": {}}
+{"request_id": "78f7b71f52e14f9d9e7d5cd75942b9ce", "status": "done", "metrics": {}}
+ok
+test_headers_safe_dom (test_service.HttpTests) ... ok
+test_host_origin (test_service.HttpTests) ... {"request_id": "4283846ec0544017a4890b68faac3145", "status": "done", "metrics": {}}
+ok
+test_invalid_json_and_content_type (test_service.HttpTests) ... ok
+test_rate_six_accepted (test_service.HttpTests) ... {"request_id": "30fe73af58424935a21533470b9f2e40", "status": "done", "metrics": {}}
+{"request_id": "99a4824dd8f740808277d55a11c2af50", "status": "done", "metrics": {}}
+{"request_id": "8225a385aa0d470da815681dc0111bbd", "status": "done", "metrics": {}}
+{"request_id": "339e0866687746fe9e7a776fcd76ef27", "status": "done", "metrics": {}}
+{"request_id": "41cb220434fe456bbe92eb7a0c889ed7", "status": "done", "metrics": {}}
+{"request_id": "aaa8e51cdbf14cfd9d7c08312859db3d", "status": "done", "metrics": {}}
+ok
+test_stalled_tcp_does_not_block_authenticated_tls (test_tls.TlsTests) ... {"service": "day30", "status": "connection_error"}
+ok
+
+----------------------------------------------------------------------
+Ran 81 tests in 17.602s
+
+OK

@@ -1,0 +1,12 @@
+test_actual_wire_stage_caps_trace_and_options_do_not_leak (test_profile09.Profile09Tests) ... ok
+test_client_accepts_completion_before1230_not_old920 (test_profile09.Profile09Tests) ... ok
+test_coupled_worker_join_plist_and_legacy_plist_preservation (test_profile09.Profile09Tests) ... ok
+test_default_routes_300_and_short_timeout_patch_still_applies_to_synthesis (test_profile09.Profile09Tests) ... ok
+test_output1408_fits_saved_bound_and_observed_cap_is_strict (test_profile09.Profile09Tests) ... ok
+test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return (test_profile09.Profile09Tests) ... ok
+test_video_terminal_wait_uses1230_seconds (test_profile09.Profile09Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.555s
+
+OK

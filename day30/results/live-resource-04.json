@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-11T22:48:56+00:00",
+  "phase": "first profile04 synthesis",
+  "memory_pressure_level": 2,
+  "provider_api_ps": [
+    {
+      "model": "qwen3.5:9b-q4_K_M",
+      "size": 6185507879,
+      "size_vram": 6185507879,
+      "context_length": 8192
+    }
+  ],
+  "measurement_limit": "Single read-only snapshot during actual inference; not a peak RSS measurement or memory benchmark."
+}

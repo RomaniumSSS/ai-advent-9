@@ -1,0 +1,139 @@
+test_application_persists_private_trace_and_sanitizes_public_and_logs (test_review_regressions.DiagnosticsTests) ... FAIL
+test_selection_and_synthesis_failures_keep_raw_phase_and_counts (test_review_regressions.DiagnosticsTests) ... test_timeout_keeps_attempted_and_completed_counts (test_review_regressions.DiagnosticsTests) ... test_actual_engine_answer_has_focus_in_second_turn (test_review_regressions.FocusTests) ... FAIL
+test_day30_shape_does_not_fall_back_to_whole_chunk (test_review_regressions.FocusTests) ... ok
+test_legacy_fallback_only_legacy_refs (test_review_regressions.FocusTests) ... ok
+test_renumbered_span_matches_but_neighbor_and_changed_metadata_do_not (test_review_regressions.FocusTests) ... FAIL
+test_partial_headers_and_body_use_absolute_deadline_and_close_socket (test_review_regressions.ProviderDeadlineTests) ... 
+======================================================================
+FAIL: test_application_persists_private_trace_and_sanitizes_public_and_logs (test_review_regressions.DiagnosticsTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 82, in test_application_persists_private_trace_and_sanitizes_public_and_logs
+    self.assertIn('synthesis_raw_response',stored.get('trace',{}))
+AssertionError: 'synthesis_raw_response' not found in {}
+
+======================================================================
+FAIL: test_selection_and_synthesis_failures_keep_raw_phase_and_counts (test_review_regressions.DiagnosticsTests) (phase='selection', bad='ids')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 48, in test_selection_and_synthesis_failures_keep_raw_phase_and_counts
+    try:engine.answer('Какие условия дня 30?',[])
+ValueError: invalid_evidence_id
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 51, in test_selection_and_synthesis_failures_keep_raw_phase_and_counts
+    self.assertIsNotNone(partial,'error discarded accumulated trace')
+AssertionError: unexpectedly None : error discarded accumulated trace
+
+======================================================================
+FAIL: test_selection_and_synthesis_failures_keep_raw_phase_and_counts (test_review_regressions.DiagnosticsTests) (phase='selection', bad='json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 48, in test_selection_and_synthesis_failures_keep_raw_phase_and_counts
+    try:engine.answer('Какие условия дня 30?',[])
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 51, in test_selection_and_synthesis_failures_keep_raw_phase_and_counts
+    self.assertIsNotNone(partial,'error discarded accumulated trace')
+AssertionError: unexpectedly None : error discarded accumulated trace
+
+======================================================================
+FAIL: test_selection_and_synthesis_failures_keep_raw_phase_and_counts (test_review_regressions.DiagnosticsTests) (phase='synthesis', bad='refs')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 48, in test_selection_and_synthesis_failures_keep_raw_phase_and_counts
+    try:engine.answer('Какие условия дня 30?',[])
+ValueError: invalid_synthesis_refs
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 51, in test_selection_and_synthesis_failures_keep_raw_phase_and_counts
+    self.assertIsNotNone(partial,'error discarded accumulated trace')
+AssertionError: unexpectedly None : error discarded accumulated trace
+
+======================================================================
+FAIL: test_timeout_keeps_attempted_and_completed_counts (test_review_regressions.DiagnosticsTests) (phase='selection')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 67, in test_timeout_keeps_attempted_and_completed_counts
+    try:service.Engine([chunk()],model).answer('Какие условия дня 30?',[])
+TimeoutError: PRIVATE_EXCEPTION_SENTINEL
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 69, in test_timeout_keeps_attempted_and_completed_counts
+    partial=getattr(exc,'partial_result',None);self.assertIsNotNone(partial)
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_timeout_keeps_attempted_and_completed_counts (test_review_regressions.DiagnosticsTests) (phase='synthesis')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 67, in test_timeout_keeps_attempted_and_completed_counts
+    try:service.Engine([chunk()],model).answer('Какие условия дня 30?',[])
+TimeoutError: PRIVATE_EXCEPTION_SENTINEL
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 69, in test_timeout_keeps_attempted_and_completed_counts
+    partial=getattr(exc,'partial_result',None);self.assertIsNotNone(partial)
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_actual_engine_answer_has_focus_in_second_turn (test_review_regressions.FocusTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 27, in test_actual_engine_answer_has_focus_in_second_turn
+    self.assertEqual(body['dialogue_focus']['evidence_ids'],['S1.U1'])
+AssertionError: Lists differ: [] != ['S1.U1']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'S1.U1'
+
+- []
++ ['S1.U1']
+
+======================================================================
+FAIL: test_renumbered_span_matches_but_neighbor_and_changed_metadata_do_not (test_review_regressions.FocusTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 34, in test_renumbered_span_matches_but_neighbor_and_changed_metadata_do_not
+    self.assertEqual(focus['evidence_ids'],['S4.U7'])
+AssertionError: Lists differ: [] != ['S4.U7']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'S4.U7'
+
+- []
++ ['S4.U7']
+
+======================================================================
+FAIL: test_partial_headers_and_body_use_absolute_deadline_and_close_socket (test_review_regressions.ProviderDeadlineTests) (phase='headers')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 118, in test_partial_headers_and_body_use_absolute_deadline_and_close_socket
+    with self.assertRaises(TimeoutError):client.request('/api/tags')
+AssertionError: TimeoutError not raised
+
+======================================================================
+FAIL: test_partial_headers_and_body_use_absolute_deadline_and_close_socket (test_review_regressions.ProviderDeadlineTests) (phase='body')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_review_regressions.py", line 118, in test_partial_headers_and_body_use_absolute_deadline_and_close_socket
+    with self.assertRaises(TimeoutError):client.request('/api/tags')
+AssertionError: TimeoutError not raised
+
+----------------------------------------------------------------------
+Ran 8 tests in 5.071s
+
+FAILED (failures=10)

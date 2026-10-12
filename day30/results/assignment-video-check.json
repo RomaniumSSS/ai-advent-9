@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "duration_seconds": 517.0,
+  "width": 1280,
+  "height": 1000,
+  "codec": "h264",
+  "audio_streams": 0,
+  "bytes": 10183644,
+  "sha256": "38ff8dae21fc533458eeec8321c0c4c7d0166e2a7bcbde2b1e835c22d21130e5",
+  "full_decode": "PASS",
+  "speed": "original; no speed change",
+  "frames": [
+    {
+      "seconds": 0.5
+    },
+    {
+      "seconds": 151.801
+    },
+    {
+      "seconds": 288.895
+    },
+    {
+      "seconds": 502.368
+    },
+    {
+      "seconds": 516.0
+    }
+  ],
+  "new_record_queries": 3,
+  "checked_at": "2026-10-12T17:57:18.173076+00:00",
+  "frame_review": "Root viewed actual start, all three completed answers, final API metrics, and three contact sheets showing each opened original",
+  "privacy": "assignment-only server; all six receipts source=assignment; no credential/private sources visible in reviewed frames",
+  "frame_review_scope": "key frames/contact sheets; full video decoded by ffmpeg",
+  "source_disclosure_seconds": [
+    160,
+    296,
+    509
+  ]
+}

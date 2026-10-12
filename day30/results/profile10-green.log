@@ -1,0 +1,8 @@
+test_current_capacity_and_lifecycle_bounds (test_profile10.Profile10Tests) ... ok
+test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three (test_profile10.Profile10Tests) ... ok
+test_engine_sends_last_rebuilt_snapshot_once_per_stage (test_profile10.Profile10Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.023s
+
+OK

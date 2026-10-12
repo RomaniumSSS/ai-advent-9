@@ -1,0 +1,51 @@
+test_current_capacity_and_lifecycle_bounds (test_profile10.Profile10Tests) ... FAIL
+test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three (test_profile10.Profile10Tests) ... test_engine_sends_last_rebuilt_snapshot_once_per_stage (test_profile10.Profile10Tests) ... ERROR
+
+======================================================================
+ERROR: test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three (test_profile10.Profile10Tests) (phase='selection')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 33, in test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three
+    initial=builder(original,[]);fresh=builder(original[:3],[])
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 31, in builder
+    if phase=='selection':return service.selection_context(ASPECTS,current,[u['evidence_id'] for u in original],query,[prior])
+AttributeError: module 'service' has no attribute 'selection_context'
+
+======================================================================
+ERROR: test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three (test_profile10.Profile10Tests) (phase='synthesis')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 33, in test_each_budget_uses_fresh_context_and_retains_earliest_fitting_three
+    initial=builder(original,[]);fresh=builder(original[:3],[])
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 32, in builder
+    return service.synthesis_context(ASPECTS,current,cov)
+AttributeError: module 'service' has no attribute 'synthesis_context'
+
+======================================================================
+ERROR: test_engine_sends_last_rebuilt_snapshot_once_per_stage (test_profile10.Profile10Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 88, in test_engine_sends_last_rebuilt_snapshot_once_per_stage
+    with patch('service.budget_for',side_effect=inspect):result=service.Engine([chunk('c'+str(i)) for i in range(5)],fake).answer('Какие условия дня 30?',[])
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 288, in answer
+    raise error(code,validation,copy.deepcopy(result)) from None
+service.InferenceFailure: provider_or_internal_failure
+
+======================================================================
+FAIL: test_current_capacity_and_lifecycle_bounds (test_profile10.Profile10Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile10.py", line 95, in test_current_capacity_and_lifecycle_bounds
+    self.assertEqual(service.generation_options('synthesis'),{'num_ctx':8192,'num_predict':1920,'temperature':.7,'top_p':.8})
+AssertionError: {'num_ctx': 8192, 'num_predict': 1408, 'temperature': 0.7, 'top_p': 0.8} != {'num_ctx': 8192, 'num_predict': 1920, 'temperature': 0.7, 'top_p': 0.8}
+- {'num_ctx': 8192, 'num_predict': 1408, 'temperature': 0.7, 'top_p': 0.8}
+?                                   ^ -
+
++ {'num_ctx': 8192, 'num_predict': 1920, 'temperature': 0.7, 'top_p': 0.8}
+?                                   ^^
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.022s
+
+FAILED (failures=1, errors=3)

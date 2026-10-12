@@ -1,0 +1,61 @@
+test_budget_and_observed_count_use_passed_context_and_output (test_profile07.Profile07Tests) ... ERROR
+test_completed_invalid_selection_and_synthesis_keep_only_called_parameters (test_profile07.Profile07Tests) ... ERROR
+test_engine_actual_wire_stage_options_and_trace_budget_match (test_profile07.Profile07Tests) ... ERROR
+test_explicit_options_and_default_payload_are_independent_copies (test_profile07.Profile07Tests) ... ERROR
+test_sent_transport_parse_error_records_selection_options_not_synthesis (test_profile07.Profile07Tests) ... ERROR
+test_unknown_presend_error_no_false_sent_parameters_and_no_shared_default_mutation (test_profile07.Profile07Tests) ... ERROR
+
+======================================================================
+ERROR: test_budget_and_observed_count_use_passed_context_and_output (test_profile07.Profile07Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile07.py", line 45, in test_budget_and_observed_count_use_passed_context_and_output
+    budget=service.budget_for(messages,{},options=options)
+TypeError: budget_for() got an unexpected keyword argument 'options'
+
+======================================================================
+ERROR: test_completed_invalid_selection_and_synthesis_keep_only_called_parameters (test_profile07.Profile07Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile07.py", line 58, in test_completed_invalid_selection_and_synthesis_keep_only_called_parameters
+    self.assertEqual(set(trace['generation_parameters']),set(phases))
+KeyError: 'generation_parameters'
+
+======================================================================
+ERROR: test_engine_actual_wire_stage_options_and_trace_budget_match (test_profile07.Profile07Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile07.py", line 25, in test_engine_actual_wire_stage_options_and_trace_budget_match
+    result=service.Engine([chunk()],Wire()).answer('Какие условия дня 30?',[])
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 254, in answer
+    raise error(code,validation,copy.deepcopy(result)) from None
+service.InferenceFailure: invalid_model_shape
+
+======================================================================
+ERROR: test_explicit_options_and_default_payload_are_independent_copies (test_profile07.Profile07Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile07.py", line 39, in test_explicit_options_and_default_payload_are_independent_copies
+    client.request=request;client.chat([],{},options=explicit);client.chat([],{})
+TypeError: chat() got an unexpected keyword argument 'options'
+
+======================================================================
+ERROR: test_sent_transport_parse_error_records_selection_options_not_synthesis (test_profile07.Profile07Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile07.py", line 70, in test_sent_transport_parse_error_records_selection_options_not_synthesis
+    trace=caught.exception.partial_result['trace'];sent=json.loads(fixture.calls[0]['body'])
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_unknown_presend_error_no_false_sent_parameters_and_no_shared_default_mutation (test_profile07.Profile07Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile07.py", line 79, in test_unknown_presend_error_no_false_sent_parameters_and_no_shared_default_mutation
+    self.assertEqual(trace['generation_attempt_parameters']['selection'],{'model':local.MODEL,'think':False,'options':SELECT})
+KeyError: 'generation_attempt_parameters'
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.035s
+
+FAILED (errors=6)

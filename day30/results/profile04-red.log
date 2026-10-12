@@ -1,0 +1,50 @@
+test_observed_context_overflow_rejected_without_retry (test_profile04.Profile04Tests) ... ok
+test_old_model_response_rejected_before_second_call_without_retry (test_profile04.Profile04Tests) ... FAIL
+test_pinned_generator_identity (test_profile04.Profile04Tests) ... FAIL
+test_qwen35_is_unsupported_and_real_factory_keeps_byte_bound_before_both_calls (test_profile04.Profile04Tests) ... ok
+test_verify_accepts_frozen_9b_and_rejects_old_digest (test_profile04.Profile04Tests) ... ERROR
+test_wire_model_identity_and_options_without_package_default_overrides (test_profile04.Profile04Tests) ... ERROR
+
+======================================================================
+ERROR: test_verify_accepts_frozen_9b_and_rejects_old_digest (test_profile04.Profile04Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile04.py", line 48, in test_verify_accepts_frozen_9b_and_rejects_old_digest
+    verified=client.verify();self.assertEqual(verified['generator_digest'],DIGEST)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/local.py", line 149, in verify
+    if len(entries)!=1 or entries[0].get('digest')!=digest:raise ValueError('model_digest_mismatch:'+name)
+ValueError: model_digest_mismatch:qwen3:8b
+
+======================================================================
+ERROR: test_wire_model_identity_and_options_without_package_default_overrides (test_profile04.Profile04Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile04.py", line 26, in test_wire_model_identity_and_options_without_package_default_overrides
+    self.assertEqual(service.parse_response(received),{});self.assertEqual(len(fixture.calls),1)
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/service.py", line 93, in parse_response
+    raise ValueError('incomplete_model_response')
+ValueError: incomplete_model_response
+
+======================================================================
+FAIL: test_old_model_response_rejected_before_second_call_without_retry (test_profile04.Profile04Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile04.py", line 35, in test_old_model_response_rejected_before_second_call_without_retry
+    with self.assertRaises(service.InferenceFailure) as caught:service.Engine([chunk()],client).answer('Какие условия дня 30?',[])
+AssertionError: InferenceFailure not raised
+
+======================================================================
+FAIL: test_pinned_generator_identity (test_profile04.Profile04Tests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day30/day30/tests/test_profile04.py", line 20, in test_pinned_generator_identity
+    self.assertEqual(local.MODEL,MODEL);self.assertEqual(service.MODEL,MODEL)
+AssertionError: 'qwen3:8b' != 'qwen3.5:9b-q4_K_M'
+- qwen3:8b
++ qwen3.5:9b-q4_K_M
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.529s
+
+FAILED (failures=2, errors=2)

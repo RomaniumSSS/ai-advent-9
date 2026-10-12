@@ -1,0 +1,25 @@
+test_actual_native_wire_limits_budget_trace_and_followup_not_inherited (test_profile11.Profile11Tests) ... ok
+test_background_context_not_second_proof_or_point_unknown_retained (test_profile11.Profile11Tests) ... ok
+test_excess_provider_outputs_fail_at_actual_stage_without_truncation_or_retry (test_profile11.Profile11Tests) ... ok
+test_explicit_current_question_detector_conservative_forms_and_guards (test_profile11.Profile11Tests) ... ok
+test_ordinary_eight_proofs_four_points_and_single_multiple_aspects (test_profile11.Profile11Tests) ... ok
+test_single_oneof_rebuilt_before_each_native_budget_and_earliest_fit (test_profile11.Profile11Tests) ... ok
+test_single_selection_schema_exact_union_and_backend_rejects_excess (test_profile11.Profile11Tests) ... ok
+test_unexpected_synthesis_thinking_rejected_and_private_snapshot_sanitized (test_profile11.Profile11Tests) ... ok
+test_actual_wire_stage_caps_trace_and_options_do_not_leak (test_profile09.Profile09Tests) ... ok
+test_client_accepts_completion_before930_not_old920 (test_profile09.Profile09Tests) ... ok
+test_coupled_worker_join_plist_and_legacy_plist_preservation (test_profile09.Profile09Tests) ... ok
+test_default_routes_300_and_short_timeout_patch_still_applies_to_synthesis (test_profile09.Profile09Tests) ... ok
+test_output1024_fits_saved_bound_and_observed_cap_is_strict (test_profile09.Profile09Tests) ... ok
+test_stalled_headers_and_body_use_short_absolute_cap_and_cancel_before_return (test_profile09.Profile09Tests) ... ok
+test_timeout_closes_transport_before_application_releases_lock (test_profile09.Profile09Tests) ... ok
+test_video_terminal_wait_uses930_seconds (test_profile09.Profile09Tests) ... ok
+test_analysis_root_extra_and_nested_unknown_payloads_opaque_in_actual_store (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_error_response_data_unknown_shape_opaque_before_snapshot (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_nested_selection_arbitrary_fields_and_wrong_types_are_opaque (test_privacy_shape08.PrivacyShape08Tests) ... ok
+test_safely_shaped_invalid_reference_keeps_exact_final_diagnostics (test_privacy_shape08.PrivacyShape08Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 4.262s
+
+OK

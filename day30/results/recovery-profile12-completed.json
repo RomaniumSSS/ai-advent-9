@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-12T02:55:02.632851+00:00",
+  "result": "PASS",
+  "method": "real CA-verified LAN HTTPS GET request receipt and conversation after controlled restart; no content POST",
+  "restart": "results/restart-12-completed.json",
+  "old_state_files_unchanged": 27,
+  "latest_completed_request_status": "done",
+  "answer_and_metrics_unchanged": true,
+  "conversation_turns": 1,
+  "latest_conversation_answer_unchanged": true,
+  "automatic_inference_replay": false,
+  "semantic_quality": "FAIL; recovery PASS does not change semantic verdict",
+  "limits": [
+    "same physical Mac using LAN IP; second physical device NOT PROVEN",
+    "not proof for a future format or implementation"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "reviewer": "fresh Astra",
+  "profile": "profile12",
+  "protocol_version": "protocol06",
+  "wire_schema_version": "profile12_aliases",
+  "baseline": "results/code-baseline-12.json",
+  "baseline_sha256": "cae6e6503e8f790483fb5b1f7df5f46ca3b55945081f095e2affdcb85e005bd5",
+  "normative_spec": "results/review-history/SPEC-profile12.md",
+  "normative_spec_sha256": "9160b74b7ff6367d11a677f368d6db1240954b8c6ad0d67a10b39d58f5488291",
+  "model": "qwen3:8b-q8_0",
+  "code_verdict": "APPROVED",
+  "gate": "FAIL",
+  "runtime": "PASS",
+  "delivered_answer_semantics": "FAIL",
+  "requests_planned_max": 3,
+  "requests_executed": 1,
+  "runtime_pass": 1,
+  "runtime_fail": 0,
+  "semantic_pass": 0,
+  "semantic_fail_delivered_answers": 1,
+  "generation_attempts": 2,
+  "generation_completed": 2,
+  "independent_offline_final": {
+    "tests": 15,
+    "passed": 15,
+    "seconds": 3.209,
+    "runtime": "/usr/bin/python3 3.9.6",
+    "provider": "fake/loopback"
+  },
+  "hashes_verified": 39,
+  "historical_failures_preserved": true,
+  "previous_semantic_result": "FAIL (profile11; not regraded)",
+  "previous_summary": "results/review-history/semantic-summary-11.json",
+  "private_evidence": "private/semantic-review-12.md",
+  "limits": [
+    "known case, not blind holdout",
+    "structural partial/supported/refs do not establish semantics",
+    "no peak RAM measured; idle snapshot not capacity proof",
+    "BPE/profile change is not a precision-only experiment",
+    "human acceptance pending",
+    "second physical device NOT PROVEN"
+  ],
+  "remaining_requests_not_run": 2,
+  "elapsed_seconds": 163.639,
+  "selection_metrics": {
+    "elapsed_seconds": 60.764,
+    "eval_count": 51,
+    "eval_duration": 17489750000,
+    "load_duration": 14164446666,
+    "prompt_eval_count": 1423,
+    "prompt_eval_duration": 29071501000,
+    "tokens_per_second": 2.92,
+    "total_duration": 60756609291
+  },
+  "synthesis_metrics": {
+    "elapsed_seconds": 100.587,
+    "eval_count": 239,
+    "eval_duration": 82227756000,
+    "load_duration": 11979167,
+    "prompt_eval_count": 880,
+    "prompt_eval_duration": 18245769000,
+    "tokens_per_second": 2.91,
+    "total_duration": 100579892708
+  },
+  "source_count": 1,
+  "answer_status": "partial",
+  "semantic_failure_categories": [
+    "unsupported necessity inferred from a premature proposal",
+    "conclusion propagates unsupported necessity"
+  ],
+  "historical_private_queries_completed": 15,
+  "stop": "first semantic failure; next two not submitted; model/parameter loop stops per SPEC12",
+  "restart": {
+    "old_state_files_unchanged": 25,
+    "automatic_replay": false,
+    "CA_verified": true
+  },
+  "budgets": {
+    "selection_input_upper_bound": 2382,
+    "synthesis_input_upper_bound": 1663,
+    "selection_native_schema": 388,
+    "synthesis_native_schema": 248,
+    "output_each": 1024,
+    "template_reserve": 512
+  },
+  "immutable_source_span_metadata": "PASS exact read-only DB match",
+  "privacy": "safe final content/role only; no reasoning field; no public trace",
+  "wire_aliases": "PASS actual order and lossless canonical equality"
+}

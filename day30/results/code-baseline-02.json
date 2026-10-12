@@ -1,0 +1,28 @@
+{
+  "base": "b3e607e",
+  "phase": "post-Astra fixes before smoke02",
+  "runtime": "/usr/bin/python3(3.9.6)",
+  "files": {
+    "SPEC.md": "cf6387f952e12f2660da4927e391cb653256578830a1f1cccd24e9d38119a2cf",
+    "archive.py": "e99fb8eef5468d40b7891bbcdecfd3abd23838858cd5299af2ba6f83ed803b2e",
+    "client.py": "573033dc17ce34a85ed982523cf7abf2eb8ea0bf83a1b34505977a6a6caf72af",
+    "deploy.py": "69cbef97e09cb44cf82ded6ef3155db2bc2084fd488b522a7063eea5a5a106df",
+    "evidence.py": "a0c5a91dfb066ed750a4be9c7d6b15cb5bf919fd353e1e1a8a47b4a4a66a9f48",
+    "local.py": "c766535b95ec006293af4592e9235029d4d4bb8044f33fa2ca2e56b6ca3df72a",
+    "retrieval.py": "8106a2839ed84fe357228929417ed3c7fe44f2b1ed6d15a8d44ecf2404f9e5f3",
+    "server.py": "7e1e822fd3aa4975b540f46c5da81d77a3faa9365bf8fcdd4ba5c05980306cdb",
+    "service.py": "dd031d75a7037fcfe38fcf66a256dfa906ffeff06e380bdca3cb1e10b01dad04",
+    "static/app.js": "820984354326e78a545c49b4e6fced76f501570823b0339031cec8354164b966",
+    "static/index.html": "f78345ac2305ba4f3d86db9b1d98939fd8024dfe8fe1d384c8eaabd10bc60dff",
+    "static/style.css": "0b96e2a46743a46d2c852d42af5e01bef86a6da04a952a5c3bfd0a6344ebd896",
+    "tests/browser_offline.py": "3df0c7e793b70c5288d1ef49efeed7ce473adf3780d161f705c1eae1e82e6697",
+    "tests/test_connections.py": "9b720846ebf02a06783be0b60e938b181c5d3a1851fcacf1e21e96d732271f84",
+    "tests/test_deploy_lifecycle.py": "af9290bd9eecb75828f8dc59f845631de3894699e167dbbedbf053c67a1cfd02",
+    "tests/test_extended.py": "7aaf54ad76b4f357f3af8a7d8136380adcee1908ee1d0456c4f37d88ee01cda3",
+    "tests/test_review_regressions.py": "d9ddc63b095e2b001f05e8e2dd0d17b0e933fe61e01ed1601aaf1e9f1811abd3",
+    "tests/test_service.py": "938b79c96f840b694554472d9244719793b46ac7aba7f286adf533ae27945c67",
+    "tests/test_tls.py": "238b6b457de6092ed222617cf3f35b6b4ea71c0fca336c9a12b6d542e8be3df6",
+    "tokenizer.py": "16041b068d23b2f08a937591f3a7cd4074a0a0d7a3da64c4d37bfaaf14795832",
+    "video/run_demo.py": "c5d095dad183f9de5cb09174ae970a82250c2987ad88c96217d0ab2db8968227"
+  }
+}

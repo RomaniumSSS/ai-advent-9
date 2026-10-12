@@ -1,0 +1,17 @@
+test_application_persists_private_trace_and_sanitizes_public_and_logs (test_review_regressions.DiagnosticsTests) ... ok
+test_selection_and_synthesis_failures_keep_raw_phase_and_counts (test_review_regressions.DiagnosticsTests) ... ok
+test_timeout_keeps_attempted_and_completed_counts (test_review_regressions.DiagnosticsTests) ... ok
+test_actual_engine_answer_has_focus_in_second_turn (test_review_regressions.FocusTests) ... ok
+test_day30_shape_does_not_fall_back_to_whole_chunk (test_review_regressions.FocusTests) ... ok
+test_legacy_fallback_only_legacy_refs (test_review_regressions.FocusTests) ... ok
+test_renumbered_span_matches_but_neighbor_and_changed_metadata_do_not (test_review_regressions.FocusTests) ... ok
+test_partial_headers_and_body_use_absolute_deadline_and_close_socket (test_review_regressions.ProviderDeadlineTests) ... ok
+test_redirect_error_body_and_invalid_provider_json_observable_no_retry (test_review_regressions.WireContracts) ... ok
+test_successful_chat_payload_and_close_no_redirect (test_review_regressions.WireContracts) ... ok
+test_synthesis_schema_rejects_bad_status_duplicates_and_extra_fields (test_review_regressions.WireContracts) ... ok
+test_transport_partial_snapshot_is_private_inference_error (test_review_regressions.WireContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 3.608s
+
+OK

@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-11T22:45:09.549977+00:00",
+  "controlled_restarts": {
+    "main": {
+      "exit_code": 0,
+      "elapsed_seconds": 0.649
+    },
+    "demo": {
+      "exit_code": 0,
+      "elapsed_seconds": 0.202
+    }
+  },
+  "states": {
+    "org.ai-advent.day30": {
+      "base_url": "https://192.168.0.100:8080",
+      "CA_hostname_verified": true,
+      "active": false,
+      "model": "qwen3.5:9b-q4_K_M",
+      "num_ctx": 8192,
+      "rate_limit": "6 / 60 s",
+      "scope": "all"
+    },
+    "org.ai-advent.day30.demo": {
+      "base_url": "https://192.168.0.100:8081",
+      "CA_hostname_verified": true,
+      "active": false,
+      "model": "qwen3.5:9b-q4_K_M",
+      "num_ctx": 8192,
+      "rate_limit": "6 / 60 s",
+      "scope": "assignment"
+    }
+  },
+  "pids": {
+    "org.ai-advent.day30": 1092,
+    "org.ai-advent.day30.demo": 1156
+  },
+  "old_state_files": 8,
+  "all_old_state_hashes_unchanged": true,
+  "automatic_inference_replay": false,
+  "second_physical_client": "NOT_PROVEN"
+}

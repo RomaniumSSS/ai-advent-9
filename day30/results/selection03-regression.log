@@ -1,0 +1,47 @@
+test_duplicate_same_id_rejected_without_synthesis_even_different_aspects (test_selection03.Selection03Tests) ... ok
+test_one_evidence_id_supports_two_requested_aspects_in_two_calls (test_selection03.Selection03Tests) ... ok
+test_provider_schema_has_array_uniqueness_constraint (test_selection03.Selection03Tests) ... ok
+test_application_persists_private_trace_and_sanitizes_public_and_logs (test_review_regressions.DiagnosticsTests) ... ok
+test_selection_and_synthesis_failures_keep_raw_phase_and_counts (test_review_regressions.DiagnosticsTests) ... ok
+test_timeout_keeps_attempted_and_completed_counts (test_review_regressions.DiagnosticsTests) ... ok
+test_actual_engine_answer_has_focus_in_second_turn (test_review_regressions.FocusTests) ... ok
+test_day30_shape_does_not_fall_back_to_whole_chunk (test_review_regressions.FocusTests) ... ok
+test_legacy_fallback_only_legacy_refs (test_review_regressions.FocusTests) ... ok
+test_renumbered_span_matches_but_neighbor_and_changed_metadata_do_not (test_review_regressions.FocusTests) ... ok
+test_partial_headers_and_body_use_absolute_deadline_and_close_socket (test_review_regressions.ProviderDeadlineTests) ... ok
+test_redirect_error_body_and_invalid_provider_json_observable_no_retry (test_review_regressions.WireContracts) ... ok
+test_successful_chat_payload_and_close_no_redirect (test_review_regressions.WireContracts) ... ok
+test_synthesis_schema_rejects_bad_status_duplicates_and_extra_fields (test_review_regressions.WireContracts) ... ok
+test_transport_partial_snapshot_is_private_inference_error (test_review_regressions.WireContracts) ... ok
+test_background_context_not_a_proof (test_extended.ExtendedCore) ... ok
+test_deploy_prepare_contains_no_token_and_correct_process (test_extended.ExtendedCore) ... ok
+test_followup_uses_user_questions_and_fresh_embedding (test_extended.ExtendedCore) ... ok
+test_generation_payload_same_model_options_thinking (test_extended.ExtendedCore) ... ok
+test_injection_treated_as_original_data (test_extended.ExtendedCore) ... ok
+test_insecure_env_rejected (test_extended.ExtendedCore) ... ok
+test_ollama_fixed_and_no_proxy_redirect (test_extended.ExtendedCore) ... ok
+test_partial_not_upgraded (test_extended.ExtendedCore) ... ok
+test_provider_model_done_and_count (test_extended.ExtendedCore) ... ok
+test_schema_reserve_included (test_extended.ExtendedCore) ... ok
+test_selection_duplicate_and_missing_aspect_rejected (test_extended.ExtendedCore) ... ok
+test_synthesis_excludes_removed_units_and_refs (test_extended.ExtendedCore) ... ok
+test_synthesis_timeout_has_exactly_two_calls (test_extended.ExtendedCore) ... ok
+test_valid_partial_retains_unknown (test_extended.ExtendedCore) ... ok
+test_bad_ids_no_synthesis (test_service.CoreTests) ... ok
+test_bad_refs (test_service.CoreTests) ... ok
+test_current_question_never_truncated (test_service.CoreTests) ... ok
+test_demo_before_retrieval_and_prompt (test_service.CoreTests) ... ok
+test_history_budget_drops_questions_before_whole_sources (test_service.CoreTests) ... ok
+test_invalid_json_length_timeout_no_retry (test_service.CoreTests) ... ok
+test_lock_release_after_error (test_service.CoreTests) ... ok
+test_new_topic_does_not_use_prior_assistant_fact (test_service.CoreTests) ... ok
+test_private_modes_restart_and_scope (test_service.CoreTests) ... ok
+test_question_limits (test_service.CoreTests) ... ok
+test_shared_lock_busy (test_service.CoreTests) ... ok
+test_two_calls_and_original_metadata (test_service.CoreTests) ... ok
+test_unknown_no_synthesis (test_service.CoreTests) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 3.649s
+
+OK

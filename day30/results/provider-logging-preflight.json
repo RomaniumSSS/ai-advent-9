@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-12T00:26:45.859627+00:00",
+  "pid": 2132,
+  "result": "PASS",
+  "method": "read-only actual launchd plist/process environment and filtered server-config log fields; no raw environment/log lines exposed",
+  "actual_logging_controls": {
+    "OLLAMA_DEBUG": {
+      "plist": "absent",
+      "process": "absent"
+    },
+    "OLLAMA_DEBUG_LOG_REQUESTS": {
+      "plist": "absent",
+      "process": "absent"
+    }
+  },
+  "startup_config_snapshots": [
+    {
+      "logging_level": "INFO",
+      "request_body_replay_logging": "not_reported"
+    },
+    {
+      "logging_level": "INFO",
+      "request_body_replay_logging": "false"
+    }
+  ],
+  "effective_level": "INFO (source inference from absent OLLAMA_DEBUG)",
+  "parser_reasoning_trace": "disabled at INFO",
+  "request_body_replay_logging": "false by source default and absent actual control",
+  "source": "https://github.com/ollama/ollama/blob/v0.33.3/envconfig/config.go#L175",
+  "global_configuration_changed": false,
+  "reasoning_inference_performed": false
+}

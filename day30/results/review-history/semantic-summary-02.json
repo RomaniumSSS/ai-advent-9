@@ -1,0 +1,31 @@
+{
+  "reviewer": "fresh Astra",
+  "baseline": "results/code-baseline-02.json",
+  "run": "smoke-02",
+  "independent_original_database_read": true,
+  "automatic_reference_validity_is_not_semantic_proof": true,
+  "private_cases": {
+    "completed_answers": 1,
+    "semantic_pass": 0,
+    "semantic_fail": 1,
+    "runtime_errors": 1,
+    "semantic_not_proven_due_to_no_answer": 1
+  },
+  "runtime_error": {
+    "phase": "selection",
+    "validation_code": "invalid_evidence_id",
+    "cause": "duplicate selection evidence IDs",
+    "generation_attempts": 1,
+    "generation_completed": 1,
+    "synthesis_calls": 0
+  },
+  "public_cases": "pending",
+  "private_evidence": "private/semantic-review.md",
+  "historical_failures_preserved": "private/semantic-review-01.md and results/review-history/",
+  "verdict": "FAIL",
+  "limitations": [
+    "known repeated cases, not blind holdout",
+    "no second physical device",
+    "human acceptance pending"
+  ]
+}

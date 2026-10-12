@@ -1,0 +1,29 @@
+{
+  "result": "PASS",
+  "manifest_sha256": "92b3eeee7c1288a51485c9066223a36cbe7d79d0d9d3b379e88a9950b4f28bb0",
+  "cases": [
+    {
+      "case_id": "G01T1",
+      "answer_limits": {
+        "max_proof_units": 1,
+        "max_points": 1
+      }
+    },
+    {
+      "case_id": "G01T2",
+      "answer_limits": {
+        "max_proof_units": 8,
+        "max_points": 4
+      }
+    },
+    {
+      "case_id": "X03T1",
+      "answer_limits": {
+        "max_proof_units": 8,
+        "max_points": 4
+      }
+    }
+  ],
+  "questions_changed": false,
+  "inference": false
+}

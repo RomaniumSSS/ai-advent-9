@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-10-11T23:33:59.550971+00:00",
+  "method": "existing authenticated Chrome UI, name-box navigation only",
+  "sheet_url": "https://docs.google.com/spreadsheets/d/1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE/edit?gid=0#gid=0",
+  "header_cell": "AE1",
+  "header_text": "День 30 (09.10)",
+  "owner_cell": "A132",
+  "owner_match": true,
+  "target_cell": "AE132",
+  "access": "Comment only",
+  "document_status": "Saved to Drive",
+  "writes_performed": false,
+  "must_recheck_before_submission": true
+}

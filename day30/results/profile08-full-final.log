@@ -1,0 +1,25 @@
+{"service": "day30", "status": "connection_error"}
+{"service": "day30", "status": "connection_error"}
+{"request_id": "e6e33f7abfcf4442930303b2e3b555e9", "status": "done", "metrics": {}}
+{"request_id": "d94add3ef4014a27baec185e48a3f796", "status": "done", "metrics": {}}
+{"request_id": "7af0f5c2835a4941b0b0c6e7ae609ab6", "status": "done", "metrics": {}}
+{"request_id": "7870da8499ac4e239f4eb545b6205015", "status": "done", "metrics": {}}
+{"request_id": "d23d39474f55492bb10a6df12e96aa65", "status": "done", "metrics": {}}
+{"request_id": "e8fb6cf573c94341b5a460b70d1a56b1", "status": "done", "metrics": {}}
+{"request_id": "c8c527a66d5c4efba8f0ef20fe38541e", "status": "done", "metrics": {}}
+{"request_id": "133d0722337343d99d1aa3718fe0d502", "status": "done", "metrics": {}}
+{"request_id": "e1b6ad259a3143edb9f77f215d4377d2", "status": "done", "metrics": {}}
+{"request_id": "64cb7b5defb64289bb775846222cd7d2", "status": "error", "metrics": {}}
+{"request_id": "c55a5b2b9bfa41bb84a4b1d3a11347f0", "status": "done", "metrics": {}}
+{"request_id": "a01d9cdeb45d42c6a48f4b4439c50cd2", "status": "done", "metrics": {}}
+{"request_id": "560e051ffd8d45b2a5af4cd16179c9cc", "status": "done", "metrics": {}}
+{"request_id": "f6b6bd0695bd4f44b3135908e907988f", "status": "done", "metrics": {}}
+{"request_id": "53e2a9bcb9734d89b9b4aaf8834aafd0", "status": "done", "metrics": {}}
+{"request_id": "5d9b4ba318dd4bf686a4c5a81341b296", "status": "done", "metrics": {}}
+{"request_id": "6e01d5cb33ac47b09b34f3b3d4b8fe10", "status": "done", "metrics": {}}
+{"request_id": "1e4a5d7cda64448fafb87f8945d3156c", "status": "done", "metrics": {}}
+{"service": "day30", "status": "connection_error"}
+----------------------------------------------------------------------
+Ran 118 tests in 24.544s
+
+OK

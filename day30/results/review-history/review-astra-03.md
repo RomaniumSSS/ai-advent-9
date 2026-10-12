@@ -1,0 +1,15 @@
+# Day30 — independent Astra review, protocol03
+
+**Overall: APPROVED (CODE, baseline03). Runtime gate03: FAIL.** Валидатор корректно отверг непоследовательную модельную структуру; это не новый code defect. Семантика доставленного ответа NOT PROVEN, поскольку API вернул ошибку. Исторические NEEDS CHANGES/semantic FAIL01/02 сохранены в `review-history/` и private audit archives.
+
+Baseline `b3e607e`, `results/code-baseline-03.json`:26hashes independently matched. SPEC SHA `3f8705b9cef56b8fd08e0f22515ef95fa266c1c35326f991b73121be9dc38834`. Reviewer не автор SPEC/PLAN/implementation; самостоятельно прочитаны полный revised SPEC/PLAN, новый protocol.py, изменённые service/evidence/local и соответствующие tests. Server/UI/deploy неизменны относительно проверенного baseline02.
+
+Проверены strict JSON с rejection duplicate keys на любом уровне, закрытые типы/поля, mapping evidence→aspects/coverage, только переданные proof IDs, точный anchor, missing rules, существующие conclusion point refs, unknown, length limits и renderer без постфактум исправления текста. Pruning пересобирает schema/mapping/coverage, снижает full до partial/none, не делает background доказательством. API сохраняет prose shape, private anchors не публикует. Новый trace отмечен repair03, старые receipts не мигрируются. Локальные_MODEL/дваcall/options/digests/index и ограничения ошибок сохраняются; corpus-specific answers не добавлены.
+
+Reviewer command `PYTHONPATH=day30:day30/tests /usr/bin/python3 -m unittest test_protocol03 test_selection03 -v`: **13PASS**,0.026s,exit0,CLT Python3.9.6. Только synthetic/mock Engine, без shared inference flock/Ollama. Отдельно3historical statefiles скопированы во временную папку и прочитаны новым Store:3/3bytehash unchanged,protocol_version не добавлен,public trace исключён; оригиналы не менялись. Прочитан root/Sol `protocol03-regression.log`: **81PASS**,17.602s quiet CLT3.9.6; `protocol03-green.log`:10PASS0.020s. Full suite reviewer повторно не запускал.
+
+Actual restart03: отдельные службы обновлены, CA+hostname state проверены,6прежних файлов сохранены,autoreplay отсутствует (`restart-03.json`). Live first request сделал2completed chat calls, но synthesis нарушил обязательное missing дляpartial aspect. Независимый replay сохранённого response в materialize_synthesis воспроизвёл `invalid_missing_aspects`; API sanitization сработала. Остальные2gate requests не запускались; public dry/record/publication остановлены. Details корпуса и отклонённый candidate только private, safe aggregate `semantic-summary.json`.
+
+Новых code findings нет. Ни anchored points, ни passing tests не доказали качество8B. Отдельная будущая model-profile гипотеза требует новой точной baseline/review/live evidence. Второе устройство NOT PROVEN, человеческая приёмка pending. Usage/cost reviewer не сообщены.
+
+Нормативный источник этого исторического baseline03 сохранён в `results/review-history/SPEC-protocol03.md`; последующая редакция текущего SPEC/profile04 этим заключением не покрыта. Проверка raw candidate выполнялась через materialize_synthesis с сохранёнными aspects/coverage, без проверки старого ответа будущей model-константой.

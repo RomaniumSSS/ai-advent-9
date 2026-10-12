@@ -1,0 +1,57 @@
+{
+  "started_at": "2026-10-11T23:05:41.241916+00:00",
+  "runtime": "Python3.9.6 launchd",
+  "provider": "real local Ollama",
+  "base_url": "https://192.168.0.100:8080",
+  "scope": "all",
+  "CA_verified": true,
+  "known_cases_not_blind_holdout": true,
+  "steps": [
+    {
+      "case": "G01T1",
+      "request_id": "a0636f8a5bc346d38c8859438b39e089",
+      "conversation_id": "8fcca99a670a43acafb1c59b0878dde4",
+      "status": "error",
+      "answer_status": null,
+      "metrics": {
+        "embedding_calls": 1,
+        "embedding_completed_calls": 1,
+        "embedding_seconds": 1.931,
+        "generation_calls": 2,
+        "generation_completed_calls": 2,
+        "retrieval_seconds": 0.525,
+        "selection": {
+          "elapsed_seconds": 66.3,
+          "eval_count": 113,
+          "eval_duration": 33901158000,
+          "load_duration": 6628839792,
+          "prompt_eval_count": 1082,
+          "prompt_eval_duration": 25730939000,
+          "tokens_per_second": 3.33,
+          "total_duration": 66290362458
+        },
+        "synthesis": {
+          "elapsed_seconds": 131.297,
+          "eval_count": 345,
+          "eval_duration": 104405940000,
+          "load_duration": 8922750,
+          "prompt_eval_count": 1082,
+          "prompt_eval_duration": 26783173000,
+          "tokens_per_second": 3.3,
+          "total_duration": 131293489833
+        },
+        "total_seconds": 200.086
+      },
+      "elapsed_seconds": 200.733,
+      "sources": 0,
+      "error_code": "invalid_model_response",
+      "private_response_sha256": "e5acf1bc70acc2f0150162d9c9916e8288fcbad1cb082965f6e04cefe8d5fabd"
+    }
+  ],
+  "result": "FAILED_FIRST_REQUEST_RUNTIME_GATE",
+  "requests_planned_max": 3,
+  "requests_executed": 1,
+  "remaining_requests_not_run": 2,
+  "automatic_retry": false,
+  "finalized_at": "2026-10-11T23:31:59.466857+00:00"
+}
