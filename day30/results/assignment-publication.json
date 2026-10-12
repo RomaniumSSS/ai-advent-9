@@ -1,0 +1,60 @@
+{
+  "status": "PUBLISHED_AND_READ_BACK",
+  "verified_at_utc": "2026-10-12T19:30:29.655320+00:00",
+  "human_acceptance": false,
+  "github": {
+    "code_url": "https://github.com/RomaniumSSS/ai-advent-9/tree/main/day30",
+    "code_commit_sha": "3c6d2c19b0e9ad429bec1e7fe02892e53a5dc01a",
+    "remote_sha_verified": true,
+    "remote_file_content_verified": true,
+    "server_sha256": "ac7d06c7c890243e15f504a4ff70108a85be70944be08681b960527a28f3cb93",
+    "day01_30_in_order": true,
+    "day01_29_unchanged": true,
+    "publication_checkout": "/private/tmp/day30-publish-20261012"
+  },
+  "drive": {
+    "file_id": "1qZXTzqn9nUa3OL_yNYksOahMt_RivTZY",
+    "video_url": "https://drive.google.com/file/d/1qZXTzqn9nUa3OL_yNYksOahMt_RivTZY/view?usp=sharing",
+    "folder_id": "1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY",
+    "owner_email": "romanpozharitskiy@gmail.com",
+    "filename": "Day30-live.mp4",
+    "bytes": 10183644,
+    "source_sha256": "38ff8dae21fc533458eeec8321c0c4c7d0166e2a7bcbde2b1e835c22d21130e5",
+    "duration_seconds": 517.0,
+    "general_access": "Anyone with the link",
+    "role": "Viewer",
+    "save_complete": true,
+    "playback_verified": true,
+    "player_observed": {
+      "playing": true,
+      "current_time": 405.05324,
+      "duration": 517.0619501133787,
+      "width": 922,
+      "height": 720,
+      "ready_state": 4,
+      "error_code": null
+    },
+    "anonymous_preview_status": 200,
+    "anonymous_title_verified": true,
+    "anonymous_access_required": false
+  },
+  "sheet": {
+    "url": "https://docs.google.com/spreadsheets/d/1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE/edit?gid=0#gid=0&range=AE132",
+    "worksheet": "Лист1",
+    "cell": "AE132",
+    "day_header_verified": "День 30 (09.10)",
+    "row_owner_verified": true,
+    "format": "own comment with two separate URLs",
+    "comment_body": "Видео: https://drive.google.com/file/d/1qZXTzqn9nUa3OL_yNYksOahMt_RivTZY/view?usp=sharing\nКод: https://github.com/RomaniumSSS/ai-advent-9/tree/main/day30",
+    "after_full_reload_readback": true,
+    "full_reload_proof": "performance.timeOrigin changed after page.reload",
+    "range_comment_anchor_verified": "Comment location Лист1 AE132",
+    "readback_urls": [
+      "https://drive.google.com/file/d/1qZXTzqn9nUa3OL_yNYksOahMt_RivTZY/view?usp=sharing",
+      "https://github.com/RomaniumSSS/ai-advent-9/tree/main/day30"
+    ],
+    "own_threads": 1,
+    "save_status": "Saved to Drive",
+    "duplicate_post_attempts": 0
+  }
+}

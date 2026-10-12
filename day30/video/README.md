@@ -1,7 +1,7 @@
 # Day30 — видео
 
 Живая assignment-only демонстрация: **PASS — ffprobe/кадры/воспроизведение/privacy**.
-Видео: готовый MP4 локально; загрузка в Drive выполняется. Новый MP4:517.0 сс,1280×1000,H264/yuv420p,
+Видео: [Day30-live.mp4](https://drive.google.com/file/d/1qZXTzqn9nUa3OL_yNYksOahMt_RivTZY/view?usp=sharing). Новый MP4:517.0 сс,1280×1000,H264/yuv420p,
 без аудио и ускорения. Evidence записанного прогона:[Record3](results/assignment-record.json).
 Проверены ffprobe, кадры начала/ответов/конца и воспроизведение:[Video check](results/assignment-video-check.json).
 

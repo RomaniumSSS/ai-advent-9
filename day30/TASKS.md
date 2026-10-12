@@ -9,10 +9,10 @@
 - [x] D2: dry3, новые done-ответы, первый + follow-up в одном разговоре, третий в новом; API readback.
 - [x] D5: record3 новых live-ответов, MP4/ffprobe/кадры/privacy/playback.
 - [x] Независимые Luna → Astra review текущей сдачи и затронутой обвязки.
-- [ ] D6: GitHub main/day30, remote SHA/content readback; старые дни неизменны.
-- [ ] D6: Drive existing folder, Anyone with link / Viewer, playback.
-- [ ] D6: Day30/AE132 header + row owner, две ссылки в комментарии, Saved/reload/readback.
-- [ ] Краткие RESULT/DELIVERY/RELEASE_NOTES/todo/HANDOFF отражают факты; human acceptance отдельно.
+- [x] D6: GitHub main/day30, remote SHA/content readback; старые дни неизменны.
+- [x] D6: Drive existing folder, Anyone with link / Viewer, playback.
+- [x] D6: Day30/AE132 header + row owner, две ссылки в комментарии, Saved/reload/readback.
+- [x] Краткие RESULT/DELIVERY/RELEASE_NOTES/todo/HANDOFF отражают факты; human acceptance отдельно.
 
 ## Исторические этапы разработки
 

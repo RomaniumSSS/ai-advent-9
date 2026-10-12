@@ -2,8 +2,8 @@
 
 Домашний локальный LLM-сервис на Mac M2/16 GiB: HTTP API поверх HTTPS,
 браузерный чат и сетевой listener на `192.168.0.100:8080`.
-Сдача по уточнённому [SPEC](SPEC.md): **локальные dry/record PASS; публикация и финальная доставка ещё выполняются**.
-Код: публикация в GitHub main/day30 выполняется. Видео: готовый MP4 локально; загрузка в Drive выполняется.
+Сдача по уточнённому [SPEC](SPEC.md): **PUBLISHED_AND_READ_BACK; человеческая приёмка отдельно**.
+Код: [GitHub main/day30](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day30). Видео: [Day30-live.mp4](https://drive.google.com/file/d/1qZXTzqn9nUa3OL_yNYksOahMt_RivTZY/view?usp=sharing).
 
 Использован существующий profile12 `qwen3:8b-q8_0`, digest
 `e56358ca25dd14db6853a9f68a92d717aaa6f0a94250a72d1a0f3d86a9f30130`.
@@ -44,7 +44,7 @@ context8192/template reserve512, deadline300с на стадию, retries0.
 
 Видео: 517.0 сс,1280×1000,H264/yuv420p, без аудио и ускорения;
 проверка ffprobe, кадров и воспроизведения: **PASS — ffprobe/кадры/воспроизведение/privacy**.
-Код/Drive/Sheet readback: publication readback ещё не завершён. Пользовательская приёмка pending.
+Код/Drive/Sheet readback: [Publication](results/assignment-publication.json). Пользовательская приёмка pending.
 
 Ограничения: качество дополнительного архивного пересказа не доказано.
 [Actual12](results/live-private-12.json) — исторический runtime PASS163.639с,

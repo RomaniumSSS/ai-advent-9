@@ -3,7 +3,7 @@
 Все реализации собраны по порядку в `main`: **`day01/`–`day30/`**.
 Day25 и Day26 сданы; публикация кода не означает пользовательскую сдачу новых дней.
 
-Day30: [частный локальный LLM-сервис](day30/README.md), HTTPS API и чат, лимиты и результаты живой серии; [материалы сдачи](day30/DELIVERY.md).
+Day30: [частный локальный LLM-сервис](day30/README.md), HTTPS API и чат, лимиты и результаты живой серии; [материалы сдачи](day30/DELIVERY.md), [живое видео 8:37](https://drive.google.com/file/d/1qZXTzqn9nUa3OL_yNYksOahMt_RivTZY/view?usp=sharing).
 
 Day29: [оптимизация Qwen3 8B и полный локальный чат](day29/README.md),
 [единая инструкция и результаты](day29/DELIVERY.md),
