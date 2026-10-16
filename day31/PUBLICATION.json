@@ -1,0 +1,63 @@
+{
+  "checked_at_utc": "2026-10-16T19:35:54.847958+00:00",
+  "repository": "https://github.com/RomaniumSSS/ai-advent-9",
+  "feature_commit": "dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e",
+  "base_commit": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7",
+  "publication": {
+    "method": "git push --atomic origin HEAD:refs/heads/day31-dev-assistant HEAD:refs/heads/main",
+    "force": false,
+    "verified_remote_refs": {
+      "refs/heads/main": "dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e",
+      "refs/heads/day31-dev-assistant": "dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e"
+    }
+  },
+  "urls": {
+    "code": "https://github.com/RomaniumSSS/ai-advent-9/tree/main/day31",
+    "video": "https://github.com/RomaniumSSS/ai-advent-9/blob/main/day31/video/Day31-live.mp4",
+    "immutable_code": "https://github.com/RomaniumSSS/ai-advent-9/tree/dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e/day31",
+    "immutable_video": "https://github.com/RomaniumSSS/ai-advent-9/blob/dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e/day31/video/Day31-live.mp4"
+  },
+  "github_path_checks": [
+    {
+      "path": "day31/README.md",
+      "api_url": "https://api.github.com/repos/RomaniumSSS/ai-advent-9/contents/day31/README.md?ref=dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e",
+      "http_status": 200,
+      "git_blob_sha": "6fe80109ba1c052bbeef1279f60f37c98c9372a2",
+      "size_bytes": 5261,
+      "verified_matches_commit": true
+    },
+    {
+      "path": "day31/provider.py",
+      "api_url": "https://api.github.com/repos/RomaniumSSS/ai-advent-9/contents/day31/provider.py?ref=dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e",
+      "http_status": 200,
+      "git_blob_sha": "71602a77433e2e067c8a607b7ce161df7c882382",
+      "size_bytes": 19340,
+      "verified_matches_commit": true
+    },
+    {
+      "path": "day31/video/Day31-live.mp4",
+      "api_url": "https://api.github.com/repos/RomaniumSSS/ai-advent-9/contents/day31/video/Day31-live.mp4?ref=dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e",
+      "http_status": 200,
+      "git_blob_sha": "52e3890e2a234b552cdaef4b2f82701d8acca61c",
+      "size_bytes": 2794853,
+      "verified_matches_commit": true,
+      "download_sha256": "ecf74c20e474b308ff7490196cc7bb20ef254304cdad31c4b597edc03739513f",
+      "download_size_bytes": 2794853
+    }
+  ],
+  "staging_checks": {
+    "paths": 309,
+    "scope": "day31/ only",
+    "runtime_excluded": true,
+    "root_HANDOFF_and_todo_excluded": true,
+    "cached_diff_check": "PASS",
+    "secret_check": "PASS, coordinator checked actual key matches=0 before staging handoff"
+  },
+  "user_acceptance": false,
+  "drive_upload": false,
+  "spreadsheet_update": false,
+  "notes": [
+    "Подтверждены первый feature push и файлы на GitHub. Этот документ добавляется следующим малым коммитом; его SHA проверяется отдельно после push.",
+    "Q2 PARTIAL и T3 FAIL сохранены; публикация не является пользовательской приёмкой."
+  ]
+}

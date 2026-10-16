@@ -1,7 +1,8 @@
 # Day31 — DevHelper
 
 16.10.2026. Подготовлены работающий код и новая живая запись; независимая
-проверка видео координатором PASS. Git-публикация — у координатора.
+проверка видео координатором PASS. Код и видео опубликованы в GitHub: обычный
+атомарный FF push в `main` и `day31-dev-assistant`, feature-коммит `dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e`.
 
 - Браузер и CLI `/help` используют один обработчик: FTS5 по README/docs →
   настоящий read-only stdio MCP → один ответ DeepSeek V4.1 Flash/DeepInfra.
@@ -33,3 +34,9 @@ $0.45713269; общий учёт $0.4734906424 из $0.50, остаток $0.026
 Dry+record добавили $0.0006702528, новый Qwen probe — $0.003622 известного usage.cost.
 Неизвестные резервы не считались бесплатными и не освобождались.
 Подробности, доказательства и ограничения — [RESULT](RESULT.md).
+
+[Код на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day31),
+[видео](https://github.com/RomaniumSSS/ai-advent-9/blob/main/day31/video/Day31-live.mp4),
+[проверка публикации](PUBLICATION.json). Удалённые SHA и файлы проверены,
+SHA скачанного видео совпал с оригиналом. Пользовательская приёмка pending;
+Drive и таблица не изменялись.

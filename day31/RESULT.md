@@ -85,5 +85,16 @@ Trace ID и generation receipt записи не пересекаются с dry
 Резервы не являются измеренной стоимостью; неизвестные расходы не названы нулём.
 Ledger не сбрасывался, резервы не освобождались.
 
-Commit/push выполняет координатор после проверки артефактов. Пользовательская
-приёмка и публикация на момент этого документа pending.
+## Публикация
+
+16.10.2026 код и проверенное видео опубликованы в GitHub: атомарный обычный
+FF push в `main` и `day31-dev-assistant`, feature-коммит
+`dbcdb2f5cd0c6476e3a0d5a388f333e65b1c608e`.
+[Код](https://github.com/RomaniumSSS/ai-advent-9/tree/main/day31),
+[видео](https://github.com/RomaniumSSS/ai-advent-9/blob/main/day31/video/Day31-live.mp4),
+[доказательство публикации](PUBLICATION.json). Удалённые SHA и файлы GitHub
+проверены; скачанное видео имеет тот же SHA256. Корневые HANDOFF/todo и runtime
+в публикацию не включены.
+
+Пользовательская приёмка и сдача в канал pending. Drive, таблица и деплой
+не выполнялись.
