@@ -1,0 +1,37 @@
+{
+  "kind": "real PR dry run before scope fix",
+  "status": "scenario_finished_with_errors",
+  "pr": 1,
+  "outcomes": [
+    {
+      "case": "upper",
+      "head": "51e16a9c704ade6e68dcc30a8c10bffae358b0f7",
+      "trace_id": "1615c67f3467462b92a004f3ac4400d5",
+      "status": "error",
+      "mode": "rag",
+      "cost": {
+        "reserved_usd": 0.065794,
+        "actual_usd": 0.004556,
+        "prompt_tokens": 739,
+        "completion_tokens": 513
+      },
+      "findings": []
+    },
+    {
+      "case": "fix",
+      "head": "2b5776af440f0844e32d3926a87c42ab8cebaa94",
+      "trace_id": "b8b09ff5dc5547f39d355e6282723ff2",
+      "status": "limited",
+      "mode": "rag",
+      "cost": {
+        "reserved_usd": 0.064336,
+        "actual_usd": 0.002898,
+        "prompt_tokens": 654,
+        "completion_tokens": 265
+      },
+      "findings": []
+    }
+  ],
+  "reason": "Global Git tree exceeded cap before scope filtering; corrected source-bounded listing; new dry required",
+  "source_manifest": "day32/.runtime/dry-extended-20261016a/manifest.json"
+}

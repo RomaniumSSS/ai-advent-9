@@ -42,6 +42,33 @@ class ScenarioTests(unittest.TestCase):
         self.assertTrue(all(c['provider'].startswith('SIMULATED ') for c in summary['cases']))
         self.assertFalse(summary['quality_evaluation']);self.assertTrue((state/'scenarios-summary.json').exists())
         with self.assertRaises(ValueError):evaluate(state)
+    def test_scope_bounds_git_tree_before_read_limit_and_keeps_outside_change(self):
+        # Только вне scope находится >200KB tree; scoped docs/code остаются полными.
+        for i in range(3500):
+            self.history.write('unrelated/long_name_'+str(i).zfill(5)+'_'+'z'*25+'.py','x=1\n')
+        self.history.write('focus/docs.md','history limit commits документирован.\n')
+        self.history.write('focus/tool.py','limit = 10\n')
+        self.history.commit('large unrelated baseline')
+        self.history.base=git(self.history.path,'rev-parse','HEAD').decode().strip()
+        self.history.write('focus/tool.py','limit = 9\n')
+        self.history.write('outside.py','limit = 8\n')
+        self.history.commit('small scoped and outside change')
+        with self.assertRaises(ValueError):git(self.history.path,'ls-tree','-r','-z','HEAD',max_bytes=200000)
+        snap=self.history.snapshot(scope='focus')
+        self.assertEqual(snap['limitations'],[])
+        self.assertEqual({item['path'] for item in snap['corpus']},{'focus/docs.md','focus/tool.py','outside.py'})
+        self.assertIn('head:focus/tool.py',snap['files']);self.assertIn('head:outside.py',snap['files'])
+        self.assertEqual({source['kind'] for source in retrieve(snap)},{'docs','code'})
+    def test_scoped_tree_paths_are_literal_including_magic_prefix(self):
+        self.history.write('docs[x]/contract.md','limit commits history\n')
+        self.history.write('docsx/incorrect.md','must not enter scoped corpus\n')
+        self.history.write(':(glob)literal/tool.py','limit = 10\n')
+        self.history.commit('literal paths')
+        self.history.base=git(self.history.path,'rev-parse','HEAD').decode().strip()
+        for scope,expected in [('docs[x]',{'docs[x]/contract.md'}),(':(glob)literal',{':(glob)literal/tool.py'})]:
+            snap=self.history.snapshot(scope=scope)
+            self.assertEqual(snap['limitations'],[])
+            self.assertEqual({item['path'] for item in snap['corpus']},expected)
     def test_added_file_lines_are_head_only(self):
         self.history.write('added.py','first = 1\nsecond = 2\n');self.history.commit('add')
         snap=self.history.snapshot();self.assert_valid(finding('added.py',2),snap)

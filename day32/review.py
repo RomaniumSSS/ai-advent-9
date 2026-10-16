@@ -98,8 +98,16 @@ class GitSnapshot:
         if len(changes) > MAX_FILES:
             limited.append('changed files limit'); changes = changes[:MAX_FILES]
         blobs = {}; corpus = []; total = 0
+        # AICODE-NOTE: scope ограничивает сам Git read до cap, а не только Python-фильтр.
+        # literal-pathspecs сохраняет имена с []/: и не интерпретирует PR paths как magic.
+        tree_paths = []
+        if scope:
+            tree_paths = [scope.rstrip('/') + '/'] + sorted({
+                c['path'] for c in changes
+                if not c['status'].startswith('D') and Path(c['path']).suffix in EXTENSIONS})
         try:
-            entries = git(repo, 'ls-tree', '-r', '-z', head, max_bytes=200000).split(b'\0')
+            entries = git(repo, '--literal-pathspecs', 'ls-tree', '-r', '-z', head,
+                          '--', *tree_paths, max_bytes=200000).split(b'\0')
         except GitReadLimit:
             entries = []
             limited.append('tree exceeds limit; corpus unavailable')

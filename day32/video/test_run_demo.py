@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import AsyncMock, Mock
-from run_demo import cleanup_resources, outcome, push_target, scenario_status, source_for, CASES
+from run_demo import cleanup_resources, history_row, outcome, push_target, scenario_status, source_for, CASES
 from review import Store
 
 
@@ -32,6 +32,23 @@ class RecorderGuards(unittest.TestCase):
                 self.assertEqual(result['mode'], 'rag')
                 self.assertEqual(result['findings'], [])
                 self.assertEqual(scenario_status([result]), 'stopped_budget')
+            finally:
+                store.db.close()
+
+    def test_history_requires_existing_error_or_limited(self):
+        with tempfile.TemporaryDirectory() as d:
+            with self.assertRaisesRegex(ValueError, 'отсутствует'):
+                history_row(d, 'a'*32)
+            with self.assertRaisesRegex(ValueError, '32 hex'):
+                history_row(d, '../escape')
+            store = Store(d)
+            try:
+                ident, _ = store.claim('historical', 0, 0)
+                store.finish(ident, {'status':'error', 'error':'original provider failure'})
+                self.assertEqual(history_row(d, ident)['report']['error'], 'original provider failure')
+                store.finish(ident, {'status':'complete'})
+                with self.assertRaisesRegex(ValueError, 'error/limited'):
+                    history_row(d, ident)
             finally:
                 store.db.close()
 

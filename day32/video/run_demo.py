@@ -4,6 +4,7 @@ import asyncio
 import json
 import os
 import re
+import sqlite3
 from pathlib import Path
 import subprocess
 import sys
@@ -42,6 +43,27 @@ def outcome(case, head, row, mode):
     return dict(case=case, head=head, trace_id=row['id'], status=row['status'], mode=mode,
                 cost=report.get('cost', {'reserved_usd':row['reserve'], 'actual_usd':row['actual']}),
                 findings=report.get('findings', []))
+
+
+def history_row(state, ident):
+    if not re.fullmatch(r'[0-9a-f]{32}', ident):
+        raise ValueError('Некорректный --history-trace: требуется trace_id из 32 hex символов')
+    db_path = Path(state).resolve() / 'state.sqlite3'
+    row = None
+    if db_path.exists():
+        db = sqlite3.connect(db_path.as_uri() + '?mode=ro', uri=True)
+        try:
+            record = db.execute('SELECT id,status,reserve,actual,report FROM runs WHERE id=?', (ident,)).fetchone()
+            if record:
+                row = dict(zip(('id','status','reserve','actual','report'), record))
+                row['report'] = json.loads(row['report']) if row['report'] else None
+        finally:
+            db.close()
+    if row is None:
+        raise ValueError('--history-trace отсутствует в canonical state: ' + ident)
+    if row['status'] not in ('error', 'limited') or not row['report']:
+        raise ValueError('--history-trace требует сохранённый error/limited report')
+    return row
 
 
 def scenario_status(outcomes):
@@ -164,6 +186,7 @@ async def scenario(a):
     if state == offline:
         raise ValueError('Live и SIMULATED state должны различаться')
     state.mkdir(parents=True, exist_ok=True)
+    historical = history_row(state, a.history_trace) if a.history_trace else None
     repo = Path(a.head_worktree).resolve()
     if command(repo, 'status', '--porcelain'):
         raise ValueError('Head worktree должен быть чистым')
@@ -301,6 +324,30 @@ async def scenario(a):
             if blocked:
                 event(output, 'stopped_budget', head=head)
                 break
+        if historical:
+            old = historical['report']
+            manifest['history'] = dict(trace_id=historical['id'], status=historical['status'],
+                source='existing canonical state; not a new model call', cost=old['cost'],
+                head=old['snapshot']['head_sha'], limitations=old['limitations'], error=old.get('error'))
+            await page.goto(f'http://127.0.0.1:{a.port}')
+            await narrative('История: реальный сбой предыдущего сухого прогона',
+                'ДО исправления выборки файлов. Это сохранённый отчёт, не новый ответ. '
+                'Текущие результаты показаны отдельно; этот сегмент не подтверждает их исправность.')
+            await page.wait_for_timeout(10000)
+            await page.reload()
+            await page.locator('#runs option').filter(has_text=historical['id'][:8]).wait_for(state='attached')
+            await page.select_option('#runs', historical['id'])
+            await page.wait_for_timeout(1000)
+            await frame('history-original-error')
+            await page.wait_for_timeout(10000)
+            for label in ('Ограничения: неполное ревью', 'Diff', 'Стоимость и reported tokens'):
+                details = page.locator('details').filter(has=page.locator('summary', has_text=label)).first
+                if await details.count():
+                    await details.locator('summary').click()
+                    await details.scroll_into_view_if_needed()
+                    await page.wait_for_timeout(6000)
+                    await frame('history-' + str(len(manifest['frames'])))
+                    await details.locator('summary').click()
         # Готовые состояния здесь созданы настоящим Runner с отдельным SIMULATED provider.
         store = Store(offline)
         faults = store.reports()
@@ -357,6 +404,7 @@ def main():
     p.add_argument('--budget', required=True, type=float)
     p.add_argument('--output', required=True)
     p.add_argument('--cases', nargs='+', choices=CASES, default=list(CASES))
+    p.add_argument('--history-trace', help='Сохранённый реальный error/limited report; не новый ответ')
     p.add_argument('--compare', action='store_true', help='Дополнительно diff/files для upper SHA')
     p.add_argument('--read-seconds', type=float, default=8)
     p.add_argument('--port', type=int, default=8073)

@@ -69,3 +69,30 @@ Real Git тест создаёт space name.py на100 строк, меняет5
 настоящий TAB header: visible50 принимается, unseen1 отвергается.
 Свежая команда: uv run --no-sync python day32/test_review.py —17 PASS за9.032с.
 git diff --check -- day32 —PASS.
+
+## Live preparation: scope до ограничения ls-tree
+
+На реальном репозитории full ls-tree превысил200KB, хотя day32/target мал.
+Прежний Python scope-фильтр применялся слишком поздно и получался limited
+без нужных файлов. При непустом scope ls-tree теперь читает только scope/
+и изменённые текстовые пути (включая вне scope) в одном bounded запросе.
+При пустом scope прежнее full-tree ограничение и limited5000 остаются.
+Глобальный Git --literal-pathspecs отключает pathspec magic; scope с [] и
+:(glob) проверены на настоящем Git, имена не трактуются как шаблоны.
+
+Добавлены realGit проверки:3500 неизменённых посторонних файлов создают
+full-tree>200KB, но scoped docs/code + changed outside дают полный снимок
+без limitations. Отдельно проверены literal scopes docs[x] и :(glob)literal.
+
+Повторная read-only проверка исходного репозитория:
+base94badd1603080af39610d1312daa5ab9264e6790,
+head2b5776af440f0844e32d3926a87c42ab8cebaa94, scope day32/target:
+limitations=[], head:day32/target/git_tool.py доступен, corpus состоит из
+этого файла и target/docs/contract.md, target/docs/provenance.md.
+Никакие live-процессы, ledger и внешние данные этой правкой не изменялись.
+
+Свежая проверка scope-fix:
+`uv run --no-sync python -m unittest discover -s day32 -p 'test_*.py'`
+—58 методов PASS за29.792с (17 исходных +41 расширенный),
+seeded properties100checks отдельно от числа методов.
+`git diff --check -- day32` —PASS.
