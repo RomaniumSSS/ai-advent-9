@@ -9,3 +9,5 @@ def recent_commits(repository, limit=5):
     result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',
                              '--format=%H %s'], check=True, capture_output=True, text=True)
     return result.stdout.splitlines()
+
+# Учебный прогон 0eab0a8c97154928802d8a489add09cb; вариант upper.
