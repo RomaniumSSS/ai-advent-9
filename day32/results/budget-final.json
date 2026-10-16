@@ -1,0 +1,17 @@
+{
+  "time": "2026-10-16T21:35:18.945501+00:00",
+  "model": "qwen/qwen3.8-max-0902",
+  "route": "alibaba/us-east-1",
+  "budget_limit_usd": 0.5,
+  "application_calls": 15,
+  "statuses": {
+    "complete": 13,
+    "limited": 1,
+    "error": 1
+  },
+  "reported_actual_usd": 0.111228,
+  "unknown_holds_usd": 0,
+  "record_new_calls": 7,
+  "record_reported_actual_usd": 0.060414,
+  "note": "All live calls share one preserved canonical ledger; SIMULATED runs are excluded; no review-model usage/cost supplied."
+}

@@ -1,0 +1,39 @@
+{
+  "live": {
+    "rows": 15,
+    "viewports": [
+      {
+        "width": 1280,
+        "scroll_width": 1280
+      },
+      {
+        "width": 768,
+        "scroll_width": 768
+      },
+      {
+        "width": 375,
+        "scroll_width": 375
+      }
+    ],
+    "title": "Day32 · Ревью PR"
+  },
+  "simulated": {
+    "rows": 9,
+    "viewports": [
+      {
+        "width": 1280,
+        "scroll_width": 1280
+      },
+      {
+        "width": 768,
+        "scroll_width": 768
+      },
+      {
+        "width": 375,
+        "scroll_width": 375
+      }
+    ],
+    "title": "Day32 · Ревью PR"
+  },
+  "page_errors": []
+}

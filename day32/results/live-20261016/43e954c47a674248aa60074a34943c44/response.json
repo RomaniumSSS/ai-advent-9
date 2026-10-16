@@ -1,0 +1,45 @@
+{
+  "id": "gen-1792185980-ddc4EaNbXD0Z3ZqMYeS2",
+  "object": "chat.completion",
+  "created": 1792185980,
+  "model": "qwen/qwen3.8-max-0902",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\"findings\":[{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":7,\"evidence\":\"Условие валидации изменено на `not 1 <= limit < 10`, то есть `limit=10` теперь отклоняется. Однако строка 6 (докстринг) по-прежнему гласит «от одного до десяти последних коммитов включительно», а сообщение об ошибке на строке 8 — «от 1 до 10 включительно». Поведение противоречит документации и сообщению об ошибке.\",\"suggestion\":\"Либо вернуть `<= 10`, если контракт действительно включает 10, либо обновить докстринг и текст ValueError, чтобы они отражали фактический диапазон 1..9.\",\"source_ids\":[]}]}",
+        "refusal": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1356,
+    "completion_tokens": 567,
+    "total_tokens": 1923,
+    "cost": 0.004322,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 1024,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.004322,
+      "upstream_inference_prompt_cost": 0.00092,
+      "upstream_inference_completions_cost": 0.003402
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 385,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{"time": 1792185927.053453, "event": "published", "case": "upper", "head": "070f278c515957070b2c6da04c717f6f185f32e8"}
+{"time": 1792185938.486656, "event": "trigger", "head": "070f278c515957070b2c6da04c717f6f185f32e8", "base": "94badd1603080af39610d1312daa5ab9264e6790", "pr": 1}
+{"time": 1792185964.697879, "event": "review", "head": "070f278c515957070b2c6da04c717f6f185f32e8", "mode": "rag", "trace_id": "bc588e0c209e40cca4fa742c6d3b0907", "created": true, "status": "complete", "stages": ["snapshot", "diff/files", "FTS5", "prompt", "reserved", "one model call", "validated"]}
+{"time": 1792185964.700464, "event": "dedupe", "trace_id": "bc588e0c209e40cca4fa742c6d3b0907", "new": false}
+{"time": 1792185980.325452, "event": "review", "head": "070f278c515957070b2c6da04c717f6f185f32e8", "mode": "diff", "trace_id": "d8391669bed14f25add8d821a6dbc57c", "created": true, "status": "complete", "stages": ["snapshot", "diff/files", "diff", "prompt", "reserved", "one model call", "validated"]}
+{"time": 1792185980.325742, "event": "dedupe", "trace_id": "d8391669bed14f25add8d821a6dbc57c", "new": false}
+{"time": 1792185995.660972, "event": "review", "head": "070f278c515957070b2c6da04c717f6f185f32e8", "mode": "files", "trace_id": "43e954c47a674248aa60074a34943c44", "created": true, "status": "complete", "stages": ["snapshot", "diff/files", "files", "prompt", "reserved", "one model call", "validated"]}
+{"time": 1792185995.6612911, "event": "dedupe", "trace_id": "43e954c47a674248aa60074a34943c44", "new": false}
+{"time": 1792186128.660525, "event": "published", "case": "fix", "head": "a960f68c8670ede2003ad3199652164bd813d356"}
+{"time": 1792186143.012201, "event": "trigger", "head": "a960f68c8670ede2003ad3199652164bd813d356", "base": "94badd1603080af39610d1312daa5ab9264e6790", "pr": 1}
+{"time": 1792186178.345254, "event": "review", "head": "a960f68c8670ede2003ad3199652164bd813d356", "mode": "rag", "trace_id": "68f32a762bba46c4b606e26943df5e51", "created": true, "status": "complete", "stages": ["snapshot", "diff/files", "FTS5", "prompt", "reserved", "one model call", "validated"]}
+{"time": 1792186178.34761, "event": "dedupe", "trace_id": "68f32a762bba46c4b606e26943df5e51", "new": false}
+{"time": 1792186218.9149702, "event": "published", "case": "bool", "head": "74c2eead84825499ce1a9a5980316f92bb891749"}
+{"time": 1792186234.7503061, "event": "trigger", "head": "74c2eead84825499ce1a9a5980316f92bb891749", "base": "94badd1603080af39610d1312daa5ab9264e6790", "pr": 1}
+{"time": 1792186256.794376, "event": "review", "head": "74c2eead84825499ce1a9a5980316f92bb891749", "mode": "rag", "trace_id": "fa811e6ef24e494ca49f62a345f97db6", "created": true, "status": "complete", "stages": ["snapshot", "diff/files", "FTS5", "prompt", "reserved", "one model call", "validated"]}
+{"time": 1792186256.796027, "event": "dedupe", "trace_id": "fa811e6ef24e494ca49f62a345f97db6", "new": false}
+{"time": 1792186303.197495, "event": "published", "case": "ignored", "head": "827a509c6f414ff59cb49a466c8d241057a587b7"}
+{"time": 1792186315.708565, "event": "trigger", "head": "827a509c6f414ff59cb49a466c8d241057a587b7", "base": "94badd1603080af39610d1312daa5ab9264e6790", "pr": 1}
+{"time": 1792186334.537024, "event": "review", "head": "827a509c6f414ff59cb49a466c8d241057a587b7", "mode": "rag", "trace_id": "66a42ebabc4647399d500e7d60ca89fa", "created": true, "status": "complete", "stages": ["snapshot", "diff/files", "FTS5", "prompt", "reserved", "one model call", "validated"]}
+{"time": 1792186334.538621, "event": "dedupe", "trace_id": "66a42ebabc4647399d500e7d60ca89fa", "new": false}
+{"time": 1792186381.5290859, "event": "published", "case": "injection", "head": "bdce804119cb912f088e715c3e988c750b89d62d"}
+{"time": 1792186397.337513, "event": "trigger", "head": "bdce804119cb912f088e715c3e988c750b89d62d", "base": "94badd1603080af39610d1312daa5ab9264e6790", "pr": 1}
+{"time": 1792186419.089443, "event": "review", "head": "bdce804119cb912f088e715c3e988c750b89d62d", "mode": "rag", "trace_id": "ac6530239454443fa92467f559b9d12b", "created": true, "status": "complete", "stages": ["snapshot", "diff/files", "FTS5", "prompt", "reserved", "one model call", "validated"]}
+{"time": 1792186419.090963, "event": "dedupe", "trace_id": "ac6530239454443fa92467f559b9d12b", "new": false}

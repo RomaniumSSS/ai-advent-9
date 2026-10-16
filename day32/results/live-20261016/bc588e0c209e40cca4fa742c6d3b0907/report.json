@@ -1,0 +1,116 @@
+{
+  "trace_id": "bc588e0c209e40cca4fa742c6d3b0907",
+  "status": "complete",
+  "mode": "rag",
+  "provider": "openrouter:qwen/qwen3.8-max-0902:alibaba/us-east-1",
+  "snapshot": {
+    "repository": "RomaniumSSS/ai-advent-9",
+    "number": 1,
+    "base_sha": "94badd1603080af39610d1312daa5ab9264e6790",
+    "head_sha": "070f278c515957070b2c6da04c717f6f185f32e8",
+    "merge_base": "94badd1603080af39610d1312daa5ab9264e6790",
+    "changed_files": [
+      {
+        "status": "M",
+        "path": "day32/target/docs/provenance.md",
+        "old_path": "day32/target/docs/provenance.md"
+      },
+      {
+        "status": "M",
+        "path": "day32/target/git_tool.py",
+        "old_path": "day32/target/git_tool.py"
+      }
+    ],
+    "diff": "diff --git a/day32/target/docs/provenance.md b/day32/target/docs/provenance.md\nindex 1d210e7c..055ed016 100644\n--- a/day32/target/docs/provenance.md\n+++ b/day32/target/docs/provenance.md\n@@ -3,4 +3,5 @@\n Самостоятельный минимальный пример на основе идеи Git-инструмента Day17\n (day17/git_mcp_server.py на базе 0883264). Код написан заново для Day32,\n не копирует SDK/MCP и не импортирует старые дни. Контракт диапазона 1..10 —\n-зафиксированный учебный предмет Day32. Проверяемая регрессия — <= 10 → < 10.\n+зафиксированный учебный предмет Day32. Ожидаемые результаты экспериментов\n+хранятся отдельно от поискового корпуса, чтобы не подсказывать ответ reviewer.\ndiff --git a/day32/target/git_tool.py b/day32/target/git_tool.py\nindex 1c5a2eae..190fe5b3 100644\n--- a/day32/target/git_tool.py\n+++ b/day32/target/git_tool.py\n@@ -4,8 +4,10 @@ import subprocess\n \n def recent_commits(repository, limit=5):\n     \"\"\"Вернуть от одного до десяти последних коммитов включительно.\"\"\"\n-    if type(limit) is not int or not 1 <= limit <= 10:\n+    if type(limit) is not int or not 1 <= limit < 10:\n         raise ValueError('limit должен быть целым от 1 до 10 включительно')\n     result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                              '--format=%H %s'], check=True, capture_output=True, text=True)\n     return result.stdout.splitlines()\n+\n+# Учебный прогон 0c17edee65a34ad590e2e8f59a8fc6f0; вариант upper.\n",
+    "files": {
+      "head:day32/target/docs/provenance.md": "# Происхождение\n\nСамостоятельный минимальный пример на основе идеи Git-инструмента Day17\n(day17/git_mcp_server.py на базе 0883264). Код написан заново для Day32,\nне копирует SDK/MCP и не импортирует старые дни. Контракт диапазона 1..10 —\nзафиксированный учебный предмет Day32. Ожидаемые результаты экспериментов\nхранятся отдельно от поискового корпуса, чтобы не подсказывать ответ reviewer.\n",
+      "head:day32/target/git_tool.py": "\"\"\"Самостоятельный учебный Git-инструмент, без импорта Day17.\"\"\"\nimport subprocess\n\n\ndef recent_commits(repository, limit=5):\n    \"\"\"Вернуть от одного до десяти последних коммитов включительно.\"\"\"\n    if type(limit) is not int or not 1 <= limit < 10:\n        raise ValueError('limit должен быть целым от 1 до 10 включительно')\n    result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                             '--format=%H %s'], check=True, capture_output=True, text=True)\n    return result.stdout.splitlines()\n\n# Учебный прогон 0c17edee65a34ad590e2e8f59a8fc6f0; вариант upper.\n"
+    },
+    "limitations": []
+  },
+  "findings": [
+    {
+      "category": "bug",
+      "path": "day32/target/git_tool.py",
+      "version": "head",
+      "line": 7,
+      "evidence": "Условие `not 1 <= limit < 10` отвергает limit=10, однако docstring (строка 6: «от одного до десяти … включительно»), текст ошибки (строка 8: «от 1 до 10 включительно») и контракт (contract.md: «Значение limit=10 допустимо») единогласно требуют принимать 10. Вызов recent_commits(repo, limit=10) неправомерно выбросит ValueError.",
+      "suggestion": "Замените `< 10` на `<= 10`, чтобы вернуть соответствие контракту: `if type(limit) is not int or not 1 <= limit <= 10:`",
+      "source_ids": [
+        "f20104a66ed18177919e",
+        "68ac0ad5891912a6b09c"
+      ]
+    },
+    {
+      "category": "bug",
+      "path": "day32/target/git_tool.py",
+      "version": "head",
+      "line": 8,
+      "evidence": "Сообщение об ошибке утверждает «от 1 до 10 включительно», но фактическая проверка на строке 7 не пропускает 10. Пользователь получит противоречивую информацию: ему говорят, что 10 допустимо, при этом 10 отклоняется.",
+      "suggestion": "Либо исправьте условие (см. выше), либо приведите сообщение в соответствие с реальной границей: «от 1 до 9 включительно».",
+      "source_ids": [
+        "f20104a66ed18177919e"
+      ]
+    },
+    {
+      "category": "recommendation",
+      "path": "day32/target/docs/provenance.md",
+      "version": "head",
+      "line": 6,
+      "evidence": "Предыдущая версия документа явно фиксировала проверяемую регрессию «<= 10 → < 10». Новая формулировка убирает это упоминание, но сам дефект остаётся в коде. Если регрессия намеренная (учебная), её стоит документировать явно; если нет — документ маскирует баг.",
+      "suggestion": "Верните явное описание регрессии или исправьте код, чтобы документация отражала реальное поведение.",
+      "source_ids": [
+        "6beb7175c846bdd24edc"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "6beb7175c846bdd24edc",
+      "path": "day32/target/docs/provenance.md",
+      "start_line": 1,
+      "end_line": 7,
+      "text": "# Происхождение\n\nСамостоятельный минимальный пример на основе идеи Git-инструмента Day17\n(day17/git_mcp_server.py на базе 0883264). Код написан заново для Day32,\nне копирует SDK/MCP и не импортирует старые дни. Контракт диапазона 1..10 —\nзафиксированный учебный предмет Day32. Ожидаемые результаты экспериментов\nхранятся отдельно от поискового корпуса, чтобы не подсказывать ответ reviewer.",
+      "sha256": "ef5cd12e3fb5f431d2af1625ca73c3a28dfc0e3b775f1d62c4a14ef6dc9e7636",
+      "kind": "docs",
+      "sha": "070f278c515957070b2c6da04c717f6f185f32e8"
+    },
+    {
+      "id": "68ac0ad5891912a6b09c",
+      "path": "day32/target/docs/contract.md",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "# Контракт истории Git\n\nrecent_commits(repository, limit=5) возвращает последние коммиты Git.\nlimit — целое число от 1 до 10 включительно. Значение limit=10 допустимо.\nЛогические значения и числа вне диапазона вызывают ValueError.\nИнструмент читает историю Git, код репозитория не исполняется.",
+      "sha256": "69e50ef5fcd765604d984a87f3ff2115b812f6f30863268e1b31c2e7a4864701",
+      "kind": "docs",
+      "sha": "070f278c515957070b2c6da04c717f6f185f32e8"
+    },
+    {
+      "id": "f20104a66ed18177919e",
+      "path": "day32/target/git_tool.py",
+      "start_line": 1,
+      "end_line": 13,
+      "text": "\"\"\"Самостоятельный учебный Git-инструмент, без импорта Day17.\"\"\"\nimport subprocess\n\n\ndef recent_commits(repository, limit=5):\n    \"\"\"Вернуть от одного до десяти последних коммитов включительно.\"\"\"\n    if type(limit) is not int or not 1 <= limit < 10:\n        raise ValueError('limit должен быть целым от 1 до 10 включительно')\n    result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                             '--format=%H %s'], check=True, capture_output=True, text=True)\n    return result.stdout.splitlines()\n\n# Учебный прогон 0c17edee65a34ad590e2e8f59a8fc6f0; вариант upper.",
+      "sha256": "348a0923310e7819806c156f602da4f2741538a558b36a7bc53eb8d2296c8257",
+      "kind": "code",
+      "sha": "070f278c515957070b2c6da04c717f6f185f32e8"
+    }
+  ],
+  "limitations": [],
+  "stages": [
+    "snapshot",
+    "diff/files",
+    "FTS5",
+    "prompt",
+    "reserved",
+    "one model call",
+    "validated"
+  ],
+  "cost": {
+    "reserved_usd": 0.087458,
+    "actual_usd": 0.010532,
+    "prompt_tokens": 2335,
+    "completion_tokens": 977
+  },
+  "elapsed_seconds": 26.204
+}

@@ -1,0 +1,75 @@
+{
+  "trace_id": "1eef9940adb944b5853584d5a456e426",
+  "status": "complete",
+  "mode": "rag",
+  "provider": "openrouter:qwen/qwen3.8-max-0902:alibaba/us-east-1",
+  "snapshot": {
+    "repository": "RomaniumSSS/ai-advent-9",
+    "number": 1,
+    "base_sha": "94badd1603080af39610d1312daa5ab9264e6790",
+    "head_sha": "b55707521a1bf441ef113bc743fdd06708ef7734",
+    "merge_base": "94badd1603080af39610d1312daa5ab9264e6790",
+    "changed_files": [
+      {
+        "status": "M",
+        "path": "day32/target/git_tool.py",
+        "old_path": "day32/target/git_tool.py"
+      }
+    ],
+    "diff": "diff --git a/day32/target/git_tool.py b/day32/target/git_tool.py\nindex 1c5a2ea..1398a29 100644\n--- a/day32/target/git_tool.py\n+++ b/day32/target/git_tool.py\n@@ -9,3 +9,5 @@ def recent_commits(repository, limit=5):\n     result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                              '--format=%H %s'], check=True, capture_output=True, text=True)\n     return result.stdout.splitlines()\n+\n+# Учебный прогон 3e6db00564554e1783df44a4d567ad34; вариант fix.\n",
+    "files": {
+      "head:day32/target/git_tool.py": "\"\"\"Самостоятельный учебный Git-инструмент, без импорта Day17.\"\"\"\nimport subprocess\n\n\ndef recent_commits(repository, limit=5):\n    \"\"\"Вернуть от одного до десяти последних коммитов включительно.\"\"\"\n    if type(limit) is not int or not 1 <= limit <= 10:\n        raise ValueError('limit должен быть целым от 1 до 10 включительно')\n    result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                             '--format=%H %s'], check=True, capture_output=True, text=True)\n    return result.stdout.splitlines()\n\n# Учебный прогон 3e6db00564554e1783df44a4d567ad34; вариант fix.\n"
+    },
+    "limitations": []
+  },
+  "findings": [],
+  "sources": [
+    {
+      "id": "a2529a3fa37e874865fc",
+      "path": "day32/target/docs/provenance.md",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "# Происхождение\n\nСамостоятельный минимальный пример на основе идеи Git-инструмента Day17\n(day17/git_mcp_server.py на базе 0883264). Код написан заново для Day32,\nне копирует SDK/MCP и не импортирует старые дни. Контракт диапазона 1..10 —\nзафиксированный учебный предмет Day32. Проверяемая регрессия — <= 10 → < 10.",
+      "sha256": "e84ee8c5697798ec5a65e41c9f2ea9e3bf308a76b4b7cf76bc19d5054305d130",
+      "kind": "docs",
+      "sha": "b55707521a1bf441ef113bc743fdd06708ef7734"
+    },
+    {
+      "id": "f611ecce84205240a604",
+      "path": "day32/target/docs/contract.md",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "# Контракт истории Git\n\nrecent_commits(repository, limit=5) возвращает последние коммиты Git.\nlimit — целое число от 1 до 10 включительно. Значение limit=10 допустимо.\nЛогические значения и числа вне диапазона вызывают ValueError.\nИнструмент читает историю Git, код репозитория не исполняется.",
+      "sha256": "69e50ef5fcd765604d984a87f3ff2115b812f6f30863268e1b31c2e7a4864701",
+      "kind": "docs",
+      "sha": "b55707521a1bf441ef113bc743fdd06708ef7734"
+    },
+    {
+      "id": "097cd6b31232b5486327",
+      "path": "day32/target/git_tool.py",
+      "start_line": 1,
+      "end_line": 13,
+      "text": "\"\"\"Самостоятельный учебный Git-инструмент, без импорта Day17.\"\"\"\nimport subprocess\n\n\ndef recent_commits(repository, limit=5):\n    \"\"\"Вернуть от одного до десяти последних коммитов включительно.\"\"\"\n    if type(limit) is not int or not 1 <= limit <= 10:\n        raise ValueError('limit должен быть целым от 1 до 10 включительно')\n    result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                             '--format=%H %s'], check=True, capture_output=True, text=True)\n    return result.stdout.splitlines()\n\n# Учебный прогон 3e6db00564554e1783df44a4d567ad34; вариант fix.",
+      "sha256": "b7fbe81fd0ae1525898b9c1ab9408beb61a4fcc1e7ebe57facf2f48fa68937fc",
+      "kind": "code",
+      "sha": "b55707521a1bf441ef113bc743fdd06708ef7734"
+    }
+  ],
+  "limitations": [],
+  "stages": [
+    "snapshot",
+    "diff/files",
+    "FTS5",
+    "prompt",
+    "reserved",
+    "one model call",
+    "validated"
+  ],
+  "cost": {
+    "reserved_usd": 0.076902,
+    "actual_usd": 0.00746,
+    "prompt_tokens": 1792,
+    "completion_tokens": 646
+  },
+  "elapsed_seconds": 18.412
+}

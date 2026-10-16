@@ -1,0 +1,45 @@
+{
+  "id": "gen-1792185116-Q4CN2UNA5JC0L3N17mUP",
+  "object": "chat.completion",
+  "created": 1792185116,
+  "model": "qwen/qwen3.8-max-0902",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\"findings\":[{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":7,\"evidence\":\"Условие валидации изменено с `1 <= limit <= 10` на `1 <= limit < 10`, что исключает значение 10. Однако и докстрок (строка 6: «от одного до десяти … включительно»), и текст ошибки (строка 8: «от 1 до 10 включительно») по-прежнему утверждают, что 10 допустимо. При `limit=10` пользователь получит `ValueError` с сообщением, противоречащим самой проверке.\",\"suggestion\":\"Вернуть оператор `<= 10`, если верхняя граница действительно 10 (как гласят докстрок и сообщение об ошибке), либо обновить докстрок и текст ошибки на «от 1 до 9 включительно», если ограничение намеренно сужено.\",\"source_ids\":[]}]}",
+        "refusal": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 739,
+    "completion_tokens": 513,
+    "total_tokens": 1252,
+    "cost": 0.004556,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.004556,
+      "upstream_inference_prompt_cost": 0.001478,
+      "upstream_inference_completions_cost": 0.003078
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 294,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

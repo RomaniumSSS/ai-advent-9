@@ -1,0 +1,45 @@
+{
+  "id": "gen-1792186234-0guiKzt2CD3rssseUCfU",
+  "object": "chat.completion",
+  "created": 1792186234,
+  "model": "qwen/qwen3.8-max-0902",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\"findings\":[{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":7,\"evidence\":\"Замена `type(limit) is not int` на `not isinstance(limit, int)` меняет поведение для `bool`. В Python `bool` — подкласс `int`, поэтому `isinstance(True, int)` возвращает `True`. В результате `limit=True` проходит валидацию (`1 <= True <= 10` истинно, т.к. `True == 1`) и функция выполняет `git log -1` вместо выбрасывания `ValueError`. Это прямо противоречит контракту из `contract.md`: «Логические значения и числа вне диапазона вызывают ValueError».\",\"suggestion\":\"Использовать `type(limit) is not int` (как было до изменения) или добавить явную проверку `isinstance(limit, bool)` перед проверкой `isinstance(limit, int)`, чтобы отклонять логические значения.\",\"source_ids\":[\"30e8222c62e20b3aa346\",\"542a7c5b98b9ccf1431c\"]}]}",
+        "refusal": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2324,
+    "completion_tokens": 765,
+    "total_tokens": 3089,
+    "cost": 0.009238,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.009238,
+      "upstream_inference_prompt_cost": 0.004648,
+      "upstream_inference_completions_cost": 0.00459
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 508,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

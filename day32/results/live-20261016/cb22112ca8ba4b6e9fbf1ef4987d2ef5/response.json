@@ -1,0 +1,45 @@
+{
+  "id": "gen-1792185821-WsCwwSHajrSLbaoEX42J",
+  "object": "chat.completion",
+  "created": 1792185821,
+  "model": "qwen/qwen3.8-max-0902",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\"findings\":[{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":7,\"evidence\":\"Условие валидации изменено с `1 <= limit <= 10` на `1 <= limit < 10`, однако документ-строка (строка 6: «от одного до десяти последних коммитов включительно») и текст ошибки (строка 8: «от 1 до 10 включительно») по-прежнему утверждают, что 10 допустимо. Вызов `recent_commits(repo, limit=10)` теперь выбросит ValueError, что противоречит задекларированному контракту.\",\"suggestion\":\"Либо вернуть верхнюю границу к `<= 10`, либо обновить docstring и текст ошибки, чтобы они отражали фактический диапазон 1–9.\",\"source_ids\":[]}]}",
+        "refusal": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1006,
+    "completion_tokens": 806,
+    "total_tokens": 1812,
+    "cost": 0.006848,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.006848,
+      "upstream_inference_prompt_cost": 0.002012,
+      "upstream_inference_completions_cost": 0.004836
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 614,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

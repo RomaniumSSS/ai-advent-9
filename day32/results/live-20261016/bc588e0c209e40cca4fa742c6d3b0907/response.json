@@ -1,0 +1,45 @@
+{
+  "id": "gen-1792185938-XJJlxAkQuefyffDuY1kT",
+  "object": "chat.completion",
+  "created": 1792185938,
+  "model": "qwen/qwen3.8-max-0902",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\"findings\":[{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":7,\"evidence\":\"Условие `not 1 <= limit < 10` отвергает limit=10, однако docstring (строка 6: «от одного до десяти … включительно»), текст ошибки (строка 8: «от 1 до 10 включительно») и контракт (contract.md: «Значение limit=10 допустимо») единогласно требуют принимать 10. Вызов recent_commits(repo, limit=10) неправомерно выбросит ValueError.\",\"suggestion\":\"Замените `< 10` на `<= 10`, чтобы вернуть соответствие контракту: `if type(limit) is not int or not 1 <= limit <= 10:`\",\"source_ids\":[\"f20104a66ed18177919e\",\"68ac0ad5891912a6b09c\"]},{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":8,\"evidence\":\"Сообщение об ошибке утверждает «от 1 до 10 включительно», но фактическая проверка на строке 7 не пропускает 10. Пользователь получит противоречивую информацию: ему говорят, что 10 допустимо, при этом 10 отклоняется.\",\"suggestion\":\"Либо исправьте условие (см. выше), либо приведите сообщение в соответствие с реальной границей: «от 1 до 9 включительно».\",\"source_ids\":[\"f20104a66ed18177919e\"]},{\"category\":\"recommendation\",\"path\":\"day32/target/docs/provenance.md\",\"version\":\"head\",\"line\":6,\"evidence\":\"Предыдущая версия документа явно фиксировала проверяемую регрессию «<= 10 → < 10». Новая формулировка убирает это упоминание, но сам дефект остаётся в коде. Если регрессия намеренная (учебная), её стоит документировать явно; если нет — документ маскирует баг.\",\"suggestion\":\"Верните явное описание регрессии или исправьте код, чтобы документация отражала реальное поведение.\",\"source_ids\":[\"6beb7175c846bdd24edc\"]}]}",
+        "refusal": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2335,
+    "completion_tokens": 977,
+    "total_tokens": 3312,
+    "cost": 0.010532,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.010532,
+      "upstream_inference_prompt_cost": 0.00467,
+      "upstream_inference_completions_cost": 0.005862
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 444,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

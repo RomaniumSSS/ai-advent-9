@@ -1,0 +1,21 @@
+{
+  "repository": "RomaniumSSS/ai-advent-9",
+  "number": 1,
+  "base_sha": "94badd1603080af39610d1312daa5ab9264e6790",
+  "head_sha": "2b5776af440f0844e32d3926a87c42ab8cebaa94",
+  "merge_base": "94badd1603080af39610d1312daa5ab9264e6790",
+  "changed_files": [
+    {
+      "status": "M",
+      "path": "day32/target/git_tool.py",
+      "old_path": "day32/target/git_tool.py"
+    }
+  ],
+  "diff": "diff --git a/day32/target/git_tool.py b/day32/target/git_tool.py\nindex 1c5a2ea..6f596b8 100644\n--- a/day32/target/git_tool.py\n+++ b/day32/target/git_tool.py\n@@ -9,3 +9,5 @@ def recent_commits(repository, limit=5):\n     result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                              '--format=%H %s'], check=True, capture_output=True, text=True)\n     return result.stdout.splitlines()\n+\n+# Учебный прогон 0eab0a8c97154928802d8a489add09cb; вариант fix.\n",
+  "files": {},
+  "corpus": [],
+  "limitations": [
+    "changed file unavailable: day32/target/git_tool.py",
+    "tree exceeds limit; corpus unavailable"
+  ]
+}

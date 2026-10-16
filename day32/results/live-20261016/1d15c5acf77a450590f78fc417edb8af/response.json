@@ -1,0 +1,45 @@
+{
+  "id": "gen-1792185322-Z7kNnrifpYwpJVWJYKhi",
+  "object": "chat.completion",
+  "created": 1792185322,
+  "model": "qwen/qwen3.8-max-0902",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\"findings\":[{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":7,\"evidence\":\"Оператор `<= 10` заменён на `< 10`, из-за чего `limit=10` теперь вызывает ValueError. Это противоречит: (1) докстрингу функции — «от одного до десяти последних коммитов включительно»; (2) тексту самого исключения — «limit должен быть целым от 1 до 10 включительно»; (3) контракту (contract.md): «limit — целое число от 1 до 10 включительно. Значение limit=10 допустимо». Файл provenance.md прямо фиксирует это как проверяемую регрессию: «<= 10 → < 10».\",\"suggestion\":\"Вернуть инклюзивную верхнюю границу: `not 1 <= limit <= 10`.\",\"source_ids\":[\"8e0027e22c182bf0d581\",\"65aa7014c91b3247b837\",\"bf38fddd18ad4511b2b1\"]}]}",
+        "refusal": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1892,
+    "completion_tokens": 725,
+    "total_tokens": 2617,
+    "cost": 0.008134,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.008134,
+      "upstream_inference_prompt_cost": 0.003784,
+      "upstream_inference_completions_cost": 0.00435
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 459,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

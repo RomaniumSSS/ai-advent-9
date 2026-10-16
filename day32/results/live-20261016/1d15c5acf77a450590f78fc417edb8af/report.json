@@ -1,0 +1,89 @@
+{
+  "trace_id": "1d15c5acf77a450590f78fc417edb8af",
+  "status": "complete",
+  "mode": "rag",
+  "provider": "openrouter:qwen/qwen3.8-max-0902:alibaba/us-east-1",
+  "snapshot": {
+    "repository": "RomaniumSSS/ai-advent-9",
+    "number": 1,
+    "base_sha": "94badd1603080af39610d1312daa5ab9264e6790",
+    "head_sha": "27ddd4ab1242043e6de86d8e821b58027197f043",
+    "merge_base": "94badd1603080af39610d1312daa5ab9264e6790",
+    "changed_files": [
+      {
+        "status": "M",
+        "path": "day32/target/git_tool.py",
+        "old_path": "day32/target/git_tool.py"
+      }
+    ],
+    "diff": "diff --git a/day32/target/git_tool.py b/day32/target/git_tool.py\nindex 1c5a2ea..2ec246f 100644\n--- a/day32/target/git_tool.py\n+++ b/day32/target/git_tool.py\n@@ -4,8 +4,10 @@ import subprocess\n \n def recent_commits(repository, limit=5):\n     \"\"\"Вернуть от одного до десяти последних коммитов включительно.\"\"\"\n-    if type(limit) is not int or not 1 <= limit <= 10:\n+    if type(limit) is not int or not 1 <= limit < 10:\n         raise ValueError('limit должен быть целым от 1 до 10 включительно')\n     result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                              '--format=%H %s'], check=True, capture_output=True, text=True)\n     return result.stdout.splitlines()\n+\n+# Учебный прогон 3e6db00564554e1783df44a4d567ad34; вариант upper.\n",
+    "files": {
+      "head:day32/target/git_tool.py": "\"\"\"Самостоятельный учебный Git-инструмент, без импорта Day17.\"\"\"\nimport subprocess\n\n\ndef recent_commits(repository, limit=5):\n    \"\"\"Вернуть от одного до десяти последних коммитов включительно.\"\"\"\n    if type(limit) is not int or not 1 <= limit < 10:\n        raise ValueError('limit должен быть целым от 1 до 10 включительно')\n    result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                             '--format=%H %s'], check=True, capture_output=True, text=True)\n    return result.stdout.splitlines()\n\n# Учебный прогон 3e6db00564554e1783df44a4d567ad34; вариант upper.\n"
+    },
+    "limitations": []
+  },
+  "findings": [
+    {
+      "category": "bug",
+      "path": "day32/target/git_tool.py",
+      "version": "head",
+      "line": 7,
+      "evidence": "Оператор `<= 10` заменён на `< 10`, из-за чего `limit=10` теперь вызывает ValueError. Это противоречит: (1) докстрингу функции — «от одного до десяти последних коммитов включительно»; (2) тексту самого исключения — «limit должен быть целым от 1 до 10 включительно»; (3) контракту (contract.md): «limit — целое число от 1 до 10 включительно. Значение limit=10 допустимо». Файл provenance.md прямо фиксирует это как проверяемую регрессию: «<= 10 → < 10».",
+      "suggestion": "Вернуть инклюзивную верхнюю границу: `not 1 <= limit <= 10`.",
+      "source_ids": [
+        "8e0027e22c182bf0d581",
+        "65aa7014c91b3247b837",
+        "bf38fddd18ad4511b2b1"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "65aa7014c91b3247b837",
+      "path": "day32/target/docs/provenance.md",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "# Происхождение\n\nСамостоятельный минимальный пример на основе идеи Git-инструмента Day17\n(day17/git_mcp_server.py на базе 0883264). Код написан заново для Day32,\nне копирует SDK/MCP и не импортирует старые дни. Контракт диапазона 1..10 —\nзафиксированный учебный предмет Day32. Проверяемая регрессия — <= 10 → < 10.",
+      "sha256": "e84ee8c5697798ec5a65e41c9f2ea9e3bf308a76b4b7cf76bc19d5054305d130",
+      "kind": "docs",
+      "sha": "27ddd4ab1242043e6de86d8e821b58027197f043"
+    },
+    {
+      "id": "8e0027e22c182bf0d581",
+      "path": "day32/target/docs/contract.md",
+      "start_line": 1,
+      "end_line": 6,
+      "text": "# Контракт истории Git\n\nrecent_commits(repository, limit=5) возвращает последние коммиты Git.\nlimit — целое число от 1 до 10 включительно. Значение limit=10 допустимо.\nЛогические значения и числа вне диапазона вызывают ValueError.\nИнструмент читает историю Git, код репозитория не исполняется.",
+      "sha256": "69e50ef5fcd765604d984a87f3ff2115b812f6f30863268e1b31c2e7a4864701",
+      "kind": "docs",
+      "sha": "27ddd4ab1242043e6de86d8e821b58027197f043"
+    },
+    {
+      "id": "bf38fddd18ad4511b2b1",
+      "path": "day32/target/git_tool.py",
+      "start_line": 1,
+      "end_line": 13,
+      "text": "\"\"\"Самостоятельный учебный Git-инструмент, без импорта Day17.\"\"\"\nimport subprocess\n\n\ndef recent_commits(repository, limit=5):\n    \"\"\"Вернуть от одного до десяти последних коммитов включительно.\"\"\"\n    if type(limit) is not int or not 1 <= limit < 10:\n        raise ValueError('limit должен быть целым от 1 до 10 включительно')\n    result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',\n                             '--format=%H %s'], check=True, capture_output=True, text=True)\n    return result.stdout.splitlines()\n\n# Учебный прогон 3e6db00564554e1783df44a4d567ad34; вариант upper.",
+      "sha256": "6672708d715c8b26f8a6a3cab018b1c79fed902c53068755242603460d8cabf3",
+      "kind": "code",
+      "sha": "27ddd4ab1242043e6de86d8e821b58027197f043"
+    }
+  ],
+  "limitations": [],
+  "stages": [
+    "snapshot",
+    "diff/files",
+    "FTS5",
+    "prompt",
+    "reserved",
+    "one model call",
+    "validated"
+  ],
+  "cost": {
+    "reserved_usd": 0.078364,
+    "actual_usd": 0.008134,
+    "prompt_tokens": 1892,
+    "completion_tokens": 725
+  },
+  "elapsed_seconds": 19.095
+}

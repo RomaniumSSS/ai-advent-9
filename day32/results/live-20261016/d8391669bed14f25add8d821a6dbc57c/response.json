@@ -1,0 +1,45 @@
+{
+  "id": "gen-1792185964-XL7LoUjUSgy2WZhBOilW",
+  "object": "chat.completion",
+  "created": 1792185964,
+  "model": "qwen/qwen3.8-max-0902",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\"findings\":[{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":7,\"evidence\":\"Условие валидации изменено с `1 <= limit <= 10` на `1 <= limit < 10`, однако docstring (строка 6) по-прежнему гласит «от одного до десяти последних коммитов включительно», а сообщение об ошибке (строка 8) — «целым от 1 до 10 включительно». Таким образом, limit=10 теперь вызывает ValueError, вопреки документированному контракту.\",\"suggestion\":\"Либо вернуть верхнюю границу к `<= 10`, либо обновить docstring и текст ошибки, чтобы они отражали реальный диапазон 1–9.\",\"source_ids\":[]}]}",
+        "refusal": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1006,
+    "completion_tokens": 576,
+    "total_tokens": 1582,
+    "cost": 0.005468,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.005468,
+      "upstream_inference_prompt_cost": 0.002012,
+      "upstream_inference_completions_cost": 0.003456
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 400,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

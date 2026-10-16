@@ -1,7 +1,7 @@
 # Day32 — задачи
 
-Текущая база 0883264, ветка `day32-pr-review`; перед кодом актуализировать её,
-сохранив локальные черновики. Remote main на16.10 20:16 UTC —0883264.
+Разработка начата от main0883264 в ветке `day32-pr-review`.
+Учебный PR направлен в неё из `day32-demo-limit10`; commit с кодом/видео — в results/publication.json.
 Day31 закрыт; требования Day32 — [SPEC](SPEC.md).
 
 - [x] Проверены main/worktree/инструкции и gh read-only доступ; окружение установлено.
@@ -17,8 +17,9 @@ Day31 закрыт; требования Day32 — [SPEC](SPEC.md).
 - [x] Browser: desktop/tablet/mobile, diff/docs+code/prompt, сохранение раскрытых секций; results/browser-check.json.
 - [x] Независимые Luna → исправления Sol → Astra → исправления/повторная Astra: APPROVED offline; свежие 17 tests PASS.
 - [x] Учебный diff подготовлен; пользователь разрешил baseline/regression commits+push+PR.
-- [ ] Настоящий PR-trigger и реальная генерация проверены; качество оценено отдельно.
-- [ ] Сухой прогон/видео, ffprobe/кадры; RESULT/RELEASE_NOTES.
+- [x] Настоящий PR-trigger/5новых SHA/7новых ответов записи и dedupe проверены; качество оценено отдельно.
+- [x] Dry/живое видео11:34, ffprobe/9извлечённых кадров; RESULT/RELEASE_NOTES.
+- [x] Финальные60+8=68тестов PASS, отдельно100generated checks/9SIMULATEDcases.
 
 ## Контракт и границы
 

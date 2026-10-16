@@ -1,0 +1,45 @@
+{
+  "id": "gen-1792185802-3ntnjcPeRIanyYF3ee15",
+  "object": "chat.completion",
+  "created": 1792185802,
+  "model": "qwen/qwen3.8-max-0902",
+  "provider": "Alibaba",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "stop",
+      "message": {
+        "role": "assistant",
+        "content": "{\"findings\":[{\"category\":\"bug\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":7,\"evidence\":\"Условие `not 1 <= limit < 10` отвергает limit=10, однако: (1) docstring на строке 6 гласит «от одного до десяти последних коммитов включительно», (2) сообщение об ошибке на строке 8 гласит «от 1 до 10 включительно», (3) контракт (contract.md) явно указывает «Значение limit=10 допустимо». Реализация противоречит задокументированному контракту и собственным строкам.\",\"suggestion\":\"Вернуть `<= 10` в условие, либо обновить docstring, сообщение об ошибке и contract.md, чтобы отразить новый диапазон 1..9.\",\"source_ids\":[\"f1276736c97fad515538\",\"075d4639d84b55fd08a1\"]},{\"category\":\"recommendation\",\"path\":\"day32/target/git_tool.py\",\"version\":\"head\",\"line\":13,\"evidence\":\"Комментарий `# Учебный прогон 1f5a25425b34436aa4e6c3def6938c98; вариант upper.` не несёт ценности для сопровождающего: хеш прогона нигде не верифицируется, а слово «вариант» не привязано к какой-либо конфигурации. Это мусорный артефакт в продакшн-коде.\",\"suggestion\":\"Удалить строку или перенести метаинформацию о прогонах в отдельный лог/документ.\",\"source_ids\":[\"f1276736c97fad515538\"]}]}",
+        "refusal": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2326,
+    "completion_tokens": 794,
+    "total_tokens": 3120,
+    "cost": 0.009416,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.009416,
+      "upstream_inference_prompt_cost": 0.004652,
+      "upstream_inference_completions_cost": 0.004764
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 381,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

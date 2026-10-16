@@ -1,5 +1,10 @@
 # Day32 — ревью PR с видимым контекстом
 
+Готовы [видео11:34](video/README.md), [результат](RESULT.md) и
+[разбор реальных ответов Qwen](results/live-semantic-review.md).
+68тестов PASS +100generated checks;15real calls,$0.111228 из$0.50.
+[Точные входы/ответы](results/live-20261016/INDEX.json).
+
 Самостоятельный read-only reviewer. Python stdlib + Git + SQLite FTS5;
 для GitHub polling нужен авторизованный `gh`. Старые дни не импортируются.
 Код PR, его тесты, hooks и инструкции из файлов не исполняются.
@@ -81,7 +86,8 @@ response 300KB. Поддерживаемые текстовые расширен
 коллекция остаётся пустой с явной причиной неполноты, snapshot сохраняется.
 Live corpus ограничен day32/target; изменённые файлы за пределами scope
 всё равно читаются в пределах лимитов. GitHub polling ограничен 20 PR;
-первый live-trigger и реальные модельные результаты ещё не проверены.
+реальный PR-trigger,7новых ответов в записи и5новых SHA проверены;
+качество ответов оценено отдельно и неоднородно.
 Не удаляйте ledger для повторной оплаты неясного запуска.
 
 ## Расширенная проверка и длинное видео
@@ -95,8 +101,9 @@ uv run --no-sync python day32/video/test_run_demo.py
 uv run --no-sync python day32/eval_faults.py --state /NEW/OFFLINE/STATE
 ```
 
-Всего 56 основных тестовых методов и 6 recorder-тестов; отдельно100seeded
+Всего 60 основных тестовых методов и 8 recorder-тестов; отдельно100seeded
 проверок(seed320016) и9SIMULATED fault-сценариев. [Доказательства](results/offline-extension-evidence.json).
 [Сценарий видео](video/SCENARIO.md), [ревью расширения Astra](results/review-extension-astra.md).
 Один реальный Qwen readiness probe нашёл limit=10 ошибку; $0.006884 reported.
-Это пока local snapshot, не доказательство GitHub trigger/видео.
+Первый probe был local snapshot; затем отдельно проверены настоящий PR-trigger
+и длинная живая запись. Итог в RESULT.md.
