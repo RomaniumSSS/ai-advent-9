@@ -1,0 +1,32 @@
+{
+  "kind": "offline ceiling preview, not billed cost",
+  "profile": "qwen/qwen3.8-max-0902 / alibaba/us-east-1",
+  "input_usd_per_million": 2,
+  "output_usd_per_million": 6,
+  "output_cap": 4096,
+  "case": "local fixture regression; live paths/SHA may differ",
+  "modes": [
+    {
+      "mode": "diff",
+      "messages_utf8_bytes": 4195,
+      "reserve_usd": 0.064966,
+      "request_bytes": 5156,
+      "sources": 0
+    },
+    {
+      "mode": "files",
+      "messages_utf8_bytes": 5450,
+      "reserve_usd": 0.067476,
+      "request_bytes": 6411,
+      "sources": 0
+    },
+    {
+      "mode": "rag",
+      "messages_utf8_bytes": 10199,
+      "reserve_usd": 0.076974,
+      "request_bytes": 11160,
+      "sources": 3
+    }
+  ],
+  "sum_usd": 0.209416
+}

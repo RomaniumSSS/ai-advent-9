@@ -1,0 +1,26 @@
+{
+  "model": "gpt-6.1-sol",
+  "environment": "macOS; existing uv Python environment",
+  "command": "uv run --no-sync python day32/test_scenarios.py",
+  "test_methods": 39,
+  "passed": 39,
+  "elapsed_seconds_reported": 18.07,
+  "generated_property_suite": {
+    "seed": 320016,
+    "checks_per_execution": 100,
+    "note": "Один набор100checks; вызывается прямым unittest и интеграционным тестом eval_faults. Не считается100отдельными методами."
+  },
+  "demo_command": "uv run --no-sync python day32/eval_faults.py --state day32/.runtime/offline-faults-20261016a",
+  "demo_scenarios": 9,
+  "demo_assertions": 36,
+  "demo_passed": true,
+  "quality_evaluation": false,
+  "paid_calls": 0,
+  "core_files_modified": false,
+  "regression_suite": {
+    "command": "uv run --no-sync python day32/test_review.py",
+    "test_methods": 17,
+    "passed": 17,
+    "elapsed_seconds_reported": 9.186
+  }
+}

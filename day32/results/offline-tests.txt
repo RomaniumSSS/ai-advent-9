@@ -1,0 +1,22 @@
+test_abandoned_claim_not_retried (__main__.ReviewTests.test_abandoned_claim_not_retried) ... ok
+test_budget_reserve_unknown_and_no_retry (__main__.ReviewTests.test_budget_reserve_unknown_and_no_retry) ... ok
+test_context_limit_does_not_mutate_snapshot (__main__.ReviewTests.test_context_limit_does_not_mutate_snapshot) ... ok
+test_delete_rename_snapshot (__main__.ReviewTests.test_delete_rename_snapshot) ... ok
+test_incomplete_model_output_rejected (__main__.ReviewTests.test_incomplete_model_output_rejected) ... ok
+test_large_tree_and_manifest_persist_limited (__main__.ReviewTests.test_large_tree_and_manifest_persist_limited) ... ok
+test_limits_and_symlink (__main__.ReviewTests.test_limits_and_symlink) ... ok
+test_persistent_dedupe_new_sha_and_modes (__main__.ReviewTests.test_persistent_dedupe_new_sha_and_modes) ... ok
+test_provider_exact_profile_and_single_request (__main__.ReviewTests.test_provider_exact_profile_and_single_request) ... ok
+test_real_git_rag_contract_and_modes (__main__.ReviewTests.test_real_git_rag_contract_and_modes) ... ok
+test_real_git_space_filename_visible_hunk (__main__.ReviewTests.test_real_git_space_filename_visible_hunk) ... ok
+test_target_boundary (__main__.ReviewTests.test_target_boundary) ... ok
+test_validation_untrusted_ids_line_and_paths (__main__.ReviewTests.test_validation_untrusted_ids_line_and_paths) ... ok
+test_visible_diff_rename_delete_and_no_newline (__main__.ReviewTests.test_visible_diff_rename_delete_and_no_newline) ... ok
+test_visible_lines_diff_full_file_and_pruned_prompt (__main__.ReviewTests.test_visible_lines_diff_full_file_and_pruned_prompt) ... ok
+test_visible_source_ranges_require_snapshot_sha (__main__.ReviewTests.test_visible_source_ranges_require_snapshot_sha) ... ok
+test_watcher_readonly_adapter (__main__.ReviewTests.test_watcher_readonly_adapter) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 9.102s
+
+OK

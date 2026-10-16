@@ -1,0 +1,333 @@
+{
+  "offline": true,
+  "quality_evaluation": false,
+  "network_calls": 0,
+  "provider_policy": "SIMULATED only",
+  "state": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day32-pr-review/day32/.runtime/offline-faults-20261016a",
+  "seeded_properties": {
+    "seed": 320016,
+    "generated_checks": 100,
+    "status": "PASS",
+    "groups": {
+      "line_coordinates": 40,
+      "invalid_references": 30,
+      "target_boundaries": 30
+    }
+  },
+  "cases": [
+    {
+      "name": "Неоднозначный timeout",
+      "trace_id": "29c8b6990b154ec3aa727749879d7e8d",
+      "provider": "SIMULATED timeout",
+      "expected": "error",
+      "actual": "error",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Повреждённый JSON",
+      "trace_id": "fdcb64e7fac04bd8ae846112f56edf63",
+      "provider": "SIMULATED malformed JSON",
+      "expected": "error",
+      "actual": "error",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Усечённый ответ",
+      "trace_id": "a2dd4bae70d34ae488dcfe5b5de0c0e1",
+      "provider": "SIMULATED truncated output",
+      "expected": "error",
+      "actual": "error",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Невидимая строка",
+      "trace_id": "e851e7b297ae4ecbacc561d9fb54f964",
+      "provider": "SIMULATED bad line",
+      "expected": "error",
+      "actual": "error",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Поддельный source ID",
+      "trace_id": "d67e83315e844c619cc974ab4f02f189",
+      "provider": "SIMULATED bad source",
+      "expected": "error",
+      "actual": "error",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Пустой choices",
+      "trace_id": "3bebcc02b71b4b11b3e01ff9a07cbb18",
+      "provider": "SIMULATED empty choices",
+      "expected": "error",
+      "actual": "error",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "error",
+          "actual": "error",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Слишком большой файл",
+      "trace_id": "850d075851cf4cdda6b186b0e59b34af",
+      "provider": "SIMULATED oversized file",
+      "expected": "limited",
+      "actual": "limited",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "limited",
+          "actual": "limited",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Нет бюджета даже для резерва",
+      "trace_id": "f0569f8669734544b087f4f882b7dac8",
+      "provider": "SIMULATED budget blocked",
+      "expected": "budget_blocked",
+      "actual": "budget_blocked",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "budget_blocked",
+          "actual": "budget_blocked",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 0,
+          "actual": 0,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "name": "Чистый diff без выдуманных defects",
+      "trace_id": "ed0df0a9208a41c78f9def499d085678",
+      "provider": "SIMULATED safe clean fixture",
+      "expected": "complete",
+      "actual": "complete",
+      "passed": true,
+      "tests": [
+        {
+          "test": "terminal status",
+          "expected": "complete",
+          "actual": "complete",
+          "passed": true
+        },
+        {
+          "test": "simulation label",
+          "expected": true,
+          "actual": true,
+          "passed": true
+        },
+        {
+          "test": "persistent dedupe",
+          "expected": false,
+          "actual": false,
+          "passed": true
+        },
+        {
+          "test": "single/no call",
+          "expected": 1,
+          "actual": 1,
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "tests": {
+    "scenario_count": 9,
+    "assertion_checks": 36,
+    "generated_property_checks": 100,
+    "unittest_command": "uv run --no-sync python day32/test_scenarios.py",
+    "note": "Число unittest методов берётся из фактического отдельного прогона; assertions не считаются методами."
+  },
+  "passed": true
+}

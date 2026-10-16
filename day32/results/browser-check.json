@@ -1,0 +1,46 @@
+{
+  "checked_at": "2026-10-16T20:55:20.661259+00:00",
+  "environment": "macOS; local Playwright browser; http://127.0.0.1:8072",
+  "provider": "offline fixture",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 800,
+      "document_width": 1280
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "document_width": 768
+    },
+    {
+      "width": 375,
+      "height": 812,
+      "document_width": 375
+    }
+  ],
+  "checks": {
+    "mobile_header_overlap_fixed": true,
+    "diff_visible": true,
+    "retrieved_docs_and_code_visible": true,
+    "exact_messages_visible": true,
+    "fixture_notice_visible": true,
+    "details_remain_open_after_6500_ms": true,
+    "switch_to_diff_trace": true,
+    "page_errors_during_final_check": []
+  },
+  "evidence": [
+    "ui-desktop.png",
+    "ui-tablet.png",
+    "ui-mobile.png",
+    "ui-context.png"
+  ],
+  "not_proven": [
+    "real PR trigger",
+    "real Qwen generation",
+    "semantic quality",
+    "human acceptance"
+  ],
+  "final_state": "day32/.runtime/offline-final",
+  "final_fresh_browser": "Playwright Chromium local; desktop/tablet/mobile screenshots refreshed; fixture and rag confirmed"
+}

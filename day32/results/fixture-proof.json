@@ -1,0 +1,58 @@
+{
+  "time": "2026-10-16T20:58:20.775130+00:00",
+  "state": "day32/.runtime/offline-final",
+  "runs": [
+    {
+      "trace_id": "bc869391a1354e9fa5d45736713a8988",
+      "mode": "rag",
+      "status": "complete",
+      "provider": "offline fixture",
+      "findings": 1,
+      "source_kinds": [
+        "code",
+        "docs"
+      ],
+      "cost": {
+        "reserved_usd": 0,
+        "actual_usd": null,
+        "prompt_tokens": null,
+        "completion_tokens": null
+      }
+    },
+    {
+      "trace_id": "1f7c7d153b1e41de9d7e65390d866739",
+      "mode": "files",
+      "status": "complete",
+      "provider": "offline fixture",
+      "findings": 1,
+      "source_kinds": [],
+      "cost": {
+        "reserved_usd": 0,
+        "actual_usd": null,
+        "prompt_tokens": null,
+        "completion_tokens": null
+      }
+    },
+    {
+      "trace_id": "41cea13210d742d7b325f435bbbd009e",
+      "mode": "diff",
+      "status": "complete",
+      "provider": "offline fixture",
+      "findings": 1,
+      "source_kinds": [],
+      "cost": {
+        "reserved_usd": 0,
+        "actual_usd": null,
+        "prompt_tokens": null,
+        "completion_tokens": null
+      }
+    }
+  ],
+  "repeat_rag_creates_new_run": false,
+  "application_provider_calls": 0,
+  "not_proven": [
+    "real GitHub PR trigger",
+    "Qwen quality",
+    "video"
+  ]
+}
