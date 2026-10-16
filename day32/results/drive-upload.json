@@ -1,0 +1,14 @@
+{
+  "verified_at": "2026-10-16T22:03:38.887118+00:00",
+  "file_name": "Day32-live-edited.mp4",
+  "file_id": "1dMjHbF4OIxSJjdF9Q7Y7wfRAQKhj615M",
+  "file_url": "https://drive.google.com/file/d/1dMjHbF4OIxSJjdF9Q7Y7wfRAQKhj615M/view?usp=sharing",
+  "folder_id": "1CUiMGnC-BFP4JTUML8LdS9cA1yPPO0zY",
+  "general_access": "Anyone with the link",
+  "permission": "Viewer",
+  "local_bytes": 12620604,
+  "local_sha256": "ad157d24dac021bd301c48c1aa434049ebf5419a1462d5bde8c36120923fa054",
+  "duration_seconds": 518.68,
+  "evidence": "Drive UI: one upload complete, filename and owner checked, Share Access updated Viewer; anonymous HTTP200 with matching filename; allowed-root upload copy SHA256 matches original",
+  "cloud_byte_hash": "not measured"
+}
