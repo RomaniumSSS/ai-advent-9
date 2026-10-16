@@ -1,0 +1,19 @@
+{
+  "time_utc": "2026-10-16T19:51:29.323054+00:00",
+  "authorization": "User explicitly requested larger limit and immediate 10-question run after earlier limit-preserving reply",
+  "before": {
+    "limit_usd": 0.5,
+    "accounted_usd": 0.4734906424,
+    "calls": 79
+  },
+  "after": {
+    "limit_usd": 1.1,
+    "accounted_usd": 0.4734906424,
+    "calls": 79
+  },
+  "prior_call_rows_unchanged": true,
+  "new_series_ceiling_usd": 0.517374,
+  "ledger_reset": false,
+  "refunds": false,
+  "scope": "Local Day31 shared ledger only; OpenRouter workspace settings unchanged"
+}

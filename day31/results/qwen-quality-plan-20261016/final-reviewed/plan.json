@@ -1,0 +1,138 @@
+{
+  "status": "blocked_budget",
+  "created_at_utc": "2026-10-16T19:44:28.881379+00:00",
+  "execute": false,
+  "model_calls_sent": 0,
+  "case_count": 10,
+  "model_eligible_count": 10,
+  "empty_retrieval_cases": [],
+  "profile": {
+    "model": "qwen/qwen3.8-max-0902",
+    "exact_route": "alibaba/us-east-1",
+    "input_usd_per_m": 2.0,
+    "output_usd_per_m": 6.0,
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    }
+  },
+  "preflight": {
+    "model": "qwen/qwen3.8-max-0902",
+    "provider": "alibaba/us-east-1",
+    "checked_at": 1792179868.881365,
+    "endpoints": [
+      {
+        "tag": "alibaba/us-east-1",
+        "prompt_usd_per_m": 2.0,
+        "completion_usd_per_m": 6.0
+      }
+    ]
+  },
+  "budget_before": {
+    "ledger_path": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant/day31/.runtime/live-20261016/budget.sqlite3",
+    "limit_usd": 0.5,
+    "charged_usd": 0.4734906424,
+    "remaining_usd": 0.026509357600000005,
+    "known_cost_usd": 0.0163579524,
+    "unknown_holds_usd": 0.45713269,
+    "entries": 79
+  },
+  "series_reserve_ceiling_usd": 0.517374,
+  "fits_current_budget": false,
+  "additional_limit_needed_usd": 0.4908646424,
+  "minimum_total_limit_usd": 0.9908646424,
+  "git": {
+    "root": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-qwen-eval",
+    "branch": "day31-qwen-eval",
+    "detached": false,
+    "head": "1a9d91a0e897dfe4ed5f6a01e5831e1ffbe76431"
+  },
+  "runtime_sha256": {
+    "assistant.py": "999d54235a9559ca7f19eda08e4913ac785bef19321218dfa97e01864a771ee2",
+    "provider.py": "86b663858bf0e6287f3010f91c9a62e65b11df313777765e621bd3b226fb27e2",
+    "retrieval.py": "eccc68a0eab2effd4c1417ccee41d03f807645d561da3540c04d3cccb01d141e",
+    "contracts.py": "d8f12045e9eb97cadcd1ed14e3e2e307c0ed18531c0489476461d6ed8bd2abf7",
+    "mcp_client.py": "74efef86bc8f486cd85c91eb3fcf6995f5f4c1d3d0fd36840cea13b2ace0975b",
+    "git_mcp_server.py": "c33628a2e6a93be4294c2ca0c54a14a9b419bbd666e8550c97ecda4d1d0703e8",
+    "config.py": "e4b385e27b2e0e86097872b779ec6c72a78f079aba605eeb302bc9490c8ffa9d",
+    "eval/compare_models.py": "b644543feb88d1eafcd79b30d38c086f441ab16680882ef6ea66765823ad2fed"
+  },
+  "corpus_sha256": "91a657b1fc58065e548769ffe8c080dbdadaa59035894a570254a84ffa3657fd",
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37",
+  "schema_sha256": "8a9434049560278fb2bc397f46350283e95f74d96a98bbadfb876ae9450c6a06",
+  "cases_sha256": "e5488bb51e2d5faf9b43a39688ddf17ed57668b232c150b76d98333d60303374",
+  "request_inputs_sha256": "d628c749a1d8ab69f3af16d01e772000c73ec0fefe33afc7efad30ddc19becb9",
+  "requests": [
+    {
+      "case_id": "Q1",
+      "input_sha256": "ea98777248cd5bd92f560a45527bac1df09b9cb4a62738116b527682f6e18c5d",
+      "request_reserve_usd": 0.04902,
+      "source_count": 5
+    },
+    {
+      "case_id": "Q2",
+      "input_sha256": "f7c1788beed042728910b2c142a3ad52ce55a90e25bb14adf1a99b769a51c301",
+      "request_reserve_usd": 0.049282,
+      "source_count": 5
+    },
+    {
+      "case_id": "Q3",
+      "input_sha256": "64f36e60d1915866b6277b688aba00bc08a6921447b34de120c4ed401f5d02b5",
+      "request_reserve_usd": 0.06059,
+      "source_count": 5
+    },
+    {
+      "case_id": "Q4",
+      "input_sha256": "c9c06261fda4d03c42b495c0ce2f2dbb9ad8221c05c184323601c010f2b411ba",
+      "request_reserve_usd": 0.053472,
+      "source_count": 5
+    },
+    {
+      "case_id": "Q5",
+      "input_sha256": "1666b3739c22f31420bd317e0df5ae29359e876d75d221f8ea520cec59c368b2",
+      "request_reserve_usd": 0.049016,
+      "source_count": 2
+    },
+    {
+      "case_id": "Q6",
+      "input_sha256": "f90951de1dbaa7dc7e90ab5f032e372ad3a1e0e147f2b62f3f2a67b1df28c7f4",
+      "request_reserve_usd": 0.049028,
+      "source_count": 5
+    },
+    {
+      "case_id": "T3",
+      "input_sha256": "6769a449385a29a377283890914f3a1c6ef9076397b7a88db4a1fb725540e45a",
+      "request_reserve_usd": 0.057486,
+      "source_count": 5
+    },
+    {
+      "case_id": "A1",
+      "input_sha256": "8201d163d384065f24e856b7802b30b0965aade3523065de114525e3d74bf2e4",
+      "request_reserve_usd": 0.047668,
+      "source_count": 5
+    },
+    {
+      "case_id": "D1",
+      "input_sha256": "d1d8976b43d720fdc4b0dd329e81451bf890025a3c85f682333b7ce2bba9f5c5",
+      "request_reserve_usd": 0.049362,
+      "source_count": 5
+    },
+    {
+      "case_id": "R1",
+      "input_sha256": "8ca8b5354a1b73a0b630fe7432071bc7dbb1f057df1f3c965085b992dfcab711",
+      "request_reserve_usd": 0.05245,
+      "source_count": 5
+    }
+  ],
+  "quality_status": "NOT_PROVEN: план не является проверкой генерации",
+  "semantic_grading": "Отдельный reviewer читает rubric и ответы; rubric не входит в actual_input.",
+  "runner_sha256": "fd16528836a10d808f7f4edba887a441eefd3b32d6fd17cc0a4417ee1fb81b5b",
+  "runner_freeze_note": "Metadata-only runner fingerprint added after Luna finding; actual inputs, corpus, SYSTEM, budget and preflight unchanged.",
+  "rubric_review_note": {
+    "updated_at_utc": "2026-10-16T19:49:23.573670+00:00",
+    "reason": "Исправлены только evaluator rubric D1/T3 по замечаниям Astra; вопросы, actual inputs, корпус, SYSTEM, schema, Git, preflight и бюджет скопированы без изменения. Бесплатная offline копия, новых MCP/LLM вызовов нет.",
+    "previous_plan": "../final/plan.json",
+    "previous_cases_sha256": "e71bac3cc93f1eab0b0096cad3f9ca45423a4fb01d0641f1e2aa077462f27aa3"
+  }
+}

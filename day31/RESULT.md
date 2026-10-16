@@ -96,5 +96,29 @@ FF push в `main` и `day31-dev-assistant`, feature-коммит
 проверены; скачанное видео имеет тот же SHA256. Корневые HANDOFF/todo и runtime
 в публикацию не включены.
 
-Пользовательская приёмка и сдача в канал pending. Drive, таблица и деплой
-не выполнялись.
+Позднее с отдельного разрешения пользователя [видео DeepSeek загружено в Drive](https://drive.google.com/file/d/1F4f1N8ke7La7VnJOxPYiZ3wpzzr7PolG/view?usp=sharing)
+в прежнюю папку с работами: Anyone/Viewer, воспроизведение и анонимное скачивание
+с полным совпадением SHA проверены. [Независимая проверка](results/drive-independent-check-20261016.json).
+В [Лист1!AF132](https://docs.google.com/spreadsheets/d/1eFmeejRLXnT5fic3uxagtNgQBvv6uAKUG5McRlEo-eE/edit?gid=0#gid=0&range=AF132) отправлен один собственный комментарий с двумя URL;
+UI подтвердил Comment created, после перезагрузки — Saved to Drive.
+**Повторное чтение текста и anchor после reload NOT PROVEN**: панель комментариев зависла.
+[Фактическое подтверждение](results/drive-table-publication-20261016.json).
+Пользовательская приёмка pending; отправка в чат и деплой не выполнялись.
+
+
+## Дополнительная проверка Qwen: 10 вопросов
+
+После отдельного разрешения увеличить потолок выполнена [серия из 10 вопросов](results/qwen-quality-live-20261016/summary.json)
+с обычным RAG/MCP-контекстом, без урезания и ручной подстановки фрагментов.
+**9 semantic PASS / 1 T3 PARTIAL**, [независимая оценка](results/qwen-quality-live-20261016/semantic-review.md).
+Qwen точно воспроизвёл `.run("stdio")` и дал валидный JSON-пример, но достроил
+часть подробностей схемы сверх источников. Новых API errors=0, десять разных receipt.
+Оформление текста удобнее сохранённых ответов DeepSeek; новый UI/видео Qwen не снимались.
+
+Reported cost серии **$0.0772**, сумма времени вызовов 147.928 s, диапазон 6.0–24.3 s.
+Прежний ledger с явного разрешения повышен $0.50→$1.10 без сброса 79 старых записей.
+После серии 89 записей: известный расход $0.0935579524, неизвестные резервы $0.45713269,
+учтено $0.5506906424, доступно $0.5493093576. Неизвестные holds не являются
+подтверждённым списанием. [Authorization](results/qwen-budget-authorization-20261016.json),
+[независимая проверка данных](results/qwen-quality-live-20261016/coordinator-check.json).
+Default/runtime/corpus опубликованного приложения не менялись; видео показывает DeepSeek.

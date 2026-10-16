@@ -1,0 +1,69 @@
+{
+  "checked_at_utc": "2026-10-16T19:55:03.385802+00:00",
+  "status": "PASS_runtime_and_evidence_only",
+  "real_calls": 10,
+  "unique_questions": 10,
+  "unique_receipts": 10,
+  "api_errors": 0,
+  "answer_text_equals_raw_model_text": true,
+  "source_ranges_hashes_verified": true,
+  "no_rubric_in_user_payload": true,
+  "same_shared_ledger_entries_matched": true,
+  "immutable_application_runtime_verified": true,
+  "new_series_actual_cost_usd": 0.0772,
+  "provider_latency_seconds": {
+    "min": 6.03453604108654,
+    "median": 15.091520478832535,
+    "max": 24.27493029087782,
+    "sum": 147.927813956514,
+    "by_case": [
+      {
+        "case": "Q1",
+        "seconds": 13.141613291809335
+      },
+      {
+        "case": "Q2",
+        "seconds": 20.526123291114345
+      },
+      {
+        "case": "Q3",
+        "seconds": 10.480418415972963
+      },
+      {
+        "case": "Q4",
+        "seconds": 6.03453604108654
+      },
+      {
+        "case": "Q5",
+        "seconds": 9.366431708913296
+      },
+      {
+        "case": "Q6",
+        "seconds": 18.079429457895458
+      },
+      {
+        "case": "T3",
+        "seconds": 17.041427665855736
+      },
+      {
+        "case": "A1",
+        "seconds": 11.286099083954468
+      },
+      {
+        "case": "D1",
+        "seconds": 17.69680470903404
+      },
+      {
+        "case": "R1",
+        "seconds": 24.27493029087782
+      }
+    ]
+  },
+  "budget_after": {
+    "limit_usd": 1.1,
+    "known_actual_cost_usd": 0.09355795239999999,
+    "unknown_cost_holds_usd": 0.45713269,
+    "entries": 89
+  },
+  "semantic_review": "separate semantic-review.md; JSON/source validity alone does not prove truth"
+}

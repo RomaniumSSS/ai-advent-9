@@ -11,6 +11,10 @@
 - [x] Финальные реальные core-сценарии и успешный CLI на выбранном профиле; Q2 PARTIAL, [оценка](results/deepseek-final-core-20261016/semantic-review.md).
 - [x] Новые live dry/record; 77.44 s, ffprobe/decode и 7 кадров проверены Sol и координатором.
 - [x] Финальные RESULT/RELEASE_NOTES, commit и атомарный FF push в GitHub main + day31-dev-assistant; [proof](PUBLICATION.json).
+- [x] Дополнительные 10 разных вопросов Qwen: реальные ответы, 9 semantic PASS / 1 T3 PARTIAL; [оценка](results/qwen-quality-live-20261016/semantic-review.md).
+- [x] Видео DeepSeek загружено в прежнюю папку Drive; Anyone/Viewer, playback и анонимный SHA PASS.
+- [x] Две ссылки отправлены одним комментарием в Лист1!AF132; Comment created / Saved to Drive.
+- [ ] Повторное чтение комментария после reload: NOT PROVEN, панель зависает; [proof](results/drive-table-publication-20261016.json).
 - [ ] Пользовательская приёмка и сдача в канал.
 
 ## Историческая подготовка и промежуточные проверки
@@ -57,7 +61,8 @@
   Полный gold PASS не заявляется: Q2 PARTIAL, T3 JSON-пример FAIL.
 - [x] Живой UI dry-run, новая запись, проверка кадров, итоговые документы и публикация кода — [итог](RESULT.md).
 
-Все реальные вызовы учитываются в одном ledger с лимитом $0.50. Исходные неудачи,
+Все реальные вызовы учитываются в одном прежнем ledger: начальный лимит $0.50,
+после отдельного разрешения пользователя на Qwen10 — $1.10. Резервы не сбрасывались. Исходные неудачи,
 диагностика и последующие результаты хранятся раздельно в results/ и actions.jsonl.
 
 ## Контракты до параллельной реализации

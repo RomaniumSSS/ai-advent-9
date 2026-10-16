@@ -1,0 +1,51 @@
+{
+  "checked_at_utc": "2026-10-16T19:49:28.211691+00:00",
+  "purpose": "Read-only delayed generation receipt check; no inference or ledger mutation",
+  "unknown_entries": 19,
+  "recoverable_receipt_ids": 7,
+  "results": [
+    {
+      "trace_id": "3c0b16197d15478eaaa21843798a4fe8",
+      "generation_id": "gen-1792177556-7cDITiSOHVlCQV1r5BvN",
+      "http_status": 404,
+      "reported_total_cost": null
+    },
+    {
+      "trace_id": "4c803d07719749f8b01c049b1c4cc74d",
+      "generation_id": "gen-1792176633-fFkClkxOd9xOJkBg9l2H",
+      "http_status": 404,
+      "reported_total_cost": null
+    },
+    {
+      "trace_id": "529c2e671c4a4aab94248a69213cb86e",
+      "generation_id": "gen-1792176632-h9IHrd3yMvG2jKeAOFnu",
+      "http_status": 404,
+      "reported_total_cost": null
+    },
+    {
+      "trace_id": "a533f3c2e2a6474d8aea6a0714fbe692",
+      "generation_id": "gen-1792176634-Wke2YXWE0r8J6A4FosXC",
+      "http_status": 404,
+      "reported_total_cost": null
+    },
+    {
+      "trace_id": "465e01e64f0f42cd8d71014fc650e664",
+      "generation_id": "gen-1792176633-6bqTEE7oyjwOBD9uzWmI",
+      "http_status": 404,
+      "reported_total_cost": null
+    },
+    {
+      "trace_id": "9b81957131e1402d9b96f06c46f838d3",
+      "generation_id": "gen-1792176632-UJgsFc7FWue69N1aA8w6",
+      "http_status": 404,
+      "reported_total_cost": null
+    },
+    {
+      "trace_id": "2786555e4c2b4ec09d60e98bade9ff34",
+      "generation_id": "gen-1792176633-5oOElevHftpWLdtUwqE3",
+      "http_status": 404,
+      "reported_total_cost": null
+    }
+  ],
+  "note": "HTTP404/absence does not prove zero cost; holds remain without explicit billing amount."
+}

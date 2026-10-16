@@ -1,0 +1,228 @@
+{
+  "status": "complete",
+  "execute": true,
+  "profile": {
+    "model": "qwen/qwen3.8-max-0902",
+    "exact_route": "alibaba/us-east-1",
+    "input_usd_per_m": 2.0,
+    "output_usd_per_m": 6.0,
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    }
+  },
+  "preflight": {
+    "model": "qwen/qwen3.8-max-0902",
+    "provider": "alibaba/us-east-1",
+    "checked_at": 1792180297.771698,
+    "endpoints": [
+      {
+        "tag": "alibaba/us-east-1",
+        "prompt_usd_per_m": 2.0,
+        "completion_usd_per_m": 6.0
+      }
+    ]
+  },
+  "budget_before": {
+    "ledger_path": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant/day31/.runtime/live-20261016/budget.sqlite3",
+    "limit_usd": 1.1,
+    "charged_usd": 0.4734906424,
+    "remaining_usd": 0.6265093576,
+    "known_cost_usd": 0.0163579524,
+    "unknown_holds_usd": 0.45713269,
+    "entries": 79
+  },
+  "calls": [
+    {
+      "case_id": "Q1",
+      "trace_id": "62f185dad8804278ad4d2b097cc67d47",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 2273,
+        "completion_tokens": 402,
+        "reasoning_tokens": 70,
+        "cost_usd": 0.006958
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW"
+      }
+    },
+    {
+      "case_id": "Q2",
+      "trace_id": "38e6bc2310814e439ccfb6eb99eaab8b",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 2053,
+        "completion_tokens": 698,
+        "reasoning_tokens": 343,
+        "cost_usd": 0.008294
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW",
+        "exact_stdio_call_mentioned": true
+      }
+    },
+    {
+      "case_id": "Q3",
+      "trace_id": "2d094efcf76f493795a733a72f920596",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 3118,
+        "completion_tokens": 317,
+        "reasoning_tokens": 177,
+        "cost_usd": 0.008138
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW"
+      }
+    },
+    {
+      "case_id": "Q4",
+      "trace_id": "4a0dea92b11c482a81379062e34e8ed3",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 2646,
+        "completion_tokens": 150,
+        "reasoning_tokens": 50,
+        "cost_usd": 0.006192
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW"
+      }
+    },
+    {
+      "case_id": "Q5",
+      "trace_id": "e7bba6cbc9904694974e7f0fb57cad76",
+      "status": "unknown",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 1729,
+        "completion_tokens": 281,
+        "reasoning_tokens": 156,
+        "cost_usd": 0.005144
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW",
+        "unknown_status": true
+      }
+    },
+    {
+      "case_id": "Q6",
+      "trace_id": "b540e78b695a4a40a94644536793902d",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 2002,
+        "completion_tokens": 656,
+        "reasoning_tokens": 310,
+        "cost_usd": 0.00794
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW"
+      }
+    },
+    {
+      "case_id": "T3",
+      "trace_id": "3a5e684089224088a491f04f17dcd152",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 3003,
+        "completion_tokens": 637,
+        "reasoning_tokens": 218,
+        "cost_usd": 0.009828
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW",
+        "inner_json_example": {
+          "status": "PASS",
+          "json_loads": "PASS",
+          "type_function_shape": true,
+          "semantic_correctness": "PENDING_REVIEW"
+        }
+      }
+    },
+    {
+      "case_id": "A1",
+      "trace_id": "78c29511642d44398293faedcce7f42b",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 2175,
+        "completion_tokens": 317,
+        "reasoning_tokens": 181,
+        "cost_usd": 0.006252
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW"
+      }
+    },
+    {
+      "case_id": "D1",
+      "trace_id": "0cdf2393ae654cefbcced2c50c8de129",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 2065,
+        "completion_tokens": 676,
+        "reasoning_tokens": 213,
+        "cost_usd": 0.008186
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW"
+      }
+    },
+    {
+      "case_id": "R1",
+      "trace_id": "dd71ce2b49614f7499da96ec7d529038",
+      "status": "ok",
+      "sent": true,
+      "usage": {
+        "prompt_tokens": 2287,
+        "completion_tokens": 949,
+        "reasoning_tokens": 550,
+        "cost_usd": 0.010268
+      },
+      "checks": {
+        "raw_outer_json_schema": "PASS",
+        "assistant_schema_and_citation_guards": "PASS",
+        "semantic": "PENDING_REVIEW"
+      }
+    }
+  ],
+  "plan_dir": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-qwen-eval/day31/results/qwen-quality-plan-20261016/final-reviewed",
+  "plan_sha256": "3a5f27d334f386b17022aa364f645e641346d76f7b936545699b77bdd93d74ef",
+  "semantic": "PENDING_REVIEW",
+  "budget_after": {
+    "ledger_path": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant/day31/.runtime/live-20261016/budget.sqlite3",
+    "limit_usd": 1.1,
+    "charged_usd": 0.5506906424,
+    "remaining_usd": 0.5493093576000001,
+    "known_cost_usd": 0.09355795239999999,
+    "unknown_holds_usd": 0.45713269,
+    "entries": 89
+  }
+}

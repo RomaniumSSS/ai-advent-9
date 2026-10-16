@@ -1,0 +1,11 @@
+{
+  "checked_at_utc": "2026-10-16T19:58:12.487905+00:00",
+  "reviewer": "root coordinator",
+  "method": "Anonymous urllib GET without cookies/authentication; TLS verified with existing certifi CA bundle",
+  "http_status": 200,
+  "content_type": "video/mp4",
+  "bytes": 2794853,
+  "sha256": "ecf74c20e474b308ff7490196cc7bb20ef254304cdad31c4b597edc03739513f",
+  "equals_canonical_video": true,
+  "status": "PASS"
+}

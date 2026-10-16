@@ -39,4 +39,16 @@ Dry+record добавили $0.0006702528, новый Qwen probe — $0.003622 �
 [видео](https://github.com/RomaniumSSS/ai-advent-9/blob/main/day31/video/Day31-live.mp4),
 [проверка публикации](PUBLICATION.json). Удалённые SHA и файлы проверены,
 SHA скачанного видео совпал с оригиналом. Пользовательская приёмка pending;
-Drive и таблица не изменялись.
+[Видео DeepSeek на Drive](https://drive.google.com/file/d/1F4f1N8ke7La7VnJOxPYiZ3wpzzr7PolG/view?usp=sharing) загружено с доступом по ссылке Viewer;
+воспроизведение и SHA анонимно скачанного файла проверены. В Лист1!AF132 отправлены
+две ссылки: Comment created / Saved to Drive. Чтение содержимого после reload
+NOT PROVEN из-за зависшей панели. [Proof](results/drive-table-publication-20261016.json).
+
+
+Дополнительно по просьбе пользователя выполнены [10 вопросов Qwen](results/qwen-quality-live-20261016/summary.json):
+9 semantic PASS, 1 PARTIAL по опоре подробностей JSON-схемы на источники; внешний
+и внутренний JSON валидны. `.run("stdio")` приведён точно; объяснения разбиты
+на списки/блоки кода. Серия стоила $0.0772, ожидание 6–24 s на ответ.
+[Смысловая оценка](results/qwen-quality-live-20261016/semantic-review.md).
+Общий лимит прежнего ledger с явного разрешения повышен до $1.10, старые резервы
+сохранены; известный расход всего $0.0935579524. Приложение и видео остаются на DeepSeek.
