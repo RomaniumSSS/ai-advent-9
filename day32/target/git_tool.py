@@ -10,4 +10,4 @@ def recent_commits(repository, limit=5):
                              '--format=%H %s'], check=True, capture_output=True, text=True)
     return result.stdout.splitlines()
 
-# Учебный прогон 1f5a25425b34436aa4e6c3def6938c98; вариант upper.
+# Учебный прогон 0c17edee65a34ad590e2e8f59a8fc6f0; вариант upper.
