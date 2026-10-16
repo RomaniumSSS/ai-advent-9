@@ -1,12 +1,8 @@
 diff --git a/git_tool.py b/git_tool.py
 --- a/git_tool.py
 +++ b/git_tool.py
-@@ -4,7 +4,7 @@ import subprocess
- 
- def recent_commits(repository, limit=5):
+@@ -6,3 +6,3 @@
      """Вернуть от одного до десяти последних коммитов включительно."""
 -    if type(limit) is not int or not 1 <= limit <= 10:
 +    if type(limit) is not int or not 1 <= limit < 10:
          raise ValueError('limit должен быть целым от 1 до 10 включительно')
-     result = subprocess.run(['git', '-C', str(repository), 'log', f'-{limit}',
-                              '--format=%H %s'], check=True, capture_output=True, text=True)
