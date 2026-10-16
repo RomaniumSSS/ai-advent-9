@@ -1,0 +1,244 @@
+{
+  "status": "complete_with_errors",
+  "execute": true,
+  "planned_calls": 9,
+  "calls": [
+    {
+      "case_id": "Q6",
+      "profile": "glm53",
+      "trace_id": "529c2e671c4a4aab94248a69213cb86e",
+      "status": "error",
+      "error_code": "incomplete",
+      "usage": null,
+      "file": "glm53/Q6.json"
+    },
+    {
+      "case_id": "P1",
+      "profile": "glm53",
+      "trace_id": "4c803d07719749f8b01c049b1c4cc74d",
+      "status": "error",
+      "error_code": "incomplete",
+      "usage": null,
+      "file": "glm53/P1.json"
+    },
+    {
+      "case_id": "T3",
+      "profile": "glm53",
+      "trace_id": "a533f3c2e2a6474d8aea6a0714fbe692",
+      "status": "error",
+      "error_code": "incomplete",
+      "usage": null,
+      "file": "glm53/T3.json"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "deepseek41",
+      "trace_id": "9b81957131e1402d9b96f06c46f838d3",
+      "status": "error",
+      "error_code": "incomplete",
+      "usage": null,
+      "file": "deepseek41/Q6.json"
+    },
+    {
+      "case_id": "P1",
+      "profile": "deepseek41",
+      "trace_id": "465e01e64f0f42cd8d71014fc650e664",
+      "status": "error",
+      "error_code": "incomplete",
+      "usage": null,
+      "file": "deepseek41/P1.json"
+    },
+    {
+      "case_id": "T3",
+      "profile": "deepseek41",
+      "trace_id": "2786555e4c2b4ec09d60e98bade9ff34",
+      "status": "error",
+      "error_code": "incomplete",
+      "usage": null,
+      "file": "deepseek41/T3.json"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "qwen38max",
+      "trace_id": "3834f3f886ba4dc1a4bb761d50c35a96",
+      "status": "error",
+      "error_code": "transport",
+      "usage": null,
+      "file": "qwen38max/Q6.json"
+    },
+    {
+      "case_id": "P1",
+      "profile": "qwen38max",
+      "trace_id": "780419688af74a3e9fc9c8afcad1ca0e",
+      "status": "error",
+      "error_code": "transport",
+      "usage": null,
+      "file": "qwen38max/P1.json"
+    },
+    {
+      "case_id": "T3",
+      "profile": "qwen38max",
+      "trace_id": "898141dd89f04e50a03a6e76767f8f08",
+      "status": "error",
+      "error_code": "transport",
+      "usage": null,
+      "file": "qwen38max/T3.json"
+    }
+  ],
+  "execution": {
+    "mode": "parallel_by_profile",
+    "max_workers": 3,
+    "questions_within_profile": "sequential"
+  },
+  "profiles": {
+    "glm53": {
+      "model": "z-ai/glm-5.3-flash",
+      "exact_route": "deepinfra/fp4",
+      "input_usd_per_m": 0.15,
+      "output_usd_per_m": 0.5,
+      "max_output_tokens": 8192,
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    },
+    "deepseek41": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "exact_route": "deepinfra/fp8",
+      "input_usd_per_m": 0.2,
+      "output_usd_per_m": 0.6,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "qwen38max": {
+      "model": "qwen/qwen3.8-max-0902",
+      "exact_route": "alibaba/us-east-1",
+      "input_usd_per_m": 2.0,
+      "output_usd_per_m": 6.0,
+      "max_output_tokens": 8192,
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    }
+  },
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37",
+  "schema_sha256": "8a9434049560278fb2bc397f46350283e95f74d96a98bbadfb876ae9450c6a06",
+  "preflight": {
+    "glm53": {
+      "model": "z-ai/glm-5.3-flash",
+      "provider": "deepinfra/fp4",
+      "checked_at": 1792176629.828955,
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp4",
+          "prompt_usd_per_m": 0.15,
+          "completion_usd_per_m": 0.5
+        }
+      ]
+    },
+    "deepseek41": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider": "deepinfra/fp8",
+      "checked_at": 1792176629.909832,
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp8",
+          "prompt_usd_per_m": 0.2,
+          "completion_usd_per_m": 0.6000000000000001
+        }
+      ]
+    },
+    "qwen38max": {
+      "model": "qwen/qwen3.8-max-0902",
+      "provider": "alibaba/us-east-1",
+      "checked_at": 1792176629.988857,
+      "endpoints": [
+        {
+          "tag": "alibaba/us-east-1",
+          "prompt_usd_per_m": 2.0,
+          "completion_usd_per_m": 6.0
+        }
+      ]
+    }
+  },
+  "corpus_sha256": "c0c0fda416edb20469a4433a0380d88bbbe0799fde2424bff9a7cef83dc960d7",
+  "planned_requests": [
+    {
+      "case_id": "Q6",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.0059330500000000005,
+      "messages_sha256": "3e703a9608e306045f000421940c5eef7ad708b1f86f6d249a6981c9d345a420",
+      "input_sha256": "4e3a8427561fe4a691b4d5249387f979808d319ba40d58ed9954b06157426871"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0034094,
+      "messages_sha256": "3e703a9608e306045f000421940c5eef7ad708b1f86f6d249a6981c9d345a420",
+      "input_sha256": "1c1942231f50c53b275d196540f24941c26f80f77759885d5f7c665036576bfc"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.073646,
+      "messages_sha256": "3e703a9608e306045f000421940c5eef7ad708b1f86f6d249a6981c9d345a420",
+      "input_sha256": "da26957c89b6484ca3400651f551590a0e47d31b5ed19522216c814710522adc"
+    },
+    {
+      "case_id": "P1",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.0060742,
+      "messages_sha256": "57fa2ac5be35634cd425fad235da3ef4f3c4d04fb2796576236ec3af31aa1ce5",
+      "input_sha256": "1d3f3783fecd7b4be54da0107474bb1ca149770850e389737b2d1dfe602d5b06"
+    },
+    {
+      "case_id": "P1",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0035976000000000003,
+      "messages_sha256": "57fa2ac5be35634cd425fad235da3ef4f3c4d04fb2796576236ec3af31aa1ce5",
+      "input_sha256": "e2de5950c7439531e771936fb05524f9af534c386b6afc52dbaae326e70ca0c3"
+    },
+    {
+      "case_id": "P1",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.075528,
+      "messages_sha256": "57fa2ac5be35634cd425fad235da3ef4f3c4d04fb2796576236ec3af31aa1ce5",
+      "input_sha256": "091c985a5d51256a28dd3add401a701a94ab01337d38ece6b47c2f8b00eb5bc6"
+    },
+    {
+      "case_id": "T3",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.00614035,
+      "messages_sha256": "f082f2ea494abdc709ff74076a471f1134d5c49ba7d393649757cd75a7764192",
+      "input_sha256": "0bfbb6565e569762baab02571c1026bca084b25ecac1ac2a7d68681d12889e5d"
+    },
+    {
+      "case_id": "T3",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0036858000000000004,
+      "messages_sha256": "f082f2ea494abdc709ff74076a471f1134d5c49ba7d393649757cd75a7764192",
+      "input_sha256": "f2f80df21030b1a3b33edc75a539c899c2c8b07cef8052cca6cfa6164f431f96"
+    },
+    {
+      "case_id": "T3",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.07641,
+      "messages_sha256": "f082f2ea494abdc709ff74076a471f1134d5c49ba7d393649757cd75a7764192",
+      "input_sha256": "d87d780352d4fc1ef70873bdd1ab27f583715a07006c3fe2bfd3b4fcd7136ca4"
+    }
+  ],
+  "total_reserve_ceiling_usd": 0.2544244,
+  "budget_before": {
+    "limit_usd": 0.5,
+    "charged_usd": 0.00529842,
+    "remaining_usd": 0.49470158
+  },
+  "budget_after": {
+    "limit_usd": 0.5,
+    "charged_usd": 0.25972282,
+    "remaining_usd": 0.24027717999999998
+  }
+}

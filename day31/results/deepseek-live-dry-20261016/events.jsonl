@@ -1,0 +1,20 @@
+{"time": "2026-10-16T19:21:32.797290+00:00", "event": "start", "kind": "dry-run", "expected_mode": "live"}
+{"time": "2026-10-16T19:21:34.567317+00:00", "event": "connected", "actual_mode": "live", "model": "deepseek/deepseek-v4.1-flash", "provider": "deepinfra/fp8"}
+{"time": "2026-10-16T19:21:34.956674+00:00", "event": "question_started", "index": 1, "question": "/help За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?"}
+{"time": "2026-10-16T19:21:39.495108+00:00", "event": "question_finished", "index": 1, "trace_id": "1c3dbf173c82444089772db873bd48c7", "status": "ok", "elapsed_seconds": 4.4367, "usage": {"prompt_tokens": 2013, "completion_tokens": 339, "reasoning_tokens": 0, "cost_usd": 0.0003894352}}
+{"time": "2026-10-16T19:21:39.607791+00:00", "event": "reading_frame", "index": 1, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "01-answer.png", "scroll_y": 510}
+{"time": "2026-10-16T19:21:39.758381+00:00", "event": "reading_frame", "index": 1, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "01-source.png", "scroll_y": 803}
+{"time": "2026-10-16T19:21:39.913262+00:00", "event": "reading_frame", "index": 1, "section": "mcp_call", "screenshot": "01-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T19:21:40.029746+00:00", "event": "reading_frame", "index": 1, "section": "mcp_result", "screenshot": "01-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T19:21:40.038138+00:00", "event": "question_started", "index": 2, "question": "/help Какая сейчас Git-ветка?"}
+{"time": "2026-10-16T19:21:41.868742+00:00", "event": "question_finished", "index": 2, "trace_id": "dd8b325a089549aaa7e9fab075880398", "status": "ok", "elapsed_seconds": 1.7798, "usage": {"prompt_tokens": 2402, "completion_tokens": 67, "reasoning_tokens": 0, "cost_usd": 5.15368e-05}}
+{"time": "2026-10-16T19:21:41.965345+00:00", "event": "reading_frame", "index": 2, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "02-answer.png", "scroll_y": 302}
+{"time": "2026-10-16T19:21:42.097274+00:00", "event": "reading_frame", "index": 2, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "02-source.png", "scroll_y": 499}
+{"time": "2026-10-16T19:21:42.236603+00:00", "event": "reading_frame", "index": 2, "section": "mcp_call", "screenshot": "02-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T19:21:42.335174+00:00", "event": "reading_frame", "index": 2, "section": "mcp_result", "screenshot": "02-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T19:21:42.339320+00:00", "event": "question_started", "index": 3, "question": "/help Какая погода завтра в Барселоне?"}
+{"time": "2026-10-16T19:21:43.094187+00:00", "event": "question_finished", "index": 3, "trace_id": "2bd25a79d5f24d2f9f4cf7b285ea4cdd", "status": "unknown", "elapsed_seconds": 0.717, "usage": null}
+{"time": "2026-10-16T19:21:43.191687+00:00", "event": "reading_frame", "index": 3, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "03-answer.png", "scroll_y": 52}
+{"time": "2026-10-16T19:21:43.311717+00:00", "event": "reading_frame", "index": 3, "section": "mcp_call", "screenshot": "03-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T19:21:43.394026+00:00", "event": "reading_frame", "index": 3, "section": "mcp_result", "screenshot": "03-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T19:21:43.394190+00:00", "event": "scenario_complete", "answer_count": 3, "page_errors": 0}

@@ -1,0 +1,136 @@
+{
+  "case_id": "Q5",
+  "question": "Какие Kubernetes-манифесты этого проекта обеспечивают автоматическое масштабирование?",
+  "answer": {
+    "status": "unknown",
+    "text": "В предоставленных источниках и Git-контексте отсутствуют сведения о Kubernetes-манифестах, обеспечивающих автоматическое масштабирование. Документы описывают запуск stdio-сервера Day17 и сценарии записи/проверки Day31, но не содержат конфигураций Kubernetes.",
+    "source_ids": [],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "a6c3b6d263cd4d238487c19497beb0a4",
+    "sources": [
+      {
+        "id": "e04f4bc74b9338bcfab2",
+        "path": "docs/git-mcp.md",
+        "start_line": 27,
+        "end_line": 42,
+        "section": "Запуск stdio-сервера Day17",
+        "text": "## Запуск stdio-сервера Day17\n\nИз корня репозитория, с установленными зависимостями проекта и Python 3.12+:\n\n```bash\nuv run --frozen python day17/git_mcp_server.py --repo /путь/к/repo\n```\n\nВ `main()` файла `git_mcp_server.py` аргумент `--repo` обязателен (`required=True`)\nи разбирается как `Path`. `build_server(args.repo)` разрешает его до Git worktree\nroot, после чего `.run(\"stdio\")` запускает MCP-сервер с транспортом stdio.\nЭто запуск отдельного процесса для MCP-клиента; HTTP-адреса у него нет.\nПуть — доверенная настройка старта, а не аргумент, который выбирает модель.\nЭтот пример запускает исходный сервер Day17 с `get_recent_commits`, а не новый\nсервер Day31 с `git_context`.\n",
+        "sha256": "9dab1d9c8cf398cbc31f578d8411f754d4b068edda00e202cf9b9ddcb588f13c",
+        "score": 2.662486232742461
+      },
+      {
+        "id": "28d422552a5566fa62dc",
+        "path": "docs/run.md",
+        "start_line": 74,
+        "end_line": 118,
+        "section": "После разрешения расходов и запуска сервера с --live:",
+        "text": "# После разрешения расходов и запуска сервера с --live:\nuv run python -m day31.recorder.run_demo --dry-run --expect-mode live \\\n  --output /tmp/day31-new-live-dry\nuv run python -m day31.recorder.run_demo --record --expect-mode live --hold-seconds 6 \\\n  --output /tmp/day31-new-live-record\n```\n\nКаждый прогон отправляет три новых вопроса через UI, раскрывает источник и\nфактический MCP result. Записываются trace_id/usage/время, ответы, скриншоты и\nсобытия этого запуска. `--expect-mode offline` по умолчанию не даст незаметно\nпотратить бюджет на облачном сервере. `--expect-mode live` явно разрешает новые\nответы через уже настроенный сервер с его общим ledger.\n\nRecord создаёт новый raw WebM и MP4 через ffmpeg, затем отдельный ffprobe.json.\nОфлайн-запись называется Day31-offline.mp4, облачная — Day31-live.mp4.\nУспешный сценарий проверяет статусы и новые trace_id, но не подменяет независимую\nпроверку смысла ответов или просмотр кадров. CLI проверяется отдельно; этот\nскрипт записывает только браузерные шаги 1–3 сценария.\n\nПараметр `--hold-seconds` (по умолчанию 6, допустимо 0 < значение ≤ 60) задаёт\nотдельную паузу для каждого читаемого экрана ответа/источника, начала MCP-вызова\nи его результата.\nЭти паузы начинаются после получения настоящего результата; ожидание API остаётся\nотдельным. Длинный ответ и источник автоматически прокручиваются экранами с\nперекрытием 180 px; каждый экран сохраняется отдельно и удерживается указанное\nвремя. Текст не сокращается и не заменяется. Для более медленного чтения можно\nувеличить hold-seconds. В dry-run паузы чтения отключены, даже если\nпараметр передан. Запрошенное и фактическое значения сохраняются в manifest.\n\nБраузерную проверку можно направить на другой Git-root:\n\n```bash\nuv run python -m day31.tests.browser_check --repo /путь/к/repo \\\n  --output /tmp/day31-browser-other-branch\n```\n\nОжидаемые Git-root, ветка и HEAD получаются независимыми командами `git`, затем\nсравниваются с точными UI/API значениями. Detached HEAD учитывается как branch=null;\nимя ветки разработчика в проверке не зафиксировано.\n\nВ MCP сначала показывается начало настоящего JSON (вызов/discovery), затем\nпрокручивается внутренний `pre` до `result.branch` и `result.head`. Код сверяет\nполный JSON с API и проверяет, что эти строки видны в viewport, не создавая\nсокращённую копию результата. Сохраняются `NN-mcp.png` и `NN-mcp-result.png`.\nУ длинного ответа/источника первый кадр сохраняет прежнее имя `NN-answer.png` /",
+        "sha256": "b2cbf92fd264774d8e374782fdf412a98334602bf6d3051e04071ada34cbb785",
+        "score": 1.3169256481905078
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0021,
+        "count": 2,
+        "source_ids": [
+          "e04f4bc74b9338bcfab2",
+          "28d422552a5566fa62dc"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6617,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 2.1469,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 1609,
+          "completion_tokens": 88,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.00011704
+        },
+        "receipt": {
+          "id": "gen-1792177274-mzwPmHijgUxsjJqYT1dQ",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "source_id_normalization": {
+          "method": "deterministic",
+          "added_from_inline": []
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1609,
+      "completion_tokens": 88,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.00011704
+    },
+    "elapsed_seconds": 2.8108,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  },
+  "provider_final": {
+    "trace_id": "a6c3b6d263cd4d238487c19497beb0a4",
+    "profile": {
+      "model": "z-ai/glm-4.7-flash",
+      "exact_route": "venice/fp8",
+      "input_usd_per_m": 0.06,
+      "output_usd_per_m": 0.4,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "finish_reason": "stop",
+    "receipt": {
+      "id": "gen-1792177274-mzwPmHijgUxsjJqYT1dQ",
+      "model": "z-ai/glm-4.7-flash",
+      "provider": "Venice"
+    },
+    "usage": {
+      "prompt_tokens": 1609,
+      "completion_tokens": 88,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.00011704
+    },
+    "content": "{\n  \"status\": \"unknown\",\n  \"text\": \"В предоставленных источниках и Git-контексте отсутствуют сведения о Kubernetes-манифестах, обеспечивающих автоматическое масштабирование. Документы описывают запуск stdio-сервера Day17 и сценарии записи/проверки Day31, но не содержат конфигураций Kubernetes.\",\n  \"source_ids\": []\n}",
+    "error": null,
+    "sent": true,
+    "reserved_usd": 0.0013746399999999999,
+    "elapsed_seconds": 2.1462065828964114
+  },
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37"
+}

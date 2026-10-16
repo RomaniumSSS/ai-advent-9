@@ -1,0 +1,56 @@
+{
+  "kind": "record",
+  "expected_mode": "offline",
+  "url": "http://127.0.0.1:8071",
+  "hold_seconds_requested": 6.0,
+  "hold_seconds_effective": 6.0,
+  "answers": [
+    {
+      "index": 1,
+      "trace_id": "39d440e38aa94975976e1357e2b9f198",
+      "status": "ok",
+      "expected": "ok",
+      "elapsed_seconds": 0.7749,
+      "usage": null
+    },
+    {
+      "index": 2,
+      "trace_id": "deb00bf119ea4aae986ad8e565afd56f",
+      "status": "ok",
+      "expected": "ok",
+      "elapsed_seconds": 0.7056,
+      "usage": null
+    },
+    {
+      "index": 3,
+      "trace_id": "8a04b9aa1dcc4f3f810651dc889665c4",
+      "status": "unknown",
+      "expected": "unknown",
+      "elapsed_seconds": 1.1697,
+      "usage": null
+    }
+  ],
+  "cli": "Проверяется отдельно командой python -m day31.cli; в этой записи только браузер",
+  "model": "offline-extract",
+  "provider": "локальный код, без LLM",
+  "git_root": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant",
+  "status": "complete",
+  "video": "/private/tmp/day31-review-offline-record/Day31-offline.mp4",
+  "raw_video": "/private/tmp/day31-review-offline-record/raw-video/page@045c3fd64763400139d770f56099210d.webm",
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 1000,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "52.400000",
+      "size": "1836165"
+    }
+  }
+}

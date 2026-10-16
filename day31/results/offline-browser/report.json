@@ -1,0 +1,17 @@
+{
+  "mode": "offline-extract + настоящий stdio MCP",
+  "checks": [
+    "README/docs и раскрываемые строки",
+    "настоящая ветка worktree",
+    "ссылка открывает существующий источник",
+    "unknown без вызова модели",
+    "HTML модели отображается как текст",
+    "pageerrors=0",
+    "нет горизонтального overflow 1280/768/375"
+  ],
+  "screenshots": [
+    "/private/tmp/day31-browser-check/desktop.png",
+    "/private/tmp/day31-browser-check/tablet.png",
+    "/private/tmp/day31-browser-check/mobile.png"
+  ]
+}

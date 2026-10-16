@@ -1,0 +1,99 @@
+{
+  "time": "2026-10-16T14:23:13.727167+00:00",
+  "base": "cf3603e",
+  "kind": "frozen_implementation_before_independent_review",
+  "files": [
+    {
+      "path": "day31/README.md",
+      "sha256": "f048b4db11affaddc04213e6a9bdd57c38a9d65f39c7d4f31eca6190d0b77ea5"
+    },
+    {
+      "path": "day31/assistant.py",
+      "sha256": "1a86ffd7d54e641278b57d2814693d84ec89d9e83fb1ae9475fac01919061ade"
+    },
+    {
+      "path": "day31/cli.py",
+      "sha256": "b48c0b51d86841258a8f0eb3ecf58162e9b04237d5722ad91e34cb286bdcade1"
+    },
+    {
+      "path": "day31/config.py",
+      "sha256": "e4b385e27b2e0e86097872b779ec6c72a78f079aba605eeb302bc9490c8ffa9d"
+    },
+    {
+      "path": "day31/contracts.py",
+      "sha256": "d8f12045e9eb97cadcd1ed14e3e2e307c0ed18531c0489476461d6ed8bd2abf7"
+    },
+    {
+      "path": "day31/docs/git-mcp.md",
+      "sha256": "784525a76b94766895fa68bfbff5b82cbccb10d592751d37049f5c8d5c68bd78"
+    },
+    {
+      "path": "day31/docs/provenance.md",
+      "sha256": "78c545548f0104f9eb2a8c48a587a4ec667addb9a3eebfe364def83b623f053b"
+    },
+    {
+      "path": "day31/docs/run.md",
+      "sha256": "14751ef17f5b2bc5f5cbc6204731a7b3099b33171d059ee84d2f27712931e861"
+    },
+    {
+      "path": "day31/git_mcp_server.py",
+      "sha256": "c33628a2e6a93be4294c2ca0c54a14a9b419bbd666e8550c97ecda4d1d0703e8"
+    },
+    {
+      "path": "day31/mcp_client.py",
+      "sha256": "74efef86bc8f486cd85c91eb3fcf6995f5f4c1d3d0fd36840cea13b2ace0975b"
+    },
+    {
+      "path": "day31/provider.py",
+      "sha256": "dc4e19c6f64be24c3107413a17c273e3f6c1fb56339d60d2bdd021f38f551326"
+    },
+    {
+      "path": "day31/recorder/run_demo.py",
+      "sha256": "9d2b6b45b2d963e9d8bf7ef70aae38f814330307f5bc7d1e31987ba86f730073"
+    },
+    {
+      "path": "day31/retrieval.py",
+      "sha256": "128890fcbdbfb2df0ba3a9de18ea3bb6a13afbe3886ba08c0736efdc17281f68"
+    },
+    {
+      "path": "day31/tests/browser_check.py",
+      "sha256": "a281bcdaae1485cb44029c5d46dbff509b395a36e30ce41b9dd2d6a523ce496b"
+    },
+    {
+      "path": "day31/tests/test_assistant.py",
+      "sha256": "1ac3ccb495a685aba65dab1b71c5975068e1d6cc20b4ca851b020cdd3826d86e"
+    },
+    {
+      "path": "day31/tests/test_mcp.py",
+      "sha256": "6e131bda2880ea830b3660c68b7acf58a47e3e113c866a2902bb1c07ebc88ced"
+    },
+    {
+      "path": "day31/tests/test_provider.py",
+      "sha256": "51269230cd09b58e5c881543b9c1022736176dd69c9ae28560c3ca6369fd60bc"
+    },
+    {
+      "path": "day31/tests/test_retrieval.py",
+      "sha256": "ff95fc2c813ac0895acbc3841c78e7f830997bd68b3aca4ba2beceae465d4c41"
+    },
+    {
+      "path": "day31/tests/test_web.py",
+      "sha256": "ae60c213027da30de8c94ae7f7cfa94af43daf607c94cba2a8ff25cffb20da3d"
+    },
+    {
+      "path": "day31/web/app.js",
+      "sha256": "50f5edabb00706d5cf29aa6662f09e02ff7e39f3542947916e36f9f6ecae8afe"
+    },
+    {
+      "path": "day31/web/index.html",
+      "sha256": "09004aa6044e978940930b8a0fbcb4aa9038170cbd6cc09e17e0fc6edcf05f1b"
+    },
+    {
+      "path": "day31/web/style.css",
+      "sha256": "82cd33a1a0bd18a3688a44be616ab49898a9c0323af2d2a0d3223acdc4b0b996"
+    },
+    {
+      "path": "day31/web.py",
+      "sha256": "77dc2fa290be82a1a9f9ac32cd529c4224dd45099d8f0df9ba76d485114af53f"
+    }
+  ]
+}

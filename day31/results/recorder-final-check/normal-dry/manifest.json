@@ -1,0 +1,38 @@
+{
+  "kind": "dry-run",
+  "expected_mode": "offline",
+  "url": "http://127.0.0.1:61636",
+  "hold_seconds_requested": 1.0,
+  "hold_seconds_effective": 0.0,
+  "answers": [
+    {
+      "index": 1,
+      "trace_id": "0e4748db16434f30bf5dee814bb43d7b",
+      "status": "ok",
+      "expected": "ok",
+      "elapsed_seconds": 0.7073,
+      "usage": null
+    },
+    {
+      "index": 2,
+      "trace_id": "f992bd2e22a04f83acce06c7928a7776",
+      "status": "ok",
+      "expected": "ok",
+      "elapsed_seconds": 0.6695,
+      "usage": null
+    },
+    {
+      "index": 3,
+      "trace_id": "16b70129a6004c2eaaa3a4c68d989b5c",
+      "status": "unknown",
+      "expected": "unknown",
+      "elapsed_seconds": 0.672,
+      "usage": null
+    }
+  ],
+  "cli": "Проверяется отдельно командой python -m day31.cli; в этой записи только браузер",
+  "model": "offline-extract",
+  "provider": "локальный код, без LLM",
+  "git_root": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant",
+  "status": "complete"
+}

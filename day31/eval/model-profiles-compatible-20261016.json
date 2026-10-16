@@ -1,0 +1,39 @@
+{
+  "profiles": [
+    {
+      "id": "glm53",
+      "model": "z-ai/glm-5.3-flash",
+      "exact_route": "deepinfra/fp4",
+      "input_usd_per_m": 0.15,
+      "output_usd_per_m": 0.5,
+      "max_output_tokens": 4096,
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    },
+    {
+      "id": "deepseek41",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "exact_route": "deepinfra/fp8",
+      "input_usd_per_m": 0.2,
+      "output_usd_per_m": 0.6,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    {
+      "id": "qwen38max",
+      "model": "qwen/qwen3.8-max-0902",
+      "exact_route": "alibaba/us-east-1",
+      "input_usd_per_m": 2.0,
+      "output_usd_per_m": 6.0,
+      "max_output_tokens": 4096,
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    }
+  ]
+}

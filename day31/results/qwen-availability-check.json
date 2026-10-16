@@ -1,0 +1,38 @@
+{
+  "time": "2026-10-16T19:18:16.620137+00:00",
+  "method": "Authenticated metadata GET only; no inference",
+  "observations": {
+    "models/user": {
+      "http_status": 200,
+      "visible_models": 391,
+      "requested_models_present": {
+        "qwen/qwen3.8-max-0902": false,
+        "z-ai/glm-5.3-flash": true,
+        "deepseek/deepseek-v4.1-flash": true
+      }
+    },
+    "model/qwen/qwen3.8-max-0902": {
+      "http_status": 200,
+      "id": "qwen/qwen3.8-max-0902",
+      "canonical_slug": "qwen/qwen3.8-max-20260902",
+      "name": "Qwen: Qwen3.8 Max (0902)"
+    },
+    "models/qwen/qwen3.8-max-0902/endpoints": {
+      "http_status": 200,
+      "id": "qwen/qwen3.8-max-0902",
+      "name": "Qwen: Qwen3.8 Max (0902)",
+      "endpoints": [
+        {
+          "tag": "alibaba/us-east-1",
+          "provider_name": "Alibaba",
+          "status": 0
+        },
+        {
+          "tag": "alibaba",
+          "provider_name": "Alibaba",
+          "status": 0
+        }
+      ]
+    }
+  }
+}

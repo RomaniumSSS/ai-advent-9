@@ -1,0 +1,29 @@
+{
+  "mode": "offline-extract + настоящий stdio MCP",
+  "checks": [
+    "README/docs и раскрываемые строки",
+    "точные ветка/HEAD/detached UI+API сверены независимыми командами Git",
+    "ссылка открывает существующий источник",
+    "unknown без вызова модели",
+    "HTML модели отображается как текст",
+    "pageerrors=0",
+    "нет горизонтального overflow 1280/768/375"
+  ],
+  "screenshots": [
+    "/private/tmp/day31-astra-rereview-browser/desktop.png",
+    "/private/tmp/day31-astra-rereview-browser/tablet.png",
+    "/private/tmp/day31-astra-rereview-browser/mobile.png"
+  ],
+  "git_expected_independent": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7",
+    "detached": false,
+    "root": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant"
+  },
+  "git_observed": {
+    "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+    "branch": "day31-dev-assistant",
+    "detached": false,
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  }
+}

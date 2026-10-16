@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-16T18:16:11.819191+00:00",
+  "model": "z-ai/glm-4.7-flash",
+  "provider": "venice/fp8",
+  "budget_limit_usd": 0.5,
+  "provider_calls": 5,
+  "known_cost_usd": 0.00080225,
+  "charged_including_unknown_usd": 0.00080225,
+  "unknown_cost_calls": 0,
+  "ledger": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant/day31/.runtime/live-20261016/budget.sqlite3"
+}

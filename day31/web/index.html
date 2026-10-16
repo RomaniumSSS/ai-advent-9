@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DevHelper · Day31</title>
+<link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+<div class="app">
+<header><div><p class="eyebrow">AI ADVENT / ДЕНЬ 31</p><h1>DevHelper<span class="dot">.</span></h1><p class="subtitle">Знакомый проект. Проверяемые источники. Настоящий Git.</p></div><span id="mode" class="mode">Подключение…</span></header>
+<section class="repository" aria-label="Настроенный репозиторий"><span class="label">GIT-ROOT</span><code id="root">…</code><div id="branch">Ветка будет прочитана через MCP во время запроса</div></section>
+<main>
+<div class="workspace">
+<section class="card ask">
+<h2>Разобраться в Git MCP</h2><p class="muted">Вопрос по README и docs проекта. Каждый запрос — отдельный запуск.</p>
+<form id="form"><label for="question">/help <span class="muted">ваш вопрос</span></label><textarea id="question" maxlength="4000" rows="3" required placeholder="Как устроен Git MCP-пример?"></textarea><button id="send" type="submit">Спросить помощника <span aria-hidden="true">↗</span></button></form>
+<div class="examples" aria-label="Примеры вопросов"><button type="button" data-question="Как устроен Git MCP-пример?">Устройство Git MCP</button><button type="button" data-question="Какая сейчас Git-ветка?">Текущая ветка</button><button type="button" data-question="Какая погода завтра в Барселоне?">Вне документации</button></div>
+</section>
+<section class="card response" aria-live="polite" aria-busy="false" id="response"><div class="section-title"><h2>Ответ</h2><span id="status" class="tag">Ожидание вопроса</span></div><p id="answer" class="answer muted">Задайте вопрос — здесь появятся ответ и ссылки на найденные фрагменты.</p><div id="citations" class="citations"></div><p id="metrics" class="metrics"></p></section>
+<section class="card source-card"><div class="section-title"><h2>Источники</h2><span id="source-count" class="tag">0 фрагментов</span></div><p class="muted small">README + docs · путь, строки и SHA256 формирует код. Проверка ссылки не заменяет проверку смысла.</p><div id="sources"><p class="muted small">Документы появятся после поиска.</p></div></section>
+</div>
+<aside class="card pipeline"><p class="eyebrow">ЧТО СДЕЛАЛ КОД</p><h2>Этапы запроса</h2><p class="muted small">Поиск и MCP выполняются до модели. Модель не выбирает инструменты.</p><div id="stages"><div class="stage"><span class="number">1</span><div><h3>Поиск по документации</h3><p>SQLite FTS5 · до 5 фрагментов</p></div></div><div class="stage"><span class="number">2</span><div><h3>Git через MCP</h3><p>stdio · discovery + git_context({})</p></div></div><div class="stage"><span class="number">3</span><div><h3>Один ответ модели</h3><p>Проверка JSON и ссылок</p></div></div></div><p class="small muted" id="run">Запуск ещё не начат.</p></aside>
+</main>
+<footer>Только чтение · Без истории чата · Day17 — документированный снимок, ветка — живые данные MCP</footer>
+</div>
+</body></html>

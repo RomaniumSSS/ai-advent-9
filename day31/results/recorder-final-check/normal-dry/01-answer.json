@@ -1,0 +1,114 @@
+{
+  "status": "ok",
+  "text": "Офлайн-режим: найденный фрагмент документации (генерация LLM не выполнялась).\n\n## Устройство\n\nКод ищет фрагменты README и docs через SQLite FTS5, затем вызывает настоящий\nstdio MCP `git_context` и передаёт источники и Git-контекст модели одним запросом.\nМодель пишет ответ с идентификаторами источников; код проверяет эти ссылки.\nПоиск лексический, без embeddings: перефразировки вне словаря могут не найти материал.\nПроверка ссылки доказывает существование фрагмента, но не смысловую верность ответа.\n",
+  "source_ids": [
+    "7faaef0d4e8e3723c3a1"
+  ],
+  "git_context": {
+    "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+    "branch": "day31-dev-assistant",
+    "detached": false,
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "trace_id": "0e4748db16434f30bf5dee814bb43d7b",
+  "sources": [
+    {
+      "id": "7faaef0d4e8e3723c3a1",
+      "path": "README.md",
+      "start_line": 6,
+      "end_line": 13,
+      "section": "Устройство",
+      "text": "## Устройство\n\nКод ищет фрагменты README и docs через SQLite FTS5, затем вызывает настоящий\nstdio MCP `git_context` и передаёт источники и Git-контекст модели одним запросом.\nМодель пишет ответ с идентификаторами источников; код проверяет эти ссылки.\nПоиск лексический, без embeddings: перефразировки вне словаря могут не найти материал.\nПроверка ссылки доказывает существование фрагмента, но не смысловую верность ответа.\n",
+      "sha256": "617938d85a8390e19f232d99d7088fd7dac3f211202ad024e51a049b794b5f44",
+      "score": 3.480957452467995
+    },
+    {
+      "id": "60d14217b2944e83a41c",
+      "path": "docs/git-mcp.md",
+      "start_line": 3,
+      "end_line": 11,
+      "section": "Устройство Git MCP",
+      "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+      "sha256": "e61fd5a31256b94687288e4a449eef9379689d388fe56db1e8d534c136132822",
+      "score": 3.376066704223758
+    },
+    {
+      "id": "f4df899d6e4593d422a1",
+      "path": "docs/run.md",
+      "start_line": 31,
+      "end_line": 49,
+      "section": "Команды облачного режима",
+      "text": "## Команды облачного режима\n\nТолько после явного разрешения бюджета. Пример использует переменную\nDAY31_BUDGET_USD с согласованным пределом; её значение не устанавливается кодом:\n\n```bash\nuv run python -m day31.web --live \\\n  --env-file /безопасный/путь/.env --budget-usd \"$DAY31_BUDGET_USD\"\nuv run python -m day31.cli '/help Как устроен Git MCP?' --live \\\n  --env-file /безопасный/путь/.env --budget-usd \"$DAY31_BUDGET_USD\" --json\n```\n\nПеред облачным стартом бесплатный metadata preflight подтверждает активный\nendpoint с точным tag venice/fp8, JSON Schema/reasoning и остальные параметры\nзапроса, а также тариф без скидки не выше резерва. При росте\nтарифа или недоступных метаданных запуск прекращается до платного запроса.\nReasoning отключён через enabled=false, require_parameters=true: неподдерживаемые\nпараметры не должны тихо игнорироваться провайдером.\n",
+      "sha256": "2e9233fc3edf1cdac7fc08efe0b9c6db21490af9abe20e06da5b96194c58d367",
+      "score": 1.9558384953672203
+    },
+    {
+      "id": "bba7dcfbd112a73e752e",
+      "path": "docs/git-mcp.md",
+      "start_line": 1,
+      "end_line": 2,
+      "section": "Знакомый Git MCP Day17",
+      "text": "# Знакомый Git MCP Day17\n",
+      "sha256": "5e04328d2db42d71f2df0a09a43d314a9f82c22d2566069f2a380518f824ab60",
+      "score": 3.995637949836423e-06
+    },
+    {
+      "id": "998c34fa0b35555b38e0",
+      "path": "docs/git-mcp.md",
+      "start_line": 27,
+      "end_line": 33,
+      "section": "Отличие нового git_context",
+      "text": "## Отличие нового git_context\n\nDay31 использует отдельный собственный MCPServer `git_context()` без аргументов.\nОн возвращает текущую ветку, detached HEAD, полный head SHA и repository_id.\nGit-root фиксируется на старте, по умолчанию это worktree приложения Day31.\nВетка читается заново для каждого вопроса; снимок документации Day17 не определяет\nтекущую ветку и не сообщает состояние Git. Это делает MCP во время запроса.",
+      "sha256": "2a5985941ac878cd497aa9ad639beaa51d93386a2e0812ce2c1a6e3ec5365c7c",
+      "score": 3.2942331271744754e-06
+    }
+  ],
+  "stages": [
+    {
+      "name": "search",
+      "status": "ok",
+      "seconds": 0.0076,
+      "count": 5,
+      "source_ids": [
+        "7faaef0d4e8e3723c3a1",
+        "60d14217b2944e83a41c",
+        "f4df899d6e4593d422a1",
+        "bba7dcfbd112a73e752e",
+        "998c34fa0b35555b38e0"
+      ]
+    },
+    {
+      "name": "mcp",
+      "status": "ok",
+      "seconds": 0.6993,
+      "tool": "git_context",
+      "arguments": {},
+      "discovery": {
+        "protocol_version": "2026-07-28",
+        "tools": [
+          "git_context"
+        ]
+      },
+      "result": {
+        "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+        "branch": "day31-dev-assistant",
+        "detached": false,
+        "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+      }
+    },
+    {
+      "name": "model",
+      "status": "ok",
+      "seconds": 0.0003,
+      "model": "offline-extract",
+      "provider": "локальный код, без LLM",
+      "usage": null,
+      "receipt": null,
+      "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+    }
+  ],
+  "usage": null,
+  "elapsed_seconds": 0.7073,
+  "model": "offline-extract",
+  "provider": "локальный код, без LLM"
+}

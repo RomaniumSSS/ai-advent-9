@@ -1,0 +1,32 @@
+{"time": "2026-10-16T19:22:14.085759+00:00", "event": "start", "kind": "record", "expected_mode": "live"}
+{"time": "2026-10-16T19:22:15.689010+00:00", "event": "connected", "actual_mode": "live", "model": "deepseek/deepseek-v4.1-flash", "provider": "deepinfra/fp8"}
+{"time": "2026-10-16T19:22:15.804853+00:00", "event": "question_started", "index": 1, "question": "/help За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?"}
+{"time": "2026-10-16T19:22:19.706202+00:00", "event": "question_finished", "index": 1, "trace_id": "5ac0673143b74a56acddf8390fdf1d81", "status": "ok", "elapsed_seconds": 3.8244, "usage": {"prompt_tokens": 2013, "completion_tokens": 339, "reasoning_tokens": 0, "cost_usd": 0.000163464}}
+{"time": "2026-10-16T19:22:19.830940+00:00", "event": "reading_frame", "index": 1, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "01-answer.png", "scroll_y": 510}
+{"time": "2026-10-16T19:22:19.831249+00:00", "event": "reading_hold", "index": 1, "section": "answer", "seconds": 6.0}
+{"time": "2026-10-16T19:22:26.008942+00:00", "event": "reading_frame", "index": 1, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "01-source.png", "scroll_y": 803}
+{"time": "2026-10-16T19:22:26.009602+00:00", "event": "reading_hold", "index": 1, "section": "source", "seconds": 6.0}
+{"time": "2026-10-16T19:22:32.166572+00:00", "event": "reading_frame", "index": 1, "section": "mcp_call", "screenshot": "01-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T19:22:32.166921+00:00", "event": "reading_hold", "index": 1, "section": "mcp_call", "seconds": 6.0}
+{"time": "2026-10-16T19:22:38.316130+00:00", "event": "reading_frame", "index": 1, "section": "mcp_result", "screenshot": "01-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T19:22:38.316356+00:00", "event": "reading_hold", "index": 1, "section": "mcp_result", "seconds": 6.0}
+{"time": "2026-10-16T19:22:44.343657+00:00", "event": "question_started", "index": 2, "question": "/help Какая сейчас Git-ветка?"}
+{"time": "2026-10-16T19:22:46.893778+00:00", "event": "question_finished", "index": 2, "trace_id": "8710c4757ae94c73b5a9d1e9ba38a3ba", "status": "ok", "elapsed_seconds": 2.4823, "usage": {"prompt_tokens": 2402, "completion_tokens": 101, "reasoning_tokens": 0, "cost_usd": 6.58168e-05}}
+{"time": "2026-10-16T19:22:46.993397+00:00", "event": "reading_frame", "index": 2, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "02-answer.png", "scroll_y": 302}
+{"time": "2026-10-16T19:22:46.993570+00:00", "event": "reading_hold", "index": 2, "section": "answer", "seconds": 6.0}
+{"time": "2026-10-16T19:22:53.130423+00:00", "event": "reading_frame", "index": 2, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "02-source.png", "scroll_y": 499}
+{"time": "2026-10-16T19:22:53.130707+00:00", "event": "reading_hold", "index": 2, "section": "source", "seconds": 6.0}
+{"time": "2026-10-16T19:22:59.285809+00:00", "event": "reading_frame", "index": 2, "section": "mcp_call", "screenshot": "02-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T19:22:59.286358+00:00", "event": "reading_hold", "index": 2, "section": "mcp_call", "seconds": 6.0}
+{"time": "2026-10-16T19:23:05.408827+00:00", "event": "reading_frame", "index": 2, "section": "mcp_result", "screenshot": "02-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T19:23:05.409349+00:00", "event": "reading_hold", "index": 2, "section": "mcp_result", "seconds": 6.0}
+{"time": "2026-10-16T19:23:11.418137+00:00", "event": "question_started", "index": 3, "question": "/help Какая погода завтра в Барселоне?"}
+{"time": "2026-10-16T19:23:13.929197+00:00", "event": "question_finished", "index": 3, "trace_id": "35704e6d9f7541e6999b99758be811f9", "status": "unknown", "elapsed_seconds": 2.4384, "usage": null}
+{"time": "2026-10-16T19:23:14.201632+00:00", "event": "reading_frame", "index": 3, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "03-answer.png", "scroll_y": 52}
+{"time": "2026-10-16T19:23:14.203561+00:00", "event": "reading_hold", "index": 3, "section": "answer", "seconds": 6.0}
+{"time": "2026-10-16T19:23:20.377584+00:00", "event": "reading_frame", "index": 3, "section": "mcp_call", "screenshot": "03-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T19:23:20.378134+00:00", "event": "reading_hold", "index": 3, "section": "mcp_call", "seconds": 6.0}
+{"time": "2026-10-16T19:23:26.478594+00:00", "event": "reading_frame", "index": 3, "section": "mcp_result", "screenshot": "03-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T19:23:26.478805+00:00", "event": "reading_hold", "index": 3, "section": "mcp_result", "seconds": 6.0}
+{"time": "2026-10-16T19:23:32.484067+00:00", "event": "scenario_complete", "answer_count": 3, "page_errors": 0}
+{"time": "2026-10-16T19:23:53.538352+00:00", "event": "video_converted", "video": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant/day31/results/deepseek-live-record-20261016/Day31-live.mp4", "ffprobe": {"programs": [], "stream_groups": [], "streams": [{"codec_name": "h264", "width": 1280, "height": 1000, "r_frame_rate": "25/1"}], "format": {"duration": "77.440000", "size": "2794853"}}}

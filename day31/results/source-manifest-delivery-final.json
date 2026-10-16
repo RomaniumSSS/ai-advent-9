@@ -1,0 +1,18 @@
+{
+  "provider.py": "86b663858bf0e6287f3010f91c9a62e65b11df313777765e621bd3b226fb27e2",
+  "assistant.py": "999d54235a9559ca7f19eda08e4913ac785bef19321218dfa97e01864a771ee2",
+  "retrieval.py": "eccc68a0eab2effd4c1417ccee41d03f807645d561da3540c04d3cccb01d141e",
+  "config.py": "e4b385e27b2e0e86097872b779ec6c72a78f079aba605eeb302bc9490c8ffa9d",
+  "mcp_client.py": "74efef86bc8f486cd85c91eb3fcf6995f5f4c1d3d0fd36840cea13b2ace0975b",
+  "git_mcp_server.py": "c33628a2e6a93be4294c2ca0c54a14a9b419bbd666e8550c97ecda4d1d0703e8",
+  "cli.py": "b48c0b51d86841258a8f0eb3ecf58162e9b04237d5722ad91e34cb286bdcade1",
+  "web.py": "77dc2fa290be82a1a9f9ac32cd529c4224dd45099d8f0df9ba76d485114af53f",
+  "recorder/run_demo.py": "eec48da7c6617494b47073bddeeb4fd7b10b3a9fb3988afe03f170f42a606263",
+  "README.md": "a2d94b876ec8ee282948638e1eae76d63f56aacecb0b1bfbc55185bea53008a1",
+  "docs/git-mcp.md": "359a776f6ebe235ea13ef4b31e3a0ca08a3d1a3d0ce00b1b97cec7b8d9a1f2e7",
+  "docs/run.md": "62aad0c07d7f569a5f23b1dac01c6ff457d6ef77ba76bedf69d78339fc1c1022",
+  "docs/provenance.md": "78c545548f0104f9eb2a8c48a587a4ec667addb9a3eebfe364def83b623f053b",
+  "web/app.js": "50f5edabb00706d5cf29aa6662f09e02ff7e39f3542947916e36f9f6ecae8afe",
+  "web/index.html": "09004aa6044e978940930b8a0fbcb4aa9038170cbd6cc09e17e0fc6edcf05f1b",
+  "web/style.css": "82cd33a1a0bd18a3688a44be616ab49898a9c0323af2d2a0d3223acdc4b0b996"
+}

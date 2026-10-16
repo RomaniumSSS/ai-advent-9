@@ -1,0 +1,52 @@
+{
+  "mode": "offline only: no OpenRouter client or ledger; real stdio MCP",
+  "checks": [
+    "normal offline dry-run",
+    "long offline record: multiple overlapping answer frames",
+    "MCP call + internally scrolled branch/head in all 3 answers",
+    "no API wait truncation; raw JSON unchanged; screenshot+trace preserved",
+    "dry-run no reading holds"
+  ],
+  "long_answer_frames": {
+    "1": 3,
+    "2": 3
+  },
+  "mcp_result_visibility": [
+    {
+      "time": "2026-10-16T18:14:24.487426+00:00",
+      "event": "reading_frame",
+      "index": 1,
+      "section": "mcp_result",
+      "screenshot": "01-mcp-result.png",
+      "pre_scroll_top": 146,
+      "visible_result_keys": {
+        "branch": true,
+        "head": true
+      }
+    },
+    {
+      "time": "2026-10-16T18:14:32.087735+00:00",
+      "event": "reading_frame",
+      "index": 2,
+      "section": "mcp_result",
+      "screenshot": "02-mcp-result.png",
+      "pre_scroll_top": 146,
+      "visible_result_keys": {
+        "branch": true,
+        "head": true
+      }
+    },
+    {
+      "time": "2026-10-16T18:14:36.215612+00:00",
+      "event": "reading_frame",
+      "index": 3,
+      "section": "mcp_result",
+      "screenshot": "03-mcp-result.png",
+      "pre_scroll_top": 146,
+      "visible_result_keys": {
+        "branch": true,
+        "head": true
+      }
+    }
+  ]
+}

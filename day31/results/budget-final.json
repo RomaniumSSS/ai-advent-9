@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-10-16T19:30:25.047076+00:00",
+  "limit_usd": 0.5,
+  "known_actual_cost_usd": 0.0163579524,
+  "unknown_cost_reserves_usd": 0.45713269,
+  "unknown_cost_entries": 19,
+  "calls": 79,
+  "charged_usd": 0.4734906424,
+  "remaining_usd": 0.026509357600000005,
+  "note": "Read-only aggregate. Existing holds retained; no reset/refunds."
+}

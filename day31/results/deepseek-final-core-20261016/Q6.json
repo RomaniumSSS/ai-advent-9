@@ -1,0 +1,172 @@
+{
+  "case_id": "Q6",
+  "question": "Откуда помощник Day17 понимает, какие действия доступны у сервера и какие данные нужно передать для выбранного действия?",
+  "answer": {
+    "status": "ok",
+    "text": "Помощник Day17 получает эту информацию через MCP discovery. Клиент выполняет list_tools, а ToolRuntime.model_tools() строит схему инструмента для модели из обнаруженных name, description и input_schema: возвращает список объектов type=function, где function.name и function.description переносятся из discovery, а function.parameters содержит input_schema. Схему создаёт код, а не модель. Перед преобразованием _allowed_tool проверяет единственный разрешённый инструмент get_recent_commits, наличие описания и корректность JSON Schema, а ensure_snapshot() сохраняет проверенный снимок для повторного использования. Какие данные передать для выбранного действия, определяется этой схемой: например, get_recent_commits принимает целый limit от 1 до 10, а путь к репозиторию задаётся доверенной конфигурацией при старте и моделью не передаётся.",
+    "source_ids": [
+      "c82a108b854961f27be7",
+      "6e3fcb7d7248be1b4581"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "3f1078919d43492586f8613745fa7d8d",
+    "sources": [
+      {
+        "id": "c82a108b854961f27be7",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 19,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nЕго `ToolRuntime.model_tools()` готовит схему инструмента для модели из MCP\ndiscovery: берёт обнаруженные `name`, `description` и `input_schema`, возвращает\nсписок объектов `type=\"function\"`, где `function.name` и `function.description`\nпереносятся из discovery, а `function.parameters` содержит `input_schema`.\nЭту схему создаёт код, не модель. Перед преобразованием `_allowed_tool` проверяет\nединственный разрешённый `get_recent_commits`, наличие описания и корректность\nJSON Schema. `ensure_snapshot()` получает discovery и сохраняет проверенный\nснимок для повторного использования.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "03acb32004e62f0985137bcecb57ed9cedd1088068a6d8fffcc5c45620fd7c9c",
+        "score": 12.285344912372771
+      },
+      {
+        "id": "ccc4c29bdaa9a73e6d8a",
+        "path": "docs/git-mcp.md",
+        "start_line": 43,
+        "end_line": 50,
+        "section": "Границы Day17",
+        "text": "## Границы Day17\n\nОбычный chat допускает максимум 2 вызова модели и 1 выполнение MCP за ход.\nСмешанные, множественные, неизвестные или некорректные tool calls не исполняются.\nПовторный запрос инструмента во втором ответе получает отказ без третьего вызова.\nWorkflow FSM в Day17 работает без tools. Ошибки и malformed result не становятся\nуспешным observation. Discovery не считается выполнением инструмента.\n",
+        "sha256": "0694af9fe3fed14da2be2274316a812de164e4aa5b4eaffb1a06c44a07446644",
+        "score": 9.095871210880372
+      },
+      {
+        "id": "6e3fcb7d7248be1b4581",
+        "path": "docs/git-mcp.md",
+        "start_line": 20,
+        "end_line": 26,
+        "section": "Данные последних коммитов",
+        "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+        "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+        "score": 6.464094471453266
+      },
+      {
+        "id": "d4fe6fcfe34975546237",
+        "path": "README.md",
+        "start_line": 1,
+        "end_line": 5,
+        "section": "Day31 — DevHelper",
+        "text": "# Day31 — DevHelper\n\nБраузерный помощник и CLI `/help <вопрос>` объясняют знакомый Git MCP из Day17.\nЭто самостоятельный модуль: старый день не импортируется и не изменяется.\n",
+        "sha256": "ce242a3910e50830cdd6aa29933d8b93b8aad47fc4b9bfa81298074deba93b34",
+        "score": 5.0921053367636295
+      },
+      {
+        "id": "e04f4bc74b9338bcfab2",
+        "path": "docs/git-mcp.md",
+        "start_line": 27,
+        "end_line": 42,
+        "section": "Запуск stdio-сервера Day17",
+        "text": "## Запуск stdio-сервера Day17\n\nИз корня репозитория, с установленными зависимостями проекта и Python 3.12+:\n\n```bash\nuv run --frozen python day17/git_mcp_server.py --repo /путь/к/repo\n```\n\nВ `main()` файла `git_mcp_server.py` аргумент `--repo` обязателен (`required=True`)\nи разбирается как `Path`. `build_server(args.repo)` разрешает его до Git worktree\nroot, после чего `.run(\"stdio\")` запускает MCP-сервер с транспортом stdio.\nЭто запуск отдельного процесса для MCP-клиента; HTTP-адреса у него нет.\nПуть — доверенная настройка старта, а не аргумент, который выбирает модель.\nЭтот пример запускает исходный сервер Day17 с `get_recent_commits`, а не новый\nсервер Day31 с `git_context`.\n",
+        "sha256": "9dab1d9c8cf398cbc31f578d8411f754d4b068edda00e202cf9b9ddcb588f13c",
+        "score": 4.459369761600619
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0024,
+        "count": 5,
+        "source_ids": [
+          "c82a108b854961f27be7",
+          "ccc4c29bdaa9a73e6d8a",
+          "6e3fcb7d7248be1b4581",
+          "d4fe6fcfe34975546237",
+          "e04f4bc74b9338bcfab2"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6666,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 2.4237,
+        "model": "deepseek/deepseek-v4.1-flash",
+        "provider": "deepinfra/fp8",
+        "usage": {
+          "prompt_tokens": 1845,
+          "completion_tokens": 257,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.000279328
+        },
+        "receipt": {
+          "id": "gen-1792178293-BzsbLlvFi63MQAGonipt",
+          "model": "deepseek/deepseek-v4.1-flash",
+          "provider": "DeepInfra"
+        },
+        "source_id_normalization": {
+          "method": "deterministic",
+          "added_from_inline": []
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1845,
+      "completion_tokens": 257,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.000279328
+    },
+    "elapsed_seconds": 3.0928,
+    "model": "deepseek/deepseek-v4.1-flash",
+    "provider": "deepinfra/fp8"
+  },
+  "provider_final": {
+    "trace_id": "3f1078919d43492586f8613745fa7d8d",
+    "profile": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "exact_route": "deepinfra/fp8",
+      "input_usd_per_m": 0.2,
+      "output_usd_per_m": 0.6,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "finish_reason": "stop",
+    "receipt": {
+      "id": "gen-1792178293-BzsbLlvFi63MQAGonipt",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider": "DeepInfra"
+    },
+    "usage": {
+      "prompt_tokens": 1845,
+      "completion_tokens": 257,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.000279328
+    },
+    "content": "{\"status\": \"ok\", \"text\": \"Помощник Day17 получает эту информацию через MCP discovery. Клиент выполняет list_tools, а ToolRuntime.model_tools() строит схему инструмента для модели из обнаруженных name, description и input_schema: возвращает список объектов type=function, где function.name и function.description переносятся из discovery, а function.parameters содержит input_schema. Схему создаёт код, а не модель. Перед преобразованием _allowed_tool проверяет единственный разрешённый инструмент get_recent_commits, наличие описания и корректность JSON Schema, а ensure_snapshot() сохраняет проверенный снимок для повторного использования. Какие данные передать для выбранного действия, определяется этой схемой: например, get_recent_commits принимает целый limit от 1 до 10, а путь к репозиторию задаётся доверенной конфигурацией при старте и моделью не передаётся.\", \"source_ids\": [\"c82a108b854961f27be7\", \"6e3fcb7d7248be1b4581\"]}",
+    "error": null,
+    "sent": true,
+    "reserved_usd": 0.003406,
+    "elapsed_seconds": 2.423538666917011
+  },
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37"
+}

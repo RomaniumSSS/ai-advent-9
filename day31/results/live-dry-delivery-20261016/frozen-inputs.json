@@ -1,0 +1,21 @@
+{
+  "before": {
+    "day31/README.md": "62f93f97454b7046da821319575f3637d2610bd7ff19c7d61a5046a4b3094ede",
+    "day31/docs/git-mcp.md": "359a776f6ebe235ea13ef4b31e3a0ca08a3d1a3d0ce00b1b97cec7b8d9a1f2e7",
+    "day31/docs/provenance.md": "78c545548f0104f9eb2a8c48a587a4ec667addb9a3eebfe364def83b623f053b",
+    "day31/docs/run.md": "21e7460dd9ee806ca782006181b509b98627a698eca12789e574db909be9c0ac",
+    "day31/provider.py": "f8304cddd44dd1a3f4cf03d021b01c0fa5e356eea60b5de2fd8e43b53da66168",
+    "day31/assistant.py": "999d54235a9559ca7f19eda08e4913ac785bef19321218dfa97e01864a771ee2",
+    "day31/recorder/run_demo.py": "d6f322f1a7c8d4001c606cecef3c27f5125f4ad182739026b6d00b9b50a3b04f"
+  },
+  "after": {
+    "day31/README.md": "62f93f97454b7046da821319575f3637d2610bd7ff19c7d61a5046a4b3094ede",
+    "day31/docs/git-mcp.md": "359a776f6ebe235ea13ef4b31e3a0ca08a3d1a3d0ce00b1b97cec7b8d9a1f2e7",
+    "day31/docs/provenance.md": "78c545548f0104f9eb2a8c48a587a4ec667addb9a3eebfe364def83b623f053b",
+    "day31/docs/run.md": "21e7460dd9ee806ca782006181b509b98627a698eca12789e574db909be9c0ac",
+    "day31/provider.py": "f8304cddd44dd1a3f4cf03d021b01c0fa5e356eea60b5de2fd8e43b53da66168",
+    "day31/assistant.py": "999d54235a9559ca7f19eda08e4913ac785bef19321218dfa97e01864a771ee2",
+    "day31/recorder/run_demo.py": "d6f322f1a7c8d4001c606cecef3c27f5125f4ad182739026b6d00b9b50a3b04f"
+  },
+  "unchanged": true
+}

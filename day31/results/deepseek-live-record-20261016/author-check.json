@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-16T19:24:22.512832+00:00",
+  "kind": "author delivery check",
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "answers": [
+    {
+      "index": 1,
+      "status": "ok",
+      "trace_id": "5ac0673143b74a56acddf8390fdf1d81",
+      "source_ids": [
+        "c82a108b854961f27be7",
+        "e04f4bc74b9338bcfab2",
+        "1fe536de17fd2919dc54"
+      ],
+      "git_exact": true,
+      "sources_exact": true
+    },
+    {
+      "index": 2,
+      "status": "ok",
+      "trace_id": "8710c4757ae94c73b5a9d1e9ba38a3ba",
+      "source_ids": [
+        "3bb965bed18427dc9862",
+        "04c4fa7bbe84b6d9ecb4"
+      ],
+      "git_exact": true,
+      "sources_exact": true
+    },
+    {
+      "index": 3,
+      "status": "unknown",
+      "trace_id": "35704e6d9f7541e6999b99758be811f9",
+      "source_ids": [],
+      "git_exact": true,
+      "sources_exact": true
+    }
+  ],
+  "new_trace_ids": {
+    "deepseek-live-dry-20261016": [
+      "1c3dbf173c82444089772db873bd48c7",
+      "dd8b325a089549aaa7e9fab075880398",
+      "2bd25a79d5f24d2f9f4cf7b285ea4cdd"
+    ],
+    "deepseek-live-record-20261016": [
+      "5ac0673143b74a56acddf8390fdf1d81",
+      "8710c4757ae94c73b5a9d1e9ba38a3ba",
+      "35704e6d9f7541e6999b99758be811f9"
+    ]
+  },
+  "new_generation_receipts": {
+    "deepseek-live-dry-20261016": [
+      "gen-1792178497-O5rN4SfKXufziXxXWo1l",
+      "gen-1792178500-BRB3YCqmX4IkwfXziTK9"
+    ],
+    "deepseek-live-record-20261016": [
+      "gen-1792178536-AozVklpZ3z1jXWFjFQ5P",
+      "gen-1792178565-3lQCAiegqGVDqzupSMNR"
+    ]
+  },
+  "frozen_files": {
+    "unchanged": true,
+    "hashes": {
+      "day31/README.md": "a2d94b876ec8ee282948638e1eae76d63f56aacecb0b1bfbc55185bea53008a1",
+      "day31/docs/git-mcp.md": "359a776f6ebe235ea13ef4b31e3a0ca08a3d1a3d0ce00b1b97cec7b8d9a1f2e7",
+      "day31/docs/provenance.md": "78c545548f0104f9eb2a8c48a587a4ec667addb9a3eebfe364def83b623f053b",
+      "day31/docs/run.md": "62aad0c07d7f569a5f23b1dac01c6ff457d6ef77ba76bedf69d78339fc1c1022",
+      "day31/provider.py": "86b663858bf0e6287f3010f91c9a62e65b11df313777765e621bd3b226fb27e2",
+      "day31/assistant.py": "999d54235a9559ca7f19eda08e4913ac785bef19321218dfa97e01864a771ee2",
+      "day31/recorder/run_demo.py": "eec48da7c6617494b47073bddeeb4fd7b10b3a9fb3988afe03f170f42a606263"
+    }
+  },
+  "page_errors": 0,
+  "ui_text_equals_api": "recorder assertion passed, no substitution",
+  "mcp_branch_head_visible": true,
+  "source_semantics": {
+    "1": "PASS: полный корректный ответ о ролях трёх файлов, stdio, discovery и преобразовании схемы; подтверждается cited docs",
+    "2": "PASS: названная ветка из свежего git_context совпадает с независимым Git",
+    "3": "PASS: unknown по пустому поиску, нет генерации и придуманных файлов"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "qwen_max_visible_after_zdr_change": true,
+  "visible_model_count": 463,
+  "method": "Authenticated metadata GET only"
+}

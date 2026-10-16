@@ -1,0 +1,99 @@
+{
+  "time": "2026-10-16T18:17:00.257311+00:00",
+  "case_id": "Q5-diagnostic",
+  "reason": "Previous request failed source/JSON validation; capture final output to distinguish causes before any fix",
+  "question": "Какие Kubernetes-манифесты этого проекта обеспечивают автоматическое масштабирование?",
+  "answer": {
+    "status": "unknown",
+    "text": "В предоставленных источниках и Git-контексте отсутствуют данные о Kubernetes-манифестах, обеспечивающих автоматическое масштабирование. Документация описывает сценарии записи (recorder), проверки браузера и работу с MCP, но не содержит конфигурации Kubernetes.",
+    "source_ids": [],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "284ae1b940294e82bdd507c38d3e1ffb",
+    "sources": [
+      {
+        "id": "4a2abc88415ca04f4b6d",
+        "path": "docs/run.md",
+        "start_line": 68,
+        "end_line": 112,
+        "section": "После разрешения расходов и запуска сервера с --live:",
+        "text": "# После разрешения расходов и запуска сервера с --live:\nuv run python -m day31.recorder.run_demo --dry-run --expect-mode live \\\n  --output /tmp/day31-new-live-dry\nuv run python -m day31.recorder.run_demo --record --expect-mode live --hold-seconds 6 \\\n  --output /tmp/day31-new-live-record\n```\n\nКаждый прогон отправляет три новых вопроса через UI, раскрывает источник и\nфактический MCP result. Записываются trace_id/usage/время, ответы, скриншоты и\nсобытия этого запуска. `--expect-mode offline` по умолчанию не даст незаметно\nпотратить бюджет на облачном сервере. `--expect-mode live` явно разрешает новые\nответы через уже настроенный сервер с его общим ledger.\n\nRecord создаёт новый raw WebM и MP4 через ffmpeg, затем отдельный ffprobe.json.\nОфлайн-запись называется Day31-offline.mp4, облачная — Day31-live.mp4.\nУспешный сценарий проверяет статусы и новые trace_id, но не подменяет независимую\nпроверку смысла ответов или просмотр кадров. CLI проверяется отдельно; этот\nскрипт записывает только браузерные шаги 1–3 сценария.\n\nПараметр `--hold-seconds` (по умолчанию 6, допустимо 0 < значение ≤ 60) задаёт\nотдельную паузу для каждого читаемого экрана ответа/источника, начала MCP-вызова\nи его результата.\nЭти паузы начинаются после получения настоящего результата; ожидание API остаётся\nотдельным. Длинный ответ и источник автоматически прокручиваются экранами с\nперекрытием 180 px; каждый экран сохраняется отдельно и удерживается указанное\nвремя. Текст не сокращается и не заменяется. Для более медленного чтения можно\nувеличить hold-seconds. В dry-run паузы чтения отключены, даже если\nпараметр передан. Запрошенное и фактическое значения сохраняются в manifest.\n\nБраузерную проверку можно направить на другой Git-root:\n\n```bash\nuv run python -m day31.tests.browser_check --repo /путь/к/repo \\\n  --output /tmp/day31-browser-other-branch\n```\n\nОжидаемые Git-root, ветка и HEAD получаются независимыми командами `git`, затем\nсравниваются с точными UI/API значениями. Detached HEAD учитывается как branch=null;\nимя ветки разработчика в проверке не зафиксировано.\n\nВ MCP сначала показывается начало настоящего JSON (вызов/discovery), затем\nпрокручивается внутренний `pre` до `result.branch` и `result.head`. Код сверяет\nполный JSON с API и проверяет, что эти строки видны в viewport, не создавая\nсокращённую копию результата. Сохраняются `NN-mcp.png` и `NN-mcp-result.png`.\nУ длинного ответа/источника первый кадр сохраняет прежнее имя `NN-answer.png` /",
+        "sha256": "b2cbf92fd264774d8e374782fdf412a98334602bf6d3051e04071ada34cbb785",
+        "score": 0.9757989205371149
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0061,
+        "count": 1,
+        "source_ids": [
+          "4a2abc88415ca04f4b6d"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6773,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 2.25,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 1185,
+          "completion_tokens": 82,
+          "cost_usd": 4.47e-05
+        },
+        "receipt": {
+          "id": "gen-1792174618-dNKGInRiJP1O7RyzdFmI",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1185,
+      "completion_tokens": 82,
+      "cost_usd": 4.47e-05
+    },
+    "elapsed_seconds": 2.9334,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  },
+  "provider_final": {
+    "final_content": "{\n  \"status\": \"unknown\",\n  \"text\": \"В предоставленных источниках и Git-контексте отсутствуют данные о Kubernetes-манифестах, обеспечивающих автоматическое масштабирование. Документация описывает сценарии записи (recorder), проверки браузера и работу с MCP, но не содержит конфигурации Kubernetes.\",\n  \"source_ids\": []\n}",
+    "usage": {
+      "prompt_tokens": 1185,
+      "completion_tokens": 82,
+      "cost_usd": 4.47e-05
+    },
+    "receipt": {
+      "id": "gen-1792174618-dNKGInRiJP1O7RyzdFmI",
+      "model": "z-ai/glm-4.7-flash",
+      "provider": "Venice"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "dry-run",
+  "expected_mode": "live",
+  "url": "http://127.0.0.1:8071",
+  "hold_seconds_requested": 6.0,
+  "hold_seconds_effective": 0.0,
+  "answers": [
+    {
+      "index": 1,
+      "trace_id": "1c3dbf173c82444089772db873bd48c7",
+      "status": "ok",
+      "expected": "ok",
+      "elapsed_seconds": 4.4367,
+      "usage": {
+        "prompt_tokens": 2013,
+        "completion_tokens": 339,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0003894352
+      }
+    },
+    {
+      "index": 2,
+      "trace_id": "dd8b325a089549aaa7e9fab075880398",
+      "status": "ok",
+      "expected": "ok",
+      "elapsed_seconds": 1.7798,
+      "usage": {
+        "prompt_tokens": 2402,
+        "completion_tokens": 67,
+        "reasoning_tokens": 0,
+        "cost_usd": 5.15368e-05
+      }
+    },
+    {
+      "index": 3,
+      "trace_id": "2bd25a79d5f24d2f9f4cf7b285ea4cdd",
+      "status": "unknown",
+      "expected": "unknown",
+      "elapsed_seconds": 0.717,
+      "usage": null
+    }
+  ],
+  "cli": "Проверяется отдельно командой python -m day31.cli; в этой записи только браузер",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra/fp8",
+  "git_root": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant",
+  "status": "complete"
+}

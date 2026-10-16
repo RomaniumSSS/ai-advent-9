@@ -1,0 +1,40 @@
+{"time": "2026-10-16T18:14:16.902645+00:00", "event": "start", "kind": "record", "expected_mode": "offline"}
+{"time": "2026-10-16T18:14:17.880871+00:00", "event": "connected", "actual_mode": "offline", "model": "offline-extract", "provider": "локальный код, без LLM"}
+{"time": "2026-10-16T18:14:17.978749+00:00", "event": "question_started", "index": 1, "question": "/help Как устроен Git MCP-пример?"}
+{"time": "2026-10-16T18:14:18.721756+00:00", "event": "question_finished", "index": 1, "trace_id": "c4cf7c1774954141865ef931dadde1c4", "status": "ok", "elapsed_seconds": 0.6885, "usage": null}
+{"time": "2026-10-16T18:14:18.838441+00:00", "event": "reading_frame", "index": 1, "section": "answer", "frame": 1, "frame_count": 3, "screenshot": "01-answer.png", "scroll_y": 604}
+{"time": "2026-10-16T18:14:18.838601+00:00", "event": "reading_hold", "index": 1, "section": "answer", "seconds": 1.0}
+{"time": "2026-10-16T18:14:19.944824+00:00", "event": "reading_frame", "index": 1, "section": "answer", "frame": 2, "frame_count": 3, "screenshot": "01-answer-02.png", "scroll_y": 1424}
+{"time": "2026-10-16T18:14:19.944992+00:00", "event": "reading_hold", "index": 1, "section": "answer", "seconds": 1.0}
+{"time": "2026-10-16T18:14:21.058160+00:00", "event": "reading_frame", "index": 1, "section": "answer", "frame": 3, "frame_count": 3, "screenshot": "01-answer-03.png", "scroll_y": 1964}
+{"time": "2026-10-16T18:14:21.058334+00:00", "event": "reading_hold", "index": 1, "section": "answer", "seconds": 1.0}
+{"time": "2026-10-16T18:14:22.196574+00:00", "event": "reading_frame", "index": 1, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "01-source.png", "scroll_y": 2616}
+{"time": "2026-10-16T18:14:22.196847+00:00", "event": "reading_hold", "index": 1, "section": "source", "seconds": 1.0}
+{"time": "2026-10-16T18:14:23.355487+00:00", "event": "reading_frame", "index": 1, "section": "mcp_call", "screenshot": "01-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T18:14:23.355701+00:00", "event": "reading_hold", "index": 1, "section": "mcp_call", "seconds": 1.0}
+{"time": "2026-10-16T18:14:24.487426+00:00", "event": "reading_frame", "index": 1, "section": "mcp_result", "screenshot": "01-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T18:14:24.487643+00:00", "event": "reading_hold", "index": 1, "section": "mcp_result", "seconds": 1.0}
+{"time": "2026-10-16T18:14:25.498340+00:00", "event": "question_started", "index": 2, "question": "/help Какая сейчас Git-ветка?"}
+{"time": "2026-10-16T18:14:26.255888+00:00", "event": "question_finished", "index": 2, "trace_id": "8299df0bae9f44a1a0f8ec0406c5e8d9", "status": "ok", "elapsed_seconds": 0.7111, "usage": null}
+{"time": "2026-10-16T18:14:26.391520+00:00", "event": "reading_frame", "index": 2, "section": "answer", "frame": 1, "frame_count": 3, "screenshot": "02-answer.png", "scroll_y": 604}
+{"time": "2026-10-16T18:14:26.391897+00:00", "event": "reading_hold", "index": 2, "section": "answer", "seconds": 1.0}
+{"time": "2026-10-16T18:14:27.511804+00:00", "event": "reading_frame", "index": 2, "section": "answer", "frame": 2, "frame_count": 3, "screenshot": "02-answer-02.png", "scroll_y": 1424}
+{"time": "2026-10-16T18:14:27.511979+00:00", "event": "reading_hold", "index": 2, "section": "answer", "seconds": 1.0}
+{"time": "2026-10-16T18:14:28.647713+00:00", "event": "reading_frame", "index": 2, "section": "answer", "frame": 3, "frame_count": 3, "screenshot": "02-answer-03.png", "scroll_y": 1964}
+{"time": "2026-10-16T18:14:28.648205+00:00", "event": "reading_hold", "index": 2, "section": "answer", "seconds": 1.0}
+{"time": "2026-10-16T18:14:29.780826+00:00", "event": "reading_frame", "index": 2, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "02-source.png", "scroll_y": 2596}
+{"time": "2026-10-16T18:14:29.781002+00:00", "event": "reading_hold", "index": 2, "section": "source", "seconds": 1.0}
+{"time": "2026-10-16T18:14:30.970282+00:00", "event": "reading_frame", "index": 2, "section": "mcp_call", "screenshot": "02-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T18:14:30.970684+00:00", "event": "reading_hold", "index": 2, "section": "mcp_call", "seconds": 1.0}
+{"time": "2026-10-16T18:14:32.087735+00:00", "event": "reading_frame", "index": 2, "section": "mcp_result", "screenshot": "02-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T18:14:32.087940+00:00", "event": "reading_hold", "index": 2, "section": "mcp_result", "seconds": 1.0}
+{"time": "2026-10-16T18:14:33.106784+00:00", "event": "question_started", "index": 3, "question": "/help Какая погода завтра в Барселоне?"}
+{"time": "2026-10-16T18:14:33.854466+00:00", "event": "question_finished", "index": 3, "trace_id": "8892c3db90564f8aa97fdd67285c9ae2", "status": "unknown", "elapsed_seconds": 0.6926, "usage": null}
+{"time": "2026-10-16T18:14:33.956982+00:00", "event": "reading_frame", "index": 3, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "03-answer.png", "scroll_y": 52}
+{"time": "2026-10-16T18:14:33.957584+00:00", "event": "reading_hold", "index": 3, "section": "answer", "seconds": 1.0}
+{"time": "2026-10-16T18:14:35.092679+00:00", "event": "reading_frame", "index": 3, "section": "mcp_call", "screenshot": "03-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T18:14:35.092946+00:00", "event": "reading_hold", "index": 3, "section": "mcp_call", "seconds": 1.0}
+{"time": "2026-10-16T18:14:36.215612+00:00", "event": "reading_frame", "index": 3, "section": "mcp_result", "screenshot": "03-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T18:14:36.215838+00:00", "event": "reading_hold", "index": 3, "section": "mcp_result", "seconds": 1.0}
+{"time": "2026-10-16T18:14:37.218143+00:00", "event": "scenario_complete", "answer_count": 3, "page_errors": 0}
+{"time": "2026-10-16T18:14:39.550748+00:00", "event": "video_converted", "video": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant/day31/results/recorder-final-check/long-offline-record/Day31-offline.mp4", "ffprobe": {"programs": [], "stream_groups": [], "streams": [{"codec_name": "h264", "width": 1280, "height": 1000, "r_frame_rate": "25/1"}], "format": {"duration": "19.920000", "size": "1602017"}}}

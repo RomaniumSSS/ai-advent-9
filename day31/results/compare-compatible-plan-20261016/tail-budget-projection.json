@@ -1,0 +1,76 @@
+{
+  "comparison_ceiling_usd": 0.172757,
+  "tail_ceiling_usd": 0.0444559,
+  "total_ceiling_usd": 0.2172129,
+  "remaining_usd": 0.22817895,
+  "fits": true,
+  "tail_profile": {
+    "model": "z-ai/glm-5.3-flash",
+    "exact_route": "deepinfra/fp4",
+    "input_usd_per_m": 0.15,
+    "output_usd_per_m": 0.5,
+    "max_output_tokens": 4096,
+    "reasoning": {
+      "effort": "low",
+      "exclude": true
+    }
+  },
+  "planned_tail": [
+    {
+      "index": 1,
+      "question": "За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?",
+      "reserve_ceiling_usd": 0.00388175
+    },
+    {
+      "index": 2,
+      "question": "Какие сведения возвращает get_recent_commits и как запускается MCP-сервер Day17?",
+      "reserve_ceiling_usd": 0.003902
+    },
+    {
+      "index": 3,
+      "question": "Можно попросить 100 последних коммитов другого репозитория, передав его путь в запросе?",
+      "reserve_ceiling_usd": 0.00463565
+    },
+    {
+      "index": 4,
+      "question": "В какой Git-ветке сейчас работает настроенный репозиторий?",
+      "reserve_ceiling_usd": 0.0042158
+    },
+    {
+      "index": 5,
+      "question": "Какие Kubernetes-манифесты этого проекта обеспечивают автоматическое масштабирование?",
+      "reserve_ceiling_usd": 0.00388145
+    },
+    {
+      "index": 6,
+      "question": "Откуда помощник Day17 понимает, какие действия доступны у сервера и какие данные нужно передать для выбранного действия?",
+      "reserve_ceiling_usd": 0.0038821999999999997
+    },
+    {
+      "index": 7,
+      "question": "За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?",
+      "reserve_ceiling_usd": 0.00388175
+    },
+    {
+      "index": 8,
+      "question": "За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?",
+      "reserve_ceiling_usd": 0.00388175
+    },
+    {
+      "index": 9,
+      "question": "Какая сейчас Git-ветка?",
+      "reserve_ceiling_usd": 0.004205899999999999
+    },
+    {
+      "index": 10,
+      "question": "За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?",
+      "reserve_ceiling_usd": 0.00388175
+    },
+    {
+      "index": 11,
+      "question": "Какая сейчас Git-ветка?",
+      "reserve_ceiling_usd": 0.004205899999999999
+    }
+  ],
+  "note": "6 core cases + CLI + 2 dry + 2 recorded generations; unknown weather retrieval skips model, extra retries not included"
+}

@@ -1,0 +1,297 @@
+{
+  "stage": "retrieval_only",
+  "generation_evaluated": false,
+  "rows": [
+    {
+      "id": "Q1",
+      "question": "За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?",
+      "hit_count": 5,
+      "hits": [
+        {
+          "id": "1fe536de17fd2919dc54",
+          "path": "docs/provenance.md",
+          "start_line": 1,
+          "end_line": 12,
+          "section": "Происхождение снимка Day17",
+          "text": "# Происхождение снимка Day17\n\nВерсия документации: 1. Источник — локальный Git commit `cf3603e3b15ce032ebf8557dbfc65b07d331f8a7`.\nСнимок не обновляется из текущей ветки автоматически. Файлы изучены read-only,\nне копируются целиком и не импортируются при запуске Day31.\n\n| Исходный путь | SHA256 исходного файла |\n| --- | --- |\n| `day17/git_mcp_server.py` | `6fcc41342d317b4982e133d2bf18e7ef7d404874a81ef20db142968ffe493e1e` |\n| `day17/mcp_client.py` | `50cbd3f240d82bfa178666a16922c24c03928ed8c2b755d500ac2f88b9710d08` |\n| `day17/tool_calling.py` | `71d0deda50120866fb295d57ca53d6e03790a5e15069c307086117b8157591dd` |\n| `day17/README.md` | `7873bbd31203255977794a6e2f0af77a11a3cbf820708dbcb38d0302ed437ed3` |",
+          "sha256": "eebf6716ae05aadaaf10be266c119deea1f7f9eaedf59bf1dabce79ff96fb31d",
+          "score": 7.011382061071253
+        },
+        {
+          "id": "60d14217b2944e83a41c",
+          "path": "docs/git-mcp.md",
+          "start_line": 3,
+          "end_line": 11,
+          "section": "Устройство Git MCP",
+          "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+          "sha256": "e61fd5a31256b94687288e4a449eef9379689d388fe56db1e8d534c136132822",
+          "score": 6.4663667981725075
+        },
+        {
+          "id": "b0edd3d17cfc0a6bbf14",
+          "path": "README.md",
+          "start_line": 14,
+          "end_line": 27,
+          "section": "Запуск",
+          "text": "## Запуск\n\nИз корня репозитория с Python 3.12 и установленным существующим lock:\n\n```bash\nuv sync --frozen\nuv run python -m day31.cli '/help Как устроен Git MCP?'\nuv run python -m day31.web\n```\n\nБраузер: http://127.0.0.1:8071. Без `--live` работает явно отмеченный офлайн-режим:\nизвлечение фрагмента вместо генерации, но с настоящим MCP. Облачные команды и\nлимит расходов описаны в [docs/run.md](docs/run.md).\n",
+          "sha256": "981a6ece7773c6087681078ded6f87dd5b31553e4adcde2a29301a41b0c9c40c",
+          "score": 1.5013036279612366
+        },
+        {
+          "id": "ff6610302703f8b67f9c",
+          "path": "README.md",
+          "start_line": 42,
+          "end_line": 50,
+          "section": "Проверки",
+          "text": "## Проверки\n\n```bash\nuv run python -m unittest discover -s day31/tests -v\n```\n\nОфлайн-проверки с fake provider отдельно проверяют контракт. Тесты MCP запускают\nнастоящий stdio-сервер и Git во временном репозитории. Реальная облачная генерация,\nсмысловая оценка ответов и видео требуют отдельного разрешённого бюджета.",
+          "sha256": "e85957d4eff771578a66186e6b8f76b5c951122549abd3863f8261a4a6fffebf",
+          "score": 1.091237363937408
+        },
+        {
+          "id": "bba7dcfbd112a73e752e",
+          "path": "docs/git-mcp.md",
+          "start_line": 1,
+          "end_line": 2,
+          "section": "Знакомый Git MCP Day17",
+          "text": "# Знакомый Git MCP Day17\n",
+          "sha256": "5e04328d2db42d71f2df0a09a43d314a9f82c22d2566069f2a380518f824ab60",
+          "score": 0.4687157615953421
+        }
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "Какие сведения возвращает get_recent_commits и как запускается MCP-сервер Day17?",
+      "hit_count": 5,
+      "hits": [
+        {
+          "id": "573974d56461b1bd8569",
+          "path": "README.md",
+          "start_line": 35,
+          "end_line": 41,
+          "section": "Ограничения",
+          "text": "## Ограничения\n\nТолько чтение документов README/docs и Git. Модель не выбирает инструменты,\nне задаёт пути и не выполняет команды. Каждый вопрос независим, истории чата нет.\nПустой поиск возвращает честное «нет данных». Ошибка MCP или модели — ошибка,\nа не успешный ответ. Ключ OPENROUTER_API_KEY остаётся в серверном процессе.\n",
+          "sha256": "35315135290b456e48fb29fde1843d0836efe9238aae5528987a0fb0b15676b8",
+          "score": 2.767735453858592
+        },
+        {
+          "id": "8cb533386d38a7580b38",
+          "path": "docs/git-mcp.md",
+          "start_line": 12,
+          "end_line": 18,
+          "section": "Данные последних коммитов",
+          "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+          "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+          "score": 2.7239035964566747
+        },
+        {
+          "id": "60d14217b2944e83a41c",
+          "path": "docs/git-mcp.md",
+          "start_line": 3,
+          "end_line": 11,
+          "section": "Устройство Git MCP",
+          "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+          "sha256": "e61fd5a31256b94687288e4a449eef9379689d388fe56db1e8d534c136132822",
+          "score": 2.7137363365627483
+        },
+        {
+          "id": "ff6610302703f8b67f9c",
+          "path": "README.md",
+          "start_line": 42,
+          "end_line": 50,
+          "section": "Проверки",
+          "text": "## Проверки\n\n```bash\nuv run python -m unittest discover -s day31/tests -v\n```\n\nОфлайн-проверки с fake provider отдельно проверяют контракт. Тесты MCP запускают\nнастоящий stdio-сервер и Git во временном репозитории. Реальная облачная генерация,\nсмысловая оценка ответов и видео требуют отдельного разрешённого бюджета.",
+          "sha256": "e85957d4eff771578a66186e6b8f76b5c951122549abd3863f8261a4a6fffebf",
+          "score": 2.2297088810771966
+        },
+        {
+          "id": "ec3f4bfe173f79b06693",
+          "path": "README.md",
+          "start_line": 28,
+          "end_line": 34,
+          "section": "Объект знаний",
+          "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+          "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+          "score": 1.6642282704964684
+        }
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "Можно попросить 100 последних коммитов другого репозитория, передав его путь в запросе?",
+      "hit_count": 5,
+      "hits": [
+        {
+          "id": "8cb533386d38a7580b38",
+          "path": "docs/git-mcp.md",
+          "start_line": 12,
+          "end_line": 18,
+          "section": "Данные последних коммитов",
+          "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+          "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+          "score": 12.620841058866924
+        },
+        {
+          "id": "b0edd3d17cfc0a6bbf14",
+          "path": "README.md",
+          "start_line": 14,
+          "end_line": 27,
+          "section": "Запуск",
+          "text": "## Запуск\n\nИз корня репозитория с Python 3.12 и установленным существующим lock:\n\n```bash\nuv sync --frozen\nuv run python -m day31.cli '/help Как устроен Git MCP?'\nuv run python -m day31.web\n```\n\nБраузер: http://127.0.0.1:8071. Без `--live` работает явно отмеченный офлайн-режим:\nизвлечение фрагмента вместо генерации, но с настоящим MCP. Облачные команды и\nлимит расходов описаны в [docs/run.md](docs/run.md).\n",
+          "sha256": "981a6ece7773c6087681078ded6f87dd5b31553e4adcde2a29301a41b0c9c40c",
+          "score": 1.5522753427303375
+        },
+        {
+          "id": "ec3f4bfe173f79b06693",
+          "path": "README.md",
+          "start_line": 28,
+          "end_line": 34,
+          "section": "Объект знаний",
+          "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+          "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+          "score": 1.3407196818545277
+        },
+        {
+          "id": "1fe536de17fd2919dc54",
+          "path": "docs/provenance.md",
+          "start_line": 1,
+          "end_line": 12,
+          "section": "Происхождение снимка Day17",
+          "text": "# Происхождение снимка Day17\n\nВерсия документации: 1. Источник — локальный Git commit `cf3603e3b15ce032ebf8557dbfc65b07d331f8a7`.\nСнимок не обновляется из текущей ветки автоматически. Файлы изучены read-only,\nне копируются целиком и не импортируются при запуске Day31.\n\n| Исходный путь | SHA256 исходного файла |\n| --- | --- |\n| `day17/git_mcp_server.py` | `6fcc41342d317b4982e133d2bf18e7ef7d404874a81ef20db142968ffe493e1e` |\n| `day17/mcp_client.py` | `50cbd3f240d82bfa178666a16922c24c03928ed8c2b755d500ac2f88b9710d08` |\n| `day17/tool_calling.py` | `71d0deda50120866fb295d57ca53d6e03790a5e15069c307086117b8157591dd` |\n| `day17/README.md` | `7873bbd31203255977794a6e2f0af77a11a3cbf820708dbcb38d0302ed437ed3` |",
+          "sha256": "eebf6716ae05aadaaf10be266c119deea1f7f9eaedf59bf1dabce79ff96fb31d",
+          "score": 1.280817840654698
+        },
+        {
+          "id": "60d14217b2944e83a41c",
+          "path": "docs/git-mcp.md",
+          "start_line": 3,
+          "end_line": 11,
+          "section": "Устройство Git MCP",
+          "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+          "sha256": "e61fd5a31256b94687288e4a449eef9379689d388fe56db1e8d534c136132822",
+          "score": 1.1838474047691687
+        }
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "В какой Git-ветке сейчас работает настроенный репозиторий?",
+      "hit_count": 5,
+      "hits": [
+        {
+          "id": "998c34fa0b35555b38e0",
+          "path": "docs/git-mcp.md",
+          "start_line": 27,
+          "end_line": 33,
+          "section": "Отличие нового git_context",
+          "text": "## Отличие нового git_context\n\nDay31 использует отдельный собственный MCPServer `git_context()` без аргументов.\nОн возвращает текущую ветку, detached HEAD, полный head SHA и repository_id.\nGit-root фиксируется на старте, по умолчанию это worktree приложения Day31.\nВетка читается заново для каждого вопроса; снимок документации Day17 не определяет\nтекущую ветку и не сообщает состояние Git. Это делает MCP во время запроса.",
+          "sha256": "2a5985941ac878cd497aa9ad639beaa51d93386a2e0812ce2c1a6e3ec5365c7c",
+          "score": 1.5307267293210047
+        },
+        {
+          "id": "04c4fa7bbe84b6d9ecb4",
+          "path": "docs/run.md",
+          "start_line": 3,
+          "end_line": 8,
+          "section": "CLI и браузер",
+          "text": "## CLI и браузер\n\nCLI принимает `/help` и вопрос. Браузер обращается к тому же `Assistant.answer`.\nПо умолчанию интерфейс слушает только 127.0.0.1:8071. `--repo` фиксирует Git-root\nна старте. В UI видны абсолютный Git-root, текущая ветка, head и repository_id.\n",
+          "sha256": "9480d98001bcc914f622c3669e184aabc200dc33e3ed0b008f334589b80abd61",
+          "score": 1.0732441272345958
+        },
+        {
+          "id": "ec3f4bfe173f79b06693",
+          "path": "README.md",
+          "start_line": 28,
+          "end_line": 34,
+          "section": "Объект знаний",
+          "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+          "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+          "score": 1.014684747008552
+        },
+        {
+          "id": "1fe536de17fd2919dc54",
+          "path": "docs/provenance.md",
+          "start_line": 1,
+          "end_line": 12,
+          "section": "Происхождение снимка Day17",
+          "text": "# Происхождение снимка Day17\n\nВерсия документации: 1. Источник — локальный Git commit `cf3603e3b15ce032ebf8557dbfc65b07d331f8a7`.\nСнимок не обновляется из текущей ветки автоматически. Файлы изучены read-only,\nне копируются целиком и не импортируются при запуске Day31.\n\n| Исходный путь | SHA256 исходного файла |\n| --- | --- |\n| `day17/git_mcp_server.py` | `6fcc41342d317b4982e133d2bf18e7ef7d404874a81ef20db142968ffe493e1e` |\n| `day17/mcp_client.py` | `50cbd3f240d82bfa178666a16922c24c03928ed8c2b755d500ac2f88b9710d08` |\n| `day17/tool_calling.py` | `71d0deda50120866fb295d57ca53d6e03790a5e15069c307086117b8157591dd` |\n| `day17/README.md` | `7873bbd31203255977794a6e2f0af77a11a3cbf820708dbcb38d0302ed437ed3` |",
+          "sha256": "eebf6716ae05aadaaf10be266c119deea1f7f9eaedf59bf1dabce79ff96fb31d",
+          "score": 0.969349608459605
+        },
+        {
+          "id": "bba7dcfbd112a73e752e",
+          "path": "docs/git-mcp.md",
+          "start_line": 1,
+          "end_line": 2,
+          "section": "Знакомый Git MCP Day17",
+          "text": "# Знакомый Git MCP Day17\n",
+          "sha256": "5e04328d2db42d71f2df0a09a43d314a9f82c22d2566069f2a380518f824ab60",
+          "score": 1.982817312368293e-06
+        }
+      ]
+    },
+    {
+      "id": "Q5",
+      "question": "Какие Kubernetes-манифесты этого проекта обеспечивают автоматическое масштабирование?",
+      "hit_count": 0,
+      "hits": []
+    },
+    {
+      "id": "Q6",
+      "question": "Откуда помощник Day17 понимает, какие действия доступны у сервера и какие данные нужно передать для выбранного действия?",
+      "hit_count": 5,
+      "hits": [
+        {
+          "id": "8cb533386d38a7580b38",
+          "path": "docs/git-mcp.md",
+          "start_line": 12,
+          "end_line": 18,
+          "section": "Данные последних коммитов",
+          "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+          "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+          "score": 4.649235341630911
+        },
+        {
+          "id": "d4fe6fcfe34975546237",
+          "path": "README.md",
+          "start_line": 1,
+          "end_line": 5,
+          "section": "Day31 — DevHelper",
+          "text": "# Day31 — DevHelper\n\nБраузерный помощник и CLI `/help <вопрос>` объясняют знакомый Git MCP из Day17.\nЭто самостоятельный модуль: старый день не импортируется и не изменяется.\n",
+          "sha256": "ce242a3910e50830cdd6aa29933d8b93b8aad47fc4b9bfa81298074deba93b34",
+          "score": 3.2350692619863906
+        },
+        {
+          "id": "745b60c6062a402e9dbe",
+          "path": "docs/run.md",
+          "start_line": 23,
+          "end_line": 28,
+          "section": "Ошибки и ограничения",
+          "text": "## Ошибки и ограничения\n\nПустая выдача документов означает «нет данных», вызова модели в этом случае нет.\nОшибка MCP, timeout модели, invalid JSON, обрезанный ответ и неизвестные source_ids\nдают status=error. Наличие существующей ссылки не доказывает смысловую верность.\nДокументы и MCP-данные считаются недоверенными данными, а не инструкциями модели.",
+          "sha256": "1e195018b9b06eef77d802a638d5e674662dad5b658c13729c15bafdecfdf3f4",
+          "score": 1.3619517982283373
+        },
+        {
+          "id": "a44e098e41c4b855e94b",
+          "path": "docs/run.md",
+          "start_line": 9,
+          "end_line": 22,
+          "section": "Облако и бюджет",
+          "text": "## Облако и бюджет\n\nРеальный режим включается явно `--live --budget-usd <разрешённый лимит>`.\nКлюч OPENROUTER_API_KEY читается из окружения или `--env-file /безопасный/путь/.env`.\nФайл ключа не входит в индекс, не копируется и не отдаётся в API.\nМодель qwen/qwen3.8-27b через OpenRouter; только DeepInfra, fallback отключён,\nmax_retries=0. Один вопрос создаёт не более одного запроса модели.\n\nБюджет хранится в SQLite ledger, общий для процессов с одинаковым data-dir.\nДо вызова резервируется потолок по тарифу без скидки: $0.20/M input и $2.50/M output.\nНеизвестный usage или неоднозначный сетевой сбой сохраняет резерв, cost=null.\nПовтор после ошибки пользователь запускает сам; автоматического retry нет.\nДанные по умолчанию лежат в day31/.runtime; их не включают в Git.\n",
+          "sha256": "c0921f202a8829a5cdbc23fbe82c3582ddd9763c5714a37decd0315c3fc2deca",
+          "score": 0.8674250683820323
+        },
+        {
+          "id": "bba7dcfbd112a73e752e",
+          "path": "docs/git-mcp.md",
+          "start_line": 1,
+          "end_line": 2,
+          "section": "Знакомый Git MCP Day17",
+          "text": "# Знакомый Git MCP Day17\n",
+          "sha256": "5e04328d2db42d71f2df0a09a43d314a9f82c22d2566069f2a380518f824ab60",
+          "score": 0.4687157615953421
+        }
+      ]
+    }
+  ]
+}

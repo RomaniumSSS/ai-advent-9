@@ -1,0 +1,151 @@
+{
+  "time": "2026-10-16T18:19:59.639235+00:00",
+  "case_id": "Q2",
+  "kind": "gold_after_corpus_fix",
+  "question": "Какие сведения возвращает get_recent_commits и как запускается MCP-сервер Day17?",
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "answer": {
+    "status": "ok",
+    "text": "Функция `get_recent_commits` принимает параметр `limit` (от 1 до 10) и возвращает идентификатор репозитория и список коммитов, содержащий `id`, `subject`, `author` и `timestamp`. Запуск MCP-сервера Day17 осуществляется из корня репозитория командой `python day17/git_mcp_server.py --repo /путь/к/repo`. Аргумент `--repo` обязателен, путь к репозиторию разрешается до Git worktree root, после чего сервер запускается с транспортом stdio как отдельный процесс.",
+    "source_ids": [
+      "c4f79e0b7538b8b6286e",
+      "c82a108b854961f27be7",
+      "6e3fcb7d7248be1b4581"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "7fb6e67d618c4c05bbb9c8bf47b37848",
+    "sources": [
+      {
+        "id": "c4f79e0b7538b8b6286e",
+        "path": "docs/git-mcp.md",
+        "start_line": 27,
+        "end_line": 42,
+        "section": "Запуск stdio-сервера Day17",
+        "text": "## Запуск stdio-сервера Day17\n\nИз корня репозитория, с установленными зависимостями проекта и Python 3.12+:\n\n```bash\npython day17/git_mcp_server.py --repo /путь/к/repo\n```\n\nВ `main()` файла `git_mcp_server.py` аргумент `--repo` обязателен (`required=True`)\nи разбирается как `Path`. `build_server(args.repo)` разрешает его до Git worktree\nroot, после чего `.run(\"stdio\")` запускает MCP-сервер с транспортом stdio.\nЭто запуск отдельного процесса для MCP-клиента; HTTP-адреса у него нет.\nПуть — доверенная настройка старта, а не аргумент, который выбирает модель.\nЭтот пример запускает исходный сервер Day17 с `get_recent_commits`, а не новый\nсервер Day31 с `git_context`.\n",
+        "sha256": "d8c440439640ecfc7e8e86edde551996cf540e24aa75cd41e7228c645571b995",
+        "score": 4.091384466608563
+      },
+      {
+        "id": "c82a108b854961f27be7",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 19,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nЕго `ToolRuntime.model_tools()` готовит схему инструмента для модели из MCP\ndiscovery: берёт обнаруженные `name`, `description` и `input_schema`, возвращает\nсписок объектов `type=\"function\"`, где `function.name` и `function.description`\nпереносятся из discovery, а `function.parameters` содержит `input_schema`.\nЭту схему создаёт код, не модель. Перед преобразованием `_allowed_tool` проверяет\nединственный разрешённый `get_recent_commits`, наличие описания и корректность\nJSON Schema. `ensure_snapshot()` получает discovery и сохраняет проверенный\nснимок для повторного использования.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "03acb32004e62f0985137bcecb57ed9cedd1088068a6d8fffcc5c45620fd7c9c",
+        "score": 3.8518183119392972
+      },
+      {
+        "id": "6e3fcb7d7248be1b4581",
+        "path": "docs/git-mcp.md",
+        "start_line": 20,
+        "end_line": 26,
+        "section": "Данные последних коммитов",
+        "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+        "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+        "score": 3.268885853612775
+      },
+      {
+        "id": "6b944ddd68925bd8192f",
+        "path": "README.md",
+        "start_line": 37,
+        "end_line": 43,
+        "section": "Ограничения",
+        "text": "## Ограничения\n\nТолько чтение документов README/docs и Git. Модель не выбирает инструменты,\nне задаёт пути и не выполняет команды. Каждый вопрос независим, истории чата нет.\nПустой поиск возвращает честное «нет данных». Ошибка MCP или модели — ошибка,\nа не успешный ответ. Ключ OPENROUTER_API_KEY остаётся в серверном процессе.\n",
+        "sha256": "35315135290b456e48fb29fde1843d0836efe9238aae5528987a0fb0b15676b8",
+        "score": 2.504857986172799
+      },
+      {
+        "id": "cb1f1b817a47f2a1e5aa",
+        "path": "README.md",
+        "start_line": 30,
+        "end_line": 36,
+        "section": "Объект знаний",
+        "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+        "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+        "score": 2.417379101520216
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0017,
+        "count": 5,
+        "source_ids": [
+          "c4f79e0b7538b8b6286e",
+          "c82a108b854961f27be7",
+          "6e3fcb7d7248be1b4581",
+          "6b944ddd68925bd8192f",
+          "cb1f1b817a47f2a1e5aa"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6718,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 3.7601,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 1740,
+          "completion_tokens": 212,
+          "cost_usd": 0.00017845
+        },
+        "receipt": {
+          "id": "gen-1792174795-V5vg2MPhacbdHNLSOIXk",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1740,
+      "completion_tokens": 212,
+      "cost_usd": 0.00017845
+    },
+    "elapsed_seconds": 4.4336,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  },
+  "provider_final": {
+    "final_content": "{\n  \"status\": \"ok\",\n  \"text\": \"Функция `get_recent_commits` принимает параметр `limit` (от 1 до 10) и возвращает идентификатор репозитория и список коммитов, содержащий `id`, `subject`, `author` и `timestamp`. Запуск MCP-сервера Day17 осуществляется из корня репозитория командой `python day17/git_mcp_server.py --repo /путь/к/repo`. Аргумент `--repo` обязателен, путь к репозиторию разрешается до Git worktree root, после чего сервер запускается с транспортом stdio как отдельный процесс.\",\n  \"source_ids\": [\n    \"c4f79e0b7538b8b6286e\",\n    \"c82a108b854961f27be7\",\n    \"6e3fcb7d7248be1b4581\"\n  ]\n}",
+    "receipt": {
+      "id": "gen-1792174795-V5vg2MPhacbdHNLSOIXk",
+      "model": "z-ai/glm-4.7-flash",
+      "provider": "Venice"
+    },
+    "usage": {
+      "prompt_tokens": 1740,
+      "completion_tokens": 212,
+      "cost_usd": 0.00017845
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{"time": "2026-10-16T19:02:29.069539+00:00", "event": "start", "kind": "dry-run", "expected_mode": "live"}
+{"time": "2026-10-16T19:02:30.907940+00:00", "event": "connected", "actual_mode": "live", "model": "z-ai/glm-4.7-flash", "provider": "venice/fp8"}
+{"time": "2026-10-16T19:02:31.057034+00:00", "event": "question_started", "index": 1, "question": "/help Как устроен Git MCP-пример?"}
+{"time": "2026-10-16T19:02:36.213024+00:00", "event": "question_finished", "index": 1, "trace_id": "0bc187052ac14f99963e4841093bf538", "status": "ok", "elapsed_seconds": 5.0783, "usage": {"prompt_tokens": 2118, "completion_tokens": 196, "reasoning_tokens": 0, "cost_usd": 0.00019073}}
+{"time": "2026-10-16T19:02:36.329010+00:00", "event": "reading_frame", "index": 1, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "01-answer.png", "scroll_y": 380}
+{"time": "2026-10-16T19:02:36.468284+00:00", "event": "reading_frame", "index": 1, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "01-source.png", "scroll_y": 654}
+{"time": "2026-10-16T19:02:36.607414+00:00", "event": "reading_frame", "index": 1, "section": "mcp_call", "screenshot": "01-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T19:02:36.707549+00:00", "event": "reading_frame", "index": 1, "section": "mcp_result", "screenshot": "01-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T19:02:36.715461+00:00", "event": "question_started", "index": 2, "question": "/help Какая сейчас Git-ветка?"}
+{"time": "2026-10-16T19:02:37.758209+00:00", "event": "question_finished", "index": 2, "trace_id": "208bbe336613408fb927fc6ad7b331e1", "status": "error", "elapsed_seconds": 0.9982, "usage": null}
+{"time": "2026-10-16T19:02:37.797487+00:00", "event": "failed", "reason": "Ответ 2: ожидался статус ok, получен error"}

@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-10-16T19:24:22.524326+00:00",
+  "ledger": "day31/.runtime/live-20261016/budget.sqlite3",
+  "limit_usd": 0.5,
+  "known_actual_cost_usd": 0.0127359524,
+  "unknown_cost_holds_usd": 0.45713269,
+  "unknown_cost_count": 19,
+  "accounted_usd": 0.46986864240000004,
+  "remaining_usd": 0.030131357599999964,
+  "call_count": 78,
+  "method": "SQLite mode=ro; no ledger changes"
+}

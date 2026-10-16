@@ -1,0 +1,71 @@
+{
+  "context": {
+    "question": "Покажи короткий JSON-пример описания MCP-инструмента Day17 с полями type и function и объясни их.",
+    "sources": [
+      {
+        "id": "c82a108b854961f27be7",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 19,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nЕго `ToolRuntime.model_tools()` готовит схему инструмента для модели из MCP\ndiscovery: берёт обнаруженные `name`, `description` и `input_schema`, возвращает\nсписок объектов `type=\"function\"`, где `function.name` и `function.description`\nпереносятся из discovery, а `function.parameters` содержит `input_schema`.\nЭту схему создаёт код, не модель. Перед преобразованием `_allowed_tool` проверяет\nединственный разрешённый `get_recent_commits`, наличие описания и корректность\nJSON Schema. `ensure_snapshot()` получает discovery и сохраняет проверенный\nснимок для повторного использования.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "03acb32004e62f0985137bcecb57ed9cedd1088068a6d8fffcc5c45620fd7c9c",
+        "score": 24.05098925667735
+      },
+      {
+        "id": "ccc4c29bdaa9a73e6d8a",
+        "path": "docs/git-mcp.md",
+        "start_line": 43,
+        "end_line": 50,
+        "section": "Границы Day17",
+        "text": "## Границы Day17\n\nОбычный chat допускает максимум 2 вызова модели и 1 выполнение MCP за ход.\nСмешанные, множественные, неизвестные или некорректные tool calls не исполняются.\nПовторный запрос инструмента во втором ответе получает отказ без третьего вызова.\nWorkflow FSM в Day17 работает без tools. Ошибки и malformed result не становятся\nуспешным observation. Discovery не считается выполнением инструмента.\n",
+        "sha256": "0694af9fe3fed14da2be2274316a812de164e4aa5b4eaffb1a06c44a07446644",
+        "score": 11.916210896710007
+      },
+      {
+        "id": "1fe536de17fd2919dc54",
+        "path": "docs/provenance.md",
+        "start_line": 1,
+        "end_line": 12,
+        "section": "Происхождение снимка Day17",
+        "text": "# Происхождение снимка Day17\n\nВерсия документации: 1. Источник — локальный Git commit `cf3603e3b15ce032ebf8557dbfc65b07d331f8a7`.\nСнимок не обновляется из текущей ветки автоматически. Файлы изучены read-only,\nне копируются целиком и не импортируются при запуске Day31.\n\n| Исходный путь | SHA256 исходного файла |\n| --- | --- |\n| `day17/git_mcp_server.py` | `6fcc41342d317b4982e133d2bf18e7ef7d404874a81ef20db142968ffe493e1e` |\n| `day17/mcp_client.py` | `50cbd3f240d82bfa178666a16922c24c03928ed8c2b755d500ac2f88b9710d08` |\n| `day17/tool_calling.py` | `71d0deda50120866fb295d57ca53d6e03790a5e15069c307086117b8157591dd` |\n| `day17/README.md` | `7873bbd31203255977794a6e2f0af77a11a3cbf820708dbcb38d0302ed437ed3` |",
+        "sha256": "eebf6716ae05aadaaf10be266c119deea1f7f9eaedf59bf1dabce79ff96fb31d",
+        "score": 3.4448703443426805
+      },
+      {
+        "id": "e04f4bc74b9338bcfab2",
+        "path": "docs/git-mcp.md",
+        "start_line": 27,
+        "end_line": 42,
+        "section": "Запуск stdio-сервера Day17",
+        "text": "## Запуск stdio-сервера Day17\n\nИз корня репозитория, с установленными зависимостями проекта и Python 3.12+:\n\n```bash\nuv run --frozen python day17/git_mcp_server.py --repo /путь/к/repo\n```\n\nВ `main()` файла `git_mcp_server.py` аргумент `--repo` обязателен (`required=True`)\nи разбирается как `Path`. `build_server(args.repo)` разрешает его до Git worktree\nroot, после чего `.run(\"stdio\")` запускает MCP-сервер с транспортом stdio.\nЭто запуск отдельного процесса для MCP-клиента; HTTP-адреса у него нет.\nПуть — доверенная настройка старта, а не аргумент, который выбирает модель.\nЭтот пример запускает исходный сервер Day17 с `get_recent_commits`, а не новый\nсервер Day31 с `git_context`.\n",
+        "sha256": "9dab1d9c8cf398cbc31f578d8411f754d4b068edda00e202cf9b9ddcb588f13c",
+        "score": 3.234847734592048
+      },
+      {
+        "id": "026ae583671638b0dac2",
+        "path": "docs/run.md",
+        "start_line": 37,
+        "end_line": 55,
+        "section": "Команды облачного режима",
+        "text": "## Команды облачного режима\n\nТолько после явного разрешения бюджета. Пример использует переменную\nDAY31_BUDGET_USD с согласованным пределом; её значение не устанавливается кодом:\n\n```bash\nuv run python -m day31.web --live \\\n  --env-file /безопасный/путь/.env --budget-usd \"$DAY31_BUDGET_USD\"\nuv run python -m day31.cli '/help Как устроен Git MCP?' --live \\\n  --env-file /безопасный/путь/.env --budget-usd \"$DAY31_BUDGET_USD\" --json\n```\n\nПеред облачным стартом бесплатный metadata preflight подтверждает активный\nendpoint с точным tag venice/fp8, JSON Schema/reasoning и остальные параметры\nзапроса, а также тариф без скидки не выше резерва. При росте\nтарифа или недоступных метаданных запуск прекращается до платного запроса.\nReasoning отключён через enabled=false, require_parameters=true: неподдерживаемые\nпараметры не должны тихо игнорироваться провайдером.\n",
+        "sha256": "2e9233fc3edf1cdac7fc08efe0b9c6db21490af9abe20e06da5b96194c58d367",
+        "score": 3.0204972491023696
+      }
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    }
+  },
+  "context_sha256": "f079f9f0c2dd80d5f2b259e7478ff731d92cff14c78d98d1bc0e8607cad5f03f",
+  "discovery": {
+    "protocol_version": "2026-07-28",
+    "tools": [
+      "git_context"
+    ]
+  },
+  "provenance": "один реальный поиск и один реальный MCP для всех кандидатов"
+}

@@ -1,0 +1,173 @@
+{
+  "case_id": "Q2",
+  "question": "Какие сведения возвращает get_recent_commits и как запускается MCP-сервер Day17?",
+  "answer": {
+    "status": "ok",
+    "text": "Инструмент get_recent_commits принимает целый limit от 1 до 10 и возвращает идентификатор репозитория и непустой список коммитов с полями id, subject, author и timestamp. Путь к репозиторию задаётся доверенной конфигурацией при старте, модель не может его передать или заменить, а git log выполняется без shell с timeout 10 секунд. MCP-сервер Day17 запускается из корня репозитория при установленных зависимостях проекта и Python 3.12+ командой uv run --frozen python day17/git_mcp_server.py --repo /путь/к/repo. В main() файла git_mcp_server.py аргумент --repo обязателен и разбирается как Path, затем build_server(args.repo) разрешает его до Git worktree root, после чего .run(stdin) запускает MCP-сервер с транспортом stdio. Это отдельный процесс для MCP-клиента, HTTP-адреса у него нет. Указанный пример запускает исходный сервер Day17 с get_recent_commits, а не новый сервер Day31 с git_context.",
+    "source_ids": [
+      "6e3fcb7d7248be1b4581",
+      "e04f4bc74b9338bcfab2",
+      "c82a108b854961f27be7"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "bdf73cd8762741de8473224a68b30c22",
+    "sources": [
+      {
+        "id": "e04f4bc74b9338bcfab2",
+        "path": "docs/git-mcp.md",
+        "start_line": 27,
+        "end_line": 42,
+        "section": "Запуск stdio-сервера Day17",
+        "text": "## Запуск stdio-сервера Day17\n\nИз корня репозитория, с установленными зависимостями проекта и Python 3.12+:\n\n```bash\nuv run --frozen python day17/git_mcp_server.py --repo /путь/к/repo\n```\n\nВ `main()` файла `git_mcp_server.py` аргумент `--repo` обязателен (`required=True`)\nи разбирается как `Path`. `build_server(args.repo)` разрешает его до Git worktree\nroot, после чего `.run(\"stdio\")` запускает MCP-сервер с транспортом stdio.\nЭто запуск отдельного процесса для MCP-клиента; HTTP-адреса у него нет.\nПуть — доверенная настройка старта, а не аргумент, который выбирает модель.\nЭтот пример запускает исходный сервер Day17 с `get_recent_commits`, а не новый\nсервер Day31 с `git_context`.\n",
+        "sha256": "9dab1d9c8cf398cbc31f578d8411f754d4b068edda00e202cf9b9ddcb588f13c",
+        "score": 5.294627186122816
+      },
+      {
+        "id": "c82a108b854961f27be7",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 19,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nЕго `ToolRuntime.model_tools()` готовит схему инструмента для модели из MCP\ndiscovery: берёт обнаруженные `name`, `description` и `input_schema`, возвращает\nсписок объектов `type=\"function\"`, где `function.name` и `function.description`\nпереносятся из discovery, а `function.parameters` содержит `input_schema`.\nЭту схему создаёт код, не модель. Перед преобразованием `_allowed_tool` проверяет\nединственный разрешённый `get_recent_commits`, наличие описания и корректность\nJSON Schema. `ensure_snapshot()` получает discovery и сохраняет проверенный\nснимок для повторного использования.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "03acb32004e62f0985137bcecb57ed9cedd1088068a6d8fffcc5c45620fd7c9c",
+        "score": 5.204705533186215
+      },
+      {
+        "id": "6e3fcb7d7248be1b4581",
+        "path": "docs/git-mcp.md",
+        "start_line": 20,
+        "end_line": 26,
+        "section": "Данные последних коммитов",
+        "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+        "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+        "score": 3.979737135648324
+      },
+      {
+        "id": "a031e5d098e840e5fa43",
+        "path": "README.md",
+        "start_line": 36,
+        "end_line": 42,
+        "section": "Объект знаний",
+        "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+        "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+        "score": 3.12780549792919
+      },
+      {
+        "id": "3bb965bed18427dc9862",
+        "path": "docs/git-mcp.md",
+        "start_line": 51,
+        "end_line": 57,
+        "section": "Отличие нового git_context",
+        "text": "## Отличие нового git_context\n\nDay31 использует отдельный собственный MCPServer `git_context()` без аргументов.\nОн возвращает текущую ветку, detached HEAD, полный head SHA и repository_id.\nGit-root фиксируется на старте, по умолчанию это worktree приложения Day31.\nВетка читается заново для каждого вопроса; снимок документации Day17 не определяет\nтекущую ветку и не сообщает состояние Git. Это делает MCP во время запроса.",
+        "sha256": "2a5985941ac878cd497aa9ad639beaa51d93386a2e0812ce2c1a6e3ec5365c7c",
+        "score": 2.73559599556289
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0022,
+        "count": 5,
+        "source_ids": [
+          "e04f4bc74b9338bcfab2",
+          "c82a108b854961f27be7",
+          "6e3fcb7d7248be1b4581",
+          "a031e5d098e840e5fa43",
+          "3bb965bed18427dc9862"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6676,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 4.8622,
+        "model": "deepseek/deepseek-v4.1-flash",
+        "provider": "deepinfra/fp8",
+        "usage": {
+          "prompt_tokens": 1895,
+          "completion_tokens": 328,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.0003682952
+        },
+        "receipt": {
+          "id": "gen-1792178281-hTmkIQ2jTo8L4EyPkG7T",
+          "model": "deepseek/deepseek-v4.1-flash",
+          "provider": "DeepInfra"
+        },
+        "source_id_normalization": {
+          "method": "deterministic",
+          "added_from_inline": []
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1895,
+      "completion_tokens": 328,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.0003682952
+    },
+    "elapsed_seconds": 5.5321,
+    "model": "deepseek/deepseek-v4.1-flash",
+    "provider": "deepinfra/fp8"
+  },
+  "provider_final": {
+    "trace_id": "bdf73cd8762741de8473224a68b30c22",
+    "profile": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "exact_route": "deepinfra/fp8",
+      "input_usd_per_m": 0.2,
+      "output_usd_per_m": 0.6,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "finish_reason": "stop",
+    "receipt": {
+      "id": "gen-1792178281-hTmkIQ2jTo8L4EyPkG7T",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider": "DeepInfra"
+    },
+    "usage": {
+      "prompt_tokens": 1895,
+      "completion_tokens": 328,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.0003682952
+    },
+    "content": "{\"status\": \"ok\", \"text\": \"Инструмент get_recent_commits принимает целый limit от 1 до 10 и возвращает идентификатор репозитория и непустой список коммитов с полями id, subject, author и timestamp. Путь к репозиторию задаётся доверенной конфигурацией при старте, модель не может его передать или заменить, а git log выполняется без shell с timeout 10 секунд. MCP-сервер Day17 запускается из корня репозитория при установленных зависимостях проекта и Python 3.12+ командой uv run --frozen python day17/git_mcp_server.py --repo /путь/к/repo. В main() файла git_mcp_server.py аргумент --repo обязателен и разбирается как Path, затем build_server(args.repo) разрешает его до Git worktree root, после чего .run(stdin) запускает MCP-сервер с транспортом stdio. Это отдельный процесс для MCP-клиента, HTTP-адреса у него нет. Указанный пример запускает исходный сервер Day17 с get_recent_commits, а не новый сервер Day31 с git_context.\", \"source_ids\": [\"6e3fcb7d7248be1b4581\", \"e04f4bc74b9338bcfab2\", \"c82a108b854961f27be7\"]}",
+    "error": null,
+    "sent": true,
+    "reserved_usd": 0.0034314000000000002,
+    "elapsed_seconds": 4.8619007910601795
+  },
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37"
+}

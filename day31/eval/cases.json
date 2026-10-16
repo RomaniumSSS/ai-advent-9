@@ -1,0 +1,107 @@
+{
+  "status": "pending_live_evaluation",
+  "prepared_by": "gpt-6-astra requirements role",
+  "gold_must_not_be_in_model_context": true,
+  "scope": "Day17 facts and dynamic Day31 Git; cite actual corpus chunks in answers",
+  "cases": [
+    {
+      "id": "Q1",
+      "question": "За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?",
+      "expected": [
+        "Сервер читает Git и предоставляет инструмент",
+        "Клиент получает каталог и вызывает инструмент",
+        "tool_calling подготавливает схему и проверяет аргументы"
+      ],
+      "must_not": [
+        "Модель сама запускает shell",
+        "MCP-клиент принимает решение вместо модели"
+      ],
+      "reference": [
+        "day17/git_mcp_server.py:95",
+        "day17/mcp_client.py:208",
+        "day17/tool_calling.py:119"
+      ]
+    },
+    {
+      "id": "Q2",
+      "question": "Какие сведения возвращает get_recent_commits и как запускается MCP-сервер Day17?",
+      "expected": [
+        "id, subject, author, timestamp коммитов",
+        "Идентификатор репозитория",
+        "stdio и обязательный --repo"
+      ],
+      "must_not": [
+        "Возвращается текущая ветка",
+        "Возвращается diff",
+        "repository содержит исходный путь"
+      ],
+      "reference": [
+        "day17/git_mcp_server.py:19",
+        "day17/git_mcp_server.py:28",
+        "day17/git_mcp_server.py:129"
+      ]
+    },
+    {
+      "id": "Q3",
+      "question": "Можно попросить 100 последних коммитов другого репозитория, передав его путь в запросе?",
+      "expected": [
+        "Нет; limit целое от1 до10",
+        "Root фиксируется при запуске, аргумент repo инструментом не принимается"
+      ],
+      "must_not": [
+        "Лимит является только рекомендацией промпта",
+        "Модель может заменить root"
+      ],
+      "reference": [
+        "day17/git_mcp_server.py:95",
+        "day17/git_mcp_server.py:117",
+        "day17/tool_calling.py:134"
+      ]
+    },
+    {
+      "id": "Q4",
+      "question": "В какой Git-ветке сейчас работает настроенный репозиторий?",
+      "expected": [
+        "Имя исключительно из свежего Git MCP Day31",
+        "При detached отсутствие именованной ветки явно",
+        "При ошибке ветка неизвестна"
+      ],
+      "must_not": [
+        "Подставлять сохранённое имя из docs",
+        "Выдавать get_recent_commits Day17 за источник branch"
+      ],
+      "dynamic_truth": "git branch --show-current / git rev-parse HEAD в фактически настроенном worktree"
+    },
+    {
+      "id": "Q5",
+      "question": "Какие Kubernetes-манифесты этого проекта обеспечивают автоматическое масштабирование?",
+      "expected": [
+        "В доступном ограниченном корпусе такие сведения не подтверждены"
+      ],
+      "must_not": [
+        "Выдумывать имена манифестов",
+        "Утверждать отсутствие Kubernetes во всём репозитории",
+        "Заменять ответ общей инструкцией Kubernetes"
+      ]
+    },
+    {
+      "id": "Q6",
+      "question": "Откуда помощник Day17 понимает, какие действия доступны у сервера и какие данные нужно передать для выбранного действия?",
+      "expected": [
+        "Каталог инструментов и входные схемы получены клиентом",
+        "Модели передаются name, description, parameters",
+        "Аргументы затем проверяет код"
+      ],
+      "must_not": [
+        "Каталог угадывается из обучения модели",
+        "Любой описанный вызов автоматически разрешён"
+      ],
+      "reference": [
+        "day17/mcp_client.py:208",
+        "day17/tool_calling.py:171",
+        "day17/tool_calling.py:119"
+      ],
+      "note": "Сначала оценивать retrieval. Пустая выдача может быть ограничением лексического поиска, не ошибкой генератора."
+    }
+  ]
+}

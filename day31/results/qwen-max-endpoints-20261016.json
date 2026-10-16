@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-10-16T18:37:41.455102+00:00",
+  "model": "qwen/qwen3.8-max-0902",
+  "active_endpoints": [
+    {
+      "provider_name": "Alibaba",
+      "tag": "alibaba/us-east-1",
+      "status": 0,
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000006",
+        "input_cache_read": "0.00000025",
+        "discount": 0
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "presence_penalty",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs",
+        "top_k",
+        "frequency_penalty",
+        "stop",
+        "reasoning_effort"
+      ],
+      "max_completion_tokens": 131072
+    },
+    {
+      "provider_name": "Alibaba",
+      "tag": "alibaba",
+      "status": 0,
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000006",
+        "input_cache_read": "0.00000025",
+        "input_cache_write": "0.0000025",
+        "discount": 0
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "presence_penalty",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs",
+        "top_k",
+        "frequency_penalty",
+        "stop",
+        "reasoning_effort"
+      ],
+      "max_completion_tokens": 131072
+    }
+  ]
+}

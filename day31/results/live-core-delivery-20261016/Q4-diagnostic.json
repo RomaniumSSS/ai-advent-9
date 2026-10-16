@@ -1,0 +1,167 @@
+{
+  "answer": {
+    "status": "ok",
+    "text": "Текущая Git-ветка — day31-dev-assistant.",
+    "source_ids": [
+      "3bb965bed18427dc9862",
+      "04c4fa7bbe84b6d9ecb4"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "5c4bc95bdc9b410fa1262452c3266142",
+    "sources": [
+      {
+        "id": "3bb965bed18427dc9862",
+        "path": "docs/git-mcp.md",
+        "start_line": 51,
+        "end_line": 57,
+        "section": "Отличие нового git_context",
+        "text": "## Отличие нового git_context\n\nDay31 использует отдельный собственный MCPServer `git_context()` без аргументов.\nОн возвращает текущую ветку, detached HEAD, полный head SHA и repository_id.\nGit-root фиксируется на старте, по умолчанию это worktree приложения Day31.\nВетка читается заново для каждого вопроса; снимок документации Day17 не определяет\nтекущую ветку и не сообщает состояние Git. Это делает MCP во время запроса.",
+        "sha256": "2a5985941ac878cd497aa9ad639beaa51d93386a2e0812ce2c1a6e3ec5365c7c",
+        "score": 4.395011163629498
+      },
+      {
+        "id": "04c4fa7bbe84b6d9ecb4",
+        "path": "docs/run.md",
+        "start_line": 3,
+        "end_line": 8,
+        "section": "CLI и браузер",
+        "text": "## CLI и браузер\n\nCLI принимает `/help` и вопрос. Браузер обращается к тому же `Assistant.answer`.\nПо умолчанию интерфейс слушает только 127.0.0.1:8071. `--repo` фиксирует Git-root\nна старте. В UI видны абсолютный Git-root, текущая ветка, head и repository_id.\n",
+        "sha256": "9480d98001bcc914f622c3669e184aabc200dc33e3ed0b008f334589b80abd61",
+        "score": 4.050158737281962
+      },
+      {
+        "id": "28d422552a5566fa62dc",
+        "path": "docs/run.md",
+        "start_line": 74,
+        "end_line": 118,
+        "section": "После разрешения расходов и запуска сервера с --live:",
+        "text": "# После разрешения расходов и запуска сервера с --live:\nuv run python -m day31.recorder.run_demo --dry-run --expect-mode live \\\n  --output /tmp/day31-new-live-dry\nuv run python -m day31.recorder.run_demo --record --expect-mode live --hold-seconds 6 \\\n  --output /tmp/day31-new-live-record\n```\n\nКаждый прогон отправляет три новых вопроса через UI, раскрывает источник и\nфактический MCP result. Записываются trace_id/usage/время, ответы, скриншоты и\nсобытия этого запуска. `--expect-mode offline` по умолчанию не даст незаметно\nпотратить бюджет на облачном сервере. `--expect-mode live` явно разрешает новые\nответы через уже настроенный сервер с его общим ledger.\n\nRecord создаёт новый raw WebM и MP4 через ffmpeg, затем отдельный ffprobe.json.\nОфлайн-запись называется Day31-offline.mp4, облачная — Day31-live.mp4.\nУспешный сценарий проверяет статусы и новые trace_id, но не подменяет независимую\nпроверку смысла ответов или просмотр кадров. CLI проверяется отдельно; этот\nскрипт записывает только браузерные шаги 1–3 сценария.\n\nПараметр `--hold-seconds` (по умолчанию 6, допустимо 0 < значение ≤ 60) задаёт\nотдельную паузу для каждого читаемого экрана ответа/источника, начала MCP-вызова\nи его результата.\nЭти паузы начинаются после получения настоящего результата; ожидание API остаётся\nотдельным. Длинный ответ и источник автоматически прокручиваются экранами с\nперекрытием 180 px; каждый экран сохраняется отдельно и удерживается указанное\nвремя. Текст не сокращается и не заменяется. Для более медленного чтения можно\nувеличить hold-seconds. В dry-run паузы чтения отключены, даже если\nпараметр передан. Запрошенное и фактическое значения сохраняются в manifest.\n\nБраузерную проверку можно направить на другой Git-root:\n\n```bash\nuv run python -m day31.tests.browser_check --repo /путь/к/repo \\\n  --output /tmp/day31-browser-other-branch\n```\n\nОжидаемые Git-root, ветка и HEAD получаются независимыми командами `git`, затем\nсравниваются с точными UI/API значениями. Detached HEAD учитывается как branch=null;\nимя ветки разработчика в проверке не зафиксировано.\n\nВ MCP сначала показывается начало настоящего JSON (вызов/discovery), затем\nпрокручивается внутренний `pre` до `result.branch` и `result.head`. Код сверяет\nполный JSON с API и проверяет, что эти строки видны в viewport, не создавая\nсокращённую копию результата. Сохраняются `NN-mcp.png` и `NN-mcp-result.png`.\nУ длинного ответа/источника первый кадр сохраняет прежнее имя `NN-answer.png` /",
+        "sha256": "b2cbf92fd264774d8e374782fdf412a98334602bf6d3051e04071ada34cbb785",
+        "score": 1.8989636502524232
+      },
+      {
+        "id": "1ce1eb0026c55160ea21",
+        "path": "README.md",
+        "start_line": 33,
+        "end_line": 39,
+        "section": "Объект знаний",
+        "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+        "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+        "score": 1.6169121530493362
+      },
+      {
+        "id": "1fe536de17fd2919dc54",
+        "path": "docs/provenance.md",
+        "start_line": 1,
+        "end_line": 12,
+        "section": "Происхождение снимка Day17",
+        "text": "# Происхождение снимка Day17\n\nВерсия документации: 1. Источник — локальный Git commit `cf3603e3b15ce032ebf8557dbfc65b07d331f8a7`.\nСнимок не обновляется из текущей ветки автоматически. Файлы изучены read-only,\nне копируются целиком и не импортируются при запуске Day31.\n\n| Исходный путь | SHA256 исходного файла |\n| --- | --- |\n| `day17/git_mcp_server.py` | `6fcc41342d317b4982e133d2bf18e7ef7d404874a81ef20db142968ffe493e1e` |\n| `day17/mcp_client.py` | `50cbd3f240d82bfa178666a16922c24c03928ed8c2b755d500ac2f88b9710d08` |\n| `day17/tool_calling.py` | `71d0deda50120866fb295d57ca53d6e03790a5e15069c307086117b8157591dd` |\n| `day17/README.md` | `7873bbd31203255977794a6e2f0af77a11a3cbf820708dbcb38d0302ed437ed3` |",
+        "sha256": "eebf6716ae05aadaaf10be266c119deea1f7f9eaedf59bf1dabce79ff96fb31d",
+        "score": 1.5683009420702745
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0083,
+        "count": 5,
+        "source_ids": [
+          "3bb965bed18427dc9862",
+          "04c4fa7bbe84b6d9ecb4",
+          "28d422552a5566fa62dc",
+          "1ce1eb0026c55160ea21",
+          "1fe536de17fd2919dc54"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6884,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 2.8378,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 2375,
+          "completion_tokens": 68,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.00016945
+        },
+        "receipt": {
+          "id": "gen-1792177186-39dnzFeNjYrQ8UwUUWDU",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "source_id_normalization": {
+          "method": "deterministic",
+          "added_from_inline": []
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2375,
+      "completion_tokens": 68,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.00016945
+    },
+    "elapsed_seconds": 3.5345,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  },
+  "provider_final": {
+    "trace_id": "5c4bc95bdc9b410fa1262452c3266142",
+    "profile": {
+      "model": "z-ai/glm-4.7-flash",
+      "exact_route": "venice/fp8",
+      "input_usd_per_m": 0.06,
+      "output_usd_per_m": 0.4,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "finish_reason": "stop",
+    "receipt": {
+      "id": "gen-1792177186-39dnzFeNjYrQ8UwUUWDU",
+      "model": "z-ai/glm-4.7-flash",
+      "provider": "Venice"
+    },
+    "usage": {
+      "prompt_tokens": 2375,
+      "completion_tokens": 68,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.00016945
+    },
+    "content": "{\n  \"status\": \"ok\",\n  \"text\": \"Текущая Git-ветка — day31-dev-assistant.\",\n  \"source_ids\": [\n    \"3bb965bed18427dc9862\",\n    \"04c4fa7bbe84b6d9ecb4\"\n  ]\n}",
+    "error": null,
+    "sent": true,
+    "reserved_usd": 0.00150448,
+    "elapsed_seconds": 2.837259833002463
+  },
+  "diagnostic_errors": [],
+  "purpose": "Один новый bounded diagnostic smoke; существующий reserve до API, без retry/fallback"
+}

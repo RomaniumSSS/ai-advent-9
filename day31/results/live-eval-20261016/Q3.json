@@ -1,0 +1,136 @@
+{
+  "time": "2026-10-16T18:16:04.476242+00:00",
+  "case_id": "Q3",
+  "kind": "gold",
+  "question": "Можно попросить 100 последних коммитов другого репозитория, передав его путь в запросе?",
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "answer": {
+    "status": "ok",
+    "text": "Нет, путь к репозиторию задаётся доверенной конфигурацией при старте; модель не может его передать или заменить. `get_recent_commits` принимает целый `limit` от 1 до 10.",
+    "source_ids": [
+      "8cb533386d38a7580b38"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "67d096ecd4c04214b334ad746ae2ba4b",
+    "sources": [
+      {
+        "id": "8cb533386d38a7580b38",
+        "path": "docs/git-mcp.md",
+        "start_line": 12,
+        "end_line": 18,
+        "section": "Данные последних коммитов",
+        "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+        "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+        "score": 14.599092394116632
+      },
+      {
+        "id": "4a2abc88415ca04f4b6d",
+        "path": "docs/run.md",
+        "start_line": 68,
+        "end_line": 112,
+        "section": "После разрешения расходов и запуска сервера с --live:",
+        "text": "# После разрешения расходов и запуска сервера с --live:\nuv run python -m day31.recorder.run_demo --dry-run --expect-mode live \\\n  --output /tmp/day31-new-live-dry\nuv run python -m day31.recorder.run_demo --record --expect-mode live --hold-seconds 6 \\\n  --output /tmp/day31-new-live-record\n```\n\nКаждый прогон отправляет три новых вопроса через UI, раскрывает источник и\nфактический MCP result. Записываются trace_id/usage/время, ответы, скриншоты и\nсобытия этого запуска. `--expect-mode offline` по умолчанию не даст незаметно\nпотратить бюджет на облачном сервере. `--expect-mode live` явно разрешает новые\nответы через уже настроенный сервер с его общим ledger.\n\nRecord создаёт новый raw WebM и MP4 через ffmpeg, затем отдельный ffprobe.json.\nОфлайн-запись называется Day31-offline.mp4, облачная — Day31-live.mp4.\nУспешный сценарий проверяет статусы и новые trace_id, но не подменяет независимую\nпроверку смысла ответов или просмотр кадров. CLI проверяется отдельно; этот\nскрипт записывает только браузерные шаги 1–3 сценария.\n\nПараметр `--hold-seconds` (по умолчанию 6, допустимо 0 < значение ≤ 60) задаёт\nотдельную паузу для каждого читаемого экрана ответа/источника, начала MCP-вызова\nи его результата.\nЭти паузы начинаются после получения настоящего результата; ожидание API остаётся\nотдельным. Длинный ответ и источник автоматически прокручиваются экранами с\nперекрытием 180 px; каждый экран сохраняется отдельно и удерживается указанное\nвремя. Текст не сокращается и не заменяется. Для более медленного чтения можно\nувеличить hold-seconds. В dry-run паузы чтения отключены, даже если\nпараметр передан. Запрошенное и фактическое значения сохраняются в manifest.\n\nБраузерную проверку можно направить на другой Git-root:\n\n```bash\nuv run python -m day31.tests.browser_check --repo /путь/к/repo \\\n  --output /tmp/day31-browser-other-branch\n```\n\nОжидаемые Git-root, ветка и HEAD получаются независимыми командами `git`, затем\nсравниваются с точными UI/API значениями. Detached HEAD учитывается как branch=null;\nимя ветки разработчика в проверке не зафиксировано.\n\nВ MCP сначала показывается начало настоящего JSON (вызов/discovery), затем\nпрокручивается внутренний `pre` до `result.branch` и `result.head`. Код сверяет\nполный JSON с API и проверяет, что эти строки видны в viewport, не создавая\nсокращённую копию результата. Сохраняются `NN-mcp.png` и `NN-mcp-result.png`.\nУ длинного ответа/источника первый кадр сохраняет прежнее имя `NN-answer.png` /",
+        "sha256": "b2cbf92fd264774d8e374782fdf412a98334602bf6d3051e04071ada34cbb785",
+        "score": 2.945138601726988
+      },
+      {
+        "id": "79fd5908739d6472ed64",
+        "path": "README.md",
+        "start_line": 14,
+        "end_line": 29,
+        "section": "Запуск",
+        "text": "## Запуск\n\nИз корня репозитория с Python 3.12 и установленным существующим lock:\n\n```bash\nuv sync --frozen\nuv run python -m day31.cli '/help Как устроен Git MCP?'\nuv run python -m day31.web\n```\n\nБраузер: http://127.0.0.1:8071. Без `--live` работает явно отмеченный офлайн-режим:\nизвлечение фрагмента вместо генерации, но с настоящим MCP. Облачные команды и\nлимит расходов описаны в [docs/run.md](docs/run.md). Облачная модель —\n`z-ai/glm-4.7-flash` (Z.ai) через OpenRouter, только `venice/fp8`, без fallback\nи retry; reasoning выключен. Платные запросы требуют разрешённого бюджета.\n",
+        "sha256": "b79d7393af046cc4297d98a090e0e4bb3fe8c10dc27fa27f336d92f57d2e7548",
+        "score": 1.8080636905476035
+      },
+      {
+        "id": "cb1f1b817a47f2a1e5aa",
+        "path": "README.md",
+        "start_line": 30,
+        "end_line": 36,
+        "section": "Объект знаний",
+        "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+        "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+        "score": 1.517349848263156
+      },
+      {
+        "id": "60d14217b2944e83a41c",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 11,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "e61fd5a31256b94687288e4a449eef9379689d388fe56db1e8d534c136132822",
+        "score": 1.3682187399315198
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0052,
+        "count": 5,
+        "source_ids": [
+          "8cb533386d38a7580b38",
+          "4a2abc88415ca04f4b6d",
+          "79fd5908739d6472ed64",
+          "cb1f1b817a47f2a1e5aa",
+          "60d14217b2944e83a41c"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6786,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 4.3002,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 2210,
+          "completion_tokens": 79,
+          "cost_usd": 0.00015355
+        },
+        "receipt": {
+          "id": "gen-1792174560-0NQbevzowPr8h5Hmgm1V",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 2210,
+      "completion_tokens": 79,
+      "cost_usd": 0.00015355
+    },
+    "elapsed_seconds": 4.984,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  }
+}

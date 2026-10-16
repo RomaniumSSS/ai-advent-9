@@ -1,0 +1,20 @@
+{"time": "2026-10-16T18:14:11.465873+00:00", "event": "start", "kind": "dry-run", "expected_mode": "offline"}
+{"time": "2026-10-16T18:14:13.163572+00:00", "event": "connected", "actual_mode": "offline", "model": "offline-extract", "provider": "локальный код, без LLM"}
+{"time": "2026-10-16T18:14:13.341201+00:00", "event": "question_started", "index": 1, "question": "/help Как устроен Git MCP-пример?"}
+{"time": "2026-10-16T18:14:14.106625+00:00", "event": "question_finished", "index": 1, "trace_id": "0e4748db16434f30bf5dee814bb43d7b", "status": "ok", "elapsed_seconds": 0.7073, "usage": null}
+{"time": "2026-10-16T18:14:14.204644+00:00", "event": "reading_frame", "index": 1, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "01-answer.png", "scroll_y": 484}
+{"time": "2026-10-16T18:14:14.343925+00:00", "event": "reading_frame", "index": 1, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "01-source.png", "scroll_y": 700}
+{"time": "2026-10-16T18:14:14.483482+00:00", "event": "reading_frame", "index": 1, "section": "mcp_call", "screenshot": "01-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T18:14:14.583614+00:00", "event": "reading_frame", "index": 1, "section": "mcp_result", "screenshot": "01-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T18:14:14.590230+00:00", "event": "question_started", "index": 2, "question": "/help Какая сейчас Git-ветка?"}
+{"time": "2026-10-16T18:14:15.291191+00:00", "event": "question_finished", "index": 2, "trace_id": "f992bd2e22a04f83acce06c7928a7776", "status": "ok", "elapsed_seconds": 0.6695, "usage": null}
+{"time": "2026-10-16T18:14:15.387877+00:00", "event": "reading_frame", "index": 2, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "02-answer.png", "scroll_y": 484}
+{"time": "2026-10-16T18:14:15.527633+00:00", "event": "reading_frame", "index": 2, "section": "source", "frame": 1, "frame_count": 1, "screenshot": "02-source.png", "scroll_y": 680}
+{"time": "2026-10-16T18:14:15.666354+00:00", "event": "reading_frame", "index": 2, "section": "mcp_call", "screenshot": "02-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T18:14:15.766315+00:00", "event": "reading_frame", "index": 2, "section": "mcp_result", "screenshot": "02-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T18:14:15.769775+00:00", "event": "question_started", "index": 3, "question": "/help Какая погода завтра в Барселоне?"}
+{"time": "2026-10-16T18:14:16.476506+00:00", "event": "question_finished", "index": 3, "trace_id": "16b70129a6004c2eaaa3a4c68d989b5c", "status": "unknown", "elapsed_seconds": 0.672, "usage": null}
+{"time": "2026-10-16T18:14:16.568499+00:00", "event": "reading_frame", "index": 3, "section": "answer", "frame": 1, "frame_count": 1, "screenshot": "03-answer.png", "scroll_y": 52}
+{"time": "2026-10-16T18:14:16.687397+00:00", "event": "reading_frame", "index": 3, "section": "mcp_call", "screenshot": "03-mcp.png", "pre_scroll_top": 0, "visible_result_keys": null}
+{"time": "2026-10-16T18:14:16.771097+00:00", "event": "reading_frame", "index": 3, "section": "mcp_result", "screenshot": "03-mcp-result.png", "pre_scroll_top": 146, "visible_result_keys": {"branch": true, "head": true}}
+{"time": "2026-10-16T18:14:16.771279+00:00", "event": "scenario_complete", "answer_count": 3, "page_errors": 0}

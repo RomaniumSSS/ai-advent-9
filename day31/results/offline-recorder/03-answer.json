@@ -1,0 +1,50 @@
+{
+  "status": "unknown",
+  "text": "В README/docs не найдено данных по этому вопросу. Уточните вопрос о Git MCP или запуске проекта.",
+  "source_ids": [],
+  "git_context": {
+    "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+    "branch": "day31-dev-assistant",
+    "detached": false,
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "trace_id": "8a04b9aa1dcc4f3f810651dc889665c4",
+  "sources": [],
+  "stages": [
+    {
+      "name": "search",
+      "status": "ok",
+      "seconds": 0.0038,
+      "count": 0,
+      "source_ids": []
+    },
+    {
+      "name": "mcp",
+      "status": "ok",
+      "seconds": 1.1657,
+      "tool": "git_context",
+      "arguments": {},
+      "discovery": {
+        "protocol_version": "2026-07-28",
+        "tools": [
+          "git_context"
+        ]
+      },
+      "result": {
+        "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+        "branch": "day31-dev-assistant",
+        "detached": false,
+        "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+      }
+    },
+    {
+      "name": "model",
+      "status": "skipped",
+      "reason": "Пустая выдача поиска: контекста для ответа нет"
+    }
+  ],
+  "usage": null,
+  "elapsed_seconds": 1.1697,
+  "model": "offline-extract",
+  "provider": "локальный код, без LLM"
+}

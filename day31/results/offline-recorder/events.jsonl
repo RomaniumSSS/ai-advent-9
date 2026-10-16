@@ -1,0 +1,18 @@
+{"time": "2026-10-16T14:29:28.328395+00:00", "event": "start", "kind": "record", "expected_mode": "offline"}
+{"time": "2026-10-16T14:29:29.426101+00:00", "event": "connected", "actual_mode": "offline", "model": "offline-extract", "provider": "локальный код, без LLM"}
+{"time": "2026-10-16T14:29:29.531466+00:00", "event": "question_started", "index": 1, "question": "/help Как устроен Git MCP-пример?"}
+{"time": "2026-10-16T14:29:30.352734+00:00", "event": "question_finished", "index": 1, "trace_id": "39d440e38aa94975976e1357e2b9f198", "status": "ok", "elapsed_seconds": 0.7749, "usage": null}
+{"time": "2026-10-16T14:29:30.438957+00:00", "event": "reading_hold", "index": 1, "section": "answer", "seconds": 6.0}
+{"time": "2026-10-16T14:29:36.528704+00:00", "event": "reading_hold", "index": 1, "section": "source", "seconds": 6.0}
+{"time": "2026-10-16T14:29:42.627321+00:00", "event": "reading_hold", "index": 1, "section": "mcp", "seconds": 6.0}
+{"time": "2026-10-16T14:29:48.639246+00:00", "event": "question_started", "index": 2, "question": "/help Какая сейчас Git-ветка?"}
+{"time": "2026-10-16T14:29:49.398124+00:00", "event": "question_finished", "index": 2, "trace_id": "deb00bf119ea4aae986ad8e565afd56f", "status": "ok", "elapsed_seconds": 0.7056, "usage": null}
+{"time": "2026-10-16T14:29:49.487683+00:00", "event": "reading_hold", "index": 2, "section": "answer", "seconds": 6.0}
+{"time": "2026-10-16T14:29:55.644881+00:00", "event": "reading_hold", "index": 2, "section": "source", "seconds": 6.0}
+{"time": "2026-10-16T14:30:01.777046+00:00", "event": "reading_hold", "index": 2, "section": "mcp", "seconds": 6.0}
+{"time": "2026-10-16T14:30:07.797768+00:00", "event": "question_started", "index": 3, "question": "/help Какая погода завтра в Барселоне?"}
+{"time": "2026-10-16T14:30:09.034396+00:00", "event": "question_finished", "index": 3, "trace_id": "8a04b9aa1dcc4f3f810651dc889665c4", "status": "unknown", "elapsed_seconds": 1.1697, "usage": null}
+{"time": "2026-10-16T14:30:09.123896+00:00", "event": "reading_hold", "index": 3, "section": "answer", "seconds": 6.0}
+{"time": "2026-10-16T14:30:15.230832+00:00", "event": "reading_hold", "index": 3, "section": "mcp", "seconds": 6.0}
+{"time": "2026-10-16T14:30:21.232614+00:00", "event": "scenario_complete", "answer_count": 3, "page_errors": 0}
+{"time": "2026-10-16T14:30:32.657932+00:00", "event": "video_converted", "video": "/private/tmp/day31-review-offline-record/Day31-offline.mp4", "ffprobe": {"programs": [], "stream_groups": [], "streams": [{"codec_name": "h264", "width": 1280, "height": 1000, "r_frame_rate": "25/1"}], "format": {"duration": "52.400000", "size": "1836165"}}}

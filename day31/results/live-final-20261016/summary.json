@@ -1,0 +1,134 @@
+{
+  "time": "2026-10-16T18:20:30.546407+00:00",
+  "model": "z-ai/glm-4.7-flash",
+  "provider": "venice/fp8",
+  "cases": [
+    {
+      "case_id": "Q1",
+      "status": "ok",
+      "trace_id": "a4bc8decc14d42208269c5ad26b29e11",
+      "usage": {
+        "prompt_tokens": 1902,
+        "completion_tokens": 171,
+        "cost_usd": 0.00014807
+      },
+      "elapsed_seconds": 4.565
+    },
+    {
+      "case_id": "Q2",
+      "status": "ok",
+      "trace_id": "7fb6e67d618c4c05bbb9c8bf47b37848",
+      "usage": {
+        "prompt_tokens": 1740,
+        "completion_tokens": 212,
+        "cost_usd": 0.00017845
+      },
+      "elapsed_seconds": 4.4336
+    },
+    {
+      "case_id": "Q3",
+      "status": "ok",
+      "trace_id": "b08c9351f53f4a51a3e4f27d033343ee",
+      "usage": {
+        "prompt_tokens": 2298,
+        "completion_tokens": 123,
+        "cost_usd": 0.00018683
+      },
+      "elapsed_seconds": 3.555
+    },
+    {
+      "case_id": "Q4",
+      "status": "ok",
+      "trace_id": "ee59bc1855244df5957ae55fba435cb4",
+      "usage": {
+        "prompt_tokens": 2305,
+        "completion_tokens": 155,
+        "cost_usd": 0.0001886
+      },
+      "elapsed_seconds": 4.7419
+    },
+    {
+      "case_id": "Q5",
+      "status": "unknown",
+      "trace_id": "1fd9fcb41e6041e7853d42dede5e07ed",
+      "usage": {
+        "prompt_tokens": 1529,
+        "completion_tokens": 89,
+        "cost_usd": 0.00011544
+      },
+      "elapsed_seconds": 2.8724
+    },
+    {
+      "case_id": "Q6",
+      "status": "ok",
+      "trace_id": "5a87466af1314530bdbd12fe0fe5fcce",
+      "usage": {
+        "prompt_tokens": 1487,
+        "completion_tokens": 183,
+        "cost_usd": 0.00015177
+      },
+      "elapsed_seconds": 4.4957
+    },
+    {
+      "case_id": "A1",
+      "status": "ok",
+      "trace_id": "61fbfcdd538344988123917e59f33aaf",
+      "usage": {
+        "prompt_tokens": 1810,
+        "completion_tokens": 47,
+        "cost_usd": 0.00011675
+      },
+      "elapsed_seconds": 2.1353
+    },
+    {
+      "case_id": "A2",
+      "status": "ok",
+      "trace_id": "986e1b8b15ed4e799215dd977795f910",
+      "usage": {
+        "prompt_tokens": 1628,
+        "completion_tokens": 158,
+        "cost_usd": 0.00015018
+      },
+      "elapsed_seconds": 3.6244
+    },
+    {
+      "case_id": "A3",
+      "status": "error",
+      "trace_id": "1e93b541ce5a4cba861de8f6022b32a4",
+      "usage": {
+        "prompt_tokens": 1760,
+        "completion_tokens": 107,
+        "cost_usd": 0.00014815
+      },
+      "elapsed_seconds": 3.6864
+    },
+    {
+      "case_id": "G1",
+      "status": "ok",
+      "trace_id": "bd28b39655b8444483568679f2110be7",
+      "usage": {
+        "prompt_tokens": 2308,
+        "completion_tokens": 48,
+        "cost_usd": 4.703e-05
+      },
+      "elapsed_seconds": 2.5328
+    },
+    {
+      "case_id": "G2",
+      "status": "ok",
+      "trace_id": "aebceff405b04807b9908e14c381698c",
+      "usage": {
+        "prompt_tokens": 2304,
+        "completion_tokens": 51,
+        "cost_usd": 0.00014799
+      },
+      "elapsed_seconds": 2.5986
+    }
+  ],
+  "budget_limit_usd": 0.5,
+  "provider_calls_all_phases": 17,
+  "known_cost_usd_all_phases": 0.00242621,
+  "charged_including_unknown_usd_all_phases": 0.00242621,
+  "unknown_cost_calls": 0,
+  "corpus_unchanged_during_run": true
+}

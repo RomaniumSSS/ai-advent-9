@@ -1,0 +1,19 @@
+{"time": "2026-10-16T19:09:53.148775+00:00", "phase": "preflight_passed", "profiles": ["glm53", "deepseek41", "qwen38max"]}
+{"time": "2026-10-16T19:09:55.222852+00:00", "phase": "call_started", "case_id": "Q6", "profile": "qwen38max"}
+{"time": "2026-10-16T19:09:55.223187+00:00", "phase": "call_started", "case_id": "Q6", "profile": "glm53"}
+{"time": "2026-10-16T19:09:55.223491+00:00", "phase": "call_started", "case_id": "Q6", "profile": "deepseek41"}
+{"time": "2026-10-16T19:09:55.815476+00:00", "phase": "call_finished", "case_id": "Q6", "profile": "qwen38max", "trace_id": "555ec873acc547908fff1ab4ef533fef", "status": "error", "error_code": "upstream_error", "usage": null}
+{"time": "2026-10-16T19:09:55.815621+00:00", "phase": "call_started", "case_id": "P1", "profile": "qwen38max"}
+{"time": "2026-10-16T19:09:55.856514+00:00", "phase": "call_finished", "case_id": "P1", "profile": "qwen38max", "trace_id": "29254891c58b4efcb442da4fe96587b4", "status": "error", "error_code": "upstream_error", "usage": null}
+{"time": "2026-10-16T19:09:55.856651+00:00", "phase": "call_started", "case_id": "T3", "profile": "qwen38max"}
+{"time": "2026-10-16T19:09:55.897390+00:00", "phase": "call_finished", "case_id": "T3", "profile": "qwen38max", "trace_id": "cd2a46a770f447ac819ef21059e2aab9", "status": "error", "error_code": "upstream_error", "usage": null}
+{"time": "2026-10-16T19:09:57.771756+00:00", "phase": "call_finished", "case_id": "Q6", "profile": "deepseek41", "trace_id": "4b8f2e7a85f044bfb5e60e9f5fd72de9", "status": "ok", "error_code": null, "usage": {"prompt_tokens": 1844, "completion_tokens": 258, "reasoning_tokens": 0, "cost_usd": 0.00036652}}
+{"time": "2026-10-16T19:09:57.771965+00:00", "phase": "call_started", "case_id": "P1", "profile": "deepseek41"}
+{"time": "2026-10-16T19:10:00.255458+00:00", "phase": "call_finished", "case_id": "P1", "profile": "deepseek41", "trace_id": "40291f6c4983446d891c5119598daeb6", "status": "ok", "error_code": null, "usage": {"prompt_tokens": 2046, "completion_tokens": 284, "reasoning_tokens": 0, "cost_usd": 0.00040572}}
+{"time": "2026-10-16T19:10:00.255690+00:00", "phase": "call_started", "case_id": "T3", "profile": "deepseek41"}
+{"time": "2026-10-16T19:10:02.637676+00:00", "phase": "call_finished", "case_id": "T3", "profile": "deepseek41", "trace_id": "a4561bcebe2948b4ba7f87b3ad9022e4", "status": "ok", "error_code": null, "usage": {"prompt_tokens": 2101, "completion_tokens": 233, "reasoning_tokens": 0, "cost_usd": 0.0003572352}}
+{"time": "2026-10-16T19:12:27.155826+00:00", "phase": "call_finished", "case_id": "Q6", "profile": "glm53", "trace_id": "f9559cb0cdca4a88a40874221e3a1915", "status": "error", "error_code": "incomplete", "usage": {"prompt_tokens": 1798, "completion_tokens": 4096, "reasoning_tokens": 0, "cost_usd": 0.00115885}}
+{"time": "2026-10-16T19:12:27.156258+00:00", "phase": "call_started", "case_id": "P1", "profile": "glm53"}
+{"time": "2026-10-16T19:12:27.713947+00:00", "phase": "call_finished", "case_id": "P1", "profile": "glm53", "trace_id": "bd060c21ccb64ce6a9aa42d9a6ff4870", "status": "error", "error_code": "upstream_error", "usage": null}
+{"time": "2026-10-16T19:12:27.714280+00:00", "phase": "call_started", "case_id": "T3", "profile": "glm53"}
+{"time": "2026-10-16T19:12:28.726163+00:00", "phase": "call_finished", "case_id": "T3", "profile": "glm53", "trace_id": "ed1343f3e4854d8e84d03ef0715d9c23", "status": "error", "error_code": "upstream_error", "usage": null}

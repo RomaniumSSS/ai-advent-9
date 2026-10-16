@@ -1,0 +1,12 @@
+{
+  "model": "z-ai/glm-4.7-flash",
+  "provider": "venice/fp8",
+  "checked_at": 1792173964.034731,
+  "endpoints": [
+    {
+      "tag": "venice/fp8",
+      "prompt_usd_per_m": 0.06,
+      "completion_usd_per_m": 0.39999999999999997
+    }
+  ]
+}

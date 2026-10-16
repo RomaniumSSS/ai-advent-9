@@ -1,0 +1,152 @@
+{
+  "status": "plan_ready",
+  "execute": false,
+  "planned_calls": 9,
+  "calls": [],
+  "profiles": {
+    "glm53": {
+      "model": "z-ai/glm-5.3-flash",
+      "exact_route": "deepinfra/fp4",
+      "input_usd_per_m": 0.15,
+      "output_usd_per_m": 0.5,
+      "max_output_tokens": 8192,
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    },
+    "deepseek41": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "exact_route": "deepinfra/fp8",
+      "input_usd_per_m": 0.2,
+      "output_usd_per_m": 0.6,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "qwen38max": {
+      "model": "qwen/qwen3.8-max-0902",
+      "exact_route": "alibaba/us-east-1",
+      "input_usd_per_m": 2.0,
+      "output_usd_per_m": 6.0,
+      "max_output_tokens": 8192,
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    }
+  },
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37",
+  "schema_sha256": "8a9434049560278fb2bc397f46350283e95f74d96a98bbadfb876ae9450c6a06",
+  "preflight": {
+    "glm53": {
+      "model": "z-ai/glm-5.3-flash",
+      "provider": "deepinfra/fp4",
+      "checked_at": 1792176425.581922,
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp4",
+          "prompt_usd_per_m": 0.15,
+          "completion_usd_per_m": 0.5
+        }
+      ]
+    },
+    "deepseek41": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider": "deepinfra/fp8",
+      "checked_at": 1792176425.660267,
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp8",
+          "prompt_usd_per_m": 0.2,
+          "completion_usd_per_m": 0.6000000000000001
+        }
+      ]
+    },
+    "qwen38max": {
+      "model": "qwen/qwen3.8-max-0902",
+      "provider": "alibaba/us-east-1",
+      "checked_at": 1792176425.749841,
+      "endpoints": [
+        {
+          "tag": "alibaba/us-east-1",
+          "prompt_usd_per_m": 2.0,
+          "completion_usd_per_m": 6.0
+        }
+      ]
+    }
+  },
+  "corpus_sha256": "a35db8718bd029b00c24c738d625467d2efd4823c6658644d25a5a5fab5ab888",
+  "planned_requests": [
+    {
+      "case_id": "Q6",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.00593335,
+      "messages_sha256": "93388ac6b5a43205f7ae2187be6c4edfdb3576dfa9cbb51cca29fb51e884d07c",
+      "input_sha256": "8c5915e8b75372b9990ac941498afd4d368f29209dac705833a3bea861740761"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0034098,
+      "messages_sha256": "93388ac6b5a43205f7ae2187be6c4edfdb3576dfa9cbb51cca29fb51e884d07c",
+      "input_sha256": "9d8dfbd39a603bfd50ac2b64feb1a0012142536e4e403983677343235b0d691f"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.07365,
+      "messages_sha256": "93388ac6b5a43205f7ae2187be6c4edfdb3576dfa9cbb51cca29fb51e884d07c",
+      "input_sha256": "d224e51c6c288fd037b3e0030b88fa41ec1bb308af7a3a0d1207c56dffcf1896"
+    },
+    {
+      "case_id": "P1",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.00607405,
+      "messages_sha256": "0df299a859ef3e0c8d384dcf90fa9780651d0f3931139c9d9c736d359cd4a9de",
+      "input_sha256": "5476ea88635778202898998e27c5f6e1e3f54ab95012d785a2f1cf3e42a2df0f"
+    },
+    {
+      "case_id": "P1",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0035974,
+      "messages_sha256": "0df299a859ef3e0c8d384dcf90fa9780651d0f3931139c9d9c736d359cd4a9de",
+      "input_sha256": "b45ed3887c332c6b83f07b495986d48e28c61ce71cca73fb2c14270869d45784"
+    },
+    {
+      "case_id": "P1",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.075526,
+      "messages_sha256": "0df299a859ef3e0c8d384dcf90fa9780651d0f3931139c9d9c736d359cd4a9de",
+      "input_sha256": "908bcdae40974f24c0bf2fcd5428cd54eb5032f41f1dae13d42c84bf6dbf1b59"
+    },
+    {
+      "case_id": "T3",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.00614035,
+      "messages_sha256": "eab1540ebd4cbb9c1df389a06feaf20a36f2b6d8aa5a59dae01c93922127cda5",
+      "input_sha256": "d45a164f81b2ce4f7f8e3019d54b6ef5654534e07dca560ea87046541b3fc889"
+    },
+    {
+      "case_id": "T3",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0036858000000000004,
+      "messages_sha256": "eab1540ebd4cbb9c1df389a06feaf20a36f2b6d8aa5a59dae01c93922127cda5",
+      "input_sha256": "f15d953c9d1380ad971215458ee87060876adeb85eb8b487ae2a41d640b124b3"
+    },
+    {
+      "case_id": "T3",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.07641,
+      "messages_sha256": "eab1540ebd4cbb9c1df389a06feaf20a36f2b6d8aa5a59dae01c93922127cda5",
+      "input_sha256": "8bbc3060f17ffa144a59f1fadc98ece911e2a5bfe00b5c8084c4993656959e44"
+    }
+  ],
+  "total_reserve_ceiling_usd": 0.2544267499999999,
+  "budget_before": {
+    "limit_usd": 0.5,
+    "charged_usd": 0.00529842,
+    "remaining_usd": 0.49470158
+  }
+}

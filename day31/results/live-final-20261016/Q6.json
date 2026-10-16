@@ -1,0 +1,150 @@
+{
+  "time": "2026-10-16T18:20:15.527323+00:00",
+  "case_id": "Q6",
+  "kind": "gold_after_corpus_fix",
+  "question": "Откуда помощник Day17 понимает, какие действия доступны у сервера и какие данные нужно передать для выбранного действия?",
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "answer": {
+    "status": "ok",
+    "text": "Помощник Day17 понимает доступные действия и параметры, опираясь на доверенную конфигурацию при старте и описание протокола MCP. Путь к репозиторию задаётся конфигурацией, а не передаётся моделью. Аргументы командной строки (например, `--repo`) разбираются и проверяются на валидность перед запуском сервера. Информация о структуре данных и параметрах (например, `limit` от 1 до 10 для `get_recent_commits`) берётся из документации протокола, а не из внешних данных.",
+    "source_ids": [
+      "6e3fcb7d7248be1b4581",
+      "c4f79e0b7538b8b6286e"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "5a87466af1314530bdbd12fe0fe5fcce",
+    "sources": [
+      {
+        "id": "6e3fcb7d7248be1b4581",
+        "path": "docs/git-mcp.md",
+        "start_line": 20,
+        "end_line": 26,
+        "section": "Данные последних коммитов",
+        "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+        "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+        "score": 6.161312372596696
+      },
+      {
+        "id": "d4fe6fcfe34975546237",
+        "path": "README.md",
+        "start_line": 1,
+        "end_line": 5,
+        "section": "Day31 — DevHelper",
+        "text": "# Day31 — DevHelper\n\nБраузерный помощник и CLI `/help <вопрос>` объясняют знакомый Git MCP из Day17.\nЭто самостоятельный модуль: старый день не импортируется и не изменяется.\n",
+        "sha256": "ce242a3910e50830cdd6aa29933d8b93b8aad47fc4b9bfa81298074deba93b34",
+        "score": 4.375340825035025
+      },
+      {
+        "id": "c4f79e0b7538b8b6286e",
+        "path": "docs/git-mcp.md",
+        "start_line": 27,
+        "end_line": 42,
+        "section": "Запуск stdio-сервера Day17",
+        "text": "## Запуск stdio-сервера Day17\n\nИз корня репозитория, с установленными зависимостями проекта и Python 3.12+:\n\n```bash\npython day17/git_mcp_server.py --repo /путь/к/repo\n```\n\nВ `main()` файла `git_mcp_server.py` аргумент `--repo` обязателен (`required=True`)\nи разбирается как `Path`. `build_server(args.repo)` разрешает его до Git worktree\nroot, после чего `.run(\"stdio\")` запускает MCP-сервер с транспортом stdio.\nЭто запуск отдельного процесса для MCP-клиента; HTTP-адреса у него нет.\nПуть — доверенная настройка старта, а не аргумент, который выбирает модель.\nЭтот пример запускает исходный сервер Day17 с `get_recent_commits`, а не новый\nсервер Day31 с `git_context`.\n",
+        "sha256": "d8c440439640ecfc7e8e86edde551996cf540e24aa75cd41e7228c645571b995",
+        "score": 3.6553921609789493
+      },
+      {
+        "id": "c82bd1e2d3f9b84dc9d8",
+        "path": "docs/run.md",
+        "start_line": 113,
+        "end_line": 115,
+        "section": "После разрешения расходов и запуска сервера с --live:",
+        "text": "`NN-source.png`, следующие получают суффиксы `-02`, `-03` и т. д. `events.jsonl`\nхранит номера кадров, координаты прокрутки и проверку видимости branch/head;\nполный trace и исходный ответ остаются в `NN-answer.json`.",
+        "sha256": "70525494b77333b0c3fe725ed584fce19774cec2885357571b6178e6034127e6",
+        "score": 2.9953839225398315
+      },
+      {
+        "id": "ce7911c097e00e8724a8",
+        "path": "docs/run.md",
+        "start_line": 24,
+        "end_line": 30,
+        "section": "Ошибки и ограничения",
+        "text": "## Ошибки и ограничения\n\nПустая выдача документов означает «нет данных», вызова модели в этом случае нет.\nОшибка MCP, timeout модели, invalid JSON, обрезанный ответ и неизвестные source_ids\nдают status=error. Наличие существующей ссылки не доказывает смысловую верность.\nДокументы и MCP-данные считаются недоверенными данными, а не инструкциями модели.\n",
+        "sha256": "e3c854d2009276ea21624df30a38a958a9c8efeafb3746edfd2007861ae0ce49",
+        "score": 1.9858644516421164
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0023,
+        "count": 5,
+        "source_ids": [
+          "6e3fcb7d7248be1b4581",
+          "d4fe6fcfe34975546237",
+          "c4f79e0b7538b8b6286e",
+          "c82bd1e2d3f9b84dc9d8",
+          "ce7911c097e00e8724a8"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.7294,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 3.764,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 1487,
+          "completion_tokens": 183,
+          "cost_usd": 0.00015177
+        },
+        "receipt": {
+          "id": "gen-1792174811-EL6E8ZJHveARnNVU2PsZ",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1487,
+      "completion_tokens": 183,
+      "cost_usd": 0.00015177
+    },
+    "elapsed_seconds": 4.4957,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  },
+  "provider_final": {
+    "final_content": "{ \"status\": \"ok\", \"text\": \"Помощник Day17 понимает доступные действия и параметры, опираясь на доверенную конфигурацию при старте и описание протокола MCP. Путь к репозиторию задаётся конфигурацией, а не передаётся моделью. Аргументы командной строки (например, `--repo`) разбираются и проверяются на валидность перед запуском сервера. Информация о структуре данных и параметрах (например, `limit` от 1 до 10 для `get_recent_commits`) берётся из документации протокола, а не из внешних данных.\", \"source_ids\": [\"6e3fcb7d7248be1b4581\", \"c4f79e0b7538b8b6286e\"] }",
+    "receipt": {
+      "id": "gen-1792174811-EL6E8ZJHveARnNVU2PsZ",
+      "model": "z-ai/glm-4.7-flash",
+      "provider": "Venice"
+    },
+    "usage": {
+      "prompt_tokens": 1487,
+      "completion_tokens": 183,
+      "cost_usd": 0.00015177
+    }
+  }
+}

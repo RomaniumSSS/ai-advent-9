@@ -1,0 +1,78 @@
+{
+  "original": "day31/results/deepseek-live-record-20261016/Day31-live.mp4",
+  "canonical": "day31/video/Day31-live.mp4",
+  "sha256": "ecf74c20e474b308ff7490196cc7bb20ef254304cdad31c4b597edc03739513f",
+  "same_sha256": true,
+  "ffprobe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1280,
+        "height": 1000,
+        "r_frame_rate": "25/1"
+      }
+    ],
+    "format": {
+      "duration": "77.440000",
+      "size": "2794853"
+    }
+  },
+  "full_ffmpeg_decode": {
+    "exit_code": 0,
+    "error_bytes": 0
+  },
+  "decoded_frames": [
+    {
+      "label": "start",
+      "video_second": 1.0,
+      "file": "day31/results/deepseek-live-record-20261016/decoded-frames/start.png"
+    },
+    {
+      "label": "answer",
+      "video_second": 6.787,
+      "file": "day31/results/deepseek-live-record-20261016/decoded-frames/answer.png"
+    },
+    {
+      "label": "source",
+      "video_second": 12.965,
+      "file": "day31/results/deepseek-live-record-20261016/decoded-frames/source.png"
+    },
+    {
+      "label": "mcp-result",
+      "video_second": 25.272,
+      "file": "day31/results/deepseek-live-record-20261016/decoded-frames/mcp-result.png"
+    },
+    {
+      "label": "branch",
+      "video_second": 33.949,
+      "file": "day31/results/deepseek-live-record-20261016/decoded-frames/branch.png"
+    },
+    {
+      "label": "unknown",
+      "video_second": 61.158,
+      "file": "day31/results/deepseek-live-record-20261016/decoded-frames/unknown.png"
+    }
+  ],
+  "frame_review": {
+    "reviewer": "author Sol",
+    "all_6_decoded_frames_viewed": true,
+    "readability": "PASS for demonstrated viewport at 1280x1000",
+    "answer": "Полный текст о ролях трёх файлов, type=function и stdio читаем",
+    "source": "Раскрыт реальный provenance со строками и хешами; другие cited docs показаны ссылками",
+    "mcp": "Внутри исходного JSON видны result.branch и result.head после реальной прокрутки",
+    "branch": "Именованная ветка совпадает с независимым Git",
+    "unknown": "0 источников, модель пропущена, честная граница знаний",
+    "independent_coordinator_review": {
+      "reviewer": "root",
+      "status": "PASS",
+      "all_six_decoded_frames_viewed": true,
+      "additional_actual_video_end_frame": {
+        "file": "decoded-frames/coordinator-end.png",
+        "video_second": 76.5
+      },
+      "notes": "Прочитаны полный ответ, источник с provenance, настоящий MCP result.branch/head, корректная ветка и unknown; последний кадр не чёрный."
+    }
+  }
+}

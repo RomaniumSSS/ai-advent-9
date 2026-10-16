@@ -1,0 +1,36 @@
+{
+  "kind": "dry-run",
+  "expected_mode": "live",
+  "url": "http://127.0.0.1:8071",
+  "hold_seconds_requested": 6.0,
+  "hold_seconds_effective": 0.0,
+  "answers": [
+    {
+      "index": 1,
+      "trace_id": "0bc187052ac14f99963e4841093bf538",
+      "status": "ok",
+      "expected": "ok",
+      "elapsed_seconds": 5.0783,
+      "usage": {
+        "prompt_tokens": 2118,
+        "completion_tokens": 196,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00019073
+      }
+    },
+    {
+      "index": 2,
+      "trace_id": "208bbe336613408fb927fc6ad7b331e1",
+      "status": "error",
+      "expected": "ok",
+      "elapsed_seconds": 0.9982,
+      "usage": null
+    }
+  ],
+  "cli": "Проверяется отдельно командой python -m day31.cli; в этой записи только браузер",
+  "model": "z-ai/glm-4.7-flash",
+  "provider": "venice/fp8",
+  "git_root": "/Users/ramanpazharytski/Projects/ai-advent-9-worktrees/day31-dev-assistant",
+  "status": "failed",
+  "error": "Ответ 2: ожидался статус ok, получен error"
+}

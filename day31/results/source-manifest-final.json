@@ -1,0 +1,29 @@
+{
+  "time": "2026-10-16T18:27:42.815331+00:00",
+  "phase": "runtime and recorder final frozen source",
+  "files": {
+    "day31/README.md": "e6275dd82dd981c7ce3555ba8e825aa7b2fa45151a609dbd8ce05662b99ebad7",
+    "day31/assistant.py": "999d54235a9559ca7f19eda08e4913ac785bef19321218dfa97e01864a771ee2",
+    "day31/cli.py": "b48c0b51d86841258a8f0eb3ecf58162e9b04237d5722ad91e34cb286bdcade1",
+    "day31/config.py": "e4b385e27b2e0e86097872b779ec6c72a78f079aba605eeb302bc9490c8ffa9d",
+    "day31/contracts.py": "d8f12045e9eb97cadcd1ed14e3e2e307c0ed18531c0489476461d6ed8bd2abf7",
+    "day31/docs/git-mcp.md": "359a776f6ebe235ea13ef4b31e3a0ca08a3d1a3d0ce00b1b97cec7b8d9a1f2e7",
+    "day31/docs/provenance.md": "78c545548f0104f9eb2a8c48a587a4ec667addb9a3eebfe364def83b623f053b",
+    "day31/docs/run.md": "f45c772d0d5c9e1913b7b9ee89a3326301925212ce628ab66342bad6ec9ae158",
+    "day31/git_mcp_server.py": "c33628a2e6a93be4294c2ca0c54a14a9b419bbd666e8550c97ecda4d1d0703e8",
+    "day31/mcp_client.py": "74efef86bc8f486cd85c91eb3fcf6995f5f4c1d3d0fd36840cea13b2ace0975b",
+    "day31/provider.py": "664f2e974d681c0154aba99195583c8759e5f92521bd6af02862b7a8cf008832",
+    "day31/recorder/run_demo.py": "d6f322f1a7c8d4001c606cecef3c27f5125f4ad182739026b6d00b9b50a3b04f",
+    "day31/retrieval.py": "eccc68a0eab2effd4c1417ccee41d03f807645d561da3540c04d3cccb01d141e",
+    "day31/tests/browser_check.py": "28ba1fe42ffa36bb18975e904f96d6655338bd682c844019f88b6dd453590907",
+    "day31/tests/test_assistant.py": "145bf3981f7d6573991f324818b7dfacec57c0496de7f8938dea251092805e2f",
+    "day31/tests/test_mcp.py": "6e131bda2880ea830b3660c68b7acf58a47e3e113c866a2902bb1c07ebc88ced",
+    "day31/tests/test_provider.py": "c38d56e7f455f6c1c35651d74f53aa4db8e5fa66c33b04a140e2d6508822fa4b",
+    "day31/tests/test_retrieval.py": "46e86ee2bd7549ba63b8a29179ac8c085eed5570cac2aaa54359cfa7e2176c53",
+    "day31/tests/test_web.py": "ae60c213027da30de8c94ae7f7cfa94af43daf607c94cba2a8ff25cffb20da3d",
+    "day31/web/app.js": "50f5edabb00706d5cf29aa6662f09e02ff7e39f3542947916e36f9f6ecae8afe",
+    "day31/web/index.html": "09004aa6044e978940930b8a0fbcb4aa9038170cbd6cc09e17e0fc6edcf05f1b",
+    "day31/web/style.css": "82cd33a1a0bd18a3688a44be616ab49898a9c0323af2d2a0d3223acdc4b0b996",
+    "day31/web.py": "77dc2fa290be82a1a9f9ac32cd529c4224dd45099d8f0df9ba76d485114af53f"
+  }
+}

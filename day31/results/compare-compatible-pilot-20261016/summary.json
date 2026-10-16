@@ -1,0 +1,264 @@
+{
+  "status": "complete_with_errors",
+  "execute": true,
+  "planned_calls": 9,
+  "calls": [
+    {
+      "case_id": "Q6",
+      "profile": "glm53",
+      "trace_id": "f9559cb0cdca4a88a40874221e3a1915",
+      "status": "error",
+      "error_code": "incomplete",
+      "usage": {
+        "prompt_tokens": 1798,
+        "completion_tokens": 4096,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00115885
+      },
+      "file": "glm53/Q6.json"
+    },
+    {
+      "case_id": "P1",
+      "profile": "glm53",
+      "trace_id": "bd060c21ccb64ce6a9aa42d9a6ff4870",
+      "status": "error",
+      "error_code": "upstream_error",
+      "usage": null,
+      "file": "glm53/P1.json"
+    },
+    {
+      "case_id": "T3",
+      "profile": "glm53",
+      "trace_id": "ed1343f3e4854d8e84d03ef0715d9c23",
+      "status": "error",
+      "error_code": "upstream_error",
+      "usage": null,
+      "file": "glm53/T3.json"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "deepseek41",
+      "trace_id": "4b8f2e7a85f044bfb5e60e9f5fd72de9",
+      "status": "ok",
+      "error_code": null,
+      "usage": {
+        "prompt_tokens": 1844,
+        "completion_tokens": 258,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00036652
+      },
+      "file": "deepseek41/Q6.json"
+    },
+    {
+      "case_id": "P1",
+      "profile": "deepseek41",
+      "trace_id": "40291f6c4983446d891c5119598daeb6",
+      "status": "ok",
+      "error_code": null,
+      "usage": {
+        "prompt_tokens": 2046,
+        "completion_tokens": 284,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.00040572
+      },
+      "file": "deepseek41/P1.json"
+    },
+    {
+      "case_id": "T3",
+      "profile": "deepseek41",
+      "trace_id": "a4561bcebe2948b4ba7f87b3ad9022e4",
+      "status": "ok",
+      "error_code": null,
+      "usage": {
+        "prompt_tokens": 2101,
+        "completion_tokens": 233,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0003572352
+      },
+      "file": "deepseek41/T3.json"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "qwen38max",
+      "trace_id": "555ec873acc547908fff1ab4ef533fef",
+      "status": "error",
+      "error_code": "upstream_error",
+      "usage": null,
+      "file": "qwen38max/Q6.json"
+    },
+    {
+      "case_id": "P1",
+      "profile": "qwen38max",
+      "trace_id": "29254891c58b4efcb442da4fe96587b4",
+      "status": "error",
+      "error_code": "upstream_error",
+      "usage": null,
+      "file": "qwen38max/P1.json"
+    },
+    {
+      "case_id": "T3",
+      "profile": "qwen38max",
+      "trace_id": "cd2a46a770f447ac819ef21059e2aab9",
+      "status": "error",
+      "error_code": "upstream_error",
+      "usage": null,
+      "file": "qwen38max/T3.json"
+    }
+  ],
+  "execution": {
+    "mode": "parallel_by_profile",
+    "max_workers": 3,
+    "questions_within_profile": "sequential"
+  },
+  "profiles": {
+    "glm53": {
+      "model": "z-ai/glm-5.3-flash",
+      "exact_route": "deepinfra/fp4",
+      "input_usd_per_m": 0.15,
+      "output_usd_per_m": 0.5,
+      "max_output_tokens": 4096,
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    },
+    "deepseek41": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "exact_route": "deepinfra/fp8",
+      "input_usd_per_m": 0.2,
+      "output_usd_per_m": 0.6,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "qwen38max": {
+      "model": "qwen/qwen3.8-max-0902",
+      "exact_route": "alibaba/us-east-1",
+      "input_usd_per_m": 2.0,
+      "output_usd_per_m": 6.0,
+      "max_output_tokens": 4096,
+      "reasoning": {
+        "effort": "low",
+        "exclude": true
+      }
+    }
+  },
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37",
+  "schema_sha256": "8a9434049560278fb2bc397f46350283e95f74d96a98bbadfb876ae9450c6a06",
+  "preflight": {
+    "glm53": {
+      "model": "z-ai/glm-5.3-flash",
+      "provider": "deepinfra/fp4",
+      "checked_at": 1792177792.9839659,
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp4",
+          "prompt_usd_per_m": 0.15,
+          "completion_usd_per_m": 0.5
+        }
+      ]
+    },
+    "deepseek41": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider": "deepinfra/fp8",
+      "checked_at": 1792177793.068417,
+      "endpoints": [
+        {
+          "tag": "deepinfra/fp8",
+          "prompt_usd_per_m": 0.2,
+          "completion_usd_per_m": 0.6000000000000001
+        }
+      ]
+    },
+    "qwen38max": {
+      "model": "qwen/qwen3.8-max-0902",
+      "provider": "alibaba/us-east-1",
+      "checked_at": 1792177793.147985,
+      "endpoints": [
+        {
+          "tag": "alibaba/us-east-1",
+          "prompt_usd_per_m": 2.0,
+          "completion_usd_per_m": 6.0
+        }
+      ]
+    }
+  },
+  "corpus_sha256": "664927d205beb75940f48e9186de40f34bab40b65390e7eb3b89cc01ef21c4f5",
+  "planned_requests": [
+    {
+      "case_id": "Q6",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.0038821999999999997,
+      "messages_sha256": "747546f69c933aaca774d8392ce040011b0f2468a77b8d7506d7e303ca4d2114",
+      "input_sha256": "79b3c167682f004515e1943b2f7ff9c6e2ca8f7f14b0e155fdefdfda0e02d958"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0034056,
+      "messages_sha256": "747546f69c933aaca774d8392ce040011b0f2468a77b8d7506d7e303ca4d2114",
+      "input_sha256": "fb30430955416d83f63f906d8932bb7e8df8c073251a707fcce193b3794f358c"
+    },
+    {
+      "case_id": "Q6",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.049032,
+      "messages_sha256": "747546f69c933aaca774d8392ce040011b0f2468a77b8d7506d7e303ca4d2114",
+      "input_sha256": "c72b608d403175ff699ac55bfe19c24d16ec445ca8e9ea2e0f3471f460a15f7c"
+    },
+    {
+      "case_id": "P1",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.004022899999999999,
+      "messages_sha256": "e5de5f6b88ca0da5ebe2cec4466d67e8da90f8e7c64f9bd20bc389bc1338a6bf",
+      "input_sha256": "56399a684e53d62b444938e7bd1fb8a1bc7cfc0494cce87d80911ca6ac3aa4d0"
+    },
+    {
+      "case_id": "P1",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0035932000000000004,
+      "messages_sha256": "e5de5f6b88ca0da5ebe2cec4466d67e8da90f8e7c64f9bd20bc389bc1338a6bf",
+      "input_sha256": "2238aad855830b1f18b398bc76e48f9f4d450aed5bef5352ad04b957480cda1d"
+    },
+    {
+      "case_id": "P1",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.050908,
+      "messages_sha256": "e5de5f6b88ca0da5ebe2cec4466d67e8da90f8e7c64f9bd20bc389bc1338a6bf",
+      "input_sha256": "bbf3286337b6032c48440a756cf9a4b418ee77c8729a54d63c109565face39c8"
+    },
+    {
+      "case_id": "T3",
+      "profile": "glm53",
+      "reserve_ceiling_usd": 0.003983899999999999,
+      "messages_sha256": "97af0d334eb570d411ecf3a73d3f727cb2da75fe61199e886bf668d8baeb1a0f",
+      "input_sha256": "963c1c4bf85e58414a48001e9eb76ab49ea1e47bed05da8c2522c8ec81f79a2c"
+    },
+    {
+      "case_id": "T3",
+      "profile": "deepseek41",
+      "reserve_ceiling_usd": 0.0035412000000000004,
+      "messages_sha256": "97af0d334eb570d411ecf3a73d3f727cb2da75fe61199e886bf668d8baeb1a0f",
+      "input_sha256": "fb1bdc1240429851ce015c678323e3e04e4e795dd640fd86baf6030e41c5171f"
+    },
+    {
+      "case_id": "T3",
+      "profile": "qwen38max",
+      "reserve_ceiling_usd": 0.050388,
+      "messages_sha256": "97af0d334eb570d411ecf3a73d3f727cb2da75fe61199e886bf668d8baeb1a0f",
+      "input_sha256": "ed26cb4715cdde0ac22cc1afa579814e1c12b4e5b85aab52b68993a3763d22ce"
+    }
+  ],
+  "total_reserve_ceiling_usd": 0.172757,
+  "budget_before": {
+    "limit_usd": 0.5,
+    "charged_usd": 0.27182105,
+    "remaining_usd": 0.22817895
+  },
+  "budget_after": {
+    "limit_usd": 0.5,
+    "charged_usd": 0.4324441752,
+    "remaining_usd": 0.0675558248
+  }
+}

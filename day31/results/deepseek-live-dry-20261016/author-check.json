@@ -1,0 +1,40 @@
+{
+  "kind": "author dry-run check, not independent human acceptance",
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "checks": [
+    {
+      "index": 1,
+      "trace_id": "1c3dbf173c82444089772db873bd48c7",
+      "status": "ok",
+      "git_exact": true,
+      "retrieved_sources_exact": true,
+      "source_ids_valid": true
+    },
+    {
+      "index": 2,
+      "trace_id": "dd8b325a089549aaa7e9fab075880398",
+      "status": "ok",
+      "git_exact": true,
+      "retrieved_sources_exact": true,
+      "source_ids_valid": true
+    },
+    {
+      "index": 3,
+      "trace_id": "2bd25a79d5f24d2f9f4cf7b285ea4cdd",
+      "status": "unknown",
+      "git_exact": true,
+      "retrieved_sources_exact": true,
+      "source_ids_valid": true
+    }
+  ],
+  "page_errors": 0,
+  "ui_text_equals_api": "recorder assertion passed for all 3, text content not replaced",
+  "source_semantics": {
+    "1": "PASS: роли server/client/tool_calling, stdio, model_tools/discovery/schema соответствуют найденным docs; type=function корректно",
+    "2": "PASS: названная ветка совпадает с независимым Git; источник свежий git_context",
+    "3": "PASS: нет найденных сведений по погоде; модель пропущена, файлов не придумано"
+  }
+}

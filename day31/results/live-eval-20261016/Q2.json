@@ -1,0 +1,139 @@
+{
+  "time": "2026-10-16T18:15:59.447929+00:00",
+  "case_id": "Q2",
+  "kind": "gold",
+  "question": "Какие сведения возвращает get_recent_commits и как запускается MCP-сервер Day17?",
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "answer": {
+    "status": "ok",
+    "text": "Функция `get_recent_commits` принимает параметр `limit` (от 1 до 10) и возвращает идентификатор репозитория и список коммитов с полями id, subject, author и timestamp. Запрос выполняется через `git log` без shell с таймаутом 10 секунд. Путь к репозиторию задаётся доверенной конфигурацией при старте сервера. MCP-сервер Day17 реализован в файле `git_mcp_server.py`, создаёт MCPServer с транспортом stdio и регистрирует read-only инструмент `get_recent_commits(limit)`. Клиент `mcp_client.py` выполняет discovery (`list_tools`) и вызов инструмента (`call_tool`). В Day31 используется другой инструмент `git_context()`, который возвращает текущую ветку и состояние Git, а не историю коммитов.",
+    "source_ids": [
+      "8cb533386d38a7580b38",
+      "60d14217b2944e83a41c",
+      "cb1f1b817a47f2a1e5aa",
+      "998c34fa0b35555b38e0"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "eccd1a699baf42ab820bd4399ff387ca",
+    "sources": [
+      {
+        "id": "8cb533386d38a7580b38",
+        "path": "docs/git-mcp.md",
+        "start_line": 12,
+        "end_line": 18,
+        "section": "Данные последних коммитов",
+        "text": "## Данные последних коммитов\n\n`get_recent_commits` принимает целый `limit` от 1 до 10. Возвращает идентификатор\nрепозитория и непустой список коммитов: id, subject, author, timestamp.\nПуть к репозиторию задаётся доверенной конфигурацией при старте; модель не может\nего передать или заменить. `git log` выполняется без shell с timeout 10 секунд.\n",
+        "sha256": "7df3ae1c341dc3753342311426e7eee8b6c38cca8fdd1d530a9a28dcb9cc9bfa",
+        "score": 3.768753655397746
+      },
+      {
+        "id": "60d14217b2944e83a41c",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 11,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "e61fd5a31256b94687288e4a449eef9379689d388fe56db1e8d534c136132822",
+        "score": 3.592860487084935
+      },
+      {
+        "id": "6b944ddd68925bd8192f",
+        "path": "README.md",
+        "start_line": 37,
+        "end_line": 43,
+        "section": "Ограничения",
+        "text": "## Ограничения\n\nТолько чтение документов README/docs и Git. Модель не выбирает инструменты,\nне задаёт пути и не выполняет команды. Каждый вопрос независим, истории чата нет.\nПустой поиск возвращает честное «нет данных». Ошибка MCP или модели — ошибка,\nа не успешный ответ. Ключ OPENROUTER_API_KEY остаётся в серверном процессе.\n",
+        "sha256": "35315135290b456e48fb29fde1843d0836efe9238aae5528987a0fb0b15676b8",
+        "score": 2.9056573732300244
+      },
+      {
+        "id": "cb1f1b817a47f2a1e5aa",
+        "path": "README.md",
+        "start_line": 30,
+        "end_line": 36,
+        "section": "Объект знаний",
+        "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+        "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+        "score": 2.8371583589195515
+      },
+      {
+        "id": "998c34fa0b35555b38e0",
+        "path": "docs/git-mcp.md",
+        "start_line": 27,
+        "end_line": 33,
+        "section": "Отличие нового git_context",
+        "text": "## Отличие нового git_context\n\nDay31 использует отдельный собственный MCPServer `git_context()` без аргументов.\nОн возвращает текущую ветку, detached HEAD, полный head SHA и repository_id.\nGit-root фиксируется на старте, по умолчанию это worktree приложения Day31.\nВетка читается заново для каждого вопроса; снимок документации Day17 не определяет\nтекущую ветку и не сообщает состояние Git. Это делает MCP во время запроса.",
+        "sha256": "2a5985941ac878cd497aa9ad639beaa51d93386a2e0812ce2c1a6e3ec5365c7c",
+        "score": 2.4256743639373415
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0101,
+        "count": 5,
+        "source_ids": [
+          "8cb533386d38a7580b38",
+          "60d14217b2944e83a41c",
+          "6b944ddd68925bd8192f",
+          "cb1f1b817a47f2a1e5aa",
+          "998c34fa0b35555b38e0"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6806,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 5.654,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 1494,
+          "completion_tokens": 278,
+          "cost_usd": 0.00020059
+        },
+        "receipt": {
+          "id": "gen-1792174554-5CA3R5an6LW1bo7G8bbK",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1494,
+      "completion_tokens": 278,
+      "cost_usd": 0.00020059
+    },
+    "elapsed_seconds": 6.3448,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  }
+}

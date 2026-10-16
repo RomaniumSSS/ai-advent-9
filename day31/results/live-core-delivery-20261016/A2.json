@@ -1,0 +1,173 @@
+{
+  "case_id": "A2",
+  "question": "В Day17 инструмент get_recent_commits возвращает текущую ветку и diff, верно?",
+  "answer": {
+    "status": "ok",
+    "text": "Нет, это неверно. В Day17 инструмент get_recent_commits не возвращает текущую ветку и diff. Он является read-only инструментом, который читает историю, а текущая ветка и состояние Git определяются инструментом Day31 git_context. Снимок Day17 фиксирует поведение Day17, которое отличается от Day31.",
+    "source_ids": [
+      "c82a108b854961f27be7",
+      "3bb965bed18427dc9862",
+      "1ce1eb0026c55160ea21"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "7af83a7921bb474ca4e20c28f5f0a65e",
+    "sources": [
+      {
+        "id": "c82a108b854961f27be7",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 19,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nЕго `ToolRuntime.model_tools()` готовит схему инструмента для модели из MCP\ndiscovery: берёт обнаруженные `name`, `description` и `input_schema`, возвращает\nсписок объектов `type=\"function\"`, где `function.name` и `function.description`\nпереносятся из discovery, а `function.parameters` содержит `input_schema`.\nЭту схему создаёт код, не модель. Перед преобразованием `_allowed_tool` проверяет\nединственный разрешённый `get_recent_commits`, наличие описания и корректность\nJSON Schema. `ensure_snapshot()` получает discovery и сохраняет проверенный\nснимок для повторного использования.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "03acb32004e62f0985137bcecb57ed9cedd1088068a6d8fffcc5c45620fd7c9c",
+        "score": 15.201220152881474
+      },
+      {
+        "id": "3bb965bed18427dc9862",
+        "path": "docs/git-mcp.md",
+        "start_line": 51,
+        "end_line": 57,
+        "section": "Отличие нового git_context",
+        "text": "## Отличие нового git_context\n\nDay31 использует отдельный собственный MCPServer `git_context()` без аргументов.\nОн возвращает текущую ветку, detached HEAD, полный head SHA и repository_id.\nGit-root фиксируется на старте, по умолчанию это worktree приложения Day31.\nВетка читается заново для каждого вопроса; снимок документации Day17 не определяет\nтекущую ветку и не сообщает состояние Git. Это делает MCP во время запроса.",
+        "sha256": "2a5985941ac878cd497aa9ad639beaa51d93386a2e0812ce2c1a6e3ec5365c7c",
+        "score": 12.548809235729628
+      },
+      {
+        "id": "1ce1eb0026c55160ea21",
+        "path": "README.md",
+        "start_line": 33,
+        "end_line": 39,
+        "section": "Объект знаний",
+        "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+        "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+        "score": 9.3535595698351
+      },
+      {
+        "id": "ccc4c29bdaa9a73e6d8a",
+        "path": "docs/git-mcp.md",
+        "start_line": 43,
+        "end_line": 50,
+        "section": "Границы Day17",
+        "text": "## Границы Day17\n\nОбычный chat допускает максимум 2 вызова модели и 1 выполнение MCP за ход.\nСмешанные, множественные, неизвестные или некорректные tool calls не исполняются.\nПовторный запрос инструмента во втором ответе получает отказ без третьего вызова.\nWorkflow FSM в Day17 работает без tools. Ошибки и malformed result не становятся\nуспешным observation. Discovery не считается выполнением инструмента.\n",
+        "sha256": "0694af9fe3fed14da2be2274316a812de164e4aa5b4eaffb1a06c44a07446644",
+        "score": 8.933753883887883
+      },
+      {
+        "id": "1fe536de17fd2919dc54",
+        "path": "docs/provenance.md",
+        "start_line": 1,
+        "end_line": 12,
+        "section": "Происхождение снимка Day17",
+        "text": "# Происхождение снимка Day17\n\nВерсия документации: 1. Источник — локальный Git commit `cf3603e3b15ce032ebf8557dbfc65b07d331f8a7`.\nСнимок не обновляется из текущей ветки автоматически. Файлы изучены read-only,\nне копируются целиком и не импортируются при запуске Day31.\n\n| Исходный путь | SHA256 исходного файла |\n| --- | --- |\n| `day17/git_mcp_server.py` | `6fcc41342d317b4982e133d2bf18e7ef7d404874a81ef20db142968ffe493e1e` |\n| `day17/mcp_client.py` | `50cbd3f240d82bfa178666a16922c24c03928ed8c2b755d500ac2f88b9710d08` |\n| `day17/tool_calling.py` | `71d0deda50120866fb295d57ca53d6e03790a5e15069c307086117b8157591dd` |\n| `day17/README.md` | `7873bbd31203255977794a6e2f0af77a11a3cbf820708dbcb38d0302ed437ed3` |",
+        "sha256": "eebf6716ae05aadaaf10be266c119deea1f7f9eaedf59bf1dabce79ff96fb31d",
+        "score": 5.223154475843011
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0024,
+        "count": 5,
+        "source_ids": [
+          "c82a108b854961f27be7",
+          "3bb965bed18427dc9862",
+          "1ce1eb0026c55160ea21",
+          "ccc4c29bdaa9a73e6d8a",
+          "1fe536de17fd2919dc54"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6593,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 2.7095,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 1954,
+          "completion_tokens": 127,
+          "reasoning_tokens": 0,
+          "cost_usd": 0.00015334
+        },
+        "receipt": {
+          "id": "gen-1792177279-bFZev1tvht2klLRIAMLi",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "source_id_normalization": {
+          "method": "deterministic",
+          "added_from_inline": []
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1954,
+      "completion_tokens": 127,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.00015334
+    },
+    "elapsed_seconds": 3.3713,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  },
+  "provider_final": {
+    "trace_id": "7af83a7921bb474ca4e20c28f5f0a65e",
+    "profile": {
+      "model": "z-ai/glm-4.7-flash",
+      "exact_route": "venice/fp8",
+      "input_usd_per_m": 0.06,
+      "output_usd_per_m": 0.4,
+      "max_output_tokens": 1600,
+      "reasoning": {
+        "enabled": false
+      }
+    },
+    "finish_reason": "stop",
+    "receipt": {
+      "id": "gen-1792177279-bFZev1tvht2klLRIAMLi",
+      "model": "z-ai/glm-4.7-flash",
+      "provider": "Venice"
+    },
+    "usage": {
+      "prompt_tokens": 1954,
+      "completion_tokens": 127,
+      "reasoning_tokens": 0,
+      "cost_usd": 0.00015334
+    },
+    "content": "{\"status\": \"ok\", \"text\": \"Нет, это неверно. В Day17 инструмент get_recent_commits не возвращает текущую ветку и diff. Он является read-only инструментом, который читает историю, а текущая ветка и состояние Git определяются инструментом Day31 git_context. Снимок Day17 фиксирует поведение Day17, которое отличается от Day31.\", \"source_ids\": [\"c82a108b854961f27be7\", \"3bb965bed18427dc9862\", \"1ce1eb0026c55160ea21\"]}",
+    "error": null,
+    "sent": true,
+    "reserved_usd": 0.00138022,
+    "elapsed_seconds": 2.7086730839218944
+  },
+  "independent_git": {
+    "branch": "day31-dev-assistant",
+    "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+  },
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37"
+}

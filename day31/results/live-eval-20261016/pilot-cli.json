@@ -1,0 +1,133 @@
+{
+  "time": "2026-10-16T18:13:38.729436+00:00",
+  "kind": "real live CLI pilot",
+  "question": "/help За что отвечают git_mcp_server.py, mcp_client.py и tool_calling.py в примере Day17?",
+  "exit_code": 0,
+  "answer": {
+    "status": "ok",
+    "text": "В снимке Day17 эти файлы отвечают за реализацию собственного MCP-инструмента: [git_mcp_server.py] создаёт MCPServer с транспортом stdio и регистрирует read-only инструмент `get_recent_commits(limit)`; [mcp_client.py] выполняет discovery (`list_tools`) и вызовы инструментов (`call_tool`); [tool_calling.py] проверяет имя инструмента, JSON-аргументы и JSON Schema. Это описание поведения Day17, а не Day31.",
+    "source_ids": [
+      "60d14217b2944e83a41c",
+      "1fe536de17fd2919dc54"
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    },
+    "trace_id": "05addb3e082042d6bfa6402a62490060",
+    "sources": [
+      {
+        "id": "1fe536de17fd2919dc54",
+        "path": "docs/provenance.md",
+        "start_line": 1,
+        "end_line": 12,
+        "section": "Происхождение снимка Day17",
+        "text": "# Происхождение снимка Day17\n\nВерсия документации: 1. Источник — локальный Git commit `cf3603e3b15ce032ebf8557dbfc65b07d331f8a7`.\nСнимок не обновляется из текущей ветки автоматически. Файлы изучены read-only,\nне копируются целиком и не импортируются при запуске Day31.\n\n| Исходный путь | SHA256 исходного файла |\n| --- | --- |\n| `day17/git_mcp_server.py` | `6fcc41342d317b4982e133d2bf18e7ef7d404874a81ef20db142968ffe493e1e` |\n| `day17/mcp_client.py` | `50cbd3f240d82bfa178666a16922c24c03928ed8c2b755d500ac2f88b9710d08` |\n| `day17/tool_calling.py` | `71d0deda50120866fb295d57ca53d6e03790a5e15069c307086117b8157591dd` |\n| `day17/README.md` | `7873bbd31203255977794a6e2f0af77a11a3cbf820708dbcb38d0302ed437ed3` |",
+        "sha256": "eebf6716ae05aadaaf10be266c119deea1f7f9eaedf59bf1dabce79ff96fb31d",
+        "score": 8.137684366166406
+      },
+      {
+        "id": "60d14217b2944e83a41c",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 11,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "e61fd5a31256b94687288e4a449eef9379689d388fe56db1e8d534c136132822",
+        "score": 7.481843734096134
+      },
+      {
+        "id": "bba7dcfbd112a73e752e",
+        "path": "docs/git-mcp.md",
+        "start_line": 1,
+        "end_line": 2,
+        "section": "Знакомый Git MCP Day17",
+        "text": "# Знакомый Git MCP Day17\n",
+        "sha256": "5e04328d2db42d71f2df0a09a43d314a9f82c22d2566069f2a380518f824ab60",
+        "score": 1.1742913523453458
+      },
+      {
+        "id": "6a82f01ce61d4890a705",
+        "path": "docs/git-mcp.md",
+        "start_line": 19,
+        "end_line": 26,
+        "section": "Границы Day17",
+        "text": "## Границы Day17\n\nОбычный chat допускает максимум 2 вызова модели и 1 выполнение MCP за ход.\nСмешанные, множественные, неизвестные или некорректные tool calls не исполняются.\nПовторный запрос инструмента во втором ответе получает отказ без третьего вызова.\nWorkflow FSM в Day17 работает без tools. Ошибки и malformed result не становятся\nуспешным observation. Discovery не считается выполнением инструмента.\n",
+        "sha256": "0694af9fe3fed14da2be2274316a812de164e4aa5b4eaffb1a06c44a07446644",
+        "score": 1.069283316700931
+      },
+      {
+        "id": "cb1f1b817a47f2a1e5aa",
+        "path": "README.md",
+        "start_line": 30,
+        "end_line": 36,
+        "section": "Объект знаний",
+        "text": "## Объект знаний\n\n[docs/git-mcp.md](docs/git-mcp.md) — документированный снимок Day17 из commit cf3603e.\nЕго `get_recent_commits` читает историю; новый Day31 `git_context` читает ветку.\nЭто разные инструменты. История, FSM и чат Day17 в Day31 не переносятся.\n[docs/provenance.md](docs/provenance.md) фиксирует исходные файлы и SHA256.\n",
+        "sha256": "f4c459973dd2b22a436fbf01026d5a8d8c430aa69ce93b5d243611befa9516a6",
+        "score": 0.8637215160498399
+      }
+    ],
+    "stages": [
+      {
+        "name": "search",
+        "status": "ok",
+        "seconds": 0.0065,
+        "count": 5,
+        "source_ids": [
+          "1fe536de17fd2919dc54",
+          "60d14217b2944e83a41c",
+          "bba7dcfbd112a73e752e",
+          "6a82f01ce61d4890a705",
+          "cb1f1b817a47f2a1e5aa"
+        ]
+      },
+      {
+        "name": "mcp",
+        "status": "ok",
+        "seconds": 0.6889,
+        "tool": "git_context",
+        "arguments": {},
+        "discovery": {
+          "protocol_version": "2026-07-28",
+          "tools": [
+            "git_context"
+          ]
+        },
+        "result": {
+          "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+          "branch": "day31-dev-assistant",
+          "detached": false,
+          "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+        }
+      },
+      {
+        "name": "model",
+        "status": "ok",
+        "seconds": 4.2985,
+        "model": "z-ai/glm-4.7-flash",
+        "provider": "venice/fp8",
+        "usage": {
+          "prompt_tokens": 1646,
+          "completion_tokens": 151,
+          "cost_usd": 0.00015891
+        },
+        "receipt": {
+          "id": "gen-1792174415-XSfE6bt2ORyFFtMCY5rP",
+          "model": "z-ai/glm-4.7-flash",
+          "provider": "Venice"
+        },
+        "validation": "JSON и source_ids проверены; смысловая верность отдельно"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 1646,
+      "completion_tokens": 151,
+      "cost_usd": 0.00015891
+    },
+    "elapsed_seconds": 4.994,
+    "model": "z-ai/glm-4.7-flash",
+    "provider": "venice/fp8"
+  }
+}

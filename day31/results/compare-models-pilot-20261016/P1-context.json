@@ -1,0 +1,71 @@
+{
+  "context": {
+    "question": "Как клиент MCP узнаёт, какие операции предлагает сервер и какие параметры они принимают в Day17?",
+    "sources": [
+      {
+        "id": "c82a108b854961f27be7",
+        "path": "docs/git-mcp.md",
+        "start_line": 3,
+        "end_line": 19,
+        "section": "Устройство Git MCP",
+        "text": "## Устройство Git MCP\n\nDay17 — первый собственный MCP-инструмент. `git_mcp_server.py` создаёт MCPServer\nс транспортом stdio. Сервер регистрирует read-only `get_recent_commits(limit)`.\n`mcp_client.py` делает discovery (`list_tools`) и выполнение (`call_tool`).\n`tool_calling.py` проверяет имя инструмента, JSON arguments и JSON Schema.\nЕго `ToolRuntime.model_tools()` готовит схему инструмента для модели из MCP\ndiscovery: берёт обнаруженные `name`, `description` и `input_schema`, возвращает\nсписок объектов `type=\"function\"`, где `function.name` и `function.description`\nпереносятся из discovery, а `function.parameters` содержит `input_schema`.\nЭту схему создаёт код, не модель. Перед преобразованием `_allowed_tool` проверяет\nединственный разрешённый `get_recent_commits`, наличие описания и корректность\nJSON Schema. `ensure_snapshot()` получает discovery и сохраняет проверенный\nснимок для повторного использования.\nВ обычном чате Day17 модель выбирает инструмент, а harness исполняет его.\nЭто описание снимка Day17, а не автономного поведения Day31.\n",
+        "sha256": "03acb32004e62f0985137bcecb57ed9cedd1088068a6d8fffcc5c45620fd7c9c",
+        "score": 8.969673804670986
+      },
+      {
+        "id": "026ae583671638b0dac2",
+        "path": "docs/run.md",
+        "start_line": 37,
+        "end_line": 55,
+        "section": "Команды облачного режима",
+        "text": "## Команды облачного режима\n\nТолько после явного разрешения бюджета. Пример использует переменную\nDAY31_BUDGET_USD с согласованным пределом; её значение не устанавливается кодом:\n\n```bash\nuv run python -m day31.web --live \\\n  --env-file /безопасный/путь/.env --budget-usd \"$DAY31_BUDGET_USD\"\nuv run python -m day31.cli '/help Как устроен Git MCP?' --live \\\n  --env-file /безопасный/путь/.env --budget-usd \"$DAY31_BUDGET_USD\" --json\n```\n\nПеред облачным стартом бесплатный metadata preflight подтверждает активный\nendpoint с точным tag venice/fp8, JSON Schema/reasoning и остальные параметры\nзапроса, а также тариф без скидки не выше резерва. При росте\nтарифа или недоступных метаданных запуск прекращается до платного запроса.\nReasoning отключён через enabled=false, require_parameters=true: неподдерживаемые\nпараметры не должны тихо игнорироваться провайдером.\n",
+        "sha256": "2e9233fc3edf1cdac7fc08efe0b9c6db21490af9abe20e06da5b96194c58d367",
+        "score": 5.4281850338448026
+      },
+      {
+        "id": "e04f4bc74b9338bcfab2",
+        "path": "docs/git-mcp.md",
+        "start_line": 27,
+        "end_line": 42,
+        "section": "Запуск stdio-сервера Day17",
+        "text": "## Запуск stdio-сервера Day17\n\nИз корня репозитория, с установленными зависимостями проекта и Python 3.12+:\n\n```bash\nuv run --frozen python day17/git_mcp_server.py --repo /путь/к/repo\n```\n\nВ `main()` файла `git_mcp_server.py` аргумент `--repo` обязателен (`required=True`)\nи разбирается как `Path`. `build_server(args.repo)` разрешает его до Git worktree\nroot, после чего `.run(\"stdio\")` запускает MCP-сервер с транспортом stdio.\nЭто запуск отдельного процесса для MCP-клиента; HTTP-адреса у него нет.\nПуть — доверенная настройка старта, а не аргумент, который выбирает модель.\nЭтот пример запускает исходный сервер Day17 с `get_recent_commits`, а не новый\nсервер Day31 с `git_context`.\n",
+        "sha256": "9dab1d9c8cf398cbc31f578d8411f754d4b068edda00e202cf9b9ddcb588f13c",
+        "score": 5.31120051436506
+      },
+      {
+        "id": "bba7dcfbd112a73e752e",
+        "path": "docs/git-mcp.md",
+        "start_line": 1,
+        "end_line": 2,
+        "section": "Знакомый Git MCP Day17",
+        "text": "# Знакомый Git MCP Day17\n",
+        "sha256": "5e04328d2db42d71f2df0a09a43d314a9f82c22d2566069f2a380518f824ab60",
+        "score": 1.3332525937901138
+      },
+      {
+        "id": "1c9323f1eb54c70049f4",
+        "path": "docs/run.md",
+        "start_line": 119,
+        "end_line": 128,
+        "section": "После разрешения расходов и запуска сервера с --live:",
+        "text": "`NN-source.png`, следующие получают суффиксы `-02`, `-03` и т. д. `events.jsonl`\nхранит номера кадров, координаты прокрутки и проверку видимости branch/head;\nполный trace и исходный ответ остаются в `NN-answer.json`.\n\nЛексический поиск сохраняет до 24 исходных уникальных терминов и отдельно\nдобавляет до 16 уникальных технических синонимов. Широкое слово «действие»\nрасширяется только при техническом контексте вопроса. Общие слова сами по себе\nне превращают нетехнический вопрос в вопрос по проекту. Ранжирование остаётся\nFTS5/BM25, без привилегий для отдельных файлов, векторов или дополнительной модели.\n",
+        "sha256": "998f0332b37f04d64c4431d80d75f98bdf5286d45f21618589bb04cdcb1f246f",
+        "score": 1.3323703487259493
+      }
+    ],
+    "git_context": {
+      "repository_id": "a97eb3af3e223227da92bedefc66cb72764c06e43d0c8ea75607bddf9d89d715",
+      "branch": "day31-dev-assistant",
+      "detached": false,
+      "head": "cf3603e3b15ce032ebf8557dbfc65b07d331f8a7"
+    }
+  },
+  "context_sha256": "75006d193c65d227c541f5fb3a2e13b0199268326684896ddf6c6740767b2783",
+  "discovery": {
+    "protocol_version": "2026-07-28",
+    "tools": [
+      "git_context"
+    ]
+  },
+  "provenance": "один реальный поиск и один реальный MCP для всех кандидатов"
+}

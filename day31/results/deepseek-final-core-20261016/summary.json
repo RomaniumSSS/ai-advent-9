@@ -1,0 +1,97 @@
+{
+  "time": "2026-10-16T19:17:54.597014+00:00",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "provider": "deepinfra/fp8",
+  "system_sha256": "d39f80341175f3027ab6e1c15b1861f7f5da25267c207697f62b735a03478c37",
+  "calls": [
+    {
+      "case_id": "Q1",
+      "status": "ok",
+      "trace_id": "da6fb433a0bf453689f91f5de0ea6467",
+      "usage": {
+        "prompt_tokens": 2013,
+        "completion_tokens": 337,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0003885952
+      },
+      "elapsed_seconds": 5.8021
+    },
+    {
+      "case_id": "Q2",
+      "status": "ok",
+      "trace_id": "bdf73cd8762741de8473224a68b30c22",
+      "usage": {
+        "prompt_tokens": 1895,
+        "completion_tokens": 328,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0003682952
+      },
+      "elapsed_seconds": 5.5321
+    },
+    {
+      "case_id": "Q3",
+      "status": "ok",
+      "trace_id": "78cae48a2a044d53a8fd30e34e48d507",
+      "usage": {
+        "prompt_tokens": 3046,
+        "completion_tokens": 163,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0004601352
+      },
+      "elapsed_seconds": 2.3556
+    },
+    {
+      "case_id": "Q4",
+      "status": "ok",
+      "trace_id": "932906d3c7464e20bcecc2d7ab6adab1",
+      "usage": {
+        "prompt_tokens": 2410,
+        "completion_tokens": 113,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0003500952
+      },
+      "elapsed_seconds": 2.1598
+    },
+    {
+      "case_id": "Q5",
+      "status": "unknown",
+      "trace_id": "71f36461a37949aea2ea46672f69d03a",
+      "usage": {
+        "prompt_tokens": 1680,
+        "completion_tokens": 109,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0002462152
+      },
+      "elapsed_seconds": 1.9455
+    },
+    {
+      "case_id": "Q6",
+      "status": "ok",
+      "trace_id": "3f1078919d43492586f8613745fa7d8d",
+      "usage": {
+        "prompt_tokens": 1845,
+        "completion_tokens": 257,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.000279328
+      },
+      "elapsed_seconds": 3.0928
+    },
+    {
+      "case_id": "A1",
+      "status": "ok",
+      "trace_id": "2836328531cb49e9a282412ea4d12732",
+      "usage": {
+        "prompt_tokens": 1892,
+        "completion_tokens": 96,
+        "reasoning_tokens": 0,
+        "cost_usd": 0.0002704352
+      },
+      "elapsed_seconds": 1.8976
+    }
+  ],
+  "budget_after": {
+    "limit_usd": 0.5,
+    "charged_usd": 0.4348072744,
+    "remaining_usd": 0.0651927256
+  }
+}
