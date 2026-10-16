@@ -1,6 +1,6 @@
 # Day32 — ревью PR с видимым контекстом
 
-Готовы [видео11:34](video/README.md), [результат](RESULT.md) и
+Готовы [видео8:39](video/README.md), [результат](RESULT.md) и
 [разбор реальных ответов Qwen](results/live-semantic-review.md).
 68тестов PASS +100generated checks;15real calls,$0.111228 из$0.50.
 [Точные входы/ответы](results/live-20261016/INDEX.json).

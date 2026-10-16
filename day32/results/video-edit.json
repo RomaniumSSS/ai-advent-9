@@ -1,0 +1,156 @@
+{
+  "source": "day32/video/Day32-live-extended.mp4",
+  "output": "day32/video/Day32-live-edited.mp4",
+  "source_duration": 693.72,
+  "expected_duration": 518.6603834342957,
+  "segments": [
+    {
+      "start": 0,
+      "end": 19.308137893676758,
+      "speed": 1,
+      "output_start": 0,
+      "output_end": 19.308137893676758
+    },
+    {
+      "start": 19.308137893676758,
+      "end": 84.91565704345703,
+      "speed": 6,
+      "case": "upper",
+      "output_start": 19.308137893676758,
+      "output_end": 30.242724418640137
+    },
+    {
+      "start": 84.91565704345703,
+      "end": 220.91521000862122,
+      "speed": 1,
+      "output_start": 30.242724418640137,
+      "output_end": 166.24227738380432
+    },
+    {
+      "start": 220.91521000862122,
+      "end": 267.5999388694763,
+      "speed": 6,
+      "case": "fix",
+      "output_start": 166.24227738380432,
+      "output_end": 174.02306552728018
+    },
+    {
+      "start": 267.5999388694763,
+      "end": 311.16965508461,
+      "speed": 1,
+      "output_start": 174.02306552728018,
+      "output_end": 217.59278174241385
+    },
+    {
+      "start": 311.16965508461,
+      "end": 346.0490608215332,
+      "speed": 6,
+      "case": "bool",
+      "output_start": 217.59278174241385,
+      "output_end": 223.40601603190106
+    },
+    {
+      "start": 346.0490608215332,
+      "end": 395.45217990875244,
+      "speed": 1,
+      "output_start": 223.40601603190106,
+      "output_end": 272.8091351191203
+    },
+    {
+      "start": 395.45217990875244,
+      "end": 423.791708946228,
+      "speed": 6,
+      "case": "ignored",
+      "output_start": 272.8091351191203,
+      "output_end": 277.5323899586996
+    },
+    {
+      "start": 423.791708946228,
+      "end": 473.78377079963684,
+      "speed": 1,
+      "output_start": 277.5323899586996,
+      "output_end": 327.5244518121084
+    },
+    {
+      "start": 473.78377079963684,
+      "end": 508.3441278934479,
+      "speed": 6,
+      "case": "injection",
+      "output_start": 327.5244518121084,
+      "output_end": 333.2845113277436
+    },
+    {
+      "start": 508.3441278934479,
+      "end": 693.72,
+      "speed": 1,
+      "output_start": 333.2845113277436,
+      "output_end": 518.6603834342957
+    }
+  ],
+  "method": "Only GitHub/model waiting intervals accelerated 6x; results at 1x; overlay labels 6x. Original retained.",
+  "frames_for_inspection": [
+    {
+      "label": "waiting-6x",
+      "seconds": 24.0,
+      "local_frame": "day32/.runtime/video-edit/waiting-6x.jpg"
+    },
+    {
+      "label": "intro",
+      "seconds": 2.5,
+      "local_frame": "day32/.runtime/video-edit/intro.jpg"
+    },
+    {
+      "label": "upper-rag",
+      "seconds": 41.053067375183105,
+      "local_frame": "day32/.runtime/video-edit/upper-rag.jpg"
+    },
+    {
+      "label": "fix-rag",
+      "seconds": 184.65412665780386,
+      "local_frame": "day32/.runtime/video-edit/fix-rag.jpg"
+    },
+    {
+      "label": "bool-rag",
+      "seconds": 233.82895521036784,
+      "local_frame": "day32/.runtime/video-edit/bool-rag.jpg"
+    },
+    {
+      "label": "ignored-rag",
+      "seconds": 288.47668101247154,
+      "local_frame": "day32/.runtime/video-edit/ignored-rag.jpg"
+    },
+    {
+      "label": "injection-rag",
+      "seconds": 344.03438343429576,
+      "local_frame": "day32/.runtime/video-edit/injection-rag.jpg"
+    },
+    {
+      "label": "history-original-error",
+      "seconds": 391.0743834342957,
+      "local_frame": "day32/.runtime/video-edit/history-original-error.jpg"
+    },
+    {
+      "label": "simulated-budget_blocked",
+      "seconds": 498.69338343429575,
+      "local_frame": "day32/.runtime/video-edit/simulated-budget_blocked.jpg"
+    },
+    {
+      "label": "end",
+      "seconds": 516.6603834342957,
+      "local_frame": "day32/.runtime/video-edit/end.jpg"
+    }
+  ],
+  "actual_duration": 518.68,
+  "size_bytes": 12620604,
+  "sha256": "ad157d24dac021bd301c48c1aa434049ebf5419a1462d5bde8c36120923fa054",
+  "probe": {
+    "codec_name": "h264",
+    "width": 1280,
+    "height": 1000,
+    "avg_frame_rate": "25/1"
+  },
+  "visual_inspection": "PASS: ten extracted edited-MP4 frames viewed: 6x overlay, intro, five case results, history, SIMULATED budget, end. Results remain 1x; no black/unrelated frames observed.",
+  "checked_at": "2026-10-16T21:58:46.999523+00:00",
+  "application_code_changed": false,
+  "new_model_calls": 0
+}
