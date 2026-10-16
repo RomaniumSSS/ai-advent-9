@@ -69,6 +69,46 @@ class ScenarioTests(unittest.TestCase):
             snap=self.history.snapshot(scope=scope)
             self.assertEqual(snap['limitations'],[])
             self.assertEqual({item['path'] for item in snap['corpus']},expected)
+    def test_poll_fetches_validated_exact_api_shas_not_mutable_ref(self):
+        import cli
+        rows=[dict(number=7,baseRefOid=self.snap['base_sha'],headRefOid=self.snap['head_sha'])]
+        with patch('cli.gh',return_value=rows):
+            with patch('cli.subprocess.run') as fetch:
+                snaps=list(cli.poll('owner/repo',self.history.path))
+        command=fetch.call_args.args[0]
+        self.assertEqual(command[-3:],['https://github.com/owner/repo.git',self.snap['base_sha'],self.snap['head_sha']])
+        self.assertFalse(any('refs/pull/' in arg for arg in command))
+        self.assertEqual(snaps[0]['head_sha'],self.snap['head_sha'])
+        for field in ('baseRefOid','headRefOid'):
+            bad=dict(rows[0]);bad[field]='--upload-pack=evil'
+            with patch('cli.gh',return_value=[bad]):
+                with patch('cli.subprocess.run') as fetch:
+                    with self.assertRaises(ValueError):list(cli.poll('owner/repo',self.history.path))
+                    fetch.assert_not_called()
+    def test_exact_sha_fetch_survives_remote_reference_advance(self):
+        import cli
+        import subprocess
+        captured_head=self.snap['head_sha'];captured_base=self.snap['base_sha']
+        self.history.write('later.py','later = True\n');advanced=self.history.commit('remote advances after API snapshot')
+        remote=self.root/'remote.git';cache=self.root/'cache.git'
+        real_run=subprocess.run
+        real_run(['git','clone','--bare',str(self.history.path),str(remote)],check=True,capture_output=True)
+        rows=[dict(number=8,baseRefOid=captured_base,headRefOid=captured_head)]
+        fetch_commands=[]
+        def local_fetch(command,**kwargs):
+            command=list(command)
+            if 'fetch' in command:
+                fetch_commands.append(list(command))
+                command[command.index('https://github.com/owner/repo.git')]=str(remote)
+            return real_run(command,**kwargs)
+        with patch('cli.gh',return_value=rows):
+            with patch('cli.subprocess.run',side_effect=local_fetch):snaps=list(cli.poll('owner/repo',cache))
+        self.assertNotEqual(captured_head,advanced)
+        self.assertEqual(git(remote,'rev-parse','HEAD').decode().strip(),advanced)
+        self.assertEqual(snaps[0]['head_sha'],captured_head)
+        self.assertIn('value_50 = 500',snaps[0]['files']['head:history.py'])
+        self.assertEqual(git(cache,'cat-file','-t',captured_head).decode().strip(),'commit')
+        self.assertEqual(fetch_commands[0][-2:],[captured_base,captured_head])
     def test_added_file_lines_are_head_only(self):
         self.history.write('added.py','first = 1\nsecond = 2\n');self.history.commit('add')
         snap=self.history.snapshot();self.assert_valid(finding('added.py',2),snap)

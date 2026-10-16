@@ -1,9 +1,11 @@
 """Офлайн guards записи: адрес публикации, budget/error исходы; без GitHub/API."""
 import tempfile
+import json
+from types import SimpleNamespace
 import unittest
 from pathlib import Path
-from unittest.mock import AsyncMock, Mock
-from run_demo import cleanup_resources, history_row, outcome, push_target, scenario_status, source_for, CASES
+from unittest.mock import AsyncMock, Mock, patch
+from run_demo import cleanup_resources, history_row, watcher, write, outcome, push_target, scenario_status, source_for, CASES
 from review import Store
 
 
@@ -32,6 +34,46 @@ class RecorderGuards(unittest.TestCase):
                 self.assertEqual(result['mode'], 'rag')
                 self.assertEqual(result['findings'], [])
                 self.assertEqual(scenario_status([result]), 'stopped_budget')
+            finally:
+                store.db.close()
+
+    def test_poll_retry_is_separate_from_single_provider_call(self):
+        from cli import fixture
+        from review import Fixture, GitSnapshot
+        with tempfile.TemporaryDirectory() as d:
+            output = Path(d) / 'output'
+            output.mkdir()
+            state = Path(d) / 'state'
+            repo, meta = fixture(Path(d) / 'fixture')
+            snapshot = GitSnapshot.build(repo, 'offline/fixture', 1, meta['base'], meta['head'])
+            write(output / 'control.json', {'head':meta['head'], 'modes':['rag']})
+            provider = Fixture()
+            calls = []
+            class CountedProvider:
+                name = 'offline fixture'
+                def __call__(self, messages):
+                    calls.append(1)
+                    return provider(messages)
+            sleeps = []
+            def bounded_sleep(_):
+                sleeps.append(1)
+                if len(sleeps) == 3:
+                    (output / 'stop').touch()
+            args = SimpleNamespace(output=str(output), state=str(state), budget=.5,
+                                   pr_repo='offline/fixture', pr_number=1)
+            with patch('run_demo.poll', side_effect=[ValueError('transient read'), [snapshot], [snapshot]]), \
+                 patch('run_demo.OpenRouter', return_value=CountedProvider()), \
+                 patch('run_demo.time.sleep', side_effect=bounded_sleep):
+                watcher(args)
+            self.assertEqual(len(calls), 1)
+            events = [json.loads(line) for line in (output/'events.jsonl').read_text().splitlines()]
+            self.assertEqual(sum(e['event']=='read_retry' for e in events), 1)
+            self.assertEqual(next(e for e in events if e['event']=='read_retry')['phase'], 'poll_fetch_snapshot')
+            self.assertFalse(next(e for e in events if e['event']=='dedupe')['new'])
+            store = Store(state)
+            try:
+                self.assertEqual(len(store.reports()), 1)
+                self.assertEqual(store.reports()[0]['status'], 'complete')
             finally:
                 store.db.close()
 

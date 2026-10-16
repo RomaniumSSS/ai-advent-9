@@ -127,7 +127,14 @@ def watcher(a):
             control = json.loads((output / 'control.json').read_text()) if (output / 'control.json').exists() else {}
             target = control.get('head')
             if target:
-                for snap in poll(a.pr_repo, Path(a.state) / 'github-cache.git'):
+                try:
+                    # Чтение полностью завершаем до Runner: retry никогда не охватывает модель.
+                    snapshots = list(poll(a.pr_repo, Path(a.state) / 'github-cache.git'))
+                except Exception as exc:
+                    event(output, 'read_retry', phase='poll_fetch_snapshot', error=type(exc).__name__)
+                    time.sleep(3)
+                    continue
+                for snap in snapshots:
                     if snap['number'] != a.pr_number or snap['head_sha'] != target:
                         continue
                     key = (target, tuple(control['modes']))
@@ -373,6 +380,9 @@ async def scenario(a):
         finally:
             raw, cleanup_errors = await cleanup_resources(context, video, browser, playwright, children)
             manifest['cleanup_errors'] = cleanup_errors
+            events_path = output / 'events.jsonl'
+            manifest['read_retries'] = sum(1 for line in events_path.read_text().splitlines()
+                if json.loads(line).get('event') == 'read_retry') if events_path.exists() else 0
             manifest['finished'] = time.time()
             manifest.setdefault('status', 'interrupted')
             if cleanup_errors and manifest['status'] == 'scenario_completed':

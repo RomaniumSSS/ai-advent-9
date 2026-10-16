@@ -96,3 +96,25 @@ limitations=[], head:day32/target/git_tool.py доступен, corpus сост�
 —58 методов PASS за29.792с (17 исходных +41 расширенный),
 seeded properties100checks отдельно от числа методов.
 `git diff --check -- day32` —PASS.
+
+## Genuine PR race: exact API head вместо mutable pull ref
+
+После push GitHub API уже сообщил новый head SHA, но refs/pull/N/head ещё
+отставал. Fetch mutable ref не гарантировал наличие API head в bare cache,
+поэтому snapshot прекращался до модельного вызова.
+
+cli.poll теперь проверяет оба baseRefOid/headRefOid через sha() и fetch
+по fixed GitHub URL получает именно оба API SHA. Mutable pull refs больше
+не используются. Scope и запрет исполнения PR не изменены.
+
+Новые проверки: аргументы fetch содержат exact base/head и не refs/pull;
+некорректный SHA отвергается до fetch. Настоящие локальные bare remote/cache:
+API snapshot сохранён, remote HEAD затем продвинут; exact SHA fetch сохраняет
+старый зафиксированный API head и правильный blob, не подменяя его текущим ref.
+В тесте только fixed GitHub URL заменён локальным bare path, Git fetch
+и чтение snapshot настоящие. Внешних сетевых запросов/платных вызовов нет.
+
+Свежая проверка exact-SHA-fix:
+`uv run --no-sync python -m unittest discover -s day32 -p 'test_*.py'`
+—60 методов PASS за30.313с. `git diff --check -- day32` —PASS.
+Live ledger/процессы не менялись и их суммы этой проверкой не измерялись.

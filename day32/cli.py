@@ -6,7 +6,7 @@ import re
 import shutil
 import subprocess
 import time
-from review import Fixture, GitSnapshot, OpenRouter, Runner, Store, dumps, git
+from review import Fixture, GitSnapshot, OpenRouter, Runner, Store, dumps, git, sha
 
 ROOT=Path(__file__).resolve().parent
 
@@ -42,10 +42,11 @@ def poll(repository,cache):
     if not cache.exists():
         subprocess.run(['git','init','--bare',str(cache)],check=True,capture_output=True)
     for pr in prs:
-        # AICODE-NOTE: только фиксированный GitHub URL, не clone URL из недоверенного PR.
+        base=sha(pr['baseRefOid']);head=sha(pr['headRefOid'])
+        # AICODE-NOTE: exact API SHA исключают race с eventual-consistent refs/pull/N/head.
+        # URL фиксирован, clone URL и refs из недоверенного PR не используются.
         subprocess.run(['git','-C',str(cache),'fetch','--no-tags',
-                        'https://github.com/'+repository+'.git',pr['baseRefOid'],
-                        'refs/pull/'+str(int(pr['number']))+'/head'],check=True,capture_output=True,timeout=120)
+                        'https://github.com/'+repository+'.git',base,head],check=True,capture_output=True,timeout=120)
         yield GitSnapshot.build(cache,repository,pr['number'],pr['baseRefOid'],pr['headRefOid'],scope='day32/target')
 
 

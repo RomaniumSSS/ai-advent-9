@@ -1,0 +1,10 @@
+{
+  "kind": "interrupted real recording before first new model call",
+  "status": "interrupted",
+  "new_calls": 0,
+  "observed": "PR API reported head37cf74e8c999cf0756fddb002558ff6ac6efb2c2, but that commit was unavailable in cache after fetching mutable PR-ref",
+  "fix": "fetch verified exact base/head SHA; retry read-only polling separately from model calls",
+  "source_manifest": "day32/.runtime/record-extended-20261016a/manifest.json",
+  "source_events": "day32/.runtime/record-extended-20261016a/events.jsonl",
+  "raw_video_preserved": true
+}
