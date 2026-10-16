@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-10-16T21:45:12.946585+00:00",
+  "status": "code_video_pushed_and_remote_metadata_verified",
+  "artifact_commit": "171b68c5f21cab531d99092b257d19466b9b90a2",
+  "code_url": "https://github.com/RomaniumSSS/ai-advent-9/tree/day32-pr-review/day32",
+  "video_url": "https://raw.githubusercontent.com/RomaniumSSS/ai-advent-9/day32-pr-review/day32/video/Day32-live-extended.mp4",
+  "video_metadata": {
+    "download_url": "https://raw.githubusercontent.com/RomaniumSSS/ai-advent-9/day32-pr-review/day32/video/Day32-live-extended.mp4",
+    "path": "day32/video/Day32-live-extended.mp4",
+    "sha": "3aa38b33a71747b8e6fb624307be7ae7c66abbda",
+    "size": 23536154
+  },
+  "remote_refs_at_verification": {
+    "refs/heads/day32-demo-limit10": "bdce804119cb912f088e715c3e988c750b89d62d",
+    "refs/heads/day32-pr-review": "171b68c5f21cab531d99092b257d19466b9b90a2",
+    "refs/heads/main": "08832644274a492609cf146e2d2246dcc1cfe0ad"
+  },
+  "pr_url": "https://github.com/RomaniumSSS/ai-advent-9/pull/1",
+  "main_mutated_by_this_task": false,
+  "pr_comments_published": false,
+  "video_drive_upload": false,
+  "human_acceptance": false,
+  "evidence": [
+    "video-validation.json",
+    "budget-final.json",
+    "live-semantic-review.md",
+    "final-main-tests.txt",
+    "final-recorder-tests.txt"
+  ]
+}
