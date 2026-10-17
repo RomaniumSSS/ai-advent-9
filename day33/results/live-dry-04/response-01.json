@@ -1,0 +1,87 @@
+{
+  "status": 200,
+  "data": {
+    "answer": "Алиса, в вашем тикете зафиксировано событие **email_unverified** — почта не подтверждена. Чтобы восстановить доступ, откройте письмо от TeamDesk и перейдите по ссылке подтверждения. Если письмо не пришло, проверьте папку «Спам» и запросите повторную отправку на странице входа.\n\nИсточники: [FAQ-EMAIL]",
+    "source_ids": [
+      "FAQ-EMAIL"
+    ],
+    "context": {
+      "user": {
+        "id": "alice",
+        "name": "Алиса",
+        "email": "alice@example.test"
+      },
+      "ticket": {
+        "id": "T101",
+        "user_id": "alice",
+        "subject": "Не работает авторизация",
+        "events": [
+          {
+            "code": "email_unverified",
+            "detail": "Почта не подтверждена"
+          }
+        ]
+      }
+    },
+    "sources": [
+      {
+        "id": "FAQ-EMAIL",
+        "title": "Подтверждение почты",
+        "keywords": [
+          "email_unverified",
+          "почта",
+          "подтверждение"
+        ],
+        "text": "При email_unverified откройте письмо TeamDesk и подтвердите почту по ссылке. Если письмо не пришло, проверьте Спам и запросите повторную отправку на странице входа."
+      },
+      {
+        "id": "FAQ-LOGIN",
+        "title": "Диагностика входа",
+        "keywords": [
+          "авторизация",
+          "войти",
+          "входа"
+        ],
+        "text": "Для диагностики входа сообщите точный текст ошибки и этап: ввод почты, пароля или переход по приглашению. Не передавайте пароль."
+      }
+    ],
+    "trace": {
+      "run_id": "08c4573c-a6f6-4289-99f7-2ed70b03839c",
+      "mcp": [
+        {
+          "method": "initialize",
+          "id": 1
+        },
+        {
+          "method": "notifications/initialized",
+          "id": null
+        },
+        {
+          "method": "tools/list",
+          "id": 2
+        },
+        {
+          "method": "tools/call",
+          "id": 3
+        }
+      ],
+      "retrieval_ids": [
+        "FAQ-EMAIL",
+        "FAQ-LOGIN"
+      ],
+      "elapsed_seconds": 7.572,
+      "mode": "live",
+      "model": "qwen/qwen3.8-max-0902",
+      "provider": "alibaba/us-east-1",
+      "usage": {
+        "prompt_tokens": 396,
+        "completion_tokens": 211,
+        "total_tokens": 607,
+        "cost": 0.002058
+      },
+      "cost_usd": 0.002058,
+      "reservation_id": "371ba244-57f1-47ef-b5e2-a416b5dfba57",
+      "response_kind": "model_answer"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "case": "outside",
+    "input": "Какая завтра погода?",
+    "ticket_id": "T101",
+    "event_codes": null,
+    "before": {
+      "kind": "model_answer",
+      "answer": "При email_unverified откройте письмо TeamDesk и подтвердите почту по ссылке. Если письмо не пришло, проверьте Спам и запросите повторную отправку на странице входа. [FAQ-EMAIL]",
+      "sources": [
+        "FAQ-EMAIL"
+      ]
+    }
+  },
+  {
+    "case": "other_product",
+    "input": "Сайт белый после обновления",
+    "ticket_id": "T103",
+    "event_codes": null,
+    "before": {
+      "error": "ValueError",
+      "message": "RAG не нашёл источников: уточните вопрос"
+    }
+  },
+  {
+    "case": "typo",
+    "input": "Не магу залогинится",
+    "ticket_id": "T103",
+    "event_codes": null,
+    "before": {
+      "error": "ValueError",
+      "message": "RAG не нашёл источников: уточните вопрос"
+    }
+  },
+  {
+    "case": "contradiction",
+    "input": "Почту уже подтвердил, но войти не могу",
+    "ticket_id": "T101",
+    "event_codes": null,
+    "before": {
+      "kind": "model_answer",
+      "answer": "При email_unverified откройте письмо TeamDesk и подтвердите почту по ссылке. Если письмо не пришло, проверьте Спам и запросите повторную отправку на странице входа. [FAQ-EMAIL]",
+      "sources": [
+        "FAQ-EMAIL"
+      ]
+    }
+  },
+  {
+    "case": "conflicting",
+    "input": "Не могу войти",
+    "ticket_id": "T101",
+    "event_codes": [
+      "email_unverified",
+      "invitation_expired"
+    ],
+    "before": {
+      "kind": "model_answer",
+      "answer": "При email_unverified откройте письмо TeamDesk и подтвердите почту по ссылке. Если письмо не пришло, проверьте Спам и запросите повторную отправку на странице входа. [FAQ-EMAIL]",
+      "sources": [
+        "FAQ-EMAIL"
+      ]
+    }
+  },
+  {
+    "case": "unknown",
+    "input": "Не могу войти",
+    "ticket_id": "T101",
+    "event_codes": [
+      "new_error"
+    ],
+    "before": {
+      "kind": "rule_based_clarification",
+      "answer": "Уточните точный текст ошибки и этап входа. Причина пока неизвестна. Не передавайте пароль.",
+      "sources": []
+    }
+  }
+]

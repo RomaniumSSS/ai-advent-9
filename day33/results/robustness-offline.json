@@ -1,0 +1,254 @@
+{
+  "environment": "offline, actual stdio MCP; deterministic mock only, no provider calls",
+  "probes": [
+    {
+      "case": "outside",
+      "input": "Какая завтра погода?",
+      "ticket_id": "T101",
+      "event_codes": null,
+      "before": {
+        "kind": "model_answer",
+        "answer": "При email_unverified откройте письмо TeamDesk и подтвердите почту по ссылке. Если письмо не пришло, проверьте Спам и запросите повторную отправку на странице входа. [FAQ-EMAIL]",
+        "sources": [
+          "FAQ-EMAIL"
+        ]
+      },
+      "after": {
+        "kind": "bounded_support",
+        "answer": "Я помогаю с TeamDesk. В базе есть сведения о входе и приглашениях; для этого вопроса данных недостаточно. Уточните, что происходит в TeamDesk и какой текст ошибки виден.",
+        "sources": []
+      }
+    },
+    {
+      "case": "other_product",
+      "input": "Сайт белый после обновления",
+      "ticket_id": "T103",
+      "event_codes": null,
+      "before": {
+        "error": "ValueError",
+        "message": "RAG не нашёл источников: уточните вопрос"
+      },
+      "after": {
+        "kind": "bounded_support",
+        "answer": "Я помогаю с TeamDesk. В базе есть сведения о входе и приглашениях; для этого вопроса данных недостаточно. Уточните, что происходит в TeamDesk и какой текст ошибки виден.",
+        "sources": []
+      }
+    },
+    {
+      "case": "typo",
+      "input": "Не магу залогинится",
+      "ticket_id": "T103",
+      "event_codes": null,
+      "before": {
+        "error": "ValueError",
+        "message": "RAG не нашёл источников: уточните вопрос"
+      },
+      "after": {
+        "kind": "rule_based_clarification",
+        "answer": "Уточните точный текст ошибки и этап входа. Причина пока неизвестна. Не передавайте пароль.",
+        "sources": []
+      }
+    },
+    {
+      "case": "contradiction",
+      "input": "Почту уже подтвердил, но войти не могу",
+      "ticket_id": "T101",
+      "event_codes": null,
+      "before": {
+        "kind": "model_answer",
+        "answer": "При email_unverified откройте письмо TeamDesk и подтвердите почту по ссылке. Если письмо не пришло, проверьте Спам и запросите повторную отправку на странице входа. [FAQ-EMAIL]",
+        "sources": [
+          "FAQ-EMAIL"
+        ]
+      },
+      "after": {
+        "kind": "contradictory_context",
+        "answer": "Вопрос может описывать состояние, отличное от события тикета. Уточните текущую ошибку и когда изменилось состояние; пока причина не подтверждена.",
+        "sources": []
+      }
+    },
+    {
+      "case": "conflicting",
+      "input": "Не могу войти",
+      "ticket_id": "T101",
+      "event_codes": [
+        "email_unverified",
+        "invitation_expired"
+      ],
+      "before": {
+        "kind": "model_answer",
+        "answer": "При email_unverified откройте письмо TeamDesk и подтвердите почту по ссылке. Если письмо не пришло, проверьте Спам и запросите повторную отправку на странице входа. [FAQ-EMAIL]",
+        "sources": [
+          "FAQ-EMAIL"
+        ]
+      },
+      "after": {
+        "kind": "ambiguous_diagnostics",
+        "answer": "События тикета не позволяют однозначно определить причину. Уточните текущий текст ошибки и этап входа. Без времени событий нельзя выбрать последнее. Не передавайте пароль.",
+        "sources": []
+      }
+    },
+    {
+      "case": "unknown",
+      "input": "Не могу войти",
+      "ticket_id": "T101",
+      "event_codes": [
+        "new_error"
+      ],
+      "before": {
+        "kind": "rule_based_clarification",
+        "answer": "Уточните точный текст ошибки и этап входа. Причина пока неизвестна. Не передавайте пароль.",
+        "sources": []
+      },
+      "after": {
+        "kind": "ambiguous_diagnostics",
+        "answer": "События тикета не позволяют однозначно определить причину. Уточните текущий текст ошибки и этап входа. Без времени событий нельзя выбрать последнее. Не передавайте пароль.",
+        "sources": []
+      }
+    }
+  ],
+  "limitations": [
+    "Freeform intent matching is conservative lexical/fuzzy matching, not a universal intent classifier.",
+    "Model injection semantics require live holdout; source ID validation does not prove answer meaning."
+  ],
+  "transport_probe": [
+    {
+      "stage": "before",
+      "result": "completed",
+      "elapsed_seconds": 1.674,
+      "timeout_seconds": 0.35
+    },
+    {
+      "stage": "after",
+      "result": "TimeoutError",
+      "elapsed_seconds": 0.368,
+      "timeout_seconds": 0.35
+    }
+  ],
+  "live_manifest_offline_smoke": [
+    {
+      "id": "auth-typo",
+      "mode": "mock",
+      "kind": "model_answer"
+    },
+    {
+      "id": "outside",
+      "mode": "mock",
+      "kind": "bounded_support"
+    },
+    {
+      "id": "other-product",
+      "mode": "mock",
+      "kind": "bounded_support"
+    },
+    {
+      "id": "contradiction",
+      "mode": "mock",
+      "kind": "contradictory_context"
+    },
+    {
+      "id": "conflicting",
+      "mode": "mock",
+      "kind": "ambiguous_diagnostics"
+    },
+    {
+      "id": "unknown",
+      "mode": "mock",
+      "kind": "ambiguous_diagnostics"
+    },
+    {
+      "id": "faq-injection",
+      "mode": "mock",
+      "kind": "model_answer"
+    },
+    {
+      "id": "ticket-injection",
+      "mode": "mock",
+      "kind": "model_answer"
+    },
+    {
+      "id": "question-injection",
+      "mode": "mock",
+      "kind": "model_answer"
+    },
+    {
+      "id": "no-faq",
+      "mode": "mock",
+      "kind": "insufficient_sources"
+    },
+    {
+      "id": "holdout-already",
+      "mode": "mock",
+      "kind": "model_answer"
+    },
+    {
+      "id": "holdout-workspace",
+      "mode": "mock",
+      "kind": "model_answer"
+    },
+    {
+      "id": "holdout-after-login",
+      "mode": "mock",
+      "kind": "bounded_support"
+    },
+    {
+      "id": "wrong-password",
+      "mode": "mock",
+      "kind": "reported_error"
+    }
+  ],
+  "checks": {
+    "application_tests": 10,
+    "robustness_tests": 9,
+    "transport_tests": 3,
+    "recorder_tests": 3,
+    "result": "PASS",
+    "environment": "local Python3 / uv Python; loopback+stdio only, no API calls"
+  },
+  "strong_review_fixes": {
+    "before": {
+      "wrong_password": {
+        "kind": "model_answer",
+        "answer": "При email_unverified откройте письмо TeamDesk и подтвердите почту по ссылке. Если письмо не пришло, проверьте Спам и запросите повторную отправку на странице входа. [FAQ-EMAIL]"
+      },
+      "extra_fields": {
+        "user": "accepted",
+        "ticket": "accepted",
+        "event": "accepted"
+      },
+      "cap_validation_before": "Astra offline fake-budget reproduction: nan/inf would reserve; .767852 denied"
+    },
+    "after": {
+      "wrong_password": {
+        "kind": "reported_error",
+        "answer": "Вы сообщили о текущей ошибке. Событие тикета само по себе не подтверждает её причину. Уточните точный текст и этап входа; не передавайте пароль."
+      },
+      "extra_fields": {
+        "user": "rejected",
+        "ticket": "rejected",
+        "event": "rejected"
+      },
+      "session_cap": {
+        "nan": "rejected_before_budget",
+        "inf": "rejected_before_budget",
+        "negative": "rejected_before_budget",
+        "above_one": "rejected_before_budget"
+      }
+    },
+    "limitation": "Reported-error lexical markers are conservative; no universal intent/contradiction guarantee. No new Qwen semantics were tested."
+  },
+  "live_semantic_prompt_correction": {
+    "failure_evidence": "robustness-live/fresh-markerless-conflict.json",
+    "observed_failure": "Qwen inferred an unsupported order of email verification and password checking; symptom/event conflict was not resolved by clarification.",
+    "change": "SYSTEM now separates event state from current cause; disallows undocumented mechanisms/order/causal chains even hedged, and event-first then recheck sequencing for a different current symptom; directs clarification when FAQ does not explicitly link symptom to event.",
+    "model_sha256": "fcaecaf7127cbf159a58ea3164d33ee3a0c5a00e8f3e34cf5f77b5f85fc52b1d",
+    "offline_rechecks": {
+      "application": 10,
+      "robustness": 9,
+      "transport": 3,
+      "recorder": 3,
+      "result": "PASS"
+    },
+    "semantic_status": "NOT_PROVEN: prompt-only change, requires independent review then same-case and fresh-holdout live checks. No API run by implementation owner."
+  }
+}

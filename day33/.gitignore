@@ -1,0 +1,11 @@
+results/
+video/*-record-*/
+planning-day34/
+actions.jsonl
+*.sqlite*
+.env*
+*.mp4
+*.webm
+*.png
+__pycache__/
+PREP.md
