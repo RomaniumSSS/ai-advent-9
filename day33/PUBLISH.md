@@ -1,7 +1,13 @@
 # Day33 — состав публикации кода
 
-Код публикуется в ветке `day33-support`. На момент подготовки этого документа
-commit/push ещё не выполнены; SHA и внешняя ссылка на видео не заявлены.
+[Видео Day33, 68.2 с](https://drive.google.com/file/d/1CNtHo7ruiEZpUN7VGUeeQiHJGXTPJYLt/view?usp=sharing). Загрузку и доступ «Anyone with the link / Viewer»
+координатор проверил через UI. Пользователь ещё должен оценить результат.
+Локальный исходник: 2 133 663 байта, SHA256
+`36059bf96377f913c5165dde64db934a30303e44d945602567e7d956f1ad2ae2`.
+Это hash локального файла, не независимо проверенный hash облачной копии.
+
+Код опубликован в ветке `day33-support`: [код Day33](https://github.com/RomaniumSSS/ai-advent-9/tree/day33-support/day33), [коммит `c6e54e2`](https://github.com/RomaniumSSS/ai-advent-9/commit/c6e54e2ffbb8ed0cab19393c32f3f22563933075).
+Координатор подтвердил SHA в remote.
 Пользовательская сдача отдельно, user_acceptance=false.
 
 В allowlist включены:

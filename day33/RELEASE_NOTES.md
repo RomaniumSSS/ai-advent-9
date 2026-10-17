@@ -1,5 +1,8 @@
 # Day33 — TeamDesk support
 
+[Видео Day33, 68.2 с](https://drive.google.com/file/d/1CNtHo7ruiEZpUN7VGUeeQiHJGXTPJYLt/view?usp=sharing). Загрузку и доступ «Anyone with the link / Viewer»
+координатор проверил через UI. Пользователь ещё должен оценить результат.
+
 Состав публикации — [PUBLISH.md](PUBLISH.md). Упомянутые локальные live/media artifacts
 не входят в Git; их историческая оценка ниже не является опубликованным сырым evidence.
 
@@ -39,4 +42,5 @@ mock не заменяет семантическую проверку Qwen. [Ev
 Исправлены TLS-среда запуска, потеря диагностики model errors, рендеринг отсутствующих
 inline-ссылок и проверка русской словоформы в runner. Старые failure artifacts сохранены.
 Семантическая корректность не доказывается одной проверкой citations; демо не production auth.
-Код подготовлен к публикации; VPS-размещение и пользовательская сдача не выполнялись.
+Код опубликован: [код Day33](https://github.com/RomaniumSSS/ai-advent-9/tree/day33-support/day33), [коммит `c6e54e2`](https://github.com/RomaniumSSS/ai-advent-9/commit/c6e54e2ffbb8ed0cab19393c32f3f22563933075).
+VPS-размещение и пользовательская сдача не выполнялись.

@@ -1,5 +1,11 @@
 # Day33 — TeamDesk
 
+[Видео Day33, 68.2 с](https://drive.google.com/file/d/1CNtHo7ruiEZpUN7VGUeeQiHJGXTPJYLt/view?usp=sharing). Загрузку и доступ «Anyone with the link / Viewer»
+координатор проверил через UI. Пользователь ещё должен оценить результат.
+
+Код опубликован: [код Day33](https://github.com/RomaniumSSS/ai-advent-9/tree/day33-support/day33), [коммит `c6e54e2`](https://github.com/RomaniumSSS/ai-advent-9/commit/c6e54e2ffbb8ed0cab19393c32f3f22563933075).
+Таблица сдачи (строка 132) заполняется координатором; user_acceptance=false.
+
 Независимый мини-сервис поддержки: серверный demo-сеанс → настоящий MCP stdio
 (JSON-RPC initialize / initialized / tools/list / tools/call) → поиск FAQ → один ответ.
 Синтетическая CRM read-only, UI слушает только `127.0.0.1`. Переключение demo-пользователя

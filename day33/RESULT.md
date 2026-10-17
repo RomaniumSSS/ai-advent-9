@@ -1,5 +1,8 @@
 # Day33 — результат
 
+[Видео Day33, 68.2 с](https://drive.google.com/file/d/1CNtHo7ruiEZpUN7VGUeeQiHJGXTPJYLt/view?usp=sharing). Загрузку и доступ «Anyone with the link / Viewer»
+координатор проверил через UI. Пользователь ещё должен оценить результат.
+
 Состав публикации — [PUBLISH.md](PUBLISH.md). Упомянутые локальные live/media artifacts
 не входят в Git; их историческая оценка ниже не является опубликованным сырым evidence.
 
@@ -40,7 +43,7 @@ Prompt-коррекция и выборочные live PASS не гаранти�
 или injection. ID ссылок не доказывают смысл ответа. Overrides live-фикстур вводятся
 после настоящего MCP scope read; это не проверка доставки изменённых fixtures MCP.
 Mock не подтверждает семантику Qwen. Оценку выполнил ассистент-координатор,
-**user_acceptance=false**; пользовательская сдача не подтверждена; код подготовлен к публикации.
+**user_acceptance=false**; пользовательская сдача не подтверждена; код опубликован: [код Day33](https://github.com/RomaniumSSS/ai-advent-9/tree/day33-support/day33), [коммит `c6e54e2`](https://github.com/RomaniumSSS/ai-advent-9/commit/c6e54e2ffbb8ed0cab19393c32f3f22563933075).
 
 TeamDesk читает синтетическую CRM через настоящий read-only MCP stdio,
 выбирает до двух FAQ-фрагментов и отвечает с учётом тикета. Серверный demo-сеанс
