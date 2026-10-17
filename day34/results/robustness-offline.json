@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-10-17T13:16:28.624623+00:00",
+  "environment": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "python": "Python 3.12.12",
+  "scope": "offline actual files/loopback HTTP and scripted/fake model; no live provider calls",
+  "before_probe_scope": "Original baseline/copytree algorithms reproduced independently after edit; not a full pre-edit suite execution. Missing identity formerly completed is visible in changed existing test expectation.",
+  "before_after_probes": [
+    {
+      "probe": "original baseline text comprehension on non-UTF8",
+      "observed": "UnicodeDecodeError",
+      "expectation": "startup tolerates non-text baseline",
+      "failure": true
+    },
+    {
+      "probe": "original copytree default dereferences source symlink",
+      "observed_external_bytes_copied": true,
+      "failure": true
+    },
+    {
+      "probe": "fixed source symlink preservation",
+      "observed_is_symlink": true,
+      "read_denied": true,
+      "pass": true
+    }
+  ],
+  "checks": [
+    {
+      "command": "uv run --offline python day34/test_day34.py",
+      "exit_code": 0,
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 13 tests in 1.941s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": "uv run --offline python day34/test_robustness.py",
+      "exit_code": 0,
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 7 tests in 0.114s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": "uv run --offline python day34/video/test_run_demo.py",
+      "exit_code": 0,
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 3 tests in 0.024s",
+        "",
+        "OK"
+      ]
+    }
+  ],
+  "hashes": {
+    "day34/core.py": "abca80d949914c2f79f1305ea96724ab981751bffef4c31ee009df195b855914",
+    "day34/model.py": "6b3b4706d64b000e7e0492e160b855db137560602c250ce6c79899dbdefb0400",
+    "day34/test_day34.py": "d08a32d309c782097f4d27d0577f500a2ca57b0e7c271f66c9f7b04d015f20f8",
+    "day34/test_robustness.py": "b8bf67ea62564e8ac47e064f26083758d6ed37ac1552135b3ed1fac5c7b2db4d",
+    "day34/robustness_runner.py": "e0a6b98f4e6c6fe1e600b5ad160231508c06f9de3b2198cfcbcd41596b3cfc8e",
+    "day34/robustness/live-manifest.json": "e80e137db32c492cde36a549624ae10f585b10c57e4afde26916acde5eeff2a4"
+  },
+  "semantic_live": "NOT PROVEN: fixture semantic claims and prompt injection require assistant live review; user acceptance separate",
+  "limitations": [
+    "Literal search does not classify alias callsites; model must read imports and implementation.",
+    "Incomplete text coverage fails closed and retains partial matches/skips; large/binary content is not inspected.",
+    "Session cap assumes one sequential operator; general ledger $1 cap remains atomic.",
+    "Source symlink read denied; TOCTOU against hostile concurrent host filesystem edits outside threat scope."
+  ],
+  "cost": null
+}

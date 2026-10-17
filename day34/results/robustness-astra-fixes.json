@@ -1,0 +1,92 @@
+{
+  "before": {
+    "empty_creation": {
+      "write": {
+        "ok": true,
+        "data": {
+          "written": "reports/empty.txt",
+          "bytes": 0
+        },
+        "truncated": false
+      },
+      "diff": {
+        "ok": true,
+        "data": "",
+        "truncated": false
+      },
+      "exists": true
+    },
+    "unchanged_symlink": {
+      "status": "completed",
+      "reason": "final_answer",
+      "diff": "Diff недоступен: нарушение sandbox"
+    }
+  },
+  "after": {
+    "empty_creation": {
+      "write": {
+        "ok": true,
+        "data": {
+          "written": "reports/empty.txt",
+          "bytes": 0
+        },
+        "truncated": false
+      },
+      "diff": {
+        "ok": true,
+        "data": "diff --git a/reports/empty.txt b/reports/empty.txt\nnew file mode 100644\n",
+        "truncated": false
+      },
+      "exists": true
+    },
+    "unchanged_symlink": {
+      "status": "completed",
+      "reason": "final_answer",
+      "diff": "--- a/README.md\n+++ b/README.md\n@@ -1,4 +1 @@\n-# Invite demo\n-\n-API: `send_invite(username, team=\"default\")` отправляет приглашение.\n-CLI: `python -m src.cli alice --team default`.\n+changed\n"
+    },
+    "diff_failure": {
+      "status": "error",
+      "reason": "diff_error",
+      "diff": "Diff недоступен: нарушение sandbox"
+    }
+  },
+  "checks": [
+    {
+      "command": "uv run --offline python day34/test_day34.py",
+      "exit_code": 0,
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 13 tests in 1.963s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": "uv run --offline python day34/test_robustness.py",
+      "exit_code": 0,
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 10 tests in 0.158s",
+        "",
+        "OK"
+      ]
+    },
+    {
+      "command": "uv run --offline python day34/video/test_run_demo.py",
+      "exit_code": 0,
+      "summary": [
+        "----------------------------------------------------------------------",
+        "Ran 3 tests in 0.026s",
+        "",
+        "OK"
+      ]
+    }
+  ],
+  "timestamp": "2026-10-17T13:20:31.645776+00:00",
+  "scope": "offline; exact before/after probes executed on actual temporary files, model scripted; no live API or existing budget ledger access",
+  "sha256": {
+    "day34/core.py": "1bd82a66cb7375115b6f63553e84c2fd58d2472a4710de1908b1fbc814e40e6e",
+    "day34/test_robustness.py": "9aea6c547f8a35d441b08a82e79d0f0b20f80b30b9b79ccc1083155c742bd1a7",
+    "day34/README.md": "ff29dd003932ecbeb479d56a17f6ac060b220288350c60b094112e2a1610fcfe"
+  }
+}

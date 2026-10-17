@@ -1,0 +1,14 @@
+runs/
+__pycache__/
+video/artifacts/
+
+# Локальные evidence и медиа публикуются отдельно от кода.
+results/live-*/
+results/robustness-live/
+results/robustness-video-dry/
+video/*record*/
+actions.jsonl
+*.sqlite*
+*.mp4
+*.webm
+*.png
