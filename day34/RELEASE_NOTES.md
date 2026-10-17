@@ -36,7 +36,7 @@ MP4 проверены ассистентом: `video/robustness-record-01/seman
 `video/live-record-02/capture.mp4` (локальное evidence: Старое record02) — историческое:
 в его сводке модель ошиблась в счёте строк. Record01 сохранён с семантическим FAIL.
 Универсальная работа с alias, production и live на больших файлах не доказаны.
-Пользовательская приёмка false; публикация кода разрешена; commit/push ожидаются. Сервер 8134 остановлен.
+Пользовательская приёмка false; код опубликован ([commit `3f1a8d7`](https://github.com/RomaniumSSS/ai-advent-9/commit/3f1a8d749b7cfdfe97e50533dd60dc921f320c61)). Сервер 8134 остановлен.
 
 Дополнительный Day34: 29 запросов / $0,108662; весь Day34 — $0,224998.
 Финальный общий бюджет Day33+Day34: actual $0,289988, unknown hold $0,037338,
@@ -47,3 +47,9 @@ MP4 проверены ассистентом: `video/robustness-record-01/seman
 Запуск mock UI: `uv run python day34/web.py`.
 Live запускает только назначенный оператор с существующим общим ledger.
 [Инструкция и ограничения](README.md).
+
+[Код на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/day34-project-files/day34).
+
+[Видео Day34, 109,4 с](https://drive.google.com/file/d/18lbaa5uEtTr8i0UGHyS-F6Um3KCVALDO/view?usp=sharing). Координатор проверил загрузку через UI и доступ
+«все, у кого есть ссылка — читатель». Таблица: строка 132 в процессе заполнения
+координатором; пользователь проверит её сам, независимая приёмка не заявляется.

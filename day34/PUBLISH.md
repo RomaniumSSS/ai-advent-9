@@ -1,7 +1,7 @@
 # Day34 — состав публикации кода
 
-Публикация кода разрешена пользователем 17.10.2026. Commit/push ещё не выполнены
-на момент подготовки этого manifest; SHA и внешняя ссылка здесь не заявляются.
+Код опубликован 17.10.2026: [Код на GitHub](https://github.com/RomaniumSSS/ai-advent-9/tree/day34-project-files/day34),
+[commit `3f1a8d7`](https://github.com/RomaniumSSS/ai-advent-9/commit/3f1a8d749b7cfdfe97e50533dd60dc921f320c61). Commit/push выполнены; remote SHA проверен координатором.
 Пользовательская приёмка результата остаётся отдельно.
 
 Включены runtime/UI, mock, офлайн-тесты, синтетические исходные и robustness fixtures,
@@ -11,7 +11,14 @@
 Исключены ledger/SQLite, .env/ключи, actions/session logs, скрытые рассуждения,
 полные live responses/traces/sandbox runs, raw outputs, MP4/WebM/PNG и остальные
 медиа. Локальные evidence в RESULT/RELEASE_NOTES явно помечены и отсутствуют
-в свежем клоне. Новые live-запросы и внешние публикации медиа не выполнялись.
+в свежем клоне. Новые live-запросы при подготовке публикации не выполнялись.
+Видео опубликовано отдельно от Git: [Видео Day34, 109,4 с](https://drive.google.com/file/d/18lbaa5uEtTr8i0UGHyS-F6Um3KCVALDO/view?usp=sharing).
+Координатор проверил UI-загрузку и доступ «все, у кого есть ссылка — читатель».
+Локальный исходник: 3 272 378 байт, SHA256
+`314857970899b4e6a9f3e9faccb2f78ce0fda0c030847dd6602c986764e36b6b`.
+Это метаданные локального исходника; cloud hash не проверялся.
+Таблица, строка 132: заполнение координатором в процессе; пользователь проверит
+результат самостоятельно, независимая приёмка таблицы не заявляется.
 Root todo/HANDOFF и другие дни не входят в stage.
 
 Проверки 17.10.2026: macOS, uv Python 3.12.12; offline application 13,
